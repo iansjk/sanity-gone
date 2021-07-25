@@ -44,7 +44,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
         <img className="operator-portrait" src={operatorImage(name)} alt="" />
         <span className="rarity" aria-label={`Rarity: ${rarity} stars`}>
           {[...Array(rarity).keys()].map((i) => (
-            <MdStar key={i} />
+            <MdStar key={i} aria-hidden="true" />
           ))}
         </span>
       </div>

@@ -15,7 +15,7 @@ const AuthorCredit: React.VFC<AuthorCreditProps> = (props) => {
       <span className="discord-tag">
         <span className="username">{username}</span>
         <span className="discriminator">#{discriminator}</span>
-        <DiscordLogo className="discord-logo" />
+        <DiscordLogo className="discord-logo" aria-label="on Discord" />
       </span>
     </div>
   );

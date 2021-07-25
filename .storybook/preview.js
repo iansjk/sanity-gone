@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
 import { defaultTheme } from "../src/theme";
+import Layout from "../src/Layout";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -9,12 +10,15 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  layout: "fullscreen",
 }
 
 export const decorators = [
   (Story) => (
     <ThemeProvider theme={defaultTheme}>
-      <Story />
+      <Layout>
+        <Story />
+      </Layout>
     </ThemeProvider>
   )
 ]

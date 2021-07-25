@@ -51,6 +51,7 @@ const styles = css`
 
     .discord-logo {
       width: 20px;
+      height: 20px;
       margin-left: 8px;
       opacity: 0.2;
     }

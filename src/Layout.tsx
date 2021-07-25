@@ -8,6 +8,7 @@ const Layout: React.FC = ({ children }) => {
 export default Layout;
 
 const styles = (theme: Theme) => ({
+  "-webkit-font-smoothing": "antialiased",
   fontFamily: theme.typography.body.family,
   fontSize: theme.typography.body.size,
   color: theme.palette.white,

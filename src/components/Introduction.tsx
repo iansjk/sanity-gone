@@ -10,6 +10,9 @@ const Introduction: React.FC<IntroductionProps> = (props) => {
   const { operatorEntry, authorDiscordTag, children } = props;
   return (
     <section css={styles}>
+      <div className="heading-block">
+        <h2>Introduction</h2>
+      </div>
       <div className="introduction-meta">
         <OperatorInfo operatorEntry={operatorEntry} />
         <div className="spacer" />
@@ -23,13 +26,28 @@ export default Introduction;
 
 const styles = css`
   background: #232134;
-  padding: 32px;
   border-radius: 8px;
+  padding-bottom: 8px;
+
+  .heading-block {
+    padding: 16px 0 16px 24px;
+    border-bottom: 1px solid #534f6b;
+
+    h2 {
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #f4f4f4;
+    }
+  }
 
   .introduction-meta {
+    margin: 19px 0 32px;
+    padding: 0 32px 0 32px;
     display: flex;
     align-items: center;
-    margin-bottom: 32px;
 
     .spacer {
       flex-grow: 1;
@@ -37,6 +55,8 @@ const styles = css`
   }
 
   .introduction-content {
+    padding: 0 32px;
+
     p {
       line-height: 28px;
       margin: 0 0 24px;

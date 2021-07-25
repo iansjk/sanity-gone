@@ -39,7 +39,7 @@ const styles = (theme: Theme) => css`
       font-size: 24px;
       font-weight: bold;
       letter-spacing: 1px;
-      color: #f4f4f4;
+      color: ${theme.palette.white};
     }
   }
 

@@ -143,7 +143,7 @@ const styles = (theme: Theme) => css`
 
     dt {
       font-size: 14px;
-      color: #998dba;
+      color: ${theme.palette.mid};
     }
 
     dd {
@@ -216,7 +216,7 @@ const styles = (theme: Theme) => css`
 
   .dp-cost {
     svg path {
-      fill: #c6c6c6;
+      fill: ${theme.palette.gray};
     }
   }
 `;

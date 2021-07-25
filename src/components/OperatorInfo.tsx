@@ -69,7 +69,7 @@ const styles = (theme: Theme) => css`
       margin: ${theme.spacing(0.5)};
       width: 96px;
       height: 96px;
-      background-color: #f98d3f;
+      background-color: ${theme.palette.orange};
       border-radius: ${theme.spacing(0.25)};
     }
 
@@ -81,8 +81,8 @@ const styles = (theme: Theme) => css`
       text-align: center;
 
       svg {
-        fill: #232134;
-        stroke: #e3e1ef;
+        fill: ${theme.palette.mid};
+        stroke: ${theme.palette.white};
         stroke-width: 1px;
         margin-right: -1px;
       }

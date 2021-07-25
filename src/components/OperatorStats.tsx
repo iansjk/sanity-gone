@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { ClassNames, css } from "@emotion/react";
 import {
   ArtsResistanceIcon,
   AttackPowerIcon,
@@ -40,9 +40,20 @@ const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
   } = props;
   return (
     <dl css={styles}>
-      <div className="stat-cell">
+      <div className="stat-cell damage-type">
         <dt>Damage Type</dt>
-        <dd>{damageType}</dd>
+        <ClassNames>
+          {({ cx }) => (
+            <dd
+              className={cx(
+                damageType === "Physical" && "physical",
+                damageType === "Magical" && "magical"
+              )}
+            >
+              {damageType}
+            </dd>
+          )}
+        </ClassNames>
       </div>
 
       <div className="stat-cell">
@@ -50,56 +61,56 @@ const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
         <dd>{position}</dd>
       </div>
 
-      <div className="stat-cell">
+      <div className="stat-cell health">
         <dt>
           <HealthIcon aria-hidden="true" /> Health
         </dt>
         <dd>{health}</dd>
       </div>
 
-      <div className="stat-cell">
+      <div className="stat-cell attack-power">
         <dt>
           <AttackPowerIcon aria-hidden="true" /> Attack Power
         </dt>
         <dd>{attackPower}</dd>
       </div>
 
-      <div className="stat-cell">
+      <div className="stat-cell defense">
         <dt>
           <DefenseIcon aria-hidden="true" /> Defense
         </dt>
         <dd>{defense}</dd>
       </div>
 
-      <div className="stat-cell">
+      <div className="stat-cell attack-interval">
         <dt>
           <AttackSpeedIcon aria-hidden="true" /> Attack Interval
         </dt>
         <dd>{attacksPerSecond} sec</dd>
       </div>
 
-      <div className="stat-cell">
+      <div className="stat-cell arts-resistance">
         <dt>
           <ArtsResistanceIcon aria-hidden="true" /> Arts Resistance
         </dt>
         <dd>{artsResistance}%</dd>
       </div>
 
-      <div className="stat-cell">
+      <div className="stat-cell block">
         <dt>
           <BlockIcon aria-hidden="true" /> Block
         </dt>
         <dd>{blockCount}</dd>
       </div>
 
-      <div className="stat-cell">
+      <div className="stat-cell redeploy-time">
         <dt>
           <RedeployTimeIcon aria-hidden="true" /> Redeploy Time
         </dt>
         <dd>{redeployTimeInSeconds} sec</dd>
       </div>
 
-      <div className="stat-cell">
+      <div className="stat-cell dp-cost">
         <dt>
           <DPCostIcon aria-hidden="true" /> DP Cost
         </dt>
@@ -123,5 +134,59 @@ const styles = css`
 
   .range {
     grid-row-start: span 2;
+  }
+
+  .damage-type {
+    .physical {
+      color: #fb4040;
+    }
+  }
+
+  .health {
+    svg path {
+      fill: #a7e855;
+    }
+  }
+
+  .attack-power {
+    svg path {
+      fill: #fb4040;
+    }
+  }
+
+  .defense {
+    svg path {
+      fill: #fa773f;
+    }
+  }
+
+  .attack-interval {
+    svg path {
+      fill: #ffcf53;
+    }
+  }
+
+  .arts-resistance {
+    svg path {
+      fill: #49b3ff;
+    }
+  }
+
+  .block {
+    svg path {
+      fill: #7f7dea;
+    }
+  }
+
+  .redeploy-time {
+    svg path {
+      fill: #e85593;
+    }
+  }
+
+  .dp-cost {
+    svg path {
+      fill: #c6c6c6;
+    }
   }
 `;

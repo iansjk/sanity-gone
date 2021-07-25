@@ -210,13 +210,13 @@ const styles = (theme: Theme) => css`
 
   .redeploy-time {
     svg path {
+      fill: ${theme.palette.pink};
     }
-    fill: ${theme.palette.pink};
   }
 
   .dp-cost {
     svg path {
-      fill: ${theme.palette.gray};
+      fill: ${theme.palette.white};
     }
   }
 `;

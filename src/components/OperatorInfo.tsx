@@ -98,6 +98,7 @@ const styles = css`
         }
 
         opacity: 0.2;
+        font-weight: normal;
       }
     }
 

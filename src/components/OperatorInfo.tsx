@@ -25,12 +25,12 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   return (
     <div css={styles}>
       <div className="name-and-class">
-        <div className="operator-name">
+        <h2 className="operator-name">
           <span className="operator-name-english">{name}</span>
           <span className="operator-name-chinese" aria-hidden="true">
             {cnName}
           </span>
-        </div>
+        </h2>
         <div className="operator-class">
           <img
             className="class-icon"

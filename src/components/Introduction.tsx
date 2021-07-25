@@ -6,23 +6,40 @@ import OperatorInfo, { OperatorInfoProps } from "./OperatorInfo";
 
 export type IntroductionProps = AuthorCreditProps & OperatorInfoProps;
 
-const Introduction: React.VFC<IntroductionProps> = (props) => {
-  const { operatorEntry, authorDiscordTag } = props;
+const Introduction: React.FC<IntroductionProps> = (props) => {
+  const { operatorEntry, authorDiscordTag, children } = props;
   return (
-    <div css={styles}>
-      <OperatorInfo operatorEntry={operatorEntry} />
-      <div className="spacer" />
-      <AuthorCredit authorDiscordTag={authorDiscordTag} />
-    </div>
+    <section css={styles}>
+      <div className="introduction-meta">
+        <OperatorInfo operatorEntry={operatorEntry} />
+        <div className="spacer" />
+        <AuthorCredit authorDiscordTag={authorDiscordTag} />
+      </div>
+      <div className="introduction-content">{children}</div>
+    </section>
   );
 };
 export default Introduction;
 
 const styles = css`
-  display: flex;
-  align-items: center;
+  .introduction-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
 
-  .spacer {
-    flex-grow: 1;
+    .spacer {
+      flex-grow: 1;
+    }
+  }
+
+  .introduction-content {
+    p {
+      line-height: 28px;
+      margin: 0 0 24px;
+    }
+
+    b {
+      color: #49b3ff;
+    }
   }
 `;

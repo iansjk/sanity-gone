@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 import { professionToClass } from "../utils/globals";
 import { operatorClassIcon, operatorImage } from "../utils/images";
-
+import { MdStar } from "react-icons/md";
 export interface OperatorInfoProps {
   operatorEntry: {
     name: string;
@@ -43,7 +43,11 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
       <div className="portrait-and-rarity">
         <img className="operator-portrait" src={operatorImage(name)} alt="" />
         <span className="rarity" aria-label={`Rarity: ${rarity} stars`}>
-          {"★".repeat(rarity)}
+          {Array(rarity)
+            .fill(null)
+            .map((_, i) => (
+              <MdStar key={i} />
+            ))}
         </span>
       </div>
     </div>
@@ -73,10 +77,17 @@ const styles = css`
 
     .rarity {
       position: absolute;
-      bottom: -15px;
+      bottom: -18px;
       left: 0;
       width: 100%;
       text-align: center;
+
+      svg {
+        fill: #232134;
+        stroke: #e3e1ef;
+        stroke-width: 1px;
+        margin-right: -1px;
+      }
     }
   }
 

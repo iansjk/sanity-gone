@@ -144,6 +144,10 @@ const styles = (theme: Theme) => css`
     dt {
       font-size: 14px;
       color: ${theme.palette.gray};
+
+      svg {
+        margin-right: ${theme.spacing(0.5)};
+      }
     }
 
     dd {

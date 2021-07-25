@@ -2,7 +2,7 @@ import { Meta, Story } from "@storybook/react";
 import OperatorInfo, { OperatorInfoProps } from "./OperatorInfo";
 
 export default {
-  title: "Components/OperatorInfo",
+  title: "Introduction/OperatorInfo",
   component: OperatorInfo,
 } as Meta;
 

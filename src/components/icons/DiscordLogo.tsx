@@ -1,7 +1,5 @@
 // from https://discord.com/branding
 
-import React from "react";
-
 const DiscordLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg

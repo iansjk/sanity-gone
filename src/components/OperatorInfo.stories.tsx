@@ -9,8 +9,9 @@ export default {
 const Template: Story<OperatorInfoProps> = (args) => <OperatorInfo {...args} />;
 export const Default = Template.bind({});
 Default.args = {
-  name: "Mudrock",
   operatorEntry: {
+    name: "泥岩",
+    appellation: "Mudrock",
     profession: "TANK",
     rarity: 5,
   },

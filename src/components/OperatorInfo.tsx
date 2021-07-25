@@ -4,24 +4,31 @@ import { professionToClass } from "../utils/globals";
 import { operatorClassIcon, operatorImage } from "../utils/images";
 
 export interface OperatorInfoProps {
-  name: string;
   operatorEntry: {
+    name: string;
+    appellation: string;
     profession: string;
     rarity: number;
   };
 }
 
 const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
-  const { name, operatorEntry } = props;
-  const operatorClass = professionToClass(operatorEntry.profession);
-  const rarity = operatorEntry.rarity + 1; // 0-indexed;
+  const { operatorEntry } = props;
+  const {
+    name: cnName,
+    appellation: name,
+    profession,
+    rarity: rawRarity,
+  } = operatorEntry;
+  const operatorClass = professionToClass(profession);
+  const rarity = rawRarity + 1; // 0-indexed;
   return (
     <div css={styles}>
       <div className="name-and-class">
         <div className="operator-name">
           <span className="operator-name-english">{name}</span>
           <span className="operator-name-chinese" aria-hidden="true">
-            泥岩
+            {cnName}
           </span>
         </div>
         <div className="operator-class">

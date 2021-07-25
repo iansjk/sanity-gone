@@ -93,7 +93,7 @@ const styles = (theme: Theme) => css`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding-left: ${theme.spacing(3)};
+    padding: 18px 0 0 ${theme.spacing(3)};
 
     .operator-name {
       font-size: 36px;

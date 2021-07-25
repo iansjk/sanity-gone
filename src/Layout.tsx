@@ -15,10 +15,12 @@ const styles = (theme: Theme) => ({
   backgroundColor: theme.palette.background,
   padding: theme.spacing(2),
   "& b, & strong": {
+    color: theme.palette.blue,
     fontWeight: theme.typography.highlight.weight,
   },
   "& a": {
     fontStyle: theme.typography.link.fontStyle,
     textDecoration: theme.typography.link.textDecoration,
+    color: theme.palette.blue,
   },
 });

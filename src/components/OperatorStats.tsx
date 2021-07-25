@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { ClassNames, css } from "@emotion/react";
+import { ClassNames, css, Theme } from "@emotion/react";
 import {
   ArtsResistanceIcon,
   AttackPowerIcon,
@@ -126,20 +126,20 @@ const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
 };
 export default OperatorStats;
 
-const styles = css`
+const styles = (theme: Theme) => css`
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: 180fr repeat(4, 140fr) 240fr;
   grid-auto-flow: column;
-  grid-gap: 2px;
+  grid-gap: ${theme.spacing(0.25)};
 
   .range {
     grid-row-start: span 2;
   }
 
   .stat-cell {
-    padding: 16px;
-    background-color: #1d1b2c;
+    padding: ${theme.spacing(2)};
+    background-color: ${theme.palette.mid};
 
     dt {
       font-size: 14px;
@@ -147,7 +147,7 @@ const styles = css`
     }
 
     dd {
-      margin: 9px 0 0;
+      margin: ${theme.spacing(1)} 0 0;
       line-height: 31px;
       font-size: 24px;
       font-weight: bold;
@@ -161,7 +161,7 @@ const styles = css`
     }
 
     .physical {
-      color: #fb4040;
+      color: ${theme.palette.red};
     }
   }
 
@@ -174,44 +174,44 @@ const styles = css`
 
   .health {
     svg path {
-      fill: #a7e855;
+      fill: ${theme.palette.lime};
     }
   }
 
   .attack-power {
     svg path {
-      fill: #fb4040;
+      fill: ${theme.palette.red};
     }
   }
 
   .defense {
     svg path {
-      fill: #fa773f;
+      fill: ${theme.palette.orange};
     }
   }
 
   .attack-interval {
     svg path {
-      fill: #ffcf53;
+      fill: ${theme.palette.yellow};
     }
   }
 
   .arts-resistance {
     svg path {
-      fill: #49b3ff;
+      fill: ${theme.palette.blue};
     }
   }
 
   .block {
     svg path {
-      fill: #7f7dea;
+      fill: ${theme.palette.softBlue};
     }
   }
 
   .redeploy-time {
     svg path {
-      fill: #e85593;
     }
+    fill: ${theme.palette.pink};
   }
 
   .dp-cost {

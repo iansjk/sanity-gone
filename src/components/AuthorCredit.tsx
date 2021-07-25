@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css, Theme } from "@emotion/react";
 import DiscordLogo from "./icons/DiscordLogo";
 
 export interface AuthorCreditProps {
@@ -22,7 +22,7 @@ const AuthorCredit: React.VFC<AuthorCreditProps> = (props) => {
 };
 export default AuthorCredit;
 
-const styles = css`
+const styles = (theme: Theme) => css`
   display: flex;
   flex-direction: column;
   text-align: end;
@@ -47,13 +47,13 @@ const styles = css`
 
     .discriminator {
       opacity: 0.5;
-      margin-left: 4px;
+      margin-left: ${theme.spacing(0.5)};
     }
 
     .discord-logo {
       width: 20px;
       height: 20px;
-      margin-left: 8px;
+      margin-left: ${theme.spacing(1)};
       opacity: 0.2;
     }
   }

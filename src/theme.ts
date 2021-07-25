@@ -27,5 +27,5 @@ const spacingUnit = 8;
 export const defaultTheme = {
   palette,
   typography,
-  spacing: (multiple: number) => spacingUnit * multiple
+  spacing: (multiple: number) => `${spacingUnit * multiple}px`,
 };

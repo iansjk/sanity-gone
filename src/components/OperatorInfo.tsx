@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css, Theme } from "@emotion/react";
 import { professionToClass } from "../utils/globals";
 import { operatorClassIcon, operatorImage } from "../utils/images";
 import { MdStar } from "react-icons/md";
@@ -53,7 +53,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
 };
 export default OperatorInfo;
 
-const styles = css`
+const styles = (theme: Theme) => css`
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
@@ -62,15 +62,15 @@ const styles = css`
     width: 104px;
     height: 104px;
     position: relative;
-    border-radius: 4px;
-    border: 2px solid #fff;
+    border-radius: ${theme.spacing(0.5)};
+    border: ${theme.spacing(0.25)} solid #fff;
 
     .operator-portrait {
-      margin: 4px;
+      margin: ${theme.spacing(0.5)};
       width: 96px;
       height: 96px;
       background-color: #f98d3f;
-      border-radius: 2px;
+      border-radius: ${theme.spacing(0.25)};
     }
 
     .rarity {
@@ -93,7 +93,7 @@ const styles = css`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding-left: 24px;
+    padding-left: ${theme.spacing(3)};
 
     .operator-name {
       font-size: 36px;
@@ -117,12 +117,12 @@ const styles = css`
       opacity: 0.5;
 
       .class-icon {
-        width: 32px;
-        height: 32px;
+        width: ${theme.spacing(4)};
+        height: ${theme.spacing(4)};
       }
 
       .class-name {
-        margin-left: 8px;
+        margin-left: ${theme.spacing(1)};
         line-height: 32px;
       }
     }

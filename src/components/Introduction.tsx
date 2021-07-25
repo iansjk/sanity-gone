@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css, Theme } from "@emotion/react";
 import React from "react";
 import AuthorCredit, { AuthorCreditProps } from "./AuthorCredit";
 import OperatorInfo, { OperatorInfoProps } from "./OperatorInfo";
@@ -24,14 +24,14 @@ const Introduction: React.FC<IntroductionProps> = (props) => {
 };
 export default Introduction;
 
-const styles = css`
-  background: #232134;
-  border-radius: 8px;
-  padding-bottom: 8px;
+const styles = (theme: Theme) => css`
+  background: ${theme.palette.mid};
+  border-radius: ${theme.spacing(1)};
+  padding-bottom: ${theme.spacing(1)};
 
   .heading-block {
     padding: 16px 0 16px 24px;
-    border-bottom: 1px solid #534f6b;
+    border-bottom: 1px solid ${theme.palette.midhl};
 
     h2 {
       margin: 0;
@@ -63,7 +63,7 @@ const styles = css`
     }
 
     b {
-      color: #49b3ff;
+      color: ${theme.palette.blue};
     }
   }
 `;

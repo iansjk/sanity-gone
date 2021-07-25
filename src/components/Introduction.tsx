@@ -22,6 +22,10 @@ const Introduction: React.FC<IntroductionProps> = (props) => {
 export default Introduction;
 
 const styles = css`
+  background: #232134;
+  padding: 32px;
+  border-radius: 8px;
+
   .introduction-meta {
     display: flex;
     align-items: center;

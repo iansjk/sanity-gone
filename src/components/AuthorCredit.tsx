@@ -30,7 +30,7 @@ const styles = (theme: Theme) => css`
   .attribution {
     display: block;
     text-transform: uppercase;
-    color: ${theme.palette.mid};
+    color: ${theme.palette.gray};
     font-size: 16px;
     letter-spacing: 1px;
   }

@@ -139,11 +139,11 @@ const styles = (theme: Theme) => css`
 
   .stat-cell {
     padding: ${theme.spacing(2)};
-    background-color: ${theme.palette.mid};
+    background-color: ${theme.palette.midBackground};
 
     dt {
       font-size: 14px;
-      color: ${theme.palette.mid};
+      color: ${theme.palette.gray};
     }
 
     dd {

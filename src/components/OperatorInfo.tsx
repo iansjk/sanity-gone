@@ -112,6 +112,7 @@ const styles = css`
 
       .class-name {
         margin-left: 8px;
+        line-height: 32px;
       }
     }
   }

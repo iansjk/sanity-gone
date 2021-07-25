@@ -56,7 +56,7 @@ const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
         </ClassNames>
       </div>
 
-      <div className="stat-cell">
+      <div className="stat-cell position">
         <dt>Position</dt>
         <dd>{position}</dd>
       </div>
@@ -131,14 +131,42 @@ const styles = css`
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: 180fr repeat(4, 140fr) 240fr;
   grid-auto-flow: column;
+  grid-gap: 2px;
 
   .range {
     grid-row-start: span 2;
   }
 
+  .stat-cell {
+    padding: 16px;
+
+    dt {
+      font-size: 14px;
+      color: #998dba;
+    }
+
+    dd {
+      margin: 9px 0 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+
   .damage-type {
+    dd {
+      font-size: 18px;
+      font-weight: normal;
+    }
+
     .physical {
       color: #fb4040;
+    }
+  }
+
+  .position {
+    dd {
+      font-size: 18px;
+      font-weight: normal;
     }
   }
 

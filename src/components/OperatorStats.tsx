@@ -1,6 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-
+import {
+  ArtsResistanceIcon,
+  AttackPowerIcon,
+  AttackSpeedIcon,
+  BlockIcon,
+  DPCostIcon,
+  DefenseIcon,
+  HealthIcon,
+  RedeployTimeIcon,
+} from "./icons/operatorStats";
 export interface OperatorStatsProps {
   damageType: "Physical" | "Magical";
   position: "Melee" | "Ranged" | "Melee or Ranged";
@@ -37,28 +46,44 @@ const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
       <dt>Position</dt>
       <dd>{position}</dd>
 
-      <dt>Health</dt>
+      <dt>
+        <HealthIcon aria-hidden="true" /> Health
+      </dt>
       <dd>{health}</dd>
 
-      <dt>Attack Power</dt>
+      <dt>
+        <AttackPowerIcon aria-hidden="true" /> Attack Power
+      </dt>
       <dd>{attackPower}</dd>
 
-      <dt>Defense</dt>
+      <dt>
+        <DefenseIcon aria-hidden="true" /> Defense
+      </dt>
       <dd>{defense}</dd>
 
-      <dt>Attacks Interval</dt>
+      <dt>
+        <AttackSpeedIcon aria-hidden="true" /> Attack Interval
+      </dt>
       <dd>{attacksPerSecond} sec</dd>
 
-      <dt>Arts Resistance</dt>
+      <dt>
+        <ArtsResistanceIcon aria-hidden="true" /> Arts Resistance
+      </dt>
       <dd>{artsResistance}%</dd>
 
-      <dt>Block</dt>
+      <dt>
+        <BlockIcon aria-hidden="true" /> Block
+      </dt>
       <dd>{blockCount}</dd>
 
-      <dt>Redeploy Time</dt>
+      <dt>
+        <RedeployTimeIcon aria-hidden="true" /> Redeploy Time
+      </dt>
       <dd>{redeployTimeInSeconds} sec</dd>
 
-      <dt>DP Cost</dt>
+      <dt>
+        <DPCostIcon aria-hidden="true" /> DP Cost
+      </dt>
       <dd>{dpCost}</dd>
 
       <dt>Range</dt>

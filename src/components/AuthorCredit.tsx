@@ -39,6 +39,7 @@ const styles = css`
     margin-top: 14px;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 
     .username {
       font-weight: bold;

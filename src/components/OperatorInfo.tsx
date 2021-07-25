@@ -88,6 +88,7 @@ const styles = css`
 
     .operator-name {
       font-size: 36px;
+      font-weight: bold;
       line-height: 24px;
       margin-bottom: 16px;
 

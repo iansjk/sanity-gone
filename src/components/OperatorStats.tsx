@@ -139,6 +139,7 @@ const styles = css`
 
   .stat-cell {
     padding: 16px;
+    background-color: #1d1b2c;
 
     dt {
       font-size: 14px;
@@ -147,6 +148,7 @@ const styles = css`
 
     dd {
       margin: 9px 0 0;
+      line-height: 31px;
       font-size: 24px;
       font-weight: bold;
     }

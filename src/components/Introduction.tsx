@@ -31,13 +31,14 @@ const styles = (theme: Theme) => css`
 
   .heading-block {
     padding: 16px 0 16px 24px;
-    border-bottom: 1px solid ${theme.palette.midhl};
+    border-bottom: 1px solid ${theme.palette.midHighlight};
 
     h2 {
       margin: 0;
-      text-transform: uppercase;
-      font-size: 24px;
-      font-weight: bold;
+      text-transform: ${theme.typography.cardHeader.textTransform};
+      font-size: ${theme.typography.cardHeader.size};
+      font-weight: ${theme.typography.cardHeader.weight};
+      font-variant: ${theme.typography.cardHeader.fontVariant};
       letter-spacing: 1px;
       color: ${theme.palette.white};
     }

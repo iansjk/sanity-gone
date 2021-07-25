@@ -31,8 +31,6 @@ const styles = (theme: Theme) => css`
     display: block;
     text-transform: uppercase;
     color: ${theme.palette.gray};
-    font-size: 16px;
-    letter-spacing: 1px;
   }
 
   .discord-tag {
@@ -46,15 +44,17 @@ const styles = (theme: Theme) => css`
     }
 
     .discriminator {
-      opacity: 0.5;
       margin-left: ${theme.spacing(0.5)};
+      color: ${theme.palette.gray};
     }
 
     .discord-logo {
       width: 20px;
       height: 20px;
       margin-left: ${theme.spacing(1)};
-      opacity: 0.2;
+      path {
+        fill: ${theme.palette.gray};
+      }
     }
   }
 `;

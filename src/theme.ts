@@ -12,14 +12,34 @@ const palette = {
   mid: "#1e1e26",
   midBackground: "#191920",
   midHighlight: "#4d4d5b",
-  headerBackground: "#101014"
+  headerBackground: "#101014",
 };
 
 const typography = {
   body: {
     family: "Source Sans Pro, sans-serif",
-    size: 18
-  }
+    size: 18,
+  },
+  highlight: {
+    weight: 600,
+  },
+  link: {
+    fontStyle: "italic",
+    textDecoration: "underline",
+  },
+  header: {
+    size: 36,
+    weight: 600,
+  },
+  header2: {
+    size: 36,
+  },
+  cardHeader: {
+    size: 24,
+    textTransform: "uppercase",
+    fontVariant: "small-caps",
+    weight: 600,
+  },
 };
 
 const spacingUnit = 8;

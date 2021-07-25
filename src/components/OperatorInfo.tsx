@@ -106,7 +106,7 @@ const styles = (theme: Theme) => css`
           content: " ";
         }
 
-        opacity: 0.2;
+        color: ${theme.palette.gray};
         font-weight: normal;
       }
     }
@@ -114,14 +114,15 @@ const styles = (theme: Theme) => css`
     .operator-class {
       display: flex;
       align-items: center;
-      opacity: 0.5;
 
       .class-icon {
-        width: ${theme.spacing(4)};
-        height: ${theme.spacing(4)};
+        width: 42px;
+        height: 42px;
+        mix-blend-mode: overlay;
       }
 
       .class-name {
+        color: ${theme.palette.gray};
         margin-left: ${theme.spacing(1)};
         line-height: 32px;
       }

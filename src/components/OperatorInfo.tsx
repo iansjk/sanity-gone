@@ -43,11 +43,9 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
       <div className="portrait-and-rarity">
         <img className="operator-portrait" src={operatorImage(name)} alt="" />
         <span className="rarity" aria-label={`Rarity: ${rarity} stars`}>
-          {Array(rarity)
-            .fill(null)
-            .map((_, i) => (
-              <MdStar key={i} />
-            ))}
+          {[...Array(rarity).keys()].map((i) => (
+            <MdStar key={i} />
+          ))}
         </span>
       </div>
     </div>

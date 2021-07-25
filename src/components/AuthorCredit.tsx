@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import DiscordLogo from "./icons/DiscordLogo";
 
 export interface AuthorCreditProps {
   authorDiscordTag: string;
@@ -14,6 +15,7 @@ const AuthorCredit: React.VFC<AuthorCreditProps> = (props) => {
       <span className="discord-tag">
         <span className="username">{username}</span>
         <span className="discriminator">#{discriminator}</span>
+        <DiscordLogo className="discord-logo" />
       </span>
     </div>
   );
@@ -34,8 +36,9 @@ const styles = css`
   }
 
   .discord-tag {
-    display: block;
     margin-top: 14px;
+    display: flex;
+    align-items: center;
 
     .username {
       font-weight: bold;
@@ -47,6 +50,12 @@ const styles = css`
       &::before {
         content: " ";
       }
+    }
+
+    .discord-logo {
+      width: 20px;
+      margin-left: 8px;
+      opacity: 0.2;
     }
   }
 `;

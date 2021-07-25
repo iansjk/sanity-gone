@@ -46,10 +46,7 @@ const styles = css`
 
     .discriminator {
       opacity: 0.5;
-
-      &::before {
-        content: " ";
-      }
+      margin-left: 4px;
     }
 
     .discord-logo {

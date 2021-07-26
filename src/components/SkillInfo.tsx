@@ -22,6 +22,10 @@ enum SkillSpType {
   "Defensive Recovery",
 }
 
+interface InterpolatedValue {
+  key: string;
+  value: number;
+}
 export interface SkillLevelObject {
   name: string;
   description: string;
@@ -39,11 +43,53 @@ export interface SkillLevelObject {
   // e.g. "gains ATK <@ba.vup>+{atk:0%}</>, <@ba.vup>reduced</> attack interval, DEF <@ba.vup>+{def:0%}</>, ..."
   // references blackboard.atk, blackboard.def and is formatted to
   // "gains ATK +140%, reduced attack interval, DEF +80%, ..." with blue text for the interpolated values
-  blackboard: {
-    key: string;
-    value: number;
-  }[];
+  blackboard: InterpolatedValue[];
 }
+
+const descriptionTagRegex = /<(?<tagName>[^>]+)>(?<tagContent>[^<]+)<\/>/;
+const descriptionInterpolationRegex = /{(?<interpolation>[^}:]+)(?::(?<formatString>[^}]+))?}/;
+/**
+ * converts game-internal skill description representations into an html-formatted description.
+ * there are three tag types that are all closed with "</>":
+ * - <@ba.vup>: value up, for increases
+ * - <@ba.vdown>: value down, for decreases
+ * - <@ba.rem>: reminder, for reminder text
+ * in addition, the "blackboard" property contains values that can be interpolated into the
+ * skill description using curly braces (like {this}). the {curly brace syntax} also accepts a format string,
+ * e.g. {foo:0%} will interpolate the numeric value "foo" in "blackboard" and display it as a percentage.
+ */
+const descriptionToHtml = (
+  description: string,
+  interpolation: InterpolatedValue[]
+): string => {
+  let htmlDescription = description.slice();
+  let match: RegExpMatchArray | null = null;
+  do {
+    match = htmlDescription.match(descriptionTagRegex);
+    if (match?.groups) {
+      let className = "";
+      switch (match.groups.tagName) {
+        case "@ba.vup":
+          className = "value-up";
+          break;
+        case "@ba.vdown":
+          className = "value-down";
+          break;
+        case "@ba.rem":
+          className = "reminder-text";
+          break;
+        default:
+          throw new Error(`Unrecognized tag name: ${match.groups.tagType}`);
+      }
+      htmlDescription = htmlDescription.replace(
+        descriptionTagRegex,
+        `<span class="${className}">${match.groups.tagContent}</span>`
+      );
+    }
+  } while (match !== null);
+
+  return htmlDescription;
+};
 
 export interface SkillInfoProps {
   skillObject: {
@@ -59,9 +105,15 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
   showcaseVideoUrl,
 }) => {
   const { skillId, iconId, levels } = skillObject;
-  const { name, description, spData, range, duration, skillType } = levels[
-    levels.length - 1
-  ];
+  const {
+    name,
+    description,
+    spData,
+    range,
+    duration,
+    skillType,
+    blackboard,
+  } = levels[levels.length - 1];
   const { initSp, spCost, spType } = spData;
   return (
     <div css={styles}>
@@ -104,7 +156,12 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
           <dd>{duration} sec</dd>
         </div>
       </dl>
-      <p className="skill-description">{description}</p>
+      <p
+        className="skill-description"
+        dangerouslySetInnerHTML={{
+          __html: descriptionToHtml(description, blackboard),
+        }}
+      />
       <div className="showcase-video-container">
         {showcaseVideoUrl && (
           <video src={showcaseVideoUrl} controls playsInline />
@@ -205,6 +262,18 @@ const styles = (theme: Theme) => css`
     color: ${theme.palette.gray};
     padding: ${theme.spacing(2)} ${theme.spacing(3)};
     margin: 0;
+
+    .value-up {
+      color: ${theme.palette.blue};
+    }
+
+    .value-down {
+      color: ${theme.palette.red};
+    }
+
+    .reminder-text {
+      color: ${theme.palette.gray};
+    }
   }
 
   .showcase-video-container {

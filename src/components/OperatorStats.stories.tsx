@@ -21,5 +21,18 @@ Default.args = {
   blockCount: 3,
   redeployTimeInSeconds: 70,
   dpCost: 36,
-  range: "lol :StayTuned::tm:",
+  rangeObject: {
+    id: "1-1",
+    direction: 1,
+    grids: [
+      {
+        row: 0,
+        col: 0,
+      },
+      {
+        row: 0,
+        col: 1,
+      },
+    ],
+  },
 };

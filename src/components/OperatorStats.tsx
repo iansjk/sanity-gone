@@ -10,6 +10,8 @@ import {
   HealthIcon,
   RedeployTimeIcon,
 } from "./icons/operatorStats";
+import OperatorRange, { RangeObject } from "./OperatorRange";
+
 export interface OperatorStatsProps {
   damageType: "Physical" | "Magical";
   position: "Melee" | "Ranged" | "Melee or Ranged";
@@ -21,7 +23,7 @@ export interface OperatorStatsProps {
   blockCount: number;
   redeployTimeInSeconds: number;
   dpCost: number;
-  range: string;
+  rangeObject: RangeObject;
 }
 
 const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
@@ -36,7 +38,7 @@ const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
     blockCount,
     redeployTimeInSeconds,
     dpCost,
-    range,
+    rangeObject,
   } = props;
   return (
     <dl css={styles}>
@@ -119,7 +121,9 @@ const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
 
       <div className="stat-cell range">
         <dt>Range</dt>
-        <dd>{range}</dd>
+        <dd>
+          <OperatorRange rangeObject={rangeObject} />
+        </dd>
       </div>
     </dl>
   );

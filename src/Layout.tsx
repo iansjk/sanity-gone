@@ -44,4 +44,27 @@ const styles = (theme: Theme) => css`
     white-space: nowrap;
     width: 1px;
   }
+
+  dl {
+    & > div {
+      padding: ${theme.spacing(2)};
+      background-color: ${theme.palette.midBackground};
+    }
+
+    dt {
+      font-size: 14px;
+      color: ${theme.palette.gray};
+
+      svg {
+        margin-right: ${theme.spacing(0.5)};
+      }
+    }
+
+    dd {
+      margin: ${theme.spacing(1)} 0 0;
+      line-height: 31px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
 `;

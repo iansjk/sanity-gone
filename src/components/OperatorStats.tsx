@@ -42,7 +42,7 @@ const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
   } = props;
   return (
     <dl css={styles}>
-      <div className="stat-cell damage-type">
+      <div className="damage-type">
         <dt>Damage Type</dt>
         <ClassNames>
           {({ cx }) => (
@@ -58,68 +58,68 @@ const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
         </ClassNames>
       </div>
 
-      <div className="stat-cell position">
+      <div className="position">
         <dt>Position</dt>
         <dd>{position}</dd>
       </div>
 
-      <div className="stat-cell health">
+      <div className="health">
         <dt>
           <HealthIcon aria-hidden="true" /> Health
         </dt>
         <dd>{health}</dd>
       </div>
 
-      <div className="stat-cell attack-power">
+      <div className="attack-power">
         <dt>
           <AttackPowerIcon aria-hidden="true" /> Attack Power
         </dt>
         <dd>{attackPower}</dd>
       </div>
 
-      <div className="stat-cell defense">
+      <div className="defense">
         <dt>
           <DefenseIcon aria-hidden="true" /> Defense
         </dt>
         <dd>{defense}</dd>
       </div>
 
-      <div className="stat-cell attack-interval">
+      <div className="attack-interval">
         <dt>
           <AttackSpeedIcon aria-hidden="true" /> Attack Interval
         </dt>
         <dd>{attacksPerSecond} sec</dd>
       </div>
 
-      <div className="stat-cell arts-resistance">
+      <div className="arts-resistance">
         <dt>
           <ArtsResistanceIcon aria-hidden="true" /> Arts Resistance
         </dt>
         <dd>{artsResistance}%</dd>
       </div>
 
-      <div className="stat-cell block">
+      <div className="block">
         <dt>
           <BlockIcon aria-hidden="true" /> Block
         </dt>
         <dd>{blockCount}</dd>
       </div>
 
-      <div className="stat-cell redeploy-time">
+      <div className="redeploy-time">
         <dt>
           <RedeployTimeIcon aria-hidden="true" /> Redeploy Time
         </dt>
         <dd>{redeployTimeInSeconds} sec</dd>
       </div>
 
-      <div className="stat-cell dp-cost">
+      <div className="dp-cost">
         <dt>
           <DPCostIcon aria-hidden="true" /> DP Cost
         </dt>
         <dd>{dpCost}</dd>
       </div>
 
-      <div className="stat-cell range">
+      <div className="range">
         <dt>Range</dt>
         <dd>
           <OperatorRange rangeObject={rangeObject} />
@@ -137,27 +137,6 @@ const styles = (theme: Theme) => css`
   grid-auto-flow: column;
   grid-gap: ${theme.spacing(0.25)};
   margin: ${theme.spacing(3)} 0;
-
-  .stat-cell {
-    padding: ${theme.spacing(2)};
-    background-color: ${theme.palette.midBackground};
-
-    dt {
-      font-size: 14px;
-      color: ${theme.palette.gray};
-
-      svg {
-        margin-right: ${theme.spacing(0.5)};
-      }
-    }
-
-    dd {
-      margin: ${theme.spacing(1)} 0 0;
-      line-height: 31px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-  }
 
   .damage-type {
     dd {

@@ -37,6 +37,9 @@ export interface SkillLevelObject {
     spType: SkillSpType;
     spCost: number;
     initSp: number;
+    levelUpCost: unknown; // unused
+    maxChargeTime: unknown; // unused
+    increment: unknown; // unused
   };
   duration: number;
   // "blackboard" is used for interpolating formatted numeric values into the description,
@@ -44,6 +47,7 @@ export interface SkillLevelObject {
   // references blackboard.atk, blackboard.def and is formatted to
   // "gains ATK +140%, reduced attack interval, DEF +80%, ..." with blue text for the interpolated values
   blackboard: InterpolatedValue[];
+  prefabId: unknown; // unused
 }
 
 const descriptionTagRegex = /<(?<tagName>[^>]+)>(?<tagContent>[^<]+)<\/>/;
@@ -126,6 +130,7 @@ export interface SkillInfoProps {
     skillId: string;
     iconId: string | null;
     levels: SkillLevelObject[];
+    hidden: unknown; // unused
   };
   showcaseVideoUrl?: string;
 }
@@ -298,11 +303,11 @@ const styles = (theme: Theme) => css`
     }
 
     .value-down {
-      color: ${theme.palette.red};
+      color: ${theme.palette.orange};
     }
 
     .reminder-text {
-      color: ${theme.palette.gray};
+      color: ${theme.palette.yellow};
     }
   }
 

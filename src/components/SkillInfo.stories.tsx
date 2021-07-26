@@ -8,8 +8,8 @@ export default {
 
 const Template: Story<SkillInfoProps> = (args) => <SkillInfo {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const MudrockS3 = Template.bind({});
+MudrockS3.args = {
   showcaseVideoUrl:
     "https://cdn.discordapp.com/attachments/648597683031900200/814340479247974430/cursed_right_side.mp4",
   skillObject: {
@@ -120,7 +120,74 @@ Default.args = {
             value: 5.0,
           },
         ],
-      } as SkillLevelObject,
+      },
     ],
   },
-} as SkillInfoProps;
+};
+
+export const BrocaS2 = Template.bind({});
+BrocaS2.args = {
+  skillObject: {
+    skillId: "skchr_broca_2",
+    iconId: null,
+    hidden: false,
+    levels: [
+      {
+        name: "High-Voltage Current",
+        range: {
+          id: "3-2",
+          direction: 1,
+          grids: [
+            {
+              row: 0,
+              col: 0,
+            },
+            {
+              row: 0,
+              col: 1,
+            },
+            {
+              row: 0,
+              col: 2,
+            },
+            {
+              row: 0,
+              col: 3,
+            },
+          ],
+        },
+        description:
+          "Attack Interval <@ba.vdown>increases</>, Attack Range <@ba.vup>increases</>, ATK <@ba.vup>+{atk:0%}</>, normal attacks deal <@ba.vup>Arts</> damage and slow targets for <@ba.vup>{attack@sluggish:0.0}</> seconds\n<@ba.rem>This unit is stunned for {stun} seconds after this skill ends</>",
+        skillType: 1,
+        spData: {
+          spType: 1,
+          levelUpCost: null,
+          maxChargeTime: 1,
+          spCost: 35,
+          initSp: 20,
+          increment: 1.0,
+        },
+        prefabId: "skchr_broca_2",
+        duration: 25.0,
+        blackboard: [
+          {
+            key: "atk",
+            value: 1.9,
+          },
+          {
+            key: "attack@sluggish",
+            value: 1.0,
+          },
+          {
+            key: "base_attack_time",
+            value: 0.65,
+          },
+          {
+            key: "stun",
+            value: 5.0,
+          },
+        ],
+      },
+    ],
+  },
+};

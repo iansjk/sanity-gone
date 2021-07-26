@@ -18,7 +18,7 @@ export default Layout;
 
 const styles = (theme: Theme) => css`
   font-family: ${theme.typography.body.family};
-  font-size: ${theme.typography.body.size};
+  font-size: ${theme.typography.body.size}px;
   color: ${theme.palette.white};
   background-color: ${theme.palette.background};
   padding: ${theme.spacing(2)};

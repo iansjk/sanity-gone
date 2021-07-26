@@ -15,13 +15,22 @@ const Skills: React.VFC<SkillsProps> = (props) => {
   return (
     <CardWithPanels header="Skills" buttonPrefix="S" css={styles}>
       {skill1Analysis && (
-        <CardPanel dangerouslySetInnerHTML={{ __html: skill1Analysis }} />
+        <CardPanel
+          className="skill-analysis"
+          dangerouslySetInnerHTML={{ __html: skill1Analysis }}
+        />
       )}
       {skill2Analysis && (
-        <CardPanel dangerouslySetInnerHTML={{ __html: skill2Analysis }} />
+        <CardPanel
+          className="skill-analysis"
+          dangerouslySetInnerHTML={{ __html: skill2Analysis }}
+        />
       )}
       {skill3Analysis && (
-        <CardPanel dangerouslySetInnerHTML={{ __html: skill3Analysis }} />
+        <CardPanel
+          className="skill-analysis"
+          dangerouslySetInnerHTML={{ __html: skill3Analysis }}
+        />
       )}
     </CardWithPanels>
   );
@@ -32,5 +41,11 @@ const styles = (theme: Theme) => css`
   b,
   strong {
     color: ${theme.palette.pink};
+  }
+
+  .skill-analysis {
+    p:first-of-type {
+      margin-top: 0;
+    }
   }
 `;

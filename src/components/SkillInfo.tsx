@@ -124,8 +124,11 @@ const styles = (theme: Theme) => css`
   grid-template-rows: max-content max-content 1fr;
   grid-gap: ${theme.spacing(0.25)};
 
-  .skill-name-and-type {
+  & > * {
     background-color: ${theme.palette.midBackground};
+  }
+
+  .skill-name-and-type {
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-template-rows: max-content max-content;
@@ -171,6 +174,7 @@ const styles = (theme: Theme) => css`
   }
 
   .sp-and-duration {
+    background-color: inherit;
     grid-row-start: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -197,7 +201,6 @@ const styles = (theme: Theme) => css`
   }
 
   .skill-description {
-    background-color: ${theme.palette.midBackground};
     grid-row-start: 3;
     color: ${theme.palette.gray};
     padding: ${theme.spacing(2)} ${theme.spacing(3)};
@@ -205,12 +208,10 @@ const styles = (theme: Theme) => css`
   }
 
   .showcase-video-container {
-    background-color: ${theme.palette.midBackground};
     grid-row-start: span 2;
   }
 
   .range {
-    background-color: ${theme.palette.midBackground};
     display: flex;
     align-items: center;
     justify-content: center;

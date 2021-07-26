@@ -130,6 +130,7 @@ const styles = (theme: Theme) => css`
     grid-template-rows: max-content max-content;
     grid-column-gap: ${theme.spacing(2)};
     align-items: center;
+    padding: ${theme.spacing(2)};
 
     .skill-name {
       font-weight: ${theme.typography.highlight.weight};
@@ -173,6 +174,7 @@ const styles = (theme: Theme) => css`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: ${theme.spacing(0.25)};
+    margin: 0;
 
     .initial-sp {
       svg path {
@@ -196,6 +198,7 @@ const styles = (theme: Theme) => css`
   .skill-description {
     grid-row-start: 3;
     color: ${theme.palette.gray};
+    padding: ${theme.spacing(2)} ${theme.spacing(3)};
   }
 
   .image-and-range {

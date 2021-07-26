@@ -22,7 +22,7 @@ const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
       <div css={styles}>
         <div className="panel-select">
           {cardPanelChildren.map((_, i) => (
-            <ClassNames>
+            <ClassNames key={i}>
               {({ cx }) => (
                 <button
                   className={cx(

@@ -11,15 +11,15 @@ export type CardWithPanelsProps = React.PropsWithChildren<
 >;
 
 const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
-  const { header, subheader, children, buttonPrefix } = props;
+  const { header, subheader, children, buttonPrefix, ...rest } = props;
   const [activePanel, setActivePanel] = useState(0);
   const cardPanelChildren = React.Children.toArray(children).filter(
     (child) =>
       React.isValidElement<CardPanelProps>(child) && child.type === CardPanel
   );
   return (
-    <Card header={header} subheader={subheader} noPadding>
-      <div css={styles}>
+    <Card header={header} subheader={subheader} css={styles} {...rest}>
+      <div className="panels-wrapper">
         <div className="panel-select">
           {cardPanelChildren.map((_, i) => (
             <ClassNames key={i}>
@@ -53,7 +53,13 @@ const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
 export default CardWithPanels;
 
 const styles = (theme: Theme) => css`
-  display: flex;
+  .card-content {
+    padding: 0;
+  }
+
+  .panels-wrapper {
+    display: flex;
+  }
 
   .panel-select {
     display: flex;

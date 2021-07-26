@@ -16,7 +16,7 @@ enum SkillType {
 }
 
 enum SkillSpType {
-  "SP/Sec" = 1,
+  "SP/second" = 1,
   "Offensive Recovery",
   "UNUSED",
   "Defensive Recovery",
@@ -243,11 +243,9 @@ const styles = (theme: Theme) => css`
 
     .skill-and-sp-type {
       display: block;
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-size: ${theme.typography.subtitle.size}px;
 
-      .sp-type.spsec {
+      .sp-type.spsecond {
         color: ${theme.palette.lime};
       }
 

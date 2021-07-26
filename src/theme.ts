@@ -41,6 +41,9 @@ const typography = {
     fontVariant: "small-caps",
     weight: 600,
   },
+  subtitle: {
+    size: 14,
+  }
 };
 
 const spacingUnit = 8;

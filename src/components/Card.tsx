@@ -43,7 +43,6 @@ const styles = (theme: Theme) => css`
     padding: ${theme.spacing(3)} ${theme.spacing(4)} ${theme.spacing(4)};
 
     p {
-      line-height: 28px;
       margin: ${theme.spacing(3)} 0 0;
     }
   }

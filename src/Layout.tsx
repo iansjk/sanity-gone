@@ -35,6 +35,10 @@ const styles = (theme: Theme) => css`
     color: ${theme.palette.blue};
   }
 
+  p {
+    line-height: ${theme.typography.body.lineHeight}px;
+  }
+
   .visually-hidden:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);

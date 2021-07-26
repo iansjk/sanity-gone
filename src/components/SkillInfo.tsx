@@ -47,7 +47,7 @@ export interface SkillLevelObject {
 }
 
 const descriptionTagRegex = /<(?<tagName>[^>]+)>(?<tagContent>[^<]+)<\/>/;
-const descriptionInterpolationRegex = /{(?<interpolation>[^}:]+)(?::(?<formatString>[^}]+))?}/;
+const descriptionInterpolationRegex = /-?{-?(?<interpolationKey>[^}:]+)(?::(?<formatString>[^}]+))?}/;
 /**
  * converts game-internal skill description representations into an html-formatted description.
  * there are three tag types that are all closed with "</>":
@@ -86,7 +86,37 @@ const descriptionToHtml = (
         `<span class="${className}">${match.groups.tagContent}</span>`
       );
     }
-  } while (match !== null);
+  } while (match);
+
+  do {
+    match = htmlDescription.match(descriptionInterpolationRegex);
+    if (match?.groups) {
+      const key = match.groups.interpolationKey;
+      let value = interpolation.find((value) => value.key === key)?.value;
+      if (!value) {
+        throw new Error(`Couldn't find matching interpolation key: ${key}`);
+      }
+      let interpolated = "";
+      const { formatString } = match.groups;
+      if (typeof formatString === "undefined") {
+        interpolated = `${value}`;
+      } else if (formatString === "0%") {
+        // convert to percentage and suffix with "%"
+        interpolated = `${value * 100}%`;
+      } else if (formatString === "0.0") {
+        // return as-is to one-decimal place
+        interpolated = `${value.toFixed(1)}`;
+      } else {
+        console.warn(
+          `Unrecognized format string: ${match.groups.formatString}`
+        );
+      }
+      htmlDescription = htmlDescription.replace(
+        descriptionInterpolationRegex,
+        interpolated
+      );
+    }
+  } while (match);
 
   return htmlDescription;
 };

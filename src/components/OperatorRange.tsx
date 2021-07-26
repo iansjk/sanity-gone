@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, Theme } from "@emotion/react";
 
-interface RangeObject {
+export interface RangeObject {
   id: string;
   direction: number;
   grids: {
@@ -93,6 +93,7 @@ const styles = (theme: Theme) => css`
   td {
     width: ${theme.spacing(2)};
     height: ${theme.spacing(2)};
+    box-sizing: border-box;
   }
 
   td.active {

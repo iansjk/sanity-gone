@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, Theme } from "@emotion/react";
 
-interface CardProps {
+export interface CardProps {
   header: string;
   subheader?: string;
 }

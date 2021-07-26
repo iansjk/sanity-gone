@@ -64,14 +64,18 @@ const OperatorRange: React.VFC<OperatorRangeProps> = ({ rangeObject }) => {
         <tr>
           <th></th>
           {[...Array(cols).keys()].map((i) => (
-            <th key={i} scope="col">{`Y${i + 1}`}</th>
+            <th key={i} scope="col" className="visually-hidden">{`Y${
+              i + 1
+            }`}</th>
           ))}
         </tr>
       </thead>
       <tbody>
         {[...Array(rows).keys()].map((rowIndex) => (
           <tr key={rowIndex}>
-            <th scope="row">{`X${rowIndex + 1}`}</th>
+            <th scope="row" className="visually-hidden">{`X${
+              rowIndex + 1
+            }`}</th>
             {[...Array(cols).keys()].map((colIndex) => (
               <td key={colIndex}>{grid[rowIndex][colIndex]}</td>
             ))}

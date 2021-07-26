@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css, Theme } from "@emotion/react";
+import React from "react";
 
 export interface RangeObject {
   id: string;
@@ -55,11 +56,14 @@ export interface OperatorRangeProps {
   rangeObject: RangeObject;
 }
 
-const OperatorRange: React.VFC<OperatorRangeProps> = ({ rangeObject }) => {
+const OperatorRange: React.VFC<
+  OperatorRangeProps & React.HTMLAttributes<HTMLTableElement>
+> = (props) => {
+  const { rangeObject, ...rest } = props;
   const { rows, cols, grid } = normalizeRange(rangeObject);
 
   return (
-    <table css={styles}>
+    <table css={styles} {...rest}>
       <thead>
         <tr>
           <th></th>

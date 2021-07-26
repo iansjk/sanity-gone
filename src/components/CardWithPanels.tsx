@@ -74,24 +74,26 @@ const styles = (theme: Theme) => css`
       height: ${theme.spacing(6)};
       border: none;
       font-weight: ${theme.typography.highlight.weight};
-      margin-bottom: ${theme.spacing(2)};
       cursor: pointer;
-    }
-
-    button:last-child {
-      margin-bottom: 0;
-    }
-
-    button.active {
-      background: ${theme.palette.midHighlight};
-      color: ${theme.palette.white};
-    }
-
-    button.inactive {
       background: ${theme.palette.background};
       color: ${theme.palette.midHighlight};
       box-sizing: border-box;
       border: ${theme.spacing(0.25)} solid ${theme.palette.midHighlight};
+
+      margin-bottom: ${theme.spacing(2)};
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.inactive:hover {
+        border-color: ${theme.palette.gray};
+        color: ${theme.palette.gray};
+      }
+
+      &.active {
+        background: ${theme.palette.midHighlight};
+        color: ${theme.palette.white};
+      }
     }
   }
 

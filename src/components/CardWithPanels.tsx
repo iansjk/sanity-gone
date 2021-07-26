@@ -1,15 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState } from "react";
-import { Theme, css } from "@emotion/react";
+import { Theme, css, ClassNames } from "@emotion/react";
 import Card, { CardProps } from "./Card";
 import { CardPanelProps } from "./CardPanel";
 
 export type CardWithPanelsProps = CardProps & {
+  buttonPrefix?: string;
   children: React.ReactElement<CardPanelProps>[];
 };
 
 const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
-  const { header, subheader, children } = props;
+  const { header, subheader, children, buttonPrefix } = props;
   const numPanels = children.length;
   const [activePanel, setActivePanel] = useState(0);
   return (
@@ -17,7 +18,20 @@ const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
       <div css={styles}>
         <div className="panel-select">
           {[...Array(numPanels).keys()].map((i) => (
-            <button onClick={() => setActivePanel(i)}>Panel {i + 1}</button>
+            <ClassNames>
+              {({ cx }) => (
+                <button
+                  className={cx(
+                    i === activePanel && "active",
+                    i !== activePanel && "inactive"
+                  )}
+                  onClick={() => setActivePanel(i)}
+                >
+                  {buttonPrefix}
+                  {i + 1}
+                </button>
+              )}
+            </ClassNames>
           ))}
         </div>
         <div className="panel-content">
@@ -31,4 +45,40 @@ const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
 };
 export default CardWithPanels;
 
-const styles = (theme: Theme) => css``;
+const styles = (theme: Theme) => css`
+  display: flex;
+
+  .panel-select {
+    display: flex;
+    flex-direction: column;
+    padding-right: ${theme.spacing(4)};
+    border-right: ${theme.spacing(0.25)} solid ${theme.palette.background};
+
+    button {
+      border-radius: ${theme.spacing(2)};
+      width: ${theme.spacing(6)};
+      height: ${theme.spacing(6)};
+      border: none;
+      font-weight: ${theme.typography.highlight.weight};
+      margin-bottom: ${theme.spacing(2)};
+      cursor: pointer;
+    }
+
+    button.active {
+      background: ${theme.palette.midHighlight};
+      color: ${theme.palette.white};
+    }
+
+    button.inactive {
+      background: ${theme.palette.background};
+      color: ${theme.palette.midHighlight};
+      box-sizing: border-box;
+      border: ${theme.spacing(0.25)} solid ${theme.palette.midHighlight};
+    }
+  }
+
+  .panel-content {
+    flex-grow: 1;
+    padding-left: ${theme.spacing(4)};
+  }
+`;

@@ -1,6 +1,5 @@
 import { Meta, Story } from "@storybook/react";
 import React from "react";
-import { CardProps } from "./Card";
 import CardPanel from "./CardPanel";
 import CardWithPanels, { CardWithPanelsProps } from "./CardWithPanels";
 
@@ -10,7 +9,7 @@ export default {
   subcomponents: { CardPanel },
 } as Meta;
 
-export const Default: Story<React.PropsWithChildren<CardProps>> = (args) => (
+export const Default: Story<CardWithPanelsProps> = (args) => (
   <CardWithPanels {...args}>
     <CardPanel>
       Doggo ipsum such treat doggo wow such tempt noodle horse, boofers. waggy
@@ -38,4 +37,5 @@ export const Default: Story<React.PropsWithChildren<CardProps>> = (args) => (
 Default.args = {
   header: "Skills",
   subheader: "",
+  buttonPrefix: "S",
 };

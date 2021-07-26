@@ -8,14 +8,28 @@ import {
 } from "./icons/skillInfo";
 import OperatorRange, { RangeObject } from "./OperatorRange";
 
+enum SkillType {
+  "Passive" = 0,
+  "Manual Trigger",
+  "Auto Trigger",
+}
+
+enum SkillSpType {
+  "Auto" = 1,
+  "Offensive Recovery",
+  "UNUSED",
+  "Defensive Recovery",
+}
+
 export interface SkillLevelObject {
   name: string;
   description: string;
   // SkillLevelObject only has rangeId (of type string) in the game data,
   // but we expect it to be denormalized into a RangeObject before being passed to <SkillInfo />
   range: RangeObject;
+  skillType: SkillType;
   spData: {
-    spType: number;
+    spType: SkillSpType;
     spCost: number;
     initSp: number;
   };

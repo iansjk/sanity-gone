@@ -28,7 +28,7 @@ export interface SkillInfoProps {
     iconId: string | null;
     levels: SkillLevelObject[];
   };
-  skillImageUrl: string;
+  skillImageUrl?: string;
 }
 
 const SkillInfo: React.VFC<SkillInfoProps> = ({
@@ -42,7 +42,7 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
   const { initSp, spCost } = spData;
   return (
     <>
-      <img src={skillImageUrl} alt="Skill usage example" />
+      {skillImageUrl && <img src={skillImageUrl} alt="Skill usage example" />}
       <OperatorRange rangeObject={range} />
     </>
   );

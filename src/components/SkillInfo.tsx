@@ -1,3 +1,10 @@
+/** @jsxImportSource @emotion/react */
+import { css, Theme } from "@emotion/react";
+import {
+  InitialSPIcon,
+  SkillDurationIcon,
+  SPCostIcon,
+} from "./icons/skillInfo";
 import OperatorRange, { RangeObject } from "./OperatorRange";
 
 export interface SkillLevelObject {
@@ -41,10 +48,77 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
   ];
   const { initSp, spCost } = spData;
   return (
-    <>
-      {skillImageUrl && <img src={skillImageUrl} alt="Skill usage example" />}
-      <OperatorRange rangeObject={range} />
-    </>
+    <div css={styles}>
+      <div className="skill-name-and-type">{name}</div>
+      <dl className="sp-and-duration">
+        <div className="initial-sp">
+          <dt>
+            <InitialSPIcon /> Initial SP
+          </dt>
+          <dd>{initSp}</dd>
+        </div>
+
+        <div className="sp-cost">
+          <dt>
+            <SPCostIcon /> SP Cost
+          </dt>
+          <dd>{spCost}</dd>
+        </div>
+
+        <div className="duration">
+          <dt>
+            <SkillDurationIcon /> Duration
+          </dt>
+          <dd>{duration} sec</dd>
+        </div>
+      </dl>
+      <div className="skill-description">{description}</div>
+      <div className="image-and-range">
+        {skillImageUrl && <img src={skillImageUrl} alt="Skill usage example" />}
+        <OperatorRange rangeObject={range} />
+      </div>
+    </div>
   );
 };
 export default SkillInfo;
+
+const styles = (theme: Theme) => css`
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: max-content max-content 1fr;
+
+  .sp-and-duration {
+    grid-row-start: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: ${theme.spacing(0.25)};
+
+    .initial-sp {
+      svg path {
+        fill: ${theme.palette.white};
+      }
+    }
+
+    .sp-cost {
+      svg path {
+        fill: ${theme.palette.lime};
+      }
+    }
+
+    .duration {
+      svg path {
+        fill: ${theme.palette.pink};
+      }
+    }
+  }
+
+  .skill-description {
+    grid-row-start: 3;
+  }
+
+  .image-and-range {
+    grid-row-start: span 3;
+    display: flex;
+    flex-direction: column;
+  }
+`;

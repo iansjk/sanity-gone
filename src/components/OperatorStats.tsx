@@ -138,10 +138,6 @@ const styles = (theme: Theme) => css`
   grid-gap: ${theme.spacing(0.25)};
   margin: ${theme.spacing(3)} 0;
 
-  .range {
-    grid-row-start: span 2;
-  }
-
   .stat-cell {
     padding: ${theme.spacing(2)};
     background-color: ${theme.palette.midBackground};
@@ -226,6 +222,23 @@ const styles = (theme: Theme) => css`
   .dp-cost {
     svg path {
       fill: ${theme.palette.white};
+    }
+  }
+
+  .range {
+    grid-row-start: span 2;
+    position: relative;
+
+    dd {
+      position: absolute;
+      top: -5px; /* this is needed to counteract extra space made by .visually-hidden */
+      left: -5px;
+      margin-top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 `;

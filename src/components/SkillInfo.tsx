@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css, Theme } from "@emotion/react";
+import { skillIcon } from "../utils/images";
 import {
   InitialSPIcon,
   SkillDurationIcon,
@@ -50,6 +51,7 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
   return (
     <div css={styles}>
       <div className="skill-name-and-type">
+        <img className="skill-icon" src={skillIcon(iconId, skillId)} alt="" />
         <span className="skill-name">{name}</span>
       </div>
       <dl className="sp-and-duration">
@@ -97,6 +99,14 @@ const styles = (theme: Theme) => css`
   .skill-name-and-type {
     .skill-name {
       font-weight: ${theme.typography.highlight.weight};
+    }
+
+    .skill-icon {
+      width: 50px;
+      height: 50px;
+      box-sizing: border-box;
+      border: ${theme.spacing(0.25)} solid ${theme.palette.white};
+      border-radius: ${theme.spacing(0.5)};
     }
   }
 

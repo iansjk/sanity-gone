@@ -137,6 +137,7 @@ const styles = (theme: Theme) => css`
 
   .skill-description {
     grid-row-start: 3;
+    color: ${theme.palette.gray};
   }
 
   .image-and-range {

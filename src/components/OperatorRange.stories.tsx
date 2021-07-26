@@ -72,3 +72,113 @@ IfritE2.args = {
     ],
   },
 };
+
+export const EyjaS3 = Template.bind({});
+EyjaS3.args = {
+  rangeObject: {
+    id: "x-3",
+    direction: 1,
+    grids: [
+      {
+        row: 3,
+        col: 0,
+      },
+      {
+        row: 2,
+        col: -1,
+      },
+      {
+        row: 2,
+        col: 0,
+      },
+      {
+        row: 2,
+        col: 1,
+      },
+      {
+        row: 1,
+        col: -2,
+      },
+      {
+        row: 1,
+        col: -1,
+      },
+      {
+        row: 1,
+        col: 0,
+      },
+      {
+        row: 1,
+        col: 1,
+      },
+      {
+        row: 1,
+        col: 2,
+      },
+      {
+        row: 0,
+        col: -3,
+      },
+      {
+        row: 0,
+        col: -2,
+      },
+      {
+        row: 0,
+        col: -1,
+      },
+      {
+        row: 0,
+        col: 0,
+      },
+      {
+        row: 0,
+        col: 1,
+      },
+      {
+        row: 0,
+        col: 2,
+      },
+      {
+        row: 0,
+        col: 3,
+      },
+      {
+        row: -1,
+        col: -2,
+      },
+      {
+        row: -1,
+        col: -1,
+      },
+      {
+        row: -1,
+        col: 0,
+      },
+      {
+        row: -1,
+        col: 1,
+      },
+      {
+        row: -1,
+        col: 2,
+      },
+      {
+        row: -2,
+        col: -1,
+      },
+      {
+        row: -2,
+        col: 0,
+      },
+      {
+        row: -2,
+        col: 1,
+      },
+      {
+        row: -3,
+        col: 0,
+      },
+    ],
+  },
+};

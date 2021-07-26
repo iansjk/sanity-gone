@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { css, Theme } from "@emotion/react";
+import { ClassNames, css, Theme } from "@emotion/react";
+import { slugify } from "../utils/globals";
 import { skillIcon } from "../utils/images";
 import {
   InitialSPIcon,
@@ -15,7 +16,7 @@ enum SkillType {
 }
 
 enum SkillSpType {
-  "Auto" = 1,
+  "SP / Sec" = 1,
   "Offensive Recovery",
   "UNUSED",
   "Defensive Recovery",
@@ -58,15 +59,33 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
   usageImageUrl,
 }) => {
   const { skillId, iconId, levels } = skillObject;
-  const { name, description, spData, range, duration } = levels[
+  const { name, description, spData, range, duration, skillType } = levels[
     levels.length - 1
   ];
-  const { initSp, spCost } = spData;
+  const { initSp, spCost, spType } = spData;
   return (
     <div css={styles}>
       <div className="skill-name-and-type">
         <img className="skill-icon" src={skillIcon(iconId, skillId)} alt="" />
         <span className="skill-name">{name}</span>
+        <ClassNames>
+          {({ cx }) => (
+            <span className="skill-and-sp-type">
+              <span
+                className={cx(
+                  "sp-type",
+                  slugify(SkillSpType[spType].replace(" / ", " "))
+                )}
+              >
+                {SkillSpType[spType]}
+              </span>
+              <span aria-hidden="true"> · </span>
+              <span className={cx("skill-type", slugify(SkillType[skillType]))}>
+                {SkillType[skillType]}
+              </span>
+            </span>
+          )}
+        </ClassNames>
       </div>
       <dl className="sp-and-duration">
         <div className="initial-sp">
@@ -111,16 +130,46 @@ const styles = (theme: Theme) => css`
   }
 
   .skill-name-and-type {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: max-content max-content;
+    grid-column-gap: ${theme.spacing(2)};
+    align-items: center;
+
     .skill-name {
       font-weight: ${theme.typography.highlight.weight};
     }
 
     .skill-icon {
+      grid-row-start: span 2;
       width: 50px;
       height: 50px;
       box-sizing: border-box;
       border: ${theme.spacing(0.25)} solid ${theme.palette.white};
       border-radius: ${theme.spacing(0.5)};
+    }
+
+    .skill-and-sp-type {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      .sp-type.sp-sec {
+        color: ${theme.palette.lime};
+      }
+
+      .sp-type.offensive-recovery {
+        color: ${theme.palette.red};
+      }
+
+      .sp-type.defensive-recovery {
+        color: ${theme.palette.yellow};
+      }
+
+      .skill-type {
+        color: ${theme.palette.gray};
+      }
     }
   }
 

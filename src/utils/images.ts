@@ -1,6 +1,5 @@
-import defaultSlugify from "slugify";
+import { slugify } from "./globals";
 
-const slugify = (text: string): string => defaultSlugify(text, { lower: true, replacement: "-", remove: /-/g });
 const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/samidare/image/upload/v1/arknights';
 
 export const operatorImage = (name: string, elite?: number) => `${CLOUDINARY_BASE_URL}/operators/${slugify(name)}${(elite && elite > 1) || name === 'Amiya' ? elite : ''}`;

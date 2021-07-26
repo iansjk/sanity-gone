@@ -64,6 +64,10 @@ const styles = (theme: Theme) => css`
       cursor: pointer;
     }
 
+    button:last-child {
+      margin-bottom: 0;
+    }
+
     button.active {
       background: ${theme.palette.midHighlight};
       color: ${theme.palette.white};

@@ -2,22 +2,26 @@
 import React, { useState } from "react";
 import { Theme, css, ClassNames } from "@emotion/react";
 import Card, { CardProps } from "./Card";
-import { CardPanelProps } from "./CardPanel";
+import CardPanel, { CardPanelProps } from "./CardPanel";
 
-export type CardWithPanelsProps = CardProps & {
-  buttonPrefix?: string;
-  children: React.ReactElement<CardPanelProps>[];
-};
+export type CardWithPanelsProps = React.PropsWithChildren<
+  CardProps & {
+    buttonPrefix?: string;
+  }
+>;
 
 const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
   const { header, subheader, children, buttonPrefix } = props;
-  const numPanels = children.length;
   const [activePanel, setActivePanel] = useState(0);
+  const cardPanelChildren = React.Children.toArray(children).filter(
+    (child) =>
+      React.isValidElement<CardPanelProps>(child) && child.type === CardPanel
+  );
   return (
     <Card header={header} subheader={subheader}>
       <div css={styles}>
         <div className="panel-select">
-          {[...Array(numPanels).keys()].map((i) => (
+          {cardPanelChildren.map((_, i) => (
             <ClassNames>
               {({ cx }) => (
                 <button
@@ -35,8 +39,11 @@ const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
           ))}
         </div>
         <div className="panel-content">
-          {children.map((child, i) =>
-            React.cloneElement(child, { key: i, hidden: i !== activePanel })
+          {cardPanelChildren.map((child, i) =>
+            React.cloneElement(child as any, {
+              key: i,
+              hidden: i !== activePanel,
+            })
           )}
         </div>
       </div>

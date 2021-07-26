@@ -86,6 +86,11 @@ const styles = (theme: Theme) => css`
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: max-content max-content 1fr;
+  grid-gap: ${theme.spacing(0.25)};
+
+  & > * {
+    background-color: ${theme.palette.midBackground};
+  }
 
   .sp-and-duration {
     grid-row-start: 2;

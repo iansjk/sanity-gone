@@ -1,6 +1,6 @@
 import defaultSlugify from "slugify";
 
-export const slugify = (text: string): string => defaultSlugify(text, { lower: true, replacement: "-", remove: /-/g });
+export const slugify = (text: string): string => defaultSlugify(text, { lower: true, replacement: "-", remove: /[-/]/g });
 
 export function toTitleCase(string: string): string {
   return [...string.toLowerCase()]

@@ -16,7 +16,7 @@ enum SkillType {
 }
 
 enum SkillSpType {
-  "SP / Sec" = 1,
+  "SP/Sec" = 1,
   "Offensive Recovery",
   "UNUSED",
   "Defensive Recovery",
@@ -71,12 +71,7 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
         <ClassNames>
           {({ cx }) => (
             <span className="skill-and-sp-type">
-              <span
-                className={cx(
-                  "sp-type",
-                  slugify(SkillSpType[spType].replace(" / ", " "))
-                )}
-              >
+              <span className={cx("sp-type", slugify(SkillSpType[spType]))}>
                 {SkillSpType[spType]}
               </span>
               <span aria-hidden="true"> · </span>
@@ -155,7 +150,7 @@ const styles = (theme: Theme) => css`
       letter-spacing: 1px;
       text-transform: uppercase;
 
-      .sp-type.sp-sec {
+      .sp-type.spsec {
         color: ${theme.palette.lime};
       }
 

@@ -28,14 +28,23 @@ export interface SkillInfoProps {
     iconId: string | null;
     levels: SkillLevelObject[];
   };
+  skillImageUrl: string;
 }
 
-const SkillInfo: React.VFC<SkillInfoProps> = ({ skillObject }) => {
+const SkillInfo: React.VFC<SkillInfoProps> = ({
+  skillObject,
+  skillImageUrl,
+}) => {
   const { skillId, iconId, levels } = skillObject;
   const { name, description, spData, range, duration } = levels[
     levels.length - 1
   ];
   const { initSp, spCost } = spData;
-  return <OperatorRange rangeObject={range} />;
+  return (
+    <>
+      <img src={skillImageUrl} alt="Skill usage example" />
+      <OperatorRange rangeObject={range} />
+    </>
+  );
 };
 export default SkillInfo;

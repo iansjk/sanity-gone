@@ -49,7 +49,9 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
   const { initSp, spCost } = spData;
   return (
     <div css={styles}>
-      <div className="skill-name-and-type">{name}</div>
+      <div className="skill-name-and-type">
+        <span className="skill-name">{name}</span>
+      </div>
       <dl className="sp-and-duration">
         <div className="initial-sp">
           <dt>
@@ -90,6 +92,12 @@ const styles = (theme: Theme) => css`
 
   & > * {
     background-color: ${theme.palette.midBackground};
+  }
+
+  .skill-name-and-type {
+    .skill-name {
+      font-weight: ${theme.typography.highlight.weight};
+    }
   }
 
   .sp-and-duration {

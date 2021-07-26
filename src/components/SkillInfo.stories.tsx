@@ -10,7 +10,7 @@ const Template: Story<SkillInfoProps> = (args) => <SkillInfo {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  skillImageUrl:
+  usageImageUrl:
     "https://media.discordapp.net/attachments/795497339472707614/869087170676265060/unknown.png",
   skillObject: {
     skillId: "skchr_mudrok_3",

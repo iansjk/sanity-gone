@@ -104,7 +104,7 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
           <dd>{duration} sec</dd>
         </div>
       </dl>
-      <div className="skill-description">{description}</div>
+      <p className="skill-description">{description}</p>
       <div className="image-and-range">
         {usageImageUrl && (
           <div
@@ -202,6 +202,7 @@ const styles = (theme: Theme) => css`
     grid-row-start: 3;
     color: ${theme.palette.gray};
     padding: ${theme.spacing(2)} ${theme.spacing(3)};
+    margin: 0;
   }
 
   .image-and-range {

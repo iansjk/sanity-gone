@@ -51,12 +51,12 @@ export interface SkillInfoProps {
     iconId: string | null;
     levels: SkillLevelObject[];
   };
-  usageImageUrl?: string;
+  showcaseVideoUrl?: string;
 }
 
 const SkillInfo: React.VFC<SkillInfoProps> = ({
   skillObject,
-  usageImageUrl,
+  showcaseVideoUrl,
 }) => {
   const { skillId, iconId, levels } = skillObject;
   const { name, description, spData, range, duration, skillType } = levels[
@@ -105,10 +105,11 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
         </div>
       </dl>
       <p className="skill-description">{description}</p>
-      <div
-        className="usage-image"
-        style={{ backgroundImage: `url(${usageImageUrl})` }}
-      />
+      <div className="showcase-video-container">
+        {showcaseVideoUrl && (
+          <video src={showcaseVideoUrl} controls playsInline />
+        )}
+      </div>
       <div className="range">
         <OperatorRange rangeObject={range} />
       </div>
@@ -203,10 +204,9 @@ const styles = (theme: Theme) => css`
     margin: 0;
   }
 
-  .usage-image {
+  .showcase-video-container {
     background-color: ${theme.palette.midBackground};
     grid-row-start: span 2;
-    background-size: cover;
   }
 
   .range {

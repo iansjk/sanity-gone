@@ -1,19 +1,26 @@
 /** @jsxImportSource @emotion/react */
-import { css, Theme } from "@emotion/react";
+import { ClassNames, css, Theme } from "@emotion/react";
 
 export interface CardProps {
   header: string;
   subheader?: string;
+  noPadding?: boolean;
 }
 
 const Card: React.FC<CardProps> = (props) => {
-  const { header, subheader, children } = props;
+  const { header, subheader, children, noPadding } = props;
   return (
     <section css={styles}>
       <div className="heading-block">
         <h2>{header}</h2>
       </div>
-      <div className="card-content">{children}</div>
+      <ClassNames>
+        {({ cx }) => (
+          <div className={cx("card-content", noPadding && "no-padding")}>
+            {children}
+          </div>
+        )}
+      </ClassNames>
     </section>
   );
 };
@@ -22,7 +29,7 @@ export default Card;
 const styles = (theme: Theme) => css`
   background: ${theme.palette.mid};
   border-radius: ${theme.spacing(1)};
-  padding-bottom: ${theme.spacing(1)};
+  padding: 0;
 
   .heading-block {
     padding: 16px 0 16px 24px;
@@ -40,7 +47,9 @@ const styles = (theme: Theme) => css`
   }
 
   .card-content {
-    padding: ${theme.spacing(3)} ${theme.spacing(4)};
+    &:not(.no-padding) {
+      padding: ${theme.spacing(3)} ${theme.spacing(4)} ${theme.spacing(4)};
+    }
 
     p {
       line-height: 28px;

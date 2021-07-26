@@ -18,7 +18,7 @@ const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
       React.isValidElement<CardPanelProps>(child) && child.type === CardPanel
   );
   return (
-    <Card header={header} subheader={subheader}>
+    <Card header={header} subheader={subheader} noPadding>
       <div css={styles}>
         <div className="panel-select">
           {cardPanelChildren.map((_, i) => (
@@ -60,6 +60,7 @@ const styles = (theme: Theme) => css`
     flex-direction: column;
     padding-right: ${theme.spacing(4)};
     border-right: ${theme.spacing(0.25)} solid ${theme.palette.background};
+    padding: ${theme.spacing(3)} ${theme.spacing(4)} ${theme.spacing(4)};
 
     button {
       border-radius: ${theme.spacing(2)};
@@ -90,6 +91,6 @@ const styles = (theme: Theme) => css`
 
   .panel-content {
     flex-grow: 1;
-    padding-left: ${theme.spacing(4)};
+    padding: ${theme.spacing(3)} ${theme.spacing(4)} ${theme.spacing(4)};
   }
 `;

@@ -105,14 +105,12 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
         </div>
       </dl>
       <p className="skill-description">{description}</p>
-      <div className="image-and-range">
-        {usageImageUrl && (
-          <div
-            className="usage-image"
-            style={{ backgroundImage: `url(${usageImageUrl})` }}
-          />
-        )}
-        <OperatorRange className="range" rangeObject={range} />
+      <div
+        className="usage-image"
+        style={{ backgroundImage: `url(${usageImageUrl})` }}
+      />
+      <div className="range">
+        <OperatorRange rangeObject={range} />
       </div>
     </div>
   );
@@ -205,21 +203,16 @@ const styles = (theme: Theme) => css`
     margin: 0;
   }
 
-  .image-and-range {
+  .usage-image {
     background-color: ${theme.palette.midBackground};
-    grid-row-start: span 3;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
+    grid-row-start: span 2;
+    background-size: cover;
+  }
 
-    .usage-image {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-    }
-
-    .range {
-      margin: auto;
-    }
+  .range {
+    background-color: ${theme.palette.midBackground};
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;

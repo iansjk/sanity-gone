@@ -5,7 +5,7 @@ import BlockIcon from "./BlockIcon";
 import DefenseIcon from "./DefenseIcon";
 import DPCostIcon from "./DPCostIcon";
 import HealthIcon from "./HealthIcon";
-import RedeployTimeIcon from "./RedeployTimeIcon";
+import HourglassIcon from "../HourglassIcon";
 
 export {
   ArtsResistanceIcon,
@@ -15,5 +15,5 @@ export {
   DefenseIcon,
   DPCostIcon,
   HealthIcon,
-  RedeployTimeIcon
+  HourglassIcon as RedeployTimeIcon
 };

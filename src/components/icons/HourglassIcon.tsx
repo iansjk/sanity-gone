@@ -1,6 +1,4 @@
-const RedeployTimeIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (
-  props
-) => {
+const HourglassIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="8"
@@ -19,4 +17,4 @@ const RedeployTimeIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (
     </svg>
   );
 };
-export default RedeployTimeIcon;
+export default HourglassIcon;

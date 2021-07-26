@@ -23,4 +23,13 @@ const styles = (theme: Theme) => ({
     textDecoration: theme.typography.link.textDecoration,
     color: theme.palette.blue,
   },
+  "& .visually-hidden:not(:focus):not(:active)": {
+    clip: "rect(0 0 0 0)",
+    clipPath: "inset(50%)",
+    height: "1px",
+    overflow: "hidden",
+    position: "absolute",
+    whiteSpace: "nowrap",
+    width: "1px",
+  },
 });

@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css, Theme } from "@emotion/react";
 
 interface RangeObject {
   id: string;
@@ -11,9 +11,9 @@ interface RangeObject {
 }
 
 enum GridCell {
-  Operator = "O",
-  empty = ".",
-  active = "x",
+  Operator = "operator",
+  empty = "empty",
+  active = "active",
 }
 
 interface NormalizedRange {
@@ -59,7 +59,7 @@ const OperatorRange: React.VFC<OperatorRangeProps> = ({ rangeObject }) => {
   const { rows, cols, grid } = normalizeRange(rangeObject);
 
   return (
-    <table>
+    <table css={styles}>
       <thead>
         <tr>
           <th></th>
@@ -77,7 +77,9 @@ const OperatorRange: React.VFC<OperatorRangeProps> = ({ rangeObject }) => {
               rowIndex + 1
             }`}</th>
             {[...Array(cols).keys()].map((colIndex) => (
-              <td key={colIndex}>{grid[rowIndex][colIndex]}</td>
+              <td key={colIndex} className={grid[rowIndex][colIndex]}>
+                <span className="visually-hidden">{`${grid[rowIndex][colIndex]} cell`}</span>
+              </td>
             ))}
           </tr>
         ))}
@@ -86,3 +88,18 @@ const OperatorRange: React.VFC<OperatorRangeProps> = ({ rangeObject }) => {
   );
 };
 export default OperatorRange;
+
+const styles = (theme: Theme) => css`
+  td {
+    width: ${theme.spacing(2)};
+    height: ${theme.spacing(2)};
+  }
+
+  td.active {
+    border: 2px solid ${theme.palette.gray};
+  }
+
+  td.operator {
+    background-color: ${theme.palette.white};
+  }
+`;

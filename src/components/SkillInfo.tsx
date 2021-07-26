@@ -209,6 +209,7 @@ const styles = (theme: Theme) => css`
 
   .showcase-video-container {
     grid-row-start: span 2;
+    line-height: 0;
   }
 
   .range {

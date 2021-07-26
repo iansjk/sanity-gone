@@ -1,14 +1,22 @@
 /** @jsxImportSource @emotion/react */
-
-import { Theme } from "@emotion/react";
+import { Global, Theme, css } from "@emotion/react";
+import emotionNormalize from "emotion-normalize";
 
 const Layout: React.FC = ({ children }) => {
-  return <main css={styles}>{children}</main>;
+  return (
+    <>
+      <Global
+        styles={css`
+          ${emotionNormalize}
+        `}
+      />
+      <main css={styles}>{children}</main>
+    </>
+  );
 };
 export default Layout;
 
 const styles = (theme: Theme) => ({
-  "-webkit-font-smoothing": "antialiased",
   fontFamily: theme.typography.body.family,
   fontSize: theme.typography.body.size,
   color: theme.palette.white,
@@ -28,8 +36,8 @@ const styles = (theme: Theme) => ({
     clipPath: "inset(50%)",
     height: "1px",
     overflow: "hidden",
-    position: "absolute",
-    whiteSpace: "nowrap",
+    position: "absolute" as const,
+    whiteSpace: "nowrap" as const,
     width: "1px",
   },
 });

@@ -8,11 +8,21 @@ import OperatorInfo, { OperatorInfoProps } from "./OperatorInfo";
 export type IntroductionProps = AuthorCreditProps & OperatorInfoProps;
 
 const Introduction: React.FC<IntroductionProps> = (props) => {
-  const { operatorEntry, authorDiscordTag, children } = props;
+  const {
+    operatorEntry,
+    authorDiscordTag,
+    archetype,
+    isLimited,
+    children,
+  } = props;
   return (
     <Card header="Introduction">
       <div css={styles}>
-        <OperatorInfo operatorEntry={operatorEntry} />
+        <OperatorInfo
+          operatorEntry={operatorEntry}
+          archetype={archetype}
+          isLimited={isLimited}
+        />
         <div className="spacer" />
         <AuthorCredit authorDiscordTag={authorDiscordTag} />
       </div>

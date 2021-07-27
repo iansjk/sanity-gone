@@ -40,11 +40,12 @@ const Template: Story<
 export const Default = Template.bind({});
 Default.args = {
   operatorEntry: {
-    name: "泥岩",
-    appellation: "Mudrock",
+    name: "Mudrock",
     profession: "TANK",
     rarity: 5,
   },
+  archetype: "Enmity",
+  isLimited: false,
   authorDiscordTag: "nikoleye#5580",
   operatorStats: {
     damageType: "Physical",

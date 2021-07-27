@@ -9,10 +9,11 @@ export interface OperatorInfoProps {
     profession: string;
     rarity: number;
   };
+  isLimited?: boolean;
 }
 
 const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
-  const { operatorEntry } = props;
+  const { operatorEntry, isLimited } = props;
   const { name, profession, rarity: rawRarity } = operatorEntry;
   const operatorClass = professionToClass(profession);
   const rarity = rawRarity + 1; // 0-indexed;
@@ -30,6 +31,11 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
         </div>
       </div>
       <div className="portrait-and-rarity">
+        {isLimited && (
+          <span className="limited" aria-label="Limited operator">
+            Limited
+          </span>
+        )}
         <img className="operator-portrait" src={operatorImage(name)} alt="" />
         <span
           className={`rarity rarity-${rarity}-stars`}
@@ -104,6 +110,20 @@ const styles = (theme: Theme) => css`
           fill: ${theme.palette.blue};
         }
       }
+    }
+
+    .limited {
+      position: absolute;
+      font-size: 14px;
+      color: ${theme.palette.red};
+      text-transform: uppercase;
+      display: inline-block;
+      text-align: center;
+      top: -8px;
+      background-color: #1e1e26;
+      padding: 0 2px;
+      left: calc(25% - 2px);
+      line-height: 1;
     }
   }
 

@@ -14,4 +14,5 @@ Default.args = {
     profession: "TANK",
     rarity: 5,
   },
+  isLimited: false,
 };

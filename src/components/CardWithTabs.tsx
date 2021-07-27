@@ -32,7 +32,6 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
     const currentTab =
       parseInt(currentTabId.charAt(currentTabId.length - 1), 10) - 1;
     if (!Number.isNaN(currentTab)) {
-      console.log("Currently focused", currentTab);
       let tabToFocus = currentTab;
       switch (e.key) {
         case "Down":
@@ -53,7 +52,6 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
           e.preventDefault();
           break;
       }
-      console.log("Going to focus", tabToFocus);
       if (tabsRef.current) {
         (tabsRef.current.children.item(
           tabToFocus

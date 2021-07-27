@@ -22,7 +22,7 @@ enum SkillSpType {
   "Defensive Recovery",
 }
 
-interface InterpolatedValue {
+export interface InterpolatedValue {
   key: string;
   value: number;
 }

@@ -1,19 +1,26 @@
 const BlockIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
-      width="8"
-      height="10"
-      viewBox="0 0 8 10"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M1 0.714286H2.66667L4 0L5.33333 0.714286H7H8V1.71429V7.14286L4 10L0 7.14286V1.71429V0.714286H1ZM3.13889 1.59577L4 1.13446L4.86111 1.59577L5.08235 1.71429H5.33333H6.02629L1 6.32172V1.71429H2.66667H2.91765L3.13889 1.59577ZM1.64382 7.08811L4 8.7711L7 6.62824V2.17828L1.64382 7.08811Z"
-        fill="#E3E1EF"
-      />
+      <g clipPath="url(#clip0)">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M1 11V1H5L7 0L9 1H13V11L7 14L1 11ZM5.36 2.41L7 1.59L8.64 2.41H10.204L2.41 8.905V2.41H5.36ZM11.59 10.11L7 12.41L2.88587 10.3484L11.59 3.095V10.11Z"
+          fill="#D6D6E2"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0">
+          <rect width="14" height="14" fill="white" />
+        </clipPath>
+      </defs>
     </svg>
   );
 };

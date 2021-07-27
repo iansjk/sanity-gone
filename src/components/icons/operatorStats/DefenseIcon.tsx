@@ -1,16 +1,18 @@
 const DefenseIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
-      width="8"
-      height="10"
-      viewBox="0 0 8 10"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path
-        d="M2.66667 0.714286H0V7.14286L4 10L8 7.14286V0.714286H5.33333L4 0L2.66667 0.714286Z"
-        fill="#E3E1EF"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M1 1V11L7 14L13 11V1H9L7 0L5 1H1Z"
+        fill="#D6D6E2"
       />
     </svg>
   );

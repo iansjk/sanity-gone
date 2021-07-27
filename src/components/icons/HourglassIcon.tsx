@@ -1,9 +1,9 @@
 const HourglassIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
-      width="8"
-      height="10"
-      viewBox="0 0 8 10"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
@@ -11,8 +11,8 @@ const HourglassIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M0 0H1.23223H6.76777H8L7.28 1L4.4 5L8 10L0 10L3.6 5L0.72 1L0 0ZM4 3.84412L1.95223 1H6.04777L4 3.84412Z"
-        fill="#E3E1EF"
+        d="M1 0H2.84835H11.1516H13L11.92 1.4L7.6 7L13 14L1 14L6.4 7L2.08 1.4L1 0ZM7 5.38177L3.92835 1.4H10.0716L7 5.38177Z"
+        fill="#D6D6E2"
       />
     </svg>
   );

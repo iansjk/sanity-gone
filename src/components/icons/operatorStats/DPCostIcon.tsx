@@ -1,9 +1,9 @@
 const DPCostIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
-      width="10"
-      height="10"
-      viewBox="0 0 10 10"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
@@ -11,8 +11,8 @@ const DPCostIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M5 10L0 5L5 0L10 5L5 10ZM8.58579 5L5 1.41421L1.41421 5L5 8.58579L8.58579 5Z"
-        fill="#E3E1EF"
+        d="M7 0L0 7L7 14L14 7L7 0ZM3 7L7 3L8 4L5 7L8 10L7 11L3 7Z"
+        fill="#D6D6E2"
       />
     </svg>
   );

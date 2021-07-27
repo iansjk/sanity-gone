@@ -3,25 +3,19 @@ const AttackSpeedIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (
 ) => {
   return (
     <svg
-      width="10"
-      height="10"
-      viewBox="0 0 10 10"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
+      <path d="M9 1H0V2H8L9 1Z" fill="#D6D6E2" />
+      <path d="M6 4H0V5H5L6 4Z" fill="#D6D6E2" />
+      <path d="M3 7H0V8H2L3 7Z" fill="#D6D6E2" />
       <path
-        d="M6.42857 0.714286H0V1.42857H5.71429L6.42857 0.714286Z"
-        fill="#E3E1EF"
-      />
-      <path
-        d="M4.28571 2.85714H0V3.57143H3.57143L4.28571 2.85714Z"
-        fill="#E3E1EF"
-      />
-      <path d="M2.14286 5H0V5.71429H1.42857L2.14286 5Z" fill="#E3E1EF" />
-      <path
-        d="M8.57143 0.714286L0 9.28571V10H0.714286L2.14286 8.57143L2.85714 9.28571H3.57143V8.57143L2.85714 7.85714L9.28571 1.42857L10 0L8.57143 0.714286Z"
-        fill="#E3E1EF"
+        d="M12 1L0 13V14H1L3 12L4 13H5V12L4 11L13 2L14 0L12 1Z"
+        fill="#D6D6E2"
       />
     </svg>
   );

@@ -1,17 +1,14 @@
 const HealthIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
-      width="10"
-      height="10"
-      viewBox="0 0 10 10"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path
-        d="M4.28571 4.28571V0H5.71429V4.28571H10V5.71429H5.71429V10H4.28571V5.71429H0V4.28571H4.28571Z"
-        fill="#E3E1EF"
-      />
+      <path d="M6 6V0H8V6H14V8H8V14H6V8H0V6H6Z" fill="#D6D6E2" />
     </svg>
   );
 };

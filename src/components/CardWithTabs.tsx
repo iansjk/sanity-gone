@@ -13,11 +13,17 @@ export type CardWithTabsProps = React.PropsWithChildren<
 const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
   const { header, subheader, children, tabType, ...rest } = props;
   const [activePanel, setActivePanel] = useState(0);
+  const [userHasInteracted, setUserHasInteracted] = useState(false);
   const cardPanelChildren = React.Children.toArray(children).filter(
     (child) =>
       React.isValidElement<CardPanelProps>(child) && child.type === CardPanel
   );
   const buttonPrefix = tabType[0].toUpperCase();
+
+  const handleClick = (i: number) => {
+    setActivePanel(i);
+    setUserHasInteracted(true);
+  };
 
   return (
     <Card header={header} subheader={subheader} css={styles} {...rest}>
@@ -31,7 +37,7 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
                   <button
                     role="tab"
                     className={cx(isActivePanel ? "active" : "inactive")}
-                    onClick={() => setActivePanel(i)}
+                    onClick={() => handleClick(i)}
                     id={`tab-${i + 1}`}
                     aria-label={`${tabType} ${i + 1}`}
                     aria-selected={isActivePanel}
@@ -56,6 +62,7 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
               hidden: !isActivePanel,
               "aria-labelledby": `tab-${i + 1}`,
               tabIndex: isActivePanel ? 0 : -1,
+              userHasInteracted,
             });
           })}
         </div>

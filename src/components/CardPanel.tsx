@@ -1,21 +1,28 @@
 import React, { useEffect, useRef } from "react";
 
 export type CardPanelProps = React.PropsWithChildren<
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLDivElement> & {
+    userHasInteracted: boolean;
+  }
 >;
 
 const CardPanel: React.FC<CardPanelProps> = (props) => {
-  const { children, "aria-expanded": ariaExpanded, ...rest } = props;
+  const {
+    children,
+    "aria-expanded": ariaExpanded,
+    userHasInteracted,
+    ...rest
+  } = props;
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (ariaExpanded && panelRef.current) {
+    if (ariaExpanded && userHasInteracted && panelRef.current) {
       panelRef.current.focus();
     }
-  }, [ariaExpanded]);
+  }, [ariaExpanded, userHasInteracted]);
 
   return (
-    <div ref={panelRef} {...rest}>
+    <div ref={panelRef} aria-expanded={ariaExpanded} {...rest}>
       {children}
     </div>
   );

@@ -14,5 +14,6 @@ Default.args = {
     profession: "TANK",
     rarity: 5,
   },
+  archetype: "Enmity",
   isLimited: false,
 };

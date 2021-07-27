@@ -9,11 +9,12 @@ export interface OperatorInfoProps {
     profession: string;
     rarity: number;
   };
+  archetype: string;
   isLimited?: boolean;
 }
 
 const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
-  const { operatorEntry, isLimited } = props;
+  const { operatorEntry, archetype, isLimited } = props;
   const { name, profession, rarity: rawRarity } = operatorEntry;
   const operatorClass = professionToClass(profession);
   const rarity = rawRarity + 1; // 0-indexed;
@@ -27,6 +28,8 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
             src={operatorClassIcon(operatorClass.toLowerCase())}
             alt=""
           />
+          <span className="archetype-name">{archetype}</span>
+          <span>&nbsp;</span>
           <span className="class-name">{operatorClass}</span>
         </div>
       </div>
@@ -144,16 +147,20 @@ const styles = (theme: Theme) => css`
     .operator-class {
       display: flex;
       align-items: center;
+      line-height: 32px;
 
       .class-icon {
         width: 24px;
         height: 24px;
+        margin-right: ${theme.spacing(1)};
+      }
+
+      .archetype-name {
+        color: ${theme.palette.white};
       }
 
       .class-name {
         color: ${theme.palette.gray};
-        margin-left: ${theme.spacing(1)};
-        line-height: 32px;
       }
     }
   }

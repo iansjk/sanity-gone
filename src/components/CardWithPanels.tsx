@@ -17,31 +17,41 @@ const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
   return (
     <Card header={header} subheader={subheader} css={styles} {...rest}>
       <div className="panels-wrapper">
-        <div className="panel-select">
+        <div className="panel-select" role="tablist">
           {cardPanelChildren.map((_, i) => (
             <ClassNames key={i}>
-              {({ cx }) => (
-                <button
-                  className={cx(
-                    i === activePanel && "active",
-                    i !== activePanel && "inactive"
-                  )}
-                  onClick={() => setActivePanel(i)}
-                >
-                  {buttonPrefix}
-                  {i + 1}
-                </button>
-              )}
+              {({ cx }) => {
+                const isActivePanel = i === activePanel;
+                return (
+                  <button
+                    role="tab"
+                    className={cx(isActivePanel ? "active" : "inactive")}
+                    onClick={() => setActivePanel(i)}
+                    id={`tab-${i + 1}`}
+                    aria-label={`${header} tab ${i + 1}`}
+                    aria-selected={isActivePanel}
+                    aria-controls={`panel-${i + 1}`}
+                  >
+                    {buttonPrefix}
+                    {i + 1}
+                  </button>
+                );
+              }}
             </ClassNames>
           ))}
         </div>
         <div className="panel-content">
-          {cardPanelChildren.map((child, i) =>
-            React.cloneElement(child as any, {
+          {cardPanelChildren.map((child, i) => {
+            const isActivePanel = i === activePanel;
+            return React.cloneElement(child as any, {
               key: i,
-              hidden: i !== activePanel,
-            })
-          )}
+              id: `panel-${i + 1}`,
+              role: "tabpanel",
+              "aria-expanded": isActivePanel,
+              hidden: !isActivePanel,
+              "aria-labelledby": `tab-${i + 1}`,
+            });
+          })}
         </div>
       </div>
     </Card>

@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { ClassNames, css, Theme } from "@emotion/react";
-import { slugify } from "../utils/globals";
 import { skillIcon } from "../utils/images";
 import {
   InitialSPIcon,
@@ -160,11 +159,11 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
         <ClassNames>
           {({ cx }) => (
             <span className="skill-and-sp-type">
-              <span className={cx("sp-type", slugify(SkillSpType[spType]))}>
+              <span className={cx("sp-type", `sp-type-${spType}`)}>
                 {SkillSpType[spType]}
               </span>
               <span aria-hidden="true"> · </span>
-              <span className={cx("skill-type", slugify(SkillType[skillType]))}>
+              <span className={cx("skill-type", `skill-type-${skillType}`)}>
                 {SkillType[skillType]}
               </span>
             </span>
@@ -247,15 +246,15 @@ const styles = (theme: Theme) => css`
       display: block;
       font-size: ${theme.typography.subtitle.size}px;
 
-      .sp-type.spsecond {
+      .sp-type-1 {
         color: ${theme.palette.lime};
       }
 
-      .sp-type.offensive-recovery {
+      .sp-type-2 {
         color: ${theme.palette.red};
       }
 
-      .sp-type.defensive-recovery {
+      .sp-type-4 {
         color: ${theme.palette.yellow};
       }
 

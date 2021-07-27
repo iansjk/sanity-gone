@@ -126,9 +126,8 @@ const styles = (theme: Theme) => css`
       align-items: center;
 
       .class-icon {
-        width: 42px;
-        height: 42px;
-        mix-blend-mode: overlay;
+        width: 24px;
+        height: 24px;
       }
 
       .class-name {

@@ -2,7 +2,7 @@
 import { Theme, css } from "@emotion/react";
 import parse from "html-react-parser";
 import { Element } from "domhandler/lib/node";
-import CardWithPanels from "./CardWithPanels";
+import CardWithTabs from "./CardWithTabs";
 import CardPanel from "./CardPanel";
 import SkillInfo, { SkillObject } from "./SkillInfo";
 
@@ -20,7 +20,7 @@ const Skills: React.VFC<SkillsProps> = (props) => {
   const { analyses, skillObjects } = props;
 
   return (
-    <CardWithPanels header="Skills" css={styles}>
+    <CardWithTabs header="Skills" css={styles}>
       {analyses.map((htmlString: string, i) => (
         <CardPanel key={i} className="skill-analysis">
           {parse(
@@ -46,7 +46,7 @@ const Skills: React.VFC<SkillsProps> = (props) => {
           )}
         </CardPanel>
       ))}
-    </CardWithPanels>
+    </CardWithTabs>
   );
 };
 export default Skills;

@@ -1,4 +1,4 @@
-import CardWithPanels from "./CardWithPanels";
+import CardWithTabs from "./CardWithTabs";
 import CardPanel from "./CardPanel";
 
 export interface TalentsProps {
@@ -9,11 +9,11 @@ export interface TalentsProps {
 const Talents: React.FC<TalentsProps> = (props) => {
   const { analyses, talentObjects } = props;
   return (
-    <CardWithPanels header="Talents">
+    <CardWithTabs header="Talents">
       {analyses.map((htmlString: string, i) => (
         <CardPanel key={i} dangerouslySetInnerHTML={{ __html: htmlString }} />
       ))}
-    </CardWithPanels>
+    </CardWithTabs>
   );
 };
 export default Talents;

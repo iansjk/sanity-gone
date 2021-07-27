@@ -4,9 +4,9 @@ import { Theme, css, ClassNames } from "@emotion/react";
 import Card, { CardProps } from "./Card";
 import CardPanel, { CardPanelProps } from "./CardPanel";
 
-export type CardWithPanelsProps = React.PropsWithChildren<CardProps>;
+export type CardWithTabsProps = React.PropsWithChildren<CardProps>;
 
-const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
+const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
   const { header, subheader, children, ...rest } = props;
   const [activePanel, setActivePanel] = useState(0);
   const cardPanelChildren = React.Children.toArray(children).filter(
@@ -57,7 +57,7 @@ const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
     </Card>
   );
 };
-export default CardWithPanels;
+export default CardWithTabs;
 
 const styles = (theme: Theme) => css`
   .card-content {

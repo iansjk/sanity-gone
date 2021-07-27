@@ -1,16 +1,16 @@
 import { Meta, Story } from "@storybook/react";
 import React from "react";
 import CardPanel from "./CardPanel";
-import CardWithPanels, { CardWithPanelsProps } from "./CardWithPanels";
+import CardWithTabs, { CardWithTabsProps } from "./CardWithTabs";
 
 export default {
-  title: "Cards/CardWithPanels",
-  component: CardWithPanels,
+  title: "Cards/CardWithTabs",
+  component: CardWithTabs,
   subcomponents: { CardPanel },
 } as Meta;
 
-export const Default: Story<CardWithPanelsProps> = (args) => (
-  <CardWithPanels {...args}>
+export const Default: Story<CardWithTabsProps> = (args) => (
+  <CardWithTabs {...args}>
     <CardPanel>
       Doggo ipsum such treat doggo wow such tempt noodle horse, boofers. waggy
       wags. Shooberino heckin good boys borkf very jealous pupper, noodle horse
@@ -31,7 +31,7 @@ export const Default: Story<CardWithPanelsProps> = (args) => (
       borkdrive super chub, he made many woofs blop smol. vvv pupperino wow very
       biscit. Heck wow very biscit what a nice floof, much ruin diet.
     </CardPanel>
-  </CardWithPanels>
+  </CardWithTabs>
 );
 
 Default.args = {

@@ -1,5 +1,5 @@
 import { Story, Meta } from "@storybook/react";
-import SkillInfo, { SkillInfoProps, SkillLevelObject } from "./SkillInfo";
+import SkillInfo, { SkillInfoProps } from "./SkillInfo";
 
 export default {
   title: "Skills/SkillInfo",
@@ -10,8 +10,6 @@ const Template: Story<SkillInfoProps> = (args) => <SkillInfo {...args} />;
 
 export const MudrockS3 = Template.bind({});
 MudrockS3.args = {
-  showcaseVideoUrl:
-    "https://cdn.discordapp.com/attachments/648597683031900200/814340479247974430/cursed_right_side.mp4",
   skillObject: {
     skillId: "skchr_mudrok_3",
     iconId: null,

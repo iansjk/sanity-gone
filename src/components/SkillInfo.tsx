@@ -134,13 +134,12 @@ export interface SkillObject {
 
 export interface SkillInfoProps {
   skillObject: SkillObject;
-  showcaseVideoUrl?: string;
 }
 
 const SkillInfo: React.VFC<
   SkillInfoProps & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
-  const { skillObject, showcaseVideoUrl, ...rest } = props;
+  const { skillObject, className, ...rest } = props;
   const { skillId, iconId, levels } = skillObject;
   const {
     name,
@@ -153,12 +152,20 @@ const SkillInfo: React.VFC<
   } = levels[levels.length - 1];
   const { initSp, spCost, spType } = spData;
   return (
-    <div css={styles} {...rest}>
-      <div className="skill-name-and-type">
-        <img className="skill-icon" src={skillIcon(iconId, skillId)} alt="" />
-        <span className="skill-name">{name}</span>
-        <ClassNames>
-          {({ cx }) => (
+    <ClassNames>
+      {({ cx }) => (
+        <div
+          css={styles}
+          className={cx(className, !range && "no-range")}
+          {...rest}
+        >
+          <div className="skill-name-and-type">
+            <img
+              className="skill-icon"
+              src={skillIcon(iconId, skillId)}
+              alt=""
+            />
+            <span className="skill-name">{name}</span>
             <span className="skill-and-sp-type">
               <span className={cx("sp-type", `sp-type-${spType}`)}>
                 {SkillSpType[spType]}
@@ -168,46 +175,41 @@ const SkillInfo: React.VFC<
                 {SkillType[skillType]}
               </span>
             </span>
-          )}
-        </ClassNames>
-      </div>
-      <dl className="sp-and-duration">
-        <div className="initial-sp">
-          <dt>
-            <InitialSPIcon /> Initial SP
-          </dt>
-          <dd>{initSp}</dd>
-        </div>
+          </div>
+          <dl className="sp-and-duration">
+            <div className="initial-sp">
+              <dt>
+                <InitialSPIcon /> Initial SP
+              </dt>
+              <dd>{initSp}</dd>
+            </div>
 
-        <div className="sp-cost">
-          <dt>
-            <SPCostIcon /> SP Cost
-          </dt>
-          <dd>{spCost}</dd>
-        </div>
+            <div className="sp-cost">
+              <dt>
+                <SPCostIcon /> SP Cost
+              </dt>
+              <dd>{spCost}</dd>
+            </div>
 
-        <div className="duration">
-          <dt>
-            <SkillDurationIcon /> Duration
-          </dt>
-          <dd>{duration} sec</dd>
+            <div className="duration">
+              <dt>
+                <SkillDurationIcon /> Duration
+              </dt>
+              <dd>{duration} sec</dd>
+            </div>
+          </dl>
+          <p
+            className="skill-description"
+            dangerouslySetInnerHTML={{
+              __html: descriptionToHtml(description, blackboard),
+            }}
+          />
+          <div className="range">
+            <OperatorRange rangeObject={range} />
+          </div>
         </div>
-      </dl>
-      <p
-        className="skill-description"
-        dangerouslySetInnerHTML={{
-          __html: descriptionToHtml(description, blackboard),
-        }}
-      />
-      <div className="showcase-video-container">
-        {showcaseVideoUrl && (
-          <video src={showcaseVideoUrl} controls playsInline />
-        )}
-      </div>
-      <div className="range">
-        <OperatorRange rangeObject={range} />
-      </div>
-    </div>
+      )}
+    </ClassNames>
   );
 };
 export default SkillInfo;
@@ -217,6 +219,10 @@ const styles = (theme: Theme) => css`
   grid-template-columns: 3fr 1fr;
   grid-template-rows: max-content max-content 1fr;
   grid-gap: ${theme.spacing(0.25)};
+
+  &.no-range {
+    grid-template-columns: 1fr;
+  }
 
   & > * {
     background-color: ${theme.palette.midBackground};
@@ -294,6 +300,7 @@ const styles = (theme: Theme) => css`
 
   .skill-description {
     grid-row-start: 3;
+    grid-column-start: span 2;
     color: ${theme.palette.gray};
     padding: ${theme.spacing(2)} ${theme.spacing(3)};
     margin: 0;
@@ -311,14 +318,10 @@ const styles = (theme: Theme) => css`
     }
   }
 
-  .showcase-video-container {
-    grid-row-start: span 2;
-    line-height: 0;
-  }
-
   .range {
     display: flex;
     align-items: center;
     justify-content: center;
+    grid-row-start: span 2;
   }
 `;

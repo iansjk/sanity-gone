@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { ClassNames, css, Theme } from "@emotion/react";
+import { css, Theme } from "@emotion/react";
+import { slugify } from "../utils/globals";
 import {
   ArtsResistanceIcon,
   AttackPowerIcon,
@@ -13,7 +14,7 @@ import {
 import OperatorRange, { RangeObject } from "./OperatorRange";
 
 export interface OperatorStatsProps {
-  damageType: "Physical" | "Magical";
+  damageType: "Physical" | "Arts" | "Healing" | "True";
   position: "Melee" | "Ranged" | "Melee or Ranged";
   health: number;
   attackPower: number;
@@ -44,18 +45,7 @@ const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
     <dl css={styles}>
       <div className="damage-type">
         <dt>Damage Type</dt>
-        <ClassNames>
-          {({ cx }) => (
-            <dd
-              className={cx(
-                damageType === "Physical" && "physical",
-                damageType === "Magical" && "magical"
-              )}
-            >
-              {damageType}
-            </dd>
-          )}
-        </ClassNames>
+        <dd className={slugify(damageType)}>{damageType}</dd>
       </div>
 
       <div className="position">

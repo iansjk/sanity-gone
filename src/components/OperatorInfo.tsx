@@ -35,8 +35,10 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
       </div>
       <div className="portrait-and-rarity">
         {isLimited && (
-          <span className="limited" aria-label="Limited operator">
-            Limited
+          <span className="limited-wrapper">
+            <span className="limited" aria-label="Limited operator">
+              Limited
+            </span>
           </span>
         )}
         <img className="operator-portrait" src={operatorImage(name)} alt="" />
@@ -115,18 +117,24 @@ const styles = (theme: Theme) => css`
       }
     }
 
-    .limited {
+    .limited-wrapper {
       position: absolute;
-      font-size: 14px;
-      color: ${theme.palette.red};
-      text-transform: uppercase;
-      display: inline-block;
-      text-align: center;
+      left: 0;
       top: -8px;
-      background-color: #1e1e26;
-      padding: 0 2px;
-      left: calc(25% - 2px);
+      width: 100%;
       line-height: 1;
+      display: flex;
+      justify-content: center;
+
+      .limited {
+        font-size: 14px;
+        color: ${theme.palette.red};
+        text-transform: uppercase;
+        display: inline-block;
+        text-align: center;
+        background-color: #1e1e26;
+        padding: 0 2px;
+      }
     }
   }
 

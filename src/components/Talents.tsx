@@ -9,7 +9,7 @@ export interface TalentsProps {
 const Talents: React.FC<TalentsProps> = (props) => {
   const { analyses, talentObjects } = props;
   return (
-    <CardWithPanels header="Talents" buttonPrefix="T">
+    <CardWithPanels header="Talents">
       {analyses.map((htmlString: string, i) => (
         <CardPanel key={i} dangerouslySetInnerHTML={{ __html: htmlString }} />
       ))}

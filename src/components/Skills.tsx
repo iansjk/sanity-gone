@@ -20,7 +20,7 @@ const Skills: React.VFC<SkillsProps> = (props) => {
   const { analyses, skillObjects } = props;
 
   return (
-    <CardWithPanels header="Skills" buttonPrefix="S" css={styles}>
+    <CardWithPanels header="Skills" css={styles}>
       {analyses.map((htmlString: string, i) => (
         <CardPanel key={i} className="skill-analysis">
           {parse(

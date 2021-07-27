@@ -4,19 +4,16 @@ import { Theme, css, ClassNames } from "@emotion/react";
 import Card, { CardProps } from "./Card";
 import CardPanel, { CardPanelProps } from "./CardPanel";
 
-export type CardWithPanelsProps = React.PropsWithChildren<
-  CardProps & {
-    buttonPrefix?: string;
-  }
->;
+export type CardWithPanelsProps = React.PropsWithChildren<CardProps>;
 
 const CardWithPanels: React.FC<CardWithPanelsProps> = (props) => {
-  const { header, subheader, children, buttonPrefix, ...rest } = props;
+  const { header, subheader, children, ...rest } = props;
   const [activePanel, setActivePanel] = useState(0);
   const cardPanelChildren = React.Children.toArray(children).filter(
     (child) =>
       React.isValidElement<CardPanelProps>(child) && child.type === CardPanel
   );
+  const buttonPrefix = header[0].toUpperCase();
   return (
     <Card header={header} subheader={subheader} css={styles} {...rest}>
       <div className="panels-wrapper">

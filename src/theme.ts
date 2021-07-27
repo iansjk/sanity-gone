@@ -5,7 +5,7 @@ const palette = {
   blue: "#49b3ff",
   softBlue: "#7f7dea",
   yellow: "#ffcf53",
-  orange: "#fa773f",
+  orange: "#f98d3f",
   red: "#fb4040",
   pink: "#e85593",
   background: "#14141b",

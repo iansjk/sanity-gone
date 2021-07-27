@@ -18,6 +18,7 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
       React.isValidElement<CardPanelProps>(child) && child.type === CardPanel
   );
   const buttonPrefix = tabType[0].toUpperCase();
+
   return (
     <Card header={header} subheader={subheader} css={styles} {...rest}>
       <div className="panels-wrapper">
@@ -44,7 +45,7 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
             </ClassNames>
           ))}
         </div>
-        <div className="panel-content">
+        <div className="panels">
           {cardPanelChildren.map((child, i) => {
             const isActivePanel = i === activePanel;
             return React.cloneElement(child as any, {
@@ -54,6 +55,7 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
               "aria-expanded": isActivePanel,
               hidden: !isActivePanel,
               "aria-labelledby": `tab-${i + 1}`,
+              tabIndex: isActivePanel ? 0 : -1,
             });
           })}
         </div>
@@ -108,7 +110,7 @@ const styles = (theme: Theme) => css`
     }
   }
 
-  .panel-content {
+  .panels {
     flex-grow: 1;
     padding: 0 ${theme.spacing(4)} ${theme.spacing(4)};
 

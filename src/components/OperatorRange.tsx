@@ -23,15 +23,7 @@ interface NormalizedRange {
   grid: GridCell[][];
 }
 
-const normalizeRange = (rangeObject: RangeObject | null): NormalizedRange => {
-  if (!rangeObject) {
-    return {
-      rows: 0,
-      cols: 0,
-      grid: [],
-    };
-  }
-
+const normalizeRange = (rangeObject: RangeObject): NormalizedRange => {
   // for each of rows and cols,
   // find the minimum value and the maximum value
   // then return max-min to get number of rows/cols
@@ -61,7 +53,7 @@ const normalizeRange = (rangeObject: RangeObject | null): NormalizedRange => {
 };
 
 export interface OperatorRangeProps {
-  rangeObject: RangeObject | null;
+  rangeObject: RangeObject;
 }
 
 const OperatorRange: React.VFC<

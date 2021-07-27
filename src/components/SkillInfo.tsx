@@ -204,9 +204,11 @@ const SkillInfo: React.VFC<
               __html: descriptionToHtml(description, blackboard),
             }}
           />
-          <div className="range">
-            <OperatorRange rangeObject={range} />
-          </div>
+          {range && (
+            <div className="range">
+              <OperatorRange rangeObject={range} />
+            </div>
+          )}
         </div>
       )}
     </ClassNames>

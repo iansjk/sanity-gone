@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Theme, css, ClassNames } from "@emotion/react";
 import Card, { CardProps } from "./Card";
 import CardPanel, { CardPanelProps } from "./CardPanel";
@@ -18,17 +18,52 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
     (child) =>
       React.isValidElement<CardPanelProps>(child) && child.type === CardPanel
   );
+  const numTabs = cardPanelChildren.length;
   const buttonPrefix = tabType[0].toUpperCase();
+  const tabsRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (i: number) => {
     setActivePanel(i);
     setUserHasInteracted(true);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    const currentTabId = (e.target as HTMLButtonElement).id;
+    const currentTab =
+      parseInt(currentTabId.charAt(currentTabId.length - 1), 10) - 1;
+    if (!Number.isNaN(currentTab)) {
+      console.log("Currently focused", currentTab);
+      let tabToFocus = currentTab;
+      switch (e.key) {
+        case "Down":
+        case "ArrowDown":
+        case "Right":
+        case "ArrowRight":
+          // next tab, wrapping if necessary
+          tabToFocus = (currentTab + 1) % numTabs;
+          break;
+        case "Up":
+        case "ArrowUp":
+        case "Left":
+        case "ArrowLeft":
+          // previous tab, wrapping if necessary
+          // (need to add numTabs first to avoid negative numbers)
+          tabToFocus = (currentTab + numTabs - 1) % numTabs;
+          break;
+      }
+      console.log("Going to focus", tabToFocus);
+      if (tabsRef.current) {
+        (tabsRef.current.children.item(
+          tabToFocus
+        ) as HTMLDivElement | null)?.focus();
+      }
+    }
+  };
+
   return (
     <Card header={header} subheader={subheader} css={styles} {...rest}>
-      <div className="panels-wrapper">
-        <div className="panel-select" role="tablist">
+      <div className="tabs-panels-wrapper">
+        <div className="tabs" role="tablist" ref={tabsRef}>
           {cardPanelChildren.map((_, i) => (
             <ClassNames key={i}>
               {({ cx }) => {
@@ -38,6 +73,8 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
                     role="tab"
                     className={cx(isActivePanel ? "active" : "inactive")}
                     onClick={() => handleClick(i)}
+                    onKeyDown={handleKeyDown}
+                    tabIndex={isActivePanel ? 0 : -1}
                     id={`tab-${i + 1}`}
                     aria-label={`${tabType} ${i + 1}`}
                     aria-selected={isActivePanel}
@@ -77,11 +114,11 @@ const styles = (theme: Theme) => css`
     padding: 0;
   }
 
-  .panels-wrapper {
+  .tabs-panels-wrapper {
     display: flex;
   }
 
-  .panel-select {
+  .tabs {
     display: flex;
     flex-direction: column;
     padding-right: ${theme.spacing(4)};

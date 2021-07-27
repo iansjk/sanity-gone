@@ -41,6 +41,7 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
         case "ArrowRight":
           // next tab, wrapping if necessary
           tabToFocus = (currentTab + 1) % numTabs;
+          e.preventDefault();
           break;
         case "Up":
         case "ArrowUp":
@@ -49,6 +50,7 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
           // previous tab, wrapping if necessary
           // (need to add numTabs first to avoid negative numbers)
           tabToFocus = (currentTab + numTabs - 1) % numTabs;
+          e.preventDefault();
           break;
       }
       console.log("Going to focus", tabToFocus);

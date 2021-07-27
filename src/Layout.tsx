@@ -58,9 +58,11 @@ const styles = (theme: Theme) => css`
     dt {
       font-size: 14px;
       color: ${theme.palette.gray};
+      display: flex;
+      align-items: center;
 
       svg {
-        margin-right: ${theme.spacing(0.5)};
+        margin-right: ${theme.spacing(1)};
       }
     }
 

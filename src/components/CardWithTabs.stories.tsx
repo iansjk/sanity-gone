@@ -43,5 +43,5 @@ export const Default: Story<CardWithTabsProps> = (args) => (
 Default.args = {
   header: "Skills",
   subheader: "",
-  buttonPrefix: "S",
+  tabType: "skill",
 };

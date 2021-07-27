@@ -4,16 +4,20 @@ import { Theme, css, ClassNames } from "@emotion/react";
 import Card, { CardProps } from "./Card";
 import CardPanel, { CardPanelProps } from "./CardPanel";
 
-export type CardWithTabsProps = React.PropsWithChildren<CardProps>;
+export type CardWithTabsProps = React.PropsWithChildren<
+  CardProps & {
+    tabType: string;
+  }
+>;
 
 const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
-  const { header, subheader, children, ...rest } = props;
+  const { header, subheader, children, tabType, ...rest } = props;
   const [activePanel, setActivePanel] = useState(0);
   const cardPanelChildren = React.Children.toArray(children).filter(
     (child) =>
       React.isValidElement<CardPanelProps>(child) && child.type === CardPanel
   );
-  const buttonPrefix = header[0].toUpperCase();
+  const buttonPrefix = tabType[0].toUpperCase();
   return (
     <Card header={header} subheader={subheader} css={styles} {...rest}>
       <div className="panels-wrapper">
@@ -28,7 +32,7 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
                     className={cx(isActivePanel ? "active" : "inactive")}
                     onClick={() => setActivePanel(i)}
                     id={`tab-${i + 1}`}
-                    aria-label={`${header} tab ${i + 1}`}
+                    aria-label={`${tabType} ${i + 1}`}
                     aria-selected={isActivePanel}
                     aria-controls={`panel-${i + 1}`}
                   >

@@ -1,4 +1,4 @@
-import ArtsResistanceIcon from "./HealthIcon";
+import ArtsResistanceIcon from "./ArtsResistanceIcon";
 import AttackPowerIcon from "./AttackPowerIcon";
 import AttackSpeedIcon from "./AttackSpeedIcon";
 import BlockIcon from "./BlockIcon";

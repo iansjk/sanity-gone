@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { ClassNames, css, Theme } from "@emotion/react";
+import React from "react";
 import { skillIcon } from "../utils/images";
 import {
   InitialSPIcon,
@@ -136,10 +137,10 @@ export interface SkillInfoProps {
   showcaseVideoUrl?: string;
 }
 
-const SkillInfo: React.VFC<SkillInfoProps> = ({
-  skillObject,
-  showcaseVideoUrl,
-}) => {
+const SkillInfo: React.VFC<
+  SkillInfoProps & React.HTMLAttributes<HTMLDivElement>
+> = (props) => {
+  const { skillObject, showcaseVideoUrl, ...rest } = props;
   const { skillId, iconId, levels } = skillObject;
   const {
     name,
@@ -152,7 +153,7 @@ const SkillInfo: React.VFC<SkillInfoProps> = ({
   } = levels[levels.length - 1];
   const { initSp, spCost, spType } = spData;
   return (
-    <div css={styles}>
+    <div css={styles} {...rest}>
       <div className="skill-name-and-type">
         <img className="skill-icon" src={skillIcon(iconId, skillId)} alt="" />
         <span className="skill-name">{name}</span>

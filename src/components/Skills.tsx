@@ -34,7 +34,12 @@ const Skills: React.VFC<SkillsProps> = (props) => {
                   domNode instanceof Element &&
                   domNode.name.toLowerCase() === "skillinfo"
                 ) {
-                  return <SkillInfo skillObject={skillObjects[i]} />;
+                  return (
+                    <SkillInfo
+                      className="skills-skill-info"
+                      skillObject={skillObjects[i]}
+                    />
+                  );
                 }
               },
             }
@@ -56,5 +61,9 @@ const styles = (theme: Theme) => css`
     p:first-of-type {
       margin-top: 0;
     }
+  }
+
+  p + .skills-skill-info {
+    margin-top: ${theme.spacing(3)};
   }
 `;

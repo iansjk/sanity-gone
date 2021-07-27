@@ -6,6 +6,8 @@ import CardWithPanels from "./CardWithPanels";
 import CardPanel from "./CardPanel";
 import SkillInfo, { SkillObject } from "./SkillInfo";
 
+const selfClosingTagRegex = /<(?<tagName>[A-Za-z]+) \/>/g;
+
 export interface SkillsProps {
   // analysis[0] should be an analysis of skill 1,
   // and skillObjects[0] should be the game data for skill 1
@@ -20,17 +22,23 @@ const Skills: React.VFC<SkillsProps> = (props) => {
   return (
     <CardWithPanels header="Skills" buttonPrefix="S" css={styles}>
       {analyses.map((htmlString: string, i) => (
-        <CardPanel className="skill-analysis">
-          {parse(htmlString, {
-            replace: (domNode) => {
-              if (
-                domNode instanceof Element &&
-                domNode.name.toLowerCase() === "skillinfo"
-              ) {
-                return <SkillInfo skillObject={skillObjects[i]} />;
-              }
-            },
-          })}
+        <CardPanel key={i} className="skill-analysis">
+          {parse(
+            htmlString.replaceAll(
+              selfClosingTagRegex,
+              (_, tagName) => `<${tagName}></${tagName}>`
+            ),
+            {
+              replace: (domNode) => {
+                if (
+                  domNode instanceof Element &&
+                  domNode.name.toLowerCase() === "skillinfo"
+                ) {
+                  return <SkillInfo skillObject={skillObjects[i]} />;
+                }
+              },
+            }
+          )}
         </CardPanel>
       ))}
     </CardWithPanels>

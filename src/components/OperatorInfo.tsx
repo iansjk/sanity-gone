@@ -6,7 +6,6 @@ import { MdStar } from "react-icons/md";
 export interface OperatorInfoProps {
   operatorEntry: {
     name: string;
-    appellation: string;
     profession: string;
     rarity: number;
   };
@@ -14,23 +13,13 @@ export interface OperatorInfoProps {
 
 const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   const { operatorEntry } = props;
-  const {
-    name: cnName,
-    appellation: name,
-    profession,
-    rarity: rawRarity,
-  } = operatorEntry;
+  const { name, profession, rarity: rawRarity } = operatorEntry;
   const operatorClass = professionToClass(profession);
   const rarity = rawRarity + 1; // 0-indexed;
   return (
     <div css={styles}>
       <div className="name-and-class">
-        <div className="operator-name">
-          <span className="operator-name-english">{name}</span>
-          <span className="operator-name-chinese" aria-hidden="true">
-            {cnName}
-          </span>
-        </div>
+        <div className="operator-name">{name}</div>
         <div className="operator-class">
           <img
             className="class-icon"
@@ -100,15 +89,6 @@ const styles = (theme: Theme) => css`
       font-weight: bold;
       line-height: 24px;
       margin-bottom: 16px;
-
-      .operator-name-chinese {
-        &::before {
-          content: " ";
-        }
-
-        color: ${theme.palette.gray};
-        font-weight: normal;
-      }
     }
 
     .operator-class {

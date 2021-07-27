@@ -52,18 +52,20 @@ const Skills: React.VFC<SkillsProps> = (props) => {
 export default Skills;
 
 const styles = (theme: Theme) => css`
+  .panel-content {
+    padding-top: 0;
+  }
+
   b,
   strong {
     color: ${theme.palette.pink};
   }
 
-  .skill-analysis {
-    p:first-of-type {
+  .skills-skill-info {
+    margin-top: ${theme.spacing(3)};
+
+    p {
       margin-top: 0;
     }
-  }
-
-  p + .skills-skill-info {
-    margin-top: ${theme.spacing(3)};
   }
 `;

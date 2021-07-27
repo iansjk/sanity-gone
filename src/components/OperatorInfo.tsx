@@ -31,7 +31,10 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
       </div>
       <div className="portrait-and-rarity">
         <img className="operator-portrait" src={operatorImage(name)} alt="" />
-        <span className="rarity" aria-label={`Rarity: ${rarity} stars`}>
+        <span
+          className={`rarity rarity-${rarity}-stars`}
+          aria-label={`Rarity: ${rarity} stars`}
+        >
           {[...Array(rarity).keys()].map((i) => (
             <StarIcon key={i} aria-hidden="true" />
           ))}
@@ -58,7 +61,6 @@ const styles = (theme: Theme) => css`
       margin: ${theme.spacing(0.5)};
       width: 96px;
       height: 96px;
-      background-color: ${theme.palette.orange};
       border-radius: ${theme.spacing(0.25)};
     }
 
@@ -76,6 +78,30 @@ const styles = (theme: Theme) => css`
           fill: ${theme.palette.white};
           stroke: ${theme.palette.mid};
           stroke-width: 2px;
+        }
+      }
+
+      &.rarity-6-stars {
+        svg path {
+          fill: ${theme.palette.orange};
+        }
+      }
+
+      &.rarity-5-stars {
+        svg path {
+          fill: ${theme.palette.yellow};
+        }
+      }
+
+      &.rarity-4-stars {
+        svg path {
+          fill: ${theme.palette.softBlue};
+        }
+      }
+
+      &.rarity-3-stars {
+        svg path {
+          fill: ${theme.palette.blue};
         }
       }
     }

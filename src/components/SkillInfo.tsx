@@ -31,7 +31,7 @@ export interface SkillLevelObject {
   description: string;
   // SkillLevelObject only has rangeId (of type string) in the game data,
   // but we expect it to be denormalized into a RangeObject before being passed to <SkillInfo />
-  range: RangeObject;
+  range: RangeObject | null;
   skillType: SkillType;
   spData: {
     spType: SkillSpType;
@@ -125,13 +125,15 @@ const descriptionToHtml = (
   return htmlDescription;
 };
 
+export interface SkillObject {
+  skillId: string;
+  iconId: string | null;
+  levels: SkillLevelObject[];
+  hidden: unknown; // unused
+}
+
 export interface SkillInfoProps {
-  skillObject: {
-    skillId: string;
-    iconId: string | null;
-    levels: SkillLevelObject[];
-    hidden: unknown; // unused
-  };
+  skillObject: SkillObject;
   showcaseVideoUrl?: string;
 }
 

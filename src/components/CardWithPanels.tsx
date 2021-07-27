@@ -99,6 +99,11 @@ const styles = (theme: Theme) => css`
 
   .panel-content {
     flex-grow: 1;
-    padding: ${theme.spacing(3)} ${theme.spacing(4)} ${theme.spacing(4)};
+    padding: 0 ${theme.spacing(4)} ${theme.spacing(4)};
+
+    b,
+    strong {
+      color: ${theme.palette.pink};
+    }
   }
 `;

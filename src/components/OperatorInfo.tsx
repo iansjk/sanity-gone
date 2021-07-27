@@ -2,7 +2,7 @@
 import { css, Theme } from "@emotion/react";
 import { professionToClass } from "../utils/globals";
 import { operatorClassIcon, operatorImage } from "../utils/images";
-import { MdStar } from "react-icons/md";
+import StarIcon from "./icons/StarIcon";
 export interface OperatorInfoProps {
   operatorEntry: {
     name: string;
@@ -33,7 +33,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
         <img className="operator-portrait" src={operatorImage(name)} alt="" />
         <span className="rarity" aria-label={`Rarity: ${rarity} stars`}>
           {[...Array(rarity).keys()].map((i) => (
-            <MdStar key={i} aria-hidden="true" />
+            <StarIcon key={i} aria-hidden="true" />
           ))}
         </span>
       </div>
@@ -64,16 +64,19 @@ const styles = (theme: Theme) => css`
 
     .rarity {
       position: absolute;
-      bottom: -18px;
+      bottom: -15px;
       left: 0;
       width: 100%;
       text-align: center;
 
       svg {
-        fill: ${theme.palette.mid};
-        stroke: ${theme.palette.white};
-        stroke-width: 1px;
-        margin-right: -1px;
+        margin-right: -6px;
+
+        path {
+          fill: ${theme.palette.white};
+          stroke: ${theme.palette.mid};
+          stroke-width: 2px;
+        }
       }
     }
   }
@@ -82,7 +85,8 @@ const styles = (theme: Theme) => css`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 18px 0 0 ${theme.spacing(3)};
+    // n.b. the padding-top here should be equal to .rarity { bottom }
+    padding: 15px 0 0 ${theme.spacing(3)};
 
     .operator-name {
       font-size: 36px;

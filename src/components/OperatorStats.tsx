@@ -145,7 +145,7 @@ const styles = (theme: Theme) => css`
     }
 
     .physical {
-      color: ${theme.palette.red};
+      color: ${theme.palette.orange};
     }
   }
 

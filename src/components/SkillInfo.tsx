@@ -251,7 +251,7 @@ const styles = (theme: Theme) => css`
       }
 
       .sp-type-2 {
-        color: ${theme.palette.red};
+        color: ${theme.palette.orange};
       }
 
       .sp-type-4 {

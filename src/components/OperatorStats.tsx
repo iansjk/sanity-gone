@@ -137,6 +137,18 @@ const styles = (theme: Theme) => css`
     .physical {
       color: ${theme.palette.orange};
     }
+
+    .arts {
+      color: ${theme.palette.blue};
+    }
+
+    .healing {
+      color: ${theme.palette.lime};
+    }
+
+    .true {
+      color: ${theme.palette.gray};
+    }
   }
 
   .position {

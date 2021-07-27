@@ -134,8 +134,7 @@ const styles = (theme: Theme) => css`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    // n.b. the padding-top here should be equal to .rarity { bottom }
-    padding: 15px 0 0 ${theme.spacing(3)};
+    padding: 0 0 0 ${theme.spacing(3)};
 
     .operator-name {
       font-size: 36px;

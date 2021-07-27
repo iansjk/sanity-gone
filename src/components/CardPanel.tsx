@@ -17,7 +17,7 @@ const CardPanel: React.FC<CardPanelProps> = (props) => {
 
   useEffect(() => {
     if (ariaExpanded && userHasInteracted && panelRef.current) {
-      panelRef.current.focus();
+      panelRef.current.focus({ preventScroll: true });
     }
   }, [ariaExpanded, userHasInteracted]);
 

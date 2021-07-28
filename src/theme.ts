@@ -22,8 +22,16 @@ const typography = {
     size: 18,
     lineHeight: 1.5,
   },
+  body2: {
+    size: 14,
+  },
   highlight: {
     weight: 600,
+  },
+  pageHeader: {
+    weight: 600,
+    size: 96,
+    lineHeight: 1.25,
   },
   link: {
     fontStyle: "italic",

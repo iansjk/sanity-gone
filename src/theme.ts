@@ -10,10 +10,11 @@ const palette = {
   pink: "#e85593",
   background: "#14141b",
   mid: "#1e1e26",
+  midRarity: "#1b1b22",
   midBackground: "#191920",
   midHighlight: "#4d4d5b",
   headerBackground: "#101014",
-};
+};  
 
 const typography = {
   body: {

@@ -227,7 +227,7 @@ const styles = (theme: Theme) => css`
   .skill-description {
     grid-row-start: 3;
     grid-column-start: span 2;
-    padding: ${theme.spacing(2)} ${theme.spacing(3)};
+    padding: ${theme.spacing(2)};
     margin: 0;
 
     .value-up {

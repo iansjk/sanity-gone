@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css, Theme } from "@emotion/react";
 import { professionToClass } from "../utils/globals";
 import { operatorClassIcon, operatorImage } from "../utils/images";

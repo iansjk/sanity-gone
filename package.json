@@ -17,6 +17,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@emotion/babel-plugin": "^11.3.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "emotion-normalize": "^11.0.1",
@@ -34,6 +35,7 @@
     "@storybook/addon-links": "^6.3.5",
     "@storybook/react": "^6.3.5",
     "babel-loader": "^8.2.2",
+    "chromatic": "^5.10.0-canary.0",
     "typescript": "^4.3.5"
   }
 }

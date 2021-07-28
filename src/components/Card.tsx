@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css, Theme } from "@emotion/react";
 
 export type CardProps = React.HTMLAttributes<HTMLDivElement> & {

@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { Theme, css } from "@emotion/react";
 import parse from "html-react-parser";
 import { Element } from "domhandler/lib/node";

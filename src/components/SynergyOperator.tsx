@@ -122,16 +122,34 @@ const styles = (theme: Theme) => css`
 
         .rarity {
           color: ${theme.palette.midRarity};
-          font-weight: bold;
+          font-size: ${theme.typography.smallPortraitRarity.size};
+          line-height: ${theme.typography.smallPortraitRarity.lineHeight};
+          font-weight: ${theme.typography.smallPortraitRarity.fontWeight};
           display: inline-flex;
           align-items: center;
-          padding: ${theme.spacing(0.25)} ${theme.spacing(0.5)};
+          padding: 0 ${theme.spacing(0.5)};
           border-radius: ${theme.spacing(0.5)};
           border: ${theme.spacing(0.25)} solid ${theme.palette.midRarity};
-          line-height: 1;
+          background-color: ${theme.palette.white};
+
+          svg {
+            margin-left: 1px;
+          }
 
           &.rarity-6-stars {
             background-color: ${theme.palette.orange};
+          }
+
+          &.rarity-5-stars {
+            background-color: ${theme.palette.yellow};
+          }
+
+          &.rarity-4-stars {
+            background-color: ${theme.palette.softBlue};
+          }
+
+          &.rarity-3-stars {
+            background-color: ${theme.palette.blue};
           }
         }
       }

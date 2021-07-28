@@ -59,6 +59,11 @@ const typography = {
     fontStyle: "italic",
     textDecoration: "underline",
   },
+  smallPortraitRarity: {
+    size: "18px",
+    lineHeight: 1.25,
+    fontWeight: 700,
+  }
 };
 
 const spacingUnit = 8;

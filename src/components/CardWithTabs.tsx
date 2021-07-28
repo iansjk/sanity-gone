@@ -156,10 +156,5 @@ const styles = (theme: Theme) => css`
   .panels {
     flex-grow: 1;
     padding: 0 ${theme.spacing(4)} ${theme.spacing(4)};
-
-    b,
-    strong {
-      color: ${theme.palette.pink};
-    }
   }
 `;

@@ -18,7 +18,7 @@ enum SkillType {
 }
 
 enum SkillSpType {
-  "SP/second" = 1,
+  "Per Second Recovery" = 1,
   "Offensive Recovery",
   "UNUSED",
   "Defensive Recovery",

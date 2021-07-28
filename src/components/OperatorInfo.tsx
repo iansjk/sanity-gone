@@ -142,10 +142,10 @@ const styles = (theme: Theme) => css`
     padding: 0 0 0 ${theme.spacing(3)};
 
     .operator-name {
-      font-size: 36px;
-      font-weight: bold;
-      line-height: 24px;
-      margin-bottom: 16px;
+      font-size: ${theme.typography.operatorNameHeader.size}px;
+      font-weight: ${theme.typography.operatorNameHeader.weight};
+      line-height: ${theme.typography.operatorNameHeader.lineHeight};
+      margin-bottom: ${theme.spacing(1)};
     }
 
     .operator-class {

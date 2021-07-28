@@ -37,9 +37,10 @@ const typography = {
     fontStyle: "italic",
     textDecoration: "underline",
   },
-  header: {
+  operatorNameHeader: {
     size: 36,
     weight: 600,
+    lineHeight: 1.25,
   },
   header2: {
     size: 36,

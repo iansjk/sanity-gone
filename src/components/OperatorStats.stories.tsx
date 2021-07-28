@@ -12,6 +12,8 @@ const Template: Story<OperatorStatsProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   operatorObject: {
+    name: "Mudrock",
+    rarity: 5,
     description: "<@ba.kw>Cannot</> be healed by allies",
     position: "MELEE",
     profession: "TANK",

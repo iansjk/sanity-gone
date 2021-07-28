@@ -47,11 +47,13 @@ interface OperatorPhaseObject {
 }
 
 // from character_table.json
-interface OperatorObject {
+export interface OperatorObject {
+  name: string;
   profession: string;
   position: "MELEE" | "RANGED";
   description: string;
   phases: OperatorPhaseObject[];
+  rarity: number; // 0-indexed, so a 1* op has value 0
 }
 
 export interface OperatorStatsProps {

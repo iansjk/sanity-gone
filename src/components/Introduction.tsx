@@ -1,8 +1,11 @@
 import { css, Theme } from "@emotion/react";
-import React from "react";
+import parse from "html-react-parser";
+import { Element } from "domhandler/lib/node";
+import { replaceSelfClosingHtmlTags } from "../utils/globals";
 import AuthorCredit, { AuthorCreditProps } from "./AuthorCredit";
 import Card from "./Card";
 import OperatorInfo, { OperatorInfoProps } from "./OperatorInfo";
+import OperatorStats from "./OperatorStats";
 
 export type IntroductionProps = AuthorCreditProps &
   OperatorInfoProps & {
@@ -28,10 +31,18 @@ const Introduction: React.VFC<IntroductionProps> = (props) => {
         <div className="spacer" />
         <AuthorCredit authorDiscordTag={authorDiscordTag} />
       </div>
-      <div
-        className="introduction-content"
-        dangerouslySetInnerHTML={{ __html: analysis }}
-      />
+      <div className="introduction-content">
+        {parse(replaceSelfClosingHtmlTags(analysis), {
+          replace: (domNode) => {
+            if (
+              domNode instanceof Element &&
+              domNode.name.toLowerCase() === "operatorstats"
+            ) {
+              return <OperatorStats operatorObject={operatorObject} />;
+            }
+          },
+        })}
+      </div>
     </Card>
   );
 };

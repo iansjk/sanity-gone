@@ -2,13 +2,10 @@ import { css, Theme } from "@emotion/react";
 import { professionToClass } from "../utils/globals";
 import { operatorClassIcon, operatorImage } from "../utils/images";
 import StarIcon from "./icons/StarIcon";
+import { OperatorObject } from "./OperatorStats";
 
 export interface OperatorInfoProps {
-  operatorObject: {
-    name: string;
-    profession: string;
-    rarity: number;
-  };
+  operatorObject: OperatorObject;
   archetype: string;
   isLimited?: boolean;
 }

@@ -17,6 +17,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@emotion/babel-plugin": "^11.3.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "emotion-normalize": "^11.0.1",

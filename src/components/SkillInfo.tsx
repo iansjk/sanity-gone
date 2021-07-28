@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { ClassNames, css, Theme } from "@emotion/react";
 import React from "react";
 import { skillIcon } from "../utils/images";

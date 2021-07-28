@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { Global, Theme, css } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
 

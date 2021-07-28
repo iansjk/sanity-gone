@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import React, { useRef, useState } from "react";
 import { Theme, css, ClassNames } from "@emotion/react";
 import Card, { CardProps } from "./Card";

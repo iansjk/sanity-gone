@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css, Theme } from "@emotion/react";
 import DiscordLogo from "./icons/DiscordLogo";
 

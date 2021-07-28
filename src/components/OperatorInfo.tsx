@@ -2,8 +2,9 @@ import { css, Theme } from "@emotion/react";
 import { professionToClass } from "../utils/globals";
 import { operatorClassIcon, operatorImage } from "../utils/images";
 import StarIcon from "./icons/StarIcon";
+
 export interface OperatorInfoProps {
-  operatorEntry: {
+  operatorObject: {
     name: string;
     profession: string;
     rarity: number;
@@ -13,8 +14,8 @@ export interface OperatorInfoProps {
 }
 
 const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
-  const { operatorEntry, archetype, isLimited } = props;
-  const { name, profession, rarity: rawRarity } = operatorEntry;
+  const { operatorObject, archetype, isLimited } = props;
+  const { name, profession, rarity: rawRarity } = operatorObject;
   const operatorClass = professionToClass(profession);
   const rarity = rawRarity + 1; // 0-indexed;
   return (

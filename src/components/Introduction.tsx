@@ -11,7 +11,7 @@ export type IntroductionProps = AuthorCreditProps &
 
 const Introduction: React.VFC<IntroductionProps> = (props) => {
   const {
-    operatorEntry,
+    operatorObject,
     authorDiscordTag,
     archetype,
     isLimited,
@@ -21,7 +21,7 @@ const Introduction: React.VFC<IntroductionProps> = (props) => {
     <Card header="Introduction">
       <div css={styles}>
         <OperatorInfo
-          operatorEntry={operatorEntry}
+          operatorObject={operatorObject}
           archetype={archetype}
           isLimited={isLimited}
         />

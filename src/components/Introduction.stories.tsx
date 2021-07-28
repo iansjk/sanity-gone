@@ -13,7 +13,7 @@ const Template: Story<
 
 export const Default = Template.bind({});
 Default.args = {
-  operatorEntry: {
+  operatorObject: {
     name: "Mudrock",
     profession: "TANK",
     rarity: 5,

@@ -1,6 +1,7 @@
 import defaultSlugify from "slugify";
 
-export const slugify = (text: string): string => defaultSlugify(text, { lower: true, replacement: "-", remove: /[-/]/g });
+export const slugify = (text: string): string =>
+  defaultSlugify(text, { lower: true, replacement: "-", remove: /[-/]/g });
 
 export function toTitleCase(string: string): string {
   return [...string.toLowerCase()]
@@ -24,3 +25,10 @@ export function professionToClass(profession: string): string {
       return toTitleCase(profession);
   }
 }
+
+const selfClosingTagRegex = /<(?<tagName>[A-Za-z]+) \/>/g;
+export const replaceSelfClosingHtmlTags = (htmlString: string) =>
+  htmlString.replaceAll(
+    selfClosingTagRegex,
+    (_, tagName) => `<${tagName}></${tagName}>`
+  );

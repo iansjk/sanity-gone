@@ -3,8 +3,7 @@ import { Element } from "domhandler/lib/node";
 import CardWithTabs from "./CardWithTabs";
 import CardPanel from "./CardPanel";
 import SkillInfo, { SkillObject } from "./SkillInfo";
-
-const selfClosingTagRegex = /<(?<tagName>[A-Za-z]+) \/>/g;
+import { replaceSelfClosingHtmlTags } from "../utils/globals";
 
 export interface SkillsProps {
   // analysis[0] should be an analysis of skill 1,
@@ -18,30 +17,24 @@ const Skills: React.VFC<SkillsProps> = (props) => {
   const { analyses, skillObjects } = props;
 
   return (
-    <CardWithTabs header="Skills" tabType="skill" css={styles}>
+    <CardWithTabs header="Skills" tabType="skill">
       {analyses.map((htmlString: string, i) => (
         <CardPanel key={i} className="skill-analysis">
-          {parse(
-            htmlString.replaceAll(
-              selfClosingTagRegex,
-              (_, tagName) => `<${tagName}></${tagName}>`
-            ),
-            {
-              replace: (domNode) => {
-                if (
-                  domNode instanceof Element &&
-                  domNode.name.toLowerCase() === "skillinfo"
-                ) {
-                  return (
-                    <SkillInfo
-                      className="skills-skill-info"
-                      skillObject={skillObjects[i]}
-                    />
-                  );
-                }
-              },
-            }
-          )}
+          {parse(replaceSelfClosingHtmlTags(htmlString), {
+            replace: (domNode) => {
+              if (
+                domNode instanceof Element &&
+                domNode.name.toLowerCase() === "skillinfo"
+              ) {
+                return (
+                  <SkillInfo
+                    className="skills-skill-info"
+                    skillObject={skillObjects[i]}
+                  />
+                );
+              }
+            },
+          })}
         </CardPanel>
       ))}
     </CardWithTabs>

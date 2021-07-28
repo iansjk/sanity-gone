@@ -22,7 +22,7 @@ interface TalentPhaseObject {
   blackboard: InterpolatedValue[];
 }
 
-interface TalentObject {
+export interface TalentObject {
   candidates: TalentPhaseObject[];
 }
 
@@ -73,6 +73,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
     </ClassNames>
   );
 };
+export default TalentInfo;
 
 const styles = (theme: Theme) => css`
   display: grid;

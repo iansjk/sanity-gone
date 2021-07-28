@@ -35,6 +35,7 @@
     "@storybook/addon-links": "^6.3.5",
     "@storybook/react": "^6.3.5",
     "babel-loader": "^8.2.2",
+    "chromatic": "^5.10.0-canary.0",
     "typescript": "^4.3.5"
   }
 }

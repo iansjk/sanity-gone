@@ -48,12 +48,12 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
   return (
     <ClassNames>
       {({ cx }) => (
-        <div
+        <section
           className={cx(className, !activePhase.range && "no-range")}
           css={styles}
           {...rest}
         >
-          <div className="talent-name">{activePhase.name}</div>
+          <h3 className="talent-name">{activePhase.name}</h3>
           <p
             className="talent-description"
             dangerouslySetInnerHTML={{
@@ -68,7 +68,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
               <OperatorRange rangeObject={activePhase.range} />
             </div>
           )}
-        </div>
+        </section>
       )}
     </ClassNames>
   );
@@ -88,6 +88,7 @@ const styles = (theme: Theme) => css`
   .talent-name {
     font-weight: ${theme.typography.highlight.weight};
     padding: ${theme.spacing(2)};
+    margin: 0;
   }
 
   .talent-description {

@@ -77,7 +77,7 @@ const SkillInfo: React.VFC<
   return (
     <ClassNames>
       {({ cx }) => (
-        <div
+        <section
           css={styles}
           className={cx(className, !range && "no-range")}
           {...rest}
@@ -88,7 +88,7 @@ const SkillInfo: React.VFC<
               src={skillIcon(iconId, skillId)}
               alt=""
             />
-            <span className="skill-name">{name}</span>
+            <h3 className="skill-name">{name}</h3>
             <span className="skill-and-sp-type">
               <span className={cx("sp-type", `sp-type-${spType}`)}>
                 {SkillSpType[spType]}
@@ -132,7 +132,7 @@ const SkillInfo: React.VFC<
               <OperatorRange rangeObject={range} />
             </div>
           )}
-        </div>
+        </section>
       )}
     </ClassNames>
   );
@@ -163,6 +163,7 @@ const styles = (theme: Theme) => css`
 
     .skill-name {
       font-weight: ${theme.typography.highlight.weight};
+      margin: 0;
     }
 
     .skill-icon {

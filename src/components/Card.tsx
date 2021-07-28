@@ -41,7 +41,7 @@ const styles = (theme: Theme) => css`
   .card-content {
     padding: ${theme.spacing(3)} ${theme.spacing(4)} ${theme.spacing(4)};
 
-    p {
+    & > p {
       margin: ${theme.spacing(3)} 0 0;
     }
   }

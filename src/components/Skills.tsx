@@ -1,4 +1,3 @@
-import { Theme, css } from "@emotion/react";
 import parse from "html-react-parser";
 import { Element } from "domhandler/lib/node";
 import CardWithTabs from "./CardWithTabs";
@@ -49,13 +48,3 @@ const Skills: React.VFC<SkillsProps> = (props) => {
   );
 };
 export default Skills;
-
-const styles = (theme: Theme) => css`
-  .skills-skill-info {
-    margin-top: ${theme.spacing(3)};
-
-    p {
-      margin-top: 0;
-    }
-  }
-`;

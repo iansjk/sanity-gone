@@ -4,15 +4,18 @@ import AuthorCredit, { AuthorCreditProps } from "./AuthorCredit";
 import Card from "./Card";
 import OperatorInfo, { OperatorInfoProps } from "./OperatorInfo";
 
-export type IntroductionProps = AuthorCreditProps & OperatorInfoProps;
+export type IntroductionProps = AuthorCreditProps &
+  OperatorInfoProps & {
+    analysis: string;
+  };
 
-const Introduction: React.FC<IntroductionProps> = (props) => {
+const Introduction: React.VFC<IntroductionProps> = (props) => {
   const {
     operatorEntry,
     authorDiscordTag,
     archetype,
     isLimited,
-    children,
+    analysis,
   } = props;
   return (
     <Card header="Introduction">
@@ -25,7 +28,10 @@ const Introduction: React.FC<IntroductionProps> = (props) => {
         <div className="spacer" />
         <AuthorCredit authorDiscordTag={authorDiscordTag} />
       </div>
-      <div className="introduction-content">{children}</div>
+      <div
+        className="introduction-content"
+        dangerouslySetInnerHTML={{ __html: analysis }}
+      />
     </Card>
   );
 };

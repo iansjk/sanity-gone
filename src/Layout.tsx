@@ -36,7 +36,7 @@ const styles = (theme: Theme) => css`
   }
 
   p {
-    line-height: ${theme.typography.body.lineHeight}px;
+    line-height: ${theme.typography.body.lineHeight};
   }
 
   .visually-hidden:not(:focus):not(:active) {

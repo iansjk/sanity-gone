@@ -19,7 +19,7 @@ const typography = {
   body: {
     family: "Source Sans Pro, sans-serif",
     size: 18,
-    lineHeight: 28,
+    lineHeight: 1.5,
   },
   highlight: {
     weight: 600,

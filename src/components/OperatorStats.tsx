@@ -1,5 +1,5 @@
 import { css, Theme } from "@emotion/react";
-import { slugify } from "../utils/globals";
+import { professionToClass, slugify, toTitleCase } from "../utils/globals";
 import {
   ArtsResistanceIcon,
   AttackPowerIcon,
@@ -12,34 +12,81 @@ import {
 } from "./icons/operatorStats";
 import OperatorRange, { RangeObject } from "./OperatorRange";
 
+const getDamageType = (
+  operatorClass: string,
+  description: string
+): "Physical" | "Arts" | "Healing" => {
+  if (operatorClass === "Medic") return "Healing";
+  return description.toLowerCase().includes("arts damage")
+    ? "Arts"
+    : "Physical";
+};
+
+interface AttributeKeyFrame {
+  level: number;
+  data: {
+    maxHp: number;
+    atk: number;
+    def: number;
+    baseAttackTime: number;
+    magicResistance: number;
+    cost: number;
+    blockCnt: number;
+    respawnTime: number;
+    [otherProperties: string]: unknown;
+  };
+}
+
+interface OperatorPhaseObject {
+  characterPrefabKey: string;
+  // character_table.json's "phases" objects have rangeIds,
+  // but we expect this to be denormalized first
+  range: RangeObject;
+  maxLevel: number;
+  attributesKeyFrames: AttributeKeyFrame[];
+}
+
+// from character_table.json
+interface OperatorObject {
+  profession: string;
+  position: "MELEE" | "RANGED";
+  description: string;
+  phases: OperatorPhaseObject[];
+}
+
 export interface OperatorStatsProps {
-  damageType: "Physical" | "Arts" | "Healing" | "True";
-  position: "Melee" | "Ranged" | "Melee or Ranged";
-  health: number;
-  attackPower: number;
-  defense: number;
-  attacksPerSecond: number;
-  artsResistance: number;
-  blockCount: number;
-  redeployTimeInSeconds: number;
-  dpCost: number;
-  rangeObject: RangeObject;
+  operatorObject: OperatorObject;
 }
 
 const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
+  const { operatorObject } = props;
   const {
-    damageType,
-    position,
-    health,
-    attackPower,
-    defense,
-    attacksPerSecond,
-    artsResistance,
-    blockCount,
-    redeployTimeInSeconds,
-    dpCost,
-    rangeObject,
-  } = props;
+    profession,
+    position: binaryPosition,
+    description,
+    phases,
+  } = operatorObject;
+  const position = description
+    .toLowerCase()
+    .includes("can be deployed on ranged grids")
+    ? "Melee or Ranged"
+    : toTitleCase(binaryPosition);
+  const activePhase = phases[phases.length - 1];
+  const { range: rangeObject } = activePhase;
+  const activeKeyFrame =
+    activePhase.attributesKeyFrames[activePhase.attributesKeyFrames.length - 1];
+  const {
+    maxHp: health,
+    atk: attackPower,
+    def: defense,
+    magicResistance: artsResistance,
+    cost: dpCost,
+    blockCnt: blockCount,
+    respawnTime: redeployTimeInSeconds,
+    baseAttackTime: attacksPerSecond,
+  } = activeKeyFrame.data;
+  const damageType = getDamageType(professionToClass(profession), description);
+
   return (
     <dl css={styles}>
       <div className="damage-type">

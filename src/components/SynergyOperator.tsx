@@ -72,12 +72,16 @@ const styles = (theme: Theme) => css`
       margin-left: ${theme.spacing(2)};
 
       .operator-name {
-        font-size: 24px;
-        margin: 0 0 ${theme.spacing(1)};
-        font-weight: ${theme.typography.highlight.weight};
+        margin: 0;
+        font-size: ${theme.typography.generalHeadingBold.size}px;
+        font-weight: ${theme.typography.generalHeadingBold.weight};
+        line-height: ${theme.typography.generalHeadingBold.lineHeight};
       }
 
       .synergy-quality {
+        font-size: ${theme.typography.body2.size}px;
+        text-transform: uppercase;
+        line-height: 1.25;
         color: ${theme.palette.gray};
 
         &.quality--1 {

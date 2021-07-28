@@ -86,7 +86,7 @@ const styles = (theme: Theme) => css`
   }
 
   .talent-name {
-    font-weight: ${theme.typography.highlight.weight};
+    font-weight: ${theme.typography.skillTalentHeading.weight};
     padding: ${theme.spacing(2)};
     margin: 0;
   }

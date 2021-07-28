@@ -29,10 +29,10 @@ const styles = (theme: Theme) => css`
 
     h2 {
       margin: 0;
-      text-transform: ${theme.typography.cardHeader.textTransform};
-      font-size: ${theme.typography.cardHeader.size};
-      font-weight: ${theme.typography.cardHeader.weight};
-      font-variant: ${theme.typography.cardHeader.fontVariant};
+      text-transform: ${theme.typography.cardHeading.textTransform};
+      font-size: ${theme.typography.cardHeading.size};
+      font-weight: ${theme.typography.cardHeading.weight};
+      font-variant: ${theme.typography.cardHeading.fontVariant};
       letter-spacing: 1px;
       color: ${theme.palette.white};
     }

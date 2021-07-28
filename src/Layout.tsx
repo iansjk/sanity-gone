@@ -21,21 +21,18 @@ const styles = (theme: Theme) => css`
   color: ${theme.palette.white};
   background-color: ${theme.palette.background};
   padding: ${theme.spacing(2)};
+  line-height: ${theme.typography.body.lineHeight};
 
   b,
   strong {
     color: ${theme.palette.blue};
-    font-weight: ${theme.typography.highlight.weight};
+    font-weight: ${theme.typography.skillTalentHeading.weight};
   }
 
   a {
     font-style: ${theme.typography.link.fontStyle};
     text-decoration: ${theme.typography.link.textDecoration};
     color: ${theme.palette.blue};
-  }
-
-  p {
-    line-height: ${theme.typography.body.lineHeight};
   }
 
   .visually-hidden:not(:focus):not(:active) {

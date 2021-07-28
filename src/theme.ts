@@ -17,43 +17,48 @@ const palette = {
 };  
 
 const typography = {
-  body: {
-    family: "Source Sans Pro, sans-serif",
-    size: 18,
-    lineHeight: 1.5,
-  },
-  body2: {
-    size: 14,
-  },
-  highlight: {
-    weight: 600,
-  },
-  pageHeader: {
+  pageHeading: {
     weight: 600,
     size: 96,
     lineHeight: 1.25,
   },
-  link: {
-    fontStyle: "italic",
-    textDecoration: "underline",
-  },
-  operatorNameHeader: {
+  operatorNameHeading: {
     size: 36,
     weight: 600,
     lineHeight: 1.25,
   },
-  header2: {
-    size: 36,
-  },
-  cardHeader: {
+  cardHeading: {
     size: 24,
     textTransform: "uppercase",
     fontVariant: "small-caps",
     weight: 600,
   },
-  subtitle: {
+  generalHeading: {
+    size: 24,
+    lineHeight: 1.25,
+  },
+  generalHeadingBold: {
+    size: 24,
+    weight: 600,
+    lineHeight: 1.25,
+  },
+  skillTalentHeading: {
+    size: 18,
+    weight: 600,
+    lineHeight: 1.25,
+  },
+  body: {
+    size: 18,
+    family: "Source Sans Pro, sans-serif",
+    lineHeight: 1.5,
+  },
+  body2: {
     size: 14,
-  }
+  },
+  link: {
+    fontStyle: "italic",
+    textDecoration: "underline",
+  },
 };
 
 const spacingUnit = 8;

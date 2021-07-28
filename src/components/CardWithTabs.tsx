@@ -129,7 +129,7 @@ const styles = (theme: Theme) => css`
       width: ${theme.spacing(6)};
       height: ${theme.spacing(6)};
       border: none;
-      font-weight: ${theme.typography.highlight.weight};
+      font-weight: ${theme.typography.skillTalentHeading.weight};
       cursor: pointer;
       background: ${theme.palette.background};
       color: ${theme.palette.midHighlight};

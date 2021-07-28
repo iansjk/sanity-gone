@@ -162,7 +162,7 @@ const styles = (theme: Theme) => css`
     padding: ${theme.spacing(2)};
 
     .skill-name {
-      font-weight: ${theme.typography.highlight.weight};
+      font-weight: ${theme.typography.skillTalentHeading.weight};
       margin: 0;
     }
 
@@ -177,7 +177,7 @@ const styles = (theme: Theme) => css`
 
     .skill-and-sp-type {
       display: block;
-      font-size: ${theme.typography.subtitle.size}px;
+      font-size: ${theme.typography.body2.size}px;
 
       .sp-type-1 {
         color: ${theme.palette.lime};

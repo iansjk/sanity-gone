@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 export type CardPanelProps = React.PropsWithChildren<
   React.HTMLAttributes<HTMLDivElement> & {
-    userHasInteracted: boolean;
+    userHasInteracted?: boolean;
   }
 >;
 

@@ -1,4 +1,4 @@
-enum SynergyQuality {
+export enum SynergyQuality {
   "Anti-Synergy" = -1,
   "Decent",
   "Good",

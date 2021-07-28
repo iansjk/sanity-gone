@@ -19,41 +19,41 @@ const palette = {
 const typography = {
   pageHeading: {
     weight: 600,
-    size: 96,
+    size: "96px",
     lineHeight: 1.25,
   },
   operatorNameHeading: {
-    size: 36,
+    size: "36px",
     weight: 600,
     lineHeight: 1.25,
   },
   cardHeading: {
-    size: 24,
+    size: "24px",
     textTransform: "uppercase",
     fontVariant: "small-caps",
     weight: 600,
   },
   generalHeading: {
-    size: 24,
+    size: "24px",
     lineHeight: 1.25,
   },
   generalHeadingBold: {
-    size: 24,
+    size: "24px",
     weight: 600,
     lineHeight: 1.25,
   },
   skillTalentHeading: {
-    size: 18,
+    size: "18px",
     weight: 600,
     lineHeight: 1.25,
   },
   body: {
-    size: 18,
+    size: "18px",
     family: "Source Sans Pro, sans-serif",
     lineHeight: 1.5,
   },
   body2: {
-    size: 14,
+    size: "14px",
   },
   link: {
     fontStyle: "italic",

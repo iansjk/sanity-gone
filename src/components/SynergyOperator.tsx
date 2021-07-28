@@ -73,13 +73,13 @@ const styles = (theme: Theme) => css`
 
       .operator-name {
         margin: 0;
-        font-size: ${theme.typography.generalHeadingBold.size}px;
+        font-size: ${theme.typography.generalHeadingBold.size};
         font-weight: ${theme.typography.generalHeadingBold.weight};
         line-height: ${theme.typography.generalHeadingBold.lineHeight};
       }
 
       .synergy-quality {
-        font-size: ${theme.typography.body2.size}px;
+        font-size: ${theme.typography.body2.size};
         text-transform: uppercase;
         line-height: 1.25;
         color: ${theme.palette.gray};

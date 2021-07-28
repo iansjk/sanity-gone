@@ -303,7 +303,6 @@ const styles = (theme: Theme) => css`
   .skill-description {
     grid-row-start: 3;
     grid-column-start: span 2;
-    color: ${theme.palette.gray};
     padding: ${theme.spacing(2)} ${theme.spacing(3)};
     margin: 0;
 

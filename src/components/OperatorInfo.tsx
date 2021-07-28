@@ -1,7 +1,7 @@
 import { css, Theme } from "@emotion/react";
 import { professionToClass } from "../utils/globals";
 import { operatorClassIcon, operatorImage } from "../utils/images";
-import StarIcon from "./icons/StarIcon";
+import TiltedStarIcon from "./icons/TiltedStarIcon";
 import { OperatorObject } from "./OperatorStats";
 
 export interface OperatorInfoProps {
@@ -44,7 +44,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
           aria-label={`Rarity: ${rarity} stars`}
         >
           {[...Array(rarity).keys()].map((i) => (
-            <StarIcon key={i} aria-hidden="true" />
+            <TiltedStarIcon key={i} aria-hidden="true" />
           ))}
         </span>
       </div>

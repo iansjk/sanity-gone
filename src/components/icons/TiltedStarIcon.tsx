@@ -1,4 +1,4 @@
-const StarIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const TiltedStarIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="20"
@@ -18,4 +18,4 @@ const StarIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
     </svg>
   );
 };
-export default StarIcon;
+export default TiltedStarIcon;

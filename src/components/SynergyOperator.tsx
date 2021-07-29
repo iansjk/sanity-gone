@@ -1,7 +1,4 @@
 import { css, Theme } from "@emotion/react";
-import React from "react";
-import { operatorImage } from "../utils/images";
-import StarIcon from "./icons/StarIcon";
 import OperatorPortrait from "./OperatorPortrait";
 
 export enum SynergyQuality {

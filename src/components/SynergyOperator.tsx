@@ -9,25 +9,16 @@ export enum SynergyQuality {
 }
 
 export interface SynergyOperatorProps {
-  synergyOperator: {
-    name: string;
-    rarity: number; // we'll assume this is 0-indexed, so rarity: 0 means a 1* operator
-    quality: SynergyQuality;
-    analysis: string;
-  };
+  name: string;
+  rarity: number;
+  quality: SynergyQuality;
+  analysis: string;
 }
 
 const SynergyOperator: React.VFC<
   SynergyOperatorProps & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
-  const {
-    name,
-    rarity: rawRarity,
-    quality,
-    analysis,
-    ...rest
-  } = props.synergyOperator;
-  const rarity = rawRarity + 1;
+  const { name, rarity, quality, analysis, ...rest } = props;
   return (
     <section css={styles} {...rest}>
       <div className="synergy-operator-info">
@@ -46,6 +37,7 @@ const SynergyOperator: React.VFC<
 export default SynergyOperator;
 
 const styles = (theme: Theme) => css`
+  padding-top: ${theme.spacing(3)};
   display: flex;
   flex-direction: column;
 

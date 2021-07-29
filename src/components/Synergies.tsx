@@ -66,16 +66,20 @@ const styles = (theme: Theme) => css`
     color: ${theme.palette.red};
   }
 
-  .operator-button {
-    background-size: contain !important; /* !important is not optional here */
-    opacity: 0.34;
+  .tabs {
+    .operator-button {
+      background-size: contain;
+      opacity: 0.34;
 
-    &:hover {
-      opacity: 0.67;
-    }
+      &:hover {
+        opacity: 0.67;
+      }
 
-    &.active {
-      opacity: 1;
+      &.active {
+        opacity: 1;
+        background-color: ${theme.palette.white};
+        border: ${theme.spacing(0.25)} solid ${theme.palette.white};
+      }
     }
   }
 `;

@@ -21,12 +21,42 @@ Default.args = {
       `,
     },
     {
+      name: "Aak",
+      rarity: 6,
+      quality: SynergyQuality["Excellent Synergy"],
+      analysis: `
+        <p>
+          The best buffer to use with Mudrock; as he can provide her defensive and offensive buffs depending on what you want. You can use S2 to increase her DEF and Max HP (which her self-heals scale off of) for better tanking and sustain, or S3 to increase her ATK and ASPD for better damage output. She has a base DEF high enough to hit the minimum damage threshold tanking his shots, and she can be buffed during S3 invulnerability phase and still get the buffs without losing anything. Aak does no harm at all for once, unbelievable right?
+        </p>
+      `,
+    },
+    {
       name: "Angelina",
       rarity: 6,
       quality: SynergyQuality["Good Synergy"],
       analysis: `
         <p>
           Her benefits to Mudrock are entirely passive, and Angelina is great for general use anyway so it makes it super easy to have them together. Angelina passively provides global HP regen and an ASPD buff, since the regen is obviously not a direct heal, it works perfectly fine on Mudrock. The ASPD is also always good since Mudrock is also a damage dealer. The passive ASPD also helps if you’re bringing Blemishine too, since faster attacks means faster charging for Mudrock S2 while Blemi is deployed. Team building matters, folks! As a bonus, Angelina’s crowd control capabilities can help with stalling during Mudrock’s S3 startup, since her fast skill rotations means Angelina can always be ready to be used together with Mudrock’s S3.
+        </p>
+      `,
+    },
+    {
+      name: "Whislash",
+      rarity: 5,
+      quality: SynergyQuality["Good Synergy"],
+      analysis: `
+        <p>
+          Similar to Angelina, she provides both offensive and defensive passive benefits to Mudrock and friends at all times, and her active skills further improve it for the duration. More DEF can always help Mudrock take less pressure from most enemies in the game, and more ASPD is the same as before. With either of her skills active, the difference is quite noticeable too and works well. Whislash can easily be placed behind Mudrock too to catch enemies that are getting by, especially during Mudrock’s S3 start-up period, while also having the extra range to attack enemies blocked by Mudrock.
+        </p>
+      `,
+    },
+    {
+      name: "Ch'en",
+      rarity: 6,
+      quality: SynergyQuality["Good Synergy"],
+      analysis: `
+        <p>
+          Another rather simple talent synergy; Ch’en’s talent helps passively charge skills with Offensive and Defensive recoveries. It’s nowhere as powerful as Blemishine’s talent, but it’s still helpful nonetheless if your objective is to help keep Mudrock spinning.
         </p>
       `,
     },

@@ -145,6 +145,7 @@ const styles = (theme: Theme) => css`
   }
 
   .tabs {
+    min-width: ${theme.spacing(12)};
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -153,8 +154,11 @@ const styles = (theme: Theme) => css`
     padding: ${theme.spacing(3)} ${theme.spacing(4)} ${theme.spacing(4)};
 
     .grouping-key {
+      text-align: center;
       font-size: ${theme.typography.body2.size};
       text-transform: uppercase;
+      width: 100%;
+      overflow: hidden;
 
       &::after {
         content: " ";

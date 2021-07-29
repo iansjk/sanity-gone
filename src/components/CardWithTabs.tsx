@@ -83,11 +83,12 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
                 {i + 1}
               </button>
             );
+            const newClassName = isActivePanel ? "active" : "inactive";
             const button = React.cloneElement(baseButton, {
               role: "tab",
-              className: `${baseButton.props.className} ${
-                isActivePanel ? "active" : "inactive"
-              }`,
+              className: baseButton.props.className
+                ? `${baseButton.props.className} ${newClassName}`
+                : newClassName,
               onClick: () => handleClick(i),
               onKeyDown: handleKeyDown,
               tabIndex: isActivePanel ? 0 : -1,

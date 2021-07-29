@@ -172,7 +172,7 @@ const styles = (theme: Theme) => css`
       border: none;
       font-weight: ${theme.typography.skillTalentHeading.weight};
       cursor: pointer;
-      background: ${theme.palette.background};
+      background-color: ${theme.palette.background};
       color: ${theme.palette.midHighlight};
       box-sizing: border-box;
       border: ${theme.spacing(0.25)} solid ${theme.palette.midHighlight};
@@ -188,7 +188,7 @@ const styles = (theme: Theme) => css`
       }
 
       &.active {
-        background: ${theme.palette.midHighlight};
+        background-color: ${theme.palette.midHighlight};
         color: ${theme.palette.white};
       }
     }

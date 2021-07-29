@@ -166,7 +166,7 @@ const styles = (theme: Theme) => css`
     }
 
     button {
-      border-radius: ${theme.spacing(2)};
+      border-radius: ${theme.spacing(1)};
       width: ${theme.spacing(6)};
       height: ${theme.spacing(6)};
       border: none;

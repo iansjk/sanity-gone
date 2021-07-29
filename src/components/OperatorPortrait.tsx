@@ -55,10 +55,10 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
               <TiltedStarIcon key={i} aria-hidden="true" />
             ))
           ) : (
-            <>
+            <span aria-hidden="true">
               {rarity}
               <StarIcon />
-            </>
+            </span>
           )}
         </span>
       </span>

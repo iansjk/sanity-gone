@@ -27,7 +27,9 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergyOperators }) => {
         return (
           <button
             className="operator-button"
-            style={{ backgroundImage: `url(${operatorImage(operator.name)})` }}
+            style={{
+              backgroundImage: `url("${operatorImage(operator.name)}")`,
+            }}
           />
         );
       }}

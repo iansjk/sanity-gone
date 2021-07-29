@@ -90,7 +90,10 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
               (i === 0 ||
                 cardPanelChildren[i - 1].props.groupingKey !== groupingKey) ? (
               <>
-                <span className={`grouping-key ${slugify(groupingKey)}`}>
+                <span
+                  className={`grouping-key ${slugify(groupingKey)}`}
+                  aria-label={`Group: ${groupingKey}`}
+                >
                   {groupingKey}
                 </span>
                 {button}

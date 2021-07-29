@@ -37,7 +37,7 @@ const SynergyOperator: React.VFC<
 export default SynergyOperator;
 
 const styles = (theme: Theme) => css`
-  padding-top: ${theme.spacing(3)};
+  margin-top: ${theme.spacing(3)};
   display: flex;
   flex-direction: column;
 

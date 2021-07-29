@@ -86,12 +86,12 @@ const styles = (theme: Theme) => css`
     justify-content: center;
 
     .limited {
-      font-size: 14px;
+      font-size: ${theme.typography.body2.size};
       color: ${theme.palette.red};
       text-transform: uppercase;
       display: inline-block;
       text-align: center;
-      background-color: #1e1e26;
+      background-color: ${theme.palette.midRarity};
       padding: 0 2px;
     }
   }

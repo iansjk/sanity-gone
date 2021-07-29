@@ -12,7 +12,7 @@ const Template: Story<OperatorPortraitProps> = (args) => (
 
 const MudrockProps = {
   name: "Mudrock",
-  rarity: 5,
+  rarity: 6,
   isLimited: false,
 };
 export const MudrockNormal = Template.bind({});

@@ -7,20 +7,27 @@ import { slugify } from "../utils/globals";
 export type CardWithTabsProps = React.PropsWithChildren<
   CardProps & {
     tabType: string;
+    buttonRenderer?: (
+      index: number
+    ) => React.ReactElement<React.HTMLAttributes<HTMLButtonElement>>;
   }
 >;
 
 const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
-  const { header, subheader, children, tabType, ...rest } = props;
+  const {
+    header,
+    subheader,
+    children,
+    tabType,
+    buttonRenderer,
+    ...rest
+  } = props;
   const [activePanel, setActivePanel] = useState(0);
   const [userHasInteracted, setUserHasInteracted] = useState(false);
   const cardPanelChildren = React.Children.toArray(children).filter(
     (child) =>
       React.isValidElement<CardPanelProps>(child) && child.type === CardPanel
   ) as React.ReactElement<CardPanelProps>[];
-  const useGroups = !!cardPanelChildren.find(
-    (child) => !!child.props.groupingKey
-  );
   const numTabs = cardPanelChildren.length;
   const buttonPrefix = tabType[0].toUpperCase();
   const tabsRef = useRef<HTMLDivElement>(null);
@@ -56,9 +63,7 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
           break;
       }
       if (tabsRef.current) {
-        (tabsRef.current.children.item(
-          tabToFocus
-        ) as HTMLDivElement | null)?.focus();
+        tabsRef.current.querySelectorAll("button").item(tabToFocus)?.focus();
       }
     }
   };
@@ -70,26 +75,32 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
           {cardPanelChildren.map((_, i) => {
             const isActivePanel = i === activePanel;
             const groupingKey = cardPanelChildren[i].props.groupingKey;
-            const button = (
-              <button
-                role="tab"
-                className={isActivePanel ? "active" : "inactive"}
-                onClick={() => handleClick(i)}
-                onKeyDown={handleKeyDown}
-                tabIndex={isActivePanel ? 0 : -1}
-                id={`tab-${i + 1}`}
-                aria-label={`${tabType} ${i + 1}`}
-                aria-selected={isActivePanel}
-                aria-controls={`panel-${i + 1}`}
-              >
+            const baseButton = buttonRenderer ? (
+              buttonRenderer(i)
+            ) : (
+              <button>
                 {buttonPrefix}
                 {i + 1}
               </button>
             );
+            const button = React.cloneElement(baseButton, {
+              role: "tab",
+              className: `${baseButton.props.className} ${
+                isActivePanel ? "active" : "inactive"
+              }`,
+              onClick: () => handleClick(i),
+              onKeyDown: handleKeyDown,
+              tabIndex: isActivePanel ? 0 : -1,
+              id: `tab-${i + 1}`,
+              "aria-label": `${tabType} ${i + 1}`,
+              "aria-selected": isActivePanel,
+              "aria-controls": `panel-${i + 1}`,
+              key: i,
+            });
             return groupingKey &&
               (i === 0 ||
                 cardPanelChildren[i - 1].props.groupingKey !== groupingKey) ? (
-              <>
+              <React.Fragment key={i}>
                 <span
                   className={`grouping-key ${slugify(groupingKey)}`}
                   aria-label={`Group: ${groupingKey}`}
@@ -97,7 +108,7 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
                   {groupingKey}
                 </span>
                 {button}
-              </>
+              </React.Fragment>
             ) : (
               button
             );

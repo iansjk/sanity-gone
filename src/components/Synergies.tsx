@@ -5,6 +5,7 @@ import SynergyOperator, {
   SynergyQuality,
 } from "./SynergyOperator";
 import { css, Theme } from "@emotion/react";
+import { operatorImage } from "../utils/images";
 
 export interface SynergiesProps {
   synergyOperators: SynergyOperatorProps[];
@@ -17,7 +18,20 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergyOperators }) => {
   );
 
   return (
-    <CardWithTabs header="Synergies" tabType="synergy" css={styles}>
+    <CardWithTabs
+      header="Synergies"
+      tabType="synergy"
+      css={styles}
+      buttonRenderer={(index) => {
+        const operator = sortedSynergyOperators[index];
+        return (
+          <button
+            className="operator-button"
+            style={{ backgroundImage: `url(${operatorImage(operator.name)})` }}
+          />
+        );
+      }}
+    >
       {sortedSynergyOperators.map((synergyOperator) => {
         const groupingKey = SynergyQuality[synergyOperator.quality].split(
           /[\s-]/
@@ -48,5 +62,18 @@ const styles = (theme: Theme) => css`
 
   .grouping-key.anti {
     color: ${theme.palette.red};
+  }
+
+  .operator-button {
+    background-size: contain !important; /* !important is not optional here */
+    opacity: 0.34;
+
+    &:hover {
+      opacity: 0.67;
+    }
+
+    &.active {
+      opacity: 1;
+    }
   }
 `;

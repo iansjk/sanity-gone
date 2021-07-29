@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 export type CardPanelProps = React.PropsWithChildren<
   React.HTMLAttributes<HTMLDivElement> & {
     userHasInteracted?: boolean;
+    groupingKey?: string;
   }
 >;
 
@@ -11,6 +12,7 @@ const CardPanel: React.FC<CardPanelProps> = (props) => {
     children,
     "aria-expanded": ariaExpanded,
     userHasInteracted,
+    groupingKey,
     ...rest
   } = props;
   const panelRef = useRef<HTMLDivElement>(null);

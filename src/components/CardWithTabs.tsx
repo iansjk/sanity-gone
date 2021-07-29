@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
-import { Theme, css, ClassNames } from "@emotion/react";
+import { Theme, css } from "@emotion/react";
 import Card, { CardProps } from "./Card";
 import CardPanel, { CardPanelProps } from "./CardPanel";
+import { slugify } from "../utils/globals";
 
 export type CardWithTabsProps = React.PropsWithChildren<
   CardProps & {
@@ -16,6 +17,9 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
   const cardPanelChildren = React.Children.toArray(children).filter(
     (child) =>
       React.isValidElement<CardPanelProps>(child) && child.type === CardPanel
+  ) as React.ReactElement<CardPanelProps>[];
+  const useGroups = !!cardPanelChildren.find(
+    (child) => !!child.props.groupingKey
   );
   const numTabs = cardPanelChildren.length;
   const buttonPrefix = tabType[0].toUpperCase();
@@ -63,34 +67,43 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
     <Card header={header} subheader={subheader} css={styles} {...rest}>
       <div className="tabs-panels-wrapper">
         <div className="tabs" role="tablist" ref={tabsRef}>
-          {cardPanelChildren.map((_, i) => (
-            <ClassNames key={i}>
-              {({ cx }) => {
-                const isActivePanel = i === activePanel;
-                return (
-                  <button
-                    role="tab"
-                    className={cx(isActivePanel ? "active" : "inactive")}
-                    onClick={() => handleClick(i)}
-                    onKeyDown={handleKeyDown}
-                    tabIndex={isActivePanel ? 0 : -1}
-                    id={`tab-${i + 1}`}
-                    aria-label={`${tabType} ${i + 1}`}
-                    aria-selected={isActivePanel}
-                    aria-controls={`panel-${i + 1}`}
-                  >
-                    {buttonPrefix}
-                    {i + 1}
-                  </button>
-                );
-              }}
-            </ClassNames>
-          ))}
+          {cardPanelChildren.map((_, i) => {
+            const isActivePanel = i === activePanel;
+            const groupingKey = cardPanelChildren[i].props.groupingKey;
+            const button = (
+              <button
+                role="tab"
+                className={isActivePanel ? "active" : "inactive"}
+                onClick={() => handleClick(i)}
+                onKeyDown={handleKeyDown}
+                tabIndex={isActivePanel ? 0 : -1}
+                id={`tab-${i + 1}`}
+                aria-label={`${tabType} ${i + 1}`}
+                aria-selected={isActivePanel}
+                aria-controls={`panel-${i + 1}`}
+              >
+                {buttonPrefix}
+                {i + 1}
+              </button>
+            );
+            return groupingKey &&
+              (i === 0 ||
+                cardPanelChildren[i - 1].props.groupingKey !== groupingKey) ? (
+              <>
+                <span className={`grouping-key ${slugify(groupingKey)}`}>
+                  {groupingKey}
+                </span>
+                {button}
+              </>
+            ) : (
+              button
+            );
+          })}
         </div>
         <div className="panels">
           {cardPanelChildren.map((child, i) => {
             const isActivePanel = i === activePanel;
-            return React.cloneElement(child as any, {
+            return React.cloneElement(child, {
               key: i,
               id: `panel-${i + 1}`,
               role: "tabpanel",
@@ -119,10 +132,24 @@ const styles = (theme: Theme) => css`
 
   .tabs {
     display: flex;
+    align-items: center;
     flex-direction: column;
     padding-right: ${theme.spacing(4)};
     border-right: ${theme.spacing(0.25)} solid ${theme.palette.background};
     padding: ${theme.spacing(3)} ${theme.spacing(4)} ${theme.spacing(4)};
+
+    .grouping-key {
+      font-size: ${theme.typography.body2.size};
+      text-transform: uppercase;
+
+      &::after {
+        content: " ";
+        display: block;
+        width: ${theme.spacing(3)};
+        margin: ${theme.spacing(1)} auto ${theme.spacing(2)};
+        border-bottom: 1px solid ${theme.palette.midHighlight};
+      }
+    }
 
     button {
       border-radius: ${theme.spacing(2)};

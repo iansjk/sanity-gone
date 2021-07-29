@@ -2,6 +2,7 @@ import { css, Theme } from "@emotion/react";
 import React from "react";
 import { operatorImage } from "../utils/images";
 import StarIcon from "./icons/StarIcon";
+import OperatorPortrait from "./OperatorPortrait";
 
 export enum SynergyQuality {
   "Anti-Synergy" = -1,
@@ -39,18 +40,7 @@ const SynergyOperator: React.VFC<
             {SynergyQuality[quality]}
           </span>
         </div>
-        <div className="portrait-and-rarity">
-          <img className="operator-portrait" src={operatorImage(name)} alt="" />
-          <span className="rarity-wrapper">
-            <span
-              className={`rarity rarity-${rarity}-stars`}
-              aria-label={`Rarity: ${rarity} stars`}
-            >
-              {rarity}
-              <StarIcon />
-            </span>
-          </span>
-        </div>
+        <OperatorPortrait variant="small" name={name} rarity={rarity} />
       </div>
       <div dangerouslySetInnerHTML={{ __html: analysis }} />
     </section>
@@ -94,63 +84,6 @@ const styles = (theme: Theme) => css`
 
         &.quality-2 {
           color: ${theme.palette.lime};
-        }
-      }
-    }
-
-    .portrait-and-rarity {
-      position: relative;
-      border: ${theme.spacing(0.25)} solid ${theme.palette.white};
-      border-radius: ${theme.spacing(0.5)};
-      width: 70px;
-      height: 70px;
-
-      .operator-portrait {
-        width: 66px;
-        height: 66px;
-        margin: ${theme.spacing(0.25)};
-        border-radius: ${theme.spacing(0.25)};
-      }
-
-      .rarity-wrapper {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        bottom: -14px;
-        left: 0;
-        width: 100%;
-
-        .rarity {
-          color: ${theme.palette.midRarity};
-          font-size: ${theme.typography.smallPortraitRarity.size};
-          line-height: ${theme.typography.smallPortraitRarity.lineHeight};
-          font-weight: ${theme.typography.smallPortraitRarity.fontWeight};
-          display: inline-flex;
-          align-items: center;
-          padding: 0 ${theme.spacing(0.5)};
-          border-radius: ${theme.spacing(0.5)};
-          border: ${theme.spacing(0.25)} solid ${theme.palette.midRarity};
-          background-color: ${theme.palette.white};
-
-          svg {
-            margin-left: 1px;
-          }
-
-          &.rarity-6-stars {
-            background-color: ${theme.palette.orange};
-          }
-
-          &.rarity-5-stars {
-            background-color: ${theme.palette.yellow};
-          }
-
-          &.rarity-4-stars {
-            background-color: ${theme.palette.softBlue};
-          }
-
-          &.rarity-3-stars {
-            background-color: ${theme.palette.blue};
-          }
         }
       }
     }

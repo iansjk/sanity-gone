@@ -150,9 +150,8 @@ const styles = (theme: Theme) => css`
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-right: ${theme.spacing(4)};
     border-right: ${theme.spacing(0.25)} solid ${theme.palette.background};
-    padding: ${theme.spacing(3)} ${theme.spacing(4)} ${theme.spacing(4)};
+    padding: ${theme.spacing(3)} 0 ${theme.spacing(4)};
 
     .grouping-key {
       text-align: center;

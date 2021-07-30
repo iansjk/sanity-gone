@@ -47,6 +47,12 @@ interface Props {
       talents: TalentObject[];
       skillData: SkillObject[];
     };
+    allOperatorsJson: {
+      nodes: {
+        name: string;
+        rarity: number;
+      }[];
+    };
   };
 }
 
@@ -56,6 +62,11 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     contentfulOperatorAnalysis: contentful,
     operatorsJson: operatorObject,
   } = data;
+
+  const rarityMap = Object.fromEntries(
+    data.allOperatorsJson.nodes.map(({ name, rarity }) => [name, rarity])
+  );
+
   const talentAnalyses = [
     contentful.talent1Analysis.childMarkdownRemark.html,
     contentful.talent2Analysis.childMarkdownRemark.html,
@@ -67,7 +78,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   ].filter((html) => !!html);
   const synergyOperators = contentful.operatorSynergies.map((os) => ({
     name: os.operatorName,
-    rarity: 0,
+    rarity: rarityMap[os.operatorName] + 1,
     quality: os.synergyQuality,
     analysis: os.synergyDescription.childMarkdownRemark.html,
   }));
@@ -230,6 +241,13 @@ export const query = graphql`
             value
           }
         }
+      }
+    }
+
+    allOperatorsJson {
+      nodes {
+        name
+        rarity
       }
     }
   }

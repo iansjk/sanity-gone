@@ -1,6 +1,8 @@
 import { graphql } from "gatsby";
 import Introduction from "../../components/Introduction";
 import { OperatorObject } from "../../components/OperatorStats";
+import { SkillObject } from "../../components/SkillInfo";
+import Skills from "../../components/Skills";
 import Synergies from "../../components/Synergies";
 import { SynergyQuality } from "../../components/SynergyOperator";
 import { TalentObject } from "../../components/TalentInfo";
@@ -43,6 +45,7 @@ interface Props {
     contentfulOperatorAnalysis: OperatorAnalysisData;
     operatorsJson: OperatorObject & {
       talents: TalentObject[];
+      skillData: SkillObject[];
     };
   };
 }
@@ -81,6 +84,10 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       <Talents
         analyses={talentAnalyses}
         talentObjects={operatorObject.talents}
+      />
+      <Skills
+        analyses={skillAnalyses}
+        skillObjects={operatorObject.skillData}
       />
       <Synergies synergyOperators={synergyOperators} />
       <pre>data: {JSON.stringify(data, null, 2)}</pre>
@@ -196,6 +203,31 @@ export const query = graphql`
             cost
             blockCnt
             respawnTime
+          }
+        }
+      }
+      skillData {
+        skillId
+        iconId
+        levels {
+          name
+          description
+          range {
+            grids {
+              row
+              col
+            }
+          }
+          skillType
+          spData {
+            spType
+            spCost
+            initSp
+          }
+          duration
+          blackboard {
+            key
+            value
           }
         }
       }

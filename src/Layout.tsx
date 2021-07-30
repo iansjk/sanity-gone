@@ -1,14 +1,27 @@
 import { Global, Theme, css, ThemeProvider } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
+import { Fragment } from "react";
 import { defaultTheme } from "./theme";
+import { Helmet } from "react-helmet";
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Global styles={emotionNormalize} />
-      <Global styles={styles} />
-      <main>{children}</main>
-    </ThemeProvider>
+    // <> shorthand syntax is BROKEN, don't use it.
+    <Fragment>
+      <Helmet>
+        <title>Sanity;Gone 0</title>
+        <link
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+          rel="stylesheet"
+          type="text/css"
+        />
+      </Helmet>
+      <ThemeProvider theme={defaultTheme}>
+        <Global styles={emotionNormalize} />
+        <Global styles={styles} />
+        <main>{children}</main>
+      </ThemeProvider>
+    </Fragment>
   );
 };
 export default Layout;

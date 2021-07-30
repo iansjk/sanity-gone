@@ -1,11 +1,11 @@
 import { graphql } from "gatsby";
+import Introduction from "../../components/Introduction";
+import { OperatorObject } from "../../components/OperatorStats";
+import Synergies from "../../components/Synergies";
 import { SynergyQuality } from "../../components/SynergyOperator";
+import { TalentObject } from "../../components/TalentInfo";
+import Talents from "../../components/Talents";
 import Layout from "../../Layout";
-
-interface Props {
-  pageContext: any;
-  params: any;
-}
 
 interface MarkdownNode {
   childMarkdownRemark: {
@@ -34,17 +34,57 @@ interface OperatorAnalysisData {
     operatorName: string;
     synergyQuality: SynergyQuality;
     synergyDescription: MarkdownNode;
-  };
+  }[];
   summary: MarkdownNode;
 }
 
+interface Props {
+  data: {
+    contentfulOperatorAnalysis: OperatorAnalysisData;
+    operatorsJson: OperatorObject & {
+      talents: TalentObject[];
+    };
+  };
+}
+
 const OperatorAnalysis: React.VFC<Props> = (props) => {
-  const { params, pageContext, ...rest } = props;
+  const { data, ...rest } = props;
+  const {
+    contentfulOperatorAnalysis: contentful,
+    operatorsJson: operatorObject,
+  } = data;
+  const talentAnalyses = [
+    contentful.talent1Analysis.childMarkdownRemark.html,
+    contentful.talent2Analysis.childMarkdownRemark.html,
+  ].filter((html) => !!html);
+  const skillAnalyses = [
+    contentful.skill1Analysis.childMarkdownRemark.html,
+    contentful.skill2Analysis.childMarkdownRemark.html,
+    contentful.skill3Analysis.childMarkdownRemark.html,
+  ].filter((html) => !!html);
+  const synergyOperators = contentful.operatorSynergies.map((os) => ({
+    name: os.operatorName,
+    rarity: 0,
+    quality: os.synergyQuality,
+    analysis: os.synergyDescription.childMarkdownRemark.html,
+  }));
 
   return (
     <Layout>
-      <pre>params: {JSON.stringify(params, null, 2)}</pre>
-      <pre>pageContext: {JSON.stringify(pageContext, null, 2)}</pre>
+      <Introduction
+        analysis={contentful.introduction.childMarkdownRemark.html}
+        archetype={contentful.operator.archetype}
+        authorDiscordTag={contentful.author[0].authorDiscordTag}
+        operatorObject={operatorObject}
+        isLimited={contentful.operator.limited}
+      />
+      <Talents
+        analyses={talentAnalyses}
+        talentObjects={operatorObject.talents}
+      />
+      <Synergies synergyOperators={synergyOperators} />
+      <pre>data: {JSON.stringify(data, null, 2)}</pre>
+      <hr />
       <pre>{JSON.stringify(rest, null, 2)}</pre>
     </Layout>
   );

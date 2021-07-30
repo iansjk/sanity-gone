@@ -1,27 +1,27 @@
-import { Global, Theme, css } from "@emotion/react";
+import { Global, Theme, css, ThemeProvider } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
+import { defaultTheme } from "./theme";
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <>
-      <Global
-        styles={css`
-          ${emotionNormalize}
-        `}
-      />
-      <main css={styles}>{children}</main>
-    </>
+    <ThemeProvider theme={defaultTheme}>
+      <Global styles={emotionNormalize} />
+      <Global styles={styles} />
+      <main>{children}</main>
+    </ThemeProvider>
   );
 };
 export default Layout;
 
 const styles = (theme: Theme) => css`
-  font-family: ${theme.typography.body.family};
-  font-size: ${theme.typography.body.size};
-  color: ${theme.palette.white};
-  background-color: ${theme.palette.background};
-  padding: ${theme.spacing(2)};
-  line-height: ${theme.typography.body.lineHeight};
+  html {
+    font-family: ${theme.typography.body.family};
+    font-size: ${theme.typography.body.size};
+    color: ${theme.palette.white};
+    background-color: ${theme.palette.background};
+    padding: ${theme.spacing(2)};
+    line-height: ${theme.typography.body.lineHeight};
+  }
 
   b,
   strong {

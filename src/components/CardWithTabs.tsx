@@ -155,7 +155,9 @@ const styles = (theme: Theme) => css`
 
     .grouping-key {
       text-align: center;
-      font-size: ${theme.typography.body2.size};
+      font-size: ${theme.typography.label1.size};
+      font-weight: ${theme.typography.label1.fontWeight};
+      line-height: ${theme.typography.label1.lineHeight};
       text-transform: uppercase;
       width: 100%;
       overflow: hidden;

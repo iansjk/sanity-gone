@@ -62,6 +62,16 @@ const typography = {
     size: "18px",
     lineHeight: 1.25,
     fontWeight: 700,
+  },
+  label1: {
+    size: "12px",
+    fontWeight: 600,
+    lineHeight: 1.25,
+  },
+  label2: {
+    size: "14px",
+    fontWeight: 600,
+    lineHeight: 1.25,
   }
 };
 

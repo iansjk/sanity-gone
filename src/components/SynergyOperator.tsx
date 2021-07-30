@@ -58,9 +58,9 @@ const styles = (theme: Theme) => css`
       }
 
       .synergy-quality {
-        font-size: ${theme.typography.body2.size};
+        font-size: ${theme.typography.label2.size};
         text-transform: uppercase;
-        line-height: 1.25;
+        line-height: ${theme.typography.label2.lineHeight};
         color: ${theme.palette.gray};
 
         &.quality--1 {

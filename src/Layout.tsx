@@ -39,7 +39,7 @@ const styles = (theme: Theme) => css`
   b,
   strong {
     color: ${theme.palette.blue};
-    font-weight: ${theme.typography.skillTalentHeading.weight};
+    font-weight: normal;
   }
 
   a {

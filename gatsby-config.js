@@ -15,6 +15,13 @@ module.exports = {
       },
     },
     "gatsby-transformer-remark",
-    "gatsby-plugin-image"
+    "gatsby-plugin-image",
+    "gatsby-transformer-json",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/`,
+      },
+    }
   ],
 };

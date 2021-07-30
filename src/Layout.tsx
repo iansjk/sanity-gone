@@ -65,7 +65,7 @@ const styles = (theme: Theme) => css`
     }
 
     dt {
-      font-size: 14px;
+      font-size: ${theme.typography.body2};
       color: ${theme.palette.gray};
       display: flex;
       align-items: center;
@@ -77,9 +77,9 @@ const styles = (theme: Theme) => css`
 
     dd {
       margin: ${theme.spacing(1)} 0 0;
-      line-height: 31px;
-      font-size: 24px;
-      font-weight: bold;
+      font-size: ${theme.typography.generalHeadingBold.size};
+      font-weight: ${theme.typography.generalHeadingBold.weight};
+      line-height: ${theme.typography.generalHeadingBold.lineHeight};
     }
   }
 `;

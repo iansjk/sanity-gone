@@ -30,7 +30,6 @@ const typography = {
   cardHeading: {
     size: "24px",
     textTransform: "uppercase",
-    fontVariant: "small-caps",
     weight: 600,
   },
   generalHeading: {

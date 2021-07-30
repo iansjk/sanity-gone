@@ -32,7 +32,6 @@ const styles = (theme: Theme) => css`
       text-transform: ${theme.typography.cardHeading.textTransform};
       font-size: ${theme.typography.cardHeading.size};
       font-weight: ${theme.typography.cardHeading.weight};
-      font-variant: ${theme.typography.cardHeading.fontVariant};
       letter-spacing: 1px;
       color: ${theme.palette.white};
     }

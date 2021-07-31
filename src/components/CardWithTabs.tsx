@@ -150,7 +150,6 @@ const styles = (theme: Theme) => css`
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-right: ${theme.spacing(0.25)} solid ${theme.palette.background};
     padding: ${theme.spacing(3)} 0 ${theme.spacing(4)};
 
     .grouping-key {

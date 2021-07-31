@@ -9,6 +9,8 @@ jobs:
   test:
     # Operating System
     runs-on: ubuntu-latest
+    env:
+      NODE_ENV: test
     # Job steps
     steps:
       - uses: actions/checkout@v1

@@ -80,6 +80,9 @@ const styles = (theme: Theme) => css`
     & > div {
       padding: ${theme.spacing(2)};
       background-color: ${theme.palette.midBackground};
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     dt {

@@ -27,18 +27,18 @@ const Layout: React.FC<LayoutProps> = (props) => {
           href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
           rel="stylesheet"
         />
-        <body
-          style={
-            bannerImageUrl
-              ? `background-image: url("${bannerImageUrl}")`
-              : ("" as any)
-          }
-        />
         <html {...rest} />
       </Helmet>
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />
         <Global styles={styles} />
+        <Global
+          styles={css`
+            body {
+              background-image: url("${bannerImageUrl}");
+            }
+          `}
+        />
         <header>
           <SanityGoneLogo />
         </header>

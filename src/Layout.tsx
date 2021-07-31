@@ -87,4 +87,9 @@ const styles = (theme: Theme) => css`
       line-height: ${theme.typography.generalHeadingBold.lineHeight};
     }
   }
+
+  p,
+  section {
+    margin: ${theme.spacing(3)} 0 0;
+  }
 `;

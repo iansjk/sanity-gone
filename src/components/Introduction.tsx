@@ -49,7 +49,6 @@ const Introduction: React.VFC<IntroductionProps> = (props) => {
 export default Introduction;
 
 const styles = (theme: Theme) => css`
-  margin: 0 0 ${theme.spacing(4)};
   display: flex;
   align-items: center;
 

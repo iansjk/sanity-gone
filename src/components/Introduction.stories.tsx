@@ -15,7 +15,6 @@ export const Default = Template.bind({});
 Default.args = {
   archetype: "Enmity",
   isLimited: false,
-  authorDiscordTag: "nikoleye#5580",
   analysis: `
     <p>
       Mudrock is a powerful <b>self-sustaining defender</b> packing both

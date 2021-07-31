@@ -3,6 +3,7 @@ import emotionNormalize from "emotion-normalize";
 import { Fragment } from "react";
 import { defaultTheme } from "./theme";
 import { Helmet } from "react-helmet";
+import SanityGoneLogo from "./components/SanityGoneLogo";
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -24,6 +25,9 @@ const Layout: React.FC = ({ children }) => {
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />
         <Global styles={styles} />
+        <header>
+          <SanityGoneLogo />
+        </header>
         <main>{children}</main>
       </ThemeProvider>
     </Fragment>
@@ -39,6 +43,15 @@ const styles = (theme: Theme) => css`
     background-color: ${theme.palette.background};
     padding: ${theme.spacing(2)};
     line-height: ${theme.typography.body.lineHeight};
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  main {
+    max-width: 1280px;
   }
 
   b,

@@ -88,7 +88,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       <Introduction
         analysis={contentful.introduction.childMarkdownRemark.html}
         archetype={contentful.operator.archetype}
-        authorDiscordTag={contentful.author[0].authorDiscordTag}
         operatorObject={operatorObject}
         isLimited={contentful.operator.limited}
       />
@@ -101,9 +100,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         skillObjects={operatorObject.skillData}
       />
       <Synergies synergyOperators={synergyOperators} />
-      <pre>data: {JSON.stringify(data, null, 2)}</pre>
-      <hr />
-      <pre>{JSON.stringify(rest, null, 2)}</pre>
     </Layout>
   );
 };

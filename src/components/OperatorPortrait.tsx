@@ -173,6 +173,7 @@ const styles = (theme: Theme) => css`
 
       svg {
         margin-left: 1px;
+        margin-bottom: -1px;
       }
 
       &.rarity-6-stars {

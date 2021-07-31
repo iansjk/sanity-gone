@@ -1,11 +1,17 @@
-import { Global, Theme, css, ThemeProvider } from "@emotion/react";
+import { Global, Theme, css, ThemeProvider, useTheme } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
 import { Fragment } from "react";
 import { defaultTheme } from "./theme";
 import { Helmet } from "react-helmet";
 import SanityGoneLogo from "./components/SanityGoneLogo";
 
-const Layout: React.FC = ({ children }) => {
+interface LayoutProps {
+  pageTitle: string;
+  bannerImageUrl?: string;
+}
+
+const Layout: React.FC<LayoutProps> = (props) => {
+  const { pageTitle, bannerImageUrl, children, ...rest } = props;
   return (
     // <> shorthand syntax is BROKEN, don't use it.
     <Fragment>
@@ -21,6 +27,14 @@ const Layout: React.FC = ({ children }) => {
           href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
           rel="stylesheet"
         />
+        <body
+          style={
+            bannerImageUrl
+              ? `background-image: url("${bannerImageUrl}")`
+              : ("" as any)
+          }
+        />
+        <html {...rest} />
       </Helmet>
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />
@@ -28,7 +42,12 @@ const Layout: React.FC = ({ children }) => {
         <header>
           <SanityGoneLogo />
         </header>
-        <main>{children}</main>
+        <main
+          className={bannerImageUrl ? "has-banner-image" : "no-banner-image"}
+        >
+          <h1>{pageTitle}</h1>
+          <div className="main-content">{children}</div>
+        </main>
       </ThemeProvider>
     </Fragment>
   );
@@ -41,17 +60,33 @@ const styles = (theme: Theme) => css`
     font-size: ${theme.typography.body.size};
     color: ${theme.palette.white};
     background-color: ${theme.palette.background};
-    padding: ${theme.spacing(2)};
     line-height: ${theme.typography.body.lineHeight};
   }
 
   body {
     display: flex;
     justify-content: center;
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+
+  header {
+    padding: ${theme.spacing(3)} ${theme.spacing(3)} 0;
   }
 
   main {
     max-width: 1280px;
+
+    &.has-banner-image {
+      margin-top: 188px;
+    }
+  }
+
+  h1 {
+    margin: 0;
+    font-size: ${theme.typography.pageHeading.size};
+    font-weight: ${theme.typography.pageHeading.weight};
+    line-height: ${theme.typography.pageHeading.lineHeight};
   }
 
   b,

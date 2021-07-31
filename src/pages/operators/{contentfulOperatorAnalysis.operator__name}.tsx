@@ -84,7 +84,10 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   }));
 
   return (
-    <Layout>
+    <Layout
+      pageTitle={contentful.operator.name}
+      bannerImageUrl={contentful.operator.operatorImageUrl}
+    >
       <Introduction
         analysis={contentful.introduction.childMarkdownRemark.html}
         archetype={contentful.operator.archetype}

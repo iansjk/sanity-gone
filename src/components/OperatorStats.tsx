@@ -181,6 +181,8 @@ const styles = (theme: Theme) => css`
     margin: ${theme.spacing(3, 0, 0)};
 
     .damage-type {
+      border-top-left-radius: ${theme.spacing(0.5)};
+
       dd {
         font-size: ${theme.typography.body.size};
         font-weight: normal;
@@ -204,6 +206,8 @@ const styles = (theme: Theme) => css`
     }
 
     .position {
+      border-bottom-left-radius: ${theme.spacing(0.5)};
+
       dd {
         font-size: 18px;
         font-weight: normal;
@@ -261,6 +265,7 @@ const styles = (theme: Theme) => css`
     .range {
       grid-row-start: span 2;
       position: relative;
+      border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
 
       dd {
         position: absolute;

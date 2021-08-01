@@ -27,6 +27,7 @@ const styles = (theme: Theme) => css`
     padding: 16px 0 16px 24px;
     background: ${transparentize(0.66, theme.palette.background)};
     backdrop-filter: blur(8px);
+    border-top-right-radius: ${theme.spacing(1)};
 
     h2 {
       margin: 0;

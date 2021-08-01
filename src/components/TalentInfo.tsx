@@ -86,20 +86,30 @@ const styles = (theme: Theme) => css`
     background-color: ${theme.palette.background};
   }
 
+  &.no-range {
+    grid-template-columns: 1fr;
+
+    .talent-name {
+      border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+    }
+
+    .talent-description {
+      border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+    }
+  }
+
   .talent-name {
     font-weight: ${theme.typography.skillTalentHeading.weight};
     padding: ${theme.spacing(2)};
     margin: 0;
+    border-top-left-radius: ${theme.spacing(0.5)};
   }
 
   .talent-description {
     grid-column-start: 1;
     margin: 0;
     padding: ${theme.spacing(2)};
-  }
-
-  &.no-range {
-    grid-template-columns: 1fr;
+    border-bottom-left-radius: ${theme.spacing(0.5)};
   }
 
   .range {
@@ -109,5 +119,6 @@ const styles = (theme: Theme) => css`
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
   }
 `;

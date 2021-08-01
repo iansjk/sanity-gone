@@ -148,6 +148,10 @@ const styles = (theme: Theme) => css`
 
   &.no-range {
     grid-template-columns: 1fr;
+
+    .skill-name-and-type {
+      border-top-right-radius: ${theme.spacing(0.5)};
+    }
   }
 
   & > * {
@@ -155,6 +159,7 @@ const styles = (theme: Theme) => css`
   }
 
   .skill-name-and-type {
+    border-top-left-radius: ${theme.spacing(0.5)};
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-template-rows: max-content max-content;
@@ -230,6 +235,7 @@ const styles = (theme: Theme) => css`
     grid-column-start: span 2;
     padding: ${theme.spacing(2)};
     margin: 0;
+    border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
 
     .value-up {
       color: ${theme.palette.blue};
@@ -249,5 +255,6 @@ const styles = (theme: Theme) => css`
     align-items: center;
     justify-content: center;
     grid-row-start: span 2;
+    border-top-right-radius: ${theme.spacing(0.5)};
   }
 `;

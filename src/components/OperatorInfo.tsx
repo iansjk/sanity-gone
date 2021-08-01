@@ -50,7 +50,7 @@ const styles = (theme: Theme) => css`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 0 0 0 ${theme.spacing(3)};
+    padding: ${theme.spacing(0, 0, 0, 3)};
 
     .operator-name {
       font-size: ${theme.typography.operatorNameHeading.size};

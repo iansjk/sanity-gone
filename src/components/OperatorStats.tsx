@@ -178,7 +178,7 @@ const styles = (theme: Theme) => css`
     grid-template-columns: 180fr repeat(4, 140fr) 240fr;
     grid-auto-flow: column;
     grid-gap: ${theme.spacing(0.25)};
-    margin: ${theme.spacing(3)} 0 0;
+    margin: ${theme.spacing(3, 0, 0)};
 
     .damage-type {
       dd {

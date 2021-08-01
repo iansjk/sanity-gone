@@ -40,12 +40,12 @@ const styles = (theme: Theme) => css`
   }
 
   .card-content {
-    padding: ${theme.spacing(3)} ${theme.spacing(4)} ${theme.spacing(4)};
+    padding: ${theme.spacing(3, 4, 4)};
     backdrop-filter: blur(8px);
     background: ${transparentize(0.34, theme.palette.mid)};
 
     & > p {
-      margin: ${theme.spacing(3)} 0 0;
+      margin: ${theme.spacing(3, 0, 0)};
     }
   }
 `;

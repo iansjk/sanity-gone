@@ -150,7 +150,7 @@ const styles = (theme: Theme) => css`
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: ${theme.spacing(3)} 0 ${theme.spacing(4)};
+    padding: ${theme.spacing(3, 0, 4)};
 
     .grouping-key {
       text-align: center;
@@ -201,6 +201,6 @@ const styles = (theme: Theme) => css`
 
   .panels {
     flex-grow: 1;
-    padding: 0 ${theme.spacing(4)} ${theme.spacing(4)};
+    padding: ${theme.spacing(0, 4, 4)};
   }
 `;

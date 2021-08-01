@@ -166,7 +166,7 @@ const styles = (theme: Theme) => css`
       font-weight: ${theme.typography.smallPortraitRarity.fontWeight};
       display: inline-flex;
       align-items: center;
-      padding: 0 ${theme.spacing(0.5)};
+      padding: ${theme.spacing(0, 0.5)};
       border-radius: ${theme.spacing(0.5)};
       border: ${theme.spacing(0.25)} solid ${theme.palette.midRarity};
       background-color: ${theme.palette.white};

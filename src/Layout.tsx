@@ -105,7 +105,7 @@ const styles = (theme: Theme) => css`
   }
 
   header {
-    padding: ${theme.spacing(3)} ${theme.spacing(3)} 0;
+    padding: ${theme.spacing(3, 3, 0)};
 
     .heading-and-breadcrumb {
       display: flex;
@@ -188,7 +188,7 @@ const styles = (theme: Theme) => css`
     }
 
     dd {
-      margin: ${theme.spacing(1)} 0 0;
+      margin: ${theme.spacing(1, 0, 0)};
       font-size: ${theme.typography.generalHeadingBold.size};
       font-weight: ${theme.typography.generalHeadingBold.weight};
       line-height: ${theme.typography.generalHeadingBold.lineHeight};
@@ -196,6 +196,6 @@ const styles = (theme: Theme) => css`
   }
 
   p {
-    margin: ${theme.spacing(3)} 0 0;
+    margin: ${theme.spacing(3, 0, 0)};
   }
 `;

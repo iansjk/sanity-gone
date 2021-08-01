@@ -104,7 +104,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         margin-top: ${theme.spacing(1)};
         text-align: start;
         line-height: ${theme.typography.navigationLink.lineHeight};
-        border-radius: ${theme.spacing(0.5)} 0 0 ${theme.spacing(0.5)};
+        border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
         border: 0;
         background: none;
         color: ${theme.palette.gray};

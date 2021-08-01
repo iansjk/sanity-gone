@@ -76,8 +76,30 @@ const typography = {
 
 const spacingUnit = 8;
 
+// adaptation of @material-ui/core's Spacing theme type
+// (note that we're only accepting numbers for arguments and only returning strings)
+interface Spacing {
+  (): string;
+  (value: number): string;
+  (topBottom: number, rightLeft: number): string;
+  (top: number, rightLeft: number, bottom: number): string;
+  (
+    top: number,
+    right: number,
+    bottom: number,
+    left: number
+  ): string;
+}
+
+const spacing: Spacing = (...args: number[]) => {
+  if (!args || args.length === 0) {
+    return `${spacingUnit}px`;
+  }
+  return args.map((multiple) => multiple === 0 ? '0' : `${multiple * spacingUnit}px`).join(" ");
+};
+
 export const defaultTheme = {
   palette,
   typography,
-  spacing: (multiple: number) => `${spacingUnit * multiple}px`,
+  spacing
 };

@@ -42,6 +42,7 @@ const styles = (theme: Theme) => css`
     padding: ${theme.spacing(3, 4, 4)};
     backdrop-filter: blur(8px);
     background: ${transparentize(0.34, theme.palette.mid)};
+    border-bottom-right-radius: ${theme.spacing(1)};
 
     & > p {
       margin: ${theme.spacing(3, 0, 0)};

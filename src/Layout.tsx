@@ -48,34 +48,36 @@ const Layout: React.FC<LayoutProps> = (props) => {
             }
           `}
         />
-        <div className="header-main-wrapper">
-          <header>
-            <SanityGoneLogo />
-            <ClassNames>
-              {({ cx }) => (
-                <div
-                  className={cx(
-                    "heading-and-breadcrumb",
-                    bannerImageUrl && "has-banner-image"
-                  )}
-                >
-                  <h1>{pageTitle}</h1>
-                  <div className="breadcrumb">
-                    <a
-                      href={previousLocationLink}
-                      aria-label={`Back to ${previousLocation}`}
-                    >
-                      <BreadcrumbBackIcon />
-                      {previousLocation}
-                    </a>
+        <div className="site-wrapper">
+          <div className="header-main-wrapper">
+            <header>
+              <SanityGoneLogo />
+              <ClassNames>
+                {({ cx }) => (
+                  <div
+                    className={cx(
+                      "heading-and-breadcrumb",
+                      bannerImageUrl && "has-banner-image"
+                    )}
+                  >
+                    <h1>{pageTitle}</h1>
+                    <div className="breadcrumb">
+                      <a
+                        href={previousLocationLink}
+                        aria-label={`Back to ${previousLocation}`}
+                      >
+                        <BreadcrumbBackIcon />
+                        {previousLocation}
+                      </a>
+                    </div>
                   </div>
-                </div>
-              )}
-            </ClassNames>
-          </header>
-          <div className="page-content">{children}</div>
+                )}
+              </ClassNames>
+            </header>
+            <div className="page-content">{children}</div>
+          </div>
+          <footer />
         </div>
-        <footer />
       </ThemeProvider>
     </Fragment>
   );
@@ -97,11 +99,22 @@ const styles = (theme: Theme) => css`
     background-position-x: center;
   }
 
+  .site-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
   .header-main-wrapper {
     margin: auto;
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
     max-width: 1280px;
+  }
+
+  footer {
+    flex-shrink: 0;
   }
 
   header {

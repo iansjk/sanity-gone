@@ -7,5 +7,7 @@ declare module "@emotion/react" {
     palette: typeof defaultTheme.palette;
     typography: typeof defaultTheme.typography;
     spacing: typeof defaultTheme.spacing;
+    containerWidth: string;
+    contentY: string;
   }
 }

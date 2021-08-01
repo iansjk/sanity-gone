@@ -182,7 +182,7 @@ const styles = (theme: Theme) => css`
 
     .damage-type {
       dd {
-        font-size: 18px;
+        font-size: ${theme.typography.body.size};
         font-weight: normal;
       }
 

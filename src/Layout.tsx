@@ -118,7 +118,7 @@ const styles = (theme: Theme) => css`
   }
 
   header {
-    padding: ${theme.spacing(3, 3, 0)};
+    padding: ${theme.spacing(3, 0, 0)};
 
     .heading-and-breadcrumb {
       display: flex;

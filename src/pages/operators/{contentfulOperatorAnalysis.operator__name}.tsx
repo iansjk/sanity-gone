@@ -146,8 +146,11 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     }
 
     main {
-      border-left: 1px solid ${theme.palette.midHighlight};
       margin-left: -1px;
+
+      .analysis-section {
+        border-left: 1px solid ${theme.palette.midHighlight};
+      }
 
       .analysis-section:not(.synergies) {
         .tabs {

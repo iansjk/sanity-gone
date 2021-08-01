@@ -11,7 +11,7 @@ interface LayoutProps {
   previousLocation: string;
   previousLocationLink: string;
   accentColor: string;
-  bannerImageUrl?: string;
+  bannerImageUrl: string;
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
@@ -62,27 +62,18 @@ const Layout: React.FC<LayoutProps> = (props) => {
           <div className="header-main-wrapper">
             <header>
               <SanityGoneLogo />
-              <ClassNames>
-                {({ cx }) => (
-                  <div
-                    className={cx(
-                      "heading-and-breadcrumb",
-                      bannerImageUrl && "has-banner-image"
-                    )}
+              <div className="heading-and-breadcrumb">
+                <h1>{pageTitle}</h1>
+                <div className="breadcrumb">
+                  <a
+                    href={previousLocationLink}
+                    aria-label={`Back to ${previousLocation}`}
                   >
-                    <h1>{pageTitle}</h1>
-                    <div className="breadcrumb">
-                      <a
-                        href={previousLocationLink}
-                        aria-label={`Back to ${previousLocation}`}
-                      >
-                        <BreadcrumbBackIcon />
-                        {previousLocation}
-                      </a>
-                    </div>
-                  </div>
-                )}
-              </ClassNames>
+                    <BreadcrumbBackIcon />
+                    {previousLocation}
+                  </a>
+                </div>
+              </div>
             </header>
             <div className="page-content">{children}</div>
           </div>
@@ -121,6 +112,10 @@ const styles = (theme: Theme) => css`
     display: flex;
     flex-direction: column;
     max-width: 1270px;
+
+    .page-content {
+      padding-top: 384px;
+    }
   }
 
   footer {
@@ -129,14 +124,12 @@ const styles = (theme: Theme) => css`
 
   header {
     padding: ${theme.spacing(3, 0, 0)};
+    position: absolute; // to remove from page flow
 
     .heading-and-breadcrumb {
       display: flex;
       flex-direction: column-reverse;
-
-      &.has-banner-image {
-        margin-top: 165px;
-      }
+      margin-top: 165px;
 
       h1 {
         margin: 0;

@@ -108,7 +108,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
 
   const styles = (theme: Theme) => css`
     display: flex;
-    margin-top: ${theme.spacing(3)};
 
     nav {
       display: flex;

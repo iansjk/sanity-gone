@@ -25,7 +25,6 @@ const styles = (theme: Theme) => css`
 
   .heading-block {
     padding: 16px 0 16px 24px;
-    border-bottom: 1px solid ${theme.palette.midHighlight};
     background: ${transparentize(0.66, theme.palette.background)};
     backdrop-filter: blur(8px);
 

@@ -104,5 +104,7 @@ const spacing: Spacing = (...args: number[]) => {
 export const defaultTheme = {
   palette,
   typography,
-  spacing
+  spacing,
+  containerWidth: "1270px",
+  contentY: "384px",
 };

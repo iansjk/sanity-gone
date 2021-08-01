@@ -61,7 +61,14 @@ const Layout: React.FC<LayoutProps> = (props) => {
         <div className="site-wrapper">
           <div className="header-main-wrapper">
             <header>
-              <SanityGoneLogo />
+              <div className="top-line">
+                <SanityGoneLogo />
+                <div className="header-links">
+                  <a href="/">Home</a>
+                  <a href="/operators">Operators</a>
+                  <a href="/about">About</a>
+                </div>
+              </div>
               <div className="heading-and-breadcrumb">
                 <h1>{pageTitle}</h1>
                 <div className="breadcrumb">
@@ -111,10 +118,10 @@ const styles = (theme: Theme) => css`
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    max-width: 1270px;
+    max-width: ${theme.containerWidth};
 
     .page-content {
-      padding-top: 384px;
+      padding-top: ${theme.contentY};
     }
   }
 
@@ -125,6 +132,23 @@ const styles = (theme: Theme) => css`
   header {
     padding: ${theme.spacing(3, 0, 0)};
     position: absolute; // to remove from page flow
+    width: ${theme.containerWidth};
+
+    .top-line {
+      display: flex;
+      align-items: flex-end;
+
+      .header-links {
+        flex-grow: 1;
+        text-align: end;
+
+        a {
+          margin-left: ${theme.spacing(8)};
+          color: ${theme.palette.white};
+          text-decoration: none;
+        }
+      }
+    }
 
     .heading-and-breadcrumb {
       display: flex;

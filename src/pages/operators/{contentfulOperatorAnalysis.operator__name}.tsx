@@ -144,6 +144,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               (label, i) => {
                 return (
                   <button
+                    key={label}
                     role="tab"
                     className={i === activeTab ? "active" : "inactive"}
                     onClick={() => setActiveTab(i)}

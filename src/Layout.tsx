@@ -183,7 +183,7 @@ const styles = (theme: Theme) => css`
   dl {
     & > div {
       padding: ${theme.spacing(2)};
-      background-color: ${theme.palette.midBackground};
+      background-color: ${theme.palette.background};
       display: flex;
       flex-direction: column;
       justify-content: space-between;

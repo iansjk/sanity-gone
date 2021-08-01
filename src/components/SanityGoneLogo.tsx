@@ -6,6 +6,7 @@ const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
       viewBox="0 0 192 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-label="Sanity Gone Zero"
       {...props}
     >
       <path

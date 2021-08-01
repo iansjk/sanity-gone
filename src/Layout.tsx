@@ -85,6 +85,7 @@ const styles = (theme: Theme) => css`
     color: ${theme.palette.white};
     background-color: ${theme.palette.background};
     line-height: ${theme.typography.body.lineHeight};
+    overflow-y: scroll;
   }
 
   body {

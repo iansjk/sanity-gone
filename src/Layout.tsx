@@ -59,14 +59,15 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 )}
               >
                 <h1>{pageTitle}</h1>
-                <a
-                  className="breadcrumb"
-                  href={previousLocationLink}
-                  aria-label={`Back to ${previousLocation}`}
-                >
-                  <BreadcrumbBackIcon />
-                  {previousLocation}
-                </a>
+                <div className="breadcrumb">
+                  <a
+                    href={previousLocationLink}
+                    aria-label={`Back to ${previousLocation}`}
+                  >
+                    <BreadcrumbBackIcon />
+                    {previousLocation}
+                  </a>
+                </div>
               </div>
             )}
           </ClassNames>
@@ -119,15 +120,19 @@ const styles = (theme: Theme) => css`
       }
 
       .breadcrumb {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        font-style: normal;
-        color: ${theme.palette.gray};
-        line-height: ${theme.typography.navigationLink.lineHeight};
+        line-height: 1;
 
-        svg {
-          margin-right: ${theme.spacing(1)};
+        a {
+          display: inline-flex;
+          align-items: center;
+          text-decoration: none;
+          font-style: normal;
+          color: ${theme.palette.gray};
+          line-height: ${theme.typography.navigationLink.lineHeight};
+
+          svg {
+            margin-right: ${theme.spacing(1)};
+          }
         }
       }
     }

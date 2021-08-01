@@ -179,6 +179,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         bannerImageUrl={contentful.operator.operatorImageUrl}
         previousLocation="Operators"
         previousLocationLink="/operators"
+        accentColor={contentful.operator.accentColorInHex}
       >
         <div className="wrapper" css={styles}>
           <nav role="tablist">

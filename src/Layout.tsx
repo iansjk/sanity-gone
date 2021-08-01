@@ -10,6 +10,7 @@ interface LayoutProps {
   pageTitle: string;
   previousLocation: string;
   previousLocationLink: string;
+  accentColor: string;
   bannerImageUrl?: string;
 }
 
@@ -19,6 +20,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
     previousLocation,
     previousLocationLink,
     bannerImageUrl,
+    accentColor,
     children,
     ...rest
   } = props;
@@ -45,6 +47,14 @@ const Layout: React.FC<LayoutProps> = (props) => {
           styles={css`
             body {
               background-image: url("${bannerImageUrl}");
+            }
+
+            header {
+              .heading-and-breadcrumb {
+                .breadcrumb a {
+                  color: ${accentColor};
+                }
+              }
             }
           `}
         />
@@ -148,6 +158,10 @@ const styles = (theme: Theme) => css`
 
           svg {
             margin-right: ${theme.spacing(1)};
+
+            path {
+              fill: ${theme.palette.white};
+            }
           }
         }
       }

@@ -30,6 +30,7 @@ const typography = {
     size: "24px",
     textTransform: "uppercase",
     weight: 700,
+    lineHeight: 1.25,
   },
   generalHeading: {
     size: "24px",

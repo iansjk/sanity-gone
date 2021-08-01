@@ -1,5 +1,7 @@
+import { css, Theme } from "@emotion/react";
 import { graphql } from "gatsby";
-import { Fragment } from "react";
+import { transparentize } from "polished";
+import { Fragment, useState } from "react";
 import Helmet from "react-helmet";
 import Introduction from "../../components/Introduction";
 import { OperatorObject } from "../../components/OperatorStats";
@@ -85,6 +87,51 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     analysis: os.synergyDescription.childMarkdownRemark.html,
   }));
 
+  const [activeTab, setActiveTab] = useState(0);
+
+  const styles = (theme: Theme) => css`
+    display: flex;
+
+    nav {
+      display: flex;
+      flex-direction: column;
+
+      button {
+        width: 192px;
+        height: ${theme.spacing(6)};
+        padding-left: ${theme.spacing(2)};
+        margin-top: ${theme.spacing(1)};
+        text-align: start;
+        line-height: ${theme.typography.navigationLink.lineHeight};
+        border-radius: ${theme.spacing(0.5)} 0 0 ${theme.spacing(0.5)};
+        border: 0;
+        background: none;
+        color: ${theme.palette.gray};
+        cursor: pointer;
+
+        &:hover {
+          background-color: ${transparentize(0.9, theme.palette.gray)};
+          color: ${theme.palette.white};
+        }
+
+        &.active {
+          background-color: ${transparentize(
+            0.9,
+            contentful.operator.accentColorInHex
+          )};
+          color: ${contentful.operator.accentColorInHex};
+          border-right: 3px solid ${contentful.operator.accentColorInHex};
+        }
+      }
+    }
+
+    .analysis-section {
+      section {
+        margin-top: 0;
+      }
+    }
+  `;
+
   return (
     <Fragment>
       <Helmet>
@@ -96,21 +143,51 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         previousLocation="Operators"
         previousLocationLink="/operators"
       >
-        <Introduction
-          analysis={contentful.introduction.childMarkdownRemark.html}
-          archetype={contentful.operator.archetype}
-          operatorObject={operatorObject}
-          isLimited={contentful.operator.limited}
-        />
-        <Talents
-          analyses={talentAnalyses}
-          talentObjects={operatorObject.talents}
-        />
-        <Skills
-          analyses={skillAnalyses}
-          skillObjects={operatorObject.skillData}
-        />
-        <Synergies synergyOperators={synergyOperators} />
+        <div className="wrapper" css={styles}>
+          <nav role="tablist">
+            {["Introduction", "Talents", "Skills", "Synergies"].map(
+              (label, i) => {
+                return (
+                  <button
+                    role="tab"
+                    className={i === activeTab ? "active" : "inactive"}
+                    onClick={() => setActiveTab(i)}
+                  >
+                    {label}
+                  </button>
+                );
+              }
+            )}
+          </nav>
+          <main>
+            {[
+              <Introduction
+                analysis={contentful.introduction.childMarkdownRemark.html}
+                archetype={contentful.operator.archetype}
+                operatorObject={operatorObject}
+                isLimited={contentful.operator.limited}
+              />,
+              <Talents
+                analyses={talentAnalyses}
+                talentObjects={operatorObject.talents}
+              />,
+              <Skills
+                analyses={skillAnalyses}
+                skillObjects={operatorObject.skillData}
+              />,
+              <Synergies synergyOperators={synergyOperators} />,
+            ].map((panelChild, i) => (
+              <div
+                className="analysis-section"
+                role="tabpanel"
+                key={i}
+                hidden={i !== activeTab}
+              >
+                {panelChild}
+              </div>
+            ))}
+          </main>
+        </div>
       </Layout>
     </Fragment>
   );

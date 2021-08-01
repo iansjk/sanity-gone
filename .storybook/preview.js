@@ -24,7 +24,8 @@ export const decorators = [
 ];
 
 const styles = (theme) => css`
-  header {
+  header,
+  footer {
     display: none;
   }
 

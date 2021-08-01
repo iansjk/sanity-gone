@@ -123,6 +123,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           )};
           color: ${contentful.operator.accentColorInHex};
           border-right: 3px solid ${contentful.operator.accentColorInHex};
+          font-weight: ${theme.typography.navigationLinkActive.fontWeight};
         }
       }
     }

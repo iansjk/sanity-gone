@@ -70,6 +70,9 @@ const typography = {
   },
   navigationLink: {
     lineHeight: 1.25
+  },
+  navigationLinkActive: {
+    fontWeight: 600
   }
 };
 

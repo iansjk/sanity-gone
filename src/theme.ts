@@ -54,10 +54,6 @@ const typography = {
   body2: {
     size: "14px",
   },
-  link: {
-    fontStyle: "italic",
-    textDecoration: "underline",
-  },
   smallPortraitRarity: {
     size: "18px",
     lineHeight: 1.25,
@@ -72,6 +68,9 @@ const typography = {
     size: "14px",
     fontWeight: 600,
     lineHeight: 1.25,
+  },
+  navigationLink: {
+    lineHeight: 1.25
   }
 };
 

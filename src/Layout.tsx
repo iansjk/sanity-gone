@@ -123,6 +123,7 @@ const styles = (theme: Theme) => css`
         text-decoration: none;
         font-style: normal;
         color: ${theme.palette.gray};
+        line-height: ${theme.typography.navigationLink.lineHeight};
 
         svg {
           margin-right: ${theme.spacing(1)};
@@ -138,8 +139,6 @@ const styles = (theme: Theme) => css`
   }
 
   a {
-    font-style: ${theme.typography.link.fontStyle};
-    text-decoration: ${theme.typography.link.textDecoration};
     color: ${theme.palette.blue};
   }
 

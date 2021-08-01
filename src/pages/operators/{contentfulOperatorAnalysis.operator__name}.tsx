@@ -96,6 +96,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     nav {
       display: flex;
       flex-direction: column;
+      z-index: 1;
 
       button {
         width: 192px;
@@ -126,17 +127,22 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       }
     }
 
-    .analysis-section:not(.synergies) {
-      .tabs {
-        button.active {
-          background-color: ${contentful.operator.accentColorInHex};
-          border-color: ${contentful.operator.accentColorInHex};
-          color: ${theme.palette.background};
-        }
+    main {
+      border-left: 1px solid ${theme.palette.midHighlight};
+      margin-left: -1px;
 
-        button.inactive:hover {
-          border-color: ${contentful.operator.accentColorInHex};
-          color: ${contentful.operator.accentColorInHex};
+      .analysis-section:not(.synergies) {
+        .tabs {
+          button.active {
+            background-color: ${contentful.operator.accentColorInHex};
+            border-color: ${contentful.operator.accentColorInHex};
+            color: ${theme.palette.background};
+          }
+
+          button.inactive:hover {
+            border-color: ${contentful.operator.accentColorInHex};
+            color: ${contentful.operator.accentColorInHex};
+          }
         }
       }
     }

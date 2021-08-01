@@ -14,14 +14,7 @@ export type CardWithTabsProps = React.PropsWithChildren<
 >;
 
 const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
-  const {
-    header,
-    subheader,
-    children,
-    tabType,
-    buttonRenderer,
-    ...rest
-  } = props;
+  const { header, children, tabType, buttonRenderer, ...rest } = props;
   const [activePanel, setActivePanel] = useState(0);
   const [userHasInteracted, setUserHasInteracted] = useState(false);
   const cardPanelChildren = React.Children.toArray(children).filter(
@@ -69,7 +62,7 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
   };
 
   return (
-    <Card header={header} subheader={subheader} css={styles} {...rest}>
+    <Card header={header} css={styles} {...rest}>
       <div className="tabs-panels-wrapper">
         <div className="tabs" role="tablist" ref={tabsRef}>
           {cardPanelChildren.map((_, i) => {
@@ -86,8 +79,10 @@ const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
             const newClassName = isActivePanel ? "active" : "inactive";
             const button = React.cloneElement(baseButton, {
               role: "tab",
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
               className: baseButton.props.className
-                ? `${baseButton.props.className} ${newClassName}`
+                ? // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-member-access
+                  `${baseButton.props.className} ${newClassName}`
                 : newClassName,
               onClick: () => handleClick(i),
               onKeyDown: handleKeyDown,

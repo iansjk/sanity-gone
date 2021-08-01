@@ -3,11 +3,10 @@ import { transparentize } from "polished";
 
 export type CardProps = React.HTMLAttributes<HTMLDivElement> & {
   header: string;
-  subheader?: string;
 };
 
 const Card: React.FC<CardProps> = (props) => {
-  const { header, subheader, children, ...rest } = props;
+  const { header, children, ...rest } = props;
   return (
     <section css={styles} {...rest}>
       <div className="heading-block">

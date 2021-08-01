@@ -36,9 +36,9 @@ const normalizeRange = (rangeObject: RangeObject): NormalizedRange => {
   // create a 2d-array of size [rows, cols]
   const rows = maxRowIndex - minRowIndex + 1;
   const cols = maxColIndex - minColIndex + 1;
-  const grid: GridCell[][] = Array(rows)
+  const grid = Array<GridCell>(rows)
     .fill(GridCell.empty)
-    .map(() => Array(cols).fill(GridCell.empty));
+    .map(() => Array<GridCell>(cols).fill(GridCell.empty));
   rangeObject.grids.forEach((cell) => {
     const type =
       cell.row === 0 && cell.col === 0 ? GridCell.Operator : GridCell.active;

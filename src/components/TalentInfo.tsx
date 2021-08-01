@@ -41,6 +41,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
   const highestEliteTalentPhases = talentObject.candidates.filter(
     (talentPhase) => talentPhase.unlockCondition.phase === highestElite
   );
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const activePhase = highestEliteTalentPhases.find(
     (talentPhase) => talentPhase.requiredPotentialRank === 0
   )!;

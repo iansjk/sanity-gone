@@ -22,7 +22,7 @@ export const descriptionToHtml = (
   let htmlDescription = description.slice();
   let match: RegExpMatchArray | null = null;
   do {
-    match = htmlDescription.match(descriptionTagRegex);
+    match = descriptionTagRegex.exec(htmlDescription);
     if (match?.groups) {
       let className = "";
       switch (match.groups.tagName) {
@@ -46,10 +46,10 @@ export const descriptionToHtml = (
   } while (match);
 
   do {
-    match = htmlDescription.match(descriptionInterpolationRegex);
+    match = descriptionInterpolationRegex.exec(htmlDescription);
     if (match?.groups) {
       const key = match.groups.interpolationKey;
-      let value = interpolation.find((value) => value.key === key)?.value;
+      const value = interpolation.find((value) => value.key === key)?.value;
       if (!value) {
         throw new Error(`Couldn't find matching interpolation key: ${key}`);
       }

@@ -12,6 +12,7 @@ const CardPanel: React.FC<CardPanelProps> = (props) => {
     children,
     "aria-expanded": ariaExpanded,
     userHasInteracted,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     groupingKey,
     ...rest
   } = props;

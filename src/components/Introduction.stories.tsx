@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/react";
 import Introduction, { IntroductionProps } from "./Introduction";
-import OperatorStats, { OperatorStatsProps } from "./OperatorStats";
+import { OperatorStatsProps } from "./OperatorStats";
 
 export default {
   title: "Introduction",

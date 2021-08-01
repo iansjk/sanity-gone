@@ -61,7 +61,7 @@ interface Props {
 }
 
 const OperatorAnalysis: React.VFC<Props> = (props) => {
-  const { data, ...rest } = props;
+  const { data } = props;
   const {
     contentfulOperatorAnalysis: contentful,
     operatorsJson: operatorObject,
@@ -95,7 +95,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       const maxChildHeight = Math.max(
         ...Array.from(
           mainRef.current.querySelectorAll(".analysis-section")
-        ).map((child, i) => {
+        ).map((child) => {
           child.setAttribute("style", "display: inherit;");
           const childHeight = child.getBoundingClientRect().height;
           child.removeAttribute("style");
@@ -251,7 +251,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
 export default OperatorAnalysis;
 
 export const query = graphql`
-  query($id: String!, $operator__name: String!) {
+  query ($id: String!, $operator__name: String!) {
     contentfulOperatorAnalysis(id: { eq: $id }) {
       operator {
         accentColorInHex

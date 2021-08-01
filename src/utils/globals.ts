@@ -27,8 +27,8 @@ export function professionToClass(profession: string): string {
 }
 
 const selfClosingTagRegex = /<(?<tagName>[A-Za-z]+) \/>/g;
-export const replaceSelfClosingHtmlTags = (htmlString: string) =>
+export const replaceSelfClosingHtmlTags = (htmlString: string): string =>
   htmlString.replace(
     selfClosingTagRegex,
-    (_, tagName) => `<${tagName}></${tagName}>`
+    (_, tagName: string) => `<${tagName}></${tagName}>`
   );

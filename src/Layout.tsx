@@ -168,7 +168,7 @@ const styles = (theme: Theme) => css`
     }
 
     dt {
-      font-size: ${theme.typography.body2};
+      font-size: ${theme.typography.body2.size};
       color: ${theme.palette.gray};
       display: flex;
       align-items: center;

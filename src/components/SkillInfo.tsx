@@ -64,15 +64,8 @@ const SkillInfo: React.VFC<
 > = (props) => {
   const { skillObject, className, ...rest } = props;
   const { skillId, iconId, levels } = skillObject;
-  const {
-    name,
-    description,
-    spData,
-    range,
-    duration,
-    skillType,
-    blackboard,
-  } = levels[levels.length - 1];
+  const { name, description, spData, range, duration, skillType, blackboard } =
+    levels[levels.length - 1];
   const { initSp, spCost, spType } = spData;
   return (
     <ClassNames>
@@ -168,6 +161,8 @@ const styles = (theme: Theme) => css`
     padding: ${theme.spacing(2)};
 
     .skill-name {
+      font-size: ${theme.typography.skillTalentHeading.size};
+      line-height: ${theme.typography.skillTalentHeading.lineHeight};
       font-weight: ${theme.typography.skillTalentHeading.weight};
       margin: 0;
     }

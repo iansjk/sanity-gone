@@ -1,7 +1,7 @@
 import { css, Theme } from "@emotion/react";
 import { graphql } from "gatsby";
 import { transparentize } from "polished";
-import { Component, Fragment, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Helmet from "react-helmet";
 import Introduction from "../../components/Introduction";
 import { OperatorObject } from "../../components/OperatorStats";
@@ -88,6 +88,23 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   }));
 
   const [activeTab, setActiveTab] = useState(0);
+  const mainRef = useRef<HTMLDivElement>(null);
+  // force a min-height on <main> to prevent forced scrolling when changing tabs
+  useEffect(() => {
+    if (mainRef.current) {
+      const maxChildHeight = Math.max(
+        ...Array.from(
+          mainRef.current.querySelectorAll(".analysis-section")
+        ).map((child, i) => {
+          child.setAttribute("style", "display: inherit;");
+          const childHeight = child.getBoundingClientRect().height;
+          child.removeAttribute("style");
+          return childHeight;
+        })
+      );
+      mainRef.current.setAttribute("style", `min-height: ${maxChildHeight}px;`);
+    }
+  }, []);
 
   const styles = (theme: Theme) => css`
     display: flex;
@@ -177,7 +194,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               }
             )}
           </nav>
-          <main>
+          <main ref={mainRef}>
             {[
               {
                 component: (

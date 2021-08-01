@@ -8,8 +8,8 @@ export default {
 
 const Template: Story<TalentInfoProps> = (args) => <TalentInfo {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const MudrockTalent1 = Template.bind({});
+MudrockTalent1.args = {
   talentObject: {
     candidates: [
       {
@@ -189,6 +189,246 @@ Default.args = {
           {
             key: "hp_ratio",
             value: 0.22,
+          },
+        ],
+      },
+    ],
+  },
+};
+
+export const Dobermann = Template.bind({});
+Dobermann.args = {
+  talentObject: {
+    candidates: [
+      {
+        unlockCondition: {
+          phase: 1,
+          level: 1,
+        },
+        requiredPotentialRank: 0,
+        prefabKey: "1",
+        name: "Starter Instructor",
+        description: "All three-star Operators' ATK +5%",
+        range: {
+          id: "x-4",
+          direction: 1,
+          grids: [
+            {
+              row: 1,
+              col: -1,
+            },
+            {
+              row: 1,
+              col: 0,
+            },
+            {
+              row: 1,
+              col: 1,
+            },
+            {
+              row: 0,
+              col: -1,
+            },
+            {
+              row: 0,
+              col: 0,
+            },
+            {
+              row: 0,
+              col: 1,
+            },
+            {
+              row: -1,
+              col: -1,
+            },
+            {
+              row: -1,
+              col: 0,
+            },
+            {
+              row: -1,
+              col: 1,
+            },
+          ],
+        },
+        blackboard: [
+          {
+            key: "atk",
+            value: 0.05,
+          },
+        ],
+      },
+      {
+        unlockCondition: {
+          phase: 1,
+          level: 1,
+        },
+        requiredPotentialRank: 4,
+        prefabKey: "1",
+        name: "Starter Instructor",
+        description: "All three-star Operators' ATK +6% <@ba.talpu>(+1%)</>",
+        range: {
+          id: "x-4",
+          direction: 1,
+          grids: [
+            {
+              row: 1,
+              col: -1,
+            },
+            {
+              row: 1,
+              col: 0,
+            },
+            {
+              row: 1,
+              col: 1,
+            },
+            {
+              row: 0,
+              col: -1,
+            },
+            {
+              row: 0,
+              col: 0,
+            },
+            {
+              row: 0,
+              col: 1,
+            },
+            {
+              row: -1,
+              col: -1,
+            },
+            {
+              row: -1,
+              col: 0,
+            },
+            {
+              row: -1,
+              col: 1,
+            },
+          ],
+        },
+        blackboard: [
+          {
+            key: "atk",
+            value: 0.06,
+          },
+        ],
+      },
+      {
+        unlockCondition: {
+          phase: 2,
+          level: 1,
+        },
+        requiredPotentialRank: 0,
+        prefabKey: "1",
+        name: "Starter Instructor",
+        description: "All three-star Operators' ATK +10%",
+        range: {
+          id: "x-4",
+          direction: 1,
+          grids: [
+            {
+              row: 1,
+              col: -1,
+            },
+            {
+              row: 1,
+              col: 0,
+            },
+            {
+              row: 1,
+              col: 1,
+            },
+            {
+              row: 0,
+              col: -1,
+            },
+            {
+              row: 0,
+              col: 0,
+            },
+            {
+              row: 0,
+              col: 1,
+            },
+            {
+              row: -1,
+              col: -1,
+            },
+            {
+              row: -1,
+              col: 0,
+            },
+            {
+              row: -1,
+              col: 1,
+            },
+          ],
+        },
+        blackboard: [
+          {
+            key: "atk",
+            value: 0.1,
+          },
+        ],
+      },
+      {
+        unlockCondition: {
+          phase: 2,
+          level: 1,
+        },
+        requiredPotentialRank: 4,
+        prefabKey: "1",
+        name: "Starter Instructor",
+        description: "All three-star Operators' ATK +11% <@ba.talpu>(+1%)</>",
+        range: {
+          id: "x-4",
+          direction: 1,
+          grids: [
+            {
+              row: 1,
+              col: -1,
+            },
+            {
+              row: 1,
+              col: 0,
+            },
+            {
+              row: 1,
+              col: 1,
+            },
+            {
+              row: 0,
+              col: -1,
+            },
+            {
+              row: 0,
+              col: 0,
+            },
+            {
+              row: 0,
+              col: 1,
+            },
+            {
+              row: -1,
+              col: -1,
+            },
+            {
+              row: -1,
+              col: 0,
+            },
+            {
+              row: -1,
+              col: 1,
+            },
+          ],
+        },
+        blackboard: [
+          {
+            key: "atk",
+            value: 0.11,
           },
         ],
       },

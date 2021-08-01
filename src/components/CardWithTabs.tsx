@@ -146,6 +146,7 @@ const styles = (theme: Theme) => css`
     align-items: center;
     flex-direction: column;
     padding: ${theme.spacing(3, 0, 4)};
+    background: ${theme.palette.mid};
 
     .grouping-key {
       text-align: center;

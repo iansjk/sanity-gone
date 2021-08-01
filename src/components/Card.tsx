@@ -20,7 +20,6 @@ const Card: React.FC<CardProps> = (props) => {
 export default Card;
 
 const styles = (theme: Theme) => css`
-  background: ${transparentize(0.66, theme.palette.mid)};
   border-radius: ${theme.spacing(1)};
   padding: 0;
 
@@ -43,6 +42,7 @@ const styles = (theme: Theme) => css`
   .card-content {
     padding: ${theme.spacing(3)} ${theme.spacing(4)} ${theme.spacing(4)};
     backdrop-filter: blur(8px);
+    background: ${transparentize(0.34, theme.palette.mid)};
 
     & > p {
       margin: ${theme.spacing(3)} 0 0;

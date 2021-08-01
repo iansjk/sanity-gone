@@ -18,7 +18,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier",
   ],
-  plugins: ["@typescript-eslint", "react", "prettier"],
+  plugins: ["@typescript-eslint", "react", "react-hooks", "prettier"],
   settings: {
     react: {
       version: "detect",
@@ -34,5 +34,7 @@ module.exports = {
         allowNumber: true,
       },
     ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
 };

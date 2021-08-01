@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TabButtons, { TabButtonsProps } from "./TabButtons";
 import TabPanels, { TabPanelsProps } from "./TabPanels";
 
@@ -9,16 +9,31 @@ const Tabs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   const tabButtons = React.Children.toArray(children).find(
     (child) =>
       React.isValidElement<TabButtonsProps>(child) && child.type === TabButtons
-  );
+  ) as React.ReactElement<TabButtonsProps>;
   const tabPanels = React.Children.toArray(children).find(
     (child) =>
       React.isValidElement<TabPanelsProps>(child) && child.type === TabPanels
-  );
+  ) as React.ReactElement<TabPanelsProps>;
   if (!tabButtons) {
-    throw new Error("<TabButtons> child is missing from <Tabs>.");
+    console.error("<TabButtons> child is missing from <Tabs>.");
   } else if (!tabPanels) {
-    throw new Error("<TabPanels> child is missing from <Tabs>.");
+    console.error("<TabPanels> child is missing from <Tabs>.");
   }
-  return <div {...rest}>{children}</div>;
+
+  const [activeTab, setActiveTab] = useState(0);
+  const [userActed, setUserActed] = useState(false);
+
+  const handleClick = (index: number) => {
+    setActiveTab(index);
+    setUserActed(true);
+  };
+
+  return (
+    <div {...rest}>
+      {tabButtons &&
+        React.cloneElement(tabButtons, { activeTab, onClick: handleClick })}
+      {tabPanels && React.cloneElement(tabPanels, { activeTab, userActed })}
+    </div>
+  );
 };
 export default Tabs;

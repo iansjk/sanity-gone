@@ -90,7 +90,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     analysis: os.synergyDescription.childMarkdownRemark.html,
   }));
 
-  const [activeTab, setActiveTab] = useState(0);
   const mainRef = useRef<HTMLDivElement>(null);
   // force a min-height on <main> to prevent forced scrolling when changing tabs
   useEffect(() => {
@@ -225,12 +224,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 className: "synergies",
               },
             ].map(({ component, className }, i) => (
-              <div
-                className={`analysis-section ${className}`}
-                role="tabpanel"
-                key={i}
-                hidden={i !== activeTab}
-              >
+              <div className={`analysis-section ${className}`} key={i}>
                 {component}
               </div>
             ))}

@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 
-export type TabButtonsProps = React.HTMLAttributes<HTMLDivElement>;
+export type TabButtonsProps = Omit<
+  React.HTMLAttributes<HTMLDivElement>,
+  "onClick"
+> &
+  Partial<{
+    activeTab: number;
+    onClick: (index: number) => void;
+  }>;
 
-const TabButtons: React.FC<TabButtonsProps> = ({ children, ...rest }) => {
-  const [activeTab, setActiveTab] = useState(0);
-  const [userActed, setUserActed] = useState(false);
+const TabButtons: React.FC<TabButtonsProps> = (props) => {
+  const { activeTab, onClick, children, ...rest } = props;
   const buttonChildren = React.Children.toArray(children).filter(
     (child) =>
       React.isValidElement<React.HTMLAttributes<HTMLButtonElement>>(child) &&
       child.type === "button"
   ) as React.ReactElement<React.HTMLAttributes<HTMLButtonElement>, "button">[];
   const numTabs = buttonChildren.length;
-
-  const handleClick = (index: number) => {
-    setActiveTab(index);
-    setUserActed(true);
-  };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     const button = e.target as HTMLButtonElement;
@@ -61,7 +62,8 @@ const TabButtons: React.FC<TabButtonsProps> = ({ children, ...rest }) => {
           className: button.props.className
             ? `${button.props.className} ${className}`
             : className,
-          onClick: () => handleClick(i),
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          onClick: () => onClick!(i),
           onKeyDown: handleKeyDown,
           tabIndex: isActiveTab ? 0 : -1,
           "data-index": i,

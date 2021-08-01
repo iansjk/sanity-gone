@@ -1,4 +1,6 @@
 import { graphql } from "gatsby";
+import { Fragment } from "react";
+import Helmet from "react-helmet";
 import Introduction from "../../components/Introduction";
 import { OperatorObject } from "../../components/OperatorStats";
 import { SkillObject } from "../../components/SkillInfo";
@@ -84,26 +86,33 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   }));
 
   return (
-    <Layout
-      pageTitle={contentful.operator.name}
-      bannerImageUrl={contentful.operator.operatorImageUrl}
-    >
-      <Introduction
-        analysis={contentful.introduction.childMarkdownRemark.html}
-        archetype={contentful.operator.archetype}
-        operatorObject={operatorObject}
-        isLimited={contentful.operator.limited}
-      />
-      <Talents
-        analyses={talentAnalyses}
-        talentObjects={operatorObject.talents}
-      />
-      <Skills
-        analyses={skillAnalyses}
-        skillObjects={operatorObject.skillData}
-      />
-      <Synergies synergyOperators={synergyOperators} />
-    </Layout>
+    <Fragment>
+      <Helmet>
+        <title>{contentful.operator.name}</title>
+      </Helmet>
+      <Layout
+        pageTitle={contentful.operator.name}
+        bannerImageUrl={contentful.operator.operatorImageUrl}
+        previousLocation="Operators"
+        previousLocationLink="/operators"
+      >
+        <Introduction
+          analysis={contentful.introduction.childMarkdownRemark.html}
+          archetype={contentful.operator.archetype}
+          operatorObject={operatorObject}
+          isLimited={contentful.operator.limited}
+        />
+        <Talents
+          analyses={talentAnalyses}
+          talentObjects={operatorObject.talents}
+        />
+        <Skills
+          analyses={skillAnalyses}
+          skillObjects={operatorObject.skillData}
+        />
+        <Synergies synergyOperators={synergyOperators} />
+      </Layout>
+    </Fragment>
   );
 };
 export default OperatorAnalysis;

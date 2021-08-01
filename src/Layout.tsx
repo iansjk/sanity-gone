@@ -1,22 +1,31 @@
-import { Global, Theme, css, ThemeProvider, useTheme } from "@emotion/react";
+import { Global, Theme, css, ThemeProvider, ClassNames } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
 import { Fragment } from "react";
 import { defaultTheme } from "./theme";
 import { Helmet } from "react-helmet";
 import SanityGoneLogo from "./components/SanityGoneLogo";
+import BreadcrumbBackIcon from "./components/icons/BreadcrumbBackIcon";
 
 interface LayoutProps {
   pageTitle: string;
+  previousLocation: string;
+  previousLocationLink: string;
   bannerImageUrl?: string;
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
-  const { pageTitle, bannerImageUrl, children, ...rest } = props;
+  const {
+    pageTitle,
+    previousLocation,
+    previousLocationLink,
+    bannerImageUrl,
+    children,
+    ...rest
+  } = props;
   return (
     // <> shorthand syntax is BROKEN, don't use it.
     <Fragment>
-      <Helmet>
-        <title>Sanity;Gone 0</title>
+      <Helmet titleTemplate="%s · Sanity;Gone 0" defaultTitle="Sanity;Gone 0">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -41,13 +50,28 @@ const Layout: React.FC<LayoutProps> = (props) => {
         />
         <header>
           <SanityGoneLogo />
+          <ClassNames>
+            {({ cx }) => (
+              <div
+                className={cx(
+                  "heading-and-breadcrumb",
+                  bannerImageUrl && "has-banner-image"
+                )}
+              >
+                <h1>{pageTitle}</h1>
+                <a
+                  className="breadcrumb"
+                  href={previousLocationLink}
+                  aria-label={`Back to ${previousLocation}`}
+                >
+                  <BreadcrumbBackIcon />
+                  {previousLocation}
+                </a>
+              </div>
+            )}
+          </ClassNames>
         </header>
-        <main
-          className={bannerImageUrl ? "has-banner-image" : "no-banner-image"}
-        >
-          <h1>{pageTitle}</h1>
-          <div className="main-content">{children}</div>
-        </main>
+        <div className="page-content">{children}</div>
       </ThemeProvider>
     </Fragment>
   );
@@ -70,23 +94,41 @@ const styles = (theme: Theme) => css`
     background-position-x: center;
   }
 
+  header,
+  .page-content {
+    max-width: 1280px;
+  }
+
   header {
     padding: ${theme.spacing(3)} ${theme.spacing(3)} 0;
-  }
 
-  main {
-    max-width: 1280px;
+    .heading-and-breadcrumb {
+      display: flex;
+      flex-direction: column-reverse;
 
-    &.has-banner-image {
-      margin-top: 188px;
+      &.has-banner-image {
+        margin-top: 165px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: ${theme.typography.pageHeading.size};
+        font-weight: ${theme.typography.pageHeading.weight};
+        line-height: ${theme.typography.pageHeading.lineHeight};
+      }
+
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-style: normal;
+        color: ${theme.palette.gray};
+
+        svg {
+          margin-right: ${theme.spacing(1)};
+        }
+      }
     }
-  }
-
-  h1 {
-    margin: 0;
-    font-size: ${theme.typography.pageHeading.size};
-    font-weight: ${theme.typography.pageHeading.weight};
-    line-height: ${theme.typography.pageHeading.lineHeight};
   }
 
   b,

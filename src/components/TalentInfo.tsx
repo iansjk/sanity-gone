@@ -80,6 +80,7 @@ const styles = (theme: Theme) => css`
   grid-template-rows: repeat(2, max-content);
   grid-template-columns: 672fr 244fr;
   grid-gap: ${theme.spacing(0.25)};
+  margin-top: ${theme.spacing(3)};
 
   & > * {
     background-color: ${theme.palette.background};

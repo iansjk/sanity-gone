@@ -181,8 +181,7 @@ const styles = (theme: Theme) => css`
     }
   }
 
-  p,
-  section {
+  p {
     margin: ${theme.spacing(3)} 0 0;
   }
 `;

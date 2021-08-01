@@ -124,12 +124,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         }
       }
     }
-
-    .analysis-section {
-      section {
-        margin-top: 0;
-      }
-    }
   `;
 
   return (

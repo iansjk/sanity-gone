@@ -144,6 +144,7 @@ const styles = (theme: Theme) => css`
   grid-template-columns: 3fr 1fr;
   grid-template-rows: max-content max-content 1fr;
   grid-gap: ${theme.spacing(0.25)};
+  margin-top: ${theme.spacing(3)};
 
   &.no-range {
     grid-template-columns: 1fr;

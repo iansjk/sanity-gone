@@ -110,7 +110,7 @@ const styles = (theme: Theme) => css`
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    max-width: 1280px;
+    max-width: 1270px;
   }
 
   footer {

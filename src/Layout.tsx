@@ -48,31 +48,34 @@ const Layout: React.FC<LayoutProps> = (props) => {
             }
           `}
         />
-        <header>
-          <SanityGoneLogo />
-          <ClassNames>
-            {({ cx }) => (
-              <div
-                className={cx(
-                  "heading-and-breadcrumb",
-                  bannerImageUrl && "has-banner-image"
-                )}
-              >
-                <h1>{pageTitle}</h1>
-                <div className="breadcrumb">
-                  <a
-                    href={previousLocationLink}
-                    aria-label={`Back to ${previousLocation}`}
-                  >
-                    <BreadcrumbBackIcon />
-                    {previousLocation}
-                  </a>
+        <div className="header-main-wrapper">
+          <header>
+            <SanityGoneLogo />
+            <ClassNames>
+              {({ cx }) => (
+                <div
+                  className={cx(
+                    "heading-and-breadcrumb",
+                    bannerImageUrl && "has-banner-image"
+                  )}
+                >
+                  <h1>{pageTitle}</h1>
+                  <div className="breadcrumb">
+                    <a
+                      href={previousLocationLink}
+                      aria-label={`Back to ${previousLocation}`}
+                    >
+                      <BreadcrumbBackIcon />
+                      {previousLocation}
+                    </a>
+                  </div>
                 </div>
-              </div>
-            )}
-          </ClassNames>
-        </header>
-        <div className="page-content">{children}</div>
+              )}
+            </ClassNames>
+          </header>
+          <div className="page-content">{children}</div>
+        </div>
+        <footer />
       </ThemeProvider>
     </Fragment>
   );
@@ -90,14 +93,14 @@ const styles = (theme: Theme) => css`
   }
 
   body {
-    display: flex;
-    justify-content: center;
     background-repeat: no-repeat;
     background-position-x: center;
   }
 
-  header,
-  .page-content {
+  .header-main-wrapper {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
     max-width: 1280px;
   }
 
@@ -136,6 +139,12 @@ const styles = (theme: Theme) => css`
         }
       }
     }
+  }
+
+  footer {
+    height: 120px;
+    margin-top: ${theme.spacing(1)};
+    background-color: ${theme.palette.headerBackground};
   }
 
   b,

@@ -9,6 +9,9 @@ import { SkillObject } from "../../components/SkillInfo";
 import Skills from "../../components/Skills";
 import Synergies from "../../components/Synergies";
 import { SynergyQuality } from "../../components/SynergyOperator";
+import Tabs from "../../components/Tabs";
+import TabButtons from "../../components/TabButtons";
+import TabPanels from "../../components/TabPanels";
 import { TalentObject } from "../../components/TalentInfo";
 import Talents from "../../components/Talents";
 import Layout from "../../Layout";
@@ -109,7 +112,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   const styles = (theme: Theme) => css`
     display: flex;
 
-    nav {
+    & > .tabs {
       display: flex;
       flex-direction: column;
       z-index: 1;
@@ -144,7 +147,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       }
     }
 
-    main {
+    & > .panels {
       margin-left: -1px;
 
       .analysis-section {
@@ -180,24 +183,13 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         previousLocationLink="/operators"
         accentColor={contentful.operator.accentColorInHex}
       >
-        <div className="wrapper" css={styles}>
-          <nav role="tablist">
-            {["Introduction", "Talents", "Skills", "Synergies"].map(
-              (label, i) => {
-                return (
-                  <button
-                    key={label}
-                    role="tab"
-                    className={i === activeTab ? "active" : "inactive"}
-                    onClick={() => setActiveTab(i)}
-                  >
-                    {label}
-                  </button>
-                );
-              }
-            )}
-          </nav>
-          <main ref={mainRef}>
+        <Tabs className="wrapper" css={styles}>
+          <TabButtons className="tabs">
+            {["Introduction", "Talents", "Skills", "Synergies"].map((label) => {
+              return <button key={label}>{label}</button>;
+            })}
+          </TabButtons>
+          <TabPanels className="panels">
             {[
               {
                 component: (
@@ -242,8 +234,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 {component}
               </div>
             ))}
-          </main>
-        </div>
+          </TabPanels>
+        </Tabs>
       </Layout>
     </Fragment>
   );

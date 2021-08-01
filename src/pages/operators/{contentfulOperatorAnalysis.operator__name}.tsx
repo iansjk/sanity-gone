@@ -1,7 +1,7 @@
 import { css, Theme } from "@emotion/react";
 import { graphql } from "gatsby";
 import { transparentize } from "polished";
-import { Fragment, useState } from "react";
+import { Component, Fragment, useState } from "react";
 import Helmet from "react-helmet";
 import Introduction from "../../components/Introduction";
 import { OperatorObject } from "../../components/OperatorStats";
@@ -125,6 +125,21 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         }
       }
     }
+
+    .analysis-section:not(.synergies) {
+      .tabs {
+        button.active {
+          background-color: ${contentful.operator.accentColorInHex};
+          border-color: ${contentful.operator.accentColorInHex};
+          color: ${theme.palette.background};
+        }
+
+        button.inactive:hover {
+          border-color: ${contentful.operator.accentColorInHex};
+          color: ${contentful.operator.accentColorInHex};
+        }
+      }
+    }
   `;
 
   return (
@@ -157,29 +172,47 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           </nav>
           <main>
             {[
-              <Introduction
-                analysis={contentful.introduction.childMarkdownRemark.html}
-                archetype={contentful.operator.archetype}
-                operatorObject={operatorObject}
-                isLimited={contentful.operator.limited}
-              />,
-              <Talents
-                analyses={talentAnalyses}
-                talentObjects={operatorObject.talents}
-              />,
-              <Skills
-                analyses={skillAnalyses}
-                skillObjects={operatorObject.skillData}
-              />,
-              <Synergies synergyOperators={synergyOperators} />,
-            ].map((panelChild, i) => (
+              {
+                component: (
+                  <Introduction
+                    analysis={contentful.introduction.childMarkdownRemark.html}
+                    archetype={contentful.operator.archetype}
+                    operatorObject={operatorObject}
+                    isLimited={contentful.operator.limited}
+                  />
+                ),
+                className: "introduction",
+              },
+              {
+                component: (
+                  <Talents
+                    analyses={talentAnalyses}
+                    talentObjects={operatorObject.talents}
+                  />
+                ),
+                className: "talents",
+              },
+              {
+                component: (
+                  <Skills
+                    analyses={skillAnalyses}
+                    skillObjects={operatorObject.skillData}
+                  />
+                ),
+                className: "skills",
+              },
+              {
+                component: <Synergies synergyOperators={synergyOperators} />,
+                className: "synergies",
+              },
+            ].map(({ component, className }, i) => (
               <div
-                className="analysis-section"
+                className={`analysis-section ${className}`}
                 role="tabpanel"
                 key={i}
                 hidden={i !== activeTab}
               >
-                {panelChild}
+                {component}
               </div>
             ))}
           </main>

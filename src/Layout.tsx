@@ -22,24 +22,11 @@ const Layout: React.FC<LayoutProps> = (props) => {
     bannerImageUrl,
     accentColor,
     children,
-    ...rest
   } = props;
   return (
     // <> shorthand syntax is BROKEN, don't use it.
     <Fragment>
-      <Helmet titleTemplate="%s · Sanity;Gone 0" defaultTitle="Sanity;Gone 0">
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
-          rel="stylesheet"
-        />
-        <html {...rest} />
-      </Helmet>
+      <Helmet titleTemplate="%s · Sanity;Gone 0" defaultTitle="Sanity;Gone 0" />
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />
         <Global styles={styles} />

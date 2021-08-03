@@ -23,6 +23,17 @@ module.exports = {
         path: `./src/data/`,
       },
     },
-    "gatsby-plugin-react-helmet"
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-omni-font-loader",
+      options: {
+        enableListener: true,
+        preconnect: ["https://fonts.gstatic.com", "https://fonts.googleapis.com"],
+        web: [{
+          name: "Source Sans Pro",
+          file: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+        }]
+      }
+    }
   ],
 };

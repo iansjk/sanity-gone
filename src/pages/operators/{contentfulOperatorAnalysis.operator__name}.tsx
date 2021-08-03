@@ -15,6 +15,7 @@ import TabPanels from "../../components/TabPanels";
 import { TalentObject } from "../../components/TalentInfo";
 import Talents from "../../components/Talents";
 import Layout from "../../Layout";
+import Card from "../../components/Card";
 
 interface MarkdownNode {
   childMarkdownRemark: {
@@ -189,9 +190,11 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       >
         <Tabs className="wrapper" css={styles}>
           <TabButtons className="tabs">
-            {["Introduction", "Talents", "Skills", "Synergies"].map((label) => {
-              return <button key={label}>{label}</button>;
-            })}
+            {["Introduction", "Talents", "Skills", "Synergies", "Summary"].map(
+              (label) => {
+                return <button key={label}>{label}</button>;
+              }
+            )}
             <hr />
             <div className="external-links">Aceship PRTS</div>
             <hr />
@@ -242,6 +245,17 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               {
                 component: <Synergies synergyOperators={synergyOperators} />,
                 className: "synergies",
+              },
+              {
+                component: (
+                  <Card
+                    header="Summary"
+                    dangerouslySetInnerHTML={{
+                      __html: contentful.summary.childMarkdownRemark.html,
+                    }}
+                  />
+                ),
+                className: "summary",
               },
             ].map(({ component, className }, i) => (
               <div className={`analysis-section ${className}`} key={i}>

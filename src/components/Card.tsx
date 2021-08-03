@@ -6,13 +6,18 @@ export type CardProps = React.HTMLAttributes<HTMLDivElement> & {
 };
 
 const Card: React.FC<CardProps> = (props) => {
-  const { header, children, ...rest } = props;
+  const { header, children, dangerouslySetInnerHTML, ...rest } = props;
   return (
     <section css={styles} {...rest}>
       <div className="heading-block">
         <h2>{header}</h2>
       </div>
-      <div className="card-content">{children}</div>
+      <div
+        className="card-content"
+        dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+      >
+        {children}
+      </div>
     </section>
   );
 };
@@ -46,6 +51,10 @@ const styles = (theme: Theme) => css`
 
     & > p {
       margin: ${theme.spacing(3, 0, 0)};
+
+      &:first-of-type {
+        margin-top: 0;
+      }
     }
   }
 `;

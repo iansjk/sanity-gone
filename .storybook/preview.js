@@ -29,7 +29,11 @@ const styles = (theme) => css`
     display: none;
   }
 
-  main {
+  .header-main-wrapper {
+    margin: 0;
+  }
+
+  .page-content {
     padding: ${theme.spacing(3)};
   }
 `;

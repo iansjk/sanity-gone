@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { transparentize } from "polished";
 import { Fragment, useEffect, useRef } from "react";
 import Helmet from "react-helmet";
+import { DateTime } from "luxon";
 import Introduction from "../../components/Introduction";
 import { OperatorObject } from "../../components/OperatorStats";
 import { SkillObject } from "../../components/SkillInfo";
@@ -208,7 +209,11 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
             </div>
             <div className="last-updated-section">
               <span className="section-label">Last Updated</span>
-              <span className="last-updated">{contentful.updatedAt}</span>
+              <span className="last-updated">
+                {DateTime.fromISO(contentful.updatedAt).toLocaleString(
+                  DateTime.DATE_FULL
+                )}
+              </span>
             </div>
           </TabButtons>
           <TabPanels className="panels">

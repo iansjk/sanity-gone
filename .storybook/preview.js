@@ -36,4 +36,8 @@ const styles = (theme) => css`
   .page-content {
     padding: ${theme.spacing(3)};
   }
+
+  body {
+    font-family: ${theme.typography.body.family};
+  }
 `;

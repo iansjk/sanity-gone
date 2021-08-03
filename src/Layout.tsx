@@ -23,11 +23,14 @@ const Layout: React.FC<LayoutProps> = (props) => {
     bannerImageUrl,
     accentColor,
     children,
+    ...rest
   } = props;
   return (
     // <> shorthand syntax is BROKEN, don't use it.
     <Fragment>
-      <Helmet titleTemplate="%s · Sanity;Gone 0" defaultTitle="Sanity;Gone 0" />
+      <Helmet titleTemplate="%s · Sanity;Gone 0" defaultTitle="Sanity;Gone 0">
+        <html {...rest} />
+      </Helmet>
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />
         <Global styles={styles} />

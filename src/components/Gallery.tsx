@@ -31,15 +31,27 @@ export default Gallery;
 
 const styles = (theme: Theme) => css`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   .gallery-image {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: ${theme.spacing(3)};
+
+    img {
+      border-radius: ${theme.spacing(0.5)};
+      width: 162px;
+      height: 172px;
+      object-fit: cover;
+    }
 
     .image-caption {
       display: inline-block;
+      margin-top: ${theme.spacing(1)};
+      color: ${theme.palette.gray};
+      font-size: ${theme.typography.body2.size};
+      line-height: ${theme.typography.body2.lineHeight};
     }
   }
 `;

@@ -74,8 +74,10 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   const {
     contentfulOperatorAnalysis: contentful,
     operatorsJson: operatorObject,
+    cnNamesJson,
   } = data;
 
+  const { cnName } = cnNamesJson;
   const rarityMap = Object.fromEntries(
     data.allOperatorsJson.nodes.map(({ name, rarity }) => [name, rarity])
   );
@@ -200,7 +202,22 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               }
             )}
             <hr />
-            <div className="external-links">Aceship PRTS</div>
+            <div className="external-links">
+              <a
+                href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${contentful.operator.name}`}
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                Aceship
+              </a>
+              <a
+                href={`http://prts.wiki/w/${encodeURIComponent(cnName)}`}
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                PRTS
+              </a>
+            </div>
             <hr />
             <div className="authors-section">
               <span className="section-label">Written By</span>

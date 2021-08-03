@@ -179,6 +179,7 @@ const styles = (theme: Theme) => css`
     .skill-and-sp-type {
       display: block;
       font-size: ${theme.typography.body2.size};
+      line-height: ${theme.typography.body2.lineHeight};
 
       .sp-type-1 {
         color: ${theme.palette.lime};

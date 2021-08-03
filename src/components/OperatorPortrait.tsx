@@ -96,6 +96,7 @@ const styles = (theme: Theme) => css`
 
     .limited {
       font-size: ${theme.typography.body2.size};
+      line-height: ${theme.typography.body2.lineHeight};
       color: ${theme.palette.red};
       text-transform: uppercase;
       display: inline-block;

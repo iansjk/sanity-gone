@@ -222,6 +222,7 @@ const styles = (theme: Theme) => css`
 
     dt {
       font-size: ${theme.typography.body2.size};
+      line-height: ${theme.typography.body2.lineHeight};
       color: ${theme.palette.gray};
       display: flex;
       align-items: center;

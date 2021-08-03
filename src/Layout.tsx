@@ -1,4 +1,4 @@
-import { Global, Theme, css, ThemeProvider, ClassNames } from "@emotion/react";
+import { Global, Theme, css, ThemeProvider } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
 import { Fragment } from "react";
 import { defaultTheme } from "./theme";

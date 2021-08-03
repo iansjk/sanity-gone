@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "update-game-data": "git submodule update --init --recursive --remote && ts-node-script ./src/scripts/copy-gamedata.ts"
   },
   "dependencies": {
     "@emotion/babel-plugin": "^11.3.0",

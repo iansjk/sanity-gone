@@ -41,8 +41,8 @@ const styles = (theme: Theme) => css`
 
     img {
       border-radius: ${theme.spacing(0.5)};
-      width: 162px;
-      height: 172px;
+      width: 164px;
+      height: 164px;
       object-fit: cover;
     }
 

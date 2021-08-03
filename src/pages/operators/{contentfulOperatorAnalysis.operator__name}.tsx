@@ -17,6 +17,8 @@ import { TalentObject } from "../../components/TalentInfo";
 import Talents from "../../components/Talents";
 import Layout from "../../Layout";
 import Card from "../../components/Card";
+import { slugify } from "../../utils/globals";
+import { defaultTheme } from "../../theme";
 
 interface MarkdownNode {
   childMarkdownRemark: {
@@ -101,19 +103,31 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   const mainRef = useRef<HTMLDivElement>(null);
   // force a min-height on <main> to prevent forced scrolling when changing tabs
   useEffect(() => {
-    if (mainRef.current) {
-      const maxChildHeight = Math.max(
-        ...Array.from(
-          mainRef.current.querySelectorAll(".analysis-section")
-        ).map((child) => {
-          child.setAttribute("style", "display: inherit;");
-          const childHeight = child.getBoundingClientRect().height;
-          child.removeAttribute("style");
-          return childHeight;
-        })
-      );
-      mainRef.current.setAttribute("style", `min-height: ${maxChildHeight}px;`);
-    }
+    const handle = setInterval(() => {
+      if (
+        mainRef.current &&
+        document.body.classList.contains(
+          `wf-${slugify(defaultTheme.typography.body.family)}--loaded`
+        )
+      ) {
+        const maxChildHeight = Math.max(
+          ...Array.from(
+            mainRef.current.querySelectorAll(".analysis-section")
+          ).map((child) => {
+            child.setAttribute("style", "display: inherit;");
+            const childHeight = child.getBoundingClientRect().height;
+            child.removeAttribute("style");
+            return childHeight;
+          })
+        );
+        mainRef.current.setAttribute(
+          "style",
+          `min-height: ${maxChildHeight}px;`
+        );
+        clearInterval(handle);
+      }
+      return () => clearInterval(handle);
+    }, 500);
   }, []);
 
   const styles = (theme: Theme) => css`

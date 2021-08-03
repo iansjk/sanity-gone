@@ -16,6 +16,14 @@ const palette = {
 };  
 
 const typography = {
+  fallbackFontFamily: "Arial, sans-serif",
+  fallbackFontCss: `
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    word-spacing: -1px;
+  `,
   pageHeading: {
     weight: 600,
     size: "96px",
@@ -48,7 +56,7 @@ const typography = {
   },
   body: {
     size: "18px",
-    family: "Source Sans Pro, sans-serif",
+    family: "Source Sans Pro",
     lineHeight: 1.5,
   },
   body2: {

@@ -5,6 +5,7 @@ import { defaultTheme } from "./theme";
 import { Helmet } from "react-helmet";
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import BreadcrumbBackIcon from "./components/icons/BreadcrumbBackIcon";
+import { slugify } from "./utils/globals";
 
 interface LayoutProps {
   pageTitle: string;
@@ -81,17 +82,25 @@ export default Layout;
 
 const styles = (theme: Theme) => css`
   html {
-    font-family: ${theme.typography.body.family};
     font-size: ${theme.typography.body.size};
     color: ${theme.palette.white};
     background-color: ${theme.palette.background};
     line-height: ${theme.typography.body.lineHeight};
     overflow-y: scroll;
+    font-family: ${theme.typography.fallbackFontFamily};
   }
 
   body {
     background-repeat: no-repeat;
     background-position-x: center;
+
+    &:not(.wf-${slugify(theme.typography.body.family)}--loaded) {
+      ${theme.typography.fallbackFontCss};
+    }
+
+    &.wf-${slugify(theme.typography.body.family)}--loaded {
+      font-family: ${theme.typography.body.family};
+    }
   }
 
   .site-wrapper {

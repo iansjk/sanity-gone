@@ -23,7 +23,7 @@ const styles = (theme: Theme) => css`
   padding: 0;
 
   .heading-block {
-    padding: ${theme.spacing(2, 0, 2, 3)};
+    padding: ${theme.spacing(2, 0, 2, 4)};
     background-color: ${transparentize(0.34, theme.palette.background)};
     backdrop-filter: blur(8px);
     border-top-right-radius: ${theme.spacing(1)};

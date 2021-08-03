@@ -158,15 +158,38 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
 
     .left-sidebar {
       grid-row-start: 2;
+      padding-right: ${theme.spacing(4)};
+
+      hr {
+        border: 0;
+        border-top: 1px solid ${theme.palette.mid};
+        margin: ${theme.spacing(3)} 0 0 0;
+      }
+
+      .external-links,
+      .metadata {
+        padding-left: ${theme.spacing(2)};
+      }
+
+      .external-links,
+      .authors-section,
+      .last-updated-section {
+        margin-top: ${theme.spacing(3)};
+      }
 
       .section-label {
         display: block;
+        margin-bottom: ${theme.spacing(1)};
+        font-size: ${theme.typography.body2.size};
+        line-height: ${theme.typography.body2.lineHeight};
+        color: ${theme.palette.gray};
       }
 
       .external-links {
         a {
           color: ${contentful.operator.accentColorInHex};
           text-decoration: none;
+          margin-right: ${theme.spacing(1)};
         }
       }
     }
@@ -235,21 +258,24 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               </a>
             </div>
             <hr />
-            <div className="authors-section">
-              <span className="section-label">Written By</span>
-              <span className="authors">
-                {contentful.author
-                  .map((author) => author.authorDiscordTag)
-                  .join(",\n")}
-              </span>
-            </div>
-            <div className="last-updated-section">
-              <span className="section-label">Last Updated</span>
-              <span className="last-updated">
-                {DateTime.fromISO(contentful.updatedAt).toLocaleString(
-                  DateTime.DATE_FULL
-                )}
-              </span>
+            <div className="metadata">
+              <div className="authors-section">
+                <span className="section-label">Written By</span>
+                <span className="authors">
+                  {contentful.author
+                    .map((author) => author.authorDiscordTag)
+                    .join(",\n")}
+                </span>
+              </div>
+
+              <div className="last-updated-section">
+                <span className="section-label">Last Updated</span>
+                <span className="last-updated">
+                  {DateTime.fromISO(contentful.updatedAt).toLocaleString(
+                    DateTime.DATE_FULL
+                  )}
+                </span>
+              </div>
             </div>
           </div>
           <TabPanels className="panels">

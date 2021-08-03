@@ -53,6 +53,7 @@ const typography = {
   },
   body2: {
     size: "14px",
+    lineHeight: "24px",
   },
   smallPortraitRarity: {
     size: "18px",

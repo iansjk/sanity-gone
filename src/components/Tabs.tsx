@@ -30,9 +30,20 @@ const Tabs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
 
   return (
     <div {...rest}>
-      {tabButtons &&
-        React.cloneElement(tabButtons, { activeTab, onClick: handleClick })}
-      {tabPanels && React.cloneElement(tabPanels, { activeTab, userActed })}
+      {React.Children.map(children, (child) => {
+        if (
+          React.isValidElement<TabButtonsProps>(child) &&
+          child.type === TabButtons
+        ) {
+          return React.cloneElement(child, { activeTab, onClick: handleClick });
+        } else if (
+          React.isValidElement<TabPanelsProps>(child) &&
+          child.type === TabPanels
+        ) {
+          return React.cloneElement(child, { activeTab, userActed });
+        }
+        return child;
+      })}
     </div>
   );
 };

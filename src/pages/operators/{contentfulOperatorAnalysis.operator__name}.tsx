@@ -117,7 +117,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   }, []);
 
   const styles = (theme: Theme) => css`
-    display: flex;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    grid-template-columns: max-content 1fr;
 
     & > .tabs {
       display: flex;
@@ -152,13 +154,25 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           font-weight: ${theme.typography.navigationLinkActive.fontWeight};
         }
       }
+    }
+
+    .left-sidebar {
+      grid-row-start: 2;
 
       .section-label {
         display: block;
       }
+
+      .external-links {
+        a {
+          color: ${contentful.operator.accentColorInHex};
+          text-decoration: none;
+        }
+      }
     }
 
     & > .panels {
+      grid-row-start: span 2;
       margin-left: -1px;
 
       .analysis-section {
@@ -194,13 +208,15 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         previousLocationLink="/operators"
         accentColor={contentful.operator.accentColorInHex}
       >
-        <Tabs className="wrapper" css={styles}>
+        <Tabs css={styles}>
           <TabButtons className="tabs">
             {["Introduction", "Talents", "Skills", "Synergies", "Summary"].map(
               (label) => {
                 return <button key={label}>{label}</button>;
               }
             )}
+          </TabButtons>
+          <div className="left-sidebar">
             <hr />
             <div className="external-links">
               <a
@@ -235,7 +251,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 )}
               </span>
             </div>
-          </TabButtons>
+          </div>
           <TabPanels className="panels">
             {[
               {

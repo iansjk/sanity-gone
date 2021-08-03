@@ -45,6 +45,7 @@ interface OperatorAnalysisData {
     synergyDescription: MarkdownNode;
   }[];
   summary: MarkdownNode;
+  updatedAt: string; // ISO 8601 timestamp
 }
 
 interface Props {
@@ -144,6 +145,10 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           font-weight: ${theme.typography.navigationLinkActive.fontWeight};
         }
       }
+
+      .section-label {
+        display: block;
+      }
     }
 
     & > .panels {
@@ -187,6 +192,21 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
             {["Introduction", "Talents", "Skills", "Synergies"].map((label) => {
               return <button key={label}>{label}</button>;
             })}
+            <hr />
+            <div className="external-links">Aceship PRTS</div>
+            <hr />
+            <div className="authors-section">
+              <span className="section-label">Written By</span>
+              <span className="authors">
+                {contentful.author
+                  .map((author) => author.authorDiscordTag)
+                  .join(",\n")}
+              </span>
+            </div>
+            <div className="last-updated-section">
+              <span className="section-label">Last Updated</span>
+              <span className="last-updated">{contentful.updatedAt}</span>
+            </div>
           </TabButtons>
           <TabPanels className="panels">
             {[
@@ -293,6 +313,7 @@ export const query = graphql`
           html
         }
       }
+      updatedAt
     }
 
     operatorsJson(name: { eq: $operator__name }) {

@@ -1,12 +1,13 @@
 import fs from "fs";
 import path from "path";
-import characterTable from "../../ArknightsGameData/en_US/gamedata/excel/character_table.json";
+import enCharacterTable from "../../ArknightsGameData/en_US/gamedata/excel/character_table.json";
+import cnCharacterTable from "../../ArknightsGameData/zh_CN/gamedata/excel/character_table.json";
 import skillTable from "../../ArknightsGameData/en_US/gamedata/excel/skill_table.json";
 import rangeTable from "../../ArknightsGameData/en_US/gamedata/excel/range_table.json";
 
 const dataDir = path.join(__filename, "../../data");
 
-const denormalizedOperators = Object.entries(characterTable).map(([id, op]) => {
+const denormalizedOperators = Object.entries(enCharacterTable).map(([id, op]) => {
   const phases = op.phases.map((phase) => ({
     ...phase,
     range: phase.rangeId
@@ -72,4 +73,13 @@ const denormalizedSkills = Object.entries(skillTable).map(([id, skill]) => {
 fs.writeFileSync(
   path.join(dataDir, "skills.json"),
   JSON.stringify(denormalizedSkills, null, 2)
+);
+
+const cnNames = Object.entries(cnCharacterTable).map(([id, cnOp]) => {
+  const enName = enCharacterTable[id as keyof typeof enCharacterTable]?.name ?? "(Not available)";
+  return { enName, cnName: cnOp.name }
+});
+fs.writeFileSync(
+  path.join(dataDir, "cn-names.json"),
+  JSON.stringify(cnNames, null, 2)
 );

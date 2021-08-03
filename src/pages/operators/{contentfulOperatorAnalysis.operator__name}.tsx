@@ -57,6 +57,9 @@ interface Props {
       talents: TalentObject[];
       skillData: SkillObject[];
     };
+    cnNamesJson: {
+      cnName: string;
+    };
     allOperatorsJson: {
       nodes: {
         name: string;
@@ -409,6 +412,10 @@ export const query = graphql`
           }
         }
       }
+    }
+
+    cnNamesJson(enName: { eq: $operator__name }) {
+      cnName
     }
 
     allOperatorsJson {

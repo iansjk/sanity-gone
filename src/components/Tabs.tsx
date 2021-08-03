@@ -2,35 +2,40 @@ import React, { useState } from "react";
 import TabButtons, { TabButtonsProps } from "./TabButtons";
 import TabPanels, { TabPanelsProps } from "./TabPanels";
 
-const Tabs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
-  children,
-  ...rest
-}) => {
-  const tabButtons = React.Children.toArray(children).find(
-    (child) =>
-      React.isValidElement<TabButtonsProps>(child) && child.type === TabButtons
-  ) as React.ReactElement<TabButtonsProps>;
-  const tabPanels = React.Children.toArray(children).find(
-    (child) =>
-      React.isValidElement<TabPanelsProps>(child) && child.type === TabPanels
-  ) as React.ReactElement<TabPanelsProps>;
-  if (!tabButtons) {
-    console.error("<TabButtons> child is missing from <Tabs>.");
-  } else if (!tabPanels) {
-    console.error("<TabPanels> child is missing from <Tabs>.");
-  }
+type TabsProps = React.HTMLAttributes<HTMLDivElement> & { component?: string };
 
-  const [activeTab, setActiveTab] = useState(0);
-  const [userActed, setUserActed] = useState(false);
+const Tabs = React.forwardRef<HTMLElement, TabsProps>(
+  ({ component = "div", children, ...rest }, ref) => {
+    const tabButtons = React.Children.toArray(children).find(
+      (child) =>
+        React.isValidElement<TabButtonsProps>(child) &&
+        child.type === TabButtons
+    ) as React.ReactElement<TabButtonsProps>;
+    const tabPanels = React.Children.toArray(children).find(
+      (child) =>
+        React.isValidElement<TabPanelsProps>(child) && child.type === TabPanels
+    ) as React.ReactElement<TabPanelsProps>;
+    if (!tabButtons) {
+      console.error("<TabButtons> child is missing from <Tabs>.");
+    } else if (!tabPanels) {
+      console.error("<TabPanels> child is missing from <Tabs>.");
+    }
 
-  const handleClick = (index: number) => {
-    setActiveTab(index);
-    setUserActed(true);
-  };
+    const [activeTab, setActiveTab] = useState(0);
+    const [userActed, setUserActed] = useState(false);
 
-  return (
-    <div {...rest}>
-      {React.Children.map(children, (child) => {
+    const handleClick = (index: number) => {
+      setActiveTab(index);
+      setUserActed(true);
+    };
+
+    return React.createElement(
+      component,
+      {
+        ref,
+        ...rest,
+      },
+      React.Children.map(children, (child) => {
         if (
           React.isValidElement<TabButtonsProps>(child) &&
           child.type === TabButtons
@@ -43,8 +48,9 @@ const Tabs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
           return React.cloneElement(child, { activeTab, userActed });
         }
         return child;
-      })}
-    </div>
-  );
-};
+      })
+    );
+  }
+);
+Tabs.displayName = "Tabs";
 export default Tabs;

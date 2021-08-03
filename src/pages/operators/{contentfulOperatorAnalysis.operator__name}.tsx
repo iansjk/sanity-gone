@@ -231,7 +231,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         previousLocationLink="/operators"
         accentColor={contentful.operator.accentColorInHex}
       >
-        <Tabs css={styles}>
+        <Tabs component="main" ref={mainRef} css={styles}>
           <TabButtons className="tabs">
             {["Introduction", "Talents", "Skills", "Synergies", "Summary"].map(
               (label) => {

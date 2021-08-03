@@ -16,12 +16,9 @@ const TabPanels: React.FC<TabPanelsProps> = (props) => {
   ) as React.ReactElement<React.HTMLAttributes<HTMLDivElement>>[];
 
   useEffect(() => {
-    console.log("userActed", userActed);
-    console.log("activeTab", activeTab);
     if (userActed && panelsRef.current && activeTab != null) {
       const activePanel: HTMLDivElement | null =
         panelsRef.current.querySelector(`div[data-index="${activeTab}"]`);
-      console.log("activePanel", activePanel);
       if (activePanel) {
         activePanel.focus({ preventScroll: true });
       }

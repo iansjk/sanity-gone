@@ -1,7 +1,7 @@
 import { css, Theme } from "@emotion/react";
 import { graphql } from "gatsby";
 import { transparentize } from "polished";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import Helmet from "react-helmet";
 import Introduction from "../../components/Introduction";
 import { OperatorObject } from "../../components/OperatorStats";

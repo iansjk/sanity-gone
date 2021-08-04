@@ -1,6 +1,6 @@
 import { css, Theme } from "@emotion/react";
 import { transparentize } from "polished";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import CloseIcon from "./icons/CloseIcon";
 import NextArrow from "./icons/NextArrow";
@@ -30,6 +30,41 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
   } = props;
   const filename = url.split("/").slice(-1)[0];
   const overlayRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (open) {
+      const listener = (e: KeyboardEvent) => {
+        switch (e.key) {
+          case "Left":
+          case "ArrowLeft":
+            e.preventDefault();
+            if (canPrevious) {
+              onPrevious();
+            }
+            e.stopPropagation();
+            break;
+          case "Right":
+          case "ArrowRight":
+            e.preventDefault();
+            if (canNext) {
+              onNext();
+            }
+            e.stopPropagation();
+            break;
+          case "Esc":
+          case "Escape":
+            e.preventDefault();
+            onClose();
+            e.stopPropagation();
+            break;
+        }
+      };
+      document.addEventListener("keydown", listener);
+      return () => {
+        document.removeEventListener("keydown", listener);
+      };
+    }
+  }, [canNext, canPrevious, onClose, onNext, onPrevious, open]);
 
   const handleOverlayClick: React.MouseEventHandler = (e) => {
     if (e.target === overlayRef.current) {

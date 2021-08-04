@@ -8,7 +8,7 @@ import GalleryItem from "./GalleryItem";
 import GalleryItemFullSizeModal from "./GalleryItemFullSizeModal";
 
 export interface GalleryProps {
-  contents: string; // htmlstring
+  contents: Element[];
 }
 
 const Gallery: React.FC<GalleryProps> = (props) => {
@@ -16,21 +16,12 @@ const Gallery: React.FC<GalleryProps> = (props) => {
   const [open, setOpen] = useState(false);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
 
-  const parsed = (
-    parse(contents, {
-      replace: (domNode) => {
-        if (domNode instanceof Element && domNode.name === "img") {
-          return domNode;
-        }
-      },
-    }) as JSX.Element[]
-  ).filter((element) => element.type === "img");
-  const numImages = parsed.length;
-  const children = parsed.map((imgElement, i) => (
+  const numImages = contents.length;
+  const children = contents.map((imgElement, i) => (
     <GalleryItem
       key={i}
-      url={imgElement.props.src}
-      alt={imgElement.props.alt}
+      url={imgElement.attribs.src}
+      alt={imgElement.attribs.alt}
       onClick={() => {
         setOpen(true);
         setActiveItemIndex(i);

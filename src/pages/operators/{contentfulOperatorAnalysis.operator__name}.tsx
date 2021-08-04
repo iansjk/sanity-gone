@@ -4,21 +4,66 @@ import { transparentize } from "polished";
 import { Fragment, useEffect, useRef } from "react";
 import Helmet from "react-helmet";
 import { DateTime } from "luxon";
+import parse from "html-react-parser";
+import { Element } from "domhandler/lib/node";
+
 import Introduction from "../../components/Introduction";
-import { OperatorObject } from "../../components/OperatorStats";
-import { SkillObject } from "../../components/SkillInfo";
+import OperatorStats, { OperatorObject } from "../../components/OperatorStats";
+import SkillInfo, { SkillObject } from "../../components/SkillInfo";
 import Skills from "../../components/Skills";
 import Synergies from "../../components/Synergies";
 import { SynergyQuality } from "../../components/SynergyOperator";
 import Tabs from "../../components/Tabs";
 import TabButtons from "../../components/TabButtons";
 import TabPanels from "../../components/TabPanels";
-import { TalentObject } from "../../components/TalentInfo";
+import TalentInfo, { TalentObject } from "../../components/TalentInfo";
 import Talents from "../../components/Talents";
 import Layout from "../../Layout";
 import Card from "../../components/Card";
-import { slugify } from "../../utils/globals";
+import { replaceSelfClosingHtmlTags, slugify } from "../../utils/globals";
 import { defaultTheme } from "../../theme";
+import Gallery from "../../components/Gallery";
+
+type HTMLToReactContext = Partial<{
+  skills: SkillObject[];
+  talents: TalentObject[];
+  operator: OperatorObject;
+}>;
+
+const htmlToReact = (
+  html: string,
+  context?: HTMLToReactContext
+): string | JSX.Element | JSX.Element[] => {
+  return parse(replaceSelfClosingHtmlTags(html), {
+    replace: (domNode) => {
+      if (domNode instanceof Element) {
+        if (domNode.name === "skillinfo") {
+          return (
+            <SkillInfo
+              className="skills-skill-info"
+              skillObject={context!.skills!.shift()!}
+            />
+          );
+        } else if (domNode.name === "talentinfo") {
+          return (
+            <TalentInfo
+              className="talents-talent-info"
+              talentObject={context!.talents!.shift()!}
+            />
+          );
+        } else if (domNode.name === "operatorstats") {
+          return <OperatorStats operatorObject={context!.operator!} />;
+        } else if ((domNode.firstChild as Element).name === "img") {
+          const contents = (domNode.children as Element[]).filter(
+            (element) => element.name === "img"
+          );
+          return <Gallery contents={contents} />;
+        }
+      }
+      return domNode;
+    },
+  });
+};
 
 interface MarkdownNode {
   childMarkdownRemark: {
@@ -87,12 +132,16 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   const talentAnalyses = [
     contentful.talent1Analysis.childMarkdownRemark.html,
     contentful.talent2Analysis.childMarkdownRemark.html,
-  ].filter((html) => !!html);
+  ]
+    .filter((html) => !!html)
+    .map((html) => htmlToReact(html, { talents: operatorObject.talents }));
   const skillAnalyses = [
     contentful.skill1Analysis.childMarkdownRemark.html,
     contentful.skill2Analysis.childMarkdownRemark.html,
     contentful.skill3Analysis.childMarkdownRemark.html,
-  ].filter((html) => !!html);
+  ]
+    .filter((html) => !!html)
+    .map((html) => htmlToReact(html, { skills: operatorObject.skillData }));
   const synergyOperators = contentful.operatorSynergies.map((os) => ({
     name: os.operatorName,
     rarity: rarityMap[os.operatorName] + 1,
@@ -300,30 +349,23 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               {
                 component: (
                   <Introduction
-                    analysis={contentful.introduction.childMarkdownRemark.html}
+                    analysis={htmlToReact(
+                      contentful.introduction.childMarkdownRemark.html,
+                      { operator: operatorObject }
+                    )}
                     archetype={contentful.operator.archetype}
-                    operatorObject={operatorObject}
                     isLimited={contentful.operator.limited}
+                    operatorObject={operatorObject}
                   />
                 ),
                 className: "introduction",
               },
               {
-                component: (
-                  <Talents
-                    analyses={talentAnalyses}
-                    talentObjects={operatorObject.talents}
-                  />
-                ),
+                component: <Talents analyses={talentAnalyses} />,
                 className: "talents",
               },
               {
-                component: (
-                  <Skills
-                    analyses={skillAnalyses}
-                    skillObjects={operatorObject.skillData}
-                  />
-                ),
+                component: <Skills analyses={skillAnalyses} />,
                 className: "skills",
               },
               {
@@ -332,12 +374,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               },
               {
                 component: (
-                  <Card
-                    header="Summary"
-                    dangerouslySetInnerHTML={{
-                      __html: contentful.summary.childMarkdownRemark.html,
-                    }}
-                  />
+                  <Card header="Summary">
+                    {htmlToReact(contentful.summary.childMarkdownRemark.html)}
+                  </Card>
                 ),
                 className: "summary",
               },

@@ -1,12 +1,9 @@
 import parse from "html-react-parser";
-import { Element } from "domhandler/lib/node";
-import { replaceSelfClosingHtmlTags } from "../utils/globals";
 import Card from "./Card";
 import OperatorInfo, { OperatorInfoProps } from "./OperatorInfo";
-import OperatorStats from "./OperatorStats";
 
 export type IntroductionProps = OperatorInfoProps & {
-  analysis: string;
+  analysis: ReturnType<typeof parse>;
 };
 
 const Introduction: React.VFC<IntroductionProps> = (props) => {
@@ -18,18 +15,7 @@ const Introduction: React.VFC<IntroductionProps> = (props) => {
         archetype={archetype}
         isLimited={isLimited}
       />
-      <div className="introduction-content">
-        {parse(replaceSelfClosingHtmlTags(analysis), {
-          replace: (domNode) => {
-            if (
-              domNode instanceof Element &&
-              domNode.name.toLowerCase() === "operatorstats"
-            ) {
-              return <OperatorStats operatorObject={operatorObject} />;
-            }
-          },
-        })}
-      </div>
+      <div className="introduction-content">{analysis}</div>
     </Card>
   );
 };

@@ -1,9 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import parse from "html-react-parser";
 import { Element } from "domhandler/lib/node";
 import { css } from "@emotion/react";
-import { Fragment, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import GalleryItem from "./GalleryItem";
 import GalleryItemFullSizeModal from "./GalleryItemFullSizeModal";
+
+interface GalleryItemData {
+  url: string;
+  alt: string;
+}
 
 export interface GalleryProps {
   contents: string; // htmlstring
@@ -12,35 +19,42 @@ export interface GalleryProps {
 const Gallery: React.FC<GalleryProps> = (props) => {
   const { contents } = props;
   const [open, setOpen] = useState(false);
-  const [activeUrl, setActiveUrl] = useState("");
-  const [activeCaption, setActiveCaption] = useState("");
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
+
+  const parsed = (
+    parse(contents, {
+      replace: (domNode) => {
+        if (domNode instanceof Element && domNode.name === "img") {
+          return domNode;
+        }
+      },
+    }) as JSX.Element[]
+  ).filter((element) => element.type === "img");
+  const numImages = parsed.length;
+  const children = parsed.map((imgElement, i) => (
+    <GalleryItem
+      key={i}
+      url={imgElement.props.src}
+      alt={imgElement.props.alt}
+      onClick={() => {
+        setOpen(true);
+        setActiveItemIndex(i);
+      }}
+    />
+  ));
 
   return (
     <Fragment>
-      <div css={styles}>
-        {parse(contents, {
-          replace: (domNode) => {
-            if (domNode instanceof Element && domNode.name === "img") {
-              return (
-                <GalleryItem
-                  url={domNode.attribs.src}
-                  alt={domNode.attribs.alt}
-                  onClick={() => {
-                    setActiveUrl(domNode.attribs.src);
-                    setActiveCaption(domNode.attribs.alt);
-                    setOpen(true);
-                  }}
-                />
-              );
-            }
-          },
-        })}
-      </div>
+      <div css={styles}>{children}</div>
       <GalleryItemFullSizeModal
-        url={activeUrl}
-        caption={activeCaption}
+        url={children[activeItemIndex].props.url}
+        caption={children[activeItemIndex].props.alt}
         open={open}
         onClose={() => setOpen(false)}
+        onPrevious={() => setActiveItemIndex((index) => index - 1)}
+        onNext={() => setActiveItemIndex((index) => index + 1)}
+        canPrevious={activeItemIndex > 0}
+        canNext={activeItemIndex < numImages - 1}
       />
     </Fragment>
   );

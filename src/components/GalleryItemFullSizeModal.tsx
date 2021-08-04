@@ -10,10 +10,23 @@ interface Props {
   caption: string;
   open: boolean;
   onClose: () => void;
+  onPrevious: () => void;
+  onNext: () => void;
+  canPrevious: boolean;
+  canNext: boolean;
 }
 
 const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
-  const { url, caption, open, onClose } = props;
+  const {
+    url,
+    caption,
+    open,
+    onClose,
+    canNext,
+    canPrevious,
+    onNext,
+    onPrevious,
+  } = props;
   const filename = url.split("/").slice(-1)[0];
 
   return ReactDOM.createPortal(
@@ -35,11 +48,27 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
         <h2 className="caption" aria-label={`Image, full size: ${caption}`}>
           {caption}
         </h2>
-        <button aria-label="Previous image" className="previous-button">
+        <button
+          aria-label="Previous image"
+          className="previous-button"
+          disabled={!canPrevious}
+          onClick={(e) => {
+            e.stopPropagation();
+            onPrevious();
+          }}
+        >
           <PreviousArrow />
         </button>
         <img src={url} alt="" />
-        <button aria-label="Next image" className="next-button">
+        <button
+          aria-label="Next image"
+          className="next-button"
+          disabled={!canNext}
+          onClick={(e) => {
+            e.stopPropagation();
+            onNext();
+          }}
+        >
           <NextArrow />
         </button>
         <div className="topbar">

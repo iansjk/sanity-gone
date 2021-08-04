@@ -296,12 +296,13 @@ export default OperatorAnalysis;
 const styles = (accentColor: string) => (theme: Theme) =>
   css`
     display: grid;
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: max-content max-content 1fr;
     grid-template-columns: max-content 1fr;
 
     & > .tabs {
       display: flex;
       flex-direction: column;
+      border-right: 1px solid ${theme.palette.midHighlight};
       z-index: 1;
 
       button {
@@ -334,6 +335,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
     .left-sidebar {
       grid-row-start: 2;
       padding-right: ${theme.spacing(4)};
+      border-right: 1px solid ${theme.palette.midHighlight};
 
       hr {
         border: 0;
@@ -368,7 +370,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
     }
 
     & > .panels {
-      grid-row-start: span 2;
+      grid-row-start: span 3;
       margin-left: -1px;
 
       .analysis-section {

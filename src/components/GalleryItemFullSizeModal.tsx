@@ -5,12 +5,15 @@ import CloseIcon from "./icons/CloseIcon";
 
 interface Props {
   url: string;
+  caption: string;
   open: boolean;
   onClose: () => void;
 }
 
 const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
-  const { url, open, onClose } = props;
+  const { url, caption, open, onClose } = props;
+  const filename = url.split("/").slice(-1)[0];
+
   return ReactDOM.createPortal(
     <div aria-modal="true" className="overlay" css={styles} hidden={!open}>
       <button
@@ -20,7 +23,24 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
       >
         <CloseIcon aria-hidden="true" />
       </button>
-      <div className="modal-content">This is a modal dialog!</div>
+      <div className="modal-content">
+        <h2 className="caption" aria-label={`Image, full size: ${caption}`}>
+          {caption}
+        </h2>
+        <button aria-label="Previous image" className="previous-button">
+          {"<-"}
+        </button>
+        <img src={url} alt="" />
+        <button aria-label="Next image" className="next-button">
+          {"->"}
+        </button>
+        <div className="topbar">
+          <span className="filename" aria-label={`Filename: ${filename}`}>
+            {filename}
+          </span>
+          <span aria-hidden="true">Full Resolution</span>
+        </div>
+      </div>
     </div>,
     document.body
   );
@@ -53,12 +73,36 @@ const styles = (theme: Theme) => css`
     left: 50vw;
     top: 50vh;
     transform: translateX(-50%) translateY(-50%);
-    width: 1408px;
-    height: 795px;
+    width: 70%;
+    height: 80%;
     background: ${transparentize(0.34, theme.palette.mid)};
 
     display: grid;
     grid-template-rows: max-content 1fr max-content;
     grid-template-columns: max-content 1fr max-content 1fr max-content;
+    grid-template-areas:
+      "topbar topbar topbar topbar topbar"
+      "previous spacerL image spacerR next"
+      "bottombar bottombar bottombar bottombar bottombar";
+
+    .topbar {
+      grid-area: topbar;
+    }
+
+    .previous-button {
+      grid-area: previous;
+    }
+
+    .next-button {
+      grid-area: next;
+    }
+
+    .caption {
+      grid-area: bottombar;
+    }
+
+    img {
+      grid-area: image;
+    }
   }
 `;

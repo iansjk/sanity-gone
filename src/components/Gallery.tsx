@@ -13,6 +13,7 @@ const Gallery: React.FC<GalleryProps> = (props) => {
   const { contents } = props;
   const [open, setOpen] = useState(false);
   const [activeUrl, setActiveUrl] = useState("");
+  const [activeCaption, setActiveCaption] = useState("");
 
   return (
     <Fragment>
@@ -26,6 +27,7 @@ const Gallery: React.FC<GalleryProps> = (props) => {
                   alt={domNode.attribs.alt}
                   onClick={() => {
                     setActiveUrl(domNode.attribs.src);
+                    setActiveCaption(domNode.attribs.alt);
                     setOpen(true);
                   }}
                 />
@@ -36,6 +38,7 @@ const Gallery: React.FC<GalleryProps> = (props) => {
       </div>
       <GalleryItemFullSizeModal
         url={activeUrl}
+        caption={activeCaption}
         open={open}
         onClose={() => setOpen(false)}
       />

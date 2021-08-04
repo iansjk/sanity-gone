@@ -183,6 +183,7 @@ const styles = (theme: Theme) => css`
   right: 0;
   background-color: ${transparentize(0.34, theme.palette.background)};
   backdrop-filter: blur(${theme.spacing(1)});
+  z-index: 100;
 
   .close-modal-button {
     position: absolute;

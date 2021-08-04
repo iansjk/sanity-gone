@@ -142,7 +142,7 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
                   onPrevious();
                 }}
               >
-                <PreviousArrow />
+                <PreviousArrow aria-hidden="true" />
               </button>
             </div>
             <img src={url} alt="" />
@@ -155,7 +155,7 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
                   onNext();
                 }}
               >
-                <NextArrow />
+                <NextArrow aria-hidden="true" />
               </button>
             </div>
             <div className="topbar">

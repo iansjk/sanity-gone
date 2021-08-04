@@ -4,12 +4,13 @@ import ReactDOM from "react-dom";
 import CloseIcon from "./icons/CloseIcon";
 
 interface Props {
+  url: string;
   open: boolean;
   onClose: () => void;
 }
 
 const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
-  const { open, onClose } = props;
+  const { url, open, onClose } = props;
   return ReactDOM.createPortal(
     <div aria-modal="true" className="overlay" css={styles} hidden={!open}>
       <button

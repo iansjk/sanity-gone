@@ -1,34 +1,25 @@
-import React, { Fragment, useState } from "react";
 import { css, Theme } from "@emotion/react";
-import GalleryItemFullSizeModal from "./GalleryItemFullSizeModal";
-
 interface Props {
   url: string;
   alt: string;
+  onClick: () => void;
 }
 
 const GalleryItem: React.VFC<Props> = (props) => {
-  const { url, alt } = props;
-  const [open, setOpen] = useState(false);
+  const { url, alt, onClick } = props;
 
   return (
-    <Fragment>
-      <button
-        className="gallery-image"
-        css={styles}
-        aria-label={`Image: ${alt}. Click to expand`}
-        onClick={() => setOpen(!open)}
-      >
-        <img src={url} alt={alt} />
-        <span className="image-caption" aria-hidden="true">
-          {alt}
-        </span>
-      </button>
-      <GalleryItemFullSizeModal
-        open={open}
-        onClose={() => setOpen((open) => !open)}
-      />
-    </Fragment>
+    <button
+      className="gallery-image"
+      css={styles}
+      aria-label={`Image: ${alt}. Click to expand`}
+      onClick={onClick}
+    >
+      <img src={url} alt={alt} />
+      <span className="image-caption" aria-hidden="true">
+        {alt}
+      </span>
+    </button>
   );
 };
 export default GalleryItem;

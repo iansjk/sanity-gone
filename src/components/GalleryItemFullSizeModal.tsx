@@ -134,29 +134,32 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
               {caption}
             </h2>
             <div className="previous-button-area">
-              <button
-                aria-label="Previous image"
-                disabled={!canPrevious}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onPrevious();
-                }}
-              >
-                <PreviousArrow aria-hidden="true" />
-              </button>
+              {canPrevious && (
+                <button
+                  aria-label="Previous image"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onPrevious();
+                  }}
+                >
+                  <PreviousArrow aria-hidden="true" />
+                </button>
+              )}
             </div>
             <img src={url} alt="" />
             <div className="next-button-area">
-              <button
-                aria-label="Next image"
-                disabled={!canNext}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onNext();
-                }}
-              >
-                <NextArrow aria-hidden="true" />
-              </button>
+              {canNext && (
+                <button
+                  aria-label="Next image"
+                  disabled={!canNext}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onNext();
+                  }}
+                >
+                  <NextArrow aria-hidden="true" />
+                </button>
+              )}
             </div>
             <div className="topbar">
               <span className="filename" aria-label={`Filename: ${filename}`}>
@@ -208,7 +211,7 @@ const styles = (theme: Theme) => css`
 
     display: grid;
     grid-template-rows: max-content 1fr max-content;
-    grid-template-columns: max-content 1fr max-content 1fr max-content;
+    grid-template-columns: 200px 1fr max-content 1fr 200px;
     grid-template-areas:
       "topbar topbar topbar topbar topbar"
       "previous spacerL image spacerR next"

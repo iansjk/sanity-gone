@@ -197,14 +197,20 @@ const styles = (theme: Theme) => css`
 
   .close-modal-button {
     position: absolute;
-    right: ${theme.spacing(4)};
-    top: ${theme.spacing(4)};
-    padding: 0;
+    right: 0;
+    top: 0;
+    padding: ${theme.spacing(4)};
     margin: 0;
     border: 0;
     background-color: unset;
     line-height: 1;
     cursor: pointer;
+
+    &:hover {
+      svg path {
+        stroke: ${theme.palette.white};
+      }
+    }
   }
 
   .modal-content {

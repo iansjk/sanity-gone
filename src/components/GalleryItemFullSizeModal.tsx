@@ -30,6 +30,8 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
   } = props;
   const filename = url.split("/").slice(-1)[0];
   const overlayRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const previousFocusRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (open) {
@@ -60,8 +62,38 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
         }
       };
       document.addEventListener("keydown", listener);
+      for (let i = 0; i < document.body.children.length; i++) {
+        const child = document.body.children.item(i);
+        if (child !== overlayRef.current) {
+          child?.setAttribute("inert", "true");
+        }
+      }
+      if (!previousFocusRef.current) {
+        // @ts-expect-error forcefully set ref
+        previousFocusRef.current = document.activeElement;
+      }
+      if (!overlayRef.current?.contains(document.activeElement)) {
+        setTimeout(() => {
+          closeButtonRef.current?.focus();
+        }, 0);
+      }
       return () => {
         document.removeEventListener("keydown", listener);
+        for (let i = 0; i < document.body.children.length; i++) {
+          const child = document.body.children.item(i);
+          child?.removeAttribute("inert");
+        }
+        setTimeout(() => {
+          if (
+            previousFocusRef.current &&
+            previousFocusRef instanceof HTMLElement
+          ) {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+            previousFocusRef.current.focus();
+            // @ts-expect-error forcefully set ref
+            previousFocusRef.current = null;
+          }
+        }, 0);
       };
     }
   }, [canNext, canPrevious, onClose, onNext, onPrevious, open]);
@@ -76,22 +108,29 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
     ? null
     : ReactDOM.createPortal(
         <div
-          aria-modal="true"
-          className="overlay"
+          className="gallery-modal-overlay"
           css={styles}
           hidden={!open}
           ref={overlayRef}
           onClick={handleOverlayClick}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="gallery-modal-title"
         >
           <button
             className="close-modal-button"
             aria-label="Close"
             onClick={onClose}
+            ref={closeButtonRef}
           >
             <CloseIcon aria-hidden="true" />
           </button>
           <div className="modal-content">
-            <h2 className="caption" aria-label={`Image, full size: ${caption}`}>
+            <h2
+              id="gallery-modal-title"
+              className="caption"
+              aria-label={`Image, full size: ${caption}`}
+            >
               {caption}
             </h2>
             <div className="previous-button-area">
@@ -123,9 +162,10 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
               <span className="filename" aria-label={`Filename: ${filename}`}>
                 {filename}
               </span>
-              <span className="full-resolution" aria-hidden="true">
-                Full Resolution
+              <span aria-hidden="true" className="separator">
+                |
               </span>
+              <span className="full-resolution">Full Resolution</span>
             </div>
           </div>
         </div>,
@@ -176,16 +216,18 @@ const styles = (theme: Theme) => css`
       grid-area: topbar;
       font-size: ${theme.typography.body.size};
       text-align: center;
+      padding: ${theme.spacing(1)} 0;
+      border-radius: ${theme.spacing(1, 1, 0, 0)};
+      background-color: ${theme.palette.background};
 
       .filename {
         color: ${theme.palette.gray};
+      }
 
-        &::after {
-          content: "|";
-          display: inline-block;
-          margin: 0 ${theme.spacing(2)};
-          color: ${theme.palette.midHighlight};
-        }
+      .separator {
+        display: inline-block;
+        margin: 0 ${theme.spacing(2)};
+        color: ${theme.palette.midHighlight};
       }
     }
 
@@ -204,7 +246,7 @@ const styles = (theme: Theme) => css`
       button {
         background: none;
         border: none;
-        padding: 0 ${theme.spacing(8)};
+        padding: ${theme.spacing(8)};
 
         &:hover:not(:disabled) {
           cursor: pointer;
@@ -225,6 +267,7 @@ const styles = (theme: Theme) => css`
       line-height: ${theme.typography.generalHeading.lineHeight};
       font-weight: normal;
       text-align: center;
+      border-radius: ${theme.spacing(0, 0, 1, 1)};
     }
 
     img {

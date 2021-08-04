@@ -1,5 +1,6 @@
 import { css, Theme } from "@emotion/react";
 import { transparentize } from "polished";
+import { useRef } from "react";
 import ReactDOM from "react-dom";
 import CloseIcon from "./icons/CloseIcon";
 import NextArrow from "./icons/NextArrow";
@@ -28,6 +29,13 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
     onPrevious,
   } = props;
   const filename = url.split("/").slice(-1)[0];
+  const overlayRef = useRef<HTMLDivElement>(null);
+
+  const handleOverlayClick: React.MouseEventHandler = (e) => {
+    if (e.target === overlayRef.current) {
+      onClose();
+    }
+  };
 
   return ReactDOM.createPortal(
     <div
@@ -35,7 +43,8 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
       className="overlay"
       css={styles}
       hidden={!open}
-      onClick={onClose}
+      ref={overlayRef}
+      onClick={handleOverlayClick}
     >
       <button
         className="close-modal-button"
@@ -48,34 +57,38 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
         <h2 className="caption" aria-label={`Image, full size: ${caption}`}>
           {caption}
         </h2>
-        <button
-          aria-label="Previous image"
-          className="previous-button"
-          disabled={!canPrevious}
-          onClick={(e) => {
-            e.stopPropagation();
-            onPrevious();
-          }}
-        >
-          <PreviousArrow />
-        </button>
+        <div className="previous-button-area">
+          <button
+            aria-label="Previous image"
+            disabled={!canPrevious}
+            onClick={(e) => {
+              e.stopPropagation();
+              onPrevious();
+            }}
+          >
+            <PreviousArrow />
+          </button>
+        </div>
         <img src={url} alt="" />
-        <button
-          aria-label="Next image"
-          className="next-button"
-          disabled={!canNext}
-          onClick={(e) => {
-            e.stopPropagation();
-            onNext();
-          }}
-        >
-          <NextArrow />
-        </button>
+        <div className="next-button-area">
+          <button
+            aria-label="Next image"
+            disabled={!canNext}
+            onClick={(e) => {
+              e.stopPropagation();
+              onNext();
+            }}
+          >
+            <NextArrow />
+          </button>
+        </div>
         <div className="topbar">
           <span className="filename" aria-label={`Filename: ${filename}`}>
             {filename}
           </span>
-          <span aria-hidden="true">Full Resolution</span>
+          <span className="full-resolution" aria-hidden="true">
+            Full Resolution
+          </span>
         </div>
       </div>
     </div>,
@@ -110,8 +123,8 @@ const styles = (theme: Theme) => css`
     left: 50vw;
     top: 50vh;
     transform: translateX(-50%) translateY(-50%);
-    width: 70%;
-    height: 80%;
+    width: 80%;
+    max-height: 80%;
     background: ${transparentize(0.34, theme.palette.mid)};
 
     display: grid;
@@ -124,22 +137,63 @@ const styles = (theme: Theme) => css`
 
     .topbar {
       grid-area: topbar;
+      font-size: ${theme.typography.body.size};
+      text-align: center;
+
+      .filename {
+        color: ${theme.palette.gray};
+
+        &::after {
+          content: "|";
+          display: inline-block;
+          margin: 0 ${theme.spacing(2)};
+          color: ${theme.palette.midHighlight};
+        }
+      }
     }
 
-    .previous-button {
+    .previous-button-area {
       grid-area: previous;
     }
 
-    .next-button {
+    .next-button-area {
       grid-area: next;
+    }
+
+    .previous-button-area,
+    .next-button-area {
+      align-self: center;
+
+      button {
+        background: none;
+        border: none;
+        padding: 0 ${theme.spacing(8)};
+
+        &:hover:not(:disabled) {
+          cursor: pointer;
+
+          svg path {
+            fill: ${theme.palette.white};
+          }
+        }
+      }
     }
 
     .caption {
       grid-area: bottombar;
+      background-color: ${theme.palette.background};
+      margin: 0;
+      padding: ${theme.spacing(1)};
+      font-size: ${theme.typography.generalHeading.size};
+      line-height: ${theme.typography.generalHeading.lineHeight};
+      font-weight: normal;
+      text-align: center;
     }
 
     img {
       grid-area: image;
+      align-self: center;
+      padding: ${theme.spacing(4)};
     }
   }
 `;

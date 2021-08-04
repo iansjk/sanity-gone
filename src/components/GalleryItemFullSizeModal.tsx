@@ -72,63 +72,65 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
     }
   };
 
-  return ReactDOM.createPortal(
-    <div
-      aria-modal="true"
-      className="overlay"
-      css={styles}
-      hidden={!open}
-      ref={overlayRef}
-      onClick={handleOverlayClick}
-    >
-      <button
-        className="close-modal-button"
-        aria-label="Close"
-        onClick={onClose}
-      >
-        <CloseIcon aria-hidden="true" />
-      </button>
-      <div className="modal-content">
-        <h2 className="caption" aria-label={`Image, full size: ${caption}`}>
-          {caption}
-        </h2>
-        <div className="previous-button-area">
+  return !open
+    ? null
+    : ReactDOM.createPortal(
+        <div
+          aria-modal="true"
+          className="overlay"
+          css={styles}
+          hidden={!open}
+          ref={overlayRef}
+          onClick={handleOverlayClick}
+        >
           <button
-            aria-label="Previous image"
-            disabled={!canPrevious}
-            onClick={(e) => {
-              e.stopPropagation();
-              onPrevious();
-            }}
+            className="close-modal-button"
+            aria-label="Close"
+            onClick={onClose}
           >
-            <PreviousArrow />
+            <CloseIcon aria-hidden="true" />
           </button>
-        </div>
-        <img src={url} alt="" />
-        <div className="next-button-area">
-          <button
-            aria-label="Next image"
-            disabled={!canNext}
-            onClick={(e) => {
-              e.stopPropagation();
-              onNext();
-            }}
-          >
-            <NextArrow />
-          </button>
-        </div>
-        <div className="topbar">
-          <span className="filename" aria-label={`Filename: ${filename}`}>
-            {filename}
-          </span>
-          <span className="full-resolution" aria-hidden="true">
-            Full Resolution
-          </span>
-        </div>
-      </div>
-    </div>,
-    document.body
-  );
+          <div className="modal-content">
+            <h2 className="caption" aria-label={`Image, full size: ${caption}`}>
+              {caption}
+            </h2>
+            <div className="previous-button-area">
+              <button
+                aria-label="Previous image"
+                disabled={!canPrevious}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onPrevious();
+                }}
+              >
+                <PreviousArrow />
+              </button>
+            </div>
+            <img src={url} alt="" />
+            <div className="next-button-area">
+              <button
+                aria-label="Next image"
+                disabled={!canNext}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onNext();
+                }}
+              >
+                <NextArrow />
+              </button>
+            </div>
+            <div className="topbar">
+              <span className="filename" aria-label={`Filename: ${filename}`}>
+                {filename}
+              </span>
+              <span className="full-resolution" aria-hidden="true">
+                Full Resolution
+              </span>
+            </div>
+          </div>
+        </div>,
+        document.body
+      );
 };
 export default GalleryItemFullSizeModal;
 

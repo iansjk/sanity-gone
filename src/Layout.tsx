@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import BreadcrumbBackIcon from "./components/icons/BreadcrumbBackIcon";
 import { slugify } from "./utils/globals";
+import "wicg-inert";
 
 interface LayoutProps {
   pageTitle: string;

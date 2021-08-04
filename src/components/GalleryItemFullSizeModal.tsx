@@ -69,7 +69,7 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
         }
       }
       if (!previousFocusRef.current) {
-        // @ts-expect-error forcefully set ref
+        // @ts-expect-error it is now safe to set ref.current, see https://reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables
         previousFocusRef.current = document.activeElement;
       }
       if (!overlayRef.current?.contains(document.activeElement)) {
@@ -90,7 +90,7 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
           ) {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-call
             previousFocusRef.current.focus();
-            // @ts-expect-error forcefully set ref
+            // @ts-expect-error it is now safe to set ref.current, see https://reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables
             previousFocusRef.current = null;
           }
         }, 0);

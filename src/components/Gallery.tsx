@@ -1,11 +1,12 @@
-import { Element } from "domhandler/lib/node";
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { css, Theme } from "@emotion/react";
 import { Fragment, useState } from "react";
 import GalleryItem from "./GalleryItem";
 import GalleryItemFullSizeModal from "./GalleryItemFullSizeModal";
 
 export interface GalleryProps {
-  contents: Element[];
+  contents: JSX.Element[];
 }
 
 const Gallery: React.FC<GalleryProps> = (props) => {
@@ -17,8 +18,8 @@ const Gallery: React.FC<GalleryProps> = (props) => {
   const children = contents.map((imgElement, i) => (
     <GalleryItem
       key={i}
-      url={imgElement.attribs.src}
-      alt={imgElement.attribs.alt}
+      url={imgElement.props.src}
+      alt={imgElement.props.alt}
       onClick={() => {
         setOpen(true);
         setActiveItemIndex(i);
@@ -32,9 +33,7 @@ const Gallery: React.FC<GalleryProps> = (props) => {
         {children}
       </div>
       <GalleryItemFullSizeModal
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
         url={children[activeItemIndex].props.url}
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
         caption={children[activeItemIndex].props.alt}
         open={open}
         onClose={() => setOpen(false)}

@@ -4,7 +4,7 @@ import { transparentize } from "polished";
 import { Fragment, useEffect, useRef } from "react";
 import Helmet from "react-helmet";
 import { DateTime } from "luxon";
-import parse from "html-react-parser";
+import parse, { attributesToProps } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
 
 import Introduction from "../../components/Introduction";
@@ -54,9 +54,11 @@ const htmlToReact = (
         } else if (domNode.name === "operatorstats") {
           return <OperatorStats operatorObject={context!.operator!} />;
         } else if ((domNode.firstChild as Element).name === "img") {
-          const contents = (domNode.children as Element[]).filter(
-            (element) => element.name === "img"
-          );
+          const contents = (domNode.children as Element[])
+            .filter((element) => element.name === "img")
+            .map((imgElement, i) => (
+              <img key={i} {...attributesToProps(imgElement.attribs)} />
+            ));
           return <Gallery contents={contents} />;
         }
       }

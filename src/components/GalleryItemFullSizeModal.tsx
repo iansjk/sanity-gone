@@ -2,6 +2,8 @@ import { css, Theme } from "@emotion/react";
 import { transparentize } from "polished";
 import ReactDOM from "react-dom";
 import CloseIcon from "./icons/CloseIcon";
+import NextArrow from "./icons/NextArrow";
+import PreviousArrow from "./icons/PreviousArrow";
 
 interface Props {
   url: string;
@@ -28,11 +30,11 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
           {caption}
         </h2>
         <button aria-label="Previous image" className="previous-button">
-          {"<-"}
+          <PreviousArrow />
         </button>
         <img src={url} alt="" />
         <button aria-label="Next image" className="next-button">
-          {"->"}
+          <NextArrow />
         </button>
         <div className="topbar">
           <span className="filename" aria-label={`Filename: ${filename}`}>

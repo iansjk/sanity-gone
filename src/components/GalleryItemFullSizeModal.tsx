@@ -168,7 +168,14 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
               <span aria-hidden="true" className="separator">
                 |
               </span>
-              <span className="full-resolution">Full Resolution</span>
+              <a
+                className="full-resolution"
+                href={url}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Full Resolution
+              </a>
             </div>
           </div>
         </div>,

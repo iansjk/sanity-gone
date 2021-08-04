@@ -281,8 +281,8 @@ const styles = (theme: Theme) => css`
       background-color: ${theme.palette.background};
       margin: 0;
       padding: ${theme.spacing(1)};
-      font-size: ${theme.typography.generalHeading.size};
-      line-height: ${theme.typography.generalHeading.lineHeight};
+      font-size: ${theme.typography.body.size};
+      line-height: ${theme.typography.body.lineHeight};
       font-weight: normal;
       text-align: center;
       border-radius: ${theme.spacing(0, 0, 1, 1)};

@@ -3,14 +3,9 @@
 import parse from "html-react-parser";
 import { Element } from "domhandler/lib/node";
 import { css } from "@emotion/react";
-import { Fragment, useMemo, useState } from "react";
+import { Fragment, useState } from "react";
 import GalleryItem from "./GalleryItem";
 import GalleryItemFullSizeModal from "./GalleryItemFullSizeModal";
-
-interface GalleryItemData {
-  url: string;
-  alt: string;
-}
 
 export interface GalleryProps {
   contents: string; // htmlstring
@@ -45,7 +40,9 @@ const Gallery: React.FC<GalleryProps> = (props) => {
 
   return (
     <Fragment>
-      <div css={styles}>{children}</div>
+      <div className="gallery" css={styles}>
+        {children}
+      </div>
       <GalleryItemFullSizeModal
         url={children[activeItemIndex].props.url}
         caption={children[activeItemIndex].props.alt}

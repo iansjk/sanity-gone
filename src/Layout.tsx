@@ -199,6 +199,10 @@ const styles = (theme: Theme) => css`
 
   a {
     color: ${theme.palette.blue};
+
+    &:hover {
+      color: ${theme.palette.white};
+    }
   }
 
   .visually-hidden:not(:focus):not(:active) {

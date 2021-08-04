@@ -201,9 +201,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
 
       .external-links {
         a {
-          color: ${contentful.operator.accentColorInHex};
           text-decoration: none;
           margin-right: ${theme.spacing(1)};
+        }
+
+        a:not(:hover) {
+          color: ${contentful.operator.accentColorInHex};
         }
       }
     }

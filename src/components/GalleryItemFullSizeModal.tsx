@@ -17,11 +17,17 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
   const filename = url.split("/").slice(-1)[0];
 
   return ReactDOM.createPortal(
-    <div aria-modal="true" className="overlay" css={styles} hidden={!open}>
+    <div
+      aria-modal="true"
+      className="overlay"
+      css={styles}
+      hidden={!open}
+      onClick={onClose}
+    >
       <button
         className="close-modal-button"
         aria-label="Close"
-        onClick={() => onClose()}
+        onClick={onClose}
       >
         <CloseIcon aria-hidden="true" />
       </button>

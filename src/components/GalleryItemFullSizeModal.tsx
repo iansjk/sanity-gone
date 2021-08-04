@@ -191,7 +191,7 @@ const styles = (theme: Theme) => css`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: ${transparentize(0.34, theme.palette.background)};
+  background-color: ${transparentize(0.34, "#000")};
   backdrop-filter: blur(${theme.spacing(1)});
   z-index: 100;
 
@@ -220,7 +220,7 @@ const styles = (theme: Theme) => css`
     transform: translateX(-50%) translateY(-50%);
     width: 80%;
     max-height: 80%;
-    background: ${transparentize(0.34, theme.palette.mid)};
+    background: ${theme.palette.mid};
 
     display: grid;
     grid-template-rows: max-content 1fr max-content;

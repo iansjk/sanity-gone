@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import parse from "html-react-parser";
 import { Element } from "domhandler/lib/node";
-import { css } from "@emotion/react";
+import { css, Theme } from "@emotion/react";
 import { Fragment, useState } from "react";
 import GalleryItem from "./GalleryItem";
 import GalleryItemFullSizeModal from "./GalleryItemFullSizeModal";
@@ -35,7 +32,9 @@ const Gallery: React.FC<GalleryProps> = (props) => {
         {children}
       </div>
       <GalleryItemFullSizeModal
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
         url={children[activeItemIndex].props.url}
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
         caption={children[activeItemIndex].props.alt}
         open={open}
         onClose={() => setOpen(false)}
@@ -49,7 +48,8 @@ const Gallery: React.FC<GalleryProps> = (props) => {
 };
 export default Gallery;
 
-const styles = css`
+const styles = (theme: Theme) => css`
   display: flex;
   justify-content: flex-start;
+  margin-top: ${theme.spacing(3)};
 `;

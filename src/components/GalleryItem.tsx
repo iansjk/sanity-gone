@@ -28,6 +28,7 @@ const styles = (theme: Theme) => css`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0;
   margin-right: ${theme.spacing(3)};
   cursor: pointer;
   background: unset;

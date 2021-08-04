@@ -181,107 +181,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     }, 500);
   }, []);
 
-  const styles = (theme: Theme) => css`
-    display: grid;
-    grid-template-rows: max-content 1fr;
-    grid-template-columns: max-content 1fr;
-
-    & > .tabs {
-      display: flex;
-      flex-direction: column;
-      z-index: 1;
-
-      button {
-        width: 192px;
-        height: ${theme.spacing(6)};
-        padding-left: ${theme.spacing(2)};
-        margin-top: ${theme.spacing(1)};
-        text-align: start;
-        line-height: ${theme.typography.navigationLink.lineHeight};
-        border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
-        border: 0;
-        background: none;
-        color: ${theme.palette.gray};
-        cursor: pointer;
-
-        &:hover {
-          background-color: ${transparentize(0.9, theme.palette.gray)};
-          color: ${theme.palette.white};
-        }
-
-        &.active {
-          background-color: ${transparentize(
-            0.9,
-            contentful.operator.accentColorInHex
-          )};
-          color: ${contentful.operator.accentColorInHex};
-          border-right: 3px solid ${contentful.operator.accentColorInHex};
-          font-weight: ${theme.typography.navigationLinkActive.fontWeight};
-        }
-      }
-    }
-
-    .left-sidebar {
-      grid-row-start: 2;
-      padding-right: ${theme.spacing(4)};
-
-      hr {
-        border: 0;
-        border-top: 1px solid ${theme.palette.mid};
-        margin: ${theme.spacing(3)} 0 0 0;
-      }
-
-      .external-links,
-      .metadata {
-        padding-left: ${theme.spacing(2)};
-      }
-
-      .external-links,
-      .authors-section,
-      .last-updated-section {
-        margin-top: ${theme.spacing(3)};
-      }
-
-      .section-label {
-        display: block;
-        margin-bottom: ${theme.spacing(1)};
-        font-size: ${theme.typography.body2.size};
-        line-height: ${theme.typography.body2.lineHeight};
-        color: ${theme.palette.gray};
-      }
-
-      .external-links {
-        a {
-          margin-right: ${theme.spacing(1)};
-        }
-      }
-    }
-
-    & > .panels {
-      grid-row-start: span 2;
-      margin-left: -1px;
-
-      .analysis-section {
-        border-left: 1px solid ${theme.palette.midHighlight};
-      }
-
-      .analysis-section:not(.synergies) {
-        .tabs {
-          button.active {
-            background-color: ${contentful.operator.accentColorInHex};
-            border-color: ${contentful.operator.accentColorInHex};
-            color: ${theme.palette.background};
-          }
-
-          button.inactive:hover {
-            border-color: ${contentful.operator.accentColorInHex};
-            color: ${contentful.operator.accentColorInHex};
-          }
-        }
-      }
-    }
-  `;
-
   return (
     <Fragment>
       <Helmet>
@@ -294,7 +193,11 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         previousLocationLink="/operators"
         accentColor={contentful.operator.accentColorInHex}
       >
-        <Tabs component="main" ref={mainRef} css={styles}>
+        <Tabs
+          component="main"
+          ref={mainRef}
+          css={styles(contentful.operator.accentColorInHex)}
+        >
           <TabButtons className="tabs">
             {["Introduction", "Talents", "Skills", "Synergies", "Summary"].map(
               (label) => {
@@ -389,6 +292,105 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   );
 };
 export default OperatorAnalysis;
+
+const styles = (accentColor: string) => (theme: Theme) =>
+  css`
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    grid-template-columns: max-content 1fr;
+
+    & > .tabs {
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+
+      button {
+        width: 192px;
+        height: ${theme.spacing(6)};
+        padding-left: ${theme.spacing(2)};
+        margin-top: ${theme.spacing(1)};
+        text-align: start;
+        line-height: ${theme.typography.navigationLink.lineHeight};
+        border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+        border: 0;
+        background: none;
+        color: ${theme.palette.gray};
+        cursor: pointer;
+
+        &:hover {
+          background-color: ${transparentize(0.9, theme.palette.gray)};
+          color: ${theme.palette.white};
+        }
+
+        &.active {
+          background-color: ${transparentize(0.9, accentColor)};
+          color: ${accentColor};
+          border-right: 3px solid ${accentColor};
+          font-weight: ${theme.typography.navigationLinkActive.fontWeight};
+        }
+      }
+    }
+
+    .left-sidebar {
+      grid-row-start: 2;
+      padding-right: ${theme.spacing(4)};
+
+      hr {
+        border: 0;
+        border-top: 1px solid ${theme.palette.mid};
+        margin: ${theme.spacing(3)} 0 0 0;
+      }
+
+      .external-links,
+      .metadata {
+        padding-left: ${theme.spacing(2)};
+      }
+
+      .external-links,
+      .authors-section,
+      .last-updated-section {
+        margin-top: ${theme.spacing(3)};
+      }
+
+      .section-label {
+        display: block;
+        margin-bottom: ${theme.spacing(1)};
+        font-size: ${theme.typography.body2.size};
+        line-height: ${theme.typography.body2.lineHeight};
+        color: ${theme.palette.gray};
+      }
+
+      .external-links {
+        a {
+          margin-right: ${theme.spacing(1)};
+        }
+      }
+    }
+
+    & > .panels {
+      grid-row-start: span 2;
+      margin-left: -1px;
+
+      .analysis-section {
+        border-left: 1px solid ${theme.palette.midHighlight};
+      }
+
+      .analysis-section:not(.synergies) {
+        .tabs {
+          button.active {
+            background-color: ${accentColor};
+            border-color: ${accentColor};
+            color: ${theme.palette.background};
+          }
+
+          button.inactive:hover {
+            border-color: ${accentColor};
+            color: ${accentColor};
+          }
+        }
+      }
+    }
+  `;
 
 export const query = graphql`
   query ($id: String!, $operator__name: String!) {

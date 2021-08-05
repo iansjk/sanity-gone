@@ -9,10 +9,8 @@ export type TabPanelsProps = React.HTMLAttributes<HTMLDivElement> &
 const TabPanels: React.FC<TabPanelsProps> = (props) => {
   const { children, activeTab, userActed, ...rest } = props;
   const panelsRef = useRef<HTMLDivElement>(null);
-  const panelChildren = React.Children.toArray(children).filter(
-    (child) =>
-      React.isValidElement<React.HTMLAttributes<HTMLDivElement>>(child) &&
-      child.type === "div"
+  const panelChildren = React.Children.toArray(children).filter((child) =>
+    React.isValidElement<React.HTMLAttributes<HTMLDivElement>>(child)
   ) as React.ReactElement<React.HTMLAttributes<HTMLDivElement>>[];
 
   useEffect(() => {

@@ -49,27 +49,46 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
     }
   };
 
-  return (
-    <div role="tablist" {...rest}>
-      {buttonChildren.map((button, i) => {
-        const isActiveTab = i === activeTab;
-        const className = isActiveTab ? "active" : "inactive";
-        return React.cloneElement<
+  let buttonIndex = 0;
+  const newChildren = [];
+  const childrenAsArray = React.Children.toArray(children);
+  for (let i = 0; i < childrenAsArray.length; i++) {
+    const child = childrenAsArray[i];
+    if (
+      React.isValidElement<React.HTMLAttributes<HTMLButtonElement>>(child) &&
+      child.type === "button"
+    ) {
+      const isActiveTab = buttonIndex === activeTab;
+      const className = isActiveTab ? "active" : "inactive";
+      newChildren.push(
+        React.cloneElement<
           React.HTMLAttributes<HTMLButtonElement> & { "data-index"?: number }
-        >(button, {
-          ...button.props,
+        >(child, {
+          ...child.props,
           role: "tab",
-          className: button.props.className
-            ? `${button.props.className} ${className}`
+          className: child.props.className
+            ? `${child.props.className} ${className}`
             : className,
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          onClick: () => onClick!(i),
+          onClick: (
+            (noClosureIndex) => () =>
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              onClick!(noClosureIndex)
+          )(buttonIndex),
           onKeyDown: handleKeyDown,
           tabIndex: isActiveTab ? 0 : -1,
-          "data-index": i,
+          "data-index": buttonIndex,
           "aria-selected": isActiveTab,
-        });
-      })}
+        })
+      );
+      buttonIndex++;
+    } else {
+      newChildren.push(child);
+    }
+  }
+
+  return (
+    <div role="tablist" {...rest}>
+      {newChildren}
     </div>
   );
 };

@@ -1,10 +1,9 @@
+import { css, Theme } from "@emotion/react";
 import CardWithTabs from "./CardWithTabs";
-import CardPanel from "./CardPanel";
 import SynergyOperator, {
   SynergyOperatorProps,
   SynergyQuality,
 } from "./SynergyOperator";
-import { css, Theme } from "@emotion/react";
 import { operatorImage } from "../utils/images";
 
 export interface SynergiesProps {
@@ -20,53 +19,44 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergyOperators }) => {
   return (
     <CardWithTabs
       header="Synergies"
-      tabType="synergy"
       css={styles}
-      buttonRenderer={(index) => {
-        const operator = sortedSynergyOperators[index];
-        return (
+      buttons={sortedSynergyOperators.flatMap((synOp, i) => {
+        const button = (
           <button
+            key={synOp.name}
+            aria-label={synOp.name}
             className="operator-button"
-            style={{
-              backgroundImage: `url("${operatorImage(operator.name)}")`,
-            }}
+            style={{ backgroundImage: `url("${operatorImage(synOp.name)}")` }}
           />
         );
-      }}
-    >
-      {sortedSynergyOperators.map((synergyOperator) => {
-        const groupingKey = SynergyQuality[synergyOperator.quality].split(
-          /[\s-]/
-        )[0];
-        return (
-          <CardPanel key={synergyOperator.name} groupingKey={groupingKey}>
-            <SynergyOperator {...synergyOperator} />
-          </CardPanel>
-        );
+        if (
+          i === 0 ||
+          sortedSynergyOperators[i - 1].quality !== synOp.quality
+        ) {
+          const [qualityLabel] = SynergyQuality[synOp.quality].split(" ");
+          return [
+            <span
+              key={qualityLabel}
+              className={`synergy-quality quality-${synOp.quality}`}
+              aria-label={SynergyQuality[synOp.quality]}
+            >
+              {qualityLabel}
+            </span>,
+            button,
+          ];
+        }
+        return button;
       })}
-    </CardWithTabs>
+      panels={sortedSynergyOperators.map((synOp) => (
+        <SynergyOperator key={synOp.name} {...synOp} />
+      ))}
+    />
   );
 };
 export default Synergies;
 
 const styles = (theme: Theme) => css`
-  .grouping-key.excellent {
-    color: ${theme.palette.lime};
-  }
-
-  .grouping-key.good {
-    color: ${theme.palette.blue};
-  }
-
-  .grouping-key.decent {
-    color: ${theme.palette.gray};
-  }
-
-  .grouping-key.anti {
-    color: ${theme.palette.red};
-  }
-
-  .tabs {
+  .tab-buttons {
     .operator-button {
       background-size: contain;
       opacity: 0.34;
@@ -80,6 +70,40 @@ const styles = (theme: Theme) => css`
         background-color: ${theme.palette.white};
         border: ${theme.spacing(0.25)} solid ${theme.palette.white};
       }
+    }
+
+    .synergy-quality {
+      text-align: center;
+      font-size: ${theme.typography.label1.size};
+      font-weight: ${theme.typography.label1.fontWeight};
+      line-height: ${theme.typography.label1.lineHeight};
+      text-transform: uppercase;
+      width: 100%;
+      overflow: hidden;
+
+      &::after {
+        content: " ";
+        display: block;
+        width: ${theme.spacing(3)};
+        margin: ${theme.spacing(1)} auto ${theme.spacing(2)};
+        border-bottom: 1px solid ${theme.palette.midHighlight};
+      }
+    }
+
+    .synergy-quality.quality-2 {
+      color: ${theme.palette.lime};
+    }
+
+    .synergy-quality.quality-1 {
+      color: ${theme.palette.blue};
+    }
+
+    .synergy-quality.quality-0 {
+      color: ${theme.palette.gray};
+    }
+
+    .synergy-quality.quality--1 {
+      color: ${theme.palette.red};
     }
   }
 `;

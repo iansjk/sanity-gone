@@ -38,8 +38,11 @@ export default SynergyOperator;
 
 const styles = (theme: Theme) => css`
   margin-top: ${theme.spacing(3)};
-  display: flex;
   flex-direction: column;
+
+  :not([hidden]) {
+    display: flex;
+  }
 
   .synergy-operator-info {
     display: flex;

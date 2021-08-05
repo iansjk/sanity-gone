@@ -10,19 +10,18 @@ import { Element } from "domhandler/lib/node";
 import Introduction from "../../components/Introduction";
 import OperatorStats, { OperatorObject } from "../../components/OperatorStats";
 import SkillInfo, { SkillObject } from "../../components/SkillInfo";
-import Skills from "../../components/Skills";
 import Synergies from "../../components/Synergies";
 import { SynergyQuality } from "../../components/SynergyOperator";
 import Tabs from "../../components/Tabs";
 import TabButtons from "../../components/TabButtons";
 import TabPanels from "../../components/TabPanels";
 import TalentInfo, { TalentObject } from "../../components/TalentInfo";
-import Talents from "../../components/Talents";
 import Layout from "../../Layout";
 import Card from "../../components/Card";
 import { replaceSelfClosingHtmlTags, slugify } from "../../utils/globals";
 import { defaultTheme } from "../../theme";
 import Gallery from "../../components/Gallery";
+import CardWithTabs from "../../components/CardWithTabs";
 
 type HTMLToReactContext = Partial<{
   skills: SkillObject[];
@@ -261,11 +260,23 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 className: "introduction",
               },
               {
-                component: <Talents analyses={talentAnalyses} />,
+                component: (
+                  <CardWithTabs
+                    header="Talents"
+                    panelContent={talentAnalyses}
+                    buttonLabelFn={(i) => `talent ${i}`}
+                  />
+                ),
                 className: "talents",
               },
               {
-                component: <Skills analyses={skillAnalyses} />,
+                component: (
+                  <CardWithTabs
+                    header="Skills"
+                    panelContent={skillAnalyses}
+                    buttonLabelFn={(i) => `skill ${i}`}
+                  />
+                ),
                 className: "skills",
               },
               {

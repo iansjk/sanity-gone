@@ -25,7 +25,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergyOperators }) => {
           <button
             key={synOp.name}
             aria-label={synOp.name}
-            className="operator-button"
+            className="operator-button synergy-operator-button"
             style={{ backgroundImage: `url("${operatorImage(synOp.name)}")` }}
           />
         );
@@ -57,7 +57,7 @@ export default Synergies;
 
 const styles = (theme: Theme) => css`
   .tab-buttons {
-    .operator-button {
+    .operator-button.synergy-operator-button {
       background-size: contain;
       opacity: 0.34;
 

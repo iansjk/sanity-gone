@@ -81,7 +81,7 @@ interface OperatorAnalysisData {
     operatorImageUrl: string;
   };
   author: {
-    authorDiscordTag: string;
+    name: string;
   }[];
   introduction: MarkdownNode;
   talent1Analysis: MarkdownNode;
@@ -227,9 +227,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               <div className="authors-section">
                 <span className="section-label">Written By</span>
                 <span className="authors">
-                  {contentful.author
-                    .map((author) => author.authorDiscordTag)
-                    .join(",\n")}
+                  {contentful.author.map((author) => author.name).join(",\n")}
                 </span>
               </div>
 
@@ -422,7 +420,7 @@ export const query = graphql`
         operatorImageUrl
       }
       author {
-        authorDiscordTag
+        name
       }
       introduction {
         childMarkdownRemark {

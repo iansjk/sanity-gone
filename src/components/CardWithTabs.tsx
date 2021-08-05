@@ -100,10 +100,17 @@ const styles = (theme: Theme) => css`
         color: ${theme.palette.midHighlight};
         box-sizing: border-box;
         border: ${theme.spacing(0.25)} solid ${theme.palette.midHighlight};
-
         margin-bottom: ${theme.spacing(2)};
-        &:last-child {
-          margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg path {
+          fill: ${theme.palette.midHighlight};
+        }
+
+        &.last-child {
+          margin: 0;
         }
 
         &.inactive:hover {

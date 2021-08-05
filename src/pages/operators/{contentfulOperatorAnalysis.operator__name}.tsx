@@ -389,16 +389,22 @@ const styles = (accentColor: string) => (theme: Theme) =>
       }
 
       .analysis-section:not(.synergies) {
-        .tabs {
+        .tab-buttons {
           button.active {
             background-color: ${accentColor};
             border-color: ${accentColor};
-            color: ${theme.palette.background};
+
+            svg path {
+              fill: ${theme.palette.background};
+            }
           }
 
           button.inactive:hover {
             border-color: ${accentColor};
-            color: ${accentColor};
+
+            svg path {
+              fill: ${accentColor};
+            }
           }
         }
       }

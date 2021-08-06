@@ -75,10 +75,12 @@ interface MarkdownNode {
 interface OperatorAnalysisData {
   operator: {
     accentColorInHex: string;
-    archetype: string;
     limited: boolean;
     name: string;
     operatorImageUrl: string;
+    archetype: {
+      archetypeName: string;
+    };
   };
   author: {
     name: string;
@@ -250,7 +252,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                       contentful.introduction.childMarkdownRemark.html,
                       { operator: operatorObject }
                     )}
-                    archetype={contentful.operator.archetype}
+                    archetype={contentful.operator.archetype.archetypeName}
                     isLimited={contentful.operator.limited}
                     operatorObject={operatorObject}
                   />
@@ -414,10 +416,12 @@ export const query = graphql`
     contentfulOperatorAnalysis(id: { eq: $id }) {
       operator {
         accentColorInHex
-        archetype
         limited
         name
         operatorImageUrl
+        archetype {
+          archetypeName
+        }
       }
       author {
         name

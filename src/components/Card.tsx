@@ -26,6 +26,8 @@ export default Card;
 const styles = (theme: Theme) => css`
   border-radius: ${theme.spacing(1)};
   padding: 0;
+  box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)} ${theme.spacing(1)}
+    rgba(0, 0, 0, 0.05);
 
   .heading-block {
     padding: ${theme.spacing(2, 0, 2, 4)};

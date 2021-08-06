@@ -155,6 +155,7 @@ const styles =
             font-size: ${theme.typography.pageHeading.size};
             font-weight: ${theme.typography.pageHeading.weight};
             line-height: ${theme.typography.pageHeading.lineHeight};
+            text-shadow: ${theme.typography.pageHeading.textShadow};
           }
 
           .breadcrumb {
@@ -165,8 +166,8 @@ const styles =
               align-items: center;
               text-decoration: none;
               font-style: normal;
-              color: ${theme.palette.gray};
               line-height: ${theme.typography.navigationLink.lineHeight};
+              text-shadow: ${theme.typography.pageHeading.textShadow};
 
               svg {
                 margin-right: ${theme.spacing(1)};

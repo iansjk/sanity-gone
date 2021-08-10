@@ -9,10 +9,10 @@ export default {
 const Template: Story<OperatorInfoProps> = (args) => <OperatorInfo {...args} />;
 export const Default = Template.bind({});
 Default.args = {
-  archetype: "Enmity",
   isLimited: false,
   operatorObject: {
     name: "Mudrock",
+    cnName: "泥岩",
     rarity: 5,
     description: "<@ba.kw>Cannot</> be healed by allies",
     position: "MELEE",

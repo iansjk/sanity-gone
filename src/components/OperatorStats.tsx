@@ -49,6 +49,7 @@ interface OperatorPhaseObject {
 // from character_table.json
 export interface OperatorObject {
   name: string;
+  cnName: string;
   profession: string;
   subProfessionId: string;
   position: "MELEE" | "RANGED";

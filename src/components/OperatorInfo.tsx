@@ -146,6 +146,7 @@ const styles = (theme: Theme) => css`
 
       .class-subclass-icons {
         display: grid;
+        align-items: center;
         grid-template-columns: 24px 18px 24px;
         column-gap: ${theme.spacing(1)};
         padding: ${theme.spacing(1)};

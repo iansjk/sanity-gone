@@ -13,6 +13,7 @@ const Template: Story<
 
 const operatorObject = {
   name: "Mudrock",
+  cnName: "泥岩",
   rarity: 5,
   description: "<@ba.kw>Cannot</> be healed by allies",
   position: "MELEE" as const,

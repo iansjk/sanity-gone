@@ -50,6 +50,7 @@ interface OperatorPhaseObject {
 export interface OperatorObject {
   name: string;
   profession: string;
+  subProfessionId: string;
   position: "MELEE" | "RANGED";
   description: string;
   phases: OperatorPhaseObject[];

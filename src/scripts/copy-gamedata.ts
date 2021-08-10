@@ -7,51 +7,58 @@ import rangeTable from "../../ArknightsGameData/en_US/gamedata/excel/range_table
 
 const dataDir = path.join(__filename, "../../data");
 
-const denormalizedOperators = Object.entries(enCharacterTable).map(([id, op]) => {
-  const phases = op.phases.map((phase) => ({
-    ...phase,
-    range: phase.rangeId
-      ? rangeTable[phase.rangeId as keyof typeof rangeTable]
-      : null,
-  }));
-  const talents = (op.talents || []).map((talent) => {
-    const candidates = (talent.candidates || []).map((candidate) => ({
-      ...candidate,
-      range: candidate.rangeId
-        ? rangeTable[candidate.rangeId as keyof typeof rangeTable]
+const denormalizedOperators = Object.entries(enCharacterTable).map(
+  ([id, op]) => {
+    const phases = op.phases.map((phase) => ({
+      ...phase,
+      range: phase.rangeId
+        ? rangeTable[phase.rangeId as keyof typeof rangeTable]
         : null,
     }));
-    return { ...talent, candidates };
-  });
-
-  const skillData = op.skills
-    .map((skill) => {
-      const skillId = skill.skillId;
-      if (!skillId) {
-        return null;
-      }
-      const baseSkillObject = skillTable[skillId as keyof typeof skillTable];
-      const levels = baseSkillObject.levels.map((skillAtLevel) => ({
-        ...skillAtLevel,
-        range: skillAtLevel.rangeId
-          ? rangeTable[skillAtLevel.rangeId as keyof typeof rangeTable]
+    const talents = (op.talents || []).map((talent) => {
+      const candidates = (talent.candidates || []).map((candidate) => ({
+        ...candidate,
+        range: candidate.rangeId
+          ? rangeTable[candidate.rangeId as keyof typeof rangeTable]
           : null,
       }));
-      return {
-        ...baseSkillObject,
-        levels,
-      };
-    })
-    .filter((skillData) => !!skillData);
+      return { ...talent, candidates };
+    });
 
-  return {
-    ...op,
-    id,
-    phases,
-    talents,
-    skillData,
-  };
-});
+    const skillData = op.skills
+      .map((skill) => {
+        const skillId = skill.skillId;
+        if (!skillId) {
+          return null;
+        }
+        const baseSkillObject = skillTable[skillId as keyof typeof skillTable];
+        const levels = baseSkillObject.levels.map((skillAtLevel) => ({
+          ...skillAtLevel,
+          range: skillAtLevel.rangeId
+            ? rangeTable[skillAtLevel.rangeId as keyof typeof rangeTable]
+            : null,
+        }));
+        return {
+          ...baseSkillObject,
+          levels,
+        };
+      })
+      .filter((skillData) => !!skillData);
+
+    const { name: cnName, subProfessionId } =
+      cnCharacterTable[id as keyof typeof cnCharacterTable];
+
+    return {
+      ...op,
+      id,
+      phases,
+      talents,
+      skillData,
+      cnName,
+      subProfessionId,
+    };
+  }
+);
 fs.writeFileSync(
   path.join(dataDir, "operators.json"),
   JSON.stringify(denormalizedOperators, null, 2)
@@ -73,13 +80,4 @@ const denormalizedSkills = Object.entries(skillTable).map(([id, skill]) => {
 fs.writeFileSync(
   path.join(dataDir, "skills.json"),
   JSON.stringify(denormalizedSkills, null, 2)
-);
-
-const cnNames = Object.entries(cnCharacterTable).map(([id, cnOp]) => {
-  const enName = enCharacterTable[id as keyof typeof enCharacterTable]?.name ?? "(Not available)";
-  return { enName, cnName: cnOp.name }
-});
-fs.writeFileSync(
-  path.join(dataDir, "cn-names.json"),
-  JSON.stringify(cnNames, null, 2)
 );

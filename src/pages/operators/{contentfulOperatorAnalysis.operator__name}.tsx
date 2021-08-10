@@ -107,9 +107,6 @@ interface Props {
       talents: TalentObject[];
       skillData: SkillObject[];
     };
-    cnNamesJson: {
-      cnName: string;
-    };
     allOperatorsJson: {
       nodes: {
         name: string;
@@ -124,10 +121,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   const {
     contentfulOperatorAnalysis: contentful,
     operatorsJson: operatorObject,
-    cnNamesJson,
   } = data;
 
-  const { cnName } = cnNamesJson;
   const rarityMap = Object.fromEntries(
     data.allOperatorsJson.nodes.map(({ name, rarity }) => [name, rarity])
   );
@@ -217,7 +212,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 Aceship
               </a>
               <a
-                href={`http://prts.wiki/w/${encodeURIComponent(cnName)}`}
+                href={`http://prts.wiki/w/${encodeURIComponent(
+                  operatorObject.cnName
+                )}`}
                 rel="noreferrer noopener"
                 target="_blank"
               >
@@ -252,7 +249,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                       contentful.introduction.childMarkdownRemark.html,
                       { operator: operatorObject }
                     )}
-                    archetype={contentful.operator.archetype.archetypeName}
                     isLimited={contentful.operator.limited}
                     operatorObject={operatorObject}
                   />
@@ -386,6 +382,16 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
       .analysis-section {
         border-left: 1px solid ${theme.palette.midHighlight};
+
+        .operator-class-subclass {
+          .subclass-name {
+            color: ${accentColor};
+          }
+
+          svg line {
+            stroke: ${accentColor};
+          }
+        }
       }
 
       .analysis-section:not(.synergies) {
@@ -475,7 +481,9 @@ export const query = graphql`
 
     operatorsJson(name: { eq: $operator__name }) {
       name
+      cnName
       profession
+      subProfessionId
       position
       description
       rarity
@@ -547,10 +555,6 @@ export const query = graphql`
           }
         }
       }
-    }
-
-    cnNamesJson(enName: { eq: $operator__name }) {
-      cnName
     }
 
     allOperatorsJson {

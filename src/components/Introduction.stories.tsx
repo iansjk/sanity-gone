@@ -17,6 +17,7 @@ const operatorObject = {
   description: "<@ba.kw>Cannot</> be healed by allies",
   position: "MELEE" as const,
   profession: "TANK",
+  subProfessionId: "unyield",
   phases: [
     {
       characterPrefabKey: "char_311_mudrok",

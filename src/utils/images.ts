@@ -6,4 +6,6 @@ export const operatorImage = (name: string, elite?: number): string => `${CLOUDI
 
 export const operatorClassIcon = (operatorClass: string): string => `${CLOUDINARY_BASE_URL}/classes/${operatorClass}`;
 
+export const operatorSubclassIcon = (subProfessionId: string): string => `${CLOUDINARY_BASE_URL}/subclasses/${subProfessionId}`;
+
 export const skillIcon = (iconId: string | null, skillId: string): string => `${CLOUDINARY_BASE_URL}/skills/${iconId ?? skillId}`;

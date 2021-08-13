@@ -86,6 +86,10 @@ const styles =
         line-height: ${theme.typography.body.lineHeight};
         overflow-y: scroll;
         font-family: ${theme.typography.fallbackFontFamily};
+
+        ${theme.breakpoints.down("mobile")} {
+          font-size: ${theme.typography.body2.size};
+        }
       }
 
       body {

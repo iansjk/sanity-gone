@@ -336,6 +336,13 @@ const styles = (accentColor: string) => (theme: Theme) =>
           border-right: 3px solid ${accentColor};
           font-weight: ${theme.typography.navigationLinkActive.fontWeight};
         }
+
+        ${theme.breakpoints.down("mobile")} {
+          font-size: ${theme.typography.cardHeading.size};
+          line-height: ${theme.typography.cardHeading.lineHeight};
+          font-weight: ${theme.typography.cardHeading.weight};
+          text-transform: ${theme.typography.cardHeading.textTransform};
+        }
       }
     }
 

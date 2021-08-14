@@ -160,6 +160,10 @@ const styles =
             font-weight: ${theme.typography.pageHeading.weight};
             line-height: ${theme.typography.pageHeading.lineHeight};
             text-shadow: ${theme.typography.pageHeading.textShadow};
+
+            ${theme.breakpoints.down("mobile")} {
+              font-size: ${theme.typography.operatorNameHeading.size};
+            }
           }
 
           .breadcrumb {

@@ -7,14 +7,10 @@ export type IntroductionProps = OperatorInfoProps & {
 };
 
 const Introduction: React.VFC<IntroductionProps> = (props) => {
-  const { operatorObject, archetype, isLimited, analysis } = props;
+  const { operatorObject, isLimited, analysis } = props;
   return (
     <Card header="Introduction">
-      <OperatorInfo
-        operatorObject={operatorObject}
-        archetype={archetype}
-        isLimited={isLimited}
-      />
+      <OperatorInfo operatorObject={operatorObject} isLimited={isLimited} />
       <div className="introduction-content">{analysis}</div>
     </Card>
   );

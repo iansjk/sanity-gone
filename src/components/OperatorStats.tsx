@@ -1,5 +1,5 @@
 import { css, Theme } from "@emotion/react";
-import { professionToClass, slugify, toTitleCase } from "../utils/globals";
+import { slugify } from "../utils/globals";
 import {
   ArtsResistanceIcon,
   AttackPowerIcon,
@@ -11,16 +11,6 @@ import {
   RedeployTimeIcon,
 } from "./icons/operatorStats";
 import OperatorRange, { RangeObject } from "./OperatorRange";
-
-const getDamageType = (
-  operatorClass: string,
-  description: string
-): "Physical" | "Arts" | "Healing" => {
-  if (operatorClass === "Medic") return "Healing";
-  return description.toLowerCase().includes("arts damage")
-    ? "Arts"
-    : "Physical";
-};
 
 interface AttributeKeyFrame {
   level: number;
@@ -64,17 +54,7 @@ export interface OperatorStatsProps {
 
 const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
   const { operatorObject } = props;
-  const {
-    profession,
-    position: binaryPosition,
-    description,
-    phases,
-  } = operatorObject;
-  const position = description
-    .toLowerCase()
-    .includes("can be deployed on ranged grids")
-    ? "Melee or Ranged"
-    : toTitleCase(binaryPosition);
+  const { phases } = operatorObject;
   const activePhase = phases[phases.length - 1];
   const { range: rangeObject } = activePhase;
   const activeKeyFrame =
@@ -89,22 +69,11 @@ const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
     respawnTime: redeployTimeInSeconds,
     baseAttackTime: attacksPerSecond,
   } = activeKeyFrame.data;
-  const damageType = getDamageType(professionToClass(profession), description);
 
   return (
     <section css={styles}>
       <h3 className="visually-hidden">Operator Stats</h3>
       <dl>
-        <div className="damage-type">
-          <dt>Damage Type</dt>
-          <dd className={slugify(damageType)}>{damageType}</dd>
-        </div>
-
-        <div className="position">
-          <dt>Position</dt>
-          <dd>{position}</dd>
-        </div>
-
         <div className="health">
           <dt>
             <HealthIcon aria-hidden="true" /> Health
@@ -177,44 +146,10 @@ const styles = (theme: Theme) => css`
   dl {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: 180fr repeat(4, 140fr) 240fr;
+    grid-template-columns: repeat(4, 195fr) 224fr;
     grid-auto-flow: column;
     grid-gap: ${theme.spacing(0.25)};
     margin: ${theme.spacing(3, 0, 0)};
-
-    .damage-type {
-      border-top-left-radius: ${theme.spacing(0.5)};
-
-      dd {
-        font-size: ${theme.typography.body.size};
-        font-weight: normal;
-      }
-
-      .physical {
-        color: ${theme.palette.orange};
-      }
-
-      .arts {
-        color: ${theme.palette.blue};
-      }
-
-      .healing {
-        color: ${theme.palette.lime};
-      }
-
-      .true {
-        color: ${theme.palette.gray};
-      }
-    }
-
-    .position {
-      border-bottom-left-radius: ${theme.spacing(0.5)};
-
-      dd {
-        font-size: 18px;
-        font-weight: normal;
-      }
-    }
 
     .health {
       svg path {

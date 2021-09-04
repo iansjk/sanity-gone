@@ -219,7 +219,7 @@ const styles = (theme: Theme) => css`
     grid-template-columns: repeat(2, max-content);
     justify-content: end;
     height: max-content;
-    column-gap: 16px;
+    column-gap: 24px;
 
     & > div {
       background: none;

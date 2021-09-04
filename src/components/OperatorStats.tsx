@@ -148,7 +148,7 @@ const styles = (theme: Theme) => css`
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(4, 195fr) 224fr;
     grid-auto-flow: column;
-    grid-gap: ${theme.spacing(0.25)};
+    gap: ${theme.spacing(0.25)};
     margin: ${theme.spacing(3, 0, 0)};
 
     .health {

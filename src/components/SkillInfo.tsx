@@ -136,7 +136,7 @@ const styles = (theme: Theme) => css`
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: max-content max-content 1fr;
-  grid-gap: ${theme.spacing(0.25)};
+  gap: ${theme.spacing(0.25)};
   margin-top: ${theme.spacing(3)};
 
   &.no-range {
@@ -156,7 +156,7 @@ const styles = (theme: Theme) => css`
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-template-rows: max-content max-content;
-    grid-column-gap: ${theme.spacing(2)};
+    column-gap: ${theme.spacing(2)};
     align-items: center;
     padding: ${theme.spacing(2)};
 
@@ -204,7 +204,7 @@ const styles = (theme: Theme) => css`
     grid-row-start: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: ${theme.spacing(0.25)};
+    gap: ${theme.spacing(0.25)};
     margin: 0;
 
     .initial-sp {

@@ -9,3 +9,5 @@ export const operatorClassIcon = (operatorClass: string): string => `${CLOUDINAR
 export const operatorSubclassIcon = (subProfessionId: string): string => `${CLOUDINARY_BASE_URL}/subclasses/${subProfessionId}`;
 
 export const skillIcon = (iconId: string | null, skillId: string): string => `${CLOUDINARY_BASE_URL}/skills/${iconId ?? skillId}`;
+
+export const moduleImage = (moduleId: string): string => `${CLOUDINARY_BASE_URL}/equip/${moduleId}`;

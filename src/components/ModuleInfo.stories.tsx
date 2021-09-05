@@ -10,6 +10,9 @@ const Template: Story<ModuleInfoProps> = (args) => <ModuleInfo {...args} />;
 
 export const Magallan = Template.bind({});
 Magallan.args = {
+  operatorName: "Magallan",
+  moduleId: "uniequip_002_mgllan",
+  moduleEffect: "Last summon on the field does not take up deployment limit",
   moduleObject: {
     phases: [
       {

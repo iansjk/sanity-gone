@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/react";
 import Introduction, { IntroductionProps } from "./Introduction";
-import OperatorStats, { OperatorStatsProps } from "./OperatorStats";
+import CharacterStats, { CharacterStatsProps } from "./CharacterStats";
 
 export default {
   title: "Introduction",
@@ -8,7 +8,7 @@ export default {
 } as Meta;
 
 const Template: Story<
-  IntroductionProps & { operatorStats: OperatorStatsProps }
+  IntroductionProps & { operatorStats: CharacterStatsProps }
 > = (args) => <Introduction {...args} />;
 
 const operatorObject = {
@@ -245,7 +245,7 @@ Default.args = {
       compared to the rest of the defender class, HP being especially important
       since all of her self-heals scale off of max HP.
     </p>,
-    <OperatorStats key="2" operatorObject={operatorObject} />,
+    <CharacterStats key="2" operatorObject={operatorObject} />,
     <p key="3">
       Her kit is adaptable to fit different situations. Whether it be a constant
       onslaught of enemies or spaced out hard-hitters, you can bring a different

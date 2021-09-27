@@ -13,11 +13,11 @@ import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import { highestCharacterStats } from "../utils/globals";
 
-export interface OperatorStatsProps {
+export interface CharacterStatsProps {
   operatorObject: CharacterObject;
 }
 
-const OperatorStats: React.VFC<OperatorStatsProps> = ({ operatorObject }) => {
+const CharacterStats: React.VFC<CharacterStatsProps> = ({ operatorObject }) => {
   const {
     artsResistance,
     attackPower,
@@ -100,7 +100,7 @@ const OperatorStats: React.VFC<OperatorStatsProps> = ({ operatorObject }) => {
     </section>
   );
 };
-export default OperatorStats;
+export default CharacterStats;
 
 const styles = (theme: Theme) => css`
   dl {

@@ -8,7 +8,7 @@ import parse, { attributesToProps } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
 
 import Introduction from "../../components/Introduction";
-import OperatorStats from "../../components/OperatorStats";
+import CharacterStats from "../../components/CharacterStats";
 import SkillInfo, { SkillObject } from "../../components/SkillInfo";
 import Synergies from "../../components/Synergies";
 import { SynergyQuality } from "../../components/SynergyOperator";
@@ -52,7 +52,7 @@ const htmlToReact = (
             />
           );
         } else if (domNode.name === "operatorstats") {
-          return <OperatorStats operatorObject={context!.operator!} />;
+          return <CharacterStats operatorObject={context!.operator!} />;
         } else if ((domNode.firstChild as Element).name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")

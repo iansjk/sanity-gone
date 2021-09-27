@@ -1,13 +1,13 @@
 import { Meta, Story } from "@storybook/react";
-import OperatorStats, { OperatorStatsProps } from "./OperatorStats";
+import CharacterStats, { CharacterStatsProps } from "./CharacterStats";
 
 export default {
-  title: "Introduction/OperatorStats",
-  component: OperatorStats,
+  title: "Introduction/CharacterStats",
+  component: CharacterStats,
 } as Meta;
 
-const Template: Story<OperatorStatsProps> = (args) => (
-  <OperatorStats {...args} />
+const Template: Story<CharacterStatsProps> = (args) => (
+  <CharacterStats {...args} />
 );
 export const Default = Template.bind({});
 Default.args = {

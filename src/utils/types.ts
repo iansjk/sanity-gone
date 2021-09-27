@@ -42,6 +42,7 @@ export interface CharacterObject {
   description: string;
   phases: CharacterPhaseObject[];
   rarity: number; // 0-indexed, so a 1* op has value 0
+  [otherProperties: string]: unknown;
 }
 
 export interface CharacterStatValues {

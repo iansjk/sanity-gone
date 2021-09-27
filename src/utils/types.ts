@@ -29,6 +29,7 @@ interface CharacterPhaseObject {
   range: RangeObject;
   maxLevel: number;
   attributesKeyFrames: AttributeKeyFrame[];
+  [otherProperties: string]: unknown;
 }
 
 // from character_table.json

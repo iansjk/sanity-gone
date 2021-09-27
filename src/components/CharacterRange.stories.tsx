@@ -1,13 +1,13 @@
 import { Meta, Story } from "@storybook/react";
-import OperatorRange, { OperatorRangeProps } from "./OperatorRange";
+import CharacterRange, { CharacterRangeProps } from "./CharacterRange";
 
 export default {
-  title: "Introduction/OperatorRange",
-  component: OperatorRange,
+  title: "Introduction/CharacterRange",
+  component: CharacterRange,
 } as Meta;
 
-const Template: Story<OperatorRangeProps> = (args) => (
-  <OperatorRange {...args} />
+const Template: Story<CharacterRangeProps> = (args) => (
+  <CharacterRange {...args} />
 );
 export const Cuora = Template.bind({});
 Cuora.args = {

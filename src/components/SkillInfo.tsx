@@ -9,7 +9,7 @@ import {
   SkillDurationIcon,
   SPCostIcon,
 } from "./icons/skillInfo";
-import OperatorRange, { RangeObject } from "./OperatorRange";
+import CharacterRange, { RangeObject } from "./CharacterRange";
 
 enum SkillType {
   "Passive" = 0,
@@ -122,7 +122,7 @@ const SkillInfo: React.VFC<
           />
           {range && (
             <div className="range">
-              <OperatorRange rangeObject={range} />
+              <CharacterRange rangeObject={range} />
             </div>
           )}
         </section>

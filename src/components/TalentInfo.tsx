@@ -3,7 +3,7 @@ import {
   descriptionToHtml,
   InterpolatedValue,
 } from "../utils/description-parser";
-import OperatorRange, { RangeObject } from "./OperatorRange";
+import CharacterRange, { RangeObject } from "./CharacterRange";
 
 /** TalentPhaseObject refers to a given talent at a specific potential level */
 interface TalentPhaseObject {
@@ -66,7 +66,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
           />
           {activePhase.range && (
             <div className="range">
-              <OperatorRange rangeObject={activePhase.range} />
+              <CharacterRange rangeObject={activePhase.range} />
             </div>
           )}
         </section>

@@ -9,7 +9,7 @@ import {
   HealthIcon,
   RedeployTimeIcon,
 } from "./icons/operatorStats";
-import OperatorRange from "./OperatorRange";
+import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import { highestCharacterStats } from "../utils/globals";
 
@@ -93,7 +93,7 @@ const OperatorStats: React.VFC<OperatorStatsProps> = ({ operatorObject }) => {
         <div className="range">
           <dt>Range</dt>
           <dd>
-            <OperatorRange rangeObject={rangeObject} />
+            <CharacterRange rangeObject={rangeObject} />
           </dd>
         </div>
       </dl>

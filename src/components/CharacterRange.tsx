@@ -43,12 +43,12 @@ const normalizeRange = (rangeObject: RangeObject): NormalizedRange => {
   };
 };
 
-export interface OperatorRangeProps {
+export interface CharacterRangeProps {
   rangeObject: RangeObject;
 }
 
-const OperatorRange: React.VFC<
-  OperatorRangeProps & React.HTMLAttributes<HTMLTableElement>
+const CharacterRange: React.VFC<
+  CharacterRangeProps & React.HTMLAttributes<HTMLTableElement>
 > = (props) => {
   const { rangeObject, ...rest } = props;
   const { rows, cols, grid } = normalizeRange(rangeObject);
@@ -82,7 +82,7 @@ const OperatorRange: React.VFC<
     </table>
   );
 };
-export default OperatorRange;
+export default CharacterRange;
 
 const styles = (theme: Theme) => css`
   td {

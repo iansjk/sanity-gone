@@ -14,10 +14,12 @@ import { CharacterObject } from "../utils/types";
 import { highestCharacterStats } from "../utils/globals";
 
 export interface CharacterStatsProps {
-  operatorObject: CharacterObject;
+  characterObject: CharacterObject;
 }
 
-const CharacterStats: React.VFC<CharacterStatsProps> = ({ operatorObject }) => {
+const CharacterStats: React.VFC<CharacterStatsProps> = ({
+  characterObject,
+}) => {
   const {
     artsResistance,
     attackPower,
@@ -28,7 +30,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({ operatorObject }) => {
     health,
     rangeObject,
     redeployTimeInSeconds,
-  } = highestCharacterStats(operatorObject);
+  } = highestCharacterStats(characterObject);
 
   return (
     <section css={styles}>

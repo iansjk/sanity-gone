@@ -52,7 +52,7 @@ const htmlToReact = (
             />
           );
         } else if (domNode.name === "operatorstats") {
-          return <CharacterStats operatorObject={context!.operator!} />;
+          return <CharacterStats characterObject={context!.operator!} />;
         } else if ((domNode.firstChild as Element).name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")

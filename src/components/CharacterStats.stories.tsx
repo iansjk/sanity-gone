@@ -9,9 +9,9 @@ export default {
 const Template: Story<CharacterStatsProps> = (args) => (
   <CharacterStats {...args} />
 );
-export const Default = Template.bind({});
-Default.args = {
-  operatorObject: {
+export const Mudrock = Template.bind({});
+Mudrock.args = {
+  characterObject: {
     name: "Mudrock",
     cnName: "泥岩",
     rarity: 5,

@@ -11,7 +11,7 @@ const Template: Story<
   IntroductionProps & { operatorStats: CharacterStatsProps }
 > = (args) => <Introduction {...args} />;
 
-const operatorObject = {
+const characterObject = {
   name: "Mudrock",
   cnName: "泥岩",
   rarity: 5,
@@ -235,7 +235,7 @@ const operatorObject = {
 export const Default = Template.bind({});
 Default.args = {
   isLimited: false,
-  operatorObject,
+  characterObject,
   analysis: [
     <p key="1">
       Mudrock is a powerful <b>self-sustaining defender</b> packing both
@@ -245,7 +245,7 @@ Default.args = {
       compared to the rest of the defender class, HP being especially important
       since all of her self-heals scale off of max HP.
     </p>,
-    <CharacterStats key="2" operatorObject={operatorObject} />,
+    <CharacterStats key="2" characterObject={characterObject} />,
     <p key="3">
       Her kit is adaptable to fit different situations. Whether it be a constant
       onslaught of enemies or spaced out hard-hitters, you can bring a different

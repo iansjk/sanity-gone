@@ -235,7 +235,7 @@ const characterObject = {
 export const Default = Template.bind({});
 Default.args = {
   isLimited: false,
-  characterObject,
+  operatorObject: characterObject,
   analysis: [
     <p key="1">
       Mudrock is a powerful <b>self-sustaining defender</b> packing both

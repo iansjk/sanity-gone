@@ -55,9 +55,9 @@ const OperatorStats: React.VFC<OperatorStatsProps> = ({ operatorObject }) => {
           <dd>{defense}</dd>
         </div>
 
-        <div className="attack-interval">
+        <div className="attack-speed">
           <dt>
-            <AttackSpeedIcon aria-hidden="true" /> Attack Interval
+            <AttackSpeedIcon aria-hidden="true" /> Attack Speed
           </dt>
           <dd>{attacksPerSecond} sec</dd>
         </div>
@@ -129,7 +129,7 @@ const styles = (theme: Theme) => css`
       }
     }
 
-    .attack-interval {
+    .attack-speed {
       svg path {
         fill: ${theme.palette.yellow};
       }

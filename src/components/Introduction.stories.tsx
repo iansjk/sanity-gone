@@ -234,7 +234,6 @@ const operatorObject = {
 };
 export const Default = Template.bind({});
 Default.args = {
-  archetype: "Enmity",
   isLimited: false,
   operatorObject,
   analysis: [

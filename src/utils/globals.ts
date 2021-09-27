@@ -1,5 +1,5 @@
 import defaultSlugify from "slugify";
-import { OperatorObject, OperatorStatValues } from "./types";
+import { CharacterObject, CharacterStatValues } from "./types";
 
 export const slugify = (text: string): string =>
   defaultSlugify(text, { lower: true, replacement: "-", remove: /[-/]/g });
@@ -34,8 +34,8 @@ export const replaceSelfClosingHtmlTags = (htmlString: string): string =>
     (_, tagName: string) => `<${tagName}></${tagName}>`
   );
 
-export const highestOperatorStats = (operatorObject: OperatorObject): OperatorStatValues => {
-  const { phases } = operatorObject;
+export const highestCharacterStats = (characterObject: CharacterObject): CharacterStatValues => {
+  const { phases } = characterObject;
   const activePhase = phases[phases.length - 1];
   const { range: rangeObject } = activePhase;
   const activeKeyFrame =

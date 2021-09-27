@@ -1,11 +1,11 @@
 import { css, Theme } from "@emotion/react";
 import { professionToClass, slugify, toTitleCase } from "../utils/globals";
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
-import { OperatorObject } from "./OperatorStats";
+import { CharacterObject } from "../utils/types";
 import OperatorPortrait from "./OperatorPortrait";
 
 export interface OperatorInfoProps {
-  operatorObject: OperatorObject;
+  operatorObject: CharacterObject;
   isLimited?: boolean;
 }
 

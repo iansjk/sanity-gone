@@ -32,7 +32,7 @@ interface OperatorPhaseObject {
 }
 
 // from character_table.json
-export interface OperatorObject {
+export interface CharacterObject {
   name: string;
   cnName: string;
   profession: string;
@@ -43,7 +43,7 @@ export interface OperatorObject {
   rarity: number; // 0-indexed, so a 1* op has value 0
 }
 
-export interface OperatorStatValues {
+export interface CharacterStatValues {
   health: number,
   attackPower: number,
   defense: number,

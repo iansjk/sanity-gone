@@ -22,12 +22,12 @@ import { replaceSelfClosingHtmlTags, slugify } from "../../utils/globals";
 import { defaultTheme } from "../../theme";
 import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
-import { OperatorObject } from "../../utils/types";
+import { CharacterObject } from "../../utils/types";
 
 type HTMLToReactContext = Partial<{
   skills: SkillObject[];
   talents: TalentObject[];
-  operator: OperatorObject;
+  operator: CharacterObject;
 }>;
 
 const htmlToReact = (
@@ -104,7 +104,7 @@ interface OperatorAnalysisData {
 interface Props {
   data: {
     contentfulOperatorAnalysis: OperatorAnalysisData;
-    operatorsJson: OperatorObject & {
+    operatorsJson: CharacterObject & {
       talents: TalentObject[];
       skillData: SkillObject[];
     };

@@ -10,11 +10,11 @@ import {
   RedeployTimeIcon,
 } from "./icons/operatorStats";
 import OperatorRange from "./OperatorRange";
-import { OperatorObject } from "../utils/types";
-import { highestOperatorStats } from "../utils/globals";
+import { CharacterObject } from "../utils/types";
+import { highestCharacterStats } from "../utils/globals";
 
 export interface OperatorStatsProps {
-  operatorObject: OperatorObject;
+  operatorObject: CharacterObject;
 }
 
 const OperatorStats: React.VFC<OperatorStatsProps> = ({ operatorObject }) => {
@@ -28,7 +28,7 @@ const OperatorStats: React.VFC<OperatorStatsProps> = ({ operatorObject }) => {
     health,
     rangeObject,
     redeployTimeInSeconds,
-  } = highestOperatorStats(operatorObject);
+  } = highestCharacterStats(operatorObject);
 
   return (
     <section css={styles}>

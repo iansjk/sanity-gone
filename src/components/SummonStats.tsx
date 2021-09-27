@@ -1,9 +1,9 @@
 import { css } from "@emotion/react";
-import { highestOperatorStats } from "../utils/globals";
-import { OperatorObject } from "../utils/types";
+import { highestCharacterStats } from "../utils/globals";
+import { CharacterObject } from "../utils/types";
 
 export interface SummonStatsProps {
-  summonObject: OperatorObject;
+  summonObject: CharacterObject;
 }
 
 const SummonStats: React.VFC<SummonStatsProps> = ({ summonObject }) => {
@@ -17,7 +17,7 @@ const SummonStats: React.VFC<SummonStatsProps> = ({ summonObject }) => {
     health,
     rangeObject,
     redeployTimeInSeconds,
-  } = highestOperatorStats(summonObject);
+  } = highestCharacterStats(summonObject);
 
   return <></>;
 };

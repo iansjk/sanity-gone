@@ -233,3 +233,518 @@ Mudrock.args = {
     ],
   },
 };
+
+export const Freeling = Template.bind({});
+Freeling.args = {
+  characterObject: {
+    cnName: '"小自在"',
+    subProfessionId: "notchar1",
+    name: "'Freeling'",
+    description: "Deals <@ba.kw>Arts Damage</>",
+    canUseGeneralPotentialItem: true,
+    potentialItemId: "",
+    nationId: null,
+    groupId: null,
+    teamId: null,
+    displayNumber: null,
+    tokenKey: null,
+    appellation: " ",
+    position: "MELEE",
+    tagList: null,
+    itemUsage: null,
+    itemDesc: null,
+    itemObtainApproach: null,
+    isNotObtainable: false,
+    isSpChar: false,
+    maxPotentialLevel: 0,
+    rarity: 5,
+    profession: "TOKEN",
+    trait: null,
+    phases: [
+      {
+        characterPrefabKey: "token_10015_dusk_drgn",
+        range: {
+          id: "x-5",
+          direction: 1,
+          grids: [
+            {
+              row: 1,
+              col: 0,
+            },
+            {
+              row: 0,
+              col: -1,
+            },
+            {
+              row: 0,
+              col: 0,
+            },
+            {
+              row: 0,
+              col: 1,
+            },
+            {
+              row: -1,
+              col: 0,
+            },
+          ],
+        },
+        maxLevel: 50,
+        attributesKeyFrames: [
+          {
+            level: 1,
+            data: {
+              maxHp: 1997,
+              atk: 398,
+              def: 302,
+              magicResistance: 50.0,
+              cost: 0,
+              blockCnt: 2,
+              moveSpeed: 1.0,
+              attackSpeed: 100.0,
+              baseAttackTime: 1.9,
+              respawnTime: 10,
+              hpRecoveryPerSec: 0.0,
+              spRecoveryPerSec: 1.0,
+              maxDeployCount: 1,
+              maxDeckStackCnt: 0,
+              tauntLevel: 0,
+              massLevel: 0,
+              baseForceLevel: 0,
+              stunImmune: false,
+              silenceImmune: false,
+              sleepImmune: false,
+            },
+          },
+          {
+            level: 50,
+            data: {
+              maxHp: 1997,
+              atk: 398,
+              def: 302,
+              magicResistance: 50.0,
+              cost: 0,
+              blockCnt: 2,
+              moveSpeed: 1.0,
+              attackSpeed: 100.0,
+              baseAttackTime: 1.9,
+              respawnTime: 10,
+              hpRecoveryPerSec: 0.0,
+              spRecoveryPerSec: 1.0,
+              maxDeployCount: 1,
+              maxDeckStackCnt: 0,
+              tauntLevel: 0,
+              massLevel: 0,
+              baseForceLevel: 0,
+              stunImmune: false,
+              silenceImmune: false,
+              sleepImmune: false,
+            },
+          },
+        ],
+        evolveCost: null,
+      },
+      {
+        characterPrefabKey: "token_10015_dusk_drgn",
+        range: {
+          id: "x-5",
+          direction: 1,
+          grids: [
+            {
+              row: 1,
+              col: 0,
+            },
+            {
+              row: 0,
+              col: -1,
+            },
+            {
+              row: 0,
+              col: 0,
+            },
+            {
+              row: 0,
+              col: 1,
+            },
+            {
+              row: -1,
+              col: 0,
+            },
+          ],
+        },
+        maxLevel: 80,
+        attributesKeyFrames: [
+          {
+            level: 1,
+            data: {
+              maxHp: 1997,
+              atk: 398,
+              def: 302,
+              magicResistance: 50.0,
+              cost: 0,
+              blockCnt: 2,
+              moveSpeed: 1.0,
+              attackSpeed: 100.0,
+              baseAttackTime: 1.9,
+              respawnTime: 10,
+              hpRecoveryPerSec: 0.0,
+              spRecoveryPerSec: 1.0,
+              maxDeployCount: 1,
+              maxDeckStackCnt: 0,
+              tauntLevel: 0,
+              massLevel: 0,
+              baseForceLevel: 0,
+              stunImmune: false,
+              silenceImmune: false,
+              sleepImmune: false,
+            },
+          },
+          {
+            level: 80,
+            data: {
+              maxHp: 1997,
+              atk: 398,
+              def: 302,
+              magicResistance: 50.0,
+              cost: 0,
+              blockCnt: 2,
+              moveSpeed: 1.0,
+              attackSpeed: 100.0,
+              baseAttackTime: 1.9,
+              respawnTime: 10,
+              hpRecoveryPerSec: 0.0,
+              spRecoveryPerSec: 1.0,
+              maxDeployCount: 1,
+              maxDeckStackCnt: 0,
+              tauntLevel: 0,
+              massLevel: 0,
+              baseForceLevel: 0,
+              stunImmune: false,
+              silenceImmune: false,
+              sleepImmune: false,
+            },
+          },
+        ],
+        evolveCost: null,
+      },
+      {
+        characterPrefabKey: "token_10015_dusk_drgn",
+        range: {
+          id: "x-5",
+          direction: 1,
+          grids: [
+            {
+              row: 1,
+              col: 0,
+            },
+            {
+              row: 0,
+              col: -1,
+            },
+            {
+              row: 0,
+              col: 0,
+            },
+            {
+              row: 0,
+              col: 1,
+            },
+            {
+              row: -1,
+              col: 0,
+            },
+          ],
+        },
+        maxLevel: 90,
+        attributesKeyFrames: [
+          {
+            level: 1,
+            data: {
+              maxHp: 1997,
+              atk: 398,
+              def: 302,
+              magicResistance: 50.0,
+              cost: 0,
+              blockCnt: 2,
+              moveSpeed: 1.0,
+              attackSpeed: 100.0,
+              baseAttackTime: 1.9,
+              respawnTime: 10,
+              hpRecoveryPerSec: 0.0,
+              spRecoveryPerSec: 1.0,
+              maxDeployCount: 1,
+              maxDeckStackCnt: 0,
+              tauntLevel: 0,
+              massLevel: 0,
+              baseForceLevel: 0,
+              stunImmune: false,
+              silenceImmune: false,
+              sleepImmune: false,
+            },
+          },
+          {
+            level: 90,
+            data: {
+              maxHp: 1997,
+              atk: 398,
+              def: 302,
+              magicResistance: 50.0,
+              cost: 0,
+              blockCnt: 2,
+              moveSpeed: 1.0,
+              attackSpeed: 100.0,
+              baseAttackTime: 1.9,
+              respawnTime: 10,
+              hpRecoveryPerSec: 0.0,
+              spRecoveryPerSec: 1.0,
+              maxDeployCount: 1,
+              maxDeckStackCnt: 0,
+              tauntLevel: 0,
+              massLevel: 0,
+              baseForceLevel: 0,
+              stunImmune: false,
+              silenceImmune: false,
+              sleepImmune: false,
+            },
+          },
+        ],
+        evolveCost: null,
+      },
+    ],
+    skills: [
+      {
+        skillId: null,
+        overridePrefabKey: null,
+        overrideTokenKey: null,
+        levelUpCostCond: [
+          {
+            unlockCond: {
+              phase: 2,
+              level: 1,
+            },
+            lvlUpTime: 0,
+            levelUpCost: null,
+          },
+          {
+            unlockCond: {
+              phase: 2,
+              level: 1,
+            },
+            lvlUpTime: 0,
+            levelUpCost: null,
+          },
+          {
+            unlockCond: {
+              phase: 2,
+              level: 1,
+            },
+            lvlUpTime: 0,
+            levelUpCost: null,
+          },
+        ],
+        unlockCond: {
+          phase: 0,
+          level: 1,
+        },
+      },
+      {
+        skillId: null,
+        overridePrefabKey: null,
+        overrideTokenKey: null,
+        levelUpCostCond: [
+          {
+            unlockCond: {
+              phase: 2,
+              level: 1,
+            },
+            lvlUpTime: 0,
+            levelUpCost: null,
+          },
+          {
+            unlockCond: {
+              phase: 2,
+              level: 1,
+            },
+            lvlUpTime: 0,
+            levelUpCost: null,
+          },
+          {
+            unlockCond: {
+              phase: 2,
+              level: 1,
+            },
+            lvlUpTime: 0,
+            levelUpCost: null,
+          },
+        ],
+        unlockCond: {
+          phase: 1,
+          level: 1,
+        },
+      },
+      {
+        skillId: null,
+        overridePrefabKey: null,
+        overrideTokenKey: null,
+        levelUpCostCond: [
+          {
+            unlockCond: {
+              phase: 2,
+              level: 1,
+            },
+            lvlUpTime: 0,
+            levelUpCost: null,
+          },
+          {
+            unlockCond: {
+              phase: 2,
+              level: 1,
+            },
+            lvlUpTime: 0,
+            levelUpCost: null,
+          },
+          {
+            unlockCond: {
+              phase: 2,
+              level: 1,
+            },
+            lvlUpTime: 0,
+            levelUpCost: null,
+          },
+        ],
+        unlockCond: {
+          phase: 2,
+          level: 1,
+        },
+      },
+    ],
+    talents: [
+      {
+        candidates: [
+          {
+            unlockCondition: {
+              phase: 2,
+              level: 1,
+            },
+            requiredPotentialRank: 0,
+            prefabKey: "1",
+            name: null,
+            description: "-",
+            rangeId: "x-5",
+            blackboard: [
+              {
+                key: "duration",
+                value: 25.0,
+              },
+              {
+                key: "atk",
+                value: 0.02,
+              },
+              {
+                key: "max_stack_cnt",
+                value: 15.0,
+              },
+            ],
+          },
+          {
+            unlockCondition: {
+              phase: 2,
+              level: 1,
+            },
+            requiredPotentialRank: 4,
+            prefabKey: "1",
+            name: null,
+            description: "-",
+            rangeId: "x-5",
+            blackboard: [
+              {
+                key: "duration",
+                value: 25.0,
+              },
+              {
+                key: "atk",
+                value: 0.02,
+              },
+              {
+                key: "max_stack_cnt",
+                value: 18.0,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    potentialRanks: [],
+    favorKeyFrames: [
+      {
+        level: 50,
+        data: {
+          maxHp: 0,
+          atk: 0,
+          def: 0,
+          magicResistance: 0.0,
+          cost: 0,
+          blockCnt: 0,
+          moveSpeed: 0.0,
+          attackSpeed: 0.0,
+          baseAttackTime: 0.0,
+          respawnTime: 0,
+          hpRecoveryPerSec: 0.0,
+          spRecoveryPerSec: 0.0,
+          maxDeployCount: 0,
+          maxDeckStackCnt: 0,
+          tauntLevel: 0,
+          massLevel: 0,
+          baseForceLevel: 0,
+          stunImmune: false,
+          silenceImmune: false,
+          sleepImmune: false,
+        },
+      },
+    ],
+    allSkillLvlup: [
+      {
+        unlockCond: {
+          phase: 0,
+          level: 1,
+        },
+        lvlUpCost: null,
+      },
+      {
+        unlockCond: {
+          phase: 0,
+          level: 1,
+        },
+        lvlUpCost: null,
+      },
+      {
+        unlockCond: {
+          phase: 0,
+          level: 1,
+        },
+        lvlUpCost: null,
+      },
+      {
+        unlockCond: {
+          phase: 1,
+          level: 1,
+        },
+        lvlUpCost: null,
+      },
+      {
+        unlockCond: {
+          phase: 1,
+          level: 1,
+        },
+        lvlUpCost: null,
+      },
+      {
+        unlockCond: {
+          phase: 1,
+          level: 1,
+        },
+        lvlUpCost: null,
+      },
+    ],
+  },
+};

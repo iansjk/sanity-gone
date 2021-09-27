@@ -22,7 +22,7 @@ export interface RangeObject {
   }[];
 }
 
-interface OperatorPhaseObject {
+interface CharacterPhaseObject {
   characterPrefabKey: string;
   // character_table.json's "phases" objects have rangeIds,
   // but we expect this to be denormalized first
@@ -39,7 +39,7 @@ export interface CharacterObject {
   subProfessionId: string;
   position: "MELEE" | "RANGED";
   description: string;
-  phases: OperatorPhaseObject[];
+  phases: CharacterPhaseObject[];
   rarity: number; // 0-indexed, so a 1* op has value 0
 }
 

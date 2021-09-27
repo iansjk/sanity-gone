@@ -31,74 +31,80 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
     rangeObject,
     redeployTimeInSeconds,
   } = highestCharacterStats(characterObject);
+  const isSummon = characterObject.profession === "TOKEN";
 
   return (
     <section css={styles}>
-      <h3 className="visually-hidden">Operator Stats</h3>
-      <dl>
-        <div className="health">
-          <dt>
-            <HealthIcon aria-hidden="true" /> Health
-          </dt>
-          <dd>{health}</dd>
-        </div>
+      <h3 className="visually-hidden">
+        {`${isSummon ? "Summon" : "Operator"} Stats`}
+      </h3>
+      <div className={isSummon ? "summon-stats" : "operator-stats"}>
+        {isSummon && <div className="summon-icon-cell">{/* TODO */}</div>}
+        <dl>
+          <div className="health">
+            <dt>
+              <HealthIcon aria-hidden="true" /> Health
+            </dt>
+            <dd>{health}</dd>
+          </div>
 
-        <div className="attack-power">
-          <dt>
-            <AttackPowerIcon aria-hidden="true" /> Attack Power
-          </dt>
-          <dd>{attackPower}</dd>
-        </div>
+          <div className="attack-power">
+            <dt>
+              <AttackPowerIcon aria-hidden="true" /> Attack Power
+            </dt>
+            <dd>{attackPower}</dd>
+          </div>
 
-        <div className="defense">
-          <dt>
-            <DefenseIcon aria-hidden="true" /> Defense
-          </dt>
-          <dd>{defense}</dd>
-        </div>
+          <div className="defense">
+            <dt>
+              <DefenseIcon aria-hidden="true" /> Defense
+            </dt>
+            <dd>{defense}</dd>
+          </div>
 
-        <div className="attack-speed">
-          <dt>
-            <AttackSpeedIcon aria-hidden="true" /> Attack Speed
-          </dt>
-          <dd>{attacksPerSecond} sec</dd>
-        </div>
+          <div className="attack-speed">
+            <dt>
+              <AttackSpeedIcon aria-hidden="true" /> Attack Speed
+            </dt>
+            <dd>{attacksPerSecond} sec</dd>
+          </div>
 
-        <div className="arts-resistance">
-          <dt>
-            <ArtsResistanceIcon aria-hidden="true" /> Arts Resistance
-          </dt>
-          <dd>{artsResistance}%</dd>
-        </div>
+          <div className="arts-resistance">
+            <dt>
+              <ArtsResistanceIcon aria-hidden="true" /> Arts Resistance
+            </dt>
+            <dd>{artsResistance}%</dd>
+          </div>
 
-        <div className="block">
-          <dt>
-            <BlockIcon aria-hidden="true" /> Block
-          </dt>
-          <dd>{blockCount}</dd>
-        </div>
+          <div className="block">
+            <dt>
+              <BlockIcon aria-hidden="true" /> Block
+            </dt>
+            <dd>{blockCount}</dd>
+          </div>
 
-        <div className="redeploy-time">
-          <dt>
-            <RedeployTimeIcon aria-hidden="true" /> Redeploy Time
-          </dt>
-          <dd>{redeployTimeInSeconds} sec</dd>
-        </div>
+          <div className="redeploy-time">
+            <dt>
+              <RedeployTimeIcon aria-hidden="true" /> Redeploy Time
+            </dt>
+            <dd>{redeployTimeInSeconds} sec</dd>
+          </div>
 
-        <div className="dp-cost">
-          <dt>
-            <DPCostIcon aria-hidden="true" /> DP Cost
-          </dt>
-          <dd>{dpCost}</dd>
-        </div>
+          <div className="dp-cost">
+            <dt>
+              <DPCostIcon aria-hidden="true" /> DP Cost
+            </dt>
+            <dd>{dpCost}</dd>
+          </div>
 
-        <div className="range">
-          <dt>Range</dt>
-          <dd>
-            <CharacterRange rangeObject={rangeObject} />
-          </dd>
-        </div>
-      </dl>
+          <div className="range">
+            <dt>Range</dt>
+            <dd>
+              <CharacterRange rangeObject={rangeObject} />
+            </dd>
+          </div>
+        </dl>
+      </div>
     </section>
   );
 };

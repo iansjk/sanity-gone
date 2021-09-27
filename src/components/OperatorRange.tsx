@@ -1,14 +1,6 @@
-import { css, Theme } from "@emotion/react";
 import React from "react";
-
-export interface RangeObject {
-  id: string;
-  direction: number;
-  grids: {
-    row: number;
-    col: number;
-  }[];
-}
+import { css, Theme } from "@emotion/react";
+import { RangeObject } from "../utils/types";
 
 enum GridCell {
   Operator = "operator",

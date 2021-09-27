@@ -1,5 +1,4 @@
 import { css, Theme } from "@emotion/react";
-import { slugify } from "../utils/globals";
 import {
   ArtsResistanceIcon,
   AttackPowerIcon,
@@ -10,65 +9,26 @@ import {
   HealthIcon,
   RedeployTimeIcon,
 } from "./icons/operatorStats";
-import OperatorRange, { RangeObject } from "./OperatorRange";
-
-interface AttributeKeyFrame {
-  level: number;
-  data: {
-    maxHp: number;
-    atk: number;
-    def: number;
-    baseAttackTime: number;
-    magicResistance: number;
-    cost: number;
-    blockCnt: number;
-    respawnTime: number;
-    [otherProperties: string]: unknown;
-  };
-}
-
-interface OperatorPhaseObject {
-  characterPrefabKey: string;
-  // character_table.json's "phases" objects have rangeIds,
-  // but we expect this to be denormalized first
-  range: RangeObject;
-  maxLevel: number;
-  attributesKeyFrames: AttributeKeyFrame[];
-}
-
-// from character_table.json
-export interface OperatorObject {
-  name: string;
-  cnName: string;
-  profession: string;
-  subProfessionId: string;
-  position: "MELEE" | "RANGED";
-  description: string;
-  phases: OperatorPhaseObject[];
-  rarity: number; // 0-indexed, so a 1* op has value 0
-}
+import OperatorRange from "./OperatorRange";
+import { OperatorObject } from "../utils/types";
+import { highestOperatorStats } from "../utils/globals";
 
 export interface OperatorStatsProps {
   operatorObject: OperatorObject;
 }
 
-const OperatorStats: React.VFC<OperatorStatsProps> = (props) => {
-  const { operatorObject } = props;
-  const { phases } = operatorObject;
-  const activePhase = phases[phases.length - 1];
-  const { range: rangeObject } = activePhase;
-  const activeKeyFrame =
-    activePhase.attributesKeyFrames[activePhase.attributesKeyFrames.length - 1];
+const OperatorStats: React.VFC<OperatorStatsProps> = ({ operatorObject }) => {
   const {
-    maxHp: health,
-    atk: attackPower,
-    def: defense,
-    magicResistance: artsResistance,
-    cost: dpCost,
-    blockCnt: blockCount,
-    respawnTime: redeployTimeInSeconds,
-    baseAttackTime: attacksPerSecond,
-  } = activeKeyFrame.data;
+    artsResistance,
+    attackPower,
+    attacksPerSecond,
+    blockCount,
+    defense,
+    dpCost,
+    health,
+    rangeObject,
+    redeployTimeInSeconds,
+  } = highestOperatorStats(operatorObject);
 
   return (
     <section css={styles}>

@@ -1,4 +1,5 @@
 import defaultSlugify from "slugify";
+import { OperatorObject, OperatorStatValues } from "./types";
 
 export const slugify = (text: string): string =>
   defaultSlugify(text, { lower: true, replacement: "-", remove: /[-/]/g });
@@ -32,3 +33,32 @@ export const replaceSelfClosingHtmlTags = (htmlString: string): string =>
     selfClosingTagRegex,
     (_, tagName: string) => `<${tagName}></${tagName}>`
   );
+
+export const highestOperatorStats = (operatorObject: OperatorObject): OperatorStatValues => {
+  const { phases } = operatorObject;
+  const activePhase = phases[phases.length - 1];
+  const { range: rangeObject } = activePhase;
+  const activeKeyFrame =
+    activePhase.attributesKeyFrames[activePhase.attributesKeyFrames.length - 1];
+  const {
+    maxHp: health,
+    atk: attackPower,
+    def: defense,
+    magicResistance: artsResistance,
+    cost: dpCost,
+    blockCnt: blockCount,
+    respawnTime: redeployTimeInSeconds,
+    baseAttackTime: attacksPerSecond,
+  } = activeKeyFrame.data;
+  return {
+    health,
+    attackPower,
+    defense,
+    artsResistance,
+    dpCost,
+    blockCount,
+    redeployTimeInSeconds,
+    attacksPerSecond,
+    rangeObject
+  }
+}

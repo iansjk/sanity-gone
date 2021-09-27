@@ -8,7 +8,7 @@ import parse, { attributesToProps } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
 
 import Introduction from "../../components/Introduction";
-import OperatorStats, { OperatorObject } from "../../components/OperatorStats";
+import OperatorStats from "../../components/OperatorStats";
 import SkillInfo, { SkillObject } from "../../components/SkillInfo";
 import Synergies from "../../components/Synergies";
 import { SynergyQuality } from "../../components/SynergyOperator";
@@ -22,6 +22,7 @@ import { replaceSelfClosingHtmlTags, slugify } from "../../utils/globals";
 import { defaultTheme } from "../../theme";
 import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
+import { OperatorObject } from "../../utils/types";
 
 type HTMLToReactContext = Partial<{
   skills: SkillObject[];

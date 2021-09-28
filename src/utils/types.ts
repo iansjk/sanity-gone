@@ -34,6 +34,7 @@ interface CharacterPhaseObject {
 
 // from character_table.json
 export interface CharacterObject {
+  id: string;
   name: string;
   cnName: string;
   profession: string;

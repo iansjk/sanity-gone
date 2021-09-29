@@ -14,6 +14,8 @@ import { CharacterObject } from "../utils/types";
 import { highestCharacterStats } from "../utils/globals";
 import { summonImage } from "../utils/images";
 
+const SUMMON_ICON_SIZE = 60;
+
 export interface CharacterStatsProps {
   characterObject: CharacterObject;
 }
@@ -40,77 +42,81 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
       <h3 className="visually-hidden">
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>
-      <div className={isSummon ? "summon-stats" : "operator-stats"}>
+      <dl className={isSummon ? "summon-stats" : "operator-stats"}>
         {isSummon && (
-          <div className="summon-icon-cell">
-            <img src={summonImage(id)} alt={name} />
+          <div className="summon-icon">
+            <img
+              src={summonImage(id)}
+              alt={name}
+              width={SUMMON_ICON_SIZE}
+              height={SUMMON_ICON_SIZE}
+            />
           </div>
         )}
-        <dl>
-          <div className="health">
-            <dt>
-              <HealthIcon aria-hidden="true" /> Health
-            </dt>
-            <dd>{health}</dd>
-          </div>
 
-          <div className="attack-power">
-            <dt>
-              <AttackPowerIcon aria-hidden="true" /> Attack Power
-            </dt>
-            <dd>{attackPower}</dd>
-          </div>
+        <div className="health">
+          <dt>
+            <HealthIcon aria-hidden="true" /> Health
+          </dt>
+          <dd>{health}</dd>
+        </div>
 
-          <div className="defense">
-            <dt>
-              <DefenseIcon aria-hidden="true" /> Defense
-            </dt>
-            <dd>{defense}</dd>
-          </div>
+        <div className="attack-power">
+          <dt>
+            <AttackPowerIcon aria-hidden="true" /> Attack Power
+          </dt>
+          <dd>{attackPower}</dd>
+        </div>
 
-          <div className="attack-speed">
-            <dt>
-              <AttackSpeedIcon aria-hidden="true" /> Attack Speed
-            </dt>
-            <dd>{attacksPerSecond} sec</dd>
-          </div>
+        <div className="defense">
+          <dt>
+            <DefenseIcon aria-hidden="true" /> Defense
+          </dt>
+          <dd>{defense}</dd>
+        </div>
 
-          <div className="arts-resistance">
-            <dt>
-              <ArtsResistanceIcon aria-hidden="true" /> Arts Resistance
-            </dt>
-            <dd>{artsResistance}%</dd>
-          </div>
+        <div className="attack-speed">
+          <dt>
+            <AttackSpeedIcon aria-hidden="true" /> Attack Speed
+          </dt>
+          <dd>{attacksPerSecond} sec</dd>
+        </div>
 
-          <div className="block">
-            <dt>
-              <BlockIcon aria-hidden="true" /> Block
-            </dt>
-            <dd>{blockCount}</dd>
-          </div>
+        <div className="arts-resistance">
+          <dt>
+            <ArtsResistanceIcon aria-hidden="true" /> Arts Resistance
+          </dt>
+          <dd>{artsResistance}%</dd>
+        </div>
 
-          <div className="redeploy-time">
-            <dt>
-              <RedeployTimeIcon aria-hidden="true" /> Redeploy Time
-            </dt>
-            <dd>{redeployTimeInSeconds} sec</dd>
-          </div>
+        <div className="block">
+          <dt>
+            <BlockIcon aria-hidden="true" /> Block
+          </dt>
+          <dd>{blockCount}</dd>
+        </div>
 
-          <div className="dp-cost">
-            <dt>
-              <DPCostIcon aria-hidden="true" /> DP Cost
-            </dt>
-            <dd>{dpCost}</dd>
-          </div>
+        <div className="redeploy-time">
+          <dt>
+            <RedeployTimeIcon aria-hidden="true" /> Redeploy Time
+          </dt>
+          <dd>{redeployTimeInSeconds} sec</dd>
+        </div>
 
-          <div className="range">
-            <dt>Range</dt>
-            <dd>
-              <CharacterRange rangeObject={rangeObject} />
-            </dd>
-          </div>
-        </dl>
-      </div>
+        <div className="dp-cost">
+          <dt>
+            <DPCostIcon aria-hidden="true" /> DP Cost
+          </dt>
+          <dd>{dpCost}</dd>
+        </div>
+
+        <div className="range">
+          <dt>Range</dt>
+          <dd>
+            <CharacterRange rangeObject={rangeObject} />
+          </dd>
+        </div>
+      </dl>
     </section>
   );
 };
@@ -120,10 +126,25 @@ const styles = (theme: Theme) => css`
   dl {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(4, 195fr) 224fr;
     grid-auto-flow: column;
     gap: ${theme.spacing(0.25)};
     margin: ${theme.spacing(3, 0, 0)};
+
+    &.operator-stats {
+      grid-template-columns: repeat(4, 195fr) 224fr;
+    }
+    
+    &.summon-stats {
+      grid-template-columns: 88fr repeat(4, 149fr) 224fr;
+    }
+
+    .summon-icon {
+      grid-row-start: span 2;
+
+      img {
+        margin: auto;
+      }
+    }
 
     .health {
       svg path {

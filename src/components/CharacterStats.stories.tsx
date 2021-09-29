@@ -12,6 +12,7 @@ const Template: Story<CharacterStatsProps> = (args) => (
 export const Mudrock = Template.bind({});
 Mudrock.args = {
   characterObject: {
+    id: "char_311_mudrok",
     name: "Mudrock",
     cnName: "泥岩",
     rarity: 5,
@@ -237,6 +238,7 @@ Mudrock.args = {
 export const Freeling = Template.bind({});
 Freeling.args = {
   characterObject: {
+    id: "token_10015_dusk_drgn",
     cnName: '"小自在"',
     subProfessionId: "notchar1",
     name: "'Freeling'",

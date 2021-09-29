@@ -12,6 +12,7 @@ import {
 import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import { highestCharacterStats } from "../utils/globals";
+import { summonImage } from "../utils/images";
 
 export interface CharacterStatsProps {
   characterObject: CharacterObject;
@@ -31,7 +32,8 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
     rangeObject,
     redeployTimeInSeconds,
   } = highestCharacterStats(characterObject);
-  const isSummon = characterObject.profession === "TOKEN";
+  const { id, name, profession } = characterObject;
+  const isSummon = profession === "TOKEN";
 
   return (
     <section css={styles}>
@@ -39,7 +41,11 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>
       <div className={isSummon ? "summon-stats" : "operator-stats"}>
-        {isSummon && <div className="summon-icon-cell">{/* TODO */}</div>}
+        {isSummon && (
+          <div className="summon-icon-cell">
+            <img src={summonImage(id)} alt={name} />
+          </div>
+        )}
         <dl>
           <div className="health">
             <dt>

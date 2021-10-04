@@ -36,7 +36,8 @@ export const descriptionToHtml = (
           className = "reminder-text";
           break;
         default:
-          throw new Error(`Unrecognized tag name: ${match.groups.tagType}`);
+          console.warn(`Unrecognized tag: ${match[0]}`);
+          break;
       }
       htmlDescription = htmlDescription.replace(
         descriptionTagRegex,

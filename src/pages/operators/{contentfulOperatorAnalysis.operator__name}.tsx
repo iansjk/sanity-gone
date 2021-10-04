@@ -28,6 +28,7 @@ type HTMLToReactContext = Partial<{
   skills: SkillObject[];
   talents: TalentObject[];
   operator: CharacterObject;
+  summon: CharacterObject;
 }>;
 
 const htmlToReact = (
@@ -53,6 +54,8 @@ const htmlToReact = (
           );
         } else if (domNode.name === "operatorstats") {
           return <CharacterStats characterObject={context!.operator!} />;
+        } else if (domNode.name === "summonstats") {
+          return <CharacterStats characterObject={context!.summon!} />;
         } else if ((domNode.firstChild as Element).name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")
@@ -114,6 +117,7 @@ interface Props {
         rarity: number;
       }[];
     };
+    allSummonsJson: CharacterObject[];
   };
 }
 
@@ -122,6 +126,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   const {
     contentfulOperatorAnalysis: contentful,
     operatorsJson: operatorObject,
+    allSummonsJson: summons,
   } = data;
 
   const rarityMap = Object.fromEntries(
@@ -248,7 +253,10 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   <Introduction
                     analysis={htmlToReact(
                       contentful.introduction.childMarkdownRemark.html,
-                      { operator: operatorObject }
+                      {
+                        operator: operatorObject,
+                        summon: summons.length > 0 ? summons[0] : undefined,
+                      }
                     )}
                     isLimited={contentful.operator.limited}
                     operatorObject={operatorObject}
@@ -569,6 +577,34 @@ export const query = graphql`
       nodes {
         name
         rarity
+      }
+    }
+
+    allSummonsJson(filter: { operatorName: { eq: $operator__name } }) {
+      nodes {
+        name
+        phases {
+          range {
+            grids {
+              row
+              col
+            }
+          }
+          maxLevel
+          attributesKeyFrames {
+            level
+            data {
+              maxHp
+              atk
+              def
+              baseAttackTime
+              magicResistance
+              cost
+              blockCnt
+              respawnTime
+            }
+          }
+        }
       }
     }
   }

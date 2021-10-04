@@ -137,14 +137,14 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
 
   const talentAnalyses = [
     contentful.talent1Analysis.childMarkdownRemark.html,
-    contentful.talent2Analysis.childMarkdownRemark.html,
+    contentful.talent2Analysis?.childMarkdownRemark.html,
   ]
     .filter((html) => !!html)
     .map((html) => htmlToReact(html, { talents: operatorObject.talents }));
   const skillAnalyses = [
     contentful.skill1Analysis.childMarkdownRemark.html,
     contentful.skill2Analysis.childMarkdownRemark.html,
-    contentful.skill3Analysis.childMarkdownRemark.html,
+    contentful.skill3Analysis?.childMarkdownRemark.html,
   ]
     .filter((html) => !!html)
     .map((html) => htmlToReact(html, { skills: operatorObject.skillData }));

@@ -7,15 +7,17 @@ import rangeTable from "../../ArknightsGameData/en_US/gamedata/excel/range_table
 
 const dataDir = path.join(__filename, "../../data");
 
-const denormalizedOperators = Object.entries(enCharacterTable).map(
-  ([id, op]) => {
-    const phases = op.phases.map((phase) => ({
+const summonIdToOperatorName: Record<string, string> = {};
+const denormalizedCharacters = Object.entries(enCharacterTable)
+  .filter(([_, character]) => character.profession !== "TRAP")
+  .map(([id, character]) => {
+    const phases = character.phases.map((phase) => ({
       ...phase,
       range: phase.rangeId
         ? rangeTable[phase.rangeId as keyof typeof rangeTable]
         : null,
     }));
-    const talents = (op.talents || []).map((talent) => {
+    const talents = (character.talents || []).map((talent) => {
       const candidates = (talent.candidates || []).map((candidate) => ({
         ...candidate,
         range: candidate.rangeId
@@ -25,7 +27,7 @@ const denormalizedOperators = Object.entries(enCharacterTable).map(
       return { ...talent, candidates };
     });
 
-    const skillData = op.skills
+    const skillData = character.skills
       .map((skill) => {
         const skillId = skill.skillId;
         if (!skillId) {
@@ -48,8 +50,12 @@ const denormalizedOperators = Object.entries(enCharacterTable).map(
     const { name: cnName, subProfessionId } =
       cnCharacterTable[id as keyof typeof cnCharacterTable];
 
+    if (character.tokenKey) {
+      summonIdToOperatorName[character.tokenKey] = character.name;
+    }
+
     return {
-      ...op,
+      ...character,
       id,
       phases,
       talents,
@@ -57,11 +63,24 @@ const denormalizedOperators = Object.entries(enCharacterTable).map(
       cnName,
       subProfessionId,
     };
-  }
+  });
+const denormalizedOperators = denormalizedCharacters.filter(
+  (character) => character.profession !== "TOKEN"
 );
 fs.writeFileSync(
   path.join(dataDir, "operators.json"),
   JSON.stringify(denormalizedOperators, null, 2)
+);
+
+const denormalizedSummons = denormalizedCharacters
+  .filter((character) => character.profession === "TOKEN")
+  .map((summon) => ({
+    ...summon,
+    operatorName: summonIdToOperatorName[summon.id],
+  }));
+fs.writeFileSync(
+  path.join(dataDir, "summons.json"),
+  JSON.stringify(denormalizedSummons, null, 2)
 );
 
 const denormalizedSkills = Object.entries(skillTable).map(([id, skill]) => {

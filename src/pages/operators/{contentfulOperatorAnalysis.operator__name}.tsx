@@ -582,7 +582,9 @@ export const query = graphql`
 
     allSummonsJson(filter: { operatorName: { eq: $operator__name } }) {
       nodes {
+        id
         name
+        profession
         phases {
           range {
             grids {

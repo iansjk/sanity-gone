@@ -117,7 +117,9 @@ interface Props {
         rarity: number;
       }[];
     };
-    allSummonsJson: CharacterObject[];
+    allSummonsJson: {
+      nodes: CharacterObject[];
+    };
   };
 }
 
@@ -126,8 +128,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   const {
     contentfulOperatorAnalysis: contentful,
     operatorsJson: operatorObject,
-    allSummonsJson: summons,
   } = data;
+  const summons = data.allSummonsJson.nodes;
 
   const rarityMap = Object.fromEntries(
     data.allOperatorsJson.nodes.map(({ name, rarity }) => [name, rarity])

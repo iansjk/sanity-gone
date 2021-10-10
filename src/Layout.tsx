@@ -130,8 +130,6 @@ const styles =
 
       header {
         padding: ${theme.spacing(3, 0, 0)};
-        position: absolute; // to remove from page flow
-        width: ${theme.containerWidth};
 
         .top-line {
           display: flex;
@@ -187,6 +185,10 @@ const styles =
             }
           }
         }
+      }
+
+      .page-content {
+        margin-top: ${theme.spacing(3)};
       }
 
       footer {

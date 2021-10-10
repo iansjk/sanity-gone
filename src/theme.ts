@@ -124,6 +124,5 @@ export const defaultTheme = {
     down: (breakpoint: keyof typeof breakpoints): string => `@media (max-width: ${breakpoints[breakpoint]})`,
     up:(breakpoint: keyof typeof breakpoints): string => `@media (min-width: ${breakpoints[breakpoint]})`,
   },
-  containerWidth: "1270px",
-  contentY: "384px",
+  containerWidth: "1270px"
 };

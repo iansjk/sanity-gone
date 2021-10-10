@@ -1,4 +1,5 @@
 import { css, Theme } from "@emotion/react";
+import { rgba } from "polished";
 import { professionToClass, slugify, toTitleCase } from "../utils/globals";
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
 import { CharacterObject } from "../utils/types";
@@ -95,6 +96,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     position: binaryPosition,
   } = operatorObject;
   const operatorClass = professionToClass(profession);
+  const subclass = subProfessionToSubclass[subProfessionId];
   const rarity = rawRarity + 1; // 0-indexed;
   const position = description
     .toLowerCase()
@@ -108,28 +110,23 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
       <div className="operator-portrait-and-class">
         <div className="name-and-class">
           <div className="operator-name">{name}</div>
-          <div className="operator-class-subclass">
-            <div className="class-subclass-icons">
-              <img
-                className="class-icon"
-                src={operatorClassIcon(operatorClass.toLowerCase())}
-                alt=""
-              />
-              <IconSeparator className="separator" aria-hidden="true" />
-              <img
-                className="subclass-icon"
-                src={operatorSubclassIcon(subProfessionId)}
-                alt=""
-              />
-            </div>
-            <div className="class-and-subclass">
-              <span className="subclass-name">
-                {subProfessionToSubclass[subProfessionId]}
-              </span>
-              <br />
-              <span className="class-name">{operatorClass}</span>
-            </div>
-          </div>
+          <a
+            className="class-and-subclass"
+            href={`/classes/${operatorClass.toLowerCase()}#${subclass.toLowerCase()}`}
+          >
+            <img
+              className="class-icon"
+              src={operatorClassIcon(operatorClass.toLowerCase())}
+              alt=""
+            />
+            {operatorClass}
+            <img
+              className="subclass-icon"
+              src={operatorSubclassIcon(subProfessionId)}
+              alt=""
+            />
+            {subclass}
+          </a>
         </div>
         <OperatorPortrait
           variant="normal"
@@ -177,37 +174,33 @@ const styles = (theme: Theme) => css`
         margin-bottom: ${theme.spacing(1)};
       }
 
-      .operator-class-subclass {
+      .class-and-subclass {
+        padding: ${theme.spacing(1)};
         display: flex;
         align-items: center;
+        font-size: ${theme.typography.label2.size};
+        line-height: ${theme.typography.label2.lineHeight};
+        font-weight: ${theme.typography.label2.fontWeight};
+        text-transform: uppercase;
+        color: ${theme.palette.white};
+        border: 1px solid ${theme.palette.midHighlight};
+        border-radius: ${theme.spacing(0.5)};
 
-        .class-subclass-icons {
-          display: grid;
-          align-items: center;
-          grid-template-columns: 24px 18px 24px;
-          column-gap: ${theme.spacing(1)};
-          padding: ${theme.spacing(1)};
-          background-color: ${theme.palette.background};
-          border-radius: ${theme.spacing(1)};
-
-          .class-icon,
-          .subclass-icon {
-            width: 24px;
-            height: 24px;
-            line-height: 1;
-          }
+        &:hover {
+          border-color: ${theme.palette.gray};
+          background-color: ${rgba(theme.palette.gray, 0.1)};
         }
 
-        .class-and-subclass {
-          margin-left: ${theme.spacing(2)};
-          font-size: ${theme.typography.label2.size};
-          line-height: ${theme.typography.label2.lineHeight};
-          font-weight: ${theme.typography.label2.fontWeight};
-          text-transform: uppercase;
+        .class-icon,
+        .subclass-icon {
+          width: 24px;
+          height: 24px;
+          line-height: 1;
+          margin-right: ${theme.spacing(1)};
+        }
 
-          .class-name {
-            color: ${theme.palette.white};
-          }
+        .subclass-icon {
+          margin-left: ${theme.spacing(1)};
         }
       }
     }

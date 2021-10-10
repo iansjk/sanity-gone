@@ -400,16 +400,6 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
       .analysis-section {
         border-left: 1px solid ${theme.palette.midHighlight};
-
-        .operator-class-subclass {
-          .subclass-name {
-            color: ${accentColor};
-          }
-
-          svg line {
-            stroke: ${accentColor};
-          }
-        }
       }
 
       .analysis-section:not(.synergies) {

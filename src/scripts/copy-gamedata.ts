@@ -2,13 +2,17 @@ import fs from "fs";
 import path from "path";
 import enCharacterTable from "../../ArknightsGameData/en_US/gamedata/excel/character_table.json";
 import cnCharacterTable from "../../ArknightsGameData/zh_CN/gamedata/excel/character_table.json";
-import skillTable from "../../ArknightsGameData/en_US/gamedata/excel/skill_table.json";
+import enSkillTable from "../../ArknightsGameData/en_US/gamedata/excel/skill_table.json";
+import cnSkillTable from "../../ArknightsGameData/zh_CN/gamedata/excel/skill_table.json";
 import rangeTable from "../../ArknightsGameData/en_US/gamedata/excel/range_table.json";
 
 const dataDir = path.join(__filename, "../../data");
 
+const enCharacterIds = new Set(Object.keys(enCharacterTable));
+const cnOnlyCharacters = Object.entries(cnCharacterTable).filter(([id]) => !enCharacterIds.has(id));
+
 const summonIdToOperatorName: Record<string, string> = {};
-const denormalizedCharacters = Object.entries(enCharacterTable)
+const denormalizedCharacters = [...Object.entries(enCharacterTable), ...cnOnlyCharacters]
   .filter(([_, character]) => character.profession !== "TRAP")
   .map(([id, character]) => {
     const phases = character.phases.map((phase) => ({
@@ -33,7 +37,7 @@ const denormalizedCharacters = Object.entries(enCharacterTable)
         if (!skillId) {
           return null;
         }
-        const baseSkillObject = skillTable[skillId as keyof typeof skillTable];
+        const baseSkillObject = enCharacterIds.has(id) ? enSkillTable[skillId as keyof typeof enSkillTable] : cnSkillTable[skillId as keyof typeof cnSkillTable];
         const levels = baseSkillObject.levels.map((skillAtLevel) => ({
           ...skillAtLevel,
           range: skillAtLevel.rangeId
@@ -62,6 +66,7 @@ const denormalizedCharacters = Object.entries(enCharacterTable)
       skillData,
       cnName,
       subProfessionId,
+      name: enCharacterIds.has(id) ? character.name : character.appellation
     };
   });
 const denormalizedOperators = denormalizedCharacters.filter(
@@ -83,7 +88,7 @@ fs.writeFileSync(
   JSON.stringify(denormalizedSummons, null, 2)
 );
 
-const denormalizedSkills = Object.entries(skillTable).map(([id, skill]) => {
+const denormalizedSkills = Object.entries(enSkillTable).map(([id, skill]) => {
   const levels = skill.levels.map((level) => ({
     ...level,
     range: level.rangeId

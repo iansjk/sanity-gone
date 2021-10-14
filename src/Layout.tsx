@@ -5,7 +5,6 @@ import { defaultTheme } from "./theme";
 import { Helmet } from "react-helmet";
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import BreadcrumbBackIcon from "./components/icons/BreadcrumbBackIcon";
-import { slugify } from "./utils/globals";
 import "wicg-inert";
 
 interface LayoutProps {
@@ -85,7 +84,7 @@ const styles =
         background-color: ${theme.palette.background};
         line-height: ${theme.typography.body.lineHeight};
         overflow-y: scroll;
-        font-family: ${theme.typography.fallbackFontFamily};
+        font-family: ${theme.typography.body.family};
 
         ${theme.breakpoints.down("mobile")} {
           font-size: ${theme.typography.body2.size};
@@ -96,13 +95,6 @@ const styles =
         background-image: url("${bannerImageUrl}");
         background-repeat: no-repeat;
         background-position-x: center;
-
-        &:not(.wf-${slugify(theme.typography.body.family)}--loaded) {
-          ${theme.typography.fallbackFontCss};
-        }
-
-        &.wf-${slugify(theme.typography.body.family)}--loaded {
-          font-family: ${theme.typography.body.family};
         }
       }
 

@@ -5,6 +5,8 @@ import cnCharacterTable from "../../ArknightsGameData/zh_CN/gamedata/excel/chara
 import enSkillTable from "../../ArknightsGameData/en_US/gamedata/excel/skill_table.json";
 import cnSkillTable from "../../ArknightsGameData/zh_CN/gamedata/excel/skill_table.json";
 import rangeTable from "../../ArknightsGameData/en_US/gamedata/excel/range_table.json";
+import jetSkillTranslations from "./jet-tls/skills.json";
+import jetTalentTranslations from "./jet-tls/talents.json";
 
 const dataDir = path.join(__filename, "../../data");
 
@@ -28,13 +30,33 @@ const denormalizedCharacters = [
         ? rangeTable[phase.rangeId as keyof typeof rangeTable]
         : null,
     }));
-    const talents = (character.talents || []).map((talent) => {
-      const candidates = (talent.candidates || []).map((candidate) => ({
-        ...candidate,
-        range: candidate.rangeId
-          ? rangeTable[candidate.rangeId as keyof typeof rangeTable]
-          : null,
-      }));
+
+    const talents = (character.talents || []).map((talent, talentIndex) => {
+      const candidates = (talent.candidates || []).map(
+        (candidate, phaseIndex) => {
+          const baseCandidateObject = {
+            ...candidate,
+            range: candidate.rangeId
+              ? rangeTable[candidate.rangeId as keyof typeof rangeTable]
+              : null,
+          };
+          if (isCnOnly && character.profession !== "TOKEN") {
+            try {
+              const talentTL =
+                jetTalentTranslations[id as keyof typeof jetTalentTranslations][
+                  talentIndex
+                ][phaseIndex];
+              baseCandidateObject.name = talentTL.name;
+              baseCandidateObject.description = talentTL.desc;
+            } catch {
+              throw new Error(
+                `No translation found for: character ${id}, talent index ${talentIndex}, phase index ${phaseIndex}`
+              );
+            }
+          }
+          return baseCandidateObject;
+        }
+      );
       return { ...talent, candidates };
     });
 
@@ -47,12 +69,30 @@ const denormalizedCharacters = [
         const baseSkillObject = isCnOnly
           ? cnSkillTable[skillId as keyof typeof cnSkillTable]
           : enSkillTable[skillId as keyof typeof enSkillTable];
-        const levels = baseSkillObject.levels.map((skillAtLevel) => ({
-          ...skillAtLevel,
-          range: skillAtLevel.rangeId
-            ? rangeTable[skillAtLevel.rangeId as keyof typeof rangeTable]
-            : null,
-        }));
+        const levels = baseSkillObject.levels.map(
+          (skillAtLevel, levelIndex) => {
+            const baseSkillLevelObject = {
+              ...skillAtLevel,
+              range: skillAtLevel.rangeId
+                ? rangeTable[skillAtLevel.rangeId as keyof typeof rangeTable]
+                : null,
+            };
+            if (isCnOnly && character.profession !== "TOKEN") {
+              const skillTL =
+                jetSkillTranslations[
+                  skillId as keyof typeof jetSkillTranslations
+                ];
+              if (!skillTL) {
+                throw new Error(
+                  `No translation found for: skill ${skillId}, level index ${levelIndex}`
+                );
+              }
+              baseSkillLevelObject.name = skillTL.name;
+              baseSkillLevelObject.description = skillTL.desc[levelIndex];
+            }
+            return baseSkillLevelObject;
+          }
+        );
         return {
           ...baseSkillObject,
           levels,

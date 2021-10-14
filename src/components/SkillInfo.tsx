@@ -9,7 +9,8 @@ import {
   SkillDurationIcon,
   SPCostIcon,
 } from "./icons/skillInfo";
-import CharacterRange, { RangeObject } from "./CharacterRange";
+import CharacterRange from "./CharacterRange";
+import { RangeObject } from "../utils/types";
 
 enum SkillType {
   "Passive" = 0,

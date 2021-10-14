@@ -105,7 +105,6 @@ const styles =
         background-image: url("${bannerImageUrl}");
         background-repeat: no-repeat;
         background-position-x: center;
-        }
       }
 
       .site-wrapper {

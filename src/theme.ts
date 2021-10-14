@@ -1,4 +1,3 @@
-
 const spacingUnit = 8;
 
 // adaptation of @material-ui/core's Spacing theme type
@@ -8,19 +7,16 @@ interface Spacing {
   (value: number): string;
   (topBottom: number, rightLeft: number): string;
   (top: number, rightLeft: number, bottom: number): string;
-  (
-    top: number,
-    right: number,
-    bottom: number,
-    left: number
-  ): string;
+  (top: number, right: number, bottom: number, left: number): string;
 }
 
 const spacing: Spacing = (...args: number[]) => {
   if (!args || args.length === 0) {
     return `${spacingUnit}px`;
   }
-  return args.map((multiple) => multiple === 0 ? '0' : `${multiple * spacingUnit}px`).join(" ");
+  return args
+    .map((multiple) => (multiple === 0 ? "0" : `${multiple * spacingUnit}px`))
+    .join(" ");
 };
 
 const palette = {
@@ -38,7 +34,7 @@ const palette = {
   midRarity: "#1b1b22",
   midHighlight: "#4d4d5b",
   headerBackground: "#101014",
-};  
+};
 
 const typography = {
   fallbackFontFamily: "Arial, sans-serif",
@@ -53,7 +49,9 @@ const typography = {
     weight: 600,
     size: "96px",
     lineHeight: 1.25,
-    textShadow: `${spacing(0.25)} ${spacing(0.5)} ${spacing(1)} rgba(0, 0, 0, 0.25)`,
+    textShadow: `${spacing(0.25)} ${spacing(0.5)} ${spacing(
+      1
+    )} rgba(0, 0, 0, 0.25)`,
   },
   operatorNameHeading: {
     size: "36px",
@@ -105,11 +103,11 @@ const typography = {
     lineHeight: 1.25,
   },
   navigationLink: {
-    lineHeight: 1.25
+    lineHeight: 1.25,
   },
   navigationLinkActive: {
-    fontWeight: 600
-  }
+    fontWeight: 600,
+  },
 };
 
 const breakpoints = {
@@ -121,8 +119,10 @@ export const defaultTheme = {
   typography,
   spacing,
   breakpoints: {
-    down: (breakpoint: keyof typeof breakpoints): string => `@media (max-width: ${breakpoints[breakpoint]})`,
-    up:(breakpoint: keyof typeof breakpoints): string => `@media (min-width: ${breakpoints[breakpoint]})`,
+    down: (breakpoint: keyof typeof breakpoints): string =>
+      `@media (max-width: ${breakpoints[breakpoint]})`,
+    up: (breakpoint: keyof typeof breakpoints): string =>
+      `@media (min-width: ${breakpoints[breakpoint]})`,
   },
-  containerWidth: "1270px"
+  containerWidth: "1270px",
 };

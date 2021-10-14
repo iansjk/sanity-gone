@@ -9,12 +9,19 @@ import rangeTable from "../../ArknightsGameData/en_US/gamedata/excel/range_table
 const dataDir = path.join(__filename, "../../data");
 
 const enCharacterIds = new Set(Object.keys(enCharacterTable));
-const cnOnlyCharacters = Object.entries(cnCharacterTable).filter(([id]) => !enCharacterIds.has(id));
+const cnOnlyCharacters = Object.entries(cnCharacterTable).filter(
+  ([id]) => !enCharacterIds.has(id)
+);
 
 const summonIdToOperatorName: Record<string, string> = {};
-const denormalizedCharacters = [...Object.entries(enCharacterTable), ...cnOnlyCharacters]
+const denormalizedCharacters = [
+  ...Object.entries(enCharacterTable),
+  ...cnOnlyCharacters,
+]
   .filter(([_, character]) => character.profession !== "TRAP")
   .map(([id, character]) => {
+    const isCnOnly = !enCharacterIds.has(id);
+
     const phases = character.phases.map((phase) => ({
       ...phase,
       range: phase.rangeId
@@ -37,7 +44,9 @@ const denormalizedCharacters = [...Object.entries(enCharacterTable), ...cnOnlyCh
         if (!skillId) {
           return null;
         }
-        const baseSkillObject = enCharacterIds.has(id) ? enSkillTable[skillId as keyof typeof enSkillTable] : cnSkillTable[skillId as keyof typeof cnSkillTable];
+        const baseSkillObject = isCnOnly
+          ? cnSkillTable[skillId as keyof typeof cnSkillTable]
+          : enSkillTable[skillId as keyof typeof enSkillTable];
         const levels = baseSkillObject.levels.map((skillAtLevel) => ({
           ...skillAtLevel,
           range: skillAtLevel.rangeId
@@ -66,7 +75,7 @@ const denormalizedCharacters = [...Object.entries(enCharacterTable), ...cnOnlyCh
       skillData,
       cnName,
       subProfessionId,
-      name: enCharacterIds.has(id) ? character.name : character.appellation
+      name: isCnOnly ? character.appellation : character.name,
     };
   });
 const denormalizedOperators = denormalizedCharacters.filter(

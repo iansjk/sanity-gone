@@ -39,5 +39,6 @@ const styles = (theme) => css`
 
   body {
     font-family: ${theme.typography.body.family};
+    background-color: #1b1b22;
   }
 `;

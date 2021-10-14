@@ -9,148 +9,182 @@ import jetSkillTranslations from "./jet-tls/skills.json";
 import jetTalentTranslations from "./jet-tls/talents.json";
 
 const dataDir = path.join(__filename, "../../data");
+const jetSkillDescriptionRegex =
+  /{{(?<tagName>[^}]+)}(:(?<formatString>[0-9.%f]+))?}/;
+const fixJetSkillDescriptionTags = (description: string): string => {
+  let newDescription = description;
+  // need to convert tag formatting used in Jet's TL json data
+  // from e.g. {{attack@atk_scale}:.0%} to {attack@atk_scale:0%}
+  // to match formatting used in skill_table.json
+  let match: RegExpMatchArray | null = null;
+  do {
+    match = jetSkillDescriptionRegex.exec(newDescription);
+    if (match?.groups) {
+      const { tagName, formatString } = match.groups;
 
-const enCharacterIds = new Set(Object.keys(enCharacterTable));
-const cnOnlyCharacters = Object.entries(cnCharacterTable).filter(
-  ([id]) => !enCharacterIds.has(id)
-);
+      let newFormatString: string | null = null;
+      if (formatString === ".0%") {
+        newFormatString = "0%";
+      } else if (formatString === ".0f") {
+        newFormatString = null;
+      } else if (formatString != null) {
+        newFormatString = formatString;
+      }
 
-const summonIdToOperatorName: Record<string, string> = {};
-const denormalizedCharacters = [
-  ...Object.entries(enCharacterTable),
-  ...cnOnlyCharacters,
-]
-  .filter(([_, character]) => character.profession !== "TRAP")
-  .map(([id, character]) => {
-    const isCnOnly = !enCharacterIds.has(id);
-
-    const phases = character.phases.map((phase) => ({
-      ...phase,
-      range: phase.rangeId
-        ? rangeTable[phase.rangeId as keyof typeof rangeTable]
-        : null,
-    }));
-
-    const talents = (character.talents || []).map((talent, talentIndex) => {
-      const candidates = (talent.candidates || []).map(
-        (candidate, phaseIndex) => {
-          const baseCandidateObject = {
-            ...candidate,
-            range: candidate.rangeId
-              ? rangeTable[candidate.rangeId as keyof typeof rangeTable]
-              : null,
-          };
-          if (isCnOnly && character.profession !== "TOKEN") {
-            try {
-              const talentTL =
-                jetTalentTranslations[id as keyof typeof jetTalentTranslations][
-                  talentIndex
-                ][phaseIndex];
-              baseCandidateObject.name = talentTL.name;
-              baseCandidateObject.description = talentTL.desc;
-            } catch {
-              throw new Error(
-                `No translation found for: character ${id}, talent index ${talentIndex}, phase index ${phaseIndex}`
-              );
-            }
-          }
-          return baseCandidateObject;
-        }
+      newDescription = newDescription.replace(
+        jetSkillDescriptionRegex,
+        `{${tagName}${newFormatString ? `:${newFormatString}` : ""}}`
       );
-      return { ...talent, candidates };
-    });
+    }
+  } while (match);
+  return newDescription;
+};
 
-    const skillData = character.skills
-      .map((skill) => {
-        const skillId = skill.skillId;
-        if (!skillId) {
-          return null;
-        }
-        const baseSkillObject = isCnOnly
-          ? cnSkillTable[skillId as keyof typeof cnSkillTable]
-          : enSkillTable[skillId as keyof typeof enSkillTable];
-        const levels = baseSkillObject.levels.map(
-          (skillAtLevel, levelIndex) => {
-            const baseSkillLevelObject = {
-              ...skillAtLevel,
-              range: skillAtLevel.rangeId
-                ? rangeTable[skillAtLevel.rangeId as keyof typeof rangeTable]
+(() => {
+  const enCharacterIds = new Set(Object.keys(enCharacterTable));
+  const cnOnlyCharacters = Object.entries(cnCharacterTable).filter(
+    ([id]) => !enCharacterIds.has(id)
+  );
+
+  const summonIdToOperatorName: Record<string, string> = {};
+  const denormalizedCharacters = [
+    ...Object.entries(enCharacterTable),
+    ...cnOnlyCharacters,
+  ]
+    .filter(([_, character]) => character.profession !== "TRAP")
+    .map(([id, character]) => {
+      const isCnOnly = !enCharacterIds.has(id);
+
+      const phases = character.phases.map((phase) => ({
+        ...phase,
+        range: phase.rangeId
+          ? rangeTable[phase.rangeId as keyof typeof rangeTable]
+          : null,
+      }));
+
+      const talents = (character.talents || []).map((talent, talentIndex) => {
+        const candidates = (talent.candidates || []).map(
+          (candidate, phaseIndex) => {
+            const baseCandidateObject = {
+              ...candidate,
+              range: candidate.rangeId
+                ? rangeTable[candidate.rangeId as keyof typeof rangeTable]
                 : null,
             };
             if (isCnOnly && character.profession !== "TOKEN") {
-              const skillTL =
-                jetSkillTranslations[
-                  skillId as keyof typeof jetSkillTranslations
-                ];
-              if (!skillTL) {
+              try {
+                const talentTL =
+                  jetTalentTranslations[
+                    id as keyof typeof jetTalentTranslations
+                  ][talentIndex][phaseIndex];
+                baseCandidateObject.name = talentTL.name;
+                baseCandidateObject.description = talentTL.desc;
+              } catch {
                 throw new Error(
-                  `No translation found for: skill ${skillId}, level index ${levelIndex}`
+                  `No translation found for: character ${id}, talent index ${talentIndex}, phase index ${phaseIndex}`
                 );
               }
-              baseSkillLevelObject.name = skillTL.name;
-              baseSkillLevelObject.description = skillTL.desc[levelIndex];
             }
-            return baseSkillLevelObject;
+            return baseCandidateObject;
           }
         );
-        return {
-          ...baseSkillObject,
-          levels,
-        };
-      })
-      .filter((skillData) => !!skillData);
+        return { ...talent, candidates };
+      });
 
-    const { name: cnName, subProfessionId } =
-      cnCharacterTable[id as keyof typeof cnCharacterTable];
+      const skillData = character.skills
+        .map((skill) => {
+          const skillId = skill.skillId;
+          if (!skillId) {
+            return null;
+          }
+          const baseSkillObject = isCnOnly
+            ? cnSkillTable[skillId as keyof typeof cnSkillTable]
+            : enSkillTable[skillId as keyof typeof enSkillTable];
+          const levels = baseSkillObject.levels.map(
+            (skillAtLevel, levelIndex) => {
+              const baseSkillLevelObject = {
+                ...skillAtLevel,
+                range: skillAtLevel.rangeId
+                  ? rangeTable[skillAtLevel.rangeId as keyof typeof rangeTable]
+                  : null,
+              };
+              if (isCnOnly && character.profession !== "TOKEN") {
+                const skillTL =
+                  jetSkillTranslations[
+                    skillId as keyof typeof jetSkillTranslations
+                  ];
+                if (!skillTL) {
+                  throw new Error(
+                    `No translation found for: skill ${skillId}, level index ${levelIndex}`
+                  );
+                }
+                baseSkillLevelObject.name = skillTL.name;
+                baseSkillLevelObject.description = fixJetSkillDescriptionTags(
+                  skillTL.desc[levelIndex]
+                );
+              }
+              return baseSkillLevelObject;
+            }
+          );
+          return {
+            ...baseSkillObject,
+            levels,
+          };
+        })
+        .filter((skillData) => !!skillData);
 
-    if (character.tokenKey) {
-      summonIdToOperatorName[character.tokenKey] = character.name;
-    }
+      const { name: cnName, subProfessionId } =
+        cnCharacterTable[id as keyof typeof cnCharacterTable];
 
+      if (character.tokenKey) {
+        summonIdToOperatorName[character.tokenKey] = character.name;
+      }
+
+      return {
+        ...character,
+        id,
+        phases,
+        talents,
+        skillData,
+        cnName,
+        subProfessionId,
+        name: isCnOnly ? character.appellation : character.name,
+      };
+    });
+  const denormalizedOperators = denormalizedCharacters.filter(
+    (character) => character.profession !== "TOKEN"
+  );
+  fs.writeFileSync(
+    path.join(dataDir, "operators.json"),
+    JSON.stringify(denormalizedOperators, null, 2)
+  );
+
+  const denormalizedSummons = denormalizedCharacters
+    .filter((character) => character.profession === "TOKEN")
+    .map((summon) => ({
+      ...summon,
+      operatorName: summonIdToOperatorName[summon.id],
+    }));
+  fs.writeFileSync(
+    path.join(dataDir, "summons.json"),
+    JSON.stringify(denormalizedSummons, null, 2)
+  );
+
+  const denormalizedSkills = Object.entries(enSkillTable).map(([id, skill]) => {
+    const levels = skill.levels.map((level) => ({
+      ...level,
+      range: level.rangeId
+        ? rangeTable[level.rangeId as keyof typeof rangeTable]
+        : null,
+    }));
     return {
-      ...character,
+      ...skill,
       id,
-      phases,
-      talents,
-      skillData,
-      cnName,
-      subProfessionId,
-      name: isCnOnly ? character.appellation : character.name,
+      levels,
     };
   });
-const denormalizedOperators = denormalizedCharacters.filter(
-  (character) => character.profession !== "TOKEN"
-);
-fs.writeFileSync(
-  path.join(dataDir, "operators.json"),
-  JSON.stringify(denormalizedOperators, null, 2)
-);
-
-const denormalizedSummons = denormalizedCharacters
-  .filter((character) => character.profession === "TOKEN")
-  .map((summon) => ({
-    ...summon,
-    operatorName: summonIdToOperatorName[summon.id],
-  }));
-fs.writeFileSync(
-  path.join(dataDir, "summons.json"),
-  JSON.stringify(denormalizedSummons, null, 2)
-);
-
-const denormalizedSkills = Object.entries(enSkillTable).map(([id, skill]) => {
-  const levels = skill.levels.map((level) => ({
-    ...level,
-    range: level.rangeId
-      ? rangeTable[level.rangeId as keyof typeof rangeTable]
-      : null,
-  }));
-  return {
-    ...skill,
-    id,
-    levels,
-  };
-});
-fs.writeFileSync(
-  path.join(dataDir, "skills.json"),
-  JSON.stringify(denormalizedSkills, null, 2)
-);
+  fs.writeFileSync(
+    path.join(dataDir, "skills.json"),
+    JSON.stringify(denormalizedSkills, null, 2)
+  );
+})();

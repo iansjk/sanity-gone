@@ -31,6 +31,11 @@ const styles = (theme: Theme) => css`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: max-content max-content;
   gap: ${theme.spacing(0.25)};
+
+  & > * {
+    padding: ${theme.spacing(2, 3)};
+    background-color: ${theme.palette.background};
+  }
   
   h3 {
     font-size: ${theme.typography.generalHeading.size};
@@ -50,6 +55,5 @@ const styles = (theme: Theme) => css`
   ul {
     grid-row-start: 2;
     margin: 0;
-    padding: 0;
   }
 `;

@@ -33,6 +33,7 @@ const styles = (theme: Theme) => css`
   gap: ${theme.spacing(0.25)};
 
   & > * {
+    margin: 0;
     padding: ${theme.spacing(2, 3)};
     background-color: ${theme.palette.background};
   }
@@ -41,7 +42,6 @@ const styles = (theme: Theme) => css`
     font-size: ${theme.typography.generalHeading.size};
     font-weight: 400;
     line-height: ${theme.typography.generalHeading.lineHeight};
-    margin: 0;
 
     &.strengths {
       color: ${theme.palette.lime};
@@ -54,6 +54,25 @@ const styles = (theme: Theme) => css`
 
   ul {
     grid-row-start: 2;
-    margin: 0;
+    list-style-type: none;
+
+    li::before {
+      content: " ";
+      display: inline-block;
+      width: ${theme.spacing(1)};
+      margin: ${theme.spacing(0, 2)};
+      vertical-align: middle;
+      border-top: 1px solid ${theme.palette.midHighlight};
+      border-bottom: 1px solid ${theme.palette.midHighlight};
+    }
+
+    li {
+      margin-left: ${theme.spacing(2)};
+      text-indent: -${theme.spacing(2 + 2 + 1)};
+    }
+
+    li ~ li {
+      margin-top: ${theme.spacing(1)};
+    }
   }
 `;

@@ -1,0 +1,72 @@
+{
+  "char_1012_skadi2": [
+    [
+      {
+        "name": "Ancient Kin",
+        "desc": "Can summon a Seaborn that lasts for 15 seconds. The Seaborn's Attack Range is treated as an extension of Skadi's Attack Range"
+      },
+      {
+        "name": "Ancient Kin",
+        "desc": "Can summon a Seaborn that lasts for 25 seconds. The Seaborn's Attack Range is treated as an extension of Skadi's Attack Range"
+      }
+    ],
+    [
+      {
+        "name": "Predatory Habits",
+        "desc": "If there are allies within Skadi or the Seaborn's Attack Range, self ATK +6%;</br></br>If the allies are [Abyssal Hunters] operators, self ATK +15% instead"
+      },
+      {
+        "name": "Predatory Habits",
+        "desc": "If there are allies within Skadi or the Seaborn's Attack Range, self ATK +9% (+3%);</br></br>If the allies are [Abyssal Hunters] operators, self ATK +18% (+3%) instead"
+      }
+    ]
+  ],
+  "char_003_kalts": [
+    [
+      {
+        "name": "Mon3tr",
+        "desc": "Can summon and heal Mon3tr. Mon3tr has 35 seconds redeployment time. Kal'tsit will prioritize healing self and Mon3tr. If not within Kal'tsit's Attack Range, Mon3tr's DEF is reduced to 0"
+      },
+      {
+        "name": "Mon3tr",
+        "desc": "Can summon and heal Mon3tr. Mon3tr has 30 seconds redeployment time. Kal'tsit will prioritize healing self and Mon3tr. If not within Kal'tsit's Attack Range, Mon3tr's DEF is reduced to 0"
+      },
+      {
+        "name": "Mon3tr",
+        "desc": "Can summon and heal Mon3tr. Mon3tr has 25 seconds redeployment time. Kal'tsit will prioritize healing self and Mon3tr. If not within Kal'tsit's Attack Range, Mon3tr's DEF is reduced to 0"
+      }
+    ],
+    [
+      {
+        "name": "Non-Damaging Restructuring",
+        "desc": "When Mon3tr is defeated (excludes retreat), Stun all enemies within the 8 surrounding tiles for 3 seconds and deal 1200 True damage to them"
+      },
+      {
+        "name": "Non-Damaging Restructuring",
+        "desc": "When Mon3tr is defeated (excludes retreat), Stun all enemies within the 8 surrounding tiles for 3.5 (+0.5) seconds and deal 1400 (+200) True damage to them"
+      }
+    ]
+  ],
+  "char_474_glady": [
+    [
+      {
+        "name": "Waves of Aegir",
+        "desc": "When deployed, all [Abyssal Hunters] operators recover 1.5% Max HP every second and receive 15% less Physical and Arts damage from [Seaborn] enemies"
+      },
+      {
+        "name": "Waves of Aegir",
+        "desc": "When deployed, all [Abyssal Hunters] operators recover 2.5% Max HP every second and receive 25% less Physical and Arts damage from [Seaborn] enemies"
+      }
+    ],
+    [
+      {
+        "name": "Survival of the Fittest",
+        "desc": "When attacking enemies with weight <= 3, deal 130% damage"
+      },
+      {
+        "name": "Survival of the Fittest",
+        "desc": "When attacking enemies with weight <= 3, deal 136% (+6%) damage"
+      }
+    ]
+  ]
+}

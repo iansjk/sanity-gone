@@ -147,6 +147,11 @@ const styles = (theme: Theme) => css`
       border-top-right-radius: ${theme.spacing(0.5)};
     }
   }
+  
+  ${theme.breakpoints.down("mobile")} {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, max-content);
+  }
 
   & > * {
     background-color: ${theme.palette.background};
@@ -160,6 +165,10 @@ const styles = (theme: Theme) => css`
     column-gap: ${theme.spacing(2)};
     align-items: center;
     padding: ${theme.spacing(2)};
+
+    ${theme.breakpoints.down("mobile")} {
+      grid-column-start: span 2;
+    }
 
     .skill-name {
       font-size: ${theme.typography.skillTalentHeading.size};
@@ -208,6 +217,11 @@ const styles = (theme: Theme) => css`
     gap: ${theme.spacing(0.25)};
     margin: 0;
 
+    ${theme.breakpoints.down("mobile")} {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+    }
+
     .initial-sp {
       svg path {
         fill: ${theme.palette.white};
@@ -253,5 +267,10 @@ const styles = (theme: Theme) => css`
     justify-content: center;
     grid-row-start: span 2;
     border-top-right-radius: ${theme.spacing(0.5)};
+
+    ${theme.breakpoints.down("mobile")} {
+      grid-row: 2;
+      grid-column: 2;
+    }
   }
 `;

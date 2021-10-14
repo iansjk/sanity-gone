@@ -230,6 +230,12 @@ const styles =
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+
+          ${theme.breakpoints.down("mobile")} {
+            padding: ${theme.spacing(1)};
+            flex-direction: row;
+            align-items: center;
+          }
         }
 
         dt {
@@ -249,6 +255,10 @@ const styles =
           font-size: ${theme.typography.generalHeadingBold.size};
           font-weight: ${theme.typography.generalHeadingBold.weight};
           line-height: ${theme.typography.generalHeadingBold.lineHeight};
+
+          ${theme.breakpoints.down("mobile")} {
+            margin: 0;
+          }
         }
       }
 

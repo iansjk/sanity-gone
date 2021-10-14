@@ -5,20 +5,22 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch TypeScript Program",
+      "type": "pwa-node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["--nolazy", "-r", "ts-node/register/transpile-only"],
+      "args": ["${relativeFile}"],
+      "cwd": "${workspaceRoot}",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"]
+    },
+    {
       "type": "pwa-chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost",
       "url": "http://localhost:8000",
       "webRoot": "${workspaceFolder}"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
-      "runtimeArgs": ["-r", "esm", "-r", "ts-node/register"],
-      "args": ["${relativeFile}"],
-      "cwd": "${workspaceFolder}",
-      "runtimeExecutable": "/Users/Ian/.nvm/versions/node/v12.20.0/bin/node"
     },
     {
       "name": "Attach",

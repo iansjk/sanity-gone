@@ -72,19 +72,6 @@ const subProfessionToSubclass: Record<string, string> = {
   dollkeeper: "Puppeteer",
 };
 
-const IconSeparator: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => (
-  <svg
-    width="18"
-    height="19"
-    viewBox="0 0 18 19"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <line x1="0.646447" y1="18.1318" x2="17.617" y2="1.16124" stroke="#fff" />
-  </svg>
-);
-
 const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   const { operatorObject, isLimited } = props;
   const {

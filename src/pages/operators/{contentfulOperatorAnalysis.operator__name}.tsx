@@ -400,6 +400,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
       .analysis-section {
         border-left: 1px solid ${theme.palette.midtoneBrighter};
+        backdrop-filter: blur(${theme.spacing(1)});
         height: 100%;
 
         section {

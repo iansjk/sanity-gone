@@ -32,7 +32,6 @@ const styles = (theme: Theme) => css`
   .heading-block {
     padding: ${theme.spacing(2, 0, 2, 4)};
     background-color: ${transparentize(0.34, theme.palette.dark)};
-    backdrop-filter: blur(8px);
     border-top-right-radius: ${theme.spacing(1)};
 
     ${theme.breakpoints.down("mobile")} {
@@ -51,7 +50,6 @@ const styles = (theme: Theme) => css`
 
   .card-content {
     padding: ${theme.spacing(3, 4, 4)};
-    backdrop-filter: blur(8px);
     background: ${transparentize(0.34, theme.palette.midtone)};
     border-bottom-right-radius: ${theme.spacing(1)};
 

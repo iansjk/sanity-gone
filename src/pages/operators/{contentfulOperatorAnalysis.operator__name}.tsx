@@ -209,45 +209,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               }
             )}
           </TabButtons>
-          <div className="left-sidebar">
-            <hr />
-            <div className="external-links">
-              <a
-                href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${contentful.operator.name}`}
-                rel="noreferrer noopener"
-                target="_blank"
-              >
-                Aceship
-              </a>
-              <a
-                href={`http://prts.wiki/w/${encodeURIComponent(
-                  operatorObject.cnName
-                )}`}
-                rel="noreferrer noopener"
-                target="_blank"
-              >
-                PRTS
-              </a>
-            </div>
-            <hr />
-            <div className="metadata">
-              <div className="authors-section">
-                <span className="section-label">Written By</span>
-                <span className="authors">
-                  {contentful.author.map((author) => author.name).join(",\n")}
-                </span>
-              </div>
-
-              <div className="last-updated-section">
-                <span className="section-label">Last Updated</span>
-                <span className="last-updated">
-                  {DateTime.fromISO(contentful.updatedAt).toLocaleString(
-                    DateTime.DATE_FULL
-                  )}
-                </span>
-              </div>
-            </div>
-          </div>
           <TabPanels className="panels">
             {[
               {
@@ -304,6 +265,45 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               </div>
             ))}
           </TabPanels>
+          <div className="left-sidebar">
+            <hr />
+            <div className="external-links">
+              <a
+                href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${contentful.operator.name}`}
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                Aceship
+              </a>
+              <a
+                href={`http://prts.wiki/w/${encodeURIComponent(
+                  operatorObject.cnName
+                )}`}
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                PRTS
+              </a>
+            </div>
+            <hr />
+            <div className="metadata">
+              <div className="authors-section">
+                <span className="section-label">Written By</span>
+                <span className="authors">
+                  {contentful.author.map((author) => author.name).join(",\n")}
+                </span>
+              </div>
+
+              <div className="last-updated-section">
+                <span className="section-label">Last Updated</span>
+                <span className="last-updated">
+                  {DateTime.fromISO(contentful.updatedAt).toLocaleString(
+                    DateTime.DATE_FULL
+                  )}
+                </span>
+              </div>
+            </div>
+          </div>
         </Tabs>
       </Layout>
     </Fragment>

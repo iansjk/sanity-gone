@@ -13,6 +13,7 @@ import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import { highestCharacterStats } from "../utils/globals";
 import { summonImage } from "../utils/images";
+import useIsMobile from "../hooks/useIsMobile";
 
 const SUMMON_ICON_SIZE = 60;
 
@@ -36,6 +37,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
   } = highestCharacterStats(characterObject);
   const { id, name, profession } = characterObject;
   const isSummon = profession === "TOKEN";
+  const isMobile = useIsMobile();
 
   return (
     <section css={styles}>
@@ -56,35 +58,38 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
 
         <div className="health">
           <dt>
-            <HealthIcon aria-hidden="true" /> Health
+            <HealthIcon aria-hidden="true" /> {isMobile ? "HP" : "Health"}
           </dt>
           <dd>{health}</dd>
         </div>
 
         <div className="attack-power">
           <dt>
-            <AttackPowerIcon aria-hidden="true" /> Attack Power
+            <AttackPowerIcon aria-hidden="true" />{" "}
+            {isMobile ? "ATK" : "Attack Power"}
           </dt>
           <dd>{attackPower}</dd>
         </div>
 
         <div className="defense">
           <dt>
-            <DefenseIcon aria-hidden="true" /> Defense
+            <DefenseIcon aria-hidden="true" /> {isMobile ? "DEF" : "Defense"}
           </dt>
           <dd>{defense}</dd>
         </div>
 
         <div className="attack-speed">
           <dt>
-            <AttackSpeedIcon aria-hidden="true" /> Attack Speed
+            <AttackSpeedIcon aria-hidden="true" />{" "}
+            {isMobile ? "ASPD" : "Attack Speed"}
           </dt>
           <dd>{attacksPerSecond} sec</dd>
         </div>
 
         <div className="arts-resistance">
           <dt>
-            <ArtsResistanceIcon aria-hidden="true" /> Arts Resistance
+            <ArtsResistanceIcon aria-hidden="true" />{" "}
+            {isMobile ? "RES" : "Arts Resistance"}
           </dt>
           <dd>{artsResistance}%</dd>
         </div>
@@ -98,7 +103,8 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
 
         <div className="redeploy-time">
           <dt>
-            <RedeployTimeIcon aria-hidden="true" /> Redeploy Time
+            <RedeployTimeIcon aria-hidden="true" />{" "}
+            {isMobile ? "Redeploy" : "Redeploy Time"}
           </dt>
           <dd>{redeployTimeInSeconds} sec</dd>
         </div>
@@ -130,8 +136,17 @@ const styles = (theme: Theme) => css`
     gap: ${theme.spacing(0.25)};
     margin: ${theme.spacing(3, 0, 0)};
 
+    ${theme.breakpoints.down("mobile")} {
+      grid-auto-flow: unset;
+    }
+
     &.operator-stats {
       grid-template-columns: repeat(4, 195fr) 224fr;
+      
+      ${theme.breakpoints.down("mobile")} {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, max-content);
+      }
     }
     
     &.summon-stats {
@@ -209,6 +224,11 @@ const styles = (theme: Theme) => css`
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+
+      ${theme.breakpoints.down("mobile")} {
+        grid-row: 5;
+        grid-column-start: span 2;
       }
     }
   }

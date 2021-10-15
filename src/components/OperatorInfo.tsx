@@ -14,11 +14,11 @@ export interface OperatorInfoProps {
 const getAttackType = (
   operatorClass: string,
   description: string
-): "Physical Damage" | "Arts Damage" | "Healing" => {
+): "Physical" | "Arts" | "Healing" => {
   if (operatorClass === "Medic") return "Healing";
-  return `${
-    description.toLowerCase().includes("arts damage") ? "Arts" : "Physical"
-  } Damage`;
+  return description.toLowerCase().includes("arts damage")
+    ? "Arts"
+    : "Physical";
 };
 
 const subProfessionToSubclass: Record<string, string> = {
@@ -127,7 +127,10 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
       <dl className="attack-type-and-position">
         <div className="attack-type">
           <dt>Attack Type</dt>
-          <dd className={slugify(attackType)}>{attackType}</dd>
+          <dd className={slugify(attackType)}>
+            {attackType}
+            {!isMobile && " Damage"}
+          </dd>
         </div>
 
         <div className="position">
@@ -216,31 +219,40 @@ const styles = (theme: Theme) => css`
     column-gap: ${theme.spacing(3)};
 
     ${theme.breakpoints.down("mobile")} {
+      grid-template-columns: repeat(2, 1fr);
       column-gap: ${theme.spacing(2)};
       justify-content: flex-start;
     }
 
     & > div {
       background: none;
-    }
 
-    .attack-type {
-      border-top-left-radius: ${theme.spacing(0.5)};
+      ${theme.breakpoints.down("mobile")} {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
       dd {
         font-size: ${theme.typography.body.fontSize};
         font-weight: normal;
 
         ${theme.breakpoints.down("mobile")} {
-          margin-left: ${theme.spacing(1)};
+          margin: ${theme.spacing(0.5, 0, 0)};
+          font-size: ${theme.typography.skillTalentHeading.fontSize};
+          font-weight: ${theme.typography.skillTalentHeading.fontWeight};
+          line-height: ${theme.typography.skillTalentHeading.lineHeight};
         }
       }
+    }
 
-      .physical-damage {
+    .attack-type {
+      border-top-left-radius: ${theme.spacing(0.5)};
+
+      .physical {
         color: ${theme.palette.orange};
       }
 
-      .arts-damage {
+      .arts {
         color: ${theme.palette.blue};
       }
 
@@ -255,15 +267,6 @@ const styles = (theme: Theme) => css`
 
     .position {
       border-bottom-left-radius: ${theme.spacing(0.5)};
-
-      dd {
-        font-size: ${theme.typography.body.fontSize};
-        font-weight: ${theme.typography.body.fontWeight};
-
-        ${theme.breakpoints.down("mobile")} {
-          margin-left: ${theme.spacing(1)};
-        }
-      }
     }
   }
 `;

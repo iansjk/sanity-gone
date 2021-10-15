@@ -102,8 +102,8 @@ const typography = {
   },
 };
 
-const breakpoints = {
-  mobile: "700px",
+export const breakpoints = {
+  mobile: 700,
 };
 
 export const defaultTheme = {
@@ -112,9 +112,9 @@ export const defaultTheme = {
   spacing,
   breakpoints: {
     down: (breakpoint: keyof typeof breakpoints): string =>
-      `@media (max-width: ${breakpoints[breakpoint]})`,
+      `@media (max-width: ${breakpoints[breakpoint]}px)`,
     up: (breakpoint: keyof typeof breakpoints): string =>
-      `@media (min-width: ${breakpoints[breakpoint]})`,
+      `@media (min-width: ${breakpoints[breakpoint]}px)`,
   },
   containerWidth: "1270px",
 };

@@ -37,8 +37,6 @@ const MobileMenu: React.VFC<MobileMenuProps> = ({ pages }) => {
 export default MobileMenu;
 
 const styles = (theme: Theme) => css`
-  display: flex;
-  overflow-x: clip;
   background-color: ${transparentize(0.34, theme.palette.background)};
   backdrop-filter: blur(${theme.spacing(1)});
 

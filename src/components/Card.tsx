@@ -35,6 +35,10 @@ const styles = (theme: Theme) => css`
     backdrop-filter: blur(8px);
     border-top-right-radius: ${theme.spacing(1)};
 
+    ${theme.breakpoints.down("mobile")} {
+      display: none;
+    }
+
     h2 {
       margin: 0;
       text-transform: ${theme.typography.cardHeading.textTransform};

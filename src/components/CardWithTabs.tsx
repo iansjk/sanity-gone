@@ -76,9 +76,21 @@ const styles = (theme: Theme) => css`
   .tabs-wrapper {
     display: flex;
 
+    ${theme.breakpoints.down("mobile")} {
+      flex-direction: column;
+    }
+
     .tab-panels {
       flex-grow: 1;
       padding: ${theme.spacing(0, 4, 4)};
+
+      ${theme.breakpoints.down("mobile")} {
+        padding: ${theme.spacing(0, 2, 2)};
+
+        p:first-of-type {
+          margin-top: 0;
+        }
+      }
     }
 
     .tab-buttons {
@@ -88,6 +100,12 @@ const styles = (theme: Theme) => css`
       flex-direction: column;
       padding: ${theme.spacing(3, 0, 4)};
       background: ${theme.palette.mid};
+
+      ${theme.breakpoints.down("mobile")} {
+        flex-direction: row;
+        justify-content: center;
+        padding: ${theme.spacing(2, 0)};
+      }
 
       button {
         border-radius: ${theme.spacing(1)};
@@ -104,6 +122,15 @@ const styles = (theme: Theme) => css`
         display: flex;
         align-items: center;
         justify-content: center;
+
+        ${theme.breakpoints.down("mobile")} {
+          margin-bottom: 0;
+          margin-right: ${theme.spacing(2)};
+
+          &:last-of-type {
+            margin-left: 0;
+          }
+        }
 
         svg path {
           fill: ${theme.palette.midHighlight};

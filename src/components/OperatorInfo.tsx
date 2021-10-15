@@ -1,5 +1,6 @@
 import { css, Theme } from "@emotion/react";
 import { rgba } from "polished";
+import useIsMobile from "../hooks/useIsMobile";
 import { professionToClass, slugify, toTitleCase } from "../utils/globals";
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
 import { CharacterObject } from "../utils/types";
@@ -91,6 +92,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     ? "Melee or Ranged"
     : toTitleCase(binaryPosition);
   const attackType = getAttackType(professionToClass(profession), description);
+  const isMobile = useIsMobile();
 
   return (
     <div css={styles}>
@@ -116,7 +118,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
           </a>
         </div>
         <OperatorPortrait
-          variant="normal"
+          variant={isMobile ? "small" : "normal"}
           name={name}
           isLimited={isLimited}
           rarity={rarity}
@@ -160,6 +162,7 @@ const styles = (theme: Theme) => css`
 
       ${theme.breakpoints.down("mobile")} {
         padding: ${theme.spacing(0, 0, 0, 2)};
+        justify-content: flex-start;
       }
 
       .operator-name {
@@ -167,6 +170,12 @@ const styles = (theme: Theme) => css`
         font-weight: ${theme.typography.operatorNameHeading.fontWeight};
         line-height: ${theme.typography.operatorNameHeading.lineHeight};
         margin-bottom: ${theme.spacing(1)};
+
+        ${theme.breakpoints.down("mobile")} {
+          font-size: ${theme.typography.generalHeadingBold.fontSize};
+          font-weight: ${theme.typography.generalHeadingBold.fontWeight};
+          line-height: ${theme.typography.generalHeadingBold.lineHeight};
+        }
       }
 
       .class-and-subclass {

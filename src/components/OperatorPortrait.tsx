@@ -5,7 +5,7 @@ import StarIcon from "./icons/StarIcon";
 
 const imageSize = {
   normal: 96,
-  small: 66,
+  small: 74,
 };
 
 export interface OperatorPortraitProps {

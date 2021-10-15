@@ -394,10 +394,28 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
     & > .panels {
       grid-row-start: span 3;
+      grid-column: 2 / span 2;
       margin-left: -1px;
+      height: 100%;
 
       .analysis-section {
         border-left: 1px solid ${theme.palette.midtoneBrighter};
+        height: 100%;
+
+        section {
+          height: 100%;
+
+          .card-content {
+            box-sizing: border-box;
+            height: calc(100% - ${theme.typography.cardHeading.fontSize} * ${
+    theme.typography.cardHeading.lineHeight
+  } - ${theme.spacing(4)});
+  
+            .tabs-wrapper {
+              height: 100%;
+            }
+          }
+        }
       }
 
       .analysis-section:not(.synergies) {

@@ -39,7 +39,7 @@ const styles = (theme: Theme) => css`
   }
   
   h3 {
-    font-size: ${theme.typography.generalHeading.size};
+    font-size: ${theme.typography.generalHeading.fontSize};
     font-weight: 400;
     line-height: ${theme.typography.generalHeading.lineHeight};
 

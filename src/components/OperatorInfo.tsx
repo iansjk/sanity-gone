@@ -169,17 +169,14 @@ const styles = (theme: Theme) => css`
         padding: ${theme.spacing(1)};
         display: flex;
         align-items: center;
-        font-size: ${theme.typography.label2.size};
-        line-height: ${theme.typography.label2.lineHeight};
-        font-weight: ${theme.typography.label2.fontWeight};
-        text-transform: uppercase;
+        font-weight: ${theme.typography.navigationLinkBold.fontWeight};
         color: ${theme.palette.white};
         border: 1px solid ${theme.palette.midHighlight};
         border-radius: ${theme.spacing(0.5)};
 
         &:hover {
           border-color: ${theme.palette.gray};
-          background-color: ${rgba(theme.palette.gray, 0.1)};
+          background-color: ${theme.palette.midHighlight};
         }
 
         .class-icon,

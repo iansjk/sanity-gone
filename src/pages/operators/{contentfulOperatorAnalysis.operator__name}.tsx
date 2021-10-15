@@ -345,7 +345,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
           background-color: ${transparentize(0.9, accentColor)};
           color: ${accentColor};
           border-right: 3px solid ${accentColor};
-          font-weight: ${theme.typography.navigationLinkActive.fontWeight};
+          font-weight: ${theme.typography.navigationLinkBold.fontWeight};
         }
 
         ${theme.breakpoints.down("mobile")} {

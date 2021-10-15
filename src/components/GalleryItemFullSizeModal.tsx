@@ -220,7 +220,7 @@ const styles = (theme: Theme) => css`
     transform: translateX(-50%) translateY(-50%);
     width: 80%;
     max-height: 80%;
-    background: ${theme.palette.mid};
+    background: ${theme.palette.midtone};
 
     display: grid;
     grid-template-rows: max-content 1fr max-content;
@@ -236,7 +236,7 @@ const styles = (theme: Theme) => css`
       text-align: center;
       padding: ${theme.spacing(1)} 0;
       border-radius: ${theme.spacing(1, 1, 0, 0)};
-      background-color: ${theme.palette.background};
+      background-color: ${theme.palette.dark};
 
       .filename {
         color: ${theme.palette.gray};
@@ -245,7 +245,7 @@ const styles = (theme: Theme) => css`
       .separator {
         display: inline-block;
         margin: 0 ${theme.spacing(2)};
-        color: ${theme.palette.midHighlight};
+        color: ${theme.palette.midtoneBrighter};
       }
     }
 
@@ -278,7 +278,7 @@ const styles = (theme: Theme) => css`
 
     .caption {
       grid-area: bottombar;
-      background-color: ${theme.palette.background};
+      background-color: ${theme.palette.dark};
       margin: 0;
       padding: ${theme.spacing(1)};
       font-size: ${theme.typography.body.fontSize};

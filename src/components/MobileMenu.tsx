@@ -37,7 +37,7 @@ const MobileMenu: React.VFC<MobileMenuProps> = ({ pages }) => {
 export default MobileMenu;
 
 const styles = (theme: Theme) => css`
-  background-color: ${transparentize(0.34, theme.palette.background)};
+  background-color: ${transparentize(0.34, theme.palette.dark)};
   backdrop-filter: blur(${theme.spacing(1)});
 
   .swiper-slide {
@@ -53,7 +53,7 @@ const styles = (theme: Theme) => css`
       font-weight: ${theme.typography.cardHeading.fontWeight};
       line-height: ${theme.typography.cardHeading.lineHeight};
       text-transform: ${theme.typography.cardHeading.textTransform};
-      color: ${theme.palette.midHighlight};
+      color: ${theme.palette.midtoneBrighter};
     }
 
     &.swiper-slide-active {

@@ -191,12 +191,12 @@ const styles = (theme: Theme) => css`
         align-items: center;
         font-weight: ${theme.typography.navigationLinkBold.fontWeight};
         color: ${theme.palette.white};
-        border: 1px solid ${theme.palette.midHighlight};
+        border: 1px solid ${theme.palette.midtoneBrighter};
         border-radius: ${theme.spacing(0.5)};
 
         &:hover {
           border-color: ${theme.palette.gray};
-          background-color: ${theme.palette.midHighlight};
+          background-color: ${theme.palette.midtoneBrighter};
         }
 
         .class-icon,

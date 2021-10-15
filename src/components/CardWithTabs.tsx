@@ -99,7 +99,7 @@ const styles = (theme: Theme) => css`
       align-items: center;
       flex-direction: column;
       padding: ${theme.spacing(3, 0, 4)};
-      background: ${theme.palette.mid};
+      background: ${theme.palette.midtone};
 
       ${theme.breakpoints.down("mobile")} {
         flex-direction: row;
@@ -114,10 +114,10 @@ const styles = (theme: Theme) => css`
         border: none;
         font-weight: ${theme.typography.skillTalentHeading.fontWeight};
         cursor: pointer;
-        background-color: ${theme.palette.background};
-        color: ${theme.palette.midHighlight};
+        background-color: ${theme.palette.dark};
+        color: ${theme.palette.midtoneBrighter};
         box-sizing: border-box;
-        border: ${theme.spacing(0.25)} solid ${theme.palette.midHighlight};
+        border: ${theme.spacing(0.25)} solid ${theme.palette.midtoneBrighter};
         margin-bottom: ${theme.spacing(2)};
         display: flex;
         align-items: center;
@@ -133,7 +133,7 @@ const styles = (theme: Theme) => css`
         }
 
         svg path {
-          fill: ${theme.palette.midHighlight};
+          fill: ${theme.palette.midtoneBrighter};
         }
 
         &.last-child {
@@ -146,7 +146,7 @@ const styles = (theme: Theme) => css`
         }
 
         &.active {
-          background-color: ${theme.palette.midHighlight};
+          background-color: ${theme.palette.midtoneBrighter};
           color: ${theme.palette.white};
         }
       }

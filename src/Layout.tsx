@@ -91,7 +91,7 @@ const styles =
       html {
         font-size: ${theme.typography.body.fontSize};
         color: ${theme.palette.white};
-        background-color: ${theme.palette.background};
+        background-color: ${theme.palette.dark};
         line-height: ${theme.typography.body.lineHeight};
         overflow-y: scroll;
         font-family: ${theme.typography.body.fontFamily};
@@ -195,7 +195,7 @@ const styles =
       footer {
         height: 120px;
         margin-top: ${theme.spacing(1)};
-        background-color: ${theme.palette.headerBackground};
+        background-color: ${theme.palette.black};
       }
 
       b,
@@ -226,7 +226,7 @@ const styles =
       dl {
         & > div {
           padding: ${theme.spacing(2)};
-          background-color: ${theme.palette.background};
+          background-color: ${theme.palette.midtoneDarker};
           display: flex;
           flex-direction: column;
           justify-content: space-between;

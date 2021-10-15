@@ -86,7 +86,7 @@ const styles = (theme: Theme) => css`
         display: block;
         width: ${theme.spacing(3)};
         margin: ${theme.spacing(1)} auto ${theme.spacing(2)};
-        border-bottom: 1px solid ${theme.palette.midHighlight};
+        border-bottom: 1px solid ${theme.palette.midtoneBrighter};
       }
     }
 

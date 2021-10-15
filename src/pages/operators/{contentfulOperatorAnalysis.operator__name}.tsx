@@ -320,7 +320,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
     & > .tabs {
       display: flex;
       flex-direction: column;
-      border-right: 1px solid ${theme.palette.midHighlight};
+      border-right: 1px solid ${theme.palette.midtoneBrighter};
       z-index: 1;
 
       button {
@@ -360,11 +360,11 @@ const styles = (accentColor: string) => (theme: Theme) =>
     .left-sidebar {
       grid-row-start: 2;
       padding-right: ${theme.spacing(4)};
-      border-right: 1px solid ${theme.palette.midHighlight};
+      border-right: 1px solid ${theme.palette.midtoneBrighter};
 
       hr {
         border: 0;
-        border-top: 1px solid ${theme.palette.mid};
+        border-top: 1px solid ${theme.palette.midtone};
         margin: ${theme.spacing(3)} 0 0 0;
       }
 
@@ -399,7 +399,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       margin-left: -1px;
 
       .analysis-section {
-        border-left: 1px solid ${theme.palette.midHighlight};
+        border-left: 1px solid ${theme.palette.midtoneBrighter};
       }
 
       .analysis-section:not(.synergies) {
@@ -409,7 +409,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
             border-color: ${accentColor};
 
             svg path {
-              fill: ${theme.palette.background};
+              fill: ${theme.palette.dark};
             }
           }
 

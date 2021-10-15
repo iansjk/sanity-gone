@@ -35,7 +35,7 @@ const styles = (theme: Theme) => css`
   & > * {
     margin: 0;
     padding: ${theme.spacing(2, 3)};
-    background-color: ${theme.palette.background};
+    background-color: ${theme.palette.dark};
   }
   
   h3 {
@@ -62,8 +62,8 @@ const styles = (theme: Theme) => css`
       width: ${theme.spacing(1)};
       margin: ${theme.spacing(0, 2)};
       vertical-align: middle;
-      border-top: 1px solid ${theme.palette.midHighlight};
-      border-bottom: 1px solid ${theme.palette.midHighlight};
+      border-top: 1px solid ${theme.palette.midtoneBrighter};
+      border-bottom: 1px solid ${theme.palette.midtoneBrighter};
     }
 
     li {

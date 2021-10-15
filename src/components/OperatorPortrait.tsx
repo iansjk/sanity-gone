@@ -101,7 +101,7 @@ const styles = (theme: Theme) => css`
       text-transform: uppercase;
       display: inline-block;
       text-align: center;
-      background-color: ${theme.palette.midRarity};
+      background-color: ${theme.palette.midtoneExtra};
       padding: 0 2px;
     }
   }
@@ -126,7 +126,7 @@ const styles = (theme: Theme) => css`
 
         path {
           fill: ${theme.palette.white};
-          stroke: ${theme.palette.mid};
+          stroke: ${theme.palette.midtone};
           stroke-width: ${theme.spacing(0.25)};
         }
       }
@@ -161,7 +161,7 @@ const styles = (theme: Theme) => css`
     bottom: -15px;
 
     .rarity {
-      color: ${theme.palette.midRarity};
+      color: ${theme.palette.midtoneExtra};
       font-size: ${theme.typography.smallPortraitRarity.fontSize};
       line-height: ${theme.typography.smallPortraitRarity.lineHeight};
       font-weight: ${theme.typography.smallPortraitRarity.fontWeight};
@@ -169,7 +169,7 @@ const styles = (theme: Theme) => css`
       align-items: center;
       padding: ${theme.spacing(0, 0.5)};
       border-radius: ${theme.spacing(0.5)};
-      border: ${theme.spacing(0.25)} solid ${theme.palette.midRarity};
+      border: ${theme.spacing(0.25)} solid ${theme.palette.midtoneExtra};
       background-color: ${theme.palette.white};
 
       svg {

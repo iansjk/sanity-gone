@@ -20,8 +20,7 @@ const spacing: Spacing = (...args: number[]) => {
 };
 
 const palette = {
-  white: "#e8e8f2",
-  gray: "#87879b",
+  // accent colors
   lime: "#a7e855",
   blue: "#49b3ff",
   softBlue: "#7f7dea",
@@ -29,11 +28,16 @@ const palette = {
   orange: "#f98d3f",
   red: "#fb4040",
   pink: "#e85593",
-  background: "#14141b",
-  mid: "#1e1e26",
-  midRarity: "#1b1b22",
-  midHighlight: "#4d4d5b",
-  headerBackground: "#101014",
+
+  // main palette
+  white: "#e8e8f2",
+  gray: "#87879b",
+  black: "#101014",
+  dark: "#14141b",
+  midtoneDarker: "#191920",
+  midtone: "#24242e",
+  midtoneBrighter: "#363643",
+  midtoneExtra: "#1f1f27",
 };
 
 const typography = {

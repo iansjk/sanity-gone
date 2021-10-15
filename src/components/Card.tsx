@@ -55,6 +55,10 @@ const styles = (theme: Theme) => css`
     background: ${transparentize(0.34, theme.palette.midtone)};
     border-bottom-right-radius: ${theme.spacing(1)};
 
+    ${theme.breakpoints.down("mobile")} {
+      padding: ${theme.spacing(2)};
+    }
+
     & > p {
       margin: ${theme.spacing(3, 0, 0)};
 

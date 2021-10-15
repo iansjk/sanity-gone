@@ -155,6 +155,10 @@ const styles = (theme: Theme) => css`
       ${theme.breakpoints.down("mobile")} {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, max-content);
+
+        .range {
+          grid-row: 6;
+        }
       }
     }
 

@@ -258,6 +258,9 @@ const styles =
 
           ${theme.breakpoints.down("mobile")} {
             margin: 0;
+            font-size: ${theme.typography.skillTalentHeading.size};
+            font-weight: ${theme.typography.skillTalentHeading.weight};
+            line-height: ${theme.typography.skillTalentHeading.lineHeight};
           }
         }
       }

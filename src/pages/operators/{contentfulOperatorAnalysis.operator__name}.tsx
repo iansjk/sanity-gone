@@ -162,7 +162,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       if (
         mainRef.current &&
         document.body.classList.contains(
-          `wf-${slugify(defaultTheme.typography.body.family)}--loaded`
+          `wf-${slugify(defaultTheme.typography.body.fontFamily)}--loaded`
         )
       ) {
         const maxChildHeight = Math.max(
@@ -349,9 +349,9 @@ const styles = (accentColor: string) => (theme: Theme) =>
         }
 
         ${theme.breakpoints.down("mobile")} {
-          font-size: ${theme.typography.cardHeading.size};
+          font-size: ${theme.typography.cardHeading.fontSize};
           line-height: ${theme.typography.cardHeading.lineHeight};
-          font-weight: ${theme.typography.cardHeading.weight};
+          font-weight: ${theme.typography.cardHeading.fontWeight};
           text-transform: ${theme.typography.cardHeading.textTransform};
         }
       }
@@ -382,7 +382,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       .section-label {
         display: block;
         margin-bottom: ${theme.spacing(1)};
-        font-size: ${theme.typography.body2.size};
+        font-size: ${theme.typography.body2.fontSize};
         line-height: ${theme.typography.body2.lineHeight};
         color: ${theme.palette.gray};
       }

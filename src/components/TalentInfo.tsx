@@ -100,9 +100,9 @@ const styles = (theme: Theme) => css`
   }
 
   .talent-name {
-    font-size: ${theme.typography.skillTalentHeading.size};
+    font-size: ${theme.typography.skillTalentHeading.fontSize};
     line-height: ${theme.typography.skillTalentHeading.lineHeight};
-    font-weight: ${theme.typography.skillTalentHeading.weight};
+    font-weight: ${theme.typography.skillTalentHeading.fontWeight};
     padding: ${theme.spacing(2)};
     margin: 0;
     border-top-left-radius: ${theme.spacing(0.5)};

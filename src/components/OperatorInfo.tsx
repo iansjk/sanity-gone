@@ -159,8 +159,8 @@ const styles = (theme: Theme) => css`
       }
 
       .operator-name {
-        font-size: ${theme.typography.operatorNameHeading.size};
-        font-weight: ${theme.typography.operatorNameHeading.weight};
+        font-size: ${theme.typography.operatorNameHeading.fontSize};
+        font-weight: ${theme.typography.operatorNameHeading.fontWeight};
         line-height: ${theme.typography.operatorNameHeading.lineHeight};
         margin-bottom: ${theme.spacing(1)};
       }
@@ -210,7 +210,7 @@ const styles = (theme: Theme) => css`
       border-top-left-radius: ${theme.spacing(0.5)};
 
       dd {
-        font-size: ${theme.typography.body.size};
+        font-size: ${theme.typography.body.fontSize};
         font-weight: normal;
       }
 
@@ -235,8 +235,8 @@ const styles = (theme: Theme) => css`
       border-bottom-left-radius: ${theme.spacing(0.5)};
 
       dd {
-        font-size: ${theme.typography.body.size};
-        font-weight: ${theme.typography.body.weight};
+        font-size: ${theme.typography.body.fontSize};
+        font-weight: ${theme.typography.body.fontWeight};
       }
     }
   }

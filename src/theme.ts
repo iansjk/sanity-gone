@@ -38,50 +38,50 @@ const palette = {
 
 const typography = {
   pageHeading: {
-    weight: 600,
-    size: "96px",
+    fontWeight: 600,
+    fontSize: "96px",
     lineHeight: 1.25,
     textShadow: `${spacing(0.25)} ${spacing(0.5)} ${spacing(
       1
     )} rgba(0, 0, 0, 0.25)`,
   },
   operatorNameHeading: {
-    size: "36px",
-    weight: 600,
+    fontSize: "36px",
+    fontWeight: 600,
     lineHeight: 1.25,
   },
   cardHeading: {
-    size: "24px",
+    fontSize: "24px",
     textTransform: "uppercase",
-    weight: 700,
+    fontWeight: 700,
     lineHeight: 1.25,
   },
   generalHeading: {
-    size: "24px",
+    fontSize: "24px",
     lineHeight: 1.25,
   },
   generalHeadingBold: {
-    size: "24px",
-    weight: 600,
+    fontSize: "24px",
+    fontWeight: 600,
     lineHeight: 1.25,
   },
   skillTalentHeading: {
-    size: "18px",
-    weight: 600,
+    fontSize: "18px",
+    fontWeight: 600,
     lineHeight: 1.25,
   },
   body: {
-    size: "18px",
-    family: "Source Sans Pro",
+    fontSize: "18px",
+    fontFamily: "Source Sans Pro",
     lineHeight: 1.5,
-    weight: 400,
+    fontWeight: 400,
   },
   body2: {
-    size: "14px",
+    fontSize: "14px",
     lineHeight: "24px",
   },
   smallPortraitRarity: {
-    size: "18px",
+    fontSize: "18px",
     lineHeight: 1.25,
     fontWeight: 700,
   },

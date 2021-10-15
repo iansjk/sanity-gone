@@ -55,8 +55,8 @@ const styles = (theme: Theme) => css`
 
       .operator-name {
         margin: 0;
-        font-size: ${theme.typography.generalHeadingBold.size};
-        font-weight: ${theme.typography.generalHeadingBold.weight};
+        font-size: ${theme.typography.generalHeadingBold.fontSize};
+        font-weight: ${theme.typography.generalHeadingBold.fontWeight};
         line-height: ${theme.typography.generalHeadingBold.lineHeight};
       }
 

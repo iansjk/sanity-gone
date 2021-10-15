@@ -45,7 +45,7 @@ const styles = (theme: Theme) => css`
     display: inline-block;
     margin-top: ${theme.spacing(1)};
     color: ${theme.palette.gray};
-    font-size: ${theme.typography.body2.size};
+    font-size: ${theme.typography.body2.fontSize};
     line-height: ${theme.typography.body2.lineHeight};
   }
 `;

@@ -95,7 +95,7 @@ const styles = (theme: Theme) => css`
     justify-content: center;
 
     .limited {
-      font-size: ${theme.typography.body2.size};
+      font-size: ${theme.typography.body2.fontSize};
       line-height: 1;
       color: ${theme.palette.red};
       text-transform: uppercase;
@@ -162,7 +162,7 @@ const styles = (theme: Theme) => css`
 
     .rarity {
       color: ${theme.palette.midRarity};
-      font-size: ${theme.typography.smallPortraitRarity.size};
+      font-size: ${theme.typography.smallPortraitRarity.fontSize};
       line-height: ${theme.typography.smallPortraitRarity.lineHeight};
       font-weight: ${theme.typography.smallPortraitRarity.fontWeight};
       display: inline-flex;

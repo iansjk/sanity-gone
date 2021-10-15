@@ -89,15 +89,15 @@ const styles =
   (theme: Theme) =>
     css`
       html {
-        font-size: ${theme.typography.body.size};
+        font-size: ${theme.typography.body.fontSize};
         color: ${theme.palette.white};
         background-color: ${theme.palette.background};
         line-height: ${theme.typography.body.lineHeight};
         overflow-y: scroll;
-        font-family: ${theme.typography.body.family};
+        font-family: ${theme.typography.body.fontFamily};
 
         ${theme.breakpoints.down("mobile")} {
-          font-size: ${theme.typography.body2.size};
+          font-size: ${theme.typography.body2.fontSize};
         }
       }
 
@@ -155,13 +155,13 @@ const styles =
 
           h1 {
             margin: 0;
-            font-size: ${theme.typography.pageHeading.size};
-            font-weight: ${theme.typography.pageHeading.weight};
+            font-size: ${theme.typography.pageHeading.fontSize};
+            font-weight: ${theme.typography.pageHeading.fontWeight};
             line-height: ${theme.typography.pageHeading.lineHeight};
             text-shadow: ${theme.typography.pageHeading.textShadow};
 
             ${theme.breakpoints.down("mobile")} {
-              font-size: ${theme.typography.operatorNameHeading.size};
+              font-size: ${theme.typography.operatorNameHeading.fontSize};
             }
           }
 
@@ -239,7 +239,7 @@ const styles =
         }
 
         dt {
-          font-size: ${theme.typography.body2.size};
+          font-size: ${theme.typography.body2.fontSize};
           line-height: ${theme.typography.body2.lineHeight};
           color: ${theme.palette.gray};
           display: flex;
@@ -252,14 +252,14 @@ const styles =
 
         dd {
           margin: ${theme.spacing(1, 0, 0)};
-          font-size: ${theme.typography.generalHeadingBold.size};
-          font-weight: ${theme.typography.generalHeadingBold.weight};
+          font-size: ${theme.typography.generalHeadingBold.fontSize};
+          font-weight: ${theme.typography.generalHeadingBold.fontWeight};
           line-height: ${theme.typography.generalHeadingBold.lineHeight};
 
           ${theme.breakpoints.down("mobile")} {
             margin: 0;
-            font-size: ${theme.typography.skillTalentHeading.size};
-            font-weight: ${theme.typography.skillTalentHeading.weight};
+            font-size: ${theme.typography.skillTalentHeading.fontSize};
+            font-weight: ${theme.typography.skillTalentHeading.fontWeight};
             line-height: ${theme.typography.skillTalentHeading.lineHeight};
           }
         }

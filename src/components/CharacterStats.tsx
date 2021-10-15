@@ -151,10 +151,20 @@ const styles = (theme: Theme) => css`
     
     &.summon-stats {
       grid-template-columns: 88fr repeat(4, 149fr) 224fr;
+
+      ${theme.breakpoints.down("mobile")} {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, max-content);
+      }
     }
 
     .summon-icon {
       grid-row-start: span 2;
+
+      ${theme.breakpoints.down("mobile")} {
+        grid-row-start: unset;
+        grid-column: span 2;
+      }
 
       img {
         margin: auto;

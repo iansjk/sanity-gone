@@ -138,6 +138,7 @@ const styles = (theme: Theme) => css`
 
     ${theme.breakpoints.down("mobile")} {
       grid-auto-flow: unset;
+      margin: ${theme.spacing(2, 0, 0)};
     }
 
     &.operator-stats {

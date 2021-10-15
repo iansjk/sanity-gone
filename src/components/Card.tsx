@@ -58,6 +58,10 @@ const styles = (theme: Theme) => css`
     & > p {
       margin: ${theme.spacing(3, 0, 0)};
 
+      ${theme.breakpoints.down("mobile")} {
+        margin: ${theme.spacing(2, 0, 0)};
+      }
+
       &:first-of-type {
         margin-top: 0;
       }

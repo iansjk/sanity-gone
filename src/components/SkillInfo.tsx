@@ -140,6 +140,10 @@ const styles = (theme: Theme) => css`
   gap: ${theme.spacing(0.25)};
   margin-top: ${theme.spacing(3)};
 
+  ${theme.breakpoints.down("mobile")} {
+    margin-top: ${theme.spacing(2)};
+  }
+
   &.no-range {
     grid-template-columns: 1fr;
 

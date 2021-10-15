@@ -320,7 +320,6 @@ const styles = (accentColor: string) => (theme: Theme) =>
     & > .tabs {
       display: flex;
       flex-direction: column;
-      border-right: 1px solid ${theme.palette.midtoneBrighter};
       z-index: 1;
 
       button {
@@ -360,7 +359,6 @@ const styles = (accentColor: string) => (theme: Theme) =>
     .left-sidebar {
       grid-row-start: 2;
       padding-right: ${theme.spacing(4)};
-      border-right: 1px solid ${theme.palette.midtoneBrighter};
 
       hr {
         border: 0;

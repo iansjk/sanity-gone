@@ -154,6 +154,10 @@ const styles = (theme: Theme) => css`
       flex-direction: column;
       padding: ${theme.spacing(0, 0, 0, 3)};
 
+      ${theme.breakpoints.down("mobile")} {
+        padding: ${theme.spacing(0, 0, 0, 2)};
+      }
+
       .operator-name {
         font-size: ${theme.typography.operatorNameHeading.size};
         font-weight: ${theme.typography.operatorNameHeading.weight};

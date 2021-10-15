@@ -89,6 +89,11 @@ const styles = (theme: Theme) => css`
     width: ${theme.spacing(2)};
     height: ${theme.spacing(2)};
     box-sizing: border-box;
+
+    ${theme.breakpoints.down("mobile")} {
+      width: ${theme.spacing(1.5)};
+      height: ${theme.spacing(1.5)};
+    }
   }
 
   td.active {

@@ -117,7 +117,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
         </div>
 
         <div className="range">
-          <dt>Range</dt>
+          <dt className={isMobile ? "visually-hidden" : ""}>Range</dt>
           <dd>
             <CharacterRange rangeObject={rangeObject} />
           </dd>
@@ -228,6 +228,11 @@ const styles = (theme: Theme) => css`
       position: relative;
       border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
 
+      ${theme.breakpoints.down("mobile")} {
+        grid-row: 5;
+        grid-column-start: span 2;
+      }
+
       dd {
         position: absolute;
         top: -5px; /* this is needed to counteract extra space made by .visually-hidden */
@@ -238,11 +243,12 @@ const styles = (theme: Theme) => css`
         display: flex;
         align-items: center;
         justify-content: center;
-      }
 
-      ${theme.breakpoints.down("mobile")} {
-        grid-row: 5;
-        grid-column-start: span 2;
+        ${theme.breakpoints.down("mobile")} {
+          position: relative;
+          top: -2.5px;
+          left: -2.5px;
+        }
       }
     }
   }

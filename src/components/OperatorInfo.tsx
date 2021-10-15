@@ -143,6 +143,10 @@ const styles = (theme: Theme) => css`
   display: grid;
   grid-template-columns: max-content 1fr max-content;
 
+  ${theme.breakpoints.down("mobile")} {
+    grid-template-columns: 1fr;
+  }
+
   .operator-portrait-and-class {
     display: flex;
     flex-direction: row-reverse;
@@ -202,6 +206,11 @@ const styles = (theme: Theme) => css`
     height: max-content;
     column-gap: ${theme.spacing(3)};
 
+    ${theme.breakpoints.down("mobile")} {
+      column-gap: ${theme.spacing(2)};
+      justify-content: flex-start;
+    }
+
     & > div {
       background: none;
     }
@@ -212,6 +221,10 @@ const styles = (theme: Theme) => css`
       dd {
         font-size: ${theme.typography.body.fontSize};
         font-weight: normal;
+
+        ${theme.breakpoints.down("mobile")} {
+          margin-left: ${theme.spacing(1)};
+        }
       }
 
       .physical-damage {
@@ -237,6 +250,10 @@ const styles = (theme: Theme) => css`
       dd {
         font-size: ${theme.typography.body.fontSize};
         font-weight: ${theme.typography.body.fontWeight};
+
+        ${theme.breakpoints.down("mobile")} {
+          margin-left: ${theme.spacing(1)};
+        }
       }
     }
   }

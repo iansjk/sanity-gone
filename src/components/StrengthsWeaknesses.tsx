@@ -28,8 +28,8 @@ export default StrengthsWeaknesses;
 
 const styles = (theme: Theme) => css`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: max-content max-content;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, max-content);
   gap: ${theme.spacing(0.25)};
 
   & > * {

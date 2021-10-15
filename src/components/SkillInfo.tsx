@@ -153,7 +153,7 @@ const styles = (theme: Theme) => css`
   }
   
   ${theme.breakpoints.down("mobile")} {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, max-content);
   }
 
@@ -165,7 +165,7 @@ const styles = (theme: Theme) => css`
     border-top-left-radius: ${theme.spacing(0.5)};
     display: grid;
     grid-template-columns: max-content 1fr;
-    grid-template-rows: max-content max-content;
+    grid-template-rows: repeat(2, max-content);
     column-gap: ${theme.spacing(2)};
     align-items: center;
     padding: ${theme.spacing(2)};

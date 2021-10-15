@@ -70,7 +70,7 @@ const styles = (theme: Theme) => css`
     margin: ${theme.spacing(0, 0, 0, 0.25)};
     display: grid;
     grid-template-columns: 144fr 650fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
     gap: ${theme.spacing(0.25)};
 
     .health {

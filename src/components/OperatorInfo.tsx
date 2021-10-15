@@ -180,8 +180,8 @@ const styles = (theme: Theme) => css`
 
         .class-icon,
         .subclass-icon {
-          width: 24px;
-          height: 24px;
+          width: ${theme.spacing(3)};
+          height: ${theme.spacing(3)};
           line-height: 1;
           margin-right: ${theme.spacing(1)};
         }
@@ -199,7 +199,7 @@ const styles = (theme: Theme) => css`
     grid-template-columns: repeat(2, max-content);
     justify-content: end;
     height: max-content;
-    column-gap: 24px;
+    column-gap: ${theme.spacing(3)};
 
     & > div {
       background: none;
@@ -234,8 +234,8 @@ const styles = (theme: Theme) => css`
       border-bottom-left-radius: ${theme.spacing(0.5)};
 
       dd {
-        font-size: 18px;
-        font-weight: normal;
+        font-size: ${theme.typography.body.size};
+        font-weight: ${theme.typography.body.weight};
       }
     }
   }

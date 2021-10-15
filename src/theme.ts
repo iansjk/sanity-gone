@@ -74,6 +74,7 @@ const typography = {
     size: "18px",
     family: "Source Sans Pro",
     lineHeight: 1.5,
+    weight: 400,
   },
   body2: {
     size: "14px",

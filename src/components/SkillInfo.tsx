@@ -158,7 +158,7 @@ const styles = (theme: Theme) => css`
   }
 
   & > * {
-    background-color: ${theme.palette.dark};
+    background-color: ${theme.palette.midtoneDarker};
   }
 
   .skill-name-and-type {

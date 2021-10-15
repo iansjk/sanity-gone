@@ -72,6 +72,7 @@ const styles = (theme: Theme) => css`
   position: relative;
   border-radius: ${theme.spacing(0.5)};
   border: ${theme.spacing(0.25)} solid ${theme.palette.white};
+  background: ${theme.palette.dark};
 
   &.small {
     margin-bottom: 13px;

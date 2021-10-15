@@ -84,7 +84,7 @@ const styles = (theme: Theme) => css`
   margin-top: ${theme.spacing(3)};
 
   & > * {
-    background-color: ${theme.palette.dark};
+    background-color: ${theme.palette.midtoneDarker};
   }
 
   &.no-range {

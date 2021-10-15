@@ -114,7 +114,7 @@ const styles = (theme: Theme) => css`
         border: none;
         font-weight: ${theme.typography.skillTalentHeading.fontWeight};
         cursor: pointer;
-        background-color: ${theme.palette.dark};
+        background-color: ${theme.palette.midtoneDarker};
         color: ${theme.palette.midtoneBrighter};
         box-sizing: border-box;
         border: ${theme.spacing(0.25)} solid ${theme.palette.midtoneBrighter};

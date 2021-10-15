@@ -20,7 +20,7 @@ const spacing: Spacing = (...args: number[]) => {
 };
 
 const palette = {
-  white: "#d6d6e2",
+  white: "#e8e8f2",
   gray: "#87879b",
   lime: "#a7e855",
   blue: "#49b3ff",

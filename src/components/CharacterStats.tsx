@@ -227,33 +227,22 @@ const styles = (theme: Theme) => css`
       grid-row-start: span 2;
       position: relative;
       border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
-      
-      ${theme.breakpoints.down("mobile")} {
-        grid-row: 5;
-        grid-column-start: span 2;
-
-        display: grid;
-        grid-template-columns: max-content 1fr;
-      }
 
       dd {
+        position: absolute;
+        top: -5px; /* this is needed to counteract extra space made by .visually-hidden */
+        left: -5px;
         margin-top: 0;
+        width: 100%;
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+      }
 
-        ${theme.breakpoints.down("mobile")} {
-          position: relative;
-          top: -2px;
-        }
-
-        ${theme.breakpoints.up("mobile")} {
-          position: absolute;
-          top: -5px; /* this is needed to counteract extra space made by .visually-hidden */
-          left: -5px;
-          width: 100%;
-          height: 100%;
-        }
+      ${theme.breakpoints.down("mobile")} {
+        grid-row: 5;
+        grid-column-start: span 2;
       }
     }
   }

@@ -101,6 +101,11 @@ const typography = {
   navigationLinkBold: {
     fontWeight: 600,
   },
+  operatorBrowserNameHeading: {
+    fontSize: "16px",
+    fontWeight: 600,
+    lineHeight: 1.25,
+  },
 };
 
 export const breakpoints = {

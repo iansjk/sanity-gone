@@ -175,9 +175,13 @@ const styles = (theme: Theme) => css`
         margin-bottom: ${theme.spacing(1)};
 
         ${theme.breakpoints.down("mobile")} {
-          font-size: ${theme.typography.generalHeadingBold.fontSize};
-          font-weight: ${theme.typography.generalHeadingBold.fontWeight};
-          line-height: ${theme.typography.generalHeadingBold.lineHeight};
+          font-size: ${theme.typography.operatorBrowserNameHeading.fontSize};
+          font-weight: ${
+            theme.typography.operatorBrowserNameHeading.fontWeight
+          };
+          line-height: ${
+            theme.typography.operatorBrowserNameHeading.lineHeight
+          };
         }
       }
 

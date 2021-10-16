@@ -254,8 +254,15 @@ const styles =
           color: ${theme.palette.gray};
 
           ${theme.breakpoints.down("mobile")} {
-            display: block;
+            grid-template-rows: repeat(2, max-content);
+            grid-template-columns: repeat(2, 1fr);
             padding: ${theme.spacing(4, 3)};
+          }
+
+          .logo-and-description {
+            ${theme.breakpoints.down("mobile")} {
+              grid-column: span 2;
+            }
           }
 
           .links-section,
@@ -264,6 +271,7 @@ const styles =
 
             ${theme.breakpoints.down("mobile")} {
               margin-top: ${theme.spacing(4)};
+              justify-self: unset;
             }
 
             .list-title {
@@ -296,7 +304,19 @@ const styles =
             }
           }
 
+          .links-section {
+            ${theme.breakpoints.down("mobile")} {
+              grid-row: 2;
+              grid-column: 1;
+            }
+          }
+
           .socials-section {
+            ${theme.breakpoints.down("mobile")} {
+              grid-row: 2;
+              grid-column: 2;
+            }
+
             ul {
               display: flex;
 

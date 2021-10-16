@@ -155,36 +155,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     analysis: os.synergyDescription.childMarkdownRemark.html,
   }));
 
-  const mainRef = useRef<HTMLDivElement>(null);
-  // force a min-height on <main> to prevent forced scrolling when changing tabs
-  useEffect(() => {
-    const handle = setInterval(() => {
-      if (
-        mainRef.current &&
-        document.body.classList.contains(
-          `wf-${slugify(defaultTheme.typography.body.fontFamily)}--loaded`
-        )
-      ) {
-        const maxChildHeight = Math.max(
-          ...Array.from(
-            mainRef.current.querySelectorAll(".analysis-section")
-          ).map((child) => {
-            child.setAttribute("style", "display: inherit;");
-            const childHeight = child.getBoundingClientRect().height;
-            child.removeAttribute("style");
-            return childHeight;
-          })
-        );
-        mainRef.current.setAttribute(
-          "style",
-          `min-height: ${maxChildHeight}px;`
-        );
-        clearInterval(handle);
-      }
-      return () => clearInterval(handle);
-    }, 500);
-  }, []);
-
   return (
     <Fragment>
       <Helmet>
@@ -199,7 +169,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       >
         <Tabs
           component="main"
-          ref={mainRef}
           css={styles(contentful.operator.accentColorInHex)}
         >
           <TabButtons className="tabs">

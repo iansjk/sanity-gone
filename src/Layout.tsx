@@ -272,4 +272,16 @@ const styles =
           margin: ${theme.spacing(2, 0, 0)};
         }
       }
+
+      .swiper-container {
+        .swiper-slide-active {
+          &::after {
+            border-bottom-color: ${accentColor};
+          }
+
+          button {
+            color: ${accentColor};
+          }
+        }
+      }
     `;

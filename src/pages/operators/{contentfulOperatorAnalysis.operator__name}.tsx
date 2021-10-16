@@ -180,7 +180,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           component="main"
           css={styles(contentful.operator.accentColorInHex)}
         >
-          <TabButtons className="tabs">
+          <TabButtons className="tabs" isSwiper>
             {["Introduction", "Talents", "Skills", "Synergies", "Summary"].map(
               (label) => {
                 return <button key={label}>{label}</button>;

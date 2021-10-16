@@ -11,6 +11,7 @@ import { defaultTheme } from "./theme";
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import BreadcrumbBackIcon from "./components/icons/BreadcrumbBackIcon";
 import useIsMobile from "./hooks/useIsMobile";
+import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 
 interface LayoutProps {
   pageTitle: string;
@@ -56,13 +57,17 @@ const Layout: React.FC<LayoutProps> = (props) => {
             <header>
               <div className="top-line">
                 <SanityGoneLogo />
-                {!isMobile && (
-                  <div className="header-links">
-                    <a href="/">Home</a>
-                    <a href="/operators">Operators</a>
-                    <a href="/about">About</a>
-                  </div>
-                )}
+                <div className="header-links" hidden={isMobile}>
+                  <a href="/">Home</a>
+                  <a href="/operators">Operators</a>
+                  <a href="/about">About</a>
+                </div>
+                <MobileMenuIcon
+                  className="mobile-menu"
+                  role="button"
+                  aria-label="Open Menu"
+                  hidden={!isMobile}
+                />
               </div>
               <div className="heading-and-breadcrumb">
                 <h1>{pageTitle}</h1>
@@ -179,6 +184,7 @@ const styles =
         .top-line {
           display: flex;
           align-items: flex-end;
+          justify-content: space-between;
 
           .header-links {
             flex-grow: 1;
@@ -189,6 +195,12 @@ const styles =
               color: ${theme.palette.white};
               text-decoration: none;
             }
+          }
+
+          .mobile-menu {
+            align-self: center;
+            position: relative;
+            top: -2px;
           }
         }
 

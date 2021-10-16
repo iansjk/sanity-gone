@@ -1,7 +1,7 @@
 import { css, Theme } from "@emotion/react";
 import { graphql } from "gatsby";
 import { transparentize } from "polished";
-import { Fragment, useEffect, useRef } from "react";
+import { Fragment } from "react";
 import Helmet from "react-helmet";
 import { DateTime } from "luxon";
 import parse, { attributesToProps } from "html-react-parser";
@@ -18,8 +18,7 @@ import TabPanels from "../../components/TabPanels";
 import TalentInfo, { TalentObject } from "../../components/TalentInfo";
 import Layout from "../../Layout";
 import Card from "../../components/Card";
-import { replaceSelfClosingHtmlTags, slugify } from "../../utils/globals";
-import { defaultTheme } from "../../theme";
+import { replaceSelfClosingHtmlTags } from "../../utils/globals";
 import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";

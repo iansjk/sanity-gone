@@ -1,11 +1,15 @@
 import { Global, Theme, css, ThemeProvider } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
 import { Fragment } from "react";
-import { defaultTheme } from "./theme";
 import { Helmet } from "react-helmet";
+import {
+  BsDiscord as DiscordLogo,
+  BsTwitter as TwitterLogo,
+} from "react-icons/bs";
+import "wicg-inert";
+import { defaultTheme } from "./theme";
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import BreadcrumbBackIcon from "./components/icons/BreadcrumbBackIcon";
-import "wicg-inert";
 import useIsMobile from "./hooks/useIsMobile";
 
 interface LayoutProps {
@@ -95,8 +99,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
               <div className="socials-section">
                 <span className="list-title">Socials</span>
                 <ul>
-                  <li>Discord</li>
-                  <li>Twitter</li>
+                  <li>
+                    <DiscordLogo size={24} aria-label="Discord" />
+                  </li>
+                  <li>
+                    <TwitterLogo size={24} aria-label="Twitter" />
+                  </li>
                 </ul>
               </div>
             </div>
@@ -284,6 +292,20 @@ const styles =
 
               li {
                 margin-top: ${theme.spacing(2)};
+              }
+            }
+          }
+
+          .socials-section {
+            ul {
+              display: flex;
+
+              li {
+                margin-top: 0;
+
+                &:not(:last-of-type) {
+                  margin-right: ${theme.spacing(2)};
+                }
               }
             }
           }

@@ -413,7 +413,11 @@ const styles = (accentColor: string) => (theme: Theme) =>
             box-sizing: border-box;
             height: calc(100% - ${theme.typography.cardHeading.fontSize} * ${
     theme.typography.cardHeading.lineHeight
-  } - ${theme.spacing(4)});
+    } - ${theme.spacing(4)});
+
+            ${theme.breakpoints.down("mobile")} {
+              height: 100%;
+            }
   
             .tabs-wrapper {
               height: 100%;

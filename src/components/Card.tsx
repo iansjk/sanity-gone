@@ -31,7 +31,7 @@ const styles = (theme: Theme) => css`
 
   .heading-block {
     padding: ${theme.spacing(2, 0, 2, 4)};
-    background-color: ${transparentize(0.34, theme.palette.dark)};
+    background-color: ${transparentize(0.34, theme.palette.midtoneDarker)};
     border-top-right-radius: ${theme.spacing(1)};
 
     ${theme.breakpoints.down("mobile")} {

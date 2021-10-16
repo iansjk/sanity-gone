@@ -55,6 +55,7 @@ const styles = (theme: Theme) => css`
 
     ${theme.breakpoints.down("mobile")} {
       padding: ${theme.spacing(2)};
+      border-bottom-right-radius: unset;
     }
 
     & > p {

@@ -22,6 +22,7 @@ import { replaceSelfClosingHtmlTags } from "../../utils/globals";
 import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";
+import useIsMobile from "../../hooks/useIsMobile";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -139,6 +140,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     operator: operatorObject,
     summon: summons.length > 0 ? summons[0] : undefined,
   };
+  const isMobile = useIsMobile();
 
   const rarityMap = Object.fromEntries(
     data.allOperatorsJson.nodes.map(({ name, rarity }) => [name, rarity])
@@ -244,7 +246,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
             ))}
           </TabPanels>
           <div className="left-sidebar">
-            <hr />
+            {!isMobile && <hr />}
             <div className="external-links">
               <a
                 href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${contentful.operator.name}`}
@@ -266,14 +268,14 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
             <hr />
             <div className="metadata">
               <div className="authors-section">
-                <span className="section-label">Written By</span>
+                <span className="section-label">Written by</span>
                 <span className="authors">
                   {contentful.author.map((author) => author.name).join(",\n")}
                 </span>
               </div>
 
               <div className="last-updated-section">
-                <span className="section-label">Last Updated</span>
+                <span className="section-label">Last updated</span>
                 <span className="last-updated">
                   {DateTime.fromISO(contentful.updatedAt).toLocaleString(
                     DateTime.DATE_FULL
@@ -356,6 +358,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
       ${theme.breakpoints.down("mobile")} {
         grid-row: 3;
+        padding: ${theme.spacing(0, 2, 3)};
       }
 
       hr {
@@ -367,6 +370,10 @@ const styles = (accentColor: string) => (theme: Theme) =>
       .external-links,
       .metadata {
         padding-left: ${theme.spacing(2)};
+
+        ${theme.breakpoints.down("mobile")} {
+          padding: 0;
+        }
       }
 
       .external-links,
@@ -383,9 +390,22 @@ const styles = (accentColor: string) => (theme: Theme) =>
         color: ${theme.palette.gray};
       }
 
+      .metadata {
+        ${theme.breakpoints.down("mobile")} {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       .external-links {
         a {
           margin-right: ${theme.spacing(1)};
+        }
+      }
+
+      .last-updated-section {
+        .last-updated {
+          font-style: italic;
         }
       }
     }
@@ -395,15 +415,17 @@ const styles = (accentColor: string) => (theme: Theme) =>
       grid-column: 2 / span 2;
       margin-left: -1px;
       height: 100%;
+      border-left: 1px solid ${theme.palette.gray};
+      backdrop-filter: blur(${theme.spacing(1)});
 
       ${theme.breakpoints.down("mobile")} {
         grid-row: 2;
         grid-column: 1;
+        border: none;
+        backdrop-filter: unset;
       }
 
       .analysis-section {
-        border-left: 1px solid ${theme.palette.gray};
-        backdrop-filter: blur(${theme.spacing(1)});
         height: 100%;
 
         section {

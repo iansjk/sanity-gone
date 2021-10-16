@@ -295,6 +295,10 @@ const styles = (accentColor: string) => (theme: Theme) =>
     grid-template-rows: max-content max-content 1fr;
     grid-template-columns: max-content 1fr;
 
+    ${theme.breakpoints.down("mobile")} {
+      grid-template-columns: 1fr;
+    }
+
     & > .tabs {
       display: flex;
       flex-direction: column;
@@ -338,6 +342,10 @@ const styles = (accentColor: string) => (theme: Theme) =>
       grid-row-start: 2;
       padding-right: ${theme.spacing(4)};
 
+      ${theme.breakpoints.down("mobile")} {
+        grid-row: 3;
+      }
+
       hr {
         border: 0;
         border-top: 1px solid ${theme.palette.midtone};
@@ -375,6 +383,11 @@ const styles = (accentColor: string) => (theme: Theme) =>
       grid-column: 2 / span 2;
       margin-left: -1px;
       height: 100%;
+
+      ${theme.breakpoints.down("mobile")} {
+        grid-row: 2;
+        grid-column: 1;
+      }
 
       .analysis-section {
         border-left: 1px solid ${theme.palette.midtoneBrighter};

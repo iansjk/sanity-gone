@@ -100,6 +100,7 @@ const typography = {
     lineHeight: 1.25,
   },
   navigationLink: {
+    fontSize: "18px",
     lineHeight: 1.25,
   },
   navigationLinkBold: {

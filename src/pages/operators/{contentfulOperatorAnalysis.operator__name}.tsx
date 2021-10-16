@@ -363,7 +363,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
       hr {
         border: 0;
-        border-top: 1px solid ${theme.palette.midtone};
+        border-top: 1px solid ${theme.palette.midtoneBrighter};
         margin: ${theme.spacing(3)} 0 0 0;
       }
 
@@ -400,6 +400,18 @@ const styles = (accentColor: string) => (theme: Theme) =>
       .external-links {
         a {
           margin-right: ${theme.spacing(1)};
+          
+          ${theme.breakpoints.down("mobile")} {
+            display: inline-block;
+            padding: ${theme.spacing(1, 2)};
+            margin-right: ${theme.spacing(2)};
+            font-size: ${theme.typography.navigationLink.fontSize};
+            line-height: ${theme.typography.navigationLink.lineHeight};
+            font-weight: ${theme.typography.navigationLinkBold.fontWeight};
+            border: 1px solid ${accentColor};
+            border-radius: ${theme.spacing(0.5)};
+            filter: drop-shadow(${theme.spacing(0.25)} ${theme.spacing(0.5)} ${theme.spacing(1)} rgba(0, 0, 0, 0.15));
+          }
         }
       }
 

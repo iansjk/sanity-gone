@@ -138,10 +138,6 @@ const styles =
         }
       }
 
-      footer {
-        flex-shrink: 0;
-      }
-
       header {
         padding: ${theme.spacing(3, 0, 0)};
 
@@ -206,6 +202,7 @@ const styles =
       }
 
       footer {
+        flex-shrink: 0;
         height: 120px;
         margin-top: ${theme.spacing(1)};
         background-color: ${theme.palette.black};

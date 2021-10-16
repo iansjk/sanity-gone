@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import BreadcrumbBackIcon from "./components/icons/BreadcrumbBackIcon";
 import "wicg-inert";
+import useIsMobile from "./hooks/useIsMobile";
 
 interface LayoutProps {
   pageTitle: string;
@@ -25,6 +26,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
     children,
     ...rest
   } = props;
+  const isMobile = useIsMobile();
+
   return (
     // <> shorthand syntax is BROKEN, don't use it.
     <Fragment>
@@ -49,11 +52,13 @@ const Layout: React.FC<LayoutProps> = (props) => {
             <header>
               <div className="top-line">
                 <SanityGoneLogo />
-                <div className="header-links">
-                  <a href="/">Home</a>
-                  <a href="/operators">Operators</a>
-                  <a href="/about">About</a>
-                </div>
+                {!isMobile && (
+                  <div className="header-links">
+                    <a href="/">Home</a>
+                    <a href="/operators">Operators</a>
+                    <a href="/about">About</a>
+                  </div>
+                )}
               </div>
               <div className="heading-and-breadcrumb">
                 <h1>{pageTitle}</h1>

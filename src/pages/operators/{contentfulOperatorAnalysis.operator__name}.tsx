@@ -24,16 +24,17 @@ import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";
 
-type HTMLToReactContext = Partial<{
+interface HTMLToReactContext {
   skills: SkillObject[];
   talents: TalentObject[];
   operator: CharacterObject;
-  summon: CharacterObject;
-}>;
+  summon?: CharacterObject;
+}
 
 const htmlToReact = (
   html: string,
-  context?: HTMLToReactContext
+  context: HTMLToReactContext,
+  index?: number
 ): string | JSX.Element | JSX.Element[] => {
   return parse(replaceSelfClosingHtmlTags(html), {
     replace: (domNode) => {
@@ -42,20 +43,23 @@ const htmlToReact = (
           return (
             <SkillInfo
               className="skills-skill-info"
-              skillObject={context!.skills!.shift()!}
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              skillObject={context.skills[index!]}
             />
           );
         } else if (domNode.name === "talentinfo") {
           return (
             <TalentInfo
               className="talents-talent-info"
-              talentObject={context!.talents!.shift()!}
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              talentObject={context.talents[index!]}
             />
           );
         } else if (domNode.name === "operatorstats") {
-          return <CharacterStats characterObject={context!.operator!} />;
+          return <CharacterStats characterObject={context.operator} />;
         } else if (domNode.name === "summonstats") {
-          return <CharacterStats characterObject={context!.summon!} />;
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          return <CharacterStats characterObject={context.summon!} />;
         } else if ((domNode.firstChild as Element).name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")
@@ -130,6 +134,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     operatorsJson: operatorObject,
   } = data;
   const summons = data.allSummonsJson.nodes;
+  const context = {
+    talents: operatorObject.talents,
+    skills: operatorObject.skillData,
+    operator: operatorObject,
+    summon: summons.length > 0 ? summons[0] : undefined,
+  };
 
   const rarityMap = Object.fromEntries(
     data.allOperatorsJson.nodes.map(({ name, rarity }) => [name, rarity])
@@ -140,14 +150,14 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     contentful.talent2Analysis?.childMarkdownRemark.html,
   ]
     .filter((html) => !!html)
-    .map((html) => htmlToReact(html, { talents: operatorObject.talents }));
+    .map((html, i) => htmlToReact(html, context, i));
   const skillAnalyses = [
     contentful.skill1Analysis.childMarkdownRemark.html,
     contentful.skill2Analysis.childMarkdownRemark.html,
     contentful.skill3Analysis?.childMarkdownRemark.html,
   ]
     .filter((html) => !!html)
-    .map((html) => htmlToReact(html, { skills: operatorObject.skillData }));
+    .map((html, i) => htmlToReact(html, context, i));
   const synergyOperators = contentful.operatorSynergies.map((os) => ({
     name: os.operatorName,
     rarity: rarityMap[os.operatorName] + 1,
@@ -185,10 +195,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   <Introduction
                     analysis={htmlToReact(
                       contentful.introduction.childMarkdownRemark.html,
-                      {
-                        operator: operatorObject,
-                        summon: summons.length > 0 ? summons[0] : undefined,
-                      }
+                      context
                     )}
                     isLimited={contentful.operator.limited}
                     operatorObject={operatorObject}
@@ -223,7 +230,10 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               {
                 component: (
                   <Card header="Summary">
-                    {htmlToReact(contentful.summary.childMarkdownRemark.html)}
+                    {htmlToReact(
+                      contentful.summary.childMarkdownRemark.html,
+                      context
+                    )}
                   </Card>
                 ),
                 className: "summary",

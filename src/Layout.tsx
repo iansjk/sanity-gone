@@ -75,7 +75,32 @@ const Layout: React.FC<LayoutProps> = (props) => {
             </header>
             <div className="page-content">{children}</div>
           </div>
-          <footer />
+          <footer>
+            <div className="footer-inner">
+              <div className="logo-and-description">
+                <SanityGoneLogo />
+                <p className="site-description">
+                  Sanity;Gone is a community resource for Arknights players,
+                  providing quick guides, reviews, and detailed information
+                  about the game.
+                </p>
+              </div>
+              <div className="links-section">
+                <span className="list-title">Links</span>
+                <ul>
+                  <li>Contact Email</li>
+                  <li>Disclaimer</li>
+                </ul>
+              </div>
+              <div className="socials-section">
+                <span className="list-title">Socials</span>
+                <ul>
+                  <li>Discord</li>
+                  <li>Twitter</li>
+                </ul>
+              </div>
+            </div>
+          </footer>
         </div>
       </ThemeProvider>
     </Fragment>
@@ -93,13 +118,15 @@ const styles =
   }) =>
   (theme: Theme) =>
     css`
-      ${accentColor && css`
+      ${accentColor &&
+      css`
         a {
           color: ${accentColor};
         }
       `}
-      
-      ${bannerImageUrl && css`
+
+      ${bannerImageUrl &&
+      css`
         body {
           background-image: url("${bannerImageUrl}");
           background-repeat: no-repeat;
@@ -202,10 +229,65 @@ const styles =
       }
 
       footer {
-        flex-shrink: 0;
-        height: 120px;
         margin-top: ${theme.spacing(1)};
         background-color: ${theme.palette.black};
+
+        ${theme.breakpoints.down("mobile")} {
+          margin: 0;
+        }
+
+        .footer-inner {
+          box-sizing: border-box;
+          margin: auto;
+          padding: ${theme.spacing(8, 3)};
+          max-width: ${theme.containerWidth};
+          display: grid;
+          grid-template-columns: 50% repeat(2, 1fr);
+          color: ${theme.palette.gray};
+
+          ${theme.breakpoints.down("mobile")} {
+            display: block;
+            padding: ${theme.spacing(4, 3)};
+          }
+
+          .links-section,
+          .socials-section {
+            justify-self: flex-end;
+
+            ${theme.breakpoints.down("mobile")} {
+              margin-top: ${theme.spacing(4)};
+            }
+
+            .list-title {
+              position: relative;
+              padding-left: ${theme.spacing(2)};
+              font-size: ${theme.typography.generalHeading.fontSize};
+              line-height: ${theme.typography.generalHeading.lineHeight};
+              font-weight: ${theme.typography.generalHeadingBold.fontWeight};
+              color: ${theme.palette.white};
+
+              &::before {
+                content: " ";
+                position: absolute;
+                display: inline-block;
+                border-left: ${theme.spacing(0.25)} solid ${theme.palette.blue};
+                height: ${theme.spacing(1.5)};
+                top: calc(50% - ${theme.spacing(0.75)});
+                left: -${theme.spacing(0.25)};
+              }
+            }
+
+            ul {
+              margin: ${theme.spacing(3, 0, 0)};
+              padding: ${theme.spacing(0, 0, 0, 2)};
+              list-style: none;
+
+              li {
+                margin-top: ${theme.spacing(2)};
+              }
+            }
+          }
+        }
       }
 
       b,

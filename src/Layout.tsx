@@ -229,7 +229,7 @@ const styles =
       }
 
       footer {
-        margin-top: ${theme.spacing(1)};
+        margin-top: ${theme.spacing(8)};
         background-color: ${theme.palette.black};
 
         ${theme.breakpoints.down("mobile")} {

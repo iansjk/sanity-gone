@@ -402,7 +402,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       }
 
       .analysis-section {
-        border-left: 1px solid ${theme.palette.midtoneBrighter};
+        border-left: 1px solid ${theme.palette.gray};
         backdrop-filter: blur(${theme.spacing(1)});
         height: 100%;
 

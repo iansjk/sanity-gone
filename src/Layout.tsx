@@ -12,8 +12,8 @@ interface LayoutProps {
   pageTitle: string;
   previousLocation: string;
   previousLocationLink: string;
-  accentColor: string;
-  bannerImageUrl: string;
+  accentColor?: string;
+  bannerImageUrl?: string;
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
@@ -88,11 +88,25 @@ const styles =
     accentColor,
     bannerImageUrl,
   }: {
-    accentColor: string;
-    bannerImageUrl: string;
+    accentColor?: string;
+    bannerImageUrl?: string;
   }) =>
   (theme: Theme) =>
     css`
+      ${accentColor && css`
+        a {
+          color: ${accentColor};
+        }
+      `}
+      
+      ${bannerImageUrl && css`
+        body {
+          background-image: url("${bannerImageUrl}");
+          background-repeat: no-repeat;
+          background-position-x: center;
+        }
+      `}
+
       html {
         font-size: ${theme.typography.body.fontSize};
         color: ${theme.palette.white};
@@ -104,12 +118,6 @@ const styles =
         ${theme.breakpoints.down("mobile")} {
           font-size: ${theme.typography.body2.fontSize};
         }
-      }
-
-      body {
-        background-image: url("${bannerImageUrl}");
-        background-repeat: no-repeat;
-        background-position-x: center;
       }
 
       .site-wrapper {
@@ -211,7 +219,6 @@ const styles =
 
       a {
         text-decoration: none;
-        color: ${accentColor};
 
         &:hover {
           color: ${theme.palette.white};
@@ -275,18 +282,6 @@ const styles =
 
         ${theme.breakpoints.down("mobile")} {
           margin: ${theme.spacing(2, 0, 0)};
-        }
-      }
-
-      .swiper-container {
-        .swiper-slide-active {
-          &::after {
-            border-bottom-color: ${accentColor};
-          }
-
-          button {
-            color: ${accentColor};
-          }
         }
       }
     `;

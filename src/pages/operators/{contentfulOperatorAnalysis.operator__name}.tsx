@@ -299,6 +299,18 @@ const styles = (accentColor: string) => (theme: Theme) =>
       grid-template-columns: 1fr;
     }
 
+    .swiper-container {
+      .swiper-slide-active {
+        &::after {
+          border-bottom-color: ${accentColor};
+        }
+
+        button {
+          color: ${accentColor};
+        }
+      }
+    }
+
     & > .tabs {
       display: flex;
       flex-direction: column;

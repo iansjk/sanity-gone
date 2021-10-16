@@ -232,7 +232,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   <CardWithTabs
                     header="Talents"
                     panelContent={talentAnalyses}
-                    buttonLabelFn={(i) => `talent ${i}`}
+                    buttonLabelFn={(i) => `talent ${i + 1}`}
                   />
                 ),
                 className: "talents",
@@ -242,7 +242,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   <CardWithTabs
                     header="Skills"
                     panelContent={skillAnalyses}
-                    buttonLabelFn={(i) => `skill ${i}`}
+                    buttonLabelFn={(i) => `skill ${i + 1}`}
                   />
                 ),
                 className: "skills",

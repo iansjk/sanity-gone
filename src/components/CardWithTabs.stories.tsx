@@ -14,7 +14,7 @@ const Template: Story<CardWithTabsProps> = (args) => <CardWithTabs {...args} />;
 export const Skills = Template.bind({});
 Skills.args = {
   header: "Skills",
-  buttonLabelFn: (i) => `skill ${i}`,
+  buttonLabelFn: (i) => `skill ${i + 1}`,
   panelContent: [
     [
       <p key="1">
@@ -309,7 +309,7 @@ Skills.args = {
 export const Talents = Template.bind({});
 Talents.args = {
   header: "Talents",
-  buttonLabelFn: (i) => `talent ${i}`,
+  buttonLabelFn: (i) => `talent ${i + 1}`,
   panelContent: [
     [
       <p key="1">

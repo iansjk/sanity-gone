@@ -81,7 +81,7 @@ const typography = {
     fontWeight: 400,
   },
   body2: {
-    fontSize: "14px",
+    fontSize: "16px",
     lineHeight: "24px",
   },
   smallPortraitRarity: {

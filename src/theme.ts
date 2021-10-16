@@ -84,6 +84,10 @@ const typography = {
     fontSize: "16px",
     lineHeight: "24px",
   },
+  body3: {
+    fontSize: "14px",
+    lineHeight: "21px",
+  },
   smallPortraitRarity: {
     fontSize: "18px",
     lineHeight: 1.25,

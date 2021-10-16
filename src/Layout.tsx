@@ -381,6 +381,11 @@ const styles =
           svg {
             margin-right: ${theme.spacing(1)};
           }
+
+          ${theme.breakpoints.down("mobile")} {
+            font-size: ${theme.typography.body3.fontSize};
+            line-height: ${theme.typography.body3.lineHeight};
+          }
         }
 
         dd {

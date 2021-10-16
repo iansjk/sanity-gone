@@ -175,13 +175,9 @@ const styles = (theme: Theme) => css`
         margin-bottom: ${theme.spacing(1)};
 
         ${theme.breakpoints.down("mobile")} {
-          font-size: ${theme.typography.operatorBrowserNameHeading.fontSize};
-          font-weight: ${
-            theme.typography.operatorBrowserNameHeading.fontWeight
-          };
-          line-height: ${
-            theme.typography.operatorBrowserNameHeading.lineHeight
-          };
+          font-size: ${theme.typography.generalHeading.fontSize};
+          line-height: ${theme.typography.generalHeading.lineHeight};
+          font-weight: ${theme.typography.generalHeadingBold.fontWeight};
         }
       }
 
@@ -242,9 +238,6 @@ const styles = (theme: Theme) => css`
 
         ${theme.breakpoints.down("mobile")} {
           margin: ${theme.spacing(0.5, 0, 0)};
-          font-size: ${theme.typography.skillTalentHeading.fontSize};
-          font-weight: ${theme.typography.skillTalentHeading.fontWeight};
-          line-height: ${theme.typography.skillTalentHeading.lineHeight};
         }
       }
     }

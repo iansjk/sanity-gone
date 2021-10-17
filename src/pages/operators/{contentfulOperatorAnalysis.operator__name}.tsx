@@ -1,8 +1,6 @@
 import { css, Theme } from "@emotion/react";
 import { graphql } from "gatsby";
 import { transparentize } from "polished";
-import { Fragment } from "react";
-import Helmet from "react-helmet";
 import { DateTime } from "luxon";
 import parse, { attributesToProps } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
@@ -167,126 +165,118 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   }));
 
   return (
-    <Fragment>
-      <Helmet>
-        <title>{contentful.operator.name}</title>
-      </Helmet>
-      <Layout
-        pageTitle={contentful.operator.name}
-        bannerImageUrl={contentful.operator.operatorImageUrl}
-        previousLocation="Operators"
-        previousLocationLink="/operators"
-        accentColor={contentful.operator.accentColorInHex}
-      >
-        <Tabs
-          component="main"
-          css={styles(contentful.operator.accentColorInHex)}
-        >
-          <TabButtons className="tabs" isSwiper>
-            {["Introduction", "Talents", "Skills", "Synergies", "Summary"].map(
-              (label) => {
-                return <button key={label}>{label}</button>;
-              }
-            )}
-          </TabButtons>
-          <TabPanels className="panels">
-            {[
-              {
-                component: (
-                  <Introduction
-                    analysis={htmlToReact(
-                      contentful.introduction.childMarkdownRemark.html,
-                      context
-                    )}
-                    isLimited={contentful.operator.limited}
-                    operatorObject={operatorObject}
-                  />
-                ),
-                className: "introduction",
-              },
-              {
-                component: (
-                  <CardWithTabs
-                    header="Talents"
-                    panelContent={talentAnalyses}
-                    buttonLabelFn={(i) => `talent ${i + 1}`}
-                  />
-                ),
-                className: "talents",
-              },
-              {
-                component: (
-                  <CardWithTabs
-                    header="Skills"
-                    panelContent={skillAnalyses}
-                    buttonLabelFn={(i) => `skill ${i + 1}`}
-                  />
-                ),
-                className: "skills",
-              },
-              {
-                component: <Synergies synergyOperators={synergyOperators} />,
-                className: "synergies",
-              },
-              {
-                component: (
-                  <Card header="Summary">
-                    {htmlToReact(
-                      contentful.summary.childMarkdownRemark.html,
-                      context
-                    )}
-                  </Card>
-                ),
-                className: "summary",
-              },
-            ].map(({ component, className }, i) => (
-              <div className={`analysis-section ${className}`} key={i}>
-                {component}
-              </div>
-            ))}
-          </TabPanels>
-          <div className="left-sidebar">
-            {!isMobile && <hr />}
-            <div className="external-links">
-              <a
-                href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${contentful.operator.name}`}
-                rel="noreferrer noopener"
-                target="_blank"
-              >
-                Aceship
-              </a>
-              <a
-                href={`http://prts.wiki/w/${encodeURIComponent(
-                  operatorObject.cnName
-                )}`}
-                rel="noreferrer noopener"
-                target="_blank"
-              >
-                PRTS
-              </a>
-            </div>
-            <hr />
-            <div className="metadata">
-              <div className="authors-section">
-                <span className="section-label">Written by</span>
-                <span className="authors">
-                  {contentful.author.map((author) => author.name).join(",\n")}
-                </span>
-              </div>
-
-              <div className="last-updated-section">
-                <span className="section-label">Last updated</span>
-                <span className="last-updated">
-                  {DateTime.fromISO(contentful.updatedAt).toLocaleString(
-                    DateTime.DATE_FULL
+    <Layout
+      pageTitle={contentful.operator.name}
+      bannerImageUrl={contentful.operator.operatorImageUrl}
+      previousLocation="Operators"
+      previousLocationLink="/operators"
+      accentColor={contentful.operator.accentColorInHex}
+    >
+      <Tabs component="main" css={styles(contentful.operator.accentColorInHex)}>
+        <TabButtons className="tabs" isSwiper>
+          {["Introduction", "Talents", "Skills", "Synergies", "Summary"].map(
+            (label) => {
+              return <button key={label}>{label}</button>;
+            }
+          )}
+        </TabButtons>
+        <TabPanels className="panels">
+          {[
+            {
+              component: (
+                <Introduction
+                  analysis={htmlToReact(
+                    contentful.introduction.childMarkdownRemark.html,
+                    context
                   )}
-                </span>
-              </div>
+                  isLimited={contentful.operator.limited}
+                  operatorObject={operatorObject}
+                />
+              ),
+              className: "introduction",
+            },
+            {
+              component: (
+                <CardWithTabs
+                  header="Talents"
+                  panelContent={talentAnalyses}
+                  buttonLabelFn={(i) => `talent ${i + 1}`}
+                />
+              ),
+              className: "talents",
+            },
+            {
+              component: (
+                <CardWithTabs
+                  header="Skills"
+                  panelContent={skillAnalyses}
+                  buttonLabelFn={(i) => `skill ${i + 1}`}
+                />
+              ),
+              className: "skills",
+            },
+            {
+              component: <Synergies synergyOperators={synergyOperators} />,
+              className: "synergies",
+            },
+            {
+              component: (
+                <Card header="Summary">
+                  {htmlToReact(
+                    contentful.summary.childMarkdownRemark.html,
+                    context
+                  )}
+                </Card>
+              ),
+              className: "summary",
+            },
+          ].map(({ component, className }, i) => (
+            <div className={`analysis-section ${className}`} key={i}>
+              {component}
+            </div>
+          ))}
+        </TabPanels>
+        <div className="left-sidebar">
+          {!isMobile && <hr />}
+          <div className="external-links">
+            <a
+              href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${contentful.operator.name}`}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Aceship
+            </a>
+            <a
+              href={`http://prts.wiki/w/${encodeURIComponent(
+                operatorObject.cnName
+              )}`}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              PRTS
+            </a>
+          </div>
+          <hr />
+          <div className="metadata">
+            <div className="authors-section">
+              <span className="section-label">Written by</span>
+              <span className="authors">
+                {contentful.author.map((author) => author.name).join(",\n")}
+              </span>
+            </div>
+
+            <div className="last-updated-section">
+              <span className="section-label">Last updated</span>
+              <span className="last-updated">
+                {DateTime.fromISO(contentful.updatedAt).toLocaleString(
+                  DateTime.DATE_FULL
+                )}
+              </span>
             </div>
           </div>
-        </Tabs>
-      </Layout>
-    </Fragment>
+        </div>
+      </Tabs>
+    </Layout>
   );
 };
 export default OperatorAnalysis;

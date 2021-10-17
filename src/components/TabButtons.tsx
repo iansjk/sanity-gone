@@ -1,10 +1,9 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Theme, css } from "@emotion/react";
 import { transparentize } from "polished";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import useIsMobile from "../hooks/useIsMobile";
-import useViewportWidth from "../hooks/useViewportWidth";
 
 export type TabButtonsProps = Omit<
   React.HTMLAttributes<HTMLDivElement>,
@@ -19,14 +18,7 @@ export type TabButtonsProps = Omit<
 const TabButtons: React.FC<TabButtonsProps> = (props) => {
   const { activeTab, onClick, isSwiper, children, ...rest } = props;
   const [swiper, setSwiper] = useState<any | null>(null);
-  const viewportWidth = useViewportWidth();
   const isMobile = useIsMobile();
-
-  useEffect(() => {
-    if (swiper) {
-      swiper.updateSize();
-    }
-  }, [viewportWidth]);
 
   const buttonChildren = React.Children.toArray(children).filter(
     (child) =>
@@ -94,7 +86,6 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
               console.log(`calling swiper.slideTo(${noClosureIndex})`);
               console.log(swiper);
               swiper?.slideTo(noClosureIndex);
-              swiper?.update();
             }
           })(buttonIndex),
           onKeyDown: handleKeyDown,
@@ -117,6 +108,7 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
           onSwiper={(swiper) => {
             setSwiper(swiper);
             swiper.slideTo(activeTab!);
+            swiper.update();
           }}
           centeredSlides
           slidesPerView="auto"
@@ -124,6 +116,10 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
           freeModeSticky
           grabCursor
           touchRatio={0.5}
+          observer
+          onActiveIndexChange={() => {
+            newChildren[swiper.activeIndex].props.onClick();
+          }}
           css={swiperStyles}
           hidden={!isMobile}
         >

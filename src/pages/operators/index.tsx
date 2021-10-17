@@ -115,8 +115,6 @@ const styles = (theme: Theme) => css`
     li.operator {
       width: 160px;
       height: 280px;
-      display: grid;
-      grid-template-rows: max-content 1fr max-content;
       border-radius: ${theme.spacing(0.5)};
       background-size: cover;
       background-image: linear-gradient(
@@ -132,6 +130,18 @@ const styles = (theme: Theme) => css`
 
       &.no-guide {
         opacity: 0.5;
+      }
+
+      &.no-guide,
+      &.has-guide a {
+        display: grid;
+        grid-template-rows: max-content 1fr max-content;
+      }
+
+      &.has-guide a {
+        width: 100%;
+        height: 100%;
+        color: inherit;
       }
 
       .operator-info {

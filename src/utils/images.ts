@@ -1,6 +1,14 @@
 import { slugify } from "./globals";
 
-const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/samidare/image/upload/v1/arknights';
+const CLOUDINARY_BASE_URL =
+  "https://res.cloudinary.com/samidare/image/upload/v1/arknights";
+
+export const operatorImage = (name: string, elite?: number): string =>
+  `${CLOUDINARY_BASE_URL}/operators/${slugify(name)}${
+    typeof elite !== "undefined" && (elite > 1 || name === "Amiya")
+      ? `-elite-${elite}`
+      : ""
+  }`;
 
 export const operatorImage = (name: string, elite?: number): string => `${CLOUDINARY_BASE_URL}/operators/${slugify(name)}${typeof elite !== "undefined" && (elite > 1 || name === 'Amiya') ? elite : ''}`;
 

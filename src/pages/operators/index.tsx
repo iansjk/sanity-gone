@@ -117,6 +117,7 @@ const styles = (theme: Theme) => css`
       height: 280px;
       border-radius: ${theme.spacing(0.5)};
       background-size: cover;
+      background-position-y: bottom;
       background-image: linear-gradient(
           120deg,
           ${theme.palette.midtoneDarker} 0%,
@@ -159,7 +160,8 @@ const styles = (theme: Theme) => css`
           font-weight: ${theme.typography.body2Bold.fontWeight};
         }
 
-        .rarity, .operator-class {
+        .rarity,
+        .operator-class {
           font-size: ${theme.typography.label2.size};
           line-height: ${theme.typography.label2.lineHeight};
         }

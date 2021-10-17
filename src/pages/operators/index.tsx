@@ -1,8 +1,11 @@
 import { graphql } from "gatsby";
 import { css, Theme } from "@emotion/react";
 import Layout from "../../Layout";
-import { operatorPortrait } from "../../utils/images";
-import { professionToClass } from "../../utils/globals";
+import { operatorPortrait, operatorSubclassIcon } from "../../utils/images";
+import {
+  professionToClass,
+  subProfessionToSubclass,
+} from "../../utils/globals";
 
 interface Props {
   data: {
@@ -26,28 +29,35 @@ const Operators: React.VFC<Props> = (props) => {
     <Layout pageTitle="Operator List">
       <main css={styles}>
         <ul className="operator-list">
-          {operators.map((op) => (
-            <li
-              key={op.id}
-              className="operator"
-              //@ts-expect-error css variable
-              style={{ "--bg-image": `url("${operatorPortrait(op.name)}")` }}
-            >
-              <div className="operator-info">
-                <span className="operator-name">{op.name}</span>
-                <span
-                  className={`rarity rarity-${op.rarity + 1}-stars`}
-                  aria-label={`${op.rarity + 1} stars`}
-                >
-                  {op.rarity + 1} ★
+          {operators.map((op) => {
+            const operatorClass = professionToClass(op.profession);
+            const subclass = subProfessionToSubclass(op.subProfessionId);
+            return (
+              <li
+                key={op.id}
+                className="operator"
+                //@ts-expect-error css variable
+                style={{ "--bg-image": `url("${operatorPortrait(op.name)}")` }}
+              >
+                <div className="operator-info">
+                  <span className="operator-name">{op.name}</span>
+                  <span
+                    className={`rarity rarity-${op.rarity + 1}-stars`}
+                    aria-label={`${op.rarity + 1} stars`}
+                  >
+                    {op.rarity + 1} ★
+                  </span>
+                  <span className="operator-class">{operatorClass}</span>
+                </div>
+                <span className="operator-subclass">
+                  <img
+                    src={operatorSubclassIcon(op.subProfessionId)}
+                    alt={subclass}
+                  />
                 </span>
-                <span className="operator-class">
-                  {professionToClass(op.profession)}
-                </span>
-              </div>
-              <span className="operator-subclass"></span>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       </main>
     </Layout>

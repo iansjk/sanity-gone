@@ -35,7 +35,12 @@ const Operators: React.VFC<Props> = (props) => {
             >
               <div className="operator-info">
                 <span className="operator-name">{op.name}</span>
-                <span className="rarity">{op.rarity + 1}</span>
+                <span
+                  className={`rarity rarity-${op.rarity + 1}-stars`}
+                  aria-label={`${op.rarity + 1} stars`}
+                >
+                  {op.rarity + 1} ★
+                </span>
                 <span className="operator-class">
                   {professionToClass(op.profession)}
                 </span>
@@ -88,15 +93,36 @@ const styles = (theme: Theme) => css`
 
         .operator-name {
           grid-column: span 2;
+          font-size: ${theme.typography.body2.fontSize};
+          line-height: ${theme.typography.body2.lineHeight};
+          font-weight: ${theme.typography.body2Bold.fontWeight};
         }
 
         .rarity {
           grid-column: 2;
+          font-size: ${theme.typography.body3.fontSize};
+
+          &.rarity-6-stars {
+            color: ${theme.palette.orange};
+          }
+
+          &.rarity-5-stars {
+            color: ${theme.palette.yellow};
+          }
+
+          &.rarity-4-stars {
+            color: ${theme.palette.softBlue};
+          }
+
+          &.rarity-3-stars {
+            color: ${theme.palette.blue};
+          }
         }
 
         .operator-class {
           grid-row: 2;
           text-transform: uppercase;
+          font-size: ${theme.typography.body3.fontSize};
         }
       }
 

@@ -404,6 +404,7 @@
     ],
     "cnName": "医疗探机",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Silence"
   },
   {
@@ -816,6 +817,7 @@
     "skillData": [],
     "cnName": "触手",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Deepcolor"
   },
   {
@@ -1238,6 +1240,7 @@
     "skillData": [],
     "cnName": "幻影",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Nightingale"
   },
   {
@@ -2725,6 +2728,7 @@
     ],
     "cnName": "机械水獭",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Mayer"
   },
   {
@@ -3918,6 +3922,7 @@
     ],
     "cnName": "龙腾.F",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Magallan"
   },
   {
@@ -5014,7 +5019,8 @@
       }
     ],
     "cnName": "龙腾.L",
-    "subProfessionId": "notchar1"
+    "subProfessionId": "notchar1",
+    "isCnOnly": false
   },
   {
     "name": "Soaring Dragon A",
@@ -6206,7 +6212,8 @@
       }
     ],
     "cnName": "龙腾.A",
-    "subProfessionId": "notchar1"
+    "subProfessionId": "notchar1",
+    "isCnOnly": false
   },
   {
     "name": "Cursed Doll",
@@ -6933,6 +6940,7 @@
     ],
     "cnName": "诅咒娃娃",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Shamare"
   },
   {
@@ -8839,6 +8847,7 @@
     ],
     "cnName": "镜中虚影",
     "subProfessionId": "executor",
+    "isCnOnly": false,
     "operatorName": "Phantom"
   },
   {
@@ -9528,6 +9537,7 @@
     ],
     "cnName": "此面向敌",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "W"
   },
   {
@@ -10827,6 +10837,7 @@
     ],
     "cnName": "工程蓄水炮",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Weedy"
   },
   {
@@ -12605,6 +12616,7 @@
     ],
     "cnName": "移动摄影器",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Scene"
   },
   {
@@ -13720,6 +13732,7 @@
     ],
     "cnName": "沙之碑",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Beeswax"
   },
   {
@@ -14624,6 +14637,7 @@
     ],
     "cnName": "迷迭香的战术装备",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Rosmontis"
   },
   {
@@ -15612,6 +15626,7 @@
     ],
     "cnName": "\"夹子\"",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Robin"
   },
   {
@@ -15994,6 +16009,7 @@
     "skillData": [],
     "cnName": "磐蟹护卫队",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Beanstalk"
   },
   {
@@ -16563,6 +16579,7 @@
     "skillData": [],
     "cnName": "\"小自在\"",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Dusk"
   },
   {
@@ -17551,6 +17568,7 @@
     ],
     "cnName": "迎宾踏垫",
     "subProfessionId": "notchar1",
+    "isCnOnly": false,
     "operatorName": "Frost"
   },
   {
@@ -18136,6 +18154,7 @@
     "id": "token_10002_kalts_mon3tr",
     "skillData": [],
     "cnName": "Mon3tr",
+    "isCnOnly": true,
     "operatorName": "凯尔希"
   },
   {
@@ -19855,6 +19874,7 @@
       }
     ],
     "cnName": "斯卡蒂的海嗣",
+    "isCnOnly": true,
     "operatorName": "浊心斯卡蒂"
   },
   {
@@ -20351,6 +20371,7 @@
       }
     ],
     "cnName": "全自动造型仪",
+    "isCnOnly": true,
     "operatorName": "罗比菈塔"
   }
 ]

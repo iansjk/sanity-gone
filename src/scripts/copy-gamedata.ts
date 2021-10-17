@@ -149,6 +149,7 @@ const fixJetSkillDescriptionTags = (description: string): string => {
         cnName,
         subProfessionId,
         name: isCnOnly ? character.appellation : character.name,
+        isCnOnly,
       };
     });
   const denormalizedOperators = denormalizedCharacters.filter(

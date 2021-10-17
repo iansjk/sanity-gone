@@ -1,7 +1,11 @@
 import { css, Theme } from "@emotion/react";
-import { rgba } from "polished";
 import useIsMobile from "../hooks/useIsMobile";
-import { professionToClass, slugify, toTitleCase } from "../utils/globals";
+import {
+  professionToClass,
+  slugify,
+  subProfessionToSubclass,
+  toTitleCase,
+} from "../utils/globals";
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
 import { CharacterObject } from "../utils/types";
 import OperatorPortrait from "./OperatorPortrait";
@@ -21,58 +25,6 @@ const getAttackType = (
     : "Physical";
 };
 
-const subProfessionToSubclass: Record<string, string> = {
-  pioneer: "Pioneer",
-  charger: "Spearhead",
-  tactician: "Tactician",
-  bearer: "Flagbearer",
-  centurion: "Assault",
-  fighter: "Brawler",
-  artsfghter: "Spellblade",
-  instructor: "Instructor",
-  lord: "Warlord",
-  sword: "Swordmaster",
-  musha: "Musha",
-  fearless: "Fearless",
-  reaper: "Reaper",
-  librator: "Liberator",
-  protector: "Ironguard",
-  guardian: "Guardian",
-  unyield: "Unyielding",
-  artsprotector: "Arts Ironguard",
-  duelist: "Champion",
-  fastshot: "Rapid Fire",
-  closerange: "Heavy",
-  aoesniper: "Cannoneer",
-  longrange: "Marksman",
-  reaperrange: "Spreadshot",
-  siegesniper: "Siege",
-  bombarder: "Bombardier",
-  corecaster: "Core",
-  splashcaster: "Dispersal",
-  funnel: "Magitech",
-  phalanx: "Formation",
-  mystic: "Mystic",
-  chain: "Chain",
-  blastcaster: "Barrage",
-  physician: "Healer",
-  ringhealer: "Mass Healer",
-  healer: "Mender",
-  slower: "Inhibitor",
-  underminer: "Weakener",
-  bard: "Bard",
-  blessing: "Protector",
-  summoner: "Summoner",
-  executor: "Executioner",
-  pusher: "Pusher",
-  stalker: "Stalker",
-  hookmaster: "Grappler",
-  geek: "Geek",
-  merchant: "Merchant",
-  traper: "Trapper",
-  dollkeeper: "Puppeteer",
-};
-
 const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   const { operatorObject, isLimited } = props;
   const {
@@ -84,7 +36,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     position: binaryPosition,
   } = operatorObject;
   const operatorClass = professionToClass(profession);
-  const subclass = subProfessionToSubclass[subProfessionId];
+  const subclass = subProfessionToSubclass(subProfessionId);
   const rarity = rawRarity + 1; // 0-indexed;
   const position = description
     .toLowerCase()

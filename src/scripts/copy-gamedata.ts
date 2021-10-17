@@ -57,7 +57,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     ...cnOnlyCharacters,
   ]
     .filter(([_, character]) => character.profession !== "TRAP")
-    .map(([id, character]) => {
+    .map(([id, character], i) => {
       const isCnOnly = !enCharacterIds.has(id);
 
       const phases = character.phases.map((phase) => ({
@@ -158,6 +158,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
           isCnOnly ? character.appellation : character.name
         ),
         isCnOnly,
+        fileIndex: i,
       };
     });
   const denormalizedOperators = denormalizedCharacters.filter(

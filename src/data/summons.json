@@ -405,6 +405,7 @@
     "cnName": "医疗探机",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 188,
     "operatorName": "Silence"
   },
   {
@@ -818,6 +819,7 @@
     "cnName": "触手",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 189,
     "operatorName": "Deepcolor"
   },
   {
@@ -1241,6 +1243,7 @@
     "cnName": "幻影",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 190,
     "operatorName": "Nightingale"
   },
   {
@@ -2729,6 +2732,7 @@
     "cnName": "机械水獭",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 191,
     "operatorName": "Mayer"
   },
   {
@@ -3923,6 +3927,7 @@
     "cnName": "龙腾.F",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 192,
     "operatorName": "Magallan"
   },
   {
@@ -5020,7 +5025,8 @@
     ],
     "cnName": "龙腾.L",
     "subProfessionId": "notchar1",
-    "isCnOnly": false
+    "isCnOnly": false,
+    "fileIndex": 193
   },
   {
     "name": "Soaring Dragon A",
@@ -6213,7 +6219,8 @@
     ],
     "cnName": "龙腾.A",
     "subProfessionId": "notchar1",
-    "isCnOnly": false
+    "isCnOnly": false,
+    "fileIndex": 194
   },
   {
     "name": "Cursed Doll",
@@ -6941,6 +6948,7 @@
     "cnName": "诅咒娃娃",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 195,
     "operatorName": "Shamare"
   },
   {
@@ -8848,6 +8856,7 @@
     "cnName": "镜中虚影",
     "subProfessionId": "executor",
     "isCnOnly": false,
+    "fileIndex": 196,
     "operatorName": "Phantom"
   },
   {
@@ -9538,6 +9547,7 @@
     "cnName": "此面向敌",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 197,
     "operatorName": "W"
   },
   {
@@ -10838,6 +10848,7 @@
     "cnName": "工程蓄水炮",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 198,
     "operatorName": "Weedy"
   },
   {
@@ -12617,6 +12628,7 @@
     "cnName": "移动摄影器",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 199,
     "operatorName": "Scene"
   },
   {
@@ -13733,6 +13745,7 @@
     "cnName": "沙之碑",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 200,
     "operatorName": "Beeswax"
   },
   {
@@ -14638,6 +14651,7 @@
     "cnName": "迷迭香的战术装备",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 201,
     "operatorName": "Rosmontis"
   },
   {
@@ -15627,6 +15641,7 @@
     "cnName": "\"夹子\"",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 202,
     "operatorName": "Robin"
   },
   {
@@ -16010,6 +16025,7 @@
     "cnName": "磐蟹护卫队",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 203,
     "operatorName": "Beanstalk"
   },
   {
@@ -16580,6 +16596,7 @@
     "cnName": "\"小自在\"",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 204,
     "operatorName": "Dusk"
   },
   {
@@ -17569,6 +17586,7 @@
     "cnName": "迎宾踏垫",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
+    "fileIndex": 205,
     "operatorName": "Frost"
   },
   {
@@ -18155,6 +18173,7 @@
     "skillData": [],
     "cnName": "Mon3tr",
     "isCnOnly": true,
+    "fileIndex": 232,
     "operatorName": "凯尔希"
   },
   {
@@ -19875,6 +19894,7 @@
     ],
     "cnName": "斯卡蒂的海嗣",
     "isCnOnly": true,
+    "fileIndex": 233,
     "operatorName": "浊心斯卡蒂"
   },
   {
@@ -20372,6 +20392,7 @@
     ],
     "cnName": "全自动造型仪",
     "isCnOnly": true,
+    "fileIndex": 234,
     "operatorName": "罗比菈塔"
   }
 ]

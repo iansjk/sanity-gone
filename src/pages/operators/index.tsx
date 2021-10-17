@@ -1,5 +1,6 @@
 import { graphql } from "gatsby";
 import { ClassNames, css, Theme } from "@emotion/react";
+import { DateTime } from "luxon";
 import Layout from "../../Layout";
 import { operatorPortrait, operatorSubclassIcon } from "../../utils/images";
 import {
@@ -26,6 +27,7 @@ interface Props {
         operator: {
           name: string;
         };
+        updatedAt: string;
       }[];
     };
   };
@@ -37,10 +39,21 @@ const Operators: React.VFC<Props> = (props) => {
   const operatorsWithGuides = new Set(
     guideNodes.map((node) => node.operator.name)
   );
+  const lastUpdatedAt = guideNodes
+    .map((node) => DateTime.fromISO(node.updatedAt))
+    .reduce((prev, curr) => (curr > prev ? curr : prev));
 
   return (
     <Layout pageTitle="Operator List">
       <main css={styles}>
+        <span className="last-updated">
+          Last Updated:{" "}
+          <span className="date">
+            {lastUpdatedAt
+              .setLocale("en-GB")
+              .toLocaleString(DateTime.DATE_FULL)}
+          </span>
+        </span>
         <ul className="operator-list">
           {operators.map((op) => {
             const operatorClass = professionToClass(op.profession);
@@ -103,10 +116,17 @@ const Operators: React.VFC<Props> = (props) => {
 export default Operators;
 
 const styles = (theme: Theme) => css`
+  margin-top: -${theme.spacing(3)};
   padding: ${theme.spacing(0, 3)};
 
+  .last-updated {
+    .date {
+      font-weight: ${theme.typography.bodyBold.fontWeight};
+    }
+  }
+
   ul.operator-list {
-    margin: 0;
+    margin: ${theme.spacing(3, 0, 0)};
     padding: 0;
     list-style: none;
     display: flex;
@@ -229,6 +249,7 @@ export const query = graphql`
         operator {
           name
         }
+        updatedAt
       }
     }
   }

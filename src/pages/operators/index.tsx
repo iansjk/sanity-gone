@@ -234,7 +234,10 @@ const styles = (theme: Theme) => css`
 
 export const query = graphql`
   query {
-    allOperatorsJson(filter: { isNotObtainable: { eq: false } }) {
+    allOperatorsJson(
+      filter: { isNotObtainable: { eq: false } }
+      sort: { order: [DESC, DESC], fields: [rarity, fileIndex] }
+    ) {
       nodes {
         id
         name

@@ -119,6 +119,28 @@ const typography = {
 
 export const breakpoints = {
   mobile: 700,
+  maxWidth: 1270,
+};
+
+const combineNumberStringWithCalc = (
+  first: number,
+  second: string | number
+): string => {
+  return `calc(${first}px + ${
+    typeof second === "number" ? `${second}px` : second
+  })`;
+};
+
+const generateMediaQuery = (
+  type: "max-width" | "min-width",
+  breakpoint: keyof typeof breakpoints,
+  nudge?: number | string
+): string => {
+  const queryArg =
+    nudge != null
+      ? combineNumberStringWithCalc(breakpoints[breakpoint], nudge)
+      : `${breakpoints[breakpoint]}px`;
+  return `@media (${type}: ${queryArg})`;
 };
 
 export const defaultTheme = {
@@ -126,10 +148,14 @@ export const defaultTheme = {
   typography,
   spacing,
   breakpoints: {
-    down: (breakpoint: keyof typeof breakpoints): string =>
-      `@media (max-width: ${breakpoints[breakpoint]}px)`,
-    up: (breakpoint: keyof typeof breakpoints): string =>
-      `@media (min-width: ${breakpoints[breakpoint]}px)`,
+    down: (
+      breakpoint: keyof typeof breakpoints,
+      nudge?: number | string
+    ): string => generateMediaQuery("max-width", breakpoint, nudge),
+    up: (
+      breakpoint: keyof typeof breakpoints,
+      nudge?: number | string
+    ): string => generateMediaQuery("min-width", breakpoint, nudge),
   },
-  containerWidth: "1270px",
+  containerWidth: `${breakpoints.maxWidth}px`,
 };

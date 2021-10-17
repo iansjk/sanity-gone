@@ -325,11 +325,14 @@ const styles = (accentColor: string) => (theme: Theme) =>
         margin-top: ${theme.spacing(1)};
         text-align: start;
         line-height: ${theme.typography.navigationLink.lineHeight};
-        border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
         border: 0;
         background: none;
         color: ${theme.palette.gray};
         cursor: pointer;
+
+        ${theme.breakpoints.up("maxWidth", theme.spacing(2))} {
+          border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+        }
 
         &:hover {
           background-color: ${transparentize(0.9, theme.palette.gray)};
@@ -400,7 +403,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       .external-links {
         a {
           margin-right: ${theme.spacing(1)};
-          
+
           ${theme.breakpoints.down("mobile")} {
             display: inline-block;
             padding: ${theme.spacing(1, 2)};
@@ -410,7 +413,10 @@ const styles = (accentColor: string) => (theme: Theme) =>
             font-weight: ${theme.typography.navigationLinkBold.fontWeight};
             border: 1px solid ${accentColor};
             border-radius: ${theme.spacing(0.5)};
-            filter: drop-shadow(${theme.spacing(0.25)} ${theme.spacing(0.5)} ${theme.spacing(1)} rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(
+              ${theme.spacing(0.25)} ${theme.spacing(0.5)} ${theme.spacing(1)}
+                rgba(0, 0, 0, 0.15)
+            );
           }
         }
       }
@@ -445,14 +451,15 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
           .card-content {
             box-sizing: border-box;
-            height: calc(100% - ${theme.typography.cardHeading.fontSize} * ${
-    theme.typography.cardHeading.lineHeight
-    } - ${theme.spacing(4)});
+            height: calc(
+              100% - ${theme.typography.cardHeading.fontSize} *
+                ${theme.typography.cardHeading.lineHeight} - ${theme.spacing(4)}
+            );
 
             ${theme.breakpoints.down("mobile")} {
               height: 100%;
             }
-  
+
             .tabs-wrapper {
               height: 100%;
             }

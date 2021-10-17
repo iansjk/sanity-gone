@@ -179,7 +179,7 @@ const styles =
       }
 
       header {
-        padding: ${theme.spacing(3, 0, 0)};
+        padding: ${theme.spacing(3, 3, 0)};
 
         .top-line {
           display: flex;

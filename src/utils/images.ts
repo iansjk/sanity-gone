@@ -10,9 +10,15 @@ export const operatorImage = (name: string, elite?: number): string =>
       : ""
   }`;
 
-export const operatorImage = (name: string, elite?: number): string => `${CLOUDINARY_BASE_URL}/operators/${slugify(name)}${typeof elite !== "undefined" && (elite > 1 || name === 'Amiya') ? elite : ''}`;
+export const summonImage = (id: string): string =>
+  `${CLOUDINARY_BASE_URL}/summons/${id}`;
 
-export const summonImage = (id: string): string => `${CLOUDINARY_BASE_URL}/summons/${id}`;
+export const operatorPortrait = (name: string, elite?: number): string =>
+  `${CLOUDINARY_BASE_URL}/portraits/${slugify(name)}${
+    typeof elite !== "undefined" && (elite > 1 || name === "Amiya")
+      ? `-elite-${elite}`
+      : ""
+  }`;
 
 export const operatorClassIcon = (operatorClass: string): string =>
   `${CLOUDINARY_BASE_URL}/classes/${operatorClass}`;

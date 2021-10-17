@@ -51,6 +51,7 @@ const Operators: React.VFC<Props> = (props) => {
                 </div>
                 <span className="operator-subclass">
                   <img
+                    className="operator-subclass-icon"
                     src={operatorSubclassIcon(op.subProfessionId)}
                     alt={subclass}
                   />
@@ -138,6 +139,17 @@ const styles = (theme: Theme) => css`
 
       .operator-subclass {
         grid-row: 1;
+
+        .operator-subclass-icon {
+          width: 40px;
+          height: 40px;
+          margin: ${theme.spacing(1, 0, 0, 1)};
+          line-height: 1;
+          object-fit: contain;
+          filter: drop-shadow(
+            0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)
+          );
+        }
       }
     }
   }

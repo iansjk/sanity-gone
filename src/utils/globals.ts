@@ -1,8 +1,12 @@
 import defaultSlugify from "slugify";
 import { CharacterObject, CharacterStatValues } from "./types";
 
-export const slugify = (text: string): string =>
-  defaultSlugify(text, { lower: true, replacement: "-", remove: /[-/]/g });
+export function slugify(toSlug: string): string {
+  return defaultSlugify(toSlug.replace(/[().'-]/g, ""), {
+    lower: true,
+    replacement: "-",
+  });
+}
 
 export function toTitleCase(string: string): string {
   return [...string.toLowerCase()]

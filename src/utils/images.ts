@@ -14,10 +14,14 @@ export const operatorImage = (name: string, elite?: number): string => `${CLOUDI
 
 export const summonImage = (id: string): string => `${CLOUDINARY_BASE_URL}/summons/${id}`;
 
-export const operatorClassIcon = (operatorClass: string): string => `${CLOUDINARY_BASE_URL}/classes/${operatorClass}`;
+export const operatorClassIcon = (operatorClass: string): string =>
+  `${CLOUDINARY_BASE_URL}/classes/${operatorClass}`;
 
-export const operatorSubclassIcon = (subProfessionId: string): string => `${CLOUDINARY_BASE_URL}/subclasses/${subProfessionId}`;
+export const operatorSubclassIcon = (subProfessionId: string): string =>
+  `${CLOUDINARY_BASE_URL}/subclasses/${subProfessionId}`;
 
-export const skillIcon = (iconId: string | null, skillId: string): string => `${CLOUDINARY_BASE_URL}/skills/${iconId ?? skillId}`;
+export const skillIcon = (iconId: string | null, skillId: string): string =>
+  `${CLOUDINARY_BASE_URL}/skills/${iconId ?? skillId}`;
 
-export const moduleImage = (moduleId: string): string => `${CLOUDINARY_BASE_URL}/equip/${moduleId}`;
+export const moduleImage = (moduleId: string): string =>
+  `${CLOUDINARY_BASE_URL}/equip/${moduleId}`;

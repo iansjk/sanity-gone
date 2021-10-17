@@ -103,6 +103,8 @@ const Operators: React.VFC<Props> = (props) => {
 export default Operators;
 
 const styles = (theme: Theme) => css`
+  padding: ${theme.spacing(0, 3)};
+
   ul.operator-list {
     margin: 0;
     padding: 0;

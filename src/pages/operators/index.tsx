@@ -158,10 +158,6 @@ const styles = (theme: Theme) => css`
         ),
         linear-gradient(to bottom, transparent 42%, #000 100%), var(--bg-image);
 
-      /* &:hover {
-        border-bottom: ${theme.spacing(0.5)} solid ${theme.palette.gray};
-      } */
-
       &.no-guide {
         opacity: 0.5;
         cursor: not-allowed;

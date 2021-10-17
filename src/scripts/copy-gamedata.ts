@@ -40,6 +40,11 @@ const fixJetSkillDescriptionTags = (description: string): string => {
   return newDescription;
 };
 
+const NAME_OVERRIDES: Record<string, string> = {
+  "THRM-EX": "Thermal-EX",
+};
+const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
+
 (() => {
   const enCharacterIds = new Set(Object.keys(enCharacterTable));
   const cnOnlyCharacters = Object.entries(cnCharacterTable).filter(
@@ -148,7 +153,9 @@ const fixJetSkillDescriptionTags = (description: string): string => {
         skillData,
         cnName,
         subProfessionId,
-        name: isCnOnly ? character.appellation : character.name,
+        name: useNameOverride(
+          isCnOnly ? character.appellation : character.name
+        ),
         isCnOnly,
       };
     });

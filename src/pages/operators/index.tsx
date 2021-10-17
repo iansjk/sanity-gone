@@ -1,11 +1,13 @@
 import { graphql } from "gatsby";
-import { css, Theme } from "@emotion/react";
+import { ClassNames, css, Theme } from "@emotion/react";
 import Layout from "../../Layout";
 import { operatorPortrait, operatorSubclassIcon } from "../../utils/images";
 import {
   professionToClass,
+  slugify,
   subProfessionToSubclass,
 } from "../../utils/globals";
+import { Fragment } from "react";
 
 interface Props {
   data: {
@@ -19,11 +21,22 @@ interface Props {
         rarity: number; // 0-indexed
       }[];
     };
+    allContentfulOperatorAnalysis: {
+      nodes: {
+        operator: {
+          name: string;
+        };
+      }[];
+    };
   };
 }
 
 const Operators: React.VFC<Props> = (props) => {
   const { nodes: operators } = props.data.allOperatorsJson;
+  const { nodes: guideNodes } = props.data.allContentfulOperatorAnalysis;
+  const operatorsWithGuides = new Set(
+    guideNodes.map((node) => node.operator.name)
+  );
 
   return (
     <Layout pageTitle="Operator List">
@@ -32,31 +45,54 @@ const Operators: React.VFC<Props> = (props) => {
           {operators.map((op) => {
             const operatorClass = professionToClass(op.profession);
             const subclass = subProfessionToSubclass(op.subProfessionId);
+            const hasGuide = operatorsWithGuides.has(op.name);
             return (
-              <li
-                key={op.id}
-                className="operator"
-                //@ts-expect-error css variable
-                style={{ "--bg-image": `url("${operatorPortrait(op.name)}")` }}
-              >
-                <div className="operator-info">
-                  <span className="operator-name">{op.name}</span>
-                  <span
-                    className={`rarity rarity-${op.rarity + 1}-stars`}
-                    aria-label={`${op.rarity + 1} stars`}
-                  >
-                    {op.rarity + 1} ★
-                  </span>
-                  <span className="operator-class">{operatorClass}</span>
-                </div>
-                <span className="operator-subclass">
-                  <img
-                    className="operator-subclass-icon"
-                    src={operatorSubclassIcon(op.subProfessionId)}
-                    alt={subclass}
-                  />
-                </span>
-              </li>
+              <ClassNames key={op.id}>
+                {({ cx }) => {
+                  const inner = (
+                    <Fragment>
+                      <div className="operator-info">
+                        <span className="operator-name">{op.name}</span>
+                        <span
+                          className={cx(
+                            "rarity",
+                            `rarity-${op.rarity + 1}-stars`
+                          )}
+                          aria-label={`${op.rarity + 1} stars`}
+                        >
+                          {op.rarity + 1} ★
+                        </span>
+                        <span className="operator-class">{operatorClass}</span>
+                      </div>
+                      <span className="operator-subclass">
+                        <img
+                          className="operator-subclass-icon"
+                          src={operatorSubclassIcon(op.subProfessionId)}
+                          alt={subclass}
+                        />
+                      </span>
+                    </Fragment>
+                  );
+                  return (
+                    <li
+                      className={cx(
+                        "operator",
+                        hasGuide ? "has-guide" : "no-guide"
+                      )}
+                      style={{
+                        //@ts-expect-error css variable
+                        "--bg-image": `url("${operatorPortrait(op.name)}")`,
+                      }}
+                    >
+                      {hasGuide ? (
+                        <a href={`/operators/${slugify(op.name)}`}>{inner}</a>
+                      ) : (
+                        inner
+                      )}
+                    </li>
+                  );
+                }}
+              </ClassNames>
             );
           })}
         </ul>
@@ -93,6 +129,10 @@ const styles = (theme: Theme) => css`
       /* &:hover {
         border-bottom: ${theme.spacing(0.5)} solid ${theme.palette.gray};
       } */
+
+      &.no-guide {
+        opacity: 0.5;
+      }
 
       .operator-info {
         grid-row: 3;
@@ -165,6 +205,13 @@ export const query = graphql`
         profession
         subProfessionId
         rarity
+      }
+    }
+    allContentfulOperatorAnalysis {
+      nodes {
+        operator {
+          name
+        }
       }
     }
   }

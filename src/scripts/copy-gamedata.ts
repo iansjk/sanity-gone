@@ -85,7 +85,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
                 baseCandidateObject.name = talentTL.name;
                 baseCandidateObject.description = talentTL.desc;
               } catch {
-                throw new Error(
+                console.warn(
                   `No translation found for: character ${id}, talent index ${talentIndex}, phase index ${phaseIndex}`
                 );
               }
@@ -114,19 +114,20 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
                   : null,
               };
               if (isCnOnly && character.profession !== "TOKEN") {
-                const skillTL =
-                  jetSkillTranslations[
-                    skillId as keyof typeof jetSkillTranslations
-                  ];
-                if (!skillTL) {
-                  throw new Error(
+                try {
+                  const skillTL =
+                    jetSkillTranslations[
+                      skillId as keyof typeof jetSkillTranslations
+                    ];
+                  baseSkillLevelObject.name = skillTL.name;
+                  baseSkillLevelObject.description = fixJetSkillDescriptionTags(
+                    skillTL.desc[levelIndex]
+                  );
+                } catch {
+                  console.warn(
                     `No translation found for: skill ${skillId}, level index ${levelIndex}`
                   );
                 }
-                baseSkillLevelObject.name = skillTL.name;
-                baseSkillLevelObject.description = fixJetSkillDescriptionTags(
-                  skillTL.desc[levelIndex]
-                );
               }
               return baseSkillLevelObject;
             }

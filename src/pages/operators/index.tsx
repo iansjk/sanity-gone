@@ -9,6 +9,7 @@ import {
   subProfessionToSubclass,
 } from "../../utils/globals";
 import { Fragment } from "react";
+import NavigateRightArrow from "../../components/icons/NavigateRightArrow";
 
 interface Props {
   data: {
@@ -84,6 +85,16 @@ const Operators: React.VFC<Props> = (props) => {
                           alt={subclass}
                         />
                       </span>
+                      <div className="on-hover">
+                        {hasGuide ? (
+                          <Fragment>
+                            <span>Read Guide</span>
+                            <NavigateRightArrow className="go-to-guide-icon" />
+                          </Fragment>
+                        ) : (
+                          <span>Guide Unavailable</span>
+                        )}
+                      </div>
                     </Fragment>
                   );
                   return (
@@ -153,6 +164,7 @@ const styles = (theme: Theme) => css`
 
       &.no-guide {
         opacity: 0.5;
+        cursor: not-allowed;
       }
 
       &.no-guide,
@@ -165,6 +177,33 @@ const styles = (theme: Theme) => css`
         width: 100%;
         height: 100%;
         color: inherit;
+      }
+
+      .on-hover {
+        display: none;
+        font-size: ${theme.typography.body3.fontSize};
+        line-height: ${theme.typography.body3.lineHeight};
+      }
+
+      &:hover {
+        .operator-info {
+          display: none;
+        }
+
+        .on-hover {
+          margin-top: -4px;
+          padding: ${theme.spacing(2)};
+          display: grid;
+          grid-template-columns: max-content 1fr max-content;
+          align-items: flex-end;
+          border-bottom: ${theme.spacing(0.5)} solid ${theme.palette.gray};
+          border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+
+          .go-to-guide-icon {
+            grid-column: 3;
+            height: ${theme.typography.body3.lineHeight};
+          }
+        }
       }
 
       .operator-info {

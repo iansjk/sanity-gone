@@ -38,7 +38,9 @@ export const replaceSelfClosingHtmlTags = (htmlString: string): string =>
     (_, tagName: string) => `<${tagName}></${tagName}>`
   );
 
-export const highestCharacterStats = (characterObject: CharacterObject): CharacterStatValues => {
+export const highestCharacterStats = (
+  characterObject: CharacterObject
+): CharacterStatValues => {
   const { phases } = characterObject;
   const activePhase = phases[phases.length - 1];
   const { range: rangeObject } = activePhase;
@@ -63,6 +65,6 @@ export const highestCharacterStats = (characterObject: CharacterObject): Charact
     blockCount,
     redeployTimeInSeconds,
     attacksPerSecond,
-    rangeObject
-  }
-}
+    rangeObject,
+  };
+};

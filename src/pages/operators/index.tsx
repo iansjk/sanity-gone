@@ -159,9 +159,13 @@ const styles = (theme: Theme) => css`
           font-weight: ${theme.typography.body2Bold.fontWeight};
         }
 
+        .rarity, .operator-class {
+          font-size: ${theme.typography.label2.size};
+          line-height: ${theme.typography.label2.lineHeight};
+        }
+
         .rarity {
           grid-column: 2;
-          font-size: ${theme.typography.body3.fontSize};
 
           &.rarity-6-stars {
             color: ${theme.palette.orange};
@@ -183,7 +187,6 @@ const styles = (theme: Theme) => css`
         .operator-class {
           grid-row: 2;
           text-transform: uppercase;
-          font-size: ${theme.typography.body3.fontSize};
         }
       }
 

@@ -15,8 +15,8 @@ import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 
 interface LayoutProps {
   pageTitle: string;
-  previousLocation: string;
-  previousLocationLink: string;
+  previousLocation?: string;
+  previousLocationLink?: string;
   accentColor?: string;
   bannerImageUrl?: string;
 }
@@ -71,15 +71,17 @@ const Layout: React.FC<LayoutProps> = (props) => {
               </div>
               <div className="heading-and-breadcrumb">
                 <h1>{pageTitle}</h1>
-                <div className="breadcrumb">
-                  <a
-                    href={previousLocationLink}
-                    aria-label={`Back to ${previousLocation}`}
-                  >
-                    <BreadcrumbBackIcon />
-                    {previousLocation}
-                  </a>
-                </div>
+                {previousLocation && previousLocationLink && (
+                  <div className="breadcrumb">
+                    <a
+                      href={previousLocationLink}
+                      aria-label={`Back to ${previousLocation}`}
+                    >
+                      <BreadcrumbBackIcon />
+                      {previousLocation}
+                    </a>
+                  </div>
+                )}
               </div>
             </header>
             <div className="page-content">{children}</div>

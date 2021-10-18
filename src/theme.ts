@@ -125,7 +125,7 @@ const typography = {
 
 export const breakpoints = {
   mobile: 700,
-  maxWidth: 1270,
+  maxWidth: 1270 + spacingUnit * 3 * 2,
 };
 
 const combineNumberStringWithCalc = (

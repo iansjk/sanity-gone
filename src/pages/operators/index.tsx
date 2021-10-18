@@ -127,7 +127,6 @@ const Operators: React.VFC<Props> = (props) => {
 export default Operators;
 
 const styles = (theme: Theme) => css`
-  margin-top: -${theme.spacing(3)};
   padding: ${theme.spacing(0, 3)};
 
   .last-updated {

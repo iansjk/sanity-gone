@@ -254,10 +254,6 @@ const styles =
         }
       }
 
-      .page-content {
-        margin-top: ${theme.spacing(3)};
-      }
-
       footer {
         margin-top: ${theme.spacing(8)};
         background-color: ${theme.palette.black};

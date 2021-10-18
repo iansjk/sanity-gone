@@ -12,6 +12,7 @@ import SanityGoneLogo from "./components/SanityGoneLogo";
 import BreadcrumbBackIcon from "./components/icons/BreadcrumbBackIcon";
 import useIsMobile from "./hooks/useIsMobile";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
+import { rgba } from "polished";
 
 interface LayoutProps {
   pageTitle: string;
@@ -145,7 +146,13 @@ const styles =
       ${bannerImageUrl &&
       css`
         body {
-          background-image: url("${bannerImageUrl}");
+          background-image: linear-gradient(
+              to bottom,
+              transparent,
+              ${rgba(theme.palette.dark, 0.9)} 518px,
+              ${theme.palette.dark} 570px
+            ),
+            url("${bannerImageUrl}");
           background-repeat: no-repeat;
           background-position-x: center;
         }

@@ -258,12 +258,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           </div>
           <hr />
           <div className="metadata">
-            <div className="authors-section">
+            {/* <div className="authors-section">
               <span className="section-label">Written by</span>
               <span className="authors">
                 {contentful.author.map((author) => author.name).join(",\n")}
               </span>
-            </div>
+            </div> */}
 
             <div className="last-updated-section">
               <span className="section-label">Last updated</span>

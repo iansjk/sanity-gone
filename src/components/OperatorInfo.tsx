@@ -17,8 +17,10 @@ export interface OperatorInfoProps {
 
 const getAttackType = (
   operatorClass: string,
+  subProfessionId: string,
   description: string
-): "Physical" | "Arts" | "Healing" => {
+): "Physical" | "Arts" | "Healing" | "None" => {
+  if (subProfessionId === "bard") return "None";
   if (operatorClass === "Medic") return "Healing";
   return description.toLowerCase().includes("arts damage")
     ? "Arts"
@@ -43,7 +45,11 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     .includes("can be deployed on ranged grids")
     ? "Melee or Ranged"
     : toTitleCase(binaryPosition);
-  const attackType = getAttackType(professionToClass(profession), description);
+  const attackType = getAttackType(
+    professionToClass(profession),
+    subProfessionId,
+    description
+  );
   const isMobile = useIsMobile();
 
   return (
@@ -78,10 +84,10 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
       </div>
       <dl className="attack-type-and-position">
         <div className="attack-type">
-          <dt>Attack Type</dt>
+          <dt>Regular Attack</dt>
           <dd className={slugify(attackType)}>
             {attackType}
-            {!isMobile && " Damage"}
+            {!isMobile && attackType !== "None" && " Damage"}
           </dd>
         </div>
 
@@ -209,7 +215,7 @@ const styles = (theme: Theme) => css`
         color: ${theme.palette.lime};
       }
 
-      .true {
+      .none {
         color: ${theme.palette.gray};
       }
     }

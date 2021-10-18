@@ -18,7 +18,7 @@ interface LayoutProps {
   pageTitle: string;
   previousLocation?: string;
   previousLocationLink?: string;
-  accentColor?: string;
+  blendPoint?: number;
   bannerImageUrl?: string;
 }
 
@@ -28,7 +28,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
     previousLocation,
     previousLocationLink,
     bannerImageUrl,
-    accentColor,
+    blendPoint,
     children,
     ...rest
   } = props;
@@ -54,7 +54,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
       </Helmet>
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />
-        <Global styles={styles({ bannerImageUrl })} />
+        <Global styles={styles({ bannerImageUrl, blendPoint })} />
         <div className="site-wrapper">
           <div className="header-main-wrapper">
             <header>
@@ -129,8 +129,10 @@ export default Layout;
 const styles =
   ({
     bannerImageUrl,
+    blendPoint = 576,
   }: {
     bannerImageUrl?: string;
+    blendPoint?: number;
   }) =>
   (theme: Theme) =>
     css`
@@ -139,16 +141,16 @@ const styles =
         body {
           background-image: linear-gradient(
               to bottom,
-              transparent,
-              ${rgba(theme.palette.dark, 0.9)} 518px,
-              ${theme.palette.dark} 570px
+              transparent ${0.3576 * blendPoint}px,
+              ${rgba(theme.palette.dark, 0.9)} ${0.8361 * blendPoint}px,
+              ${theme.palette.dark} ${blendPoint}px
             ),
             url("${bannerImageUrl}"),
             linear-gradient(
               to bottom,
               ${theme.palette.black},
-              ${theme.palette.black} 570px,
-              ${theme.palette.dark} 570px
+              ${theme.palette.black} ${blendPoint}px,
+              ${theme.palette.dark} ${blendPoint}px
             );
           background-repeat: no-repeat;
           background-position-x: center;

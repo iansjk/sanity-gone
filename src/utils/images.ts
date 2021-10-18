@@ -31,3 +31,11 @@ export const skillIcon = (iconId: string | null, skillId: string): string =>
 
 export const moduleImage = (moduleId: string): string =>
   `${CLOUDINARY_BASE_URL}/arknights/equip/${moduleId}`;
+
+export const sgMemberAvatar = (memberName: string): string =>
+  `${CLOUDINARY_BASE_URL}/sanity-gone-zero/member-avatars/${slugify(
+    memberName
+  )}`;
+
+export const sgPageBanner = (pageName: string): string =>
+  `${CLOUDINARY_BASE_URL}/sanity-gone-zero/page-banners/${pageName}`;

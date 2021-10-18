@@ -160,7 +160,7 @@ const styles = (theme: Theme) => css`
 
       &.no-guide {
         opacity: 0.5;
-        cursor: not-allowed;
+        cursor: initial;
       }
 
       &.no-guide,

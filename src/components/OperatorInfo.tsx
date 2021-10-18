@@ -116,17 +116,19 @@ const styles = (theme: Theme) => css`
     justify-content: flex-end;
 
     .name-and-class {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
       padding: ${theme.spacing(0, 0, 0, 3)};
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      grid-template-rows: repeat(2, max-content);
+      align-self: center;
 
       ${theme.breakpoints.down("mobile")} {
         padding: ${theme.spacing(0, 0, 0, 2)};
-        justify-content: flex-start;
+        align-self: flex-start;
       }
 
       .operator-name {
+        grid-column: span 2;
         font-size: ${theme.typography.operatorNameHeading.fontSize};
         font-weight: ${theme.typography.operatorNameHeading.fontWeight};
         line-height: ${theme.typography.operatorNameHeading.lineHeight};

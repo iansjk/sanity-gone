@@ -138,13 +138,14 @@ const styles = (theme: Theme) => css`
   ul.operator-list {
     margin: ${theme.spacing(3, 0, 0)};
     padding: 0;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: ${theme.spacing(3)};
+    list-style: none;
 
     ${theme.breakpoints.down("mobile")} {
       margin: ${theme.spacing(2, 0, 0)};
+      grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
       gap: ${theme.spacing(2)};
     }
 

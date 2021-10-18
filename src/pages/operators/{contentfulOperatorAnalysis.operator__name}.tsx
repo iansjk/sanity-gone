@@ -172,6 +172,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       previousLocationLink="/operators"
       accentColor={contentful.operator.accentColorInHex}
     >
+      <Global
+        styles={globalOverrideStyles(contentful.operator.accentColorInHex)}
+      />
       <Tabs component="main" css={styles(contentful.operator.accentColorInHex)}>
         <TabButtons className="tabs" isSwiper>
           {["Introduction", "Talents", "Skills", "Synergies", "Summary"].map(
@@ -280,6 +283,13 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   );
 };
 export default OperatorAnalysis;
+
+const globalOverrideStyles = (accentColor: string) => (theme: Theme) =>
+  css`
+    a {
+      color: ${accentColor};
+    }
+  `;
 
 const styles = (accentColor: string) => (theme: Theme) =>
   css`

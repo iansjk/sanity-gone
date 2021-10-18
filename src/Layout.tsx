@@ -54,7 +54,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
       </Helmet>
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />
-        <Global styles={styles({ accentColor, bannerImageUrl })} />
+        <Global styles={styles({ bannerImageUrl })} />
         <div className="site-wrapper">
           <div className="header-main-wrapper">
             <header>
@@ -128,21 +128,12 @@ export default Layout;
 
 const styles =
   ({
-    accentColor,
     bannerImageUrl,
   }: {
-    accentColor?: string;
     bannerImageUrl?: string;
   }) =>
   (theme: Theme) =>
     css`
-      ${accentColor &&
-      css`
-        a {
-          color: ${accentColor};
-        }
-      `}
-
       ${bannerImageUrl &&
       css`
         body {

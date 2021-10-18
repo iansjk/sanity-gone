@@ -152,7 +152,13 @@ const styles =
               ${rgba(theme.palette.dark, 0.9)} 518px,
               ${theme.palette.dark} 570px
             ),
-            url("${bannerImageUrl}");
+            url("${bannerImageUrl}"),
+            linear-gradient(
+              to bottom,
+              ${theme.palette.black},
+              ${theme.palette.black} 570px,
+              ${theme.palette.dark} 570px
+            );
           background-repeat: no-repeat;
           background-position-x: center;
         }

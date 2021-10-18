@@ -240,7 +240,7 @@ const styles =
               text-decoration: none;
               font-style: normal;
               line-height: ${theme.typography.navigationLink.lineHeight};
-              text-shadow: ${theme.typography.pageHeading.textShadow};
+              text-shadow: ${theme.typography.operatorPageHeading.textShadow};
 
               svg {
                 margin-right: ${theme.spacing(1)};

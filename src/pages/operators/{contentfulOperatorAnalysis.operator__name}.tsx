@@ -1,6 +1,7 @@
-import { css, Theme } from "@emotion/react";
+import { Fragment } from "react";
+import { css, Global, Theme } from "@emotion/react";
 import { graphql } from "gatsby";
-import { transparentize } from "polished";
+import { rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
 import parse, { attributesToProps } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
@@ -15,7 +16,6 @@ import TabButtons from "../../components/TabButtons";
 import TabPanels from "../../components/TabPanels";
 import TalentInfo, { TalentObject } from "../../components/TalentInfo";
 import Layout from "../../Layout";
-import Card from "../../components/Card";
 import { replaceSelfClosingHtmlTags } from "../../utils/globals";
 import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
@@ -177,10 +177,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       />
       <Tabs component="main" css={styles(contentful.operator.accentColorInHex)}>
         <TabButtons className="tabs" isSwiper>
-          {["Introduction", "Talents", "Skills", "Synergies", "Summary"].map(
-            (label) => {
-              return <button key={label}>{label}</button>;
-            }
+          {["Introduction", "Module", "Talents", "Skills", "Synergies"].map(
+            (label) => (
+              <button disabled={label === "Module"} key={label}>
+                {label}
+              </button>
+            )
           )}
         </TabButtons>
         <TabPanels className="panels">
@@ -197,6 +199,10 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 />
               ),
               className: "introduction",
+            },
+            {
+              component: <Fragment />,
+              className: "module",
             },
             {
               component: (
@@ -221,17 +227,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
             {
               component: <Synergies synergyOperators={synergyOperators} />,
               className: "synergies",
-            },
-            {
-              component: (
-                <Card header="Summary">
-                  {htmlToReact(
-                    contentful.summary.childMarkdownRemark.html,
-                    context
-                  )}
-                </Card>
-              ),
-              className: "summary",
             },
           ].map(({ component, className }, i) => (
             <div className={`analysis-section ${className}`} key={i}>
@@ -345,7 +340,12 @@ const styles = (accentColor: string) => (theme: Theme) =>
           border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
         }
 
-        &:hover {
+        :disabled {
+          cursor: initial;
+          color: ${rgba(theme.palette.gray, 0.5)};
+        }
+
+        &:not(:disabled):hover {
           background-color: ${transparentize(0.9, theme.palette.gray)};
           color: ${theme.palette.white};
         }

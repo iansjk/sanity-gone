@@ -56,38 +56,40 @@ const Layout: React.FC<LayoutProps> = (props) => {
         <Global styles={emotionNormalize} />
         <Global styles={styles({ bannerImageUrl, blendPoint })} />
         <div className="site-wrapper">
-          <div className="header-main-wrapper">
-            <header>
-              <div className="top-line">
-                <SanityGoneLogo />
-                <div className="header-links" hidden={isMobile}>
-                  <a href="/">Home</a>
-                  <a href="/operators">Operators</a>
-                  <a href="/about">About</a>
-                </div>
-                <MobileMenuIcon
-                  className="mobile-menu"
-                  role="button"
-                  aria-label="Open Menu"
-                  hidden={!isMobile}
-                />
-              </div>
-              <div className="heading-and-breadcrumb">
-                <h1>{pageTitle}</h1>
-                {previousLocation && previousLocationLink && (
-                  <div className="breadcrumb">
-                    <a
-                      href={previousLocationLink}
-                      aria-label={`Back to ${previousLocation}`}
-                    >
-                      <BreadcrumbBackIcon />
-                      {previousLocation}
-                    </a>
+          <div className="top-fold">
+            <div className="header-main-wrapper">
+              <header>
+                <div className="top-line">
+                  <SanityGoneLogo />
+                  <div className="header-links" hidden={isMobile}>
+                    <a href="/">Home</a>
+                    <a href="/operators">Operators</a>
+                    <a href="/about">About</a>
                   </div>
-                )}
-              </div>
-            </header>
-            <div className="page-content">{children}</div>
+                  <MobileMenuIcon
+                    className="mobile-menu"
+                    role="button"
+                    aria-label="Open Menu"
+                    hidden={!isMobile}
+                  />
+                </div>
+                <div className="heading-and-breadcrumb">
+                  <h1>{pageTitle}</h1>
+                  {previousLocation && previousLocationLink && (
+                    <div className="breadcrumb">
+                      <a
+                        href={previousLocationLink}
+                        aria-label={`Back to ${previousLocation}`}
+                      >
+                        <BreadcrumbBackIcon />
+                        {previousLocation}
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </header>
+              <div className="page-content">{children}</div>
+            </div>
           </div>
           <footer>
             <div className="footer-inner">
@@ -172,20 +174,13 @@ const styles =
 
       .site-wrapper {
         height: 100vh;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: 1fr max-content;
       }
 
       .header-main-wrapper {
-        margin: auto;
-        flex: 1 0 auto;
-        display: flex;
-        flex-direction: column;
         max-width: ${theme.containerWidth};
-
-        .page-content {
-          padding-top: ${theme.contentY};
-        }
+        margin: auto;
       }
 
       header {

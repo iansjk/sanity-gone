@@ -42,6 +42,12 @@ const palette = {
 
 const typography = {
   pageHeading: {
+    fontSize: "64px",
+    lineHeight: 1.25,
+    fontWeight: 600,
+    textShadow: `0 ${spacing(0.25)} ${spacing(1)} rgba(0, 0, 0, 0.5)`,
+  },
+  operatorPageHeading: {
     fontWeight: 600,
     fontSize: "96px",
     lineHeight: 1.25,

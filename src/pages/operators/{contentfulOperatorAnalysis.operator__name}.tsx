@@ -289,6 +289,17 @@ const globalOverrideStyles = (accentColor: string) => (theme: Theme) =>
     a {
       color: ${accentColor};
     }
+
+    header {
+      .heading-and-breadcrumb {
+        h1 {
+          font-size: ${theme.typography.operatorPageHeading.fontSize};
+          font-weight: ${theme.typography.operatorPageHeading.fontWeight};
+          line-height: ${theme.typography.operatorPageHeading.lineHeight};
+          text-shadow: ${theme.typography.operatorPageHeading.textShadow};
+        }
+      }
+    }
   `;
 
 const styles = (accentColor: string) => (theme: Theme) =>

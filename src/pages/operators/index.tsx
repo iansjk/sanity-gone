@@ -143,20 +143,29 @@ const styles = (theme: Theme) => css`
     display: flex;
     flex-wrap: wrap;
     gap: ${theme.spacing(3)};
-    justify-content: space-between;
+
+    ${theme.breakpoints.down("mobile")} {
+      margin: ${theme.spacing(2, 0, 0)};
+      gap: ${theme.spacing(2)};
+    }
 
     li.operator {
       width: 160px;
       height: 280px;
+      flex-grow: 1;
       border-radius: ${theme.spacing(0.5)};
       background-size: cover;
-      background-position-y: bottom;
+      background-position-y: center;
       background-image: linear-gradient(
           120deg,
           ${theme.palette.midtoneDarker} 0%,
           transparent 18%
         ),
         linear-gradient(to bottom, transparent 42%, #000 100%), var(--bg-image);
+
+      ${theme.breakpoints.down("mobile")} {
+        width: 148px;
+      }
 
       &.no-guide {
         opacity: 0.5;

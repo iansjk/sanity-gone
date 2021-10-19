@@ -1,12 +1,12 @@
 import { Story, Meta } from "@storybook/react";
-import Synergy, { SynergyOperatorProps, SynergyQuality } from "./Synergy";
+import Synergy, { SynergyProps, SynergyQuality } from "./Synergy";
 
 export default {
-  title: "Synergies/SynergyOperator",
+  title: "Synergies/Synergy",
   component: Synergy,
 } as Meta;
 
-const Template: Story<SynergyOperatorProps> = (args) => <Synergy {...args} />;
+const Template: Story<SynergyProps> = (args) => <Synergy {...args} />;
 
 export const Angelina = Template.bind({});
 Angelina.args = {
@@ -19,3 +19,10 @@ Angelina.args = {
 };
 
 export const LowAtkOperators = Template.bind({});
+LowAtkOperators.args = {
+  name: "Low ATK Physical Operators",
+  isGroup: true,
+  iconUrl:
+    "https://res.cloudinary.com/samidare/image/upload/v1628565419/arknights/subclasses/fastshot.png",
+  analysis: `<p>The toughest thing for a lot of these operators, such as AA snipers, is how much even mid-levels of DEF can hurt their DPS. Skalter is able to provide them with a strong flat ATK buff either at short, strong bursts, or with her permanent duration buff. She massively improves their DPS and makes them much better to use in general with no downside.</p>`,
+};

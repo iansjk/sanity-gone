@@ -83,7 +83,7 @@ const styles = (theme: Theme) => css`
 
   .operator-portrait {
     border-radius: ${theme.spacing(0.25)};
-    object-fit: cover;
+    object-fit: scale-down;
   }
 
   .limited-wrapper {

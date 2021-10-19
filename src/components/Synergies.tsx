@@ -60,6 +60,8 @@ const styles = (theme: Theme) => css`
   .tab-buttons {
     .operator-button.synergy-operator-button {
       background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       opacity: 0.34;
 
       &:hover {

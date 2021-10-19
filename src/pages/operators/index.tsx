@@ -44,7 +44,7 @@ const Operators: React.VFC<Props> = (props) => {
   const lastUpdatedAt = guideNodes
     .map((node) => DateTime.fromISO(node.updatedAt))
     .reduce((prev, curr) => (curr > prev ? curr : prev));
-  const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(false);
+  const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
 
   const handleGuideAvailableChange = (
     e: React.ChangeEvent<HTMLInputElement>

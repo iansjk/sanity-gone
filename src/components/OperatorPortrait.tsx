@@ -10,16 +10,17 @@ const imageSize = {
 
 export interface OperatorPortraitProps {
   name: string;
-  rarity: number; // 1-indexed, NOT 0-indexed
+  rarity?: number; // 1-indexed, NOT 0-indexed
   isLimited?: boolean;
   variant?: "normal" | "small";
+  iconOverride?: string;
 }
 
 const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
   variant = "normal",
   ...rest
 }) => {
-  const { name, rarity, isLimited } = rest;
+  const { name, rarity, isLimited, iconOverride } = rest;
   const theme = useTheme();
 
   const portraitMargin = theme.spacing(variant === "normal" ? 0.5 : 0.25);
@@ -40,29 +41,31 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
       )}
       <img
         className="operator-portrait"
-        src={operatorImage(name)}
+        src={iconOverride ?? operatorImage(name)}
         alt=""
         width={imageSize[variant]}
         height={imageSize[variant]}
         style={{ margin: portraitMargin }}
       />
-      <span className={`rarity-wrapper ${variant}`}>
-        <span
-          className={`rarity rarity-${rarity}-stars`}
-          aria-label={`Rarity: ${rarity} stars`}
-        >
-          {variant === "normal" ? (
-            [...Array(rarity).keys()].map((i) => (
-              <TiltedStarIcon key={i} aria-hidden="true" />
-            ))
-          ) : (
-            <span aria-hidden="true">
-              {rarity}
-              <StarIcon />
-            </span>
-          )}
+      {rarity && variant === "normal" && (
+        <span className={`rarity-wrapper ${variant}`}>
+          <span
+            className={`rarity rarity-${rarity}-stars`}
+            aria-label={`Rarity: ${rarity} stars`}
+          >
+            {variant === "normal" ? (
+              [...Array(rarity).keys()].map((i) => (
+                <TiltedStarIcon key={i} aria-hidden="true" />
+              ))
+            ) : (
+              <span aria-hidden="true">
+                {rarity}
+                <StarIcon />
+              </span>
+            )}
+          </span>
         </span>
-      </span>
+      )}
     </div>
   );
 };
@@ -74,16 +77,13 @@ const styles = (theme: Theme) => css`
   border: ${theme.spacing(0.25)} solid ${theme.palette.white};
   background: ${theme.palette.dark};
 
-  &.small {
-    margin-bottom: 13px;
-  }
-
   &.normal {
     margin-bottom: 9px;
   }
 
   .operator-portrait {
     border-radius: ${theme.spacing(0.25)};
+    object-fit: cover;
   }
 
   .limited-wrapper {

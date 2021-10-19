@@ -59,6 +59,9 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     .filter(([_, character]) => character.profession !== "TRAP")
     .map(([id, character], i) => {
       const isCnOnly = !enCharacterIds.has(id);
+      const characterName = useNameOverride(
+        isCnOnly ? character.appellation : character.name
+      );
 
       const phases = character.phases.map((phase) => ({
         ...phase,
@@ -143,7 +146,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
         cnCharacterTable[id as keyof typeof cnCharacterTable];
 
       if (character.tokenKey) {
-        summonIdToOperatorName[character.tokenKey] = character.name;
+        summonIdToOperatorName[character.tokenKey] = characterName;
       }
 
       return {

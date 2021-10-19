@@ -10,7 +10,7 @@ import Introduction from "../../components/Introduction";
 import CharacterStats from "../../components/CharacterStats";
 import SkillInfo, { SkillObject } from "../../components/SkillInfo";
 import Synergies from "../../components/Synergies";
-import { SynergyQuality } from "../../components/SynergyOperator";
+import { SynergyQuality } from "../../components/Synergy";
 import Tabs from "../../components/Tabs";
 import TabButtons from "../../components/TabButtons";
 import TabPanels from "../../components/TabPanels";
@@ -56,8 +56,13 @@ const htmlToReact = (
         } else if (domNode.name === "operatorstats") {
           return <CharacterStats characterObject={context.operator} />;
         } else if (domNode.name === "summonstats") {
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          return <CharacterStats characterObject={context.summon!} />;
+          if (!context.summon) {
+            console.log(context);
+            throw new Error(
+              "Can't render <SummonStats /> because summon is missing from context. Check your console for context contents"
+            );
+          }
+          return <CharacterStats characterObject={context.summon} />;
         } else if ((domNode.firstChild as Element).name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")
@@ -111,8 +116,10 @@ interface OperatorAnalysisData {
   skill1Analysis: MarkdownNode;
   skill2Analysis: MarkdownNode;
   skill3Analysis: MarkdownNode;
-  operatorSynergies: {
-    operatorName: string;
+  synergies: {
+    synergyName: string;
+    isGroup: boolean;
+    synergyIconUrl: string;
     synergyQuality: SynergyQuality;
     synergyDescription: MarkdownNode;
   }[];
@@ -172,11 +179,13 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   ]
     .filter((html) => !!html)
     .map((html, i) => htmlToReact(html, context, i));
-  const synergyOperators = contentful.operatorSynergies.map((os) => ({
-    name: os.operatorName,
-    rarity: rarityMap[os.operatorName] + 1,
-    quality: os.synergyQuality,
-    analysis: os.synergyDescription.childMarkdownRemark.html,
+  const synergies = contentful.synergies.map((syn) => ({
+    name: syn.synergyName,
+    isGroup: syn.isGroup,
+    rarity: syn.isGroup ? undefined : rarityMap[syn.synergyName] + 1,
+    quality: syn.synergyQuality,
+    iconUrl: syn.synergyIconUrl,
+    analysis: syn.synergyDescription.childMarkdownRemark.html,
   }));
 
   const strengths =
@@ -250,7 +259,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               className: "skills",
             },
             {
-              component: <Synergies synergyOperators={synergyOperators} />,
+              component: <Synergies synergies={synergies} />,
               className: "synergies",
             },
           ].map(({ component, className }, i) => (
@@ -324,11 +333,13 @@ const globalOverrideStyles = (accentColor: string) => (theme: Theme) =>
 
 const styles = (accentColor: string) => (theme: Theme) =>
   css`
+    margin: ${theme.spacing(3, 0, 0)};
     display: grid;
     grid-template-rows: max-content max-content 1fr;
     grid-template-columns: max-content 1fr;
 
     ${theme.breakpoints.down("mobile")} {
+      margin: ${theme.spacing(2, 0, 0)};
       grid-template-columns: 1fr;
     }
 
@@ -568,8 +579,10 @@ export const query = graphql`
           html
         }
       }
-      operatorSynergies {
-        operatorName
+      synergies {
+        synergyName
+        isGroup
+        synergyIconUrl
         synergyQuality
         synergyDescription {
           childMarkdownRemark {

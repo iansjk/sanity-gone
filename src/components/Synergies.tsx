@@ -1,44 +1,45 @@
 import { css, Theme } from "@emotion/react";
 import CardWithTabs from "./CardWithTabs";
-import Synergy, {
-  SynergyOperatorProps,
-  SynergyQuality,
-} from "./SynergyOperator";
+import Synergy, { SynergyProps, SynergyQuality } from "./Synergy";
 import { operatorImage } from "../utils/images";
 
 export interface SynergiesProps {
-  synergyOperators: SynergyOperatorProps[];
+  synergies: SynergyProps[];
 }
 
-const Synergies: React.VFC<SynergiesProps> = ({ synergyOperators }) => {
+const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
   // sort by descending synergy quality
-  const sortedSynergyOperators = synergyOperators.sort(
-    (a, b) => b.quality - a.quality
+  const sortedSynergies = synergies.sort(
+    (a, b) => (b.quality ?? 0.5) - (a.quality ?? 0.5) // sort right above 0 ("decent") but below 1 ("good")
   );
 
   return (
     <CardWithTabs
       header="Synergies"
       css={styles}
-      buttons={sortedSynergyOperators.flatMap((synOp, i) => {
+      buttons={sortedSynergies.flatMap((syn, i) => {
         const button = (
           <button
-            key={synOp.name}
-            aria-label={synOp.name}
+            key={syn.name}
+            aria-label={syn.name}
             className="operator-button synergy-operator-button"
-            style={{ backgroundImage: `url("${operatorImage(synOp.name)}")` }}
+            style={{
+              backgroundImage: `url("${
+                syn.isGroup ? syn.iconUrl! : operatorImage(syn.name)
+              }")`,
+            }}
           />
         );
         if (
-          i === 0 ||
-          sortedSynergyOperators[i - 1].quality !== synOp.quality
+          syn.quality &&
+          (i === 0 || sortedSynergies[i - 1].quality !== syn.quality)
         ) {
-          const [qualityLabel] = SynergyQuality[synOp.quality].split(" ");
+          const [qualityLabel] = SynergyQuality[syn.quality].split(" ");
           return [
             <span
               key={qualityLabel}
-              className={`synergy-quality quality-${synOp.quality}`}
-              aria-label={SynergyQuality[synOp.quality]}
+              className={`synergy-quality quality-${syn.quality}`}
+              aria-label={SynergyQuality[syn.quality]}
             >
               {qualityLabel}
             </span>,
@@ -47,7 +48,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergyOperators }) => {
         }
         return button;
       })}
-      panels={sortedSynergyOperators.map((synOp) => (
+      panels={sortedSynergies.map((synOp) => (
         <Synergy key={synOp.name} {...synOp} />
       ))}
     />

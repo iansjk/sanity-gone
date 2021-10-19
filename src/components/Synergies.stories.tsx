@@ -1,6 +1,6 @@
 import { Story, Meta } from "@storybook/react";
 import Synergies, { SynergiesProps } from "./Synergies";
-import { SynergyQuality } from "./SynergyOperator";
+import { SynergyQuality } from "./Synergy";
 
 export default {
   title: "Synergies",
@@ -9,7 +9,7 @@ export default {
 
 export const Default: Story<SynergiesProps> = (args) => <Synergies {...args} />;
 Default.args = {
-  synergyOperators: [
+  synergies: [
     {
       name: "Blemishine",
       rarity: 6,

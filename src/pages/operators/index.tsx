@@ -2,11 +2,15 @@ import React, { Fragment, useState } from "react";
 import { graphql } from "gatsby";
 import { ClassNames, css, Theme } from "@emotion/react";
 import { DateTime } from "luxon";
+import gatsbySlugify from "@sindresorhus/slugify";
 import Layout from "../../Layout";
-import { operatorPortrait, operatorSubclassIcon } from "../../utils/images";
+import {
+  operatorPortrait,
+  operatorSubclassIcon,
+  sgPageBanner,
+} from "../../utils/images";
 import {
   professionToClass,
-  slugify,
   subProfessionToSubclass,
 } from "../../utils/globals";
 import NavigateRightArrow from "../../components/icons/NavigateRightArrow";
@@ -57,7 +61,10 @@ const Operators: React.VFC<Props> = (props) => {
     : operators;
 
   return (
-    <Layout pageTitle="Operator List">
+    <Layout
+      pageTitle="Operator List"
+      bannerImageUrl={sgPageBanner("operators")}
+    >
       <main css={styles}>
         <span className="last-updated">
           Last Updated:{" "}
@@ -128,7 +135,9 @@ const Operators: React.VFC<Props> = (props) => {
                       }}
                     >
                       {hasGuide ? (
-                        <a href={`/operators/${slugify(op.name)}`}>{inner}</a>
+                        <a href={`/operators/${gatsbySlugify(op.name)}`}>
+                          {inner}
+                        </a>
                       ) : (
                         inner
                       )}

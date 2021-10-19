@@ -21,6 +21,7 @@
     "@emotion/babel-plugin": "^11.3.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@sindresorhus/slugify": "^2.1.0",
     "dotenv": "^10.0.0",
     "emotion-normalize": "^11.0.1",
     "gatsby": "^3.10.1",

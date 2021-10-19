@@ -83,8 +83,6 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             onClick!(noClosureIndex);
             if (isSwiper) {
-              console.log(`calling swiper.slideTo(${noClosureIndex})`);
-              console.log(swiper);
               swiper?.slideTo(noClosureIndex);
             }
           })(buttonIndex),

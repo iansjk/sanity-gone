@@ -10,7 +10,7 @@ const imageSize = {
 
 export interface OperatorPortraitProps {
   name: string;
-  rarity: number; // 1-indexed, NOT 0-indexed
+  rarity?: number; // 1-indexed, NOT 0-indexed
   isLimited?: boolean;
   variant?: "normal" | "small";
 }
@@ -46,23 +46,25 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
         height={imageSize[variant]}
         style={{ margin: portraitMargin }}
       />
-      <span className={`rarity-wrapper ${variant}`}>
-        <span
-          className={`rarity rarity-${rarity}-stars`}
-          aria-label={`Rarity: ${rarity} stars`}
-        >
-          {variant === "normal" ? (
-            [...Array(rarity).keys()].map((i) => (
-              <TiltedStarIcon key={i} aria-hidden="true" />
-            ))
-          ) : (
-            <span aria-hidden="true">
-              {rarity}
-              <StarIcon />
-            </span>
-          )}
+      {rarity && (
+        <span className={`rarity-wrapper ${variant}`}>
+          <span
+            className={`rarity rarity-${rarity}-stars`}
+            aria-label={`Rarity: ${rarity} stars`}
+          >
+            {variant === "normal" ? (
+              [...Array(rarity).keys()].map((i) => (
+                <TiltedStarIcon key={i} aria-hidden="true" />
+              ))
+            ) : (
+              <span aria-hidden="true">
+                {rarity}
+                <StarIcon />
+              </span>
+            )}
+          </span>
         </span>
-      </span>
+      )}
     </div>
   );
 };

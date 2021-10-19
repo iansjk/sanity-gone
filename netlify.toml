@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/"
+  to = "/operators/"
+  status = 302
+  force = true

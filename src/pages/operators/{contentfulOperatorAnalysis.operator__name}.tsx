@@ -335,6 +335,19 @@ const globalOverrideStyles = (accentColor: string) => (theme: Theme) =>
           font-weight: ${theme.typography.operatorPageHeading.fontWeight};
           line-height: ${theme.typography.operatorPageHeading.lineHeight};
           text-shadow: ${theme.typography.operatorPageHeading.textShadow};
+
+          ${theme.breakpoints.down("mobile")} {
+            font-size: ${theme.typography.operatorNameHeading.fontSize};
+            font-weight: ${theme.typography.operatorNameHeading.fontWeight};
+            line-height: ${theme.typography.operatorNameHeading.lineHeight};
+
+            .alter-name {
+              display: inline-block;
+              font-size: ${theme.typography.generalHeading.fontSize};
+              line-height: ${theme.typography.generalHeading.lineHeight};
+              font-weight: normal;
+            }
+          }
         }
       }
     }

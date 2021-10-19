@@ -78,6 +78,20 @@ interface MarkdownNode {
   };
 }
 
+interface AstNode {
+  type: string;
+  tagName: string;
+  properties: Record<string, string>;
+  children: AstNode[];
+  value: string;
+}
+
+interface MarkdownHtmlAstNode {
+  childMarkdownRemark: {
+    htmlAst: AstNode;
+  };
+}
+
 interface OperatorAnalysisData {
   operator: {
     accentColorInHex: string;
@@ -102,7 +116,8 @@ interface OperatorAnalysisData {
     synergyQuality: SynergyQuality;
     synergyDescription: MarkdownNode;
   }[];
-  summary: MarkdownNode;
+  strengths: MarkdownHtmlAstNode;
+  weaknesses: MarkdownHtmlAstNode;
   updatedAt: string; // ISO 8601 timestamp
 }
 
@@ -164,6 +179,15 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     analysis: os.synergyDescription.childMarkdownRemark.html,
   }));
 
+  const strengths =
+    contentful.strengths.childMarkdownRemark.htmlAst.children[0].children
+      .filter((child) => child.tagName === "li")
+      .map((child) => child.children[0].value);
+  const weaknesses =
+    contentful.weaknesses.childMarkdownRemark.htmlAst.children[0].children
+      .filter((child) => child.tagName === "li")
+      .map((child) => child.children[0].value);
+
   return (
     <Layout
       pageTitle={contentful.operator.name}
@@ -195,6 +219,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   )}
                   isLimited={contentful.operator.limited}
                   operatorObject={operatorObject}
+                  strengths={strengths}
+                  weaknesses={weaknesses}
                 />
               ),
               className: "introduction",
@@ -551,9 +577,14 @@ export const query = graphql`
           }
         }
       }
-      summary {
+      strengths {
         childMarkdownRemark {
-          html
+          htmlAst
+        }
+      }
+      weaknesses {
+        childMarkdownRemark {
+          htmlAst
         }
       }
       updatedAt

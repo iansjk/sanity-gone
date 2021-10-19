@@ -8,7 +8,7 @@ export interface StrengthsWeaknessesProps {
 const StrengthsWeaknesses: React.VFC<StrengthsWeaknessesProps> = (props) => {
   const { strengths, weaknesses } = props;
   return (
-    <div css={styles}>
+    <div className="strengths-and-weaknesses" css={styles}>
       <h3 className="strengths">Strengths</h3>
       <ul>
         {strengths.map((strength) => (
@@ -37,7 +37,7 @@ const styles = (theme: Theme) => css`
     padding: ${theme.spacing(2, 3)};
     background-color: ${theme.palette.dark};
   }
-  
+
   h3 {
     font-size: ${theme.typography.generalHeading.fontSize};
     font-weight: 400;

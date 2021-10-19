@@ -205,9 +205,18 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       .filter((child) => child.tagName === "li")
       .map((child) => child.children[0].value);
 
+  const [baseChar, alterName] = contentful.operator.name.split(" the ");
+
   return (
     <Layout
       pageTitle={contentful.operator.name}
+      customPageHeading={
+        alterName && (
+          <h1>
+            {baseChar} <span className="alter-name">The {alterName}</span>
+          </h1>
+        )
+      }
       bannerImageUrl={contentful.operator.operatorImageUrl}
       previousLocation="Operators"
       previousLocationLink="/operators"

@@ -16,6 +16,7 @@ import { rgba } from "polished";
 
 interface LayoutProps {
   pageTitle: string;
+  customPageHeading?: React.ReactNode;
   previousLocation?: string;
   previousLocationLink?: string;
   blendPoint?: number;
@@ -25,6 +26,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = (props) => {
   const {
     pageTitle,
+    customPageHeading,
     previousLocation,
     previousLocationLink,
     bannerImageUrl,
@@ -74,7 +76,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   />
                 </div>
                 <div className="heading-and-breadcrumb">
-                  <h1>{pageTitle}</h1>
+                  {customPageHeading || <h1>{pageTitle}</h1>}
                   {previousLocation && previousLocationLink && (
                     <div className="breadcrumb">
                       <a

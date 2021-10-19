@@ -209,13 +209,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       />
       <Tabs component="main" css={styles(contentful.operator.accentColorInHex)}>
         <TabButtons className="tabs" isSwiper>
-          {["Introduction", "Module", "Talents", "Skills", "Synergies"].map(
-            (label) => (
-              <button disabled={label === "Module"} key={label}>
-                {label}
-              </button>
-            )
-          )}
+          {["Introduction", "Talents", "Skills", "Synergies"].map((label) => (
+            <button key={label}>{label}</button>
+          ))}
         </TabButtons>
         <TabPanels className="panels">
           {[
@@ -233,10 +229,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 />
               ),
               className: "introduction",
-            },
-            {
-              component: <Fragment />,
-              className: "module",
             },
             {
               component: (

@@ -1,4 +1,5 @@
 import { css, Theme } from "@emotion/react";
+import GroupSynergyIcon from "./icons/GroupSynergyIcon";
 import OperatorPortrait from "./OperatorPortrait";
 
 export enum SynergyQuality {
@@ -24,6 +25,20 @@ const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
     return (
       <section css={styles} {...rest}>
         <div className="synergy-operator-info">
+          <div className="portrait">
+            <OperatorPortrait
+              variant="small"
+              name={name}
+              iconOverride={isGroup ? iconUrl : undefined}
+              rarity={!isGroup ? rarity : undefined}
+            />
+            {isGroup && (
+              <GroupSynergyIcon
+                className="group-synergy-icon"
+                aria-label="Group Synergy"
+              />
+            )}
+          </div>
           <div className="name-and-quality">
             <h3 className="operator-name">{name}</h3>
             {quality && (
@@ -32,12 +47,6 @@ const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
               </span>
             )}
           </div>
-          <OperatorPortrait
-            variant="small"
-            name={name}
-            iconOverride={isGroup ? iconUrl : undefined}
-            rarity={!isGroup ? rarity : undefined}
-          />
         </div>
         <div dangerouslySetInnerHTML={{ __html: analysis }} />
       </section>
@@ -55,9 +64,17 @@ const styles = (theme: Theme) => css`
 
   .synergy-operator-info {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
-    justify-content: flex-end;
+
+    .portrait {
+      position: relative;
+
+      .group-synergy-icon {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
 
     .name-and-quality {
       margin-left: ${theme.spacing(2)};

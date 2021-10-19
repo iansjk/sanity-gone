@@ -77,16 +77,13 @@ const styles = (theme: Theme) => css`
   border: ${theme.spacing(0.25)} solid ${theme.palette.white};
   background: ${theme.palette.dark};
 
-  &.small {
-    margin-bottom: 13px;
-  }
-
   &.normal {
     margin-bottom: 9px;
   }
 
   .operator-portrait {
     border-radius: ${theme.spacing(0.25)};
+    object-fit: cover;
   }
 
   .limited-wrapper {

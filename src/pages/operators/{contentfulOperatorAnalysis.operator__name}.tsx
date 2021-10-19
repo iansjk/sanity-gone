@@ -56,8 +56,13 @@ const htmlToReact = (
         } else if (domNode.name === "operatorstats") {
           return <CharacterStats characterObject={context.operator} />;
         } else if (domNode.name === "summonstats") {
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          return <CharacterStats characterObject={context.summon!} />;
+          if (!context.summon) {
+            console.log(context);
+            throw new Error(
+              "Can't render <SummonStats /> because summon is missing from context. Check your console for context contents"
+            );
+          }
+          return <CharacterStats characterObject={context.summon} />;
         } else if ((domNode.firstChild as Element).name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")

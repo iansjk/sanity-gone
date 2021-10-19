@@ -1,3 +1,4 @@
+import React, { Fragment, useState } from "react";
 import { graphql } from "gatsby";
 import { ClassNames, css, Theme } from "@emotion/react";
 import { DateTime } from "luxon";
@@ -8,7 +9,6 @@ import {
   slugify,
   subProfessionToSubclass,
 } from "../../utils/globals";
-import { Fragment } from "react";
 import NavigateRightArrow from "../../components/icons/NavigateRightArrow";
 
 interface Props {
@@ -43,6 +43,17 @@ const Operators: React.VFC<Props> = (props) => {
   const lastUpdatedAt = guideNodes
     .map((node) => DateTime.fromISO(node.updatedAt))
     .reduce((prev, curr) => (curr > prev ? curr : prev));
+  const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(false);
+
+  const handleGuideAvailableChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setShowOnlyGuideAvailable(e.target.checked);
+  };
+
+  const operatorsToShow = showOnlyGuideAvailable
+    ? operators.filter((op) => operatorsWithGuides.has(op.name))
+    : operators;
 
   return (
     <Layout pageTitle="Operator List">
@@ -55,8 +66,18 @@ const Operators: React.VFC<Props> = (props) => {
               .toLocaleString(DateTime.DATE_FULL)}
           </span>
         </span>
+        <div className="sort-and-filter-options">
+          <label className="guide-available">
+            <input
+              type="checkbox"
+              onChange={handleGuideAvailableChange}
+              checked={showOnlyGuideAvailable}
+            />
+            Guide available
+          </label>
+        </div>
         <ul className="operator-list">
-          {operators.map((op) => {
+          {operatorsToShow.map((op) => {
             const operatorClass = professionToClass(op.profession);
             const subclass = subProfessionToSubclass(op.subProfessionId);
             const hasGuide = operatorsWithGuides.has(op.name);
@@ -133,6 +154,15 @@ const styles = (theme: Theme) => css`
     .date {
       font-weight: ${theme.typography.bodyBold.fontWeight};
     }
+  }
+
+  .sort-and-filter-options {
+    height: 39px; // FIXME should be unnecessary once sort buttons are added
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: ${theme.typography.navigationLink.fontSize};
+    line-height: ${theme.typography.navigationLink.lineHeight};
   }
 
   ul.operator-list {

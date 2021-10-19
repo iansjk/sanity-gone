@@ -512,9 +512,6 @@ export const query = graphql`
           archetypeName
         }
       }
-      author {
-        name
-      }
       introduction {
         childMarkdownRemark {
           html

@@ -1,4 +1,5 @@
 import { css, Theme } from "@emotion/react";
+import { Fragment } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 import {
   professionToClass,
@@ -51,12 +52,21 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     description
   );
   const isMobile = useIsMobile();
+  const [charName, alterName] = name.split(" the ");
 
   return (
     <div css={styles}>
       <div className="operator-portrait-and-class">
         <div className="name-and-class">
-          <div className="operator-name">{name}</div>
+          <div className="operator-name">
+            {alterName ? (
+              <Fragment>
+                {charName} <span className="alter-name">The {alterName}</span>
+              </Fragment>
+            ) : (
+              name
+            )}
+          </div>
           <a
             className="class-and-subclass"
             href={`/classes/${operatorClass.toLowerCase()}#${subclass.toLowerCase()}`}
@@ -137,9 +147,18 @@ const styles = (theme: Theme) => css`
         margin-bottom: ${theme.spacing(1)};
 
         ${theme.breakpoints.down("mobile")} {
+          align-items: baseline;
           font-size: ${theme.typography.generalHeading.fontSize};
           line-height: ${theme.typography.generalHeading.lineHeight};
           font-weight: ${theme.typography.generalHeadingBold.fontWeight};
+
+          .alter-name {
+            margin-left: ${theme.spacing(0.5)};
+            color: ${theme.palette.gray};
+            font-size: ${theme.typography.body.fontSize};
+            font-weight: ${theme.typography.body.fontWeight};
+            line-height: ${theme.typography.body.lineHeight};
+          }
         }
       }
 

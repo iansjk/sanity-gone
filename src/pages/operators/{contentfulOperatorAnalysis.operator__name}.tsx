@@ -329,11 +329,13 @@ const globalOverrideStyles = (accentColor: string) => (theme: Theme) =>
 
 const styles = (accentColor: string) => (theme: Theme) =>
   css`
+    margin: ${theme.spacing(3, 0, 0)};
     display: grid;
     grid-template-rows: max-content max-content 1fr;
     grid-template-columns: max-content 1fr;
 
     ${theme.breakpoints.down("mobile")} {
+      margin: ${theme.spacing(2, 0, 0)};
       grid-template-columns: 1fr;
     }
 

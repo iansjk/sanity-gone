@@ -11,9 +11,7 @@ const CustomCheckbox: React.VFC<CustomCheckboxProps> = (props) => {
     <label className={disabled ? "disabled" : ""} css={styles}>
       <div className="checkbox-input">
         <input type="checkbox" {...{ disabled, ...rest }} />
-        <span className="checkbox-control" aria-hidden="true">
-          <span className="checked-indicator" />
-        </span>
+        <span className="checkbox-control" aria-hidden="true" />
       </div>
       {label}
     </label>
@@ -50,28 +48,20 @@ const styles = (theme: Theme) => css`
     }
 
     .checkbox-control {
-      width: 20px;
-      height: 20px;
+      width: 14px;
+      height: 14px;
+      padding: 2px;
+      background-clip: content-box;
       display: flex;
       align-items: center;
       justify-content: center;
       border: 1px solid ${theme.palette.white};
       border-radius: ${theme.spacing(0.5)};
-
-      .checked-indicator {
-        display: none;
-        width: 14px;
-        height: 14px;
-        background-color: ${theme.palette.blue};
-      }
     }
 
     input:checked + .checkbox-control {
       border-color: ${theme.palette.blue};
-
-      .checked-indicator {
-        display: block;
-      }
+      background-color: ${theme.palette.blue};
     }
 
     input:focus + .checkbox-control {

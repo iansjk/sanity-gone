@@ -28,7 +28,10 @@ const Synergies: React.VFC<SynergiesProps> = ({
             style={{ backgroundImage: `url("${operatorImage(synOp.name)}")` }}
           />
         );
-        if (i === 0 || sortedSynergies[i - 1].quality !== synOp.quality) {
+        if (
+          synOp.quality &&
+          (i === 0 || sortedSynergies[i - 1].quality !== synOp.quality)
+        ) {
           const [qualityLabel] = SynergyQuality[synOp.quality].split(" ");
           return [
             <span

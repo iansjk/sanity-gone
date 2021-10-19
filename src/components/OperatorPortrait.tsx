@@ -47,7 +47,7 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
         height={imageSize[variant]}
         style={{ margin: portraitMargin }}
       />
-      {rarity && (
+      {rarity && variant === "normal" && (
         <span className={`rarity-wrapper ${variant}`}>
           <span
             className={`rarity rarity-${rarity}-stars`}

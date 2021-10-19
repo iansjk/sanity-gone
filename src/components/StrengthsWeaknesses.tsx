@@ -10,13 +10,13 @@ const StrengthsWeaknesses: React.VFC<StrengthsWeaknessesProps> = (props) => {
   return (
     <div className="strengths-and-weaknesses" css={styles}>
       <h3 className="strengths">Strengths</h3>
-      <ul>
+      <ul className="strengths-list">
         {strengths.map((strength) => (
           <li key={strength}>{strength}</li>
         ))}
       </ul>
       <h3 className="weaknesses">Weaknesses</h3>
-      <ul>
+      <ul className="weaknesses-list">
         {weaknesses.map((weakness) => (
           <li key={weakness}>{weakness}</li>
         ))}
@@ -31,6 +31,11 @@ const styles = (theme: Theme) => css`
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, max-content);
   gap: ${theme.spacing(0.25)};
+
+  ${theme.breakpoints.down("mobile")} {
+    grid-template-rows: repeat(4, max-content);
+    grid-template-columns: 1fr;
+  }
 
   & > * {
     margin: 0;
@@ -53,8 +58,14 @@ const styles = (theme: Theme) => css`
   }
 
   ul {
-    grid-row-start: 2;
+    grid-row: 2;
     list-style-type: none;
+
+    ${theme.breakpoints.down("mobile")} {
+      &.weaknesses-list {
+        grid-row: 4;
+      }
+    }
 
     li::before {
       content: " ";

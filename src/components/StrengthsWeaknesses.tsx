@@ -35,7 +35,7 @@ const styles = (theme: Theme) => css`
   & > * {
     margin: 0;
     padding: ${theme.spacing(2, 3)};
-    background-color: ${theme.palette.dark};
+    background-color: ${theme.palette.midtoneDarker};
   }
 
   h3 {

@@ -218,8 +218,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         )
       }
       bannerImageUrl={contentful.operator.operatorImageUrl}
-      previousLocation="Operators"
-      previousLocationLink="/operators"
+      // previousLocation="Operators"
+      // previousLocationLink="/operators"
     >
       <Global
         styles={globalOverrideStyles(contentful.operator.accentColorInHex)}

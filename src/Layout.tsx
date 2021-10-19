@@ -17,8 +17,6 @@ import { rgba } from "polished";
 interface LayoutProps {
   pageTitle: string;
   customPageHeading?: React.ReactNode;
-  previousLocation?: string;
-  previousLocationLink?: string;
   blendPoint?: number;
   bannerImageUrl?: string;
 }
@@ -77,7 +75,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 </div>
                 <div className="heading-and-breadcrumb">
                   {customPageHeading || <h1>{pageTitle}</h1>}
-                  {previousLocation && previousLocationLink && (
+                  {/* {previousLocation && previousLocationLink && (
                     <div className="breadcrumb">
                       <a
                         href={previousLocationLink}
@@ -87,7 +85,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                         {previousLocation}
                       </a>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </header>
               <div className="page-content">{children}</div>
@@ -228,7 +226,7 @@ const styles =
             }
           }
 
-          .breadcrumb {
+          /* .breadcrumb {
             line-height: 1;
 
             a {
@@ -247,7 +245,7 @@ const styles =
                 }
               }
             }
-          }
+          } */
         }
       }
 

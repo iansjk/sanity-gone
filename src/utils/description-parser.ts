@@ -4,7 +4,8 @@ export interface InterpolatedValue {
 }
 
 const descriptionTagRegex = /<(?<tagName>[^>]+)>(?<tagContent>[^<]+)<\/>/;
-const descriptionInterpolationRegex = /-?{-?(?<interpolationKey>[^}:]+)(?::(?<formatString>[^}]+))?}/;
+const descriptionInterpolationRegex =
+  /-?{-?(?<interpolationKey>[^}:]+)(?::(?<formatString>[^}]+))?}/;
 /**
  * converts game-internal skill description representations into an html-formatted description.
  * there are three tag types that are all closed with "</>":
@@ -60,7 +61,7 @@ export const descriptionToHtml = (
         interpolated = `${value}`;
       } else if (formatString === "0%") {
         // convert to percentage and suffix with "%"
-        interpolated = `${value * 100}%`;
+        interpolated = `${Math.round(value * 100)}%`;
       } else if (formatString === "0.0") {
         // return as-is to one-decimal place
         interpolated = `${value.toFixed(1)}`;

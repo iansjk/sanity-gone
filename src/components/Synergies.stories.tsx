@@ -12,7 +12,10 @@ Default.args = {
   synergies: [
     {
       name: "Blemishine",
-      rarity: 6,
+      rarity: 5,
+      isGroup: false,
+      profession: "TANK",
+      subProfessionId: "guardian",
       quality: SynergyQuality["Excellent Synergy"],
       analysis: `
         <p>
@@ -22,7 +25,10 @@ Default.args = {
     },
     {
       name: "Aak",
-      rarity: 6,
+      rarity: 5,
+      isGroup: false,
+      profession: "SPECIAL",
+      subProfessionId: "geek",
       quality: SynergyQuality["Excellent Synergy"],
       analysis: `
         <p>
@@ -32,7 +38,10 @@ Default.args = {
     },
     {
       name: "Angelina",
-      rarity: 6,
+      rarity: 5,
+      isGroup: false,
+      profession: "SUPPORT",
+      subProfessionId: "slower",
       quality: SynergyQuality["Good Synergy"],
       analysis: `
         <p>
@@ -42,7 +51,10 @@ Default.args = {
     },
     {
       name: "Whislash",
-      rarity: 5,
+      rarity: 4,
+      isGroup: false,
+      profession: "Warrior",
+      subProfessionId: "instructor",
       quality: SynergyQuality["Good Synergy"],
       analysis: `
         <p>
@@ -52,7 +64,10 @@ Default.args = {
     },
     {
       name: "Ch'en",
-      rarity: 6,
+      rarity: 5,
+      isGroup: false,
+      profession: "WARRIOR",
+      subProfessionId: "sword",
       quality: SynergyQuality["Good Synergy"],
       analysis: `
         <p>
@@ -62,7 +77,10 @@ Default.args = {
     },
     {
       name: "Elysium",
-      rarity: 5,
+      rarity: 4,
+      isGroup: false,
+      profession: "PIONEER",
+      subProfessionId: "bearer",
       quality: SynergyQuality["Decent Synergy"],
       analysis: `
         <p>

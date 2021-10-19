@@ -31,7 +31,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
           />
         );
         if (
-          syn.quality &&
+          syn.quality != null &&
           (i === 0 || sortedSynergies[i - 1].quality !== syn.quality)
         ) {
           const [qualityLabel] = SynergyQuality[syn.quality].split(" ");

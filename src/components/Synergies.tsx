@@ -1,26 +1,25 @@
 import { css, Theme } from "@emotion/react";
 import CardWithTabs from "./CardWithTabs";
-import Synergy, {
-  SynergyOperatorProps,
-  SynergyQuality,
-} from "./SynergyOperator";
+import Synergy, { SynergyProps, SynergyQuality } from "./Synergy";
 import { operatorImage } from "../utils/images";
 
 export interface SynergiesProps {
-  synergyOperators: SynergyOperatorProps[];
+  synergies: SynergyProps[];
 }
 
-const Synergies: React.VFC<SynergiesProps> = ({ synergyOperators }) => {
+const Synergies: React.VFC<SynergiesProps> = ({
+  synergies: synergyOperators,
+}) => {
   // sort by descending synergy quality
-  const sortedSynergyOperators = synergyOperators.sort(
-    (a, b) => b.quality - a.quality
+  const sortedSynergies = synergyOperators.sort(
+    (a, b) => (b.quality ?? 0.5) - (a.quality ?? 0.5) // sort right above 0 ("decent") but below 1 ("good")
   );
 
   return (
     <CardWithTabs
       header="Synergies"
       css={styles}
-      buttons={sortedSynergyOperators.flatMap((synOp, i) => {
+      buttons={sortedSynergies.flatMap((synOp, i) => {
         const button = (
           <button
             key={synOp.name}
@@ -29,10 +28,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergyOperators }) => {
             style={{ backgroundImage: `url("${operatorImage(synOp.name)}")` }}
           />
         );
-        if (
-          i === 0 ||
-          sortedSynergyOperators[i - 1].quality !== synOp.quality
-        ) {
+        if (i === 0 || sortedSynergies[i - 1].quality !== synOp.quality) {
           const [qualityLabel] = SynergyQuality[synOp.quality].split(" ");
           return [
             <span
@@ -47,7 +43,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergyOperators }) => {
         }
         return button;
       })}
-      panels={sortedSynergyOperators.map((synOp) => (
+      panels={sortedSynergies.map((synOp) => (
         <Synergy key={synOp.name} {...synOp} />
       ))}
     />

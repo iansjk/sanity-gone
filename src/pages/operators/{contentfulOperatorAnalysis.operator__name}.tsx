@@ -10,7 +10,7 @@ import Introduction from "../../components/Introduction";
 import CharacterStats from "../../components/CharacterStats";
 import SkillInfo, { SkillObject } from "../../components/SkillInfo";
 import Synergies from "../../components/Synergies";
-import { SynergyQuality } from "../../components/SynergyOperator";
+import { SynergyQuality } from "../../components/Synergy";
 import Tabs from "../../components/Tabs";
 import TabButtons from "../../components/TabButtons";
 import TabPanels from "../../components/TabPanels";
@@ -250,7 +250,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               className: "skills",
             },
             {
-              component: <Synergies synergyOperators={synergyOperators} />,
+              component: <Synergies synergies={synergyOperators} />,
               className: "synergies",
             },
           ].map(({ component, className }, i) => (

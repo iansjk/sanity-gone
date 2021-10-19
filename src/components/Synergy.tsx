@@ -8,32 +8,33 @@ export enum SynergyQuality {
   "Excellent Synergy",
 }
 
-export interface SynergyOperatorProps {
+export interface SynergyProps {
   name: string;
   rarity: number;
-  quality: SynergyQuality;
+  quality?: SynergyQuality;
   analysis: string;
 }
 
-const Synergy: React.VFC<
-  SynergyOperatorProps & React.HTMLAttributes<HTMLDivElement>
-> = (props) => {
-  const { name, rarity, quality, analysis, ...rest } = props;
-  return (
-    <section css={styles} {...rest}>
-      <div className="synergy-operator-info">
-        <div className="name-and-quality">
-          <h3 className="operator-name">{name}</h3>
-          <span className={`synergy-quality quality-${quality}`}>
-            {SynergyQuality[quality]}
-          </span>
+const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
+  (props) => {
+    const { name, rarity, quality, analysis, ...rest } = props;
+    return (
+      <section css={styles} {...rest}>
+        <div className="synergy-operator-info">
+          <div className="name-and-quality">
+            <h3 className="operator-name">{name}</h3>
+            {quality && (
+              <span className={`synergy-quality quality-${quality}`}>
+                {SynergyQuality[quality]}
+              </span>
+            )}
+          </div>
+          <OperatorPortrait variant="small" name={name} rarity={rarity} />
         </div>
-        <OperatorPortrait variant="small" name={name} rarity={rarity} />
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: analysis }} />
-    </section>
-  );
-};
+        <div dangerouslySetInnerHTML={{ __html: analysis }} />
+      </section>
+    );
+  };
 export default Synergy;
 
 const styles = (theme: Theme) => css`

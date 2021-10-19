@@ -118,6 +118,8 @@ interface OperatorAnalysisData {
   skill3Analysis: MarkdownNode;
   operatorSynergies: {
     operatorName: string;
+    isGroup: boolean;
+    synergyIconUrl: string;
     synergyQuality: SynergyQuality;
     synergyDescription: MarkdownNode;
   }[];
@@ -577,6 +579,8 @@ export const query = graphql`
       }
       operatorSynergies {
         operatorName
+        isGroup
+        synergyIconUrl
         synergyQuality
         synergyDescription {
           childMarkdownRemark {

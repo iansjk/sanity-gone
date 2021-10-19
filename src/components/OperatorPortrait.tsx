@@ -13,13 +13,14 @@ export interface OperatorPortraitProps {
   rarity?: number; // 1-indexed, NOT 0-indexed
   isLimited?: boolean;
   variant?: "normal" | "small";
+  iconOverride?: string;
 }
 
 const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
   variant = "normal",
   ...rest
 }) => {
-  const { name, rarity, isLimited } = rest;
+  const { name, rarity, isLimited, iconOverride } = rest;
   const theme = useTheme();
 
   const portraitMargin = theme.spacing(variant === "normal" ? 0.5 : 0.25);
@@ -40,7 +41,7 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
       )}
       <img
         className="operator-portrait"
-        src={operatorImage(name)}
+        src={iconOverride ?? operatorImage(name)}
         alt=""
         width={imageSize[variant]}
         height={imageSize[variant]}

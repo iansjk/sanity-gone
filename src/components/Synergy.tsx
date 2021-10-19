@@ -10,14 +10,17 @@ export enum SynergyQuality {
 
 export interface SynergyProps {
   name: string;
-  rarity: number;
+  rarity?: number;
   quality?: SynergyQuality;
+  isGroup: boolean;
+  iconUrl?: string;
   analysis: string;
 }
 
 const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
   (props) => {
-    const { name, rarity, quality, analysis, ...rest } = props;
+    const { name, rarity, quality, isGroup, iconUrl, analysis, ...rest } =
+      props;
     return (
       <section css={styles} {...rest}>
         <div className="synergy-operator-info">
@@ -29,7 +32,12 @@ const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
               </span>
             )}
           </div>
-          <OperatorPortrait variant="small" name={name} rarity={rarity} />
+          <OperatorPortrait
+            variant="small"
+            name={name}
+            iconOverride={isGroup ? iconUrl : undefined}
+            rarity={!isGroup ? rarity : undefined}
+          />
         </div>
         <div dangerouslySetInnerHTML={{ __html: analysis }} />
       </section>

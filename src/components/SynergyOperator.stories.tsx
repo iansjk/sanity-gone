@@ -1,17 +1,15 @@
 import { Story, Meta } from "@storybook/react";
-import SynergyOperator, {
+import Synergy, {
   SynergyOperatorProps,
   SynergyQuality,
 } from "./SynergyOperator";
 
 export default {
   title: "Synergies/SynergyOperator",
-  component: SynergyOperator,
+  component: Synergy,
 } as Meta;
 
-const Template: Story<SynergyOperatorProps> = (args) => (
-  <SynergyOperator {...args} />
-);
+const Template: Story<SynergyOperatorProps> = (args) => <Synergy {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

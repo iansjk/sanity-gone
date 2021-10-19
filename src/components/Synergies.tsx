@@ -1,6 +1,6 @@
 import { css, Theme } from "@emotion/react";
 import CardWithTabs from "./CardWithTabs";
-import SynergyOperator, {
+import Synergy, {
   SynergyOperatorProps,
   SynergyQuality,
 } from "./SynergyOperator";
@@ -48,7 +48,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergyOperators }) => {
         return button;
       })}
       panels={sortedSynergyOperators.map((synOp) => (
-        <SynergyOperator key={synOp.name} {...synOp} />
+        <Synergy key={synOp.name} {...synOp} />
       ))}
     />
   );

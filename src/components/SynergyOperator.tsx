@@ -15,7 +15,7 @@ export interface SynergyOperatorProps {
   analysis: string;
 }
 
-const SynergyOperator: React.VFC<
+const Synergy: React.VFC<
   SynergyOperatorProps & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
   const { name, rarity, quality, analysis, ...rest } = props;
@@ -34,7 +34,7 @@ const SynergyOperator: React.VFC<
     </section>
   );
 };
-export default SynergyOperator;
+export default Synergy;
 
 const styles = (theme: Theme) => css`
   margin-top: ${theme.spacing(3)};

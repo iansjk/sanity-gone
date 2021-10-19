@@ -87,7 +87,9 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
           <dt>Regular Attack</dt>
           <dd className={slugify(attackType)}>
             {attackType}
-            {!isMobile && attackType !== "None" && " Damage"}
+            {!isMobile &&
+              (attackType === "Arts" || attackType === "Physical") &&
+              " Damage"}
           </dd>
         </div>
 

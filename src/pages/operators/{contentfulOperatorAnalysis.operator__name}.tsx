@@ -116,8 +116,8 @@ interface OperatorAnalysisData {
   skill1Analysis: MarkdownNode;
   skill2Analysis: MarkdownNode;
   skill3Analysis: MarkdownNode;
-  operatorSynergies: {
-    operatorName: string;
+  synergies: {
+    synergyName: string;
     isGroup: boolean;
     synergyIconUrl: string;
     synergyQuality: SynergyQuality;
@@ -179,11 +179,13 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   ]
     .filter((html) => !!html)
     .map((html, i) => htmlToReact(html, context, i));
-  const synergyOperators = contentful.operatorSynergies.map((os) => ({
-    name: os.operatorName,
-    rarity: rarityMap[os.operatorName] + 1,
-    quality: os.synergyQuality,
-    analysis: os.synergyDescription.childMarkdownRemark.html,
+  const synergies = contentful.synergies.map((syn) => ({
+    name: syn.synergyName,
+    isGroup: syn.isGroup,
+    rarity: syn.isGroup ? undefined : rarityMap[syn.synergyName] + 1,
+    quality: syn.synergyQuality,
+    iconUrl: syn.synergyIconUrl,
+    analysis: syn.synergyDescription.childMarkdownRemark.html,
   }));
 
   const strengths =
@@ -257,7 +259,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               className: "skills",
             },
             {
-              component: <Synergies synergies={synergyOperators} />,
+              component: <Synergies synergies={synergies} />,
               className: "synergies",
             },
           ].map(({ component, className }, i) => (
@@ -577,8 +579,8 @@ export const query = graphql`
           html
         }
       }
-      operatorSynergies {
-        operatorName
+      synergies {
+        synergyName
         isGroup
         synergyIconUrl
         synergyQuality

@@ -1,4 +1,5 @@
 import { css, Theme } from "@emotion/react";
+import { professionToClass, subProfessionToSubclass } from "../utils/globals";
 import GroupSynergyIcon from "./icons/GroupSynergyIcon";
 import OperatorPortrait from "./OperatorPortrait";
 
@@ -11,17 +12,30 @@ export enum SynergyQuality {
 
 export interface SynergyProps {
   name: string;
-  rarity?: number;
   quality?: SynergyQuality;
   isGroup: boolean;
-  iconUrl?: string;
   analysis: string;
+  iconUrl?: string;
+  rarity?: number;
+  profession?: string;
+  subProfessionId?: string;
 }
 
 const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
   (props) => {
-    const { name, rarity, quality, isGroup, iconUrl, analysis, ...rest } =
-      props;
+    const {
+      name,
+      quality,
+      isGroup,
+      analysis,
+      iconUrl,
+      rarity: rawRarity,
+      profession,
+      subProfessionId,
+      ...rest
+    } = props;
+    const rarity = rawRarity ? rawRarity + 1 : undefined;
+
     return (
       <section css={styles} {...rest}>
         <div className="synergy-operator-info">
@@ -45,6 +59,16 @@ const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
               <span className={`synergy-quality quality-${quality}`}>
                 {SynergyQuality[quality]}
               </span>
+            )}
+            {!isGroup && (
+              <div className="synergy-operator-info">
+                {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+                <span className={`rarity-${rarity!}-stars`}>{rarity} ★</span>{" "}
+                {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+                {professionToClass(profession!)} ·{" "}
+                {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+                {subProfessionToSubclass(subProfessionId!)}
+              </div>
             )}
           </div>
         </div>
@@ -103,6 +127,11 @@ const styles = (theme: Theme) => css`
         &.quality-2 {
           color: ${theme.palette.lime};
         }
+      }
+
+      .synergy-operator-info {
+        font-size: ${theme.typography.body3.fontSize};
+        line-height: ${theme.typography.body3.lineHeight};
       }
     }
   }

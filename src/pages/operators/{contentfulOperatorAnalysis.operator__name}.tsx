@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { css, Global, Theme } from "@emotion/react";
 import { graphql } from "gatsby";
 import { rgba, transparentize } from "polished";
@@ -139,6 +138,8 @@ interface Props {
       nodes: {
         name: string;
         rarity: number;
+        profession: string;
+        subProfessionId: string;
       }[];
     };
     allSummonsJson: {
@@ -162,10 +163,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   };
   const isMobile = useIsMobile();
 
-  const rarityMap = Object.fromEntries(
-    data.allOperatorsJson.nodes.map(({ name, rarity }) => [name, rarity])
-  );
-
   const talentAnalyses = [
     contentful.talent1Analysis.childMarkdownRemark.html,
     contentful.talent2Analysis?.childMarkdownRemark.html,
@@ -179,14 +176,25 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   ]
     .filter((html) => !!html)
     .map((html, i) => htmlToReact(html, context, i));
-  const synergies = contentful.synergies.map((syn) => ({
-    name: syn.synergyName,
-    isGroup: syn.isGroup,
-    rarity: syn.isGroup ? undefined : rarityMap[syn.synergyName] + 1,
-    quality: syn.synergyQuality,
-    iconUrl: syn.synergyIconUrl,
-    analysis: syn.synergyDescription.childMarkdownRemark.html,
-  }));
+
+  const operatorMap = Object.fromEntries(
+    data.allOperatorsJson.nodes.map(({ name, ...rest }) => [name, rest])
+  );
+
+  const synergies = contentful.synergies.map((syn) => {
+    const baseProps = {
+      name: syn.synergyName,
+      isGroup: syn.isGroup,
+      quality: syn.synergyQuality,
+      analysis: syn.synergyDescription.childMarkdownRemark.html,
+    };
+    return syn.isGroup
+      ? {
+          ...baseProps,
+          iconUrl: syn.synergyIconUrl,
+        }
+      : { ...baseProps, ...operatorMap[syn.synergyName] };
+  });
 
   const strengths =
     contentful.strengths.childMarkdownRemark.htmlAst.children[0].children
@@ -677,6 +685,8 @@ export const query = graphql`
       nodes {
         name
         rarity
+        profession
+        subProfessionId
       }
     }
 

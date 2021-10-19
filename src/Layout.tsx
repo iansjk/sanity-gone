@@ -423,4 +423,20 @@ const styles =
           margin: ${theme.spacing(2, 0, 0)};
         }
       }
+
+      .rarity-6-stars {
+        color: ${theme.palette.orange};
+      }
+
+      .rarity-5-stars {
+        color: ${theme.palette.yellow};
+      }
+
+      .rarity-4-stars {
+        color: ${theme.palette.softBlue};
+      }
+
+      .rarity-3-stars {
+        color: ${theme.palette.blue};
+      }
     `;

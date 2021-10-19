@@ -262,22 +262,6 @@ const styles = (theme: Theme) => css`
 
         .rarity {
           grid-column: 2;
-
-          &.rarity-6-stars {
-            color: ${theme.palette.orange};
-          }
-
-          &.rarity-5-stars {
-            color: ${theme.palette.yellow};
-          }
-
-          &.rarity-4-stars {
-            color: ${theme.palette.softBlue};
-          }
-
-          &.rarity-3-stars {
-            color: ${theme.palette.blue};
-          }
         }
 
         .operator-class {

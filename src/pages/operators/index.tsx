@@ -10,6 +10,7 @@ import {
   subProfessionToSubclass,
 } from "../../utils/globals";
 import NavigateRightArrow from "../../components/icons/NavigateRightArrow";
+import CustomCheckbox from "../../components/CustomCheckbox";
 
 interface Props {
   data: {
@@ -67,14 +68,11 @@ const Operators: React.VFC<Props> = (props) => {
           </span>
         </span>
         <div className="sort-and-filter-options">
-          <label className="guide-available">
-            <input
-              type="checkbox"
-              onChange={handleGuideAvailableChange}
-              checked={showOnlyGuideAvailable}
-            />
-            Guide available
-          </label>
+          <CustomCheckbox
+            label="Guide available"
+            onChange={handleGuideAvailableChange}
+            checked={showOnlyGuideAvailable}
+          />
         </div>
         <ul className="operator-list">
           {operatorsToShow.map((op) => {

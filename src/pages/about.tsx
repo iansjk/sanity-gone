@@ -75,7 +75,7 @@ const globalOverrideStyles = css`
 `;
 
 const styles = (theme: Theme) => css`
-  padding: ${theme.spacing(0, 3)};
+  padding: ${theme.spacing(0, 2)};
 
   h2 {
     margin: ${theme.spacing(8, 0, 0)};

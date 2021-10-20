@@ -156,7 +156,7 @@ const Operators: React.VFC<Props> = (props) => {
 export default Operators;
 
 const styles = (theme: Theme) => css`
-  padding: ${theme.spacing(0, 3)};
+  padding: ${theme.spacing(0, 2)};
 
   .last-updated {
     .date {

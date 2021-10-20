@@ -66,9 +66,14 @@ const styles = (theme: Theme) => css`
       background-repeat: no-repeat;
       background-position: center;
       opacity: 0.34;
+      background-color: ${theme.palette.midtoneDarker};
 
       &:hover {
         opacity: 0.67;
+      }
+
+      &.inactive:hover {
+        background-color: ${theme.palette.midtone};
       }
 
       &.active {

@@ -255,6 +255,7 @@ const styles = (theme: Theme) => css`
 
         &.has-guide {
           transform: scale(1.1);
+          filter: brightness(110%);
 
           .on-hover {
             border-bottom: ${theme.spacing(0.5)} solid ${theme.palette.white};

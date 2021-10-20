@@ -143,13 +143,26 @@ const styles = (theme: Theme) => css`
 
     &.operator-stats {
       grid-template-columns: repeat(4, 195fr) 224fr;
-      
+
       ${theme.breakpoints.down("mobile")} {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, max-content);
       }
+
+      .health {
+        border-top-left-radius: ${theme.spacing(0.5)};
+      }
+
+      .attack-power {
+        border-bottom-left-radius: ${theme.spacing(0.5)};
+
+        ${theme.breakpoints.down("mobile")} {
+          border-bottom-left-radius: 0;
+          border-top-right-radius: ${theme.spacing(0.5)};
+        }
+      }
     }
-    
+
     &.summon-stats {
       grid-template-columns: 88fr repeat(4, 149fr) 224fr;
 
@@ -165,10 +178,12 @@ const styles = (theme: Theme) => css`
 
     .summon-icon {
       grid-row-start: span 2;
+      border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
 
       ${theme.breakpoints.down("mobile")} {
         grid-row-start: unset;
         grid-column: span 2;
+        border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
       }
 
       img {
@@ -232,6 +247,7 @@ const styles = (theme: Theme) => css`
       ${theme.breakpoints.down("mobile")} {
         grid-row: 5;
         grid-column-start: span 2;
+        border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
       }
 
       dd {

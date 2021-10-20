@@ -114,7 +114,7 @@ const styles = (theme: Theme) => css`
         border: none;
         font-weight: ${theme.typography.skillTalentHeading.fontWeight};
         cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.66);
+        background-color: ${theme.palette.midtoneDarker};
         color: ${theme.palette.midtoneBrighter};
         box-sizing: border-box;
         border: ${theme.spacing(0.25)} solid ${theme.palette.midtoneBrighter};
@@ -141,7 +141,6 @@ const styles = (theme: Theme) => css`
         }
 
         &.inactive:hover {
-          background-color: ${theme.palette.midtone};
           border-color: ${theme.palette.gray};
           color: ${theme.palette.gray};
         }

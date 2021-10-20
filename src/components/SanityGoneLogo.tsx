@@ -67,6 +67,7 @@ const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
 export default SanityGoneLogo;
 
 const styles = (theme: Theme) => css`
+  margin-top: 2px;
   line-height: 1;
 
   & > svg > path {

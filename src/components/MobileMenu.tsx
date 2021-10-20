@@ -1,12 +1,85 @@
 import { css, Theme } from "@emotion/react";
+import { MdClose as CloseIcon } from "react-icons/md";
 
 import "swiper/swiper.min.css";
+import SanityGoneLogo from "./SanityGoneLogo";
 
-export interface MobileMenuProps {}
-
-const MobileMenu: React.VFC<MobileMenuProps> = () => {
-  return <div></div>;
+const MobileMenu: React.VFC = () => {
+  return (
+    <div aria-modal="true" css={styles}>
+      <div className="top-bar">
+        <SanityGoneLogo />
+        <button className="close-button" aria-label="Close menu">
+          <CloseIcon />
+        </button>
+      </div>
+      <h2 className="list-header">Navigation</h2>
+      <ul>
+        <li>
+          <a href="/operators">Operators</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+  );
 };
 export default MobileMenu;
 
-const styles = (theme: Theme) => css``;
+const styles = (theme: Theme) => css`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  .top-bar {
+    height: 77px;
+    padding: ${theme.spacing(0, 3)};
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+    background-color: ${theme.palette.dark};
+
+    .close-button {
+      grid-column: 3;
+      background: none;
+      border: none;
+
+      svg {
+        fill: ${theme.palette.white};
+      }
+    }
+  }
+
+  .list-header {
+    margin: 0;
+    font-size: ${theme.typography.skillTalentHeading.fontSize};
+    font-weight: ${theme.typography.skillTalentHeading.fontWeight};
+    line-height: ${theme.typography.skillTalentHeading.lineHeight};
+    color: ${theme.palette.gray};
+    border-bottom: 1px solid ${theme.palette.midtoneBrigterer};
+  }
+
+  .list-header,
+  ul li a {
+    margin: 0;
+    padding: ${theme.spacing(3)};
+    background-color: ${theme.palette.midtone};
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    a {
+      color: ${theme.palette.white};
+    }
+  }
+
+  ul li a {
+    display: block;
+  }
+`;

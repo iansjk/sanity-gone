@@ -105,6 +105,7 @@ interface OperatorAnalysisData {
     archetype: {
       archetypeName: string;
     };
+    customBgPositionX: string;
   };
   author: {
     name: string;
@@ -222,7 +223,10 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       // previousLocationLink="/operators"
     >
       <Global
-        styles={globalOverrideStyles(contentful.operator.accentColorInHex)}
+        styles={globalOverrideStyles(
+          contentful.operator.accentColorInHex,
+          contentful.operator.customBgPositionX
+        )}
       />
       <Tabs component="main" css={styles(contentful.operator.accentColorInHex)}>
         <TabButtons className="tabs" isSwiper>
@@ -322,36 +326,44 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
 };
 export default OperatorAnalysis;
 
-const globalOverrideStyles = (accentColor: string) => (theme: Theme) =>
-  css`
-    a {
-      color: ${accentColor};
-    }
+const globalOverrideStyles =
+  (accentColor: string, customBgPositionX?: string) => (theme: Theme) =>
+    css`
+      ${customBgPositionX &&
+      css`
+        body {
+          background-position-x: ${customBgPositionX};
+        }
+      `}
 
-    header {
-      .heading-and-breadcrumb {
-        h1 {
-          font-size: ${theme.typography.operatorPageHeading.fontSize};
-          font-weight: ${theme.typography.operatorPageHeading.fontWeight};
-          line-height: ${theme.typography.operatorPageHeading.lineHeight};
-          text-shadow: ${theme.typography.operatorPageHeading.textShadow};
+      a {
+        color: ${accentColor};
+      }
 
-          ${theme.breakpoints.down("mobile")} {
-            font-size: ${theme.typography.operatorNameHeading.fontSize};
-            font-weight: ${theme.typography.operatorNameHeading.fontWeight};
-            line-height: ${theme.typography.operatorNameHeading.lineHeight};
+      header {
+        .heading-and-breadcrumb {
+          h1 {
+            font-size: ${theme.typography.operatorPageHeading.fontSize};
+            font-weight: ${theme.typography.operatorPageHeading.fontWeight};
+            line-height: ${theme.typography.operatorPageHeading.lineHeight};
+            text-shadow: ${theme.typography.operatorPageHeading.textShadow};
 
-            .alter-name {
-              display: inline-block;
-              font-size: ${theme.typography.generalHeading.fontSize};
-              line-height: ${theme.typography.generalHeading.lineHeight};
-              font-weight: normal;
+            ${theme.breakpoints.down("mobile")} {
+              font-size: ${theme.typography.operatorNameHeading.fontSize};
+              font-weight: ${theme.typography.operatorNameHeading.fontWeight};
+              line-height: ${theme.typography.operatorNameHeading.lineHeight};
+
+              .alter-name {
+                display: inline-block;
+                font-size: ${theme.typography.generalHeading.fontSize};
+                line-height: ${theme.typography.generalHeading.lineHeight};
+                font-weight: normal;
+              }
             }
           }
         }
       }
-    }
-  `;
+    `;
 
 const styles = (accentColor: string) => (theme: Theme) =>
   css`
@@ -570,6 +582,7 @@ export const query = graphql`
         archetype {
           archetypeName
         }
+        customBgPositionX
       }
       introduction {
         childMarkdownRemark {

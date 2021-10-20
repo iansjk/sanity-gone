@@ -354,7 +354,7 @@ const globalOverrideStyles =
               line-height: ${theme.typography.operatorNameHeading.lineHeight};
 
               .alter-name {
-                display: inline-block;
+                display: block;
                 font-size: ${theme.typography.generalHeading.fontSize};
                 line-height: ${theme.typography.generalHeading.lineHeight};
                 font-weight: normal;

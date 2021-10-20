@@ -1,3 +1,5 @@
+import { css, Theme } from "@emotion/react";
+
 const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
@@ -7,6 +9,7 @@ const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Sanity Gone Zero"
+      css={styles}
       {...props}
     >
       <path
@@ -61,3 +64,9 @@ const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   );
 };
 export default SanityGoneLogo;
+
+const styles = (theme: Theme) => css`
+  & > path {
+    fill: ${theme.palette.white};
+  }
+`;

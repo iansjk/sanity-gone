@@ -185,7 +185,7 @@ const styles =
       }
 
       header {
-        padding: ${theme.spacing(2, 0, 0)};
+        padding: ${theme.spacing(2, 2, 0)};
 
         .top-line {
           height: 39px; // FIXME delete this once site-wide search is implemented

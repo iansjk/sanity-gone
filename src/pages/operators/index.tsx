@@ -203,6 +203,7 @@ const styles = (theme: Theme) => css`
         linear-gradient(to bottom, transparent 42%, #000 100%), var(--bg-image);
       box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)}
         ${theme.spacing(1)} rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease-in-out;
 
       ${theme.breakpoints.down("mobile")} {
         width: 148px;
@@ -253,6 +254,8 @@ const styles = (theme: Theme) => css`
         }
 
         &.has-guide {
+          transform: scale(1.1);
+
           .on-hover {
             border-bottom: ${theme.spacing(0.5)} solid ${theme.palette.white};
           }

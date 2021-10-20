@@ -188,12 +188,12 @@ const styles = (theme: Theme) => css`
     }
 
     li.operator {
-      width: 160px;
+      width: 100%;
       height: 280px;
       flex-grow: 1;
       border-radius: ${theme.spacing(0.5)};
       background-size: cover;
-      background-position-y: center;
+      background-position-y: top;
       background-image: linear-gradient(
           120deg,
           ${theme.palette.midtoneDarker} 0%,

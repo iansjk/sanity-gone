@@ -163,7 +163,7 @@ const styles = (theme: Theme) => css`
       }
 
       .class-and-subclass {
-        padding: ${theme.spacing(1)};
+        padding: ${theme.spacing(1, 2)};
         display: flex;
         align-items: center;
         font-weight: ${theme.typography.navigationLinkBold.fontWeight};

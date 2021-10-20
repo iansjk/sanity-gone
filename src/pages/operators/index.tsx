@@ -244,12 +244,17 @@ const styles = (theme: Theme) => css`
           display: grid;
           grid-template-columns: max-content 1fr max-content;
           align-items: flex-end;
-          border-bottom: ${theme.spacing(0.5)} solid ${theme.palette.gray};
           border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
 
           .go-to-guide-icon {
             grid-column: 3;
             height: ${theme.typography.body3.lineHeight};
+          }
+        }
+
+        &.has-guide {
+          .on-hover {
+            border-bottom: ${theme.spacing(0.5)} solid ${theme.palette.white};
           }
         }
       }

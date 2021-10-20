@@ -104,7 +104,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
               <div className="links-section">
                 <span className="list-title">Links</span>
                 <ul>
-                  <li>Contact Email</li>
+                  <li>
+                    <a href="mailto:sanitygone.help@gmail.com">Contact Email</a>
+                  </li>
                   <li>Disclaimer</li>
                 </ul>
               </div>
@@ -318,6 +320,14 @@ const styles =
           }
 
           .links-section {
+            a {
+              color: ${theme.palette.gray};
+
+              &:hover {
+                color: ${theme.palette.white};
+              }
+            }
+
             ${theme.breakpoints.down("mobile")} {
               grid-row: 2;
               grid-column: 1;

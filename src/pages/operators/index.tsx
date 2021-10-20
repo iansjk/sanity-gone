@@ -192,6 +192,7 @@ const styles = (theme: Theme) => css`
       height: 280px;
       flex-grow: 1;
       border-radius: ${theme.spacing(0.5)};
+      background-color: ${theme.palette.black};
       background-size: cover;
       background-position-y: top;
       background-image: linear-gradient(
@@ -200,6 +201,8 @@ const styles = (theme: Theme) => css`
           transparent 18%
         ),
         linear-gradient(to bottom, transparent 42%, #000 100%), var(--bg-image);
+      box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)}
+        ${theme.spacing(1)} rgba(0, 0, 0, 0.15);
 
       ${theme.breakpoints.down("mobile")} {
         width: 148px;
@@ -226,6 +229,8 @@ const styles = (theme: Theme) => css`
         display: none;
         font-size: ${theme.typography.body3.fontSize};
         line-height: ${theme.typography.body3.lineHeight};
+        text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
+          rgba(0, 0, 0, 0.5);
       }
 
       &:hover {
@@ -256,6 +261,13 @@ const styles = (theme: Theme) => css`
         grid-template-columns: 1fr max-content;
         padding: ${theme.spacing(2)};
         row-gap: ${theme.spacing(1)};
+
+        .operator-name,
+        .rarity,
+        .operator-class {
+          text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
+            rgba(0, 0, 0, 0.5);
+        }
 
         .operator-name {
           grid-column: span 2;

@@ -62,7 +62,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <div className="top-line">
                   <SanityGoneLogo />
                   <div className="header-links" hidden={isMobile}>
-                    <a href="/">Home</a>
                     <a href="/operators">Operators</a>
                     <a href="/about">About</a>
                   </div>

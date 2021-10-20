@@ -50,10 +50,20 @@ const styles = (theme: Theme) => css`
 
     &.strengths {
       color: ${theme.palette.lime};
+      border-top-left-radius: ${theme.spacing(0.5)};
+
+      ${theme.breakpoints.down("mobile")} {
+        border-top-right-radius: ${theme.spacing(0.5)};
+      }
     }
 
     &.weaknesses {
       color: ${theme.palette.red};
+      border-top-right-radius: ${theme.spacing(0.5)};
+
+      ${theme.breakpoints.down("mobile")} {
+        border-radius: 0;
+      }
     }
   }
 
@@ -61,9 +71,20 @@ const styles = (theme: Theme) => css`
     grid-row: 2;
     list-style-type: none;
 
-    ${theme.breakpoints.down("mobile")} {
-      &.weaknesses-list {
+    &.strengths-list {
+      border-bottom-left-radius: ${theme.spacing(0.5)};
+
+      ${theme.breakpoints.down("mobile")} {
+        border-radius: 0;
+      }
+    }
+
+    &.weaknesses-list {
+      border-bottom-right-radius: ${theme.spacing(0.5)};
+
+      ${theme.breakpoints.down("mobile")} {
         grid-row: 4;
+        border-bottom-left-radius: ${theme.spacing(0.5)};
       }
     }
 

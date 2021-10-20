@@ -256,7 +256,7 @@ const styles =
         background-color: ${theme.palette.black};
 
         ${theme.breakpoints.down("mobile")} {
-          margin: 0;
+          margin-top: ${theme.spacing(4)};
         }
 
         .footer-inner {

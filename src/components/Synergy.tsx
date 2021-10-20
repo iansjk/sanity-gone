@@ -95,8 +95,8 @@ const styles = (theme: Theme) => css`
 
       .group-synergy-icon {
         position: absolute;
-        right: 0;
-        bottom: 0;
+        right: -3px;
+        bottom: -2px;
       }
     }
 

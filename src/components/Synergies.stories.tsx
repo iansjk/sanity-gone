@@ -11,12 +11,11 @@ export const Default: Story<SynergiesProps> = (args) => <Synergies {...args} />;
 Default.args = {
   synergies: [
     {
-      name: "Blemishine",
+      name: "Low ATK Physical Operators",
       rarity: 5,
-      isGroup: false,
-      profession: "TANK",
-      subProfessionId: "guardian",
-      quality: SynergyQuality["Excellent Synergy"],
+      isGroup: true,
+      iconUrl:
+        "https://res.cloudinary.com/samidare/image/upload/v1628565419/arknights/subclasses/fastshot.png",
       analysis: `
         <p>
           The synergy with her talent is an obvious one, since Mudrock’s S2 is Defensive Recovery, Blemishine’s first talents will work on it allowing Mudrock to recover 1 SP whenever attacking an enemy, making the skill very spammable and consistent by not relying on enemies to actually hit you. On top of that, Blemishine’s S2 is not actually a direct heal; it’s a regeneration type heal, meaning that Blemi can actually heal Mudrock (and other similar operators) with it. This can easily make a huge difference if your Mudrock is struggling to sustain herself. This makes the two a great defender duo to bring pretty much anywhere.

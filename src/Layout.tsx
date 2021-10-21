@@ -132,14 +132,14 @@ const Layout: React.FC<LayoutProps> = (props) => {
                       <DiscordLogo size={24} />
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a
                       href="https://twitter.com/sanitygonezero"
                       aria-label="Sanity Gone Zero Twitter"
                     >
                       <TwitterLogo size={24} />
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

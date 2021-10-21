@@ -59,7 +59,7 @@ const styles = (theme: Theme) => css`
     font-weight: ${theme.typography.skillTalentHeading.fontWeight};
     line-height: ${theme.typography.skillTalentHeading.lineHeight};
     color: ${theme.palette.gray};
-    border-bottom: 1px solid ${theme.palette.midtoneBrigterer};
+    border-bottom: 1px solid ${theme.palette.midtoneBrighterer};
   }
 
   .list-header,

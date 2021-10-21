@@ -37,7 +37,7 @@ const palette = {
   midtoneDarker: "#191920",
   midtone: "#24242e",
   midtoneBrighter: "#363643",
-  midtoneBrigterer: "#484858",
+  midtoneBrighterer: "#484858",
   midtoneExtra: "#1f1f27",
 };
 

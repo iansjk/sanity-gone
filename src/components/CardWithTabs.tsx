@@ -86,10 +86,6 @@ const styles = (theme: Theme) => css`
 
       ${theme.breakpoints.down("mobile")} {
         padding: ${theme.spacing(0, 2, 2)};
-
-        p:first-of-type {
-          margin-top: 0;
-        }
       }
     }
 

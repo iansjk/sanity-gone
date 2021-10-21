@@ -125,6 +125,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   <li>
                     <a
                       href="https://discord.gg/QS3uSVzT9M"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label="Sanity Gone Zero Discord Server"
                     >
                       <DiscordLogo size={24} />

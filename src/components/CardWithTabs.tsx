@@ -10,6 +10,7 @@ import { css, Theme } from "@emotion/react";
 
 export type CardWithTabsProps = {
   header: string;
+  isSwiper?: boolean;
 } & Either<
   {
     panelContent: ReturnType<typeof parse>[];
@@ -30,6 +31,7 @@ export type CardWithTabsProps = {
 const CardWithTabs: React.VFC<CardWithTabsProps> = (props) => {
   const {
     header,
+    isSwiper,
     panelContent,
     buttonLabels,
     buttonLabelFn,
@@ -41,7 +43,7 @@ const CardWithTabs: React.VFC<CardWithTabsProps> = (props) => {
   return (
     <Card header={header} css={styles} {...rest}>
       <Tabs className="tabs-wrapper">
-        <TabButtons className="tab-buttons">
+        <TabButtons className="tab-buttons" isSwiper={isSwiper}>
           {panelContent
             ? panelContent.map((_, i) => (
                 <button

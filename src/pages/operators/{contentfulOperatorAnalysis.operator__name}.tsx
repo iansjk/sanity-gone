@@ -379,7 +379,41 @@ const styles = (accentColor: string) => (theme: Theme) =>
       grid-template-columns: 1fr;
     }
 
-    .swiper-container {
+    .tabs ~ .swiper-container {
+      background-color: ${transparentize(0.34, theme.palette.dark)};
+      backdrop-filter: blur(${theme.spacing(1)});
+
+      button {
+        box-sizing: border-box;
+        padding: ${theme.spacing(2)};
+        width: max-content;
+        position: relative;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: ${theme.typography.cardHeading.fontSize};
+        font-weight: ${theme.typography.cardHeading.fontWeight};
+        line-height: ${theme.typography.cardHeading.lineHeight};
+        text-transform: ${theme.typography.cardHeading.textTransform};
+
+        &:not(.active) {
+          color: ${theme.palette.midtoneBrighter};
+        }
+
+        &.active {
+          &::after {
+            content: " ";
+            display: inline-block;
+            width: ${theme.spacing(4)};
+            position: absolute;
+            left: calc(50% - ${theme.spacing(2)});
+            bottom: 0;
+            border-bottom-width: 3px;
+            border-bottom-style: solid;
+          }
+        }
+      }
+
       button.active {
         color: ${accentColor};
 

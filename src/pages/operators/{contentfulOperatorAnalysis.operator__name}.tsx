@@ -22,6 +22,7 @@ import { CharacterObject } from "../../utils/types";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Fragment } from "react";
 import StarIcon from "../../components/icons/StarIcon";
+import MasteryRecommendation from "../../components/MasteryRecommendation";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -65,7 +66,15 @@ const htmlToReact = (
           }
           return <CharacterStats characterObject={context.summon} />;
         } else if (domNode.name === "masteryrecommendation") {
-          return <Fragment />;
+          const props = attributesToProps(domNode.attribs);
+          return (
+            <MasteryRecommendation
+              {...props}
+              //@ts-expect-error children[0].data should exist on a text node
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              analysis={domNode.children[0].data}
+            />
+          );
         } else if ((domNode.firstChild as Element).name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")

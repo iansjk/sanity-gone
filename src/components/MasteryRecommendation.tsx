@@ -6,9 +6,7 @@ export interface MasteryRecommendationProps {
   analysis: string;
 }
 
-const MasteryRecommendation: React.VFC<MasteryRecommendationProps> = (
-  props
-) => {
+const MasteryRecommendation: React.FC<MasteryRecommendationProps> = (props) => {
   const { level, priority, analysis } = props;
   return (
     <section css={styles}>
@@ -40,6 +38,10 @@ const styles = (theme: Theme) => css`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: ${theme.spacing(0.25)};
+
+    ${theme.breakpoints.down("mobile")} {
+      grid-template-columns: unset;
+    }
 
     .recommended-rank,
     .priority {

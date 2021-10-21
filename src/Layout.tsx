@@ -1,6 +1,6 @@
 import { Global, Theme, css, ThemeProvider } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Helmet } from "react-helmet";
 import {
   BsDiscord as DiscordLogo,
@@ -12,6 +12,7 @@ import SanityGoneLogo from "./components/SanityGoneLogo";
 import useIsMobile from "./hooks/useIsMobile";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 import { rgba } from "polished";
+import MobileMenu from "./components/MobileMenu";
 
 interface LayoutProps {
   pageTitle: string;
@@ -30,6 +31,11 @@ const Layout: React.FC<LayoutProps> = (props) => {
     ...rest
   } = props;
   const isMobile = useIsMobile();
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMobileMenuOpen((open) => !open);
+  };
 
   return (
     // <> shorthand syntax is BROKEN, don't use it.
@@ -62,12 +68,19 @@ const Layout: React.FC<LayoutProps> = (props) => {
                     <a href="/operators">Operators</a>
                     <a href="/about">About</a>
                   </div>
-                  <MobileMenuIcon
-                    className="mobile-menu"
-                    role="button"
-                    aria-label="Open Menu"
-                    hidden={!isMobile}
-                  />
+                  <button className="mobile-menu-button" aria-label="Open menu">
+                    <MobileMenuIcon
+                      className="mobile-menu"
+                      role="button"
+                      aria-label="Open Menu"
+                      hidden={!isMobile}
+                      onClick={handleMenuToggle}
+                    />
+                    <MobileMenu
+                      open={isMobileMenuOpen}
+                      onClose={() => setMobileMenuOpen(false)}
+                    />
+                  </button>
                 </div>
                 <div className="heading-and-breadcrumb">
                   {customPageHeading || <h1>{pageTitle}</h1>}
@@ -184,6 +197,10 @@ const styles =
       header {
         padding: ${theme.spacing(2, 2, 0)};
 
+        ${theme.breakpoints.down("mobile")} {
+          padding: ${theme.spacing(3, 3, 0)};
+        }
+
         .top-line {
           height: 39px; // FIXME delete this once site-wide search is implemented
           display: flex;
@@ -199,6 +216,12 @@ const styles =
               color: ${theme.palette.white};
               text-decoration: none;
             }
+          }
+
+          .mobile-menu-button {
+            padding: 0;
+            background: none;
+            border: none;
           }
 
           .mobile-menu {

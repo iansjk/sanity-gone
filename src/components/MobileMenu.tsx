@@ -1,29 +1,50 @@
+import ReactDOM from "react-dom";
 import { css, Theme } from "@emotion/react";
 import { MdClose as CloseIcon } from "react-icons/md";
 
 import "swiper/swiper.min.css";
 import SanityGoneLogo from "./SanityGoneLogo";
 
-const MobileMenu: React.VFC = () => {
-  return (
-    <div aria-modal="true" css={styles}>
-      <div className="top-bar">
-        <SanityGoneLogo />
-        <button className="close-button" aria-label="Close menu">
-          <CloseIcon />
-        </button>
-      </div>
-      <h2 className="list-header">Navigation</h2>
-      <ul>
-        <li>
-          <a href="/operators">Operators</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
-      </ul>
-    </div>
-  );
+export interface MobileMenuProps {
+  open: boolean;
+  onClose: () => void;
+}
+
+const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
+  const { open, onClose } = props;
+
+  return typeof window === "undefined"
+    ? null
+    : ReactDOM.createPortal(
+        <div
+          aria-modal={open}
+          className={open ? "open" : "closed"}
+          css={styles}
+        >
+          <div className="mobile-menu-inner">
+            <div className="top-bar">
+              <SanityGoneLogo />
+              <button
+                className="close-button"
+                aria-label="Close menu"
+                onClick={onClose}
+              >
+                <CloseIcon />
+              </button>
+            </div>
+            <h2 className="list-header">Navigation</h2>
+            <ul>
+              <li>
+                <a href="/operators">Operators</a>
+              </li>
+              <li>
+                <a href="/about">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>,
+        window.document.body
+      );
 };
 export default MobileMenu;
 
@@ -33,16 +54,29 @@ const styles = (theme: Theme) => css`
   top: 0;
   width: 100%;
   height: 100%;
+  z-index: 100;
+
+  &.closed {
+    display: none;
+  }
+
+  &.open {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.66);
+  }
 
   .top-bar {
-    height: 77px;
-    padding: ${theme.spacing(0, 3)};
+    height: 39px;
+    padding: ${theme.spacing(3)};
     display: grid;
     grid-template-columns: max-content 1fr max-content;
     align-items: center;
     background-color: ${theme.palette.dark};
 
     .close-button {
+      position: relative;
+      right: -7px;
+      top: -1px;
       grid-column: 3;
       background: none;
       border: none;

@@ -21,6 +21,7 @@ import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Fragment } from "react";
+import StarIcon from "../../components/icons/StarIcon";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -116,8 +117,11 @@ interface OperatorAnalysisData {
   introduction: MarkdownNode;
   talent1Analysis: MarkdownNode;
   talent2Analysis: MarkdownNode;
+  skill1Recommended?: boolean;
   skill1Analysis: MarkdownNode;
+  skill2Recommended?: boolean;
   skill2Analysis: MarkdownNode;
+  skill3Recommended?: boolean;
   skill3Analysis: MarkdownNode;
   synergies: {
     synergyName: string;
@@ -174,13 +178,30 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   ]
     .filter((html) => !!html)
     .map((html, i) => htmlToReact(html, context, i));
+  const skillRecommended = [
+    contentful.skill1Recommended,
+    contentful.skill2Recommended,
+    contentful.skill3Recommended,
+  ];
   const skillAnalyses = [
     contentful.skill1Analysis.childMarkdownRemark.html,
     contentful.skill2Analysis.childMarkdownRemark.html,
     contentful.skill3Analysis?.childMarkdownRemark.html,
   ]
     .filter((html) => !!html)
-    .map((html, i) => htmlToReact(html, context, i));
+    .map((html, i) => {
+      if (skillRecommended[i]) {
+        return (
+          <Fragment>
+            <span className="recommended-skill">
+              <StarIcon aria-hidden="true" /> Recommended Skill
+            </span>
+            {htmlToReact(html, context, i)}
+          </Fragment>
+        );
+      }
+      return htmlToReact(html, context, i);
+    });
 
   const operatorMap = Object.fromEntries(
     data.allOperatorsJson.nodes.map(({ name, ...rest }) => [name, rest])
@@ -583,6 +604,25 @@ const styles = (accentColor: string) => (theme: Theme) =>
             }
           }
         }
+
+        .recommended-skill {
+          display: inline-flex;
+          margin-top: ${theme.spacing(3)};
+          gap: ${theme.spacing(1)};
+          color: ${theme.palette.yellow};
+          font-size: ${theme.typography.skillTalentHeading.fontSize};
+          font-weight: ${theme.typography.skillTalentHeading.fontWeight};
+          line-height: ${theme.typography.skillTalentHeading.lineHeight};
+          align-items: center;
+
+          svg path {
+            fill: ${theme.palette.yellow};
+          }
+
+          ${theme.breakpoints.down("mobile")} {
+            margin-top: ${theme.spacing(2)};
+          }
+        }
       }
 
       .analysis-section:not(.synergies) {
@@ -636,16 +676,19 @@ export const query = graphql`
           html
         }
       }
+      skill1Recommended
       skill1Analysis {
         childMarkdownRemark {
           html
         }
       }
+      skill2Recommended
       skill2Analysis {
         childMarkdownRemark {
           html
         }
       }
+      skill3Recommended
       skill3Analysis {
         childMarkdownRemark {
           html

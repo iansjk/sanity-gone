@@ -50,11 +50,6 @@ const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
           </div>
           <div className="name-and-quality">
             <h3 className="operator-name">{name}</h3>
-            {quality != null && (
-              <span className={`synergy-quality quality-${quality}`}>
-                {SynergyQuality[quality]}
-              </span>
-            )}
             {!isGroup && (
               <div className="synergy-operator-info">
                 {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}

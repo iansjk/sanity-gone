@@ -123,10 +123,20 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <span className="list-title">Socials</span>
                 <ul>
                   <li>
-                    <DiscordLogo size={24} aria-label="Discord" />
+                    <a
+                      href="https://discord.gg/QS3uSVzT9M"
+                      aria-label="Sanity Gone Zero Discord Server"
+                    >
+                      <DiscordLogo size={24} />
+                    </a>
                   </li>
                   <li>
-                    <TwitterLogo size={24} aria-label="Twitter" />
+                    <a
+                      href="https://twitter.com/sanitygonezero"
+                      aria-label="Sanity Gone Zero Twitter"
+                    >
+                      <TwitterLogo size={24} />
+                    </a>
                   </li>
                 </ul>
               </div>

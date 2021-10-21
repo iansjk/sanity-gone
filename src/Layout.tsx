@@ -349,7 +349,8 @@ const styles =
             }
           }
 
-          .links-section {
+          .links-section,
+          .socials-section {
             a {
               color: ${theme.palette.gray};
 
@@ -357,7 +358,9 @@ const styles =
                 color: ${theme.palette.white};
               }
             }
+          }
 
+          .links-section {
             ${theme.breakpoints.down("mobile")} {
               grid-row: 2;
               grid-column: 1;

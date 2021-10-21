@@ -47,12 +47,6 @@ const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
               iconOverride={isGroup ? iconUrl : undefined}
               rarity={!isGroup ? rarity : undefined}
             />
-            {isGroup && (
-              <GroupSynergyIcon
-                className="group-synergy-icon"
-                aria-label="Group Synergy"
-              />
-            )}
           </div>
           <div className="name-and-quality">
             <h3 className="operator-name">{name}</h3>

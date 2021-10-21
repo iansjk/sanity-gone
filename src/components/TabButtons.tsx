@@ -1,8 +1,7 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { Theme, css } from "@emotion/react";
 import { transparentize } from "polished";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper.min.css";
+import ScrollContainer from "react-indiana-drag-scroll";
 import useIsMobile from "../hooks/useIsMobile";
 
 export type TabButtonsProps = Omit<
@@ -17,7 +16,6 @@ export type TabButtonsProps = Omit<
 
 const TabButtons: React.FC<TabButtonsProps> = (props) => {
   const { activeTab, onClick, isSwiper, children, ...rest } = props;
-  const [swiper, setSwiper] = useState<any | null>(null);
   const isMobile = useIsMobile();
 
   const buttonChildren = React.Children.toArray(children).filter(
@@ -82,9 +80,6 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
           onClick: ((noClosureIndex) => () => {
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             onClick!(noClosureIndex);
-            if (isSwiper) {
-              swiper?.slideTo(noClosureIndex);
-            }
           })(buttonIndex),
           onKeyDown: handleKeyDown,
           tabIndex: isActiveTab ? 0 : -1,
@@ -101,30 +96,9 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
   return (
     <Fragment>
       {isSwiper && (
-        <Swiper
-          role="tablist"
-          onSwiper={(swiper) => {
-            setSwiper(swiper);
-            swiper.slideTo(activeTab!);
-            swiper.update();
-          }}
-          centeredSlides
-          slidesPerView="auto"
-          freeMode
-          freeModeSticky
-          grabCursor
-          touchRatio={0.5}
-          observer
-          onActiveIndexChange={() => {
-            newChildren[swiper.activeIndex].props.onClick();
-          }}
-          css={swiperStyles}
-          hidden={!isMobile}
-        >
-          {newChildren.map((child, i) => (
-            <SwiperSlide key={i}>{child}</SwiperSlide>
-          ))}
-        </Swiper>
+        <ScrollContainer css={swiperStyles} className="swiper-container">
+          {newChildren}
+        </ScrollContainer>
       )}
       <div
         role="tablist"
@@ -141,47 +115,36 @@ export default TabButtons;
 const swiperStyles = (theme: Theme) => css`
   background-color: ${transparentize(0.34, theme.palette.dark)};
   backdrop-filter: blur(${theme.spacing(1)});
+  display: flex;
 
-  &.swiper-container {
-    margin: 0;
-    width: 100%;
-  }
-
-  .swiper-slide {
+  button {
     box-sizing: border-box;
     padding: ${theme.spacing(2)};
-    margin-left: ${theme.spacing(2)};
     width: max-content;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: ${theme.typography.cardHeading.fontSize};
+    font-weight: ${theme.typography.cardHeading.fontWeight};
+    line-height: ${theme.typography.cardHeading.lineHeight};
+    text-transform: ${theme.typography.cardHeading.textTransform};
 
-    button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: ${theme.typography.cardHeading.fontSize};
-      font-weight: ${theme.typography.cardHeading.fontWeight};
-      line-height: ${theme.typography.cardHeading.lineHeight};
-      text-transform: ${theme.typography.cardHeading.textTransform};
-    }
-  }
-
-  .swiper-slide:not(.swiper-slide-active) {
-    button {
+    &:not(.active) {
       color: ${theme.palette.midtoneBrighter};
     }
-  }
 
-  .swiper-slide-active {
-    position: relative;
-
-    &::after {
-      content: " ";
-      display: inline-block;
-      width: ${theme.spacing(4)};
-      position: absolute;
-      left: calc(50% - ${theme.spacing(2)});
-      bottom: 0;
-      border-bottom-width: 3px;
-      border-bottom-style: solid;
+    &.active {
+      &::after {
+        content: " ";
+        display: inline-block;
+        width: ${theme.spacing(4)};
+        position: absolute;
+        left: calc(50% - ${theme.spacing(2)});
+        bottom: 0;
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+      }
     }
   }
 `;

@@ -380,13 +380,11 @@ const styles = (accentColor: string) => (theme: Theme) =>
     }
 
     .swiper-container {
-      .swiper-slide-active {
+      button.active {
+        color: ${accentColor};
+
         &::after {
           border-bottom-color: ${accentColor};
-        }
-
-        button {
-          color: ${accentColor};
         }
       }
     }

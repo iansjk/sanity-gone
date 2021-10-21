@@ -19,6 +19,7 @@ export interface SynergyProps {
   rarity?: number;
   profession?: string;
   subProfessionId?: string;
+  shouldInvertIconOnHighlight?: boolean;
 }
 
 const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =

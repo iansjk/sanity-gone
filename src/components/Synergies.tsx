@@ -29,6 +29,9 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
               backgroundImage: `url("${
                 syn.isGroup ? syn.iconUrl! : operatorImage(syn.name)
               }")`,
+              backgroundBlendMode: syn.shouldInvertIconOnHighlight
+                ? "difference"
+                : "normal",
             }}
           />
         );

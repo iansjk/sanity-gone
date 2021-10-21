@@ -122,6 +122,7 @@ interface OperatorAnalysisData {
     synergyIconUrl: string;
     synergyQuality: SynergyQuality;
     synergyDescription: MarkdownNode;
+    shouldInvertIconOnHighlight?: boolean;
   }[];
   strengths: MarkdownHtmlAstNode;
   weaknesses: MarkdownHtmlAstNode;
@@ -188,6 +189,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       isGroup: syn.isGroup,
       quality: syn.synergyQuality,
       analysis: syn.synergyDescription.childMarkdownRemark.html,
+      shouldInvertIconOnHighlight: syn.shouldInvertIconOnHighlight,
     };
     return syn.isGroup
       ? {
@@ -624,6 +626,7 @@ export const query = graphql`
             html
           }
         }
+        shouldInvertIconOnHighlight
       }
       strengths {
         childMarkdownRemark {

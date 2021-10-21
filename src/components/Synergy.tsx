@@ -53,11 +53,18 @@ const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
             {!isGroup && (
               <div className="synergy-operator-info">
                 {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
-                <span className={`rarity-${rarity!}-stars`}>{rarity} ★</span>{" "}
-                {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
-                {professionToClass(profession!)} ·{" "}
-                {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
-                {subProfessionToSubclass(subProfessionId!)}
+                <span className={`rarity-${rarity!}-stars`}>{rarity} ★</span>
+                <span className="operator-class">
+                  {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+                  {professionToClass(profession!)}
+                </span>
+                <span className="class-subclass-separator" aria-hidden="true">
+                  ·
+                </span>
+                <span className="subclass">
+                  {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+                  {subProfessionToSubclass(subProfessionId!)}
+                </span>
               </div>
             )}
           </div>
@@ -122,6 +129,20 @@ const styles = (theme: Theme) => css`
       .synergy-operator-info {
         font-size: ${theme.typography.body3.fontSize};
         line-height: ${theme.typography.body3.lineHeight};
+
+        .operator-class,
+        .class-subclass-separator,
+        .subclass {
+          display: inline-block;
+        }
+
+        .operator-class {
+          margin-left: ${theme.spacing(1)};
+        }
+
+        .class-subclass-separator {
+          margin: ${theme.spacing(0, 1)};
+        }
       }
     }
   }

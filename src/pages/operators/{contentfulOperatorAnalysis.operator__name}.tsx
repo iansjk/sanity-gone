@@ -20,6 +20,7 @@ import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";
 import useIsMobile from "../../hooks/useIsMobile";
+import { Fragment } from "react";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -62,6 +63,8 @@ const htmlToReact = (
             );
           }
           return <CharacterStats characterObject={context.summon} />;
+        } else if (domNode.name === "masteryrecommendation") {
+          return <Fragment />;
         } else if ((domNode.firstChild as Element).name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")

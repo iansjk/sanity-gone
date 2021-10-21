@@ -63,6 +63,10 @@ export default Synergies;
 
 const styles = (theme: Theme) => css`
   .tab-buttons {
+    ${theme.breakpoints.down("mobile")} {
+      overflow-x: auto;
+    }
+
     .operator-button.synergy-operator-button {
       position: relative;
       background-size: contain;
@@ -111,6 +115,22 @@ const styles = (theme: Theme) => css`
         width: ${theme.spacing(3)};
         margin: ${theme.spacing(1)} auto ${theme.spacing(2)};
         border-bottom: 1px solid ${theme.palette.midtoneBrighter};
+      }
+
+      ${theme.breakpoints.down("mobile")} {
+        width: unset;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        margin-right: ${theme.spacing(1)};
+      }
+
+      &::after {
+        margin: ${theme.spacing(0, 1, 0, 0)};
+        border-bottom: none;
+        border-left: 1px solid ${theme.palette.midtoneBrighter};
+        width: unset;
+        height: ${theme.spacing(3)};
       }
     }
 

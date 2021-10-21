@@ -117,6 +117,7 @@ const styles = (theme: Theme) => css`
   width: 100%;
   display: grid;
   grid-template-columns: max-content 1fr max-content;
+  align-items: center;
 
   ${theme.breakpoints.down("mobile")} {
     grid-template-columns: 1fr;
@@ -128,11 +129,11 @@ const styles = (theme: Theme) => css`
     justify-content: flex-end;
 
     .name-and-class {
-      padding: ${theme.spacing(0, 0, 0, 3)};
+      padding: ${theme.spacing(0.5, 0, 0, 3)};
       display: grid;
       grid-template-columns: max-content 1fr;
       grid-template-rows: repeat(2, max-content);
-      align-self: center;
+      align-self: baseline;
 
       ${theme.breakpoints.down("mobile")} {
         padding: ${theme.spacing(0, 0, 0, 2)};

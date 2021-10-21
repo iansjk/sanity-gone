@@ -39,7 +39,7 @@ const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
 
     return (
       <section css={styles} {...rest}>
-        <div className="synergy-operator-info">
+        <div className="synergy-header">
           <div className="portrait">
             <OperatorPortrait
               variant="small"
@@ -76,7 +76,7 @@ const styles = (theme: Theme) => css`
     display: flex;
   }
 
-  .synergy-operator-info {
+  .synergy-header {
     display: flex;
     align-items: center;
 

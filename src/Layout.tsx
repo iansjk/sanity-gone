@@ -9,7 +9,6 @@ import {
 import "wicg-inert";
 import { defaultTheme } from "./theme";
 import SanityGoneLogo from "./components/SanityGoneLogo";
-import BreadcrumbBackIcon from "./components/icons/BreadcrumbBackIcon";
 import useIsMobile from "./hooks/useIsMobile";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 import { rgba } from "polished";
@@ -25,8 +24,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
   const {
     pageTitle,
     customPageHeading,
-    previousLocation,
-    previousLocationLink,
     bannerImageUrl,
     blendPoint,
     children,

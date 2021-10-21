@@ -1,8 +1,7 @@
+import { useRef } from "react";
 import ReactDOM from "react-dom";
 import { css, Theme } from "@emotion/react";
 import { MdClose as CloseIcon } from "react-icons/md";
-
-import "swiper/swiper.min.css";
 import SanityGoneLogo from "./SanityGoneLogo";
 
 export interface MobileMenuProps {
@@ -12,14 +11,23 @@ export interface MobileMenuProps {
 
 const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
   const { open, onClose } = props;
+  const menuContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleClick: React.MouseEventHandler = (e) => {
+    if (e.target === menuContainerRef.current) {
+      onClose();
+    }
+  };
 
   return typeof window === "undefined"
     ? null
     : ReactDOM.createPortal(
         <div
+          ref={menuContainerRef}
           aria-modal={open}
           className={open ? "open" : "closed"}
           css={styles}
+          onClick={handleClick}
         >
           <div className="mobile-menu-inner">
             <div className="top-bar">

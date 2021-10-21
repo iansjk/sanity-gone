@@ -85,6 +85,8 @@ const CharacterRange: React.VFC<
 export default CharacterRange;
 
 const styles = (theme: Theme) => css`
+  flex-shrink: 0;
+
   td {
     width: ${theme.spacing(2)};
     height: ${theme.spacing(2)};

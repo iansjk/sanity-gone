@@ -96,7 +96,11 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
   return (
     <Fragment>
       {isSwiper && (
-        <ScrollContainer css={swiperStyles} className="swiper-container">
+        <ScrollContainer
+          css={swiperStyles}
+          className="swiper-container"
+          style={!isMobile ? { display: "none" } : {}}
+        >
           {newChildren}
         </ScrollContainer>
       )}

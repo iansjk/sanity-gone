@@ -417,7 +417,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
           color: ${rgba(theme.palette.gray, 0.5)};
         }
 
-        &:not(:disabled):hover {
+        &:not(:disabled):not(.active):hover {
           background-color: ${transparentize(0.9, theme.palette.gray)};
           color: ${theme.palette.white};
         }

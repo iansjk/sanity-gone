@@ -4,7 +4,7 @@ import GroupSynergyIcon from "./icons/GroupSynergyIcon";
 import OperatorPortrait from "./OperatorPortrait";
 
 export enum SynergyQuality {
-  "Anti-Synergy" = -1,
+  "Bad Synergy" = -1,
   "Decent Synergy",
   "Good Synergy",
   "Excellent Synergy",

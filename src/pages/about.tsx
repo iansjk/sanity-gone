@@ -33,7 +33,7 @@ const members: { name: string; role: string }[] = [
     role: "Founder, Advisor",
   },
   {
-    name: "Yonaka",
+    name: "pepegaturtle",
     role: ":pepegaturtle:",
   },
 ];

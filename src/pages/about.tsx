@@ -60,6 +60,23 @@ const About: React.VFC = () => {
               <b>cortz</b>, <b>Alyeska</b>, and <b>Dimbreath</b> for the help in
               early stages of development
             </li>
+            <li>
+              <b>Kengxxiao</b> for their{" "}
+              <a
+                href="https://github.com/Kengxxiao/ArknightsGameData"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Arknights game data repository
+              </a>
+            </li>
+            <li>
+              <b>Jetroyz</b> for translations of not-yet-released operator
+              skills and talents
+            </li>
+            <li>
+              <b>Aceship</b> for Arknights assets and community support
+            </li>
           </ul>
           <p></p>
         </section>

@@ -127,7 +127,8 @@ const styles = (theme: Theme) => css`
       margin: ${theme.spacing(2, 0, 0)};
     }
 
-    .member-name {
+    b {
+      color: unset;
       font-weight: ${theme.typography.bodyBold.fontWeight};
     }
   }

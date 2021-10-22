@@ -1,8 +1,11 @@
+/* eslint-disable*/
+const gatsbySlugify = require("@sindresorhus/slugify");
+const { DateTime } = require("luxon");
 require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://sanitygone.help",
     title: "Sanity;Gone 0",
   },
   plugins: [
@@ -24,5 +27,61 @@ module.exports = {
       },
     },
     "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allContentfulOperatorAnalysis {
+              nodes {
+                updatedAt
+                operator {
+                  name
+                }
+              }
+            }
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+          }
+        `,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allContentfulOperatorAnalysis: { nodes: allOperatorAnalysis },
+        }) => {
+          const latestOperatorAnalysis = allOperatorAnalysis.map((analysis) => DateTime.fromISO(analysis.updatedAt)).reduce((a, b) => a > b ? a : b).toISO();
+          const pages = allPages.map((page) => {
+            const { path } = page;
+            const operatorAnalysis = allOperatorAnalysis.find(({ operator: { name } }) => `/operators/${gatsbySlugify(name)}/` === path);
+            if (operatorAnalysis) {
+              return {
+                path,
+                lastmod: operatorAnalysis.updatedAt,
+              };
+            } else if (path === "/" || path === "/operators/") {
+              return {
+                path,
+                lastmod: latestOperatorAnalysis
+              }
+            }
+            return { path };
+          });
+          return pages;
+        },
+        serialize: ({ path, lastmod }) => {
+          return {
+            url: path,
+            lastmod,
+          };
+        }
+      },
+    },
   ],
 };

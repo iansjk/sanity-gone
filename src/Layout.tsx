@@ -55,6 +55,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
         />
         <html lang="en" {...rest} />
         <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />

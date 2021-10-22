@@ -124,7 +124,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <ul>
                   <li>
                     <a
-                      href="https://discord.gg/QS3uSVzT9M"
+                      href="https://discord.gg/bAnrGzw75H"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Sanity Gone Zero Discord Server"

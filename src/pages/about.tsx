@@ -55,12 +55,13 @@ const About: React.VFC = () => {
 
         <section className="special-thanks">
           <h3>Special thanks to:</h3>
-          <p>
-            <span className="member-name">cortz</span>,{" "}
-            <span className="member-name">Alyeska</span>, and{" "}
-            <span className="member-name">Dimbreath</span> for the help in early
-            stages of development
-          </p>
+          <ul>
+            <li>
+              <b>cortz</b>, <b>Alyeska</b>, and <b>Dimbreath</b> for the help in
+              early stages of development
+            </li>
+          </ul>
+          <p></p>
         </section>
       </main>
     </Layout>

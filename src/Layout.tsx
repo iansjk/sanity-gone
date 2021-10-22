@@ -122,7 +122,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   <li>
                     <a href="mailto:sanitygone.help@gmail.com">Contact Email</a>
                   </li>
-                  <li>Disclaimer</li>
+                  <li>
+                    <a href="/disclaimer">Disclaimer</a>
+                  </li>
                 </ul>
               </div>
               <div className="socials-section">

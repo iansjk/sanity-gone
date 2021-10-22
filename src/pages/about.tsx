@@ -68,12 +68,6 @@ const About: React.VFC = () => {
 };
 export default About;
 
-const globalOverrideStyles = css`
-  body {
-    background-size: contain;
-  }
-`;
-
 const styles = (theme: Theme) => css`
   padding: ${theme.spacing(0, 2)};
 

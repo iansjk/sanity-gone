@@ -32,8 +32,8 @@ export const skillIcon = (iconId: string | null, skillId: string): string =>
 export const moduleImage = (moduleId: string): string =>
   `${CLOUDINARY_BASE_URL}/arknights/equip/${moduleId}`;
 
-export const sgMemberAvatar = (memberName: string): string =>
-  `${CLOUDINARY_BASE_URL}/sanity-gone-zero/member-avatars/${slugify(
+export const sgMemberAvatar = (memberName: string, size: number): string =>
+  `https://res.cloudinary.com/samidare/image/upload/${defaultTransforms},c_scale,w_${size},h_${size}/v1/sanity-gone-zero/member-avatars/${slugify(
     memberName
   )}`;
 

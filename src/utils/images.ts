@@ -1,7 +1,7 @@
 import { slugify } from "./globals";
 
-const CLOUDINARY_BASE_URL =
-  "https://res.cloudinary.com/samidare/image/upload/v1/";
+const defaultTransforms = "f_auto,q_auto";
+const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/samidare/image/upload/${defaultTransforms}/v1`;
 
 export const operatorImage = (name: string, elite?: number): string =>
   `${CLOUDINARY_BASE_URL}/arknights/operators/${slugify(name)}${

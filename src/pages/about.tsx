@@ -46,7 +46,7 @@ const About: React.VFC = () => {
         <ul className="team-members">
           {members.map(({ name, role }) => (
             <li className="member-card" key={name}>
-              <img className="avatar" src={sgMemberAvatar(name)} alt="" />
+              <img className="avatar" src={sgMemberAvatar(name, 128)} alt="" />
               <span className="member-name">{name}</span>
               <span className="role">{role}</span>
             </li>

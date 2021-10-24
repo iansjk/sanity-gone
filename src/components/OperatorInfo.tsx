@@ -121,6 +121,7 @@ const styles = (theme: Theme) => css`
 
   ${theme.breakpoints.down("mobile")} {
     grid-template-columns: 1fr;
+    row-gap: ${theme.spacing(2)};
   }
 
   .operator-portrait-and-class {

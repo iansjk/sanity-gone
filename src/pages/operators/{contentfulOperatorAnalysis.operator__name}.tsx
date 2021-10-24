@@ -430,7 +430,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         text-transform: ${theme.typography.cardHeading.textTransform};
 
         &:not(.active) {
-          color: ${theme.palette.midtoneBrighter};
+          color: ${theme.palette.gray};
         }
 
         &.active {

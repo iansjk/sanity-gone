@@ -96,14 +96,18 @@ const styles = (theme: Theme) => css`
     justify-content: center;
 
     .limited {
+      display: inline-block;
+      position: relative;
+      top: -1px;
+      padding: 0 2px;
       font-size: ${theme.typography.body2.fontSize};
+      font-weight: ${theme.typography.body2Bold.fontWeight};
       line-height: 1;
       color: ${theme.palette.red};
       text-transform: uppercase;
-      display: inline-block;
       text-align: center;
       background-color: ${theme.palette.midtoneExtra};
-      padding: 0 2px;
+      border-radius: ${theme.spacing(0.25)};
     }
   }
 

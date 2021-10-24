@@ -1,41 +1,35 @@
 import { slugify } from "./globals";
 
-const defaultTransforms = "f_auto,q_auto";
-const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/samidare/image/upload/${defaultTransforms}/v1`;
-
 export const operatorImage = (name: string, elite?: number): string =>
-  `${CLOUDINARY_BASE_URL}/arknights/operators/${slugify(name)}${
+  `/images/operators/${slugify(name)}${
     typeof elite !== "undefined" && (elite > 1 || name === "Amiya")
       ? `-elite-${elite}`
       : ""
-  }`;
+  }.png`;
 
-export const summonImage = (id: string): string =>
-  `${CLOUDINARY_BASE_URL}/arknights/summons/${id}`;
+export const summonImage = (id: string): string => `/images/summons/${id}.png`;
 
 export const operatorPortrait = (name: string, elite?: number): string =>
-  `${CLOUDINARY_BASE_URL}/arknights/portraits/${slugify(name)}${
+  `/images/portraits/${slugify(name)}${
     typeof elite !== "undefined" && (elite > 1 || name === "Amiya")
       ? `-elite-${elite}`
       : ""
-  }`;
+  }.png`;
 
 export const operatorClassIcon = (operatorClass: string): string =>
-  `${CLOUDINARY_BASE_URL}/arknights/classes/${operatorClass}`;
+  `/images/classes/${operatorClass}.png`;
 
 export const operatorSubclassIcon = (subProfessionId: string): string =>
-  `${CLOUDINARY_BASE_URL}/arknights/subclasses/${subProfessionId}`;
+  `/images/subclasses/${subProfessionId}.png`;
 
 export const skillIcon = (iconId: string | null, skillId: string): string =>
-  `${CLOUDINARY_BASE_URL}/arknights/skills/${iconId ?? skillId}`;
+  `/images/skills/${iconId ?? skillId}.png`;
 
 export const moduleImage = (moduleId: string): string =>
-  `${CLOUDINARY_BASE_URL}/arknights/equip/${moduleId}`;
+  `/images/equip/${moduleId}.png`;
 
 export const sgMemberAvatar = (memberName: string, size: number): string =>
-  `https://res.cloudinary.com/samidare/image/upload/${defaultTransforms},c_scale,w_${size},h_${size}/v1/sanity-gone-zero/member-avatars/${slugify(
-    memberName
-  )}`;
+  `/images/member-avatars/${slugify(memberName)}`;
 
 export const sgPageBanner = (pageName: string): string =>
-  `${CLOUDINARY_BASE_URL}/sanity-gone-zero/page-banners/${pageName}`;
+  `/images/page-banners/${pageName}.jpg`;

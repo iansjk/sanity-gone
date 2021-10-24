@@ -131,7 +131,7 @@ const styles = (theme: Theme) => css`
 
         path {
           fill: ${theme.palette.white};
-          stroke: ${theme.palette.midtone};
+          stroke: ${theme.palette.midtoneExtra};
           stroke-width: ${theme.spacing(0.25)};
         }
       }

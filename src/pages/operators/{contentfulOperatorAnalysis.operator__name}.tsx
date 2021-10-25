@@ -245,7 +245,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
 
   return (
     <Layout
-      pageTitle={contentful.operator.name}
+      pageTitle={`${contentful.operator.name} Guide`}
       customPageHeading={
         alterName && (
           <h1>

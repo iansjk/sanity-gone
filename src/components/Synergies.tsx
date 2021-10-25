@@ -105,42 +105,37 @@ const styles = (theme: Theme) => css`
       }
 
       .synergy-quality {
-        margin: ${theme.spacing(0, 0, 2)};
-        text-align: center;
         font-size: ${theme.typography.body2.fontSize};
         line-height: ${theme.typography.body2.lineHeight};
         font-weight: ${theme.typography.body2Bold.fontWeight};
         text-transform: uppercase;
-        width: 100%;
-        overflow: hidden;
 
-        &::before {
-          content: " ";
-          display: block;
-          width: ${theme.spacing(3)};
-          margin: ${theme.spacing(1)} auto ${theme.spacing(2)};
-          border-top: 2px solid ${theme.palette.midtoneBrighter};
+        ${theme.breakpoints.up("mobile")} {
+          margin: ${theme.spacing(0, 0, 2)};
+          text-align: center;
+          width: 100%;
+
+          &::before {
+            content: " ";
+            display: block;
+            width: ${theme.spacing(3)};
+            margin: ${theme.spacing(1)} auto ${theme.spacing(2)};
+            border-top: 2px solid ${theme.palette.midtoneBrighter};
+          }
         }
 
         ${theme.breakpoints.down("mobile")} {
-          width: unset;
           display: flex;
-          margin: 0;
           flex-direction: row-reverse;
           align-items: center;
-          margin-right: ${theme.spacing(1)};
-
-          &::before {
-            content: none;
-          }
+          margin-right: ${theme.spacing(0, 1, 0)};
+          overflow: hidden;
 
           &::after {
             content: " ";
             display: block;
             margin: ${theme.spacing(0, 1, 0, 0)};
-            border-bottom: none;
             border-left: 2px solid ${theme.palette.midtoneBrighter};
-            width: unset;
             height: ${theme.spacing(3)};
           }
         }

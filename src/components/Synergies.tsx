@@ -126,15 +126,14 @@ const styles = (theme: Theme) => css`
 
         ${theme.breakpoints.down("mobile")} {
           display: flex;
-          flex-direction: row-reverse;
           align-items: center;
-          margin-right: ${theme.spacing(0, 1, 0)};
+          margin: ${theme.spacing(0, 2, 0, 0)};
           overflow: hidden;
 
-          &::after {
+          &::before {
             content: " ";
             display: block;
-            margin: ${theme.spacing(0, 1, 0, 0)};
+            margin: ${theme.spacing(0, 3, 0, 1)};
             border-left: 2px solid ${theme.palette.midtoneBrighter};
             height: ${theme.spacing(3)};
           }

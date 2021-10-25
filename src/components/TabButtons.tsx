@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
-import { Theme, css } from "@emotion/react";
-import { transparentize } from "polished";
+import { css } from "@emotion/react";
 import ScrollContainer from "react-indiana-drag-scroll";
 import useIsMobile from "../hooks/useIsMobile";
 

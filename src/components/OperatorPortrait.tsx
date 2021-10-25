@@ -1,6 +1,7 @@
 import { css, Theme, useTheme } from "@emotion/react";
 import { operatorImage } from "../utils/images";
 import TiltedStarIcon from "./icons/TiltedStarIcon";
+import StarIcon from "./icons/StarIcon";
 
 const imageSize = {
   normal: 96,
@@ -46,15 +47,22 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
         height={imageSize[variant]}
         style={{ margin: portraitMargin }}
       />
-      {rarity && variant === "normal" && (
-        <span className="rarity-wrapper">
+      {rarity && (
+        <span className={`rarity-wrapper ${variant}`}>
           <span
             className={`rarity rarity-${rarity}-stars`}
             aria-label={`Rarity: ${rarity} stars`}
           >
-            {[...Array(rarity).keys()].map((i) => (
-              <TiltedStarIcon key={i} aria-hidden="true" />
-            ))}
+            {variant === "normal" ? (
+              [...Array(rarity).keys()].map((i) => (
+                <TiltedStarIcon key={i} aria-hidden="true" />
+              ))
+            ) : (
+              <span aria-hidden="true">
+                {rarity}
+                <StarIcon />
+              </span>
+            )}
           </span>
         </span>
       )}
@@ -88,14 +96,18 @@ const styles = (theme: Theme) => css`
     justify-content: center;
 
     .limited {
+      display: inline-block;
+      position: relative;
+      top: -1px;
+      padding: 0 2px;
       font-size: ${theme.typography.body2.fontSize};
+      font-weight: ${theme.typography.body2Bold.fontWeight};
       line-height: 1;
       color: ${theme.palette.red};
       text-transform: uppercase;
-      display: inline-block;
       text-align: center;
       background-color: ${theme.palette.midtoneExtra};
-      padding: 0 2px;
+      border-radius: ${theme.spacing(0.25)};
     }
   }
 
@@ -105,6 +117,9 @@ const styles = (theme: Theme) => css`
     justify-content: center;
     width: 100%;
     left: 0;
+  }
+
+  .rarity-wrapper.normal {
     bottom: -18px;
 
     .rarity {
@@ -116,7 +131,7 @@ const styles = (theme: Theme) => css`
 
         path {
           fill: ${theme.palette.white};
-          stroke: ${theme.palette.midtone};
+          stroke: ${theme.palette.midtoneExtra};
           stroke-width: ${theme.spacing(0.25)};
         }
       }
@@ -143,6 +158,44 @@ const styles = (theme: Theme) => css`
         svg path {
           fill: ${theme.palette.blue};
         }
+      }
+    }
+  }
+
+  .rarity-wrapper.small {
+    bottom: -15px;
+
+    .rarity {
+      color: ${theme.palette.midtoneExtra};
+      font-size: ${theme.typography.smallPortraitRarity.fontSize};
+      line-height: ${theme.typography.smallPortraitRarity.lineHeight};
+      font-weight: ${theme.typography.smallPortraitRarity.fontWeight};
+      display: inline-flex;
+      align-items: center;
+      padding: ${theme.spacing(0, 0.5)};
+      border-radius: ${theme.spacing(0.5)};
+      border: ${theme.spacing(0.25)} solid ${theme.palette.midtoneExtra};
+      background-color: ${theme.palette.white};
+
+      svg {
+        margin-left: 1px;
+        margin-bottom: -1px;
+      }
+
+      &.rarity-6-stars {
+        background-color: ${theme.palette.orange};
+      }
+
+      &.rarity-5-stars {
+        background-color: ${theme.palette.yellow};
+      }
+
+      &.rarity-4-stars {
+        background-color: ${theme.palette.softBlue};
+      }
+
+      &.rarity-3-stars {
+        background-color: ${theme.palette.blue};
       }
     }
   }

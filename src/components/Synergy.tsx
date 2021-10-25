@@ -45,7 +45,6 @@ const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
               variant="small"
               name={name}
               iconOverride={isGroup ? iconUrl : undefined}
-              rarity={!isGroup ? rarity : undefined}
             />
           </div>
           <div className="name-and-quality">

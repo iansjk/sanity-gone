@@ -41,7 +41,11 @@ const Layout: React.FC<LayoutProps> = (props) => {
     // <> shorthand syntax is BROKEN, don't use it.
     <Fragment>
       <Helmet
-        title={pageTitle ? `${pageTitle} · Sanity;Gone 0` : "Sanity;Gone 0"}
+        title={
+          pageTitle
+            ? `${pageTitle} / Arknights Hub - Sanity;Gone`
+            : "Arknights Hub - Sanity;Gone"
+        }
       >
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

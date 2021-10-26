@@ -11,7 +11,7 @@ import { defaultTheme } from "./theme";
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import useIsMobile from "./hooks/useIsMobile";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
-import { rgba } from "polished";
+import { lighten, rgba } from "polished";
 import MobileMenu from "./components/MobileMenu";
 
 interface LayoutProps {
@@ -406,11 +406,16 @@ const styles =
       a,
       a:link,
       a:visited {
+        display: inline-block;
+        padding: ${theme.spacing(0, 0.5)};
         text-decoration: none;
-        color: ${theme.palette.blue};
+        color: ${rgba(lighten(0.27, theme.palette.blue), 0.66)};
+        background-color: ${rgba(theme.palette.blue, 0.08)};
+        border-radius: ${theme.spacing(0.25)};
 
         &:hover {
-          color: ${theme.palette.white};
+          color: ${lighten(0.27, theme.palette.blue)};
+          background-color: ${rgba(theme.palette.blue, 0.4)};
         }
       }
 

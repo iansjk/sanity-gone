@@ -412,6 +412,7 @@ const styles =
         color: ${rgba(lighten(0.27, theme.palette.blue), 0.66)};
         background-color: ${rgba(theme.palette.blue, 0.08)};
         border-radius: ${theme.spacing(0.25)};
+        transition: all 50ms ease-out;
 
         &:hover {
           color: ${lighten(0.27, theme.palette.blue)};

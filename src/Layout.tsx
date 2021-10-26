@@ -400,12 +400,14 @@ const styles =
 
       b,
       strong {
-        color: ${theme.palette.blue};
-        font-weight: normal;
+        font-weight: ${theme.typography.bodyBold.fontWeight};
       }
 
-      a {
+      a,
+      a:link,
+      a:visited {
         text-decoration: none;
+        color: ${theme.palette.blue};
 
         &:hover {
           color: ${theme.palette.white};

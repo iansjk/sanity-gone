@@ -143,10 +143,5 @@ const styles = (theme: Theme) => css`
     p {
       margin: ${theme.spacing(2, 0, 0)};
     }
-
-    b {
-      color: unset;
-      font-weight: ${theme.typography.bodyBold.fontWeight};
-    }
   }
 `;

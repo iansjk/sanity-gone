@@ -247,10 +247,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     <Layout
       pageTitle={`${contentful.operator.name} Guide`}
       customPageHeading={
-        alterName && (
+        alterName ? (
           <h1>
             {baseChar} <span className="alter-name">The {alterName}</span>
           </h1>
+        ) : (
+          <h1>{baseChar}</h1>
         )
       }
       bannerImageUrl={contentful.operator.operatorImageUrl}

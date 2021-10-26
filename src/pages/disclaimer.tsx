@@ -43,9 +43,4 @@ const styles = (theme: Theme) => css`
   ${theme.breakpoints.down("mobile")} {
     padding: ${theme.spacing(0, 3)};
   }
-
-  b {
-    font-weight: ${theme.typography.bodyBold.fontWeight};
-    color: unset;
-  }
 `;

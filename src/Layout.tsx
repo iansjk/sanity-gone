@@ -355,6 +355,15 @@ const styles =
 
               li {
                 margin-top: ${theme.spacing(2)};
+
+                a {
+                  background: none;
+                  transition: none;
+
+                  &:hover {
+                    background: none;
+                  }
+                }
               }
             }
           }

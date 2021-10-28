@@ -1,6 +1,6 @@
 import { css, Global, Theme } from "@emotion/react";
 import { graphql } from "gatsby";
-import { rgba, transparentize } from "polished";
+import { lighten, rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
 import parse, { attributesToProps } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
@@ -554,19 +554,12 @@ const styles = (accentColor: string) => (theme: Theme) =>
         a {
           margin-right: ${theme.spacing(1)};
 
-          ${theme.breakpoints.down("mobile")} {
-            display: inline-block;
-            padding: ${theme.spacing(1, 2)};
-            margin-right: ${theme.spacing(2)};
-            font-size: ${theme.typography.navigationLink.fontSize};
-            line-height: ${theme.typography.navigationLink.lineHeight};
-            font-weight: ${theme.typography.navigationLinkBold.fontWeight};
-            border: 1px solid ${accentColor};
-            border-radius: ${theme.spacing(0.5)};
-            filter: drop-shadow(
-              ${theme.spacing(0.25)} ${theme.spacing(0.5)} ${theme.spacing(1)}
-                rgba(0, 0, 0, 0.15)
-            );
+          color: ${rgba(lighten(0.27, accentColor), 0.66)};
+          background-color: ${rgba(accentColor, 0.08)};
+
+          &:hover {
+            color: ${lighten(0.27, accentColor)};
+            background-color: ${rgba(accentColor, 0.4)};
           }
         }
       }

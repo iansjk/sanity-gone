@@ -406,17 +406,20 @@ const styles =
       a,
       a:link,
       a:visited {
-        display: inline-block;
-        padding: ${theme.spacing(0, 0.5)};
         text-decoration: none;
-        color: ${rgba(lighten(0.27, theme.palette.blue), 0.66)};
-        background-color: ${rgba(theme.palette.blue, 0.08)};
-        border-radius: ${theme.spacing(0.25)};
-        transition: all 50ms ease-out;
 
-        &:hover {
-          color: ${lighten(0.27, theme.palette.blue)};
-          background-color: ${rgba(theme.palette.blue, 0.4)};
+        &[target="_blank"] {
+          display: inline-block;
+          padding: ${theme.spacing(0, 0.5)};
+          border-radius: ${theme.spacing(0.25)};
+          transition: all 50ms ease-out;
+          color: ${rgba(lighten(0.27, theme.palette.blue), 0.66)};
+          background-color: ${rgba(theme.palette.blue, 0.08)};
+
+          &:hover {
+            color: ${lighten(0.27, theme.palette.blue)};
+            background-color: ${rgba(theme.palette.blue, 0.4)};
+          }
         }
       }
 

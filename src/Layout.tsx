@@ -400,7 +400,7 @@ const styles =
 
       b,
       strong {
-        font-weight: ${theme.typography.bodyBold.fontWeight};
+        font-weight: ${theme.typography.bodyBolder.fontWeight};
       }
 
       a,

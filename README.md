@@ -1,54 +1,30 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Sanity;Gone
 
-## 🚀 Quick start
+**Sanity;Gone** is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game.
 
-1.  **Create a Gatsby site.**
+## Building the app
+The site is built using Gatsby. It uses two datasources: the internal game JSON (which we use for operator/summon stats, skills, talents, etc.) as well as a Contentful CMS integration (for operator guides).
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+To run the app locally:
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+1. Copy `.env.example` to `.env`
+2. Fill in the CONTENTFUL_ACCESS_TOKEN value (ask a team member for this)
+3. `yarn install`
+4. `yarn start`
+5. Point your browser at `localhost:8000`
 
-2.  **Start developing.**
+## Testing components in isolation
+To test React components in isolation, use Storybook:
+1. `yarn storybook`
+2. Visit `localhost:6006`
 
-    Navigate into your new site’s directory and start it up.
+## Acknowledgements
+- **Kengxxiao** for their Arknights game data repository
+- **Jetroyz** for translations of not-yet-released operator skills and talents
+- **Aceship** for Arknights assets and community support
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+## Disclaimer
+Sanity;Gone Zero is an unofficial fan project and is not affiliated with or endorsed by Hypergryph/Studio Montagne/Yostar, Arknights’ creators & distributors. The in-game assets used on this site are the property of Hypergryph/Yostar.
 
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+## License
+GPLv2 or later

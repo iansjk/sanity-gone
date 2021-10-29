@@ -6,7 +6,7 @@ require("dotenv").config();
 module.exports = {
   siteMetadata: {
     siteUrl: "https://sanitygone.help",
-    title: "Sanity;Gone 0",
+    title: "Sanity;Gone",
   },
   plugins: [
     "gatsby-plugin-emotion",
@@ -20,6 +20,8 @@ module.exports = {
     },
     "gatsby-transformer-remark",
     "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     "gatsby-transformer-json",
     {
       resolve: `gatsby-source-filesystem`,

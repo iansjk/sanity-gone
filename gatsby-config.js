@@ -15,6 +15,7 @@ module.exports = {
       options: {
         spaceId: `9auzhr5vyq9m`,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
       },
     },
     "gatsby-transformer-remark",

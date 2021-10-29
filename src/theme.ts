@@ -88,6 +88,9 @@ const typography = {
   bodyBold: {
     fontWeight: 600,
   },
+  bodyBolder: {
+    fontWeight: 700,
+  },
   body2: {
     fontSize: "16px",
     lineHeight: "24px",

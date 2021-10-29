@@ -11,7 +11,7 @@ import { defaultTheme } from "./theme";
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import useIsMobile from "./hooks/useIsMobile";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
-import { rgba } from "polished";
+import { lighten, rgba } from "polished";
 import MobileMenu from "./components/MobileMenu";
 
 interface LayoutProps {
@@ -122,7 +122,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   <li>
                     <a href="mailto:sanitygone.help@gmail.com">Contact Email</a>
                   </li>
-                  <li>Disclaimer</li>
+                  <li>
+                    <a href="/disclaimer">Disclaimer</a>
+                  </li>
                 </ul>
               </div>
               <div className="socials-section">
@@ -353,6 +355,15 @@ const styles =
 
               li {
                 margin-top: ${theme.spacing(2)};
+
+                a {
+                  background: none;
+                  transition: none;
+
+                  &:hover {
+                    background: none;
+                  }
+                }
               }
             }
           }
@@ -398,15 +409,26 @@ const styles =
 
       b,
       strong {
-        color: ${theme.palette.blue};
-        font-weight: normal;
+        font-weight: ${theme.typography.bodyBolder.fontWeight};
       }
 
-      a {
+      a,
+      a:link,
+      a:visited {
         text-decoration: none;
 
-        &:hover {
-          color: ${theme.palette.white};
+        &[target="_blank"] {
+          display: inline-block;
+          padding: ${theme.spacing(0, 0.5)};
+          border-radius: ${theme.spacing(0.25)};
+          transition: all 50ms ease-out;
+          color: ${rgba(lighten(0.27, theme.palette.blue), 0.66)};
+          background-color: ${rgba(theme.palette.blue, 0.08)};
+
+          &:hover {
+            color: ${lighten(0.27, theme.palette.blue)};
+            background-color: ${rgba(theme.palette.blue, 0.4)};
+          }
         }
       }
 

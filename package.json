@@ -1,12 +1,12 @@
 {
   "name": "sanity-gone-0",
   "version": "1.0.0",
-  "private": true,
   "description": "Sanity;Gone 0",
   "author": "Ian Kim",
   "keywords": [
     "gatsby"
   ],
+  "license": "GPL-2.0-or-later",
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",

@@ -17,6 +17,8 @@ import { graphql, useStaticQuery } from "gatsby";
 
 interface LayoutProps {
   pageTitle: string;
+  description?: string;
+  image?: string;
   customPageHeading?: React.ReactNode;
   blendPoint?: number;
   bannerImageUrl?: string;
@@ -36,6 +38,8 @@ interface SiteMetadataQuery {
 const Layout: React.FC<LayoutProps> = (props) => {
   const {
     pageTitle,
+    description,
+    image,
     customPageHeading,
     bannerImageUrl,
     blendPoint,
@@ -90,11 +94,20 @@ const Layout: React.FC<LayoutProps> = (props) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={defaultDescription} />
+        <meta
+          property="og:description"
+          content={description ?? defaultDescription}
+        />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={siteName} />
-        <meta property="og:image" content={`${siteUrl}${defaultImage}`} />
-        <meta property="description" content={defaultDescription} />
+        <meta
+          property="og:image"
+          content={`${siteUrl}${image ?? defaultImage}`}
+        />
+        <meta
+          property="description"
+          content={description ?? defaultDescription}
+        />
       </Helmet>
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />

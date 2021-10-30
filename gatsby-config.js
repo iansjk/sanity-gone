@@ -6,7 +6,9 @@ require("dotenv").config();
 module.exports = {
   siteMetadata: {
     siteUrl: "https://sanitygone.help",
-    title: "Sanity;Gone",
+    siteName: "Sanity;Gone",
+    image: "/sg-logo.png",
+    description: "Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game."
   },
   plugins: [
     "gatsby-plugin-emotion",

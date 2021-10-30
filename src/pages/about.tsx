@@ -3,38 +3,46 @@ import { rgba } from "polished";
 import Layout from "../Layout";
 import { sgMemberAvatar, sgPageBanner } from "../utils/images";
 
-const members: { name: string; role: string }[] = [
+const members: { name: string; role: string; avatar: string }[] = [
   {
     name: "nikoleye",
     role: "Project Lead, Writer",
+    avatar: "nikoleye.png",
   },
   {
     name: "samidare",
     role: "Developer",
+    avatar: "samidare.png",
   },
   {
     name: "namtar",
     role: "Founder, Designer",
+    avatar: "namtar.jpg",
   },
   {
     name: "kawa",
     role: "Editor-in-Chief",
+    avatar: "kawa.jpg",
   },
   {
     name: "Thanik",
     role: "Writer, Editor",
+    avatar: "thanik.jpg",
   },
   {
     name: "Kirahuang",
     role: "Host, Advisor",
+    avatar: "kirahuang.webp",
   },
   {
     name: "Noël",
     role: "Founder, Advisor",
+    avatar: "noel.png",
   },
   {
     name: "pepegaturtle",
     role: ":pepegaturtle:",
+    avatar: "pepegaturtle.png",
   },
 ];
 
@@ -44,9 +52,9 @@ const About: React.VFC = () => {
       <main css={styles}>
         <h2>Sanity;Gone Team</h2>
         <ul className="team-members">
-          {members.map(({ name, role }) => (
+          {members.map(({ name, role, avatar }) => (
             <li className="member-card" key={name}>
-              <img className="avatar" src={sgMemberAvatar(name, 128)} alt="" />
+              <img className="avatar" src={sgMemberAvatar(avatar)} alt="" />
               <span className="member-name">{name}</span>
               <span className="role">{role}</span>
             </li>

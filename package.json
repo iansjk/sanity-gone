@@ -13,8 +13,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "NODE_ENV=test start-storybook -p 6006 -s static",
+    "build-storybook": "NODE_ENV=test build-storybook -s static",
     "update-game-data": "git submodule update --init --recursive --remote && ts-node-script ./src/scripts/copy-gamedata.ts"
   },
   "dependencies": {
@@ -52,6 +52,8 @@
     "@storybook/addon-actions": "^6.3.5",
     "@storybook/addon-essentials": "^6.3.5",
     "@storybook/addon-links": "^6.3.5",
+    "@storybook/builder-webpack5": "^6.3.12",
+    "@storybook/manager-webpack5": "^6.3.12",
     "@storybook/react": "^6.3.5",
     "@types/luxon": "^1.27.1",
     "@types/react-dom": "^17.0.9",

@@ -13,20 +13,24 @@ import useIsMobile from "./hooks/useIsMobile";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 import { lighten, rgba } from "polished";
 import MobileMenu from "./components/MobileMenu";
+import { graphql, useStaticQuery } from "gatsby";
 
 interface LayoutProps {
   pageTitle: string;
   customPageHeading?: React.ReactNode;
   blendPoint?: number;
   bannerImageUrl?: string;
-  siteMetadata?: SiteMetadata;
 }
 
-interface SiteMetadata {
-  title: string;
-  description: string;
-  siteName: string;
-  image: string;
+interface SiteMetadataQuery {
+  site: {
+    siteMetadata: {
+      siteUrl: string;
+      siteName: string;
+      image: string;
+      description: string;
+    };
+  };
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
@@ -36,12 +40,33 @@ const Layout: React.FC<LayoutProps> = (props) => {
     bannerImageUrl,
     blendPoint,
     children,
-    siteMetadata,
     ...rest
   } = props;
+  const data: SiteMetadataQuery = useStaticQuery(graphql`
+    query SiteMetadataQuery {
+      site {
+        siteMetadata {
+          siteUrl
+          description
+          siteName
+          image
+        }
+      }
+    }
+  `);
+  const {
+    siteUrl,
+    description: defaultDescription,
+    siteName,
+    image: defaultImage,
+  } = data.site.siteMetadata;
 
   const isMobile = useIsMobile();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const title = pageTitle
+    ? `${pageTitle} / Arknights Hub - ${siteName}`
+    : `Arknights Hub - ${siteName}`;
 
   const handleMenuToggle = () => {
     setMobileMenuOpen((open) => !open);
@@ -50,13 +75,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
   return (
     // <> shorthand syntax is BROKEN, don't use it.
     <Fragment>
-      <Helmet
-        title={
-          pageTitle
-            ? `${pageTitle} / Arknights Hub - Sanity;Gone`
-            : "Arknights Hub - Sanity;Gone"
-        }
-      >
+      <Helmet title={title}>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -70,12 +89,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
         <html lang="en" {...rest} />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content={siteMetadata?.title ?? "Arknights Hub"} />
-        <meta property="og:description" content={siteMetadata?.description ?? "Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game."}/>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={defaultDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={siteMetadata?.siteName ?? "Sanity;Gone"} />
-        <meta property="og:image" content={siteMetadata?.image ?? "https://cdn.discordapp.com/attachments/774778714197327873/851560713961209926/logo_border.PNG" } />
-        <meta property="description" content={siteMetadata?.description ?? "Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game."}/>
+        <meta property="og:site_name" content={siteName} />
+        <meta property="og:image" content={`${siteUrl}${defaultImage}`} />
+        <meta property="description" content={defaultDescription} />
       </Helmet>
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />

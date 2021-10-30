@@ -256,7 +256,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     title: `${contentful.operator.name} Guide`,
     description: `A guide for ${contentful.operator.name}.`,
     siteName: "Sanity;Gone",
-    image: new URL(operatorImage(contentful.operator.name), document.baseURI).href
+    // is there a better way to load the absolute image URL?
+    image: new URL(operatorImage(contentful.operator.name), "https://sanitygone.help").href
   }
 
   return (

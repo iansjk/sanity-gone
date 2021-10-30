@@ -19,6 +19,14 @@ interface LayoutProps {
   customPageHeading?: React.ReactNode;
   blendPoint?: number;
   bannerImageUrl?: string;
+  siteMetadata?: SiteMetadata;
+}
+
+interface SiteMetadata {
+  title: string;
+  description: string;
+  siteName: string;
+  image: string;
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
@@ -28,8 +36,10 @@ const Layout: React.FC<LayoutProps> = (props) => {
     bannerImageUrl,
     blendPoint,
     children,
+    siteMetadata,
     ...rest
   } = props;
+
   const isMobile = useIsMobile();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -60,12 +70,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
         <html lang="en" {...rest} />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Arknights Hub" />
-        <meta property="og:description" content="Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game."/>
+        <meta property="og:title" content={siteMetadata?.title ?? "Arknights Hub"} />
+        <meta property="og:description" content={siteMetadata?.description ?? "Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game."}/>
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Sanity;Gone" />
-        <meta property="og:image" content="https://cdn.discordapp.com/attachments/774778714197327873/851560713961209926/logo_border.PNG" />
-        <meta property="description" content="Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game."/>
+        <meta property="og:site_name" content={siteMetadata?.siteName ?? "Sanity;Gone"} />
+        <meta property="og:image" content={siteMetadata?.image ?? "https://cdn.discordapp.com/attachments/774778714197327873/851560713961209926/logo_border.PNG" } />
+        <meta property="description" content={siteMetadata?.description ?? "Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game."}/>
       </Helmet>
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />

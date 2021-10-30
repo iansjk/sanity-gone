@@ -23,6 +23,7 @@ import useIsMobile from "../../hooks/useIsMobile";
 import { Fragment } from "react";
 import StarIcon from "../../components/icons/StarIcon";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
+import {operatorImage} from "../../utils/images";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -251,9 +252,16 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
 
   const [baseChar, alterName] = contentful.operator.name.split(" the ");
 
+  const siteMetadata = {
+    title: `${contentful.operator.name} Guide`,
+    description: `A guide for ${contentful.operator.name}.`,
+    siteName: "Sanity;Gone",
+    image: new URL(operatorImage(contentful.operator.name), document.baseURI).href
+  }
+
   return (
     <Layout
-      pageTitle={`${contentful.operator.name} Guide`}
+      pageTitle={siteMetadata.title}
       customPageHeading={
         alterName ? (
           <h1>
@@ -264,6 +272,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         )
       }
       bannerImageUrl={contentful.operator.bannerImage.localFile.publicURL}
+      siteMetadata = {siteMetadata}
       // previousLocation="Operators"
       // previousLocationLink="/operators"
     >

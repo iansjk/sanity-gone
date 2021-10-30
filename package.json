@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "storybook": "NODE_ENV=test start-storybook -p 6006 -s static",
-    "build-storybook": "NODE_ENV=test build-storybook -s static",
+    "build-storybook": "gatsby build && NODE_ENV=test build-storybook -s static",
     "update-game-data": "git submodule update --init --recursive --remote && ts-node-script ./src/scripts/copy-gamedata.ts"
   },
   "dependencies": {

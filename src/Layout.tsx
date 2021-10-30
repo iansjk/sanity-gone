@@ -60,6 +60,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
         <html lang="en" {...rest} />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Arknights Hub" />
+        <meta property="og:description" content="Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game."/>
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Sanity;Gone" />
+        <meta property="og:image" content="https://res.cloudinary.com/samidare/image/upload/c_crop,g_auto,h_500,w_500/v1/sanity-gone-zero/page-banners/operators" />
+        <meta property="description" content="Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game."/>
       </Helmet>
       <ThemeProvider theme={defaultTheme}>
         <Global styles={emotionNormalize} />

@@ -114,6 +114,11 @@ interface OperatorAnalysisData {
     accentColorInHex: string;
     limited: boolean;
     name: string;
+    bannerImage: {
+      localFile: {
+        publicURL: string;
+      };
+    };
     operatorImageUrl: string;
     archetype: {
       archetypeName: string;
@@ -255,7 +260,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           <h1>{baseChar}</h1>
         )
       }
-      bannerImageUrl={contentful.operator.operatorImageUrl}
+      bannerImageUrl={contentful.operator.bannerImage.localFile.publicURL}
       // previousLocation="Operators"
       // previousLocationLink="/operators"
     >
@@ -664,6 +669,11 @@ export const query = graphql`
           archetypeName
         }
         customBgPositionX
+        bannerImage {
+          localFile {
+            publicURL
+          }
+        }
       }
       introduction {
         childMarkdownRemark {

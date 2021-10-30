@@ -114,7 +114,11 @@ interface OperatorAnalysisData {
     accentColorInHex: string;
     limited: boolean;
     name: string;
-    operatorImageUrl: string;
+    bannerImage: {
+      localFile: {
+        publicURL: string;
+      };
+    };
     archetype: {
       archetypeName: string;
     };
@@ -135,10 +139,14 @@ interface OperatorAnalysisData {
   synergies: {
     synergyName: string;
     isGroup: boolean;
-    synergyIconUrl: string;
     synergyQuality: SynergyQuality;
     synergyDescription: MarkdownNode;
     shouldInvertIconOnHighlight?: boolean;
+    customSynergyIcon: {
+      localFile: {
+        publicURL: string;
+      };
+    };
   }[];
   strengths: MarkdownHtmlAstNode;
   weaknesses: MarkdownHtmlAstNode;
@@ -227,7 +235,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     return syn.isGroup
       ? {
           ...baseProps,
-          iconUrl: syn.synergyIconUrl,
+          iconUrl: syn.customSynergyIcon.localFile.publicURL,
         }
       : { ...baseProps, ...operatorMap[syn.synergyName] };
   });
@@ -255,7 +263,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           <h1>{baseChar}</h1>
         )
       }
-      bannerImageUrl={contentful.operator.operatorImageUrl}
+      bannerImageUrl={contentful.operator.bannerImage.localFile.publicURL}
       // previousLocation="Operators"
       // previousLocationLink="/operators"
     >
@@ -659,11 +667,15 @@ export const query = graphql`
         accentColorInHex
         limited
         name
-        operatorImageUrl
         archetype {
           archetypeName
         }
         customBgPositionX
+        bannerImage {
+          localFile {
+            publicURL
+          }
+        }
       }
       introduction {
         childMarkdownRemark {
@@ -701,11 +713,15 @@ export const query = graphql`
       synergies {
         synergyName
         isGroup
-        synergyIconUrl
         synergyQuality
         synergyDescription {
           childMarkdownRemark {
             html
+          }
+        }
+        customSynergyIcon {
+          localFile {
+            publicURL
           }
         }
         shouldInvertIconOnHighlight

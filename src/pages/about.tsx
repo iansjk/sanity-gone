@@ -15,6 +15,11 @@ const members: { name: string; role: string; avatar: string }[] = [
     avatar: "samidare.png",
   },
   {
+    name: "Stinggyray",
+    role: "Developer",
+    avatar: "sting.png"
+  },
+  {
     name: "namtar",
     role: "Founder, Designer",
     avatar: "namtar.jpg",

@@ -32,7 +32,7 @@ const members: { name: string; role: string; avatar: string }[] = [
   {
     name: "Kirahuang",
     role: "Host, Advisor",
-    avatar: "kirahuang.webp",
+    avatar: "kirahuang.png",
   },
   {
     name: "Noël",

@@ -23,7 +23,7 @@ import useIsMobile from "../../hooks/useIsMobile";
 import { Fragment } from "react";
 import StarIcon from "../../components/icons/StarIcon";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
-import {operatorImage} from "../../utils/images";
+import { operatorImage } from "../../utils/images";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -250,19 +250,17 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       .filter((child) => child.tagName === "li")
       .map((child) => child.children[0].value);
 
-  const [baseChar, alterName] = contentful.operator.name.split(" the ");
-
-  const siteMetadata = {
-    title: `${contentful.operator.name} Guide`,
-    description: `A guide for ${contentful.operator.name}.`,
-    siteName: "Sanity;Gone",
-    // is there a better way to load the absolute image URL?
-    image: new URL(operatorImage(contentful.operator.name), "https://sanitygone.help").href
-  }
+  const operatorName = contentful.operator.name;
+  const [baseChar, alterName] = operatorName.split(" the ");
+  const description = `${
+    contentful.introduction.childMarkdownRemark.html
+      .replaceAll(/<\/?[A-za-z-]*>/g, "")
+      .split(/(\.)\s*/)[0]
+  }.`;
 
   return (
     <Layout
-      pageTitle={siteMetadata.title}
+      pageTitle={`${operatorName} Guide`}
       customPageHeading={
         alterName ? (
           <h1>
@@ -273,7 +271,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         )
       }
       bannerImageUrl={contentful.operator.bannerImage.localFile.publicURL}
-      siteMetadata = {siteMetadata}
+      image={operatorImage(operatorName)}
+      description={description}
       // previousLocation="Operators"
       // previousLocationLink="/operators"
     >
@@ -340,7 +339,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           {!isMobile && <hr />}
           <div className="external-links">
             <a
-              href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${contentful.operator.name}`}
+              href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${operatorName}`}
               rel="noreferrer noopener"
               target="_blank"
             >

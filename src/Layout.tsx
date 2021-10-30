@@ -120,7 +120,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <span className="list-title">Links</span>
                 <ul>
                   <li>
-                    <a href="mailto:sanitygone.help@gmail.com">Contact Email</a>
+                    <a href="mailto:admin@sanitygone.help">Contact Email</a>
                   </li>
                   <li>
                     <a href="/disclaimer">Disclaimer</a>

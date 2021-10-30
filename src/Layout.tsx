@@ -64,7 +64,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
         <meta property="og:description" content="Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game."/>
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Sanity;Gone" />
-        <meta property="og:image" content="https://res.cloudinary.com/samidare/image/upload/c_crop,g_auto,h_500,w_500/v1/sanity-gone-zero/page-banners/operators" />
+        <meta property="og:image" content="https://cdn.discordapp.com/attachments/774778714197327873/851560713961209926/logo_border.PNG" />
         <meta property="description" content="Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game."/>
       </Helmet>
       <ThemeProvider theme={defaultTheme}>

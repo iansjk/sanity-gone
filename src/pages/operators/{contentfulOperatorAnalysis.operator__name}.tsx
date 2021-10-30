@@ -140,10 +140,14 @@ interface OperatorAnalysisData {
   synergies: {
     synergyName: string;
     isGroup: boolean;
-    synergyIconUrl: string;
     synergyQuality: SynergyQuality;
     synergyDescription: MarkdownNode;
     shouldInvertIconOnHighlight?: boolean;
+    customSynergyIcon: {
+      localFile: {
+        publicURL: string;
+      };
+    };
   }[];
   strengths: MarkdownHtmlAstNode;
   weaknesses: MarkdownHtmlAstNode;
@@ -232,7 +236,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     return syn.isGroup
       ? {
           ...baseProps,
-          iconUrl: syn.synergyIconUrl,
+          iconUrl: syn.customSynergyIcon.localFile.publicURL,
         }
       : { ...baseProps, ...operatorMap[syn.synergyName] };
   });
@@ -716,6 +720,11 @@ export const query = graphql`
         synergyDescription {
           childMarkdownRemark {
             html
+          }
+        }
+        customSynergyIcon {
+          localFile {
+            publicURL
           }
         }
         shouldInvertIconOnHighlight

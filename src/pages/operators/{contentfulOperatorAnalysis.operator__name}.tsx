@@ -119,7 +119,6 @@ interface OperatorAnalysisData {
         publicURL: string;
       };
     };
-    operatorImageUrl: string;
     archetype: {
       archetypeName: string;
     };
@@ -668,7 +667,6 @@ export const query = graphql`
         accentColorInHex
         limited
         name
-        operatorImageUrl
         archetype {
           archetypeName
         }
@@ -715,7 +713,6 @@ export const query = graphql`
       synergies {
         synergyName
         isGroup
-        synergyIconUrl
         synergyQuality
         synergyDescription {
           childMarkdownRemark {

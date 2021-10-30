@@ -263,6 +263,11 @@ const styles = (theme: Theme) => css`
     .reminder-text {
       color: ${theme.palette.yellow};
     }
+    
+    .skill-tooltip {
+      // maybe change this in future to be Underline when we implement tooltips
+      // text-decoration: underline;
+    }
   }
 
   .range {

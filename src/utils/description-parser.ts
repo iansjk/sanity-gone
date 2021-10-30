@@ -1,9 +1,14 @@
+import XRegExp, {MatchRecursiveValueNameMatch} from "xregexp";
+import {html} from "gatsby/dist/redux/reducers";
+
 export interface InterpolatedValue {
   key: string;
   value: number;
 }
 
-const descriptionTagRegex = /<(?<tagName>[^>]+)>(?<tagContent>[^<]+)<\/>/;
+const descriptionTagLeftDelim = "<(?!span)[^>/]+>";
+const descriptionTagRightDelim = "</>";
+//<(?<tagName>[^>]+)>(?<tagContent>[^<]+)<\/>/;
 const descriptionInterpolationRegex =
   /-?{-?(?<interpolationKey>[^}:]+)(?::(?<formatString>[^}]+))?}/;
 /**
@@ -21,31 +26,53 @@ export const descriptionToHtml = (
   interpolation: InterpolatedValue[]
 ): string => {
   let htmlDescription = description.slice();
+  let recursiveMatch: MatchRecursiveValueNameMatch[] | null = null;
   let match: RegExpMatchArray | null = null;
   do {
-    match = descriptionTagRegex.exec(htmlDescription);
-    if (match?.groups) {
-      let className = "";
-      switch (match.groups.tagName) {
-        case "@ba.vup":
-          className = "value-up";
-          break;
-        case "@ba.vdown":
-          className = "value-down";
-          break;
-        case "@ba.rem":
-          className = "reminder-text";
-          break;
-        default:
-          console.warn(`Unrecognized tag: ${match[0]}`);
-          break;
+    recursiveMatch = XRegExp.matchRecursive(htmlDescription, descriptionTagLeftDelim, descriptionTagRightDelim, 'g', {
+      valueNames: ['between', 'tagName', 'tagContent', 'closingTag']
+    });
+
+    if (recursiveMatch.length > 0) {
+      let resultingString = "";
+      for(let i = 0; i < recursiveMatch.length; i++) {
+        if(recursiveMatch[i].name === 'between') {
+          resultingString += recursiveMatch[i].value;
+        } else if(recursiveMatch[i].name === 'tagName') {
+          const tagName = recursiveMatch[i].value.slice(1, -1);
+          let className = "";
+          switch (tagName) {
+            case "@ba.vup":
+              className = "value-up";
+              break;
+            case "@ba.vdown":
+              className = "value-down";
+              break;
+            case "@ba.rem":
+              className = "reminder-text";
+              break;
+            default:
+              if(tagName.slice(0, 1) === '$') {
+                className = "skill-tooltip";
+                break;
+              }
+              console.warn(`Unrecognized tag: ${tagName}`);
+              break;
+          }
+          resultingString += `<span class="${className}">`
+        } else if (recursiveMatch[i].name === 'tagContent') {
+          resultingString += recursiveMatch[i].value;
+        } else if (recursiveMatch[i].name === 'closingTag') {
+          resultingString += "</span>";
+        }
       }
-      htmlDescription = htmlDescription.replace(
-        descriptionTagRegex,
-        `<span class="${className}">${match.groups.tagContent}</span>`
-      );
+
+      htmlDescription = resultingString;
     }
-  } while (match);
+  } while (recursiveMatch.length > 0);
+
+  // replace any newlines with <br> tags to get past HTML whitespace collapsing
+  htmlDescription = htmlDescription.replaceAll("\n", "<br>");
 
   do {
     match = descriptionInterpolationRegex.exec(htmlDescription);

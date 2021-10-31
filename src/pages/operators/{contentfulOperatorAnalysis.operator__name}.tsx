@@ -129,6 +129,7 @@ interface OperatorAnalysisData {
     name: string;
   }[];
   introduction: MarkdownNode;
+  customByline?: string;
   talent1Analysis: MarkdownNode;
   talent2Analysis: MarkdownNode;
   skill1Recommended?: boolean;
@@ -272,7 +273,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       }
       bannerImageUrl={contentful.operator.bannerImage.localFile.publicURL}
       image={operatorImage(operatorName)}
-      description={description}
+      description={contentful.customByline ?? description}
       // previousLocation="Operators"
       // previousLocationLink="/operators"
     >
@@ -691,6 +692,7 @@ export const query = graphql`
           html
         }
       }
+      customByline
       talent1Analysis {
         childMarkdownRemark {
           html

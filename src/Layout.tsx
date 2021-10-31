@@ -105,7 +105,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
           content={`${siteUrl}${image ?? defaultImage}`}
         />
         <meta
-          property="description"
+          name="description"
           content={description ?? defaultDescription}
         />
       </Helmet>

@@ -1,5 +1,5 @@
-import XRegExp, {MatchRecursiveValueNameMatch} from "xregexp";
-import {html} from "gatsby/dist/redux/reducers";
+import XRegExp, { MatchRecursiveValueNameMatch } from "xregexp";
+import { html } from "gatsby/dist/redux/reducers";
 
 export interface InterpolatedValue {
   key: string;
@@ -29,16 +29,22 @@ export const descriptionToHtml = (
   let recursiveMatch: MatchRecursiveValueNameMatch[] | null = null;
   let match: RegExpMatchArray | null = null;
   do {
-    recursiveMatch = XRegExp.matchRecursive(htmlDescription, descriptionTagLeftDelim, descriptionTagRightDelim, 'g', {
-      valueNames: ['between', 'tagName', 'tagContent', 'closingTag']
-    });
+    recursiveMatch = XRegExp.matchRecursive(
+      htmlDescription,
+      descriptionTagLeftDelim,
+      descriptionTagRightDelim,
+      "g",
+      {
+        valueNames: ["between", "tagName", "tagContent", "closingTag"],
+      }
+    );
 
     if (recursiveMatch.length > 0) {
       let resultingString = "";
-      for(let i = 0; i < recursiveMatch.length; i++) {
-        if(recursiveMatch[i].name === 'between') {
+      for (let i = 0; i < recursiveMatch.length; i++) {
+        if (recursiveMatch[i].name === "between") {
           resultingString += recursiveMatch[i].value;
-        } else if(recursiveMatch[i].name === 'tagName') {
+        } else if (recursiveMatch[i].name === "tagName") {
           const tagName = recursiveMatch[i].value.slice(1, -1);
           let className = "";
           switch (tagName) {
@@ -52,17 +58,17 @@ export const descriptionToHtml = (
               className = "reminder-text";
               break;
             default:
-              if(tagName.slice(0, 1) === '$') {
+              if (tagName.slice(0, 1) === "$") {
                 className = "skill-tooltip";
                 break;
               }
               console.warn(`Unrecognized tag: ${tagName}`);
               break;
           }
-          resultingString += `<span class="${className}">`
-        } else if (recursiveMatch[i].name === 'tagContent') {
+          resultingString += `<span class="${className}">`;
+        } else if (recursiveMatch[i].name === "tagContent") {
           resultingString += recursiveMatch[i].value;
-        } else if (recursiveMatch[i].name === 'closingTag') {
+        } else if (recursiveMatch[i].name === "closingTag") {
           resultingString += "</span>";
         }
       }

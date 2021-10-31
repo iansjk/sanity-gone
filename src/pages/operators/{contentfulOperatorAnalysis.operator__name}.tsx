@@ -398,6 +398,11 @@ const globalOverrideStyles =
       a {
         color: ${accentColor};
       }
+      
+      .heading-block {
+        background: linear-gradient(90deg, ${transparentize(0.9, accentColor)}, ${transparentize(1, theme.palette.white)}), ${transparentize(0.67, theme.palette.midtoneBrighter)};
+        backdrop-filter: blur(8px);
+      }
 
       header {
         .heading-and-breadcrumb {

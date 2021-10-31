@@ -400,8 +400,8 @@ const globalOverrideStyles =
       }
       
       .heading-block {
-        background: linear-gradient(90deg, ${transparentize(0.9, accentColor)}, ${transparentize(1, theme.palette.white)}), ${transparentize(0.67, theme.palette.midtoneBrighter)};
-        backdrop-filter: blur(8px);
+        background: linear-gradient(90deg, ${transparentize(0.9, accentColor)}, transparent), ${transparentize(0.67, theme.palette.midtoneBrighter)};
+        backdrop-filter: blur(${theme.spacing(1)});
       }
 
       header {

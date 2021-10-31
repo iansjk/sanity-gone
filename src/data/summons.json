@@ -405,7 +405,7 @@
     "cnName": "医疗探机",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 188,
+    "fileIndex": 192,
     "operatorName": "Silence"
   },
   {
@@ -819,8 +819,595 @@
     "cnName": "触手",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 189,
+    "fileIndex": 193,
     "operatorName": "Deepcolor"
+  },
+  {
+    "name": "Mon3tr",
+    "description": null,
+    "canUseGeneralPotentialItem": true,
+    "potentialItemId": "",
+    "nationId": null,
+    "groupId": null,
+    "teamId": null,
+    "displayNumber": null,
+    "tokenKey": null,
+    "appellation": " ",
+    "position": "MELEE",
+    "tagList": null,
+    "itemUsage": null,
+    "itemDesc": null,
+    "itemObtainApproach": null,
+    "isNotObtainable": false,
+    "isSpChar": false,
+    "maxPotentialLevel": 0,
+    "rarity": 5,
+    "profession": "TOKEN",
+    "trait": null,
+    "phases": [
+      {
+        "characterPrefabKey": "token_10002_kalts_mon3tr",
+        "rangeId": "1-1",
+        "maxLevel": 50,
+        "attributesKeyFrames": [
+          {
+            "level": 1,
+            "data": {
+              "maxHp": 2510,
+              "atk": 545,
+              "def": 201,
+              "magicResistance": 0,
+              "cost": 10,
+              "blockCnt": 3,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 2,
+              "respawnTime": 35,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          },
+          {
+            "level": 50,
+            "data": {
+              "maxHp": 3347,
+              "atk": 827,
+              "def": 272,
+              "magicResistance": 0,
+              "cost": 10,
+              "blockCnt": 3,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 2,
+              "respawnTime": 35,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          }
+        ],
+        "evolveCost": null,
+        "range": {
+          "id": "1-1",
+          "direction": 1,
+          "grids": [
+            {
+              "row": 0,
+              "col": 0
+            },
+            {
+              "row": 0,
+              "col": 1
+            }
+          ]
+        }
+      },
+      {
+        "characterPrefabKey": "token_10002_kalts_mon3tr",
+        "rangeId": "1-1",
+        "maxLevel": 80,
+        "attributesKeyFrames": [
+          {
+            "level": 1,
+            "data": {
+              "maxHp": 3347,
+              "atk": 827,
+              "def": 272,
+              "magicResistance": 0,
+              "cost": 10,
+              "blockCnt": 3,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 2,
+              "respawnTime": 30,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          },
+          {
+            "level": 80,
+            "data": {
+              "maxHp": 4292,
+              "atk": 1149,
+              "def": 336,
+              "magicResistance": 0,
+              "cost": 10,
+              "blockCnt": 3,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 2,
+              "respawnTime": 30,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          }
+        ],
+        "evolveCost": null,
+        "range": {
+          "id": "1-1",
+          "direction": 1,
+          "grids": [
+            {
+              "row": 0,
+              "col": 0
+            },
+            {
+              "row": 0,
+              "col": 1
+            }
+          ]
+        }
+      },
+      {
+        "characterPrefabKey": "token_10002_kalts_mon3tr",
+        "rangeId": "1-1",
+        "maxLevel": 90,
+        "attributesKeyFrames": [
+          {
+            "level": 1,
+            "data": {
+              "maxHp": 4292,
+              "atk": 1149,
+              "def": 336,
+              "magicResistance": 0,
+              "cost": 10,
+              "blockCnt": 3,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 2,
+              "respawnTime": 25,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          },
+          {
+            "level": 90,
+            "data": {
+              "maxHp": 5433,
+              "atk": 1402,
+              "def": 405,
+              "magicResistance": 0,
+              "cost": 10,
+              "blockCnt": 3,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 2,
+              "respawnTime": 25,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          }
+        ],
+        "evolveCost": null,
+        "range": {
+          "id": "1-1",
+          "direction": 1,
+          "grids": [
+            {
+              "row": 0,
+              "col": 0
+            },
+            {
+              "row": 0,
+              "col": 1
+            }
+          ]
+        }
+      }
+    ],
+    "skills": [
+      {
+        "skillId": null,
+        "overridePrefabKey": null,
+        "overrideTokenKey": null,
+        "levelUpCostCond": [
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          }
+        ],
+        "unlockCond": {
+          "phase": 0,
+          "level": 1
+        }
+      },
+      {
+        "skillId": null,
+        "overridePrefabKey": null,
+        "overrideTokenKey": null,
+        "levelUpCostCond": [
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          }
+        ],
+        "unlockCond": {
+          "phase": 1,
+          "level": 1
+        }
+      },
+      {
+        "skillId": null,
+        "overridePrefabKey": null,
+        "overrideTokenKey": null,
+        "levelUpCostCond": [
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          }
+        ],
+        "unlockCond": {
+          "phase": 2,
+          "level": 1
+        }
+      }
+    ],
+    "talents": [
+      {
+        "candidates": []
+      },
+      {
+        "candidates": [
+          {
+            "unlockCondition": {
+              "phase": 2,
+              "level": 1
+            },
+            "requiredPotentialRank": 0,
+            "prefabKey": "2",
+            "name": null,
+            "description": "-",
+            "rangeId": "x-4",
+            "blackboard": [
+              {
+                "key": "stun",
+                "value": 3
+              },
+              {
+                "key": "value",
+                "value": 1200
+              }
+            ],
+            "range": {
+              "id": "x-4",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": -1
+                },
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 1,
+                  "col": 1
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": -1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                },
+                {
+                  "row": -1,
+                  "col": 1
+                }
+              ]
+            }
+          },
+          {
+            "unlockCondition": {
+              "phase": 2,
+              "level": 1
+            },
+            "requiredPotentialRank": 4,
+            "prefabKey": "2",
+            "name": null,
+            "description": "-",
+            "rangeId": "x-4",
+            "blackboard": [
+              {
+                "key": "stun",
+                "value": 3.5
+              },
+              {
+                "key": "value",
+                "value": 1400
+              }
+            ],
+            "range": {
+              "id": "x-4",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": -1
+                },
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 1,
+                  "col": 1
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": -1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                },
+                {
+                  "row": -1,
+                  "col": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "potentialRanks": [],
+    "favorKeyFrames": [
+      {
+        "level": 0,
+        "data": {
+          "maxHp": 0,
+          "atk": 0,
+          "def": 0,
+          "magicResistance": 0,
+          "cost": 0,
+          "blockCnt": 0,
+          "moveSpeed": 0,
+          "attackSpeed": 0,
+          "baseAttackTime": 0,
+          "respawnTime": 0,
+          "hpRecoveryPerSec": 0,
+          "spRecoveryPerSec": 0,
+          "maxDeployCount": 0,
+          "maxDeckStackCnt": 0,
+          "tauntLevel": 0,
+          "massLevel": 0,
+          "baseForceLevel": 0,
+          "stunImmune": false,
+          "silenceImmune": false,
+          "sleepImmune": false
+        }
+      },
+      {
+        "level": 50,
+        "data": {
+          "maxHp": 0,
+          "atk": 0,
+          "def": 0,
+          "magicResistance": 0,
+          "cost": 0,
+          "blockCnt": 0,
+          "moveSpeed": 0,
+          "attackSpeed": 0,
+          "baseAttackTime": 0,
+          "respawnTime": 0,
+          "hpRecoveryPerSec": 0,
+          "spRecoveryPerSec": 0,
+          "maxDeployCount": 0,
+          "maxDeckStackCnt": 0,
+          "tauntLevel": 0,
+          "massLevel": 0,
+          "baseForceLevel": 0,
+          "stunImmune": false,
+          "silenceImmune": false,
+          "sleepImmune": false
+        }
+      }
+    ],
+    "allSkillLvlup": [
+      {
+        "unlockCond": {
+          "phase": 0,
+          "level": 1
+        },
+        "lvlUpCost": null
+      },
+      {
+        "unlockCond": {
+          "phase": 0,
+          "level": 1
+        },
+        "lvlUpCost": null
+      },
+      {
+        "unlockCond": {
+          "phase": 0,
+          "level": 1
+        },
+        "lvlUpCost": null
+      },
+      {
+        "unlockCond": {
+          "phase": 1,
+          "level": 1
+        },
+        "lvlUpCost": null
+      },
+      {
+        "unlockCond": {
+          "phase": 1,
+          "level": 1
+        },
+        "lvlUpCost": null
+      },
+      {
+        "unlockCond": {
+          "phase": 1,
+          "level": 1
+        },
+        "lvlUpCost": null
+      }
+    ],
+    "id": "token_10002_kalts_mon3tr",
+    "skillData": [],
+    "cnName": "Mon3tr",
+    "subProfessionId": "notchar1",
+    "isCnOnly": false,
+    "fileIndex": 194,
+    "operatorName": "Kal'tsit"
   },
   {
     "name": "Mirage",
@@ -1243,7 +1830,7 @@
     "cnName": "幻影",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 190,
+    "fileIndex": 195,
     "operatorName": "Nightingale"
   },
   {
@@ -2732,7 +3319,7 @@
     "cnName": "机械水獭",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 191,
+    "fileIndex": 196,
     "operatorName": "Mayer"
   },
   {
@@ -3927,7 +4514,7 @@
     "cnName": "龙腾.F",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 192,
+    "fileIndex": 197,
     "operatorName": "Magallan"
   },
   {
@@ -5026,7 +5613,7 @@
     "cnName": "龙腾.L",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 193
+    "fileIndex": 198
   },
   {
     "name": "Soaring Dragon A",
@@ -6220,7 +6807,7 @@
     "cnName": "龙腾.A",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 194
+    "fileIndex": 199
   },
   {
     "name": "Cursed Doll",
@@ -6948,7 +7535,7 @@
     "cnName": "诅咒娃娃",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 195,
+    "fileIndex": 200,
     "operatorName": "Shamare"
   },
   {
@@ -8856,7 +9443,7 @@
     "cnName": "镜中虚影",
     "subProfessionId": "executor",
     "isCnOnly": false,
-    "fileIndex": 196,
+    "fileIndex": 201,
     "operatorName": "Phantom"
   },
   {
@@ -9547,7 +10134,7 @@
     "cnName": "此面向敌",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 197,
+    "fileIndex": 202,
     "operatorName": "W"
   },
   {
@@ -10848,7 +11435,7 @@
     "cnName": "工程蓄水炮",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 198,
+    "fileIndex": 203,
     "operatorName": "Weedy"
   },
   {
@@ -12628,7 +13215,7 @@
     "cnName": "移动摄影器",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 199,
+    "fileIndex": 204,
     "operatorName": "Scene"
   },
   {
@@ -13745,7 +14332,7 @@
     "cnName": "沙之碑",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 200,
+    "fileIndex": 205,
     "operatorName": "Beeswax"
   },
   {
@@ -14651,7 +15238,7 @@
     "cnName": "迷迭香的战术装备",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 201,
+    "fileIndex": 206,
     "operatorName": "Rosmontis"
   },
   {
@@ -15641,7 +16228,7 @@
     "cnName": "\"夹子\"",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 202,
+    "fileIndex": 207,
     "operatorName": "Robin"
   },
   {
@@ -16025,7 +16612,7 @@
     "cnName": "磐蟹护卫队",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 203,
+    "fileIndex": 208,
     "operatorName": "Beanstalk"
   },
   {
@@ -16596,7 +17183,7 @@
     "cnName": "\"小自在\"",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 204,
+    "fileIndex": 209,
     "operatorName": "Dusk"
   },
   {
@@ -17586,12 +18173,12 @@
     "cnName": "迎宾踏垫",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 205,
+    "fileIndex": 210,
     "operatorName": "Frost"
   },
   {
-    "name": "Mon3tr",
-    "description": null,
+    "name": "Skadi's Seaborn",
+    "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
     "canUseGeneralPotentialItem": true,
     "potentialItemId": "",
     "nationId": null,
@@ -17599,594 +18186,7 @@
     "teamId": null,
     "displayNumber": null,
     "tokenKey": null,
-    "appellation": "Mon3tr",
-    "position": "MELEE",
-    "tagList": null,
-    "itemUsage": null,
-    "itemDesc": null,
-    "itemObtainApproach": null,
-    "isNotObtainable": false,
-    "isSpChar": false,
-    "maxPotentialLevel": 0,
-    "rarity": 5,
-    "profession": "TOKEN",
-    "subProfessionId": "notchar1",
-    "trait": null,
-    "phases": [
-      {
-        "characterPrefabKey": "token_10002_kalts_mon3tr",
-        "rangeId": "1-1",
-        "maxLevel": 50,
-        "attributesKeyFrames": [
-          {
-            "level": 1,
-            "data": {
-              "maxHp": 2510,
-              "atk": 545,
-              "def": 201,
-              "magicResistance": 0,
-              "cost": 10,
-              "blockCnt": 3,
-              "moveSpeed": 1,
-              "attackSpeed": 100,
-              "baseAttackTime": 2,
-              "respawnTime": 35,
-              "hpRecoveryPerSec": 0,
-              "spRecoveryPerSec": 1,
-              "maxDeployCount": 1,
-              "maxDeckStackCnt": 0,
-              "tauntLevel": 0,
-              "massLevel": 0,
-              "baseForceLevel": 0,
-              "stunImmune": false,
-              "silenceImmune": false,
-              "sleepImmune": false
-            }
-          },
-          {
-            "level": 50,
-            "data": {
-              "maxHp": 3347,
-              "atk": 827,
-              "def": 272,
-              "magicResistance": 0,
-              "cost": 10,
-              "blockCnt": 3,
-              "moveSpeed": 1,
-              "attackSpeed": 100,
-              "baseAttackTime": 2,
-              "respawnTime": 35,
-              "hpRecoveryPerSec": 0,
-              "spRecoveryPerSec": 1,
-              "maxDeployCount": 1,
-              "maxDeckStackCnt": 0,
-              "tauntLevel": 0,
-              "massLevel": 0,
-              "baseForceLevel": 0,
-              "stunImmune": false,
-              "silenceImmune": false,
-              "sleepImmune": false
-            }
-          }
-        ],
-        "evolveCost": null,
-        "range": {
-          "id": "1-1",
-          "direction": 1,
-          "grids": [
-            {
-              "row": 0,
-              "col": 0
-            },
-            {
-              "row": 0,
-              "col": 1
-            }
-          ]
-        }
-      },
-      {
-        "characterPrefabKey": "token_10002_kalts_mon3tr",
-        "rangeId": "1-1",
-        "maxLevel": 80,
-        "attributesKeyFrames": [
-          {
-            "level": 1,
-            "data": {
-              "maxHp": 3347,
-              "atk": 827,
-              "def": 272,
-              "magicResistance": 0,
-              "cost": 10,
-              "blockCnt": 3,
-              "moveSpeed": 1,
-              "attackSpeed": 100,
-              "baseAttackTime": 2,
-              "respawnTime": 30,
-              "hpRecoveryPerSec": 0,
-              "spRecoveryPerSec": 1,
-              "maxDeployCount": 1,
-              "maxDeckStackCnt": 0,
-              "tauntLevel": 0,
-              "massLevel": 0,
-              "baseForceLevel": 0,
-              "stunImmune": false,
-              "silenceImmune": false,
-              "sleepImmune": false
-            }
-          },
-          {
-            "level": 80,
-            "data": {
-              "maxHp": 4292,
-              "atk": 1149,
-              "def": 336,
-              "magicResistance": 0,
-              "cost": 10,
-              "blockCnt": 3,
-              "moveSpeed": 1,
-              "attackSpeed": 100,
-              "baseAttackTime": 2,
-              "respawnTime": 30,
-              "hpRecoveryPerSec": 0,
-              "spRecoveryPerSec": 1,
-              "maxDeployCount": 1,
-              "maxDeckStackCnt": 0,
-              "tauntLevel": 0,
-              "massLevel": 0,
-              "baseForceLevel": 0,
-              "stunImmune": false,
-              "silenceImmune": false,
-              "sleepImmune": false
-            }
-          }
-        ],
-        "evolveCost": null,
-        "range": {
-          "id": "1-1",
-          "direction": 1,
-          "grids": [
-            {
-              "row": 0,
-              "col": 0
-            },
-            {
-              "row": 0,
-              "col": 1
-            }
-          ]
-        }
-      },
-      {
-        "characterPrefabKey": "token_10002_kalts_mon3tr",
-        "rangeId": "1-1",
-        "maxLevel": 90,
-        "attributesKeyFrames": [
-          {
-            "level": 1,
-            "data": {
-              "maxHp": 4292,
-              "atk": 1149,
-              "def": 336,
-              "magicResistance": 0,
-              "cost": 10,
-              "blockCnt": 3,
-              "moveSpeed": 1,
-              "attackSpeed": 100,
-              "baseAttackTime": 2,
-              "respawnTime": 25,
-              "hpRecoveryPerSec": 0,
-              "spRecoveryPerSec": 1,
-              "maxDeployCount": 1,
-              "maxDeckStackCnt": 0,
-              "tauntLevel": 0,
-              "massLevel": 0,
-              "baseForceLevel": 0,
-              "stunImmune": false,
-              "silenceImmune": false,
-              "sleepImmune": false
-            }
-          },
-          {
-            "level": 90,
-            "data": {
-              "maxHp": 5433,
-              "atk": 1402,
-              "def": 405,
-              "magicResistance": 0,
-              "cost": 10,
-              "blockCnt": 3,
-              "moveSpeed": 1,
-              "attackSpeed": 100,
-              "baseAttackTime": 2,
-              "respawnTime": 25,
-              "hpRecoveryPerSec": 0,
-              "spRecoveryPerSec": 1,
-              "maxDeployCount": 1,
-              "maxDeckStackCnt": 0,
-              "tauntLevel": 0,
-              "massLevel": 0,
-              "baseForceLevel": 0,
-              "stunImmune": false,
-              "silenceImmune": false,
-              "sleepImmune": false
-            }
-          }
-        ],
-        "evolveCost": null,
-        "range": {
-          "id": "1-1",
-          "direction": 1,
-          "grids": [
-            {
-              "row": 0,
-              "col": 0
-            },
-            {
-              "row": 0,
-              "col": 1
-            }
-          ]
-        }
-      }
-    ],
-    "skills": [
-      {
-        "skillId": null,
-        "overridePrefabKey": null,
-        "overrideTokenKey": null,
-        "levelUpCostCond": [
-          {
-            "unlockCond": {
-              "phase": 2,
-              "level": 1
-            },
-            "lvlUpTime": 0,
-            "levelUpCost": null
-          },
-          {
-            "unlockCond": {
-              "phase": 2,
-              "level": 1
-            },
-            "lvlUpTime": 0,
-            "levelUpCost": null
-          },
-          {
-            "unlockCond": {
-              "phase": 2,
-              "level": 1
-            },
-            "lvlUpTime": 0,
-            "levelUpCost": null
-          }
-        ],
-        "unlockCond": {
-          "phase": 0,
-          "level": 1
-        }
-      },
-      {
-        "skillId": null,
-        "overridePrefabKey": null,
-        "overrideTokenKey": null,
-        "levelUpCostCond": [
-          {
-            "unlockCond": {
-              "phase": 2,
-              "level": 1
-            },
-            "lvlUpTime": 0,
-            "levelUpCost": null
-          },
-          {
-            "unlockCond": {
-              "phase": 2,
-              "level": 1
-            },
-            "lvlUpTime": 0,
-            "levelUpCost": null
-          },
-          {
-            "unlockCond": {
-              "phase": 2,
-              "level": 1
-            },
-            "lvlUpTime": 0,
-            "levelUpCost": null
-          }
-        ],
-        "unlockCond": {
-          "phase": 1,
-          "level": 1
-        }
-      },
-      {
-        "skillId": null,
-        "overridePrefabKey": null,
-        "overrideTokenKey": null,
-        "levelUpCostCond": [
-          {
-            "unlockCond": {
-              "phase": 2,
-              "level": 1
-            },
-            "lvlUpTime": 0,
-            "levelUpCost": null
-          },
-          {
-            "unlockCond": {
-              "phase": 2,
-              "level": 1
-            },
-            "lvlUpTime": 0,
-            "levelUpCost": null
-          },
-          {
-            "unlockCond": {
-              "phase": 2,
-              "level": 1
-            },
-            "lvlUpTime": 0,
-            "levelUpCost": null
-          }
-        ],
-        "unlockCond": {
-          "phase": 2,
-          "level": 1
-        }
-      }
-    ],
-    "talents": [
-      {
-        "candidates": []
-      },
-      {
-        "candidates": [
-          {
-            "unlockCondition": {
-              "phase": 2,
-              "level": 1
-            },
-            "requiredPotentialRank": 0,
-            "prefabKey": "2",
-            "name": null,
-            "description": "-",
-            "rangeId": "x-4",
-            "blackboard": [
-              {
-                "key": "stun",
-                "value": 3
-              },
-              {
-                "key": "value",
-                "value": 1200
-              }
-            ],
-            "range": {
-              "id": "x-4",
-              "direction": 1,
-              "grids": [
-                {
-                  "row": 1,
-                  "col": -1
-                },
-                {
-                  "row": 1,
-                  "col": 0
-                },
-                {
-                  "row": 1,
-                  "col": 1
-                },
-                {
-                  "row": 0,
-                  "col": -1
-                },
-                {
-                  "row": 0,
-                  "col": 0
-                },
-                {
-                  "row": 0,
-                  "col": 1
-                },
-                {
-                  "row": -1,
-                  "col": -1
-                },
-                {
-                  "row": -1,
-                  "col": 0
-                },
-                {
-                  "row": -1,
-                  "col": 1
-                }
-              ]
-            }
-          },
-          {
-            "unlockCondition": {
-              "phase": 2,
-              "level": 1
-            },
-            "requiredPotentialRank": 4,
-            "prefabKey": "2",
-            "name": null,
-            "description": "-",
-            "rangeId": "x-4",
-            "blackboard": [
-              {
-                "key": "stun",
-                "value": 3.5
-              },
-              {
-                "key": "value",
-                "value": 1400
-              }
-            ],
-            "range": {
-              "id": "x-4",
-              "direction": 1,
-              "grids": [
-                {
-                  "row": 1,
-                  "col": -1
-                },
-                {
-                  "row": 1,
-                  "col": 0
-                },
-                {
-                  "row": 1,
-                  "col": 1
-                },
-                {
-                  "row": 0,
-                  "col": -1
-                },
-                {
-                  "row": 0,
-                  "col": 0
-                },
-                {
-                  "row": 0,
-                  "col": 1
-                },
-                {
-                  "row": -1,
-                  "col": -1
-                },
-                {
-                  "row": -1,
-                  "col": 0
-                },
-                {
-                  "row": -1,
-                  "col": 1
-                }
-              ]
-            }
-          }
-        ]
-      }
-    ],
-    "potentialRanks": [],
-    "favorKeyFrames": [
-      {
-        "level": 0,
-        "data": {
-          "maxHp": 0,
-          "atk": 0,
-          "def": 0,
-          "magicResistance": 0,
-          "cost": 0,
-          "blockCnt": 0,
-          "moveSpeed": 0,
-          "attackSpeed": 0,
-          "baseAttackTime": 0,
-          "respawnTime": 0,
-          "hpRecoveryPerSec": 0,
-          "spRecoveryPerSec": 0,
-          "maxDeployCount": 0,
-          "maxDeckStackCnt": 0,
-          "tauntLevel": 0,
-          "massLevel": 0,
-          "baseForceLevel": 0,
-          "stunImmune": false,
-          "silenceImmune": false,
-          "sleepImmune": false
-        }
-      },
-      {
-        "level": 50,
-        "data": {
-          "maxHp": 0,
-          "atk": 0,
-          "def": 0,
-          "magicResistance": 0,
-          "cost": 0,
-          "blockCnt": 0,
-          "moveSpeed": 0,
-          "attackSpeed": 0,
-          "baseAttackTime": 0,
-          "respawnTime": 0,
-          "hpRecoveryPerSec": 0,
-          "spRecoveryPerSec": 0,
-          "maxDeployCount": 0,
-          "maxDeckStackCnt": 0,
-          "tauntLevel": 0,
-          "massLevel": 0,
-          "baseForceLevel": 0,
-          "stunImmune": false,
-          "silenceImmune": false,
-          "sleepImmune": false
-        }
-      }
-    ],
-    "allSkillLvlup": [
-      {
-        "unlockCond": {
-          "phase": 0,
-          "level": 1
-        },
-        "lvlUpCost": null
-      },
-      {
-        "unlockCond": {
-          "phase": 0,
-          "level": 1
-        },
-        "lvlUpCost": null
-      },
-      {
-        "unlockCond": {
-          "phase": 0,
-          "level": 1
-        },
-        "lvlUpCost": null
-      },
-      {
-        "unlockCond": {
-          "phase": 1,
-          "level": 1
-        },
-        "lvlUpCost": null
-      },
-      {
-        "unlockCond": {
-          "phase": 1,
-          "level": 1
-        },
-        "lvlUpCost": null
-      },
-      {
-        "unlockCond": {
-          "phase": 1,
-          "level": 1
-        },
-        "lvlUpCost": null
-      }
-    ],
-    "id": "token_10002_kalts_mon3tr",
-    "skillData": [],
-    "cnName": "Mon3tr",
-    "isCnOnly": true,
-    "fileIndex": 232,
-    "operatorName": "Kal'tsit"
-  },
-  {
-    "name": "Skadi's seaborn",
-    "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
-    "canUseGeneralPotentialItem": true,
-    "potentialItemId": "",
-    "nationId": null,
-    "groupId": null,
-    "teamId": null,
-    "displayNumber": null,
-    "tokenKey": null,
-    "appellation": "Skadi's seaborn",
+    "appellation": " ",
     "position": "ALL",
     "tagList": null,
     "itemUsage": null,
@@ -18197,7 +18197,6 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
-    "subProfessionId": "notchar1",
     "trait": {
       "candidates": [
         {
@@ -18212,7 +18211,7 @@
               "value": 0.1
             }
           ],
-          "overrideDescripton": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+          "overrideDescripton": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
           "prefabKey": "-1",
           "rangeId": null
         }
@@ -18986,9 +18985,9 @@
         "hidden": false,
         "levels": [
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19017,9 +19016,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19048,9 +19047,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19079,9 +19078,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19110,9 +19109,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19141,9 +19140,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19172,9 +19171,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19203,9 +19202,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19234,9 +19233,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19265,9 +19264,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19303,9 +19302,9 @@
         "hidden": false,
         "levels": [
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19334,9 +19333,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19365,9 +19364,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19396,9 +19395,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19427,9 +19426,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19458,9 +19457,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19489,9 +19488,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19520,9 +19519,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19551,9 +19550,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19582,9 +19581,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19620,9 +19619,9 @@
         "hidden": false,
         "levels": [
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19647,9 +19646,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19674,9 +19673,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19701,9 +19700,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19728,9 +19727,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19755,9 +19754,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19782,9 +19781,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19809,9 +19808,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19836,9 +19835,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19863,9 +19862,9 @@
             "range": null
           },
           {
-            "name": "共鸣",
+            "name": "Resonance",
             "rangeId": null,
-            "description": "攻击范围视为浊心斯卡蒂攻击范围的延伸",
+            "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
             "skillType": 0,
             "spData": {
               "spType": 8,
@@ -19893,8 +19892,9 @@
       }
     ],
     "cnName": "斯卡蒂的海嗣",
-    "isCnOnly": true,
-    "fileIndex": 233,
+    "subProfessionId": "notchar1",
+    "isCnOnly": false,
+    "fileIndex": 211,
     "operatorName": "Skadi the Corrupting Heart"
   },
   {

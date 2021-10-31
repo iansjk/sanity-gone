@@ -33,6 +33,7 @@ module.exports = {
     },
     "gatsby-theme-material-ui",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-aceship",
     {
       resolve: "gatsby-plugin-sitemap",
       options: {

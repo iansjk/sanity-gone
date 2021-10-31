@@ -1,0 +1,8 @@
+{
+  "name": "gatsby-plugin-aceship",
+  "version": "1.0.0",
+  "description": "Produces a mapping of operator IDs to page URLs for Aceship's Arknights site",
+  "main": "index.js",
+  "author": "Ian Kim",
+  "license": "GPL-2.0-or-later"
+}

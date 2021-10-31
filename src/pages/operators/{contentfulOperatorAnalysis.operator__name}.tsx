@@ -23,6 +23,7 @@ import useIsMobile from "../../hooks/useIsMobile";
 import { Fragment } from "react";
 import StarIcon from "../../components/icons/StarIcon";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
+import { operatorImage } from "../../utils/images";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -128,6 +129,7 @@ interface OperatorAnalysisData {
     name: string;
   }[];
   introduction: MarkdownNode;
+  customByline?: string;
   talent1Analysis: MarkdownNode;
   talent2Analysis: MarkdownNode;
   skill1Recommended?: boolean;
@@ -249,11 +251,17 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       .filter((child) => child.tagName === "li")
       .map((child) => child.children[0].value);
 
-  const [baseChar, alterName] = contentful.operator.name.split(" the ");
+  const operatorName = contentful.operator.name;
+  const [baseChar, alterName] = operatorName.split(" the ");
+  const description = `${
+    contentful.introduction.childMarkdownRemark.html
+      .replaceAll(/<\/?[A-za-z-]*>/g, "")
+      .split(/(\.)\s*/)[0]
+  }.`;
 
   return (
     <Layout
-      pageTitle={`${contentful.operator.name} Guide`}
+      pageTitle={`${operatorName} Guide`}
       customPageHeading={
         alterName ? (
           <h1>
@@ -264,6 +272,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         )
       }
       bannerImageUrl={contentful.operator.bannerImage.localFile.publicURL}
+      image={operatorImage(operatorName)}
+      description={contentful.customByline ?? description}
       // previousLocation="Operators"
       // previousLocationLink="/operators"
     >
@@ -330,7 +340,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           {!isMobile && <hr />}
           <div className="external-links">
             <a
-              href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${contentful.operator.name}`}
+              href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${operatorName}`}
               rel="noreferrer noopener"
               target="_blank"
             >
@@ -682,6 +692,7 @@ export const query = graphql`
           html
         }
       }
+      customByline
       talent1Analysis {
         childMarkdownRemark {
           html

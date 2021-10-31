@@ -7,6 +7,7 @@ import cnSkillTable from "../../ArknightsGameData/zh_CN/gamedata/excel/skill_tab
 import rangeTable from "../../ArknightsGameData/en_US/gamedata/excel/range_table.json";
 import jetSkillTranslations from "./jet-tls/skills.json";
 import jetTalentTranslations from "./jet-tls/talents.json";
+import { Character, SkillAtLevel } from "./gamedata-types";
 
 const dataDir = path.join(__filename, "../../data");
 const jetSkillDescriptionRegex =
@@ -52,16 +53,24 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
   );
 
   const summonIdToOperatorName: Record<string, string> = {};
-  const denormalizedCharacters = [
-    ...Object.entries(enCharacterTable),
-    ...cnOnlyCharacters,
-  ]
+  const denormalizedCharacters = (
+    [...Object.entries(enCharacterTable), ...cnOnlyCharacters] as [
+      string,
+      Character
+    ][]
+  )
     .filter(([_, character]) => character.profession !== "TRAP")
     .map(([id, character], i) => {
       const isCnOnly = !enCharacterIds.has(id);
       const characterName = useNameOverride(
         isCnOnly ? character.appellation : character.name
       );
+
+      character.skills
+        .filter((skill) => skill.overrideTokenKey != null)
+        .forEach((skill) => {
+          summonIdToOperatorName[skill.overrideTokenKey!] = characterName;
+        });
 
       const phases = character.phases.map((phase) => ({
         ...phase,
@@ -109,7 +118,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
             ? cnSkillTable[skillId as keyof typeof cnSkillTable]
             : enSkillTable[skillId as keyof typeof enSkillTable];
           const levels = baseSkillObject.levels.map(
-            (skillAtLevel, levelIndex) => {
+            (skillAtLevel: SkillAtLevel, levelIndex) => {
               const baseSkillLevelObject = {
                 ...skillAtLevel,
                 range: skillAtLevel.rangeId

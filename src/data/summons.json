@@ -5613,7 +5613,8 @@
     "cnName": "龙腾.L",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 198
+    "fileIndex": 198,
+    "operatorName": "Magallan"
   },
   {
     "name": "Soaring Dragon A",
@@ -6807,7 +6808,8 @@
     "cnName": "龙腾.A",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 199
+    "fileIndex": 199,
+    "operatorName": "Magallan"
   },
   {
     "name": "Cursed Doll",

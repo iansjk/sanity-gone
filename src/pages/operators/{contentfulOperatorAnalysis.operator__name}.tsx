@@ -209,6 +209,10 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   ]
     .filter((html) => !!html)
     .map((html, i) => {
+      // if this operator has per-skill summons, then pass the correct summon for this skill
+      if (summons.length > 1) {
+        context.summon = summons[i];
+      }
       if (skillRecommended[i]) {
         return (
           <Fragment>

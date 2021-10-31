@@ -1,5 +1,4 @@
 import XRegExp, { MatchRecursiveValueNameMatch } from "xregexp";
-import { html } from "gatsby/dist/redux/reducers";
 
 export interface InterpolatedValue {
   key: string;
@@ -8,7 +7,7 @@ export interface InterpolatedValue {
 
 const descriptionTagLeftDelim = "<(?!span)[^>/]+>";
 const descriptionTagRightDelim = "</>";
-//<(?<tagName>[^>]+)>(?<tagContent>[^<]+)<\/>/;
+
 const descriptionInterpolationRegex =
   /-?{-?(?<interpolationKey>[^}:]+)(?::(?<formatString>[^}]+))?}/;
 /**

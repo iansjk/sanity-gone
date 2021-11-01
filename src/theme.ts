@@ -1,42 +1,83 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
 import { createTheme } from "@mui/material";
 
-const spacingUnit = 8;
+declare module "@mui/material/styles" {
+  interface SGPalette {
+    lime: Palette["primary"];
+    blue: Palette["primary"];
+    softBlue: Palette["primary"];
+    yellow: Palette["primary"];
+    orange: Palette["primary"];
+    red: Palette["primary"];
+    pink: Palette["primary"];
+    white: Palette["primary"];
+    gray: Palette["primary"];
+    black: Palette["primary"];
+    dark: Palette["primary"];
+    midtoneDarker: Palette["primary"];
+    midtone: Palette["primary"];
+    midtoneBrighter: Palette["primary"];
+    midtoneBrighterer: Palette["primary"];
+    midtoneExtra: Palette["primary"];
+  }
 
-// adaptation of @material-ui/core's Spacing theme type
-// (note that we're only accepting numbers for arguments and only returning strings)
-interface Spacing {
-  (): string;
-  (value: number): string;
-  (topBottom: number, rightLeft: number): string;
-  (top: number, rightLeft: number, bottom: number): string;
-  (top: number, right: number, bottom: number, left: number): string;
+  interface SGPaletteOptions {
+    lime: PaletteOptions["primary"];
+    blue: PaletteOptions["primary"];
+    softBlue: PaletteOptions["primary"];
+    yellow: PaletteOptions["primary"];
+    orange: PaletteOptions["primary"];
+    red: PaletteOptions["primary"];
+    pink: PaletteOptions["primary"];
+    white: PaletteOptions["primary"];
+    gray: PaletteOptions["primary"];
+    black: PaletteOptions["primary"];
+    dark: PaletteOptions["primary"];
+    midtoneDarker: PaletteOptions["primary"];
+    midtone: PaletteOptions["primary"];
+    midtoneBrighter: PaletteOptions["primary"];
+    midtoneBrighterer: PaletteOptions["primary"];
+    midtoneExtra: PaletteOptions["primary"];
+  }
+
+  interface SGTypography {
+    pageHeading: React.CSSProperties;
+    operatorPageHeading: React.CSSProperties;
+    operatorNameHeading: React.CSSProperties;
+    cardHeading: React.CSSProperties;
+    generalHeading: React.CSSProperties;
+    generalHeadingBold: React.CSSProperties;
+    skillTalentHeading: React.CSSProperties;
+    body1Bold: React.CSSProperties;
+    body1Bolder: React.CSSProperties;
+    body2Bold: React.CSSProperties;
+    body2Bolder: React.CSSProperties;
+    body3: React.CSSProperties;
+    smallPortraitRarity: React.CSSProperties;
+    label1: React.CSSProperties;
+    label2: React.CSSProperties;
+    navigationLink: React.CSSProperties;
+    navigationLinkBold: React.CSSProperties;
+    operatorBrowserNameHeading: React.CSSProperties;
+  }
+
+  interface Palette extends SGPalette {}
+  interface PaletteOptions extends SGPaletteOptions {}
+  interface TypographyVariants extends SGTypography {}
+  interface TypographyVariantsOptions extends Partial<SGTypography> {}
+
+  interface BreakpointOverrides {
+    xs: false;
+    sm: false;
+    md: false;
+    lg: false;
+    xl: false;
+    mobile: true;
+    maxWidth: true;
+  }
 }
 
-const spacing: Spacing = (...args: number[]) => {
-  if (!args || args.length === 0) {
-    return `${spacingUnit}px`;
-  }
-  return args
-    .map((multiple) => (multiple === 0 ? "0" : `${multiple * spacingUnit}px`))
-    .join(" ");
-};
-
-// export const defaultTheme = {
-//   palette,
-//   typography,
-//   spacing,
-//   breakpoints: {
-//     down: (
-//       breakpoint: keyof typeof breakpoints,
-//       nudge?: number | string
-//     ): string => generateMediaQuery("max-width", breakpoint, nudge),
-//     up: (
-//       breakpoint: keyof typeof breakpoints,
-//       nudge?: number | string
-//     ): string => generateMediaQuery("min-width", breakpoint, nudge),
-//   },
-//   containerWidth: `${breakpoints.maxWidth}px`,
-// };
+const spacingUnit = 8;
 
 export const defaultTheme = createTheme({
   palette: {
@@ -95,13 +136,11 @@ export const defaultTheme = createTheme({
       fontSize: 64,
       lineHeight: 1.25,
       fontWeight: 600,
-      textShadow: `0 ${spacing(0.25)} ${spacing(1)} rgba(0, 0, 0, 0.5)`,
     },
     operatorPageHeading: {
       fontWeight: 600,
       fontSize: 96,
       lineHeight: 1.25,
-      textShadow: `0 ${spacing(0.25)} ${spacing(1)} rgba(0, 0, 0, 0.5)`,
     },
     operatorNameHeading: {
       fontSize: 36,
@@ -155,12 +194,12 @@ export const defaultTheme = createTheme({
       lineHeight: 1.25,
     },
     label1: {
-      size: 12,
+      fontSize: 12,
       fontWeight: 600,
       lineHeight: 1.25,
     },
     label2: {
-      size: 14,
+      fontSize: 14,
       fontWeight: 600,
       lineHeight: 1.25,
     },
@@ -183,4 +222,4 @@ export const defaultTheme = createTheme({
       maxWidth: 1270 + spacingUnit * 3 * 2,
     },
   },
-} as any);
+});

@@ -415,7 +415,8 @@ const globalOverrideStyles =
             font-size: ${theme.typography.operatorPageHeading.fontSize};
             font-weight: ${theme.typography.operatorPageHeading.fontWeight};
             line-height: ${theme.typography.operatorPageHeading.lineHeight};
-            text-shadow: ${theme.typography.operatorPageHeading.textShadow};
+            text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
+              rgba(0, 0, 0, 0.5);
 
             ${theme.breakpoints.down("mobile")} {
               font-size: ${theme.typography.operatorNameHeading.fontSize};

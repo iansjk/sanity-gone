@@ -322,7 +322,8 @@ const styles =
             font-size: ${theme.typography.pageHeading.fontSize};
             font-weight: ${theme.typography.pageHeading.fontWeight};
             line-height: ${theme.typography.pageHeading.lineHeight};
-            text-shadow: ${theme.typography.pageHeading.textShadow};
+            text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
+              rgba(0, 0, 0, 0.5);
 
             ${theme.breakpoints.down("mobile")} {
               font-size: ${theme.typography.operatorNameHeading.fontSize};

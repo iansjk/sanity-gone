@@ -505,13 +505,10 @@ const styles = (accentColor: string) => (theme: Theme) =>
         text-align: start;
         line-height: ${theme.typography.navigationLink.lineHeight};
         border: 0;
+        border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
         background: none;
         color: ${theme.palette.gray.main};
         cursor: pointer;
-
-        ${theme.breakpoints.up("maxWidth", theme.spacing(2))} {
-          border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
-        }
 
         :disabled {
           cursor: initial;

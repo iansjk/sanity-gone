@@ -39,7 +39,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
   const { id, name, profession } = characterObject;
   const isSummon = profession === "TOKEN";
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile" as any));
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   return (
     <section css={styles}>

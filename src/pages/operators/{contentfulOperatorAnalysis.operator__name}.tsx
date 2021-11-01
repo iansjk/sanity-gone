@@ -190,7 +190,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     summon: summons.length > 0 ? summons[0] : undefined,
   };
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile" as any));
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   const talentAnalyses = [
     contentful.talent1Analysis.childMarkdownRemark.html,

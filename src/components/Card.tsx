@@ -1,4 +1,5 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 import { transparentize } from "polished";
 
 export type CardProps = React.HTMLAttributes<HTMLDivElement> & {

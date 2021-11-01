@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import ReactDOM from "react-dom";
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 import { MdClose as CloseIcon } from "react-icons/md";
+
 import SanityGoneLogo from "./SanityGoneLogo";
 
 export interface MobileMenuProps {

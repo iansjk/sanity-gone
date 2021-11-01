@@ -1,7 +1,9 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 import { transparentize } from "polished";
 import { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
+
 import CloseIcon from "./icons/CloseIcon";
 import NextArrow from "./icons/NextArrow";
 import PreviousArrow from "./icons/PreviousArrow";

@@ -1,5 +1,7 @@
 import React from "react";
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
+
 import { RangeObject } from "../utils/types";
 
 enum GridCell {

@@ -1,9 +1,12 @@
-import { css, ClassNames, Theme } from "@emotion/react";
+import { css, ClassNames } from "@emotion/react";
+import { Theme } from "@mui/material";
+
 import {
   descriptionToHtml,
   InterpolatedValue,
 } from "../utils/description-parser";
-import CharacterRange, { RangeObject } from "./CharacterRange";
+import { RangeObject } from "../utils/types";
+import CharacterRange from "./CharacterRange";
 
 /** TalentPhaseObject refers to a given talent at a specific potential level */
 interface TalentPhaseObject {

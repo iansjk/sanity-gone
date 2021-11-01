@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from "react";
 import { graphql } from "gatsby";
-import { ClassNames, css, Theme } from "@emotion/react";
+import { ClassNames, css } from "@emotion/react";
+import { Theme } from "@mui/material";
 import { DateTime } from "luxon";
 import gatsbySlugify from "@sindresorhus/slugify";
+
 import Layout from "../../Layout";
 import {
   operatorPortrait,

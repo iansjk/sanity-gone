@@ -1,6 +1,7 @@
-import { css, Theme } from "@emotion/react";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { css } from "@emotion/react";
+import { useMediaQuery, useTheme, Theme } from "@mui/material";
 import { Fragment } from "react";
+
 import {
   professionToClass,
   slugify,

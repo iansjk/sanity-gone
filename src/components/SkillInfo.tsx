@@ -1,4 +1,6 @@
-import { ClassNames, css, Theme } from "@emotion/react";
+import { ClassNames, css } from "@emotion/react";
+import { Theme } from "@mui/material";
+
 import {
   descriptionToHtml,
   InterpolatedValue,

@@ -1,7 +1,8 @@
+import { graphql, useStaticQuery } from "gatsby";
+import { Theme, ThemeProvider as MuiThemeProvider } from "@mui/material";
 import {
-  Global,
-  Theme,
   css,
+  Global,
   ThemeProvider as EmotionThemeProvider,
 } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
@@ -12,13 +13,12 @@ import {
   BsTwitter as TwitterLogo,
 } from "react-icons/bs";
 import "wicg-inert";
+
 import { defaultTheme } from "./theme";
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 import { lighten, rgba } from "polished";
 import MobileMenu from "./components/MobileMenu";
-import { graphql, useStaticQuery } from "gatsby";
-import { ThemeProvider as MuiThemeProvider } from "@mui/material";
 
 interface LayoutProps {
   pageTitle: string;

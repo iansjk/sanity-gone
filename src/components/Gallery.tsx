@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 import { Fragment, useState } from "react";
 import GalleryItem from "./GalleryItem";
 import GalleryItemFullSizeModal from "./GalleryItemFullSizeModal";

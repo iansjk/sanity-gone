@@ -1,4 +1,6 @@
-import { css, Theme, useTheme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { useTheme, Theme } from "@mui/material";
+
 import { operatorImage } from "../utils/images";
 import TiltedStarIcon from "./icons/TiltedStarIcon";
 import StarIcon from "./icons/StarIcon";

@@ -1,4 +1,5 @@
-import { css, Global, Theme } from "@emotion/react";
+import { css, Global } from "@emotion/react";
+import { Theme, useMediaQuery, useTheme } from "@mui/material";
 import { graphql } from "gatsby";
 import { lighten, rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
@@ -23,7 +24,6 @@ import { Fragment } from "react";
 import StarIcon from "../../components/icons/StarIcon";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
 import { operatorImage } from "../../utils/images";
-import { Button, useMediaQuery, useTheme } from "@mui/material";
 
 interface HTMLToReactContext {
   skills: SkillObject[];

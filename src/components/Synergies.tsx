@@ -1,4 +1,6 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
+
 import CardWithTabs from "./CardWithTabs";
 import Synergy, { SynergyProps, SynergyQuality } from "./Synergy";
 import { operatorImage } from "../utils/images";

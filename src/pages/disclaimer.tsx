@@ -1,4 +1,6 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
+
 import Layout from "../Layout";
 import { sgPageBanner } from "../utils/images";
 

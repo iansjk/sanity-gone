@@ -1,4 +1,7 @@
 import parse from "html-react-parser";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
+
 import Card from "./Card";
 import Tabs from "./Tabs";
 import TabButtons from "./TabButtons";
@@ -6,7 +9,6 @@ import TabPanels from "./TabPanels";
 import RomanNumeralOne from "./icons/RomanNumeralOne";
 import RomanNumeralTwo from "./icons/RomanNumeralTwo";
 import RomanNumeralThree from "./icons/RomanNumeralThree";
-import { css, Theme } from "@emotion/react";
 
 export type CardWithTabsProps = {
   header: string;

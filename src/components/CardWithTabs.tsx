@@ -97,7 +97,7 @@ const styles = (theme: Theme) => css`
       align-items: center;
       flex-direction: column;
       padding: ${theme.spacing(3, 0, 4)};
-      background: ${theme.palette.midtone};
+      background: ${theme.palette.midtone.main};
 
       ${theme.breakpoints.down("mobile")} {
         flex-direction: row;
@@ -112,10 +112,11 @@ const styles = (theme: Theme) => css`
         border: none;
         font-weight: ${theme.typography.skillTalentHeading.fontWeight};
         cursor: pointer;
-        background-color: ${theme.palette.midtoneDarker};
-        color: ${theme.palette.midtoneBrighter};
+        background-color: ${theme.palette.midtoneDarker.main};
+        color: ${theme.palette.midtoneBrighter.main};
         box-sizing: border-box;
-        border: ${theme.spacing(0.25)} solid ${theme.palette.midtoneBrighter};
+        border: ${theme.spacing(0.25)} solid
+          ${theme.palette.midtoneBrighter.main};
         margin-bottom: ${theme.spacing(2)};
         display: flex;
         align-items: center;
@@ -131,7 +132,7 @@ const styles = (theme: Theme) => css`
         }
 
         svg path {
-          fill: ${theme.palette.midtoneBrighter};
+          fill: ${theme.palette.midtoneBrighter.main};
         }
 
         &.last-child {
@@ -139,13 +140,13 @@ const styles = (theme: Theme) => css`
         }
 
         &.inactive:hover {
-          border-color: ${theme.palette.gray};
-          color: ${theme.palette.gray};
+          border-color: ${theme.palette.gray.main};
+          color: ${theme.palette.gray.main};
         }
 
         &.active {
-          background-color: ${theme.palette.midtoneBrighter};
-          color: ${theme.palette.white};
+          background-color: ${theme.palette.midtoneBrighter.main};
+          color: ${theme.palette.white.main};
         }
       }
     }

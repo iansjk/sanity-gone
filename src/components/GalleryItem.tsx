@@ -44,7 +44,7 @@ const styles = (theme: Theme) => css`
   .image-caption {
     display: inline-block;
     margin-top: ${theme.spacing(1)};
-    color: ${theme.palette.gray};
+    color: ${theme.palette.gray.main};
     font-size: ${theme.typography.body2.fontSize};
     line-height: ${theme.typography.body2.lineHeight};
   }

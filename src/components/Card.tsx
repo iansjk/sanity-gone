@@ -43,13 +43,13 @@ const styles = (theme: Theme) => css`
       font-size: ${theme.typography.cardHeading.fontSize};
       font-weight: ${theme.typography.cardHeading.fontWeight};
       line-height: ${theme.typography.cardHeading.lineHeight};
-      color: ${theme.palette.white};
+      color: ${theme.palette.white.main};
     }
   }
 
   .card-content {
     padding: ${theme.spacing(3, 4, 4)};
-    background: ${transparentize(0.34, theme.palette.midtone)};
+    background: ${transparentize(0.34, theme.palette.midtone.main)};
     border-bottom-right-radius: ${theme.spacing(1)};
 
     ${theme.breakpoints.down("mobile")} {

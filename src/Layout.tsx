@@ -1,4 +1,9 @@
-import { Global, Theme, css, ThemeProvider } from "@emotion/react";
+import {
+  Global,
+  Theme,
+  css,
+  ThemeProvider as EmotionThemeProvider,
+} from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
 import { Fragment, useState } from "react";
 import { Helmet } from "react-helmet";
@@ -9,11 +14,11 @@ import {
 import "wicg-inert";
 import { defaultTheme } from "./theme";
 import SanityGoneLogo from "./components/SanityGoneLogo";
-import useIsMobile from "./hooks/useIsMobile";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 import { lighten, rgba } from "polished";
 import MobileMenu from "./components/MobileMenu";
 import { graphql, useStaticQuery } from "gatsby";
+import { ThemeProvider as MuiThemeProvider } from "@mui/material";
 
 interface LayoutProps {
   pageTitle: string;
@@ -65,7 +70,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
     image: defaultImage,
   } = data.site.siteMetadata;
 
-  const isMobile = useIsMobile();
+  const isMobile = false; // FIXME
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const title = pageTitle
@@ -93,7 +98,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
         <html lang="en" {...rest} />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content={pageTitle ?? "Arknights Hub" } />
+        <meta property="og:title" content={pageTitle ?? "Arknights Hub"} />
         <meta
           property="og:description"
           content={description ?? defaultDescription}
@@ -104,41 +109,42 @@ const Layout: React.FC<LayoutProps> = (props) => {
           property="og:image"
           content={`${siteUrl}${image ?? defaultImage}`}
         />
-        <meta
-          name="description"
-          content={description ?? defaultDescription}
-        />
+        <meta name="description" content={description ?? defaultDescription} />
       </Helmet>
-      <ThemeProvider theme={defaultTheme}>
-        <Global styles={emotionNormalize} />
-        <Global styles={styles({ bannerImageUrl, blendPoint })} />
-        <div className="site-wrapper">
-          <div className="top-fold">
-            <div className="header-main-wrapper">
-              <header>
-                <div className="top-line">
-                  <SanityGoneLogo />
-                  <div className="header-links" hidden={isMobile}>
-                    <a href="/operators">Operators</a>
-                    <a href="/about">About</a>
+      <MuiThemeProvider theme={defaultTheme}>
+        <EmotionThemeProvider theme={defaultTheme}>
+          <Global styles={emotionNormalize} />
+          <Global styles={styles({ bannerImageUrl, blendPoint })} />
+          <div className="site-wrapper">
+            <div className="top-fold">
+              <div className="header-main-wrapper">
+                <header>
+                  <div className="top-line">
+                    <SanityGoneLogo />
+                    <div className="header-links" hidden={isMobile}>
+                      <a href="/operators">Operators</a>
+                      <a href="/about">About</a>
+                    </div>
+                    <button
+                      className="mobile-menu-button"
+                      aria-label="Open menu"
+                    >
+                      <MobileMenuIcon
+                        className="mobile-menu"
+                        role="button"
+                        aria-label="Open Menu"
+                        hidden={!isMobile}
+                        onClick={handleMenuToggle}
+                      />
+                      <MobileMenu
+                        open={isMobileMenuOpen}
+                        onClose={() => setMobileMenuOpen(false)}
+                      />
+                    </button>
                   </div>
-                  <button className="mobile-menu-button" aria-label="Open menu">
-                    <MobileMenuIcon
-                      className="mobile-menu"
-                      role="button"
-                      aria-label="Open Menu"
-                      hidden={!isMobile}
-                      onClick={handleMenuToggle}
-                    />
-                    <MobileMenu
-                      open={isMobileMenuOpen}
-                      onClose={() => setMobileMenuOpen(false)}
-                    />
-                  </button>
-                </div>
-                <div className="heading-and-breadcrumb">
-                  {customPageHeading || <h1>{pageTitle}</h1>}
-                  {/* {previousLocation && previousLocationLink && (
+                  <div className="heading-and-breadcrumb">
+                    {customPageHeading || <h1>{pageTitle}</h1>}
+                    {/* {previousLocation && previousLocationLink && (
                     <div className="breadcrumb">
                       <a
                         href={previousLocationLink}
@@ -149,46 +155,46 @@ const Layout: React.FC<LayoutProps> = (props) => {
                       </a>
                     </div>
                   )} */}
-                </div>
-              </header>
-              <div className="page-content">{children}</div>
+                  </div>
+                </header>
+                <div className="page-content">{children}</div>
+              </div>
             </div>
-          </div>
-          <footer>
-            <div className="footer-inner">
-              <div className="logo-and-description">
-                <SanityGoneLogo />
-                <p className="site-description">
-                  Sanity;Gone is a community resource for Arknights players,
-                  providing quick guides, reviews, and detailed information
-                  about the game.
-                </p>
-              </div>
-              <div className="links-section">
-                <span className="list-title">Links</span>
-                <ul>
-                  <li>
-                    <a href="mailto:admin@sanitygone.help">Contact Email</a>
-                  </li>
-                  <li>
-                    <a href="/disclaimer">Disclaimer</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="socials-section">
-                <span className="list-title">Socials</span>
-                <ul>
-                  <li>
-                    <a
-                      href="https://discord.gg/bAnrGzw75H"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Sanity Gone Zero Discord Server"
-                    >
-                      <DiscordLogo size={24} />
-                    </a>
-                  </li>
-                  {/* <li>
+            <footer>
+              <div className="footer-inner">
+                <div className="logo-and-description">
+                  <SanityGoneLogo />
+                  <p className="site-description">
+                    Sanity;Gone is a community resource for Arknights players,
+                    providing quick guides, reviews, and detailed information
+                    about the game.
+                  </p>
+                </div>
+                <div className="links-section">
+                  <span className="list-title">Links</span>
+                  <ul>
+                    <li>
+                      <a href="mailto:admin@sanitygone.help">Contact Email</a>
+                    </li>
+                    <li>
+                      <a href="/disclaimer">Disclaimer</a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="socials-section">
+                  <span className="list-title">Socials</span>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://discord.gg/bAnrGzw75H"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Sanity Gone Zero Discord Server"
+                      >
+                        <DiscordLogo size={24} />
+                      </a>
+                    </li>
+                    {/* <li>
                     <a
                       href="https://twitter.com/sanitygonezero"
                       aria-label="Sanity Gone Zero Twitter"
@@ -196,12 +202,13 @@ const Layout: React.FC<LayoutProps> = (props) => {
                       <TwitterLogo size={24} />
                     </a>
                   </li> */}
-                </ul>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </footer>
-        </div>
-      </ThemeProvider>
+            </footer>
+          </div>
+        </EmotionThemeProvider>
+      </MuiThemeProvider>
     </Fragment>
   );
 };
@@ -223,15 +230,15 @@ const styles =
           background-image: linear-gradient(
               to bottom,
               transparent ${0.3576 * blendPoint}px,
-              ${rgba(theme.palette.dark, 0.9)} ${0.8361 * blendPoint}px,
-              ${theme.palette.dark} ${blendPoint}px
+              ${rgba(theme.palette.dark.main, 0.9)} ${0.8361 * blendPoint}px,
+              ${theme.palette.dark.main} ${blendPoint}px
             ),
             url("${bannerImageUrl}"),
             linear-gradient(
               to bottom,
-              ${theme.palette.black},
-              ${theme.palette.black} ${blendPoint}px,
-              ${theme.palette.dark} ${blendPoint}px
+              ${theme.palette.black.main},
+              ${theme.palette.black.main} ${blendPoint}px,
+              ${theme.palette.dark.main} ${blendPoint}px
             );
           background-repeat: no-repeat;
           background-position-x: center;
@@ -239,12 +246,12 @@ const styles =
       `}
 
       html {
-        font-size: ${theme.typography.body.fontSize};
-        color: ${theme.palette.white};
-        background-color: ${theme.palette.dark};
-        line-height: ${theme.typography.body.lineHeight};
+        font-size: ${theme.typography.body1.fontSize};
+        color: ${theme.palette.white.main};
+        background-color: ${theme.palette.dark.main};
+        line-height: ${theme.typography.body1.lineHeight};
         overflow-y: scroll;
-        font-family: ${theme.typography.body.fontFamily};
+        font-family: ${theme.typography.body1.fontFamily};
 
         ${theme.breakpoints.down("mobile")} {
           font-size: ${theme.typography.body2.fontSize};
@@ -281,7 +288,7 @@ const styles =
 
             a {
               margin-left: ${theme.spacing(8)};
-              color: ${theme.palette.white};
+              color: ${theme.palette.white.main};
               text-decoration: none;
             }
           }
@@ -331,7 +338,7 @@ const styles =
                 margin-right: ${theme.spacing(1)};
 
                 path {
-                  fill: ${theme.palette.white};
+                  fill: ${theme.palette.white.main};
                 }
               }
             }
@@ -341,7 +348,7 @@ const styles =
 
       footer {
         margin-top: ${theme.spacing(8)};
-        background-color: ${theme.palette.black};
+        background-color: ${theme.palette.black.main};
 
         ${theme.breakpoints.down("mobile")} {
           margin-top: ${theme.spacing(4)};
@@ -354,7 +361,7 @@ const styles =
           max-width: ${theme.containerWidth};
           display: grid;
           grid-template-columns: 50% repeat(2, 1fr);
-          color: ${theme.palette.gray};
+          color: ${theme.palette.gray.main};
 
           ${theme.breakpoints.down("mobile")} {
             grid-template-rows: repeat(2, max-content);
@@ -383,13 +390,14 @@ const styles =
               font-size: ${theme.typography.generalHeading.fontSize};
               line-height: ${theme.typography.generalHeading.lineHeight};
               font-weight: ${theme.typography.generalHeadingBold.fontWeight};
-              color: ${theme.palette.white};
+              color: ${theme.palette.white.main};
 
               &::before {
                 content: " ";
                 position: absolute;
                 display: inline-block;
-                border-left: ${theme.spacing(0.25)} solid ${theme.palette.blue};
+                border-left: ${theme.spacing(0.25)} solid
+                  ${theme.palette.blue.main};
                 height: ${theme.spacing(1.5)};
                 top: calc(50% - ${theme.spacing(0.75)});
                 left: -${theme.spacing(0.25)};
@@ -419,10 +427,10 @@ const styles =
           .links-section,
           .socials-section {
             a {
-              color: ${theme.palette.gray};
+              color: ${theme.palette.gray.main};
 
               &:hover {
-                color: ${theme.palette.white};
+                color: ${theme.palette.white.main};
               }
             }
           }
@@ -457,7 +465,7 @@ const styles =
 
       b,
       strong {
-        font-weight: ${theme.typography.bodyBolder.fontWeight};
+        font-weight: ${theme.typography.body1Bolder.fontWeight};
       }
 
       a,
@@ -470,12 +478,12 @@ const styles =
           padding: ${theme.spacing(0, 0.5)};
           border-radius: ${theme.spacing(0.25)};
           transition: all 50ms ease-out;
-          color: ${rgba(lighten(0.27, theme.palette.blue), 0.66)};
-          background-color: ${rgba(theme.palette.blue, 0.08)};
+          color: ${rgba(lighten(0.27, theme.palette.blue.main), 0.66)};
+          background-color: ${rgba(theme.palette.blue.main, 0.08)};
 
           &:hover {
-            color: ${lighten(0.27, theme.palette.blue)};
-            background-color: ${rgba(theme.palette.blue, 0.4)};
+            color: ${lighten(0.27, theme.palette.blue.main)};
+            background-color: ${rgba(theme.palette.blue.main, 0.4)};
           }
         }
       }
@@ -493,7 +501,7 @@ const styles =
       dl {
         & > div {
           padding: ${theme.spacing(2)};
-          background-color: ${theme.palette.midtoneDarker};
+          background-color: ${theme.palette.midtoneDarker.main};
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -508,7 +516,7 @@ const styles =
         dt {
           font-size: ${theme.typography.body2.fontSize};
           line-height: ${theme.typography.body2.lineHeight};
-          color: ${theme.palette.gray};
+          color: ${theme.palette.gray.main};
           display: flex;
           align-items: center;
 
@@ -546,18 +554,18 @@ const styles =
       }
 
       .rarity-6-stars {
-        color: ${theme.palette.orange};
+        color: ${theme.palette.orange.main};
       }
 
       .rarity-5-stars {
-        color: ${theme.palette.yellow};
+        color: ${theme.palette.yellow.main};
       }
 
       .rarity-4-stars {
-        color: ${theme.palette.softBlue};
+        color: ${theme.palette.softBlue.main};
       }
 
       .rarity-3-stars {
-        color: ${theme.palette.blue};
+        color: ${theme.palette.blue.main};
       }
     `;

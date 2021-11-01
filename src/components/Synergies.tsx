@@ -77,20 +77,20 @@ const styles = (theme: Theme) => css`
         background-repeat: no-repeat;
         background-position: center;
         opacity: 0.34;
-        background-color: ${theme.palette.midtoneDarker};
+        background-color: ${theme.palette.midtoneDarker.main};
 
         &:hover {
           opacity: 0.67;
         }
 
         &.inactive:hover {
-          background-color: ${theme.palette.midtone};
+          background-color: ${theme.palette.midtone.main};
         }
 
         &.active {
           opacity: 1;
-          background-color: ${theme.palette.white};
-          border: ${theme.spacing(0.25)} solid ${theme.palette.white};
+          background-color: ${theme.palette.white.main};
+          border: ${theme.spacing(0.25)} solid ${theme.palette.white.main};
         }
 
         &.synergy-group::after {
@@ -120,7 +120,7 @@ const styles = (theme: Theme) => css`
             display: block;
             width: ${theme.spacing(3)};
             margin: ${theme.spacing(1)} auto ${theme.spacing(2)};
-            border-top: 2px solid ${theme.palette.midtoneBrighter};
+            border-top: 2px solid ${theme.palette.midtoneBrighter.main};
           }
         }
 
@@ -134,26 +134,26 @@ const styles = (theme: Theme) => css`
             content: " ";
             display: block;
             margin: ${theme.spacing(0, 3, 0, 1)};
-            border-left: 2px solid ${theme.palette.midtoneBrighter};
+            border-left: 2px solid ${theme.palette.midtoneBrighter.main};
             height: ${theme.spacing(3)};
           }
         }
       }
 
       .synergy-quality.quality-2 {
-        color: ${theme.palette.lime};
+        color: ${theme.palette.lime.main};
       }
 
       .synergy-quality.quality-1 {
-        color: ${theme.palette.blue};
+        color: ${theme.palette.blue.main};
       }
 
       .synergy-quality.quality-0 {
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
       }
 
       .synergy-quality.quality--1 {
-        color: ${theme.palette.red};
+        color: ${theme.palette.red.main};
       }
     }
 

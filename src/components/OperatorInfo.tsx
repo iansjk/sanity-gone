@@ -1,6 +1,6 @@
 import { css, Theme } from "@emotion/react";
+import { useMediaQuery, useTheme } from "@mui/material";
 import { Fragment } from "react";
-import useIsMobile from "../hooks/useIsMobile";
 import {
   professionToClass,
   slugify,
@@ -51,7 +51,8 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     subProfessionId,
     description
   );
-  const isMobile = useIsMobile();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile" as any));
   const [charName, alterName] = name.split(" the ");
 
   return (
@@ -156,10 +157,10 @@ const styles = (theme: Theme) => css`
 
           .alter-name {
             margin-left: ${theme.spacing(0.5)};
-            color: ${theme.palette.gray};
-            font-size: ${theme.typography.body.fontSize};
-            font-weight: ${theme.typography.body.fontWeight};
-            line-height: ${theme.typography.body.lineHeight};
+            color: ${theme.palette.gray.main};
+            font-size: ${theme.typography.body1.fontSize};
+            font-weight: ${theme.typography.body1.fontWeight};
+            line-height: ${theme.typography.body1.lineHeight};
           }
         }
       }
@@ -169,13 +170,13 @@ const styles = (theme: Theme) => css`
         display: flex;
         align-items: center;
         font-weight: ${theme.typography.navigationLinkBold.fontWeight};
-        color: ${theme.palette.white};
-        border: 1px solid ${theme.palette.gray};
+        color: ${theme.palette.white.main};
+        border: 1px solid ${theme.palette.gray.main};
         border-radius: ${theme.spacing(0.5)};
 
         /* &:hover {
-          border-color: ${theme.palette.gray};
-          background-color: ${theme.palette.midtoneBrighter};
+          border-color: ${theme.palette.gray.main};
+          background-color: ${theme.palette.midtoneBrighter.main};
         } */
 
         .class-icon,
@@ -216,7 +217,7 @@ const styles = (theme: Theme) => css`
       }
 
       dd {
-        font-size: ${theme.typography.body.fontSize};
+        font-size: ${theme.typography.body1.fontSize};
         font-weight: normal;
 
         ${theme.breakpoints.down("mobile")} {
@@ -229,19 +230,19 @@ const styles = (theme: Theme) => css`
       border-top-left-radius: ${theme.spacing(0.5)};
 
       .physical {
-        color: ${theme.palette.orange};
+        color: ${theme.palette.orange.main};
       }
 
       .arts {
-        color: ${theme.palette.blue};
+        color: ${theme.palette.blue.main};
       }
 
       .healing {
-        color: ${theme.palette.lime};
+        color: ${theme.palette.lime.main};
       }
 
       .none {
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
       }
     }
 

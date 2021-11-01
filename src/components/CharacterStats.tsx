@@ -13,7 +13,7 @@ import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import { highestCharacterStats } from "../utils/globals";
 import { summonImage } from "../utils/images";
-import useIsMobile from "../hooks/useIsMobile";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const SUMMON_ICON_SIZE = 60;
 
@@ -37,7 +37,8 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
   } = highestCharacterStats(characterObject);
   const { id, name, profession } = characterObject;
   const isSummon = profession === "TOKEN";
-  const isMobile = useIsMobile();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile" as any));
 
   return (
     <section css={styles}>
@@ -193,49 +194,49 @@ const styles = (theme: Theme) => css`
 
     .health {
       svg path {
-        fill: ${theme.palette.lime};
+        fill: ${theme.palette.lime.main};
       }
     }
 
     .attack-power {
       svg path {
-        fill: ${theme.palette.red};
+        fill: ${theme.palette.red.main};
       }
     }
 
     .defense {
       svg path {
-        fill: ${theme.palette.orange};
+        fill: ${theme.palette.orange.main};
       }
     }
 
     .attack-speed {
       svg path {
-        fill: ${theme.palette.yellow};
+        fill: ${theme.palette.yellow.main};
       }
     }
 
     .arts-resistance {
       svg path {
-        fill: ${theme.palette.blue};
+        fill: ${theme.palette.blue.main};
       }
     }
 
     .block {
       svg path {
-        fill: ${theme.palette.softBlue};
+        fill: ${theme.palette.softBlue.main};
       }
     }
 
     .redeploy-time {
       svg path {
-        fill: ${theme.palette.pink};
+        fill: ${theme.palette.pink.main};
       }
     }
 
     .dp-cost {
       svg path {
-        fill: ${theme.palette.white};
+        fill: ${theme.palette.white.main};
       }
     }
 

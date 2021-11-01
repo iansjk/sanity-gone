@@ -55,17 +55,17 @@ const styles = (theme: Theme) => css`
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid ${theme.palette.white};
+      border: 1px solid ${theme.palette.white.main};
       border-radius: ${theme.spacing(0.5)};
     }
 
     input:checked + .checkbox-control {
-      border-color: ${theme.palette.blue};
-      background-color: ${theme.palette.blue};
+      border-color: ${theme.palette.blue.main};
+      background-color: ${theme.palette.blue.main};
     }
 
     input:focus + .checkbox-control {
-      box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em ${theme.palette.blue};
+      box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em ${theme.palette.blue.main};
     }
   }
 `;

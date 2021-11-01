@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { css } from "@emotion/react";
 import ScrollContainer from "react-indiana-drag-scroll";
-import useIsMobile from "../hooks/useIsMobile";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 export type TabButtonsProps = Omit<
   React.HTMLAttributes<HTMLDivElement>,
@@ -15,7 +15,8 @@ export type TabButtonsProps = Omit<
 
 const TabButtons: React.FC<TabButtonsProps> = (props) => {
   const { activeTab, onClick, isSwiper, children, ...rest } = props;
-  const isMobile = useIsMobile();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile" as any));
 
   const buttonChildren = React.Children.toArray(children).filter(
     (child) =>

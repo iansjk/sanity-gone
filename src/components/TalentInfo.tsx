@@ -88,7 +88,7 @@ const styles = (theme: Theme) => css`
   }
 
   & > * {
-    background-color: ${theme.palette.midtoneDarker};
+    background-color: ${theme.palette.midtoneDarker.main};
   }
 
   &.no-range {

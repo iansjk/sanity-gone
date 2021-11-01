@@ -19,11 +19,11 @@ import { replaceSelfClosingHtmlTags } from "../../utils/globals";
 import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";
-import useIsMobile from "../../hooks/useIsMobile";
 import { Fragment } from "react";
 import StarIcon from "../../components/icons/StarIcon";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
 import { operatorImage } from "../../utils/images";
+import { Button, useMediaQuery, useTheme } from "@mui/material";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -189,7 +189,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     operator: operatorObject,
     summon: summons.length > 0 ? summons[0] : undefined,
   };
-  const isMobile = useIsMobile();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile" as any));
 
   const talentAnalyses = [
     contentful.talent1Analysis.childMarkdownRemark.html,
@@ -398,9 +399,14 @@ const globalOverrideStyles =
       a {
         color: ${accentColor};
       }
-      
+
       .heading-block {
-        background: linear-gradient(90deg, ${transparentize(0.9, accentColor)}, transparent), ${transparentize(0.67, theme.palette.midtoneBrighter)};
+        background: linear-gradient(
+            90deg,
+            ${transparentize(0.9, accentColor)},
+            transparent
+          ),
+          ${transparentize(0.67, theme.palette.midtoneBrighter.main)};
       }
 
       header {
@@ -441,7 +447,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
     }
 
     .tabs ~ .swiper-container {
-      background-color: ${transparentize(0.34, theme.palette.dark)};
+      background-color: ${transparentize(0.34, theme.palette.dark.main)};
       backdrop-filter: blur(${theme.spacing(1)});
 
       button {
@@ -458,7 +464,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         text-transform: ${theme.typography.cardHeading.textTransform};
 
         &:not(.active) {
-          color: ${theme.palette.gray};
+          color: ${theme.palette.gray.main};
         }
 
         &.active {
@@ -498,7 +504,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         line-height: ${theme.typography.navigationLink.lineHeight};
         border: 0;
         background: none;
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
         cursor: pointer;
 
         ${theme.breakpoints.up("maxWidth", theme.spacing(2))} {
@@ -507,12 +513,12 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
         :disabled {
           cursor: initial;
-          color: ${rgba(theme.palette.gray, 0.5)};
+          color: ${rgba(theme.palette.gray.main, 0.5)};
         }
 
         &:not(:disabled):not(.active):hover {
-          background-color: ${transparentize(0.9, theme.palette.gray)};
-          color: ${theme.palette.white};
+          background-color: ${transparentize(0.9, theme.palette.gray.main)};
+          color: ${theme.palette.white.main};
         }
 
         &.active {
@@ -542,7 +548,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
       hr {
         border: 0;
-        border-top: 1px solid ${theme.palette.midtoneBrighter};
+        border-top: 1px solid ${theme.palette.midtoneBrighter.main};
         margin: ${theme.spacing(3)} 0 0 0;
       }
 
@@ -566,7 +572,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         margin-bottom: ${theme.spacing(1)};
         font-size: ${theme.typography.body2.fontSize};
         line-height: ${theme.typography.body2.lineHeight};
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
       }
 
       .metadata {
@@ -602,7 +608,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       grid-column: 2 / span 2;
       margin-left: -1px;
       height: 100%;
-      border-left: 1px solid ${theme.palette.gray};
+      border-left: 1px solid ${theme.palette.gray.main};
       backdrop-filter: blur(${theme.spacing(1)});
 
       ${theme.breakpoints.down("mobile")} {
@@ -639,14 +645,14 @@ const styles = (accentColor: string) => (theme: Theme) =>
           display: inline-flex;
           margin-top: ${theme.spacing(3)};
           gap: ${theme.spacing(1)};
-          color: ${theme.palette.yellow};
+          color: ${theme.palette.yellow.main};
           font-size: ${theme.typography.skillTalentHeading.fontSize};
           font-weight: ${theme.typography.skillTalentHeading.fontWeight};
           line-height: ${theme.typography.skillTalentHeading.lineHeight};
           align-items: center;
 
           svg path {
-            fill: ${theme.palette.yellow};
+            fill: ${theme.palette.yellow.main};
           }
 
           ${theme.breakpoints.down("mobile")} {
@@ -662,7 +668,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
             border-color: ${accentColor};
 
             svg path {
-              fill: ${theme.palette.dark};
+              fill: ${theme.palette.dark.main};
             }
           }
 

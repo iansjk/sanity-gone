@@ -71,6 +71,6 @@ const styles = (theme: Theme) => css`
   line-height: 1;
 
   & > svg > path {
-    fill: ${theme.palette.white};
+    fill: ${theme.palette.white.main};
   }
 `;

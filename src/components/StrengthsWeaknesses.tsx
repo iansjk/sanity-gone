@@ -40,7 +40,7 @@ const styles = (theme: Theme) => css`
   & > * {
     margin: 0;
     padding: ${theme.spacing(2, 3)};
-    background-color: ${theme.palette.midtoneDarker};
+    background-color: ${theme.palette.midtoneDarker.main};
   }
 
   h3 {
@@ -49,7 +49,7 @@ const styles = (theme: Theme) => css`
     line-height: ${theme.typography.generalHeading.lineHeight};
 
     &.strengths {
-      color: ${theme.palette.lime};
+      color: ${theme.palette.lime.main};
       border-top-left-radius: ${theme.spacing(0.5)};
 
       ${theme.breakpoints.down("mobile")} {
@@ -58,7 +58,7 @@ const styles = (theme: Theme) => css`
     }
 
     &.weaknesses {
-      color: ${theme.palette.red};
+      color: ${theme.palette.red.main};
       border-top-right-radius: ${theme.spacing(0.5)};
 
       ${theme.breakpoints.down("mobile")} {
@@ -94,8 +94,8 @@ const styles = (theme: Theme) => css`
       width: ${theme.spacing(1)};
       margin: ${theme.spacing(0, 2)};
       vertical-align: middle;
-      border-top: 1px solid ${theme.palette.midtoneBrighter};
-      border-bottom: 1px solid ${theme.palette.midtoneBrighter};
+      border-top: 1px solid ${theme.palette.midtoneBrighter.main};
+      border-bottom: 1px solid ${theme.palette.midtoneBrighter.main};
     }
 
     li {

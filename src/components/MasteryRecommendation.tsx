@@ -50,9 +50,9 @@ const styles = (theme: Theme) => css`
 
       dd {
         margin: 0;
-        font-size: ${theme.typography.body.fontSize};
-        line-height: ${theme.typography.body.lineHeight};
-        font-weight: ${theme.typography.bodyBold.fontWeight};
+        font-size: ${theme.typography.body1.fontSize};
+        line-height: ${theme.typography.body1.lineHeight};
+        font-weight: ${theme.typography.body1Bold.fontWeight};
       }
     }
   }

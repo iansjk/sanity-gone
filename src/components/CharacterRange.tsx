@@ -99,10 +99,10 @@ const styles = (theme: Theme) => css`
   }
 
   td.active {
-    border: 2px solid ${theme.palette.gray};
+    border: 2px solid ${theme.palette.gray.main};
   }
 
   td.operator {
-    background-color: ${theme.palette.white};
+    background-color: ${theme.palette.white.main};
   }
 `;

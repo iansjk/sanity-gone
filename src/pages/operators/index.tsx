@@ -160,7 +160,7 @@ const styles = (theme: Theme) => css`
 
   .last-updated {
     .date {
-      font-weight: ${theme.typography.bodyBold.fontWeight};
+      font-weight: ${theme.typography.body1Bold.fontWeight};
     }
   }
 
@@ -192,12 +192,12 @@ const styles = (theme: Theme) => css`
       height: 280px;
       flex-grow: 1;
       border-radius: ${theme.spacing(0.5)};
-      background-color: ${theme.palette.black};
+      background-color: ${theme.palette.black.main};
       background-size: cover;
       background-position-y: top;
       background-image: linear-gradient(
           120deg,
-          ${theme.palette.midtoneDarker} 0%,
+          ${theme.palette.midtoneDarker.main} 0%,
           transparent 18%
         ),
         linear-gradient(to bottom, transparent 42%, #000 100%), var(--bg-image);
@@ -258,7 +258,8 @@ const styles = (theme: Theme) => css`
           filter: brightness(110%);
 
           .on-hover {
-            border-bottom: ${theme.spacing(0.5)} solid ${theme.palette.white};
+            border-bottom: ${theme.spacing(0.5)} solid
+              ${theme.palette.white.main};
           }
         }
       }

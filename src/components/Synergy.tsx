@@ -110,18 +110,18 @@ const styles = (theme: Theme) => css`
         font-size: ${theme.typography.label2.size};
         text-transform: uppercase;
         line-height: ${theme.typography.label2.lineHeight};
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
 
         &.quality--1 {
-          color: ${theme.palette.red};
+          color: ${theme.palette.red.main};
         }
 
         &.quality-1 {
-          color: ${theme.palette.blue};
+          color: ${theme.palette.blue.main};
         }
 
         &.quality-2 {
-          color: ${theme.palette.lime};
+          color: ${theme.palette.lime.main};
         }
       }
 

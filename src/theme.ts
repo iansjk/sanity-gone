@@ -178,7 +178,9 @@ export const defaultTheme = createTheme({
     },
   },
   breakpoints: {
-    mobile: 700,
-    maxWidth: 1270 + spacingUnit * 3 * 2,
+    values: {
+      mobile: 700,
+      maxWidth: 1270 + spacingUnit * 3 * 2,
+    },
   },
 } as any);

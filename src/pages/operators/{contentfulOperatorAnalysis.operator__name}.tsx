@@ -69,6 +69,7 @@ const htmlToReact = (
         } else if (domNode.name === "masteryrecommendation") {
           const props = attributesToProps(domNode.attribs);
           return (
+            //@ts-expect-error props will contain level and priority
             <MasteryRecommendation
               {...props}
               //@ts-expect-error children[0].data should exist on a text node

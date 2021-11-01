@@ -70,7 +70,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
     image: defaultImage,
   } = data.site.siteMetadata;
 
-  const isMobile = false; // FIXME
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const title = pageTitle
@@ -121,7 +120,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <header>
                   <div className="top-line">
                     <SanityGoneLogo />
-                    <div className="header-links" hidden={isMobile}>
+                    <div className="header-links">
                       <a href="/operators">Operators</a>
                       <a href="/about">About</a>
                     </div>
@@ -133,7 +132,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
                         className="mobile-menu"
                         role="button"
                         aria-label="Open Menu"
-                        hidden={!isMobile}
                         onClick={handleMenuToggle}
                       />
                       <MobileMenu
@@ -265,7 +263,7 @@ const styles =
       }
 
       .header-main-wrapper {
-        max-width: ${theme.containerWidth};
+        max-width: ${theme.breakpoints.values["maxWidth"]}px;
         margin: auto;
       }
 
@@ -286,6 +284,10 @@ const styles =
             flex-grow: 1;
             text-align: end;
 
+            ${theme.breakpoints.down("mobile")} {
+              display: none;
+            }
+
             a {
               margin-left: ${theme.spacing(8)};
               color: ${theme.palette.white.main};
@@ -297,6 +299,10 @@ const styles =
             padding: 0;
             background: none;
             border: none;
+
+            ${theme.breakpoints.up("mobile")} {
+              display: none;
+            }
           }
 
           .mobile-menu {

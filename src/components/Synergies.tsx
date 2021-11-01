@@ -107,7 +107,7 @@ const styles = (theme: Theme) => css`
       }
 
       .synergy-quality {
-        font-size: ${theme.typography.body2.fontSize};
+        font-size: ${theme.typography.body2.fontSize}px;
         line-height: ${theme.typography.body2.lineHeight};
         font-weight: ${theme.typography.body2Bold.fontWeight};
         text-transform: uppercase;

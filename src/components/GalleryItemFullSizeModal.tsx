@@ -234,7 +234,7 @@ const styles = (theme: Theme) => css`
 
     .topbar {
       grid-area: topbar;
-      font-size: ${theme.typography.body1.fontSize};
+      font-size: ${theme.typography.body1.fontSize}px;
       text-align: center;
       padding: ${theme.spacing(1)} 0;
       border-radius: ${theme.spacing(1, 1, 0, 0)};
@@ -283,7 +283,7 @@ const styles = (theme: Theme) => css`
       background-color: ${theme.palette.dark.main};
       margin: 0;
       padding: ${theme.spacing(1)};
-      font-size: ${theme.typography.body1.fontSize};
+      font-size: ${theme.typography.body1.fontSize}px;
       line-height: ${theme.typography.body1.lineHeight};
       font-weight: normal;
       text-align: center;

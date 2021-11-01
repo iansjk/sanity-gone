@@ -106,7 +106,7 @@ const styles = (theme: Theme) => css`
 
   h2 {
     margin: ${theme.spacing(8, 0, 0)};
-    font-size: ${theme.typography.operatorNameHeading.fontSize};
+    font-size: ${theme.typography.operatorNameHeading.fontSize}px;
     font-weight: ${theme.typography.operatorNameHeading.fontWeight};
     line-height: ${theme.typography.operatorNameHeading.lineHeight};
   }
@@ -139,7 +139,7 @@ const styles = (theme: Theme) => css`
 
       .member-name {
         margin: ${theme.spacing(2, 0, 0)};
-        font-size: ${theme.typography.generalHeadingBold.fontSize};
+        font-size: ${theme.typography.generalHeadingBold.fontSize}px;
         font-weight: ${theme.typography.generalHeadingBold.fontWeight};
         line-height: ${theme.typography.generalHeadingBold.lineHeight};
       }

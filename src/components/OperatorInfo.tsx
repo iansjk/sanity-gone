@@ -145,21 +145,21 @@ const styles = (theme: Theme) => css`
 
       .operator-name {
         grid-column: span 2;
-        font-size: ${theme.typography.operatorNameHeading.fontSize};
+        font-size: ${theme.typography.operatorNameHeading.fontSize}px;
         font-weight: ${theme.typography.operatorNameHeading.fontWeight};
         line-height: ${theme.typography.operatorNameHeading.lineHeight};
         margin-bottom: ${theme.spacing(1)};
 
         ${theme.breakpoints.down("mobile")} {
           align-items: baseline;
-          font-size: ${theme.typography.generalHeading.fontSize};
+          font-size: ${theme.typography.generalHeading.fontSize}px;
           line-height: ${theme.typography.generalHeading.lineHeight};
           font-weight: ${theme.typography.generalHeadingBold.fontWeight};
 
           .alter-name {
             margin-left: ${theme.spacing(0.5)};
             color: ${theme.palette.gray.main};
-            font-size: ${theme.typography.body1.fontSize};
+            font-size: ${theme.typography.body1.fontSize}px;
             font-weight: ${theme.typography.body1.fontWeight};
             line-height: ${theme.typography.body1.lineHeight};
           }
@@ -218,7 +218,7 @@ const styles = (theme: Theme) => css`
       }
 
       dd {
-        font-size: ${theme.typography.body1.fontSize};
+        font-size: ${theme.typography.body1.fontSize}px;
         font-weight: normal;
 
         ${theme.breakpoints.down("mobile")} {

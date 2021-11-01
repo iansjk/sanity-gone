@@ -177,7 +177,7 @@ const styles = (theme: Theme) => css`
     }
 
     .skill-name {
-      font-size: ${theme.typography.skillTalentHeading.fontSize};
+      font-size: ${theme.typography.skillTalentHeading.fontSize}px;
       line-height: ${theme.typography.skillTalentHeading.lineHeight};
       font-weight: ${theme.typography.skillTalentHeading.fontWeight};
       margin: 0;
@@ -194,7 +194,7 @@ const styles = (theme: Theme) => css`
 
     .skill-and-sp-type {
       display: block;
-      font-size: ${theme.typography.body2.fontSize};
+      font-size: ${theme.typography.body2.fontSize}px;
       line-height: ${theme.typography.body2.lineHeight};
 
       .sp-type-1 {

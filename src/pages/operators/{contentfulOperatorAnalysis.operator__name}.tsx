@@ -412,20 +412,20 @@ const globalOverrideStyles =
       header {
         .heading-and-breadcrumb {
           h1 {
-            font-size: ${theme.typography.operatorPageHeading.fontSize};
+            font-size: ${theme.typography.operatorPageHeading.fontSize}px;
             font-weight: ${theme.typography.operatorPageHeading.fontWeight};
             line-height: ${theme.typography.operatorPageHeading.lineHeight};
             text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
               rgba(0, 0, 0, 0.5);
 
             ${theme.breakpoints.down("mobile")} {
-              font-size: ${theme.typography.operatorNameHeading.fontSize};
+              font-size: ${theme.typography.operatorNameHeading.fontSize}px;
               font-weight: ${theme.typography.operatorNameHeading.fontWeight};
               line-height: ${theme.typography.operatorNameHeading.lineHeight};
 
               .alter-name {
                 display: block;
-                font-size: ${theme.typography.generalHeading.fontSize};
+                font-size: ${theme.typography.generalHeading.fontSize}px;
                 line-height: ${theme.typography.generalHeading.lineHeight};
                 font-weight: normal;
               }
@@ -459,7 +459,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         background: none;
         border: none;
         cursor: pointer;
-        font-size: ${theme.typography.cardHeading.fontSize};
+        font-size: ${theme.typography.cardHeading.fontSize}px;
         font-weight: ${theme.typography.cardHeading.fontWeight};
         line-height: ${theme.typography.cardHeading.lineHeight};
         text-transform: ${theme.typography.cardHeading.textTransform};
@@ -530,7 +530,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         }
 
         ${theme.breakpoints.down("mobile")} {
-          font-size: ${theme.typography.cardHeading.fontSize};
+          font-size: ${theme.typography.cardHeading.fontSize}px;
           line-height: ${theme.typography.cardHeading.lineHeight};
           font-weight: ${theme.typography.cardHeading.fontWeight};
           text-transform: ${theme.typography.cardHeading.textTransform};
@@ -571,7 +571,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       .section-label {
         display: block;
         margin-bottom: ${theme.spacing(1)};
-        font-size: ${theme.typography.body2.fontSize};
+        font-size: ${theme.typography.body2.fontSize}px;
         line-height: ${theme.typography.body2.lineHeight};
         color: ${theme.palette.gray.main};
       }
@@ -628,7 +628,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
           .card-content {
             box-sizing: border-box;
             height: calc(
-              100% - ${theme.typography.cardHeading.fontSize} *
+              100% - ${theme.typography.cardHeading.fontSize}px *
                 ${theme.typography.cardHeading.lineHeight} - ${theme.spacing(4)}
             );
 
@@ -647,7 +647,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
           margin-top: ${theme.spacing(3)};
           gap: ${theme.spacing(1)};
           color: ${theme.palette.yellow.main};
-          font-size: ${theme.typography.skillTalentHeading.fontSize};
+          font-size: ${theme.typography.skillTalentHeading.fontSize}px;
           font-weight: ${theme.typography.skillTalentHeading.fontWeight};
           line-height: ${theme.typography.skillTalentHeading.lineHeight};
           align-items: center;

@@ -41,7 +41,7 @@ const styles = (theme: Theme) => css`
     h2 {
       margin: 0;
       text-transform: ${theme.typography.cardHeading.textTransform};
-      font-size: ${theme.typography.cardHeading.fontSize};
+      font-size: ${theme.typography.cardHeading.fontSize}px;
       font-weight: ${theme.typography.cardHeading.fontWeight};
       line-height: ${theme.typography.cardHeading.lineHeight};
       color: ${theme.palette.white.main};

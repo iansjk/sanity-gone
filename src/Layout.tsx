@@ -244,7 +244,7 @@ const styles =
       `}
 
       html {
-        font-size: ${theme.typography.body1.fontSize};
+        font-size: ${theme.typography.body1.fontSize}px;
         color: ${theme.palette.white.main};
         background-color: ${theme.palette.dark.main};
         line-height: ${theme.typography.body1.lineHeight};
@@ -252,7 +252,7 @@ const styles =
         font-family: ${theme.typography.body1.fontFamily};
 
         ${theme.breakpoints.down("mobile")} {
-          font-size: ${theme.typography.body2.fontSize};
+          font-size: ${theme.typography.body2.fontSize}px;
         }
       }
 
@@ -319,14 +319,14 @@ const styles =
 
           h1 {
             margin: 0;
-            font-size: ${theme.typography.pageHeading.fontSize};
+            font-size: ${theme.typography.pageHeading.fontSize}px;
             font-weight: ${theme.typography.pageHeading.fontWeight};
             line-height: ${theme.typography.pageHeading.lineHeight};
             text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
               rgba(0, 0, 0, 0.5);
 
             ${theme.breakpoints.down("mobile")} {
-              font-size: ${theme.typography.operatorNameHeading.fontSize};
+              font-size: ${theme.typography.operatorNameHeading.fontSize}px;
             }
           }
 
@@ -365,7 +365,7 @@ const styles =
           box-sizing: border-box;
           margin: auto;
           padding: ${theme.spacing(8, 3)};
-          max-width: ${theme.containerWidth};
+          max-width: ${theme.breakpoints.values["maxWidth"]}px;
           display: grid;
           grid-template-columns: 50% repeat(2, 1fr);
           color: ${theme.palette.gray.main};
@@ -394,7 +394,7 @@ const styles =
             .list-title {
               position: relative;
               padding-left: ${theme.spacing(2)};
-              font-size: ${theme.typography.generalHeading.fontSize};
+              font-size: ${theme.typography.generalHeading.fontSize}px;
               line-height: ${theme.typography.generalHeading.lineHeight};
               font-weight: ${theme.typography.generalHeadingBold.fontWeight};
               color: ${theme.palette.white.main};
@@ -521,7 +521,7 @@ const styles =
         }
 
         dt {
-          font-size: ${theme.typography.body2.fontSize};
+          font-size: ${theme.typography.body2.fontSize}px;
           line-height: ${theme.typography.body2.lineHeight};
           color: ${theme.palette.gray.main};
           display: flex;
@@ -532,20 +532,20 @@ const styles =
           }
 
           ${theme.breakpoints.down("mobile")} {
-            font-size: ${theme.typography.body3.fontSize};
+            font-size: ${theme.typography.body3.fontSize}px;
             line-height: ${theme.typography.body3.lineHeight};
           }
         }
 
         dd {
           margin: ${theme.spacing(1, 0, 0)};
-          font-size: ${theme.typography.generalHeadingBold.fontSize};
+          font-size: ${theme.typography.generalHeadingBold.fontSize}px;
           font-weight: ${theme.typography.generalHeadingBold.fontWeight};
           line-height: ${theme.typography.generalHeadingBold.lineHeight};
 
           ${theme.breakpoints.down("mobile")} {
             margin: 0;
-            font-size: ${theme.typography.skillTalentHeading.fontSize};
+            font-size: ${theme.typography.skillTalentHeading.fontSize}px;
             font-weight: ${theme.typography.skillTalentHeading.fontWeight};
             line-height: ${theme.typography.skillTalentHeading.lineHeight};
           }

@@ -102,7 +102,7 @@ const styles = (theme: Theme) => css`
       position: relative;
       top: -1px;
       padding: 0 2px;
-      font-size: ${theme.typography.body2.fontSize};
+      font-size: ${theme.typography.body2.fontSize}px;
       font-weight: ${theme.typography.body2Bold.fontWeight};
       line-height: 1;
       color: ${theme.palette.red.main};
@@ -169,7 +169,7 @@ const styles = (theme: Theme) => css`
 
     .rarity {
       color: ${theme.palette.midtoneExtra.main};
-      font-size: ${theme.typography.smallPortraitRarity.fontSize};
+      font-size: ${theme.typography.smallPortraitRarity.fontSize}px;
       line-height: ${theme.typography.smallPortraitRarity.lineHeight};
       font-weight: ${theme.typography.smallPortraitRarity.fontWeight};
       display: inline-flex;

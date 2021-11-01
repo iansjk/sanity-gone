@@ -99,7 +99,7 @@ const styles = (theme: Theme) => css`
 
   .list-header {
     margin: 0;
-    font-size: ${theme.typography.skillTalentHeading.fontSize};
+    font-size: ${theme.typography.skillTalentHeading.fontSize}px;
     font-weight: ${theme.typography.skillTalentHeading.fontWeight};
     line-height: ${theme.typography.skillTalentHeading.lineHeight};
     color: ${theme.palette.gray.main};

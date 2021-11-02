@@ -33,6 +33,8 @@
     "gatsby-plugin-sitemap": "<5",
     "gatsby-source-contentful": "^5.10.0",
     "gatsby-source-filesystem": "^3.10.0",
+    "gatsby-theme-material-ui": "^5.0.0",
+    "gatsby-theme-material-ui-top-layout": "^5.0.0",
     "gatsby-transformer-json": "^3.10.0",
     "gatsby-transformer-remark": "^4.7.0",
     "gatsby-transformer-sharp": "<4",

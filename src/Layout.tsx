@@ -1,11 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { Theme, ThemeProvider as MuiThemeProvider } from "@mui/material";
-import {
-  css,
-  Global,
-  ThemeProvider as EmotionThemeProvider,
-} from "@emotion/react";
-import emotionNormalize from "emotion-normalize";
+import { Theme } from "@mui/material";
+import { css, Global } from "@emotion/react";
 import { Fragment, useState } from "react";
 import { Helmet } from "react-helmet";
 import {
@@ -14,7 +9,6 @@ import {
 } from "react-icons/bs";
 import "wicg-inert";
 
-import { defaultTheme } from "./theme";
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 import { lighten, rgba } from "polished";
@@ -110,40 +104,34 @@ const Layout: React.FC<LayoutProps> = (props) => {
         />
         <meta name="description" content={description ?? defaultDescription} />
       </Helmet>
-      <MuiThemeProvider theme={defaultTheme}>
-        <EmotionThemeProvider theme={defaultTheme}>
-          <Global styles={emotionNormalize} />
-          {/* @ts-expect-error Emotion doesn't like that I'm using MUI's Theme type, but this still works fine */}
-          <Global styles={styles({ bannerImageUrl, blendPoint })} />
-          <div className="site-wrapper">
-            <div className="top-fold">
-              <div className="header-main-wrapper">
-                <header>
-                  <div className="top-line">
-                    <SanityGoneLogo />
-                    <div className="header-links">
-                      <a href="/operators">Operators</a>
-                      <a href="/about">About</a>
-                    </div>
-                    <button
-                      className="mobile-menu-button"
-                      aria-label="Open menu"
-                    >
-                      <MobileMenuIcon
-                        className="mobile-menu"
-                        role="button"
-                        aria-label="Open Menu"
-                        onClick={handleMenuToggle}
-                      />
-                      <MobileMenu
-                        open={isMobileMenuOpen}
-                        onClose={() => setMobileMenuOpen(false)}
-                      />
-                    </button>
-                  </div>
-                  <div className="heading-and-breadcrumb">
-                    {customPageHeading || <h1>{pageTitle}</h1>}
-                    {/* {previousLocation && previousLocationLink && (
+      {/* @ts-expect-error Emotion doesn't like that I'm using MUI's Theme type, but this still works fine */}
+      <Global styles={styles({ bannerImageUrl, blendPoint })} />
+      <div className="site-wrapper">
+        <div className="top-fold">
+          <div className="header-main-wrapper">
+            <header>
+              <div className="top-line">
+                <SanityGoneLogo />
+                <div className="header-links">
+                  <a href="/operators">Operators</a>
+                  <a href="/about">About</a>
+                </div>
+                <button className="mobile-menu-button" aria-label="Open menu">
+                  <MobileMenuIcon
+                    className="mobile-menu"
+                    role="button"
+                    aria-label="Open Menu"
+                    onClick={handleMenuToggle}
+                  />
+                  <MobileMenu
+                    open={isMobileMenuOpen}
+                    onClose={() => setMobileMenuOpen(false)}
+                  />
+                </button>
+              </div>
+              <div className="heading-and-breadcrumb">
+                {customPageHeading || <h1>{pageTitle}</h1>}
+                {/* {previousLocation && previousLocationLink && (
                     <div className="breadcrumb">
                       <a
                         href={previousLocationLink}
@@ -154,46 +142,46 @@ const Layout: React.FC<LayoutProps> = (props) => {
                       </a>
                     </div>
                   )} */}
-                  </div>
-                </header>
-                <div className="page-content">{children}</div>
               </div>
+            </header>
+            <div className="page-content">{children}</div>
+          </div>
+        </div>
+        <footer>
+          <div className="footer-inner">
+            <div className="logo-and-description">
+              <SanityGoneLogo />
+              <p className="site-description">
+                Sanity;Gone is a community resource for Arknights players,
+                providing quick guides, reviews, and detailed information about
+                the game.
+              </p>
             </div>
-            <footer>
-              <div className="footer-inner">
-                <div className="logo-and-description">
-                  <SanityGoneLogo />
-                  <p className="site-description">
-                    Sanity;Gone is a community resource for Arknights players,
-                    providing quick guides, reviews, and detailed information
-                    about the game.
-                  </p>
-                </div>
-                <div className="links-section">
-                  <span className="list-title">Links</span>
-                  <ul>
-                    <li>
-                      <a href="mailto:admin@sanitygone.help">Contact Email</a>
-                    </li>
-                    <li>
-                      <a href="/disclaimer">Disclaimer</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="socials-section">
-                  <span className="list-title">Socials</span>
-                  <ul>
-                    <li>
-                      <a
-                        href="https://discord.gg/bAnrGzw75H"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Sanity Gone Zero Discord Server"
-                      >
-                        <DiscordLogo size={24} />
-                      </a>
-                    </li>
-                    {/* <li>
+            <div className="links-section">
+              <span className="list-title">Links</span>
+              <ul>
+                <li>
+                  <a href="mailto:admin@sanitygone.help">Contact Email</a>
+                </li>
+                <li>
+                  <a href="/disclaimer">Disclaimer</a>
+                </li>
+              </ul>
+            </div>
+            <div className="socials-section">
+              <span className="list-title">Socials</span>
+              <ul>
+                <li>
+                  <a
+                    href="https://discord.gg/bAnrGzw75H"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Sanity Gone Zero Discord Server"
+                  >
+                    <DiscordLogo size={24} />
+                  </a>
+                </li>
+                {/* <li>
                     <a
                       href="https://twitter.com/sanitygonezero"
                       aria-label="Sanity Gone Zero Twitter"
@@ -201,13 +189,11 @@ const Layout: React.FC<LayoutProps> = (props) => {
                       <TwitterLogo size={24} />
                     </a>
                   </li> */}
-                  </ul>
-                </div>
-              </div>
-            </footer>
+              </ul>
+            </div>
           </div>
-        </EmotionThemeProvider>
-      </MuiThemeProvider>
+        </footer>
+      </div>
     </Fragment>
   );
 };

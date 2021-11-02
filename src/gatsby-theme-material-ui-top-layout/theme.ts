@@ -79,7 +79,7 @@ declare module "@mui/material/styles" {
 
 const spacingUnit = 8;
 
-export const defaultTheme = createTheme({
+const defaultTheme = createTheme({
   palette: {
     lime: {
       main: "#a7e855",
@@ -224,3 +224,5 @@ export const defaultTheme = createTheme({
     },
   },
 });
+
+export default defaultTheme;

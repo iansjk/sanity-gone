@@ -192,6 +192,7 @@ export const defaultTheme = createTheme({
     smallPortraitRarity: {
       fontSize: 18,
       lineHeight: 1.25,
+      fontWeight: 700,
     },
     label1: {
       fontSize: 12,

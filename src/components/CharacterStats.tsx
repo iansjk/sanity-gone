@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { Theme } from "@mui/material";
+import { useMediaQuery, useTheme, Theme } from "@mui/material";
 import {
   ArtsResistanceIcon,
   AttackPowerIcon,
@@ -14,7 +14,6 @@ import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import { highestCharacterStats } from "../utils/globals";
 import { summonImage } from "../utils/images";
-import { useMediaQuery, useTheme } from "@mui/material";
 
 const SUMMON_ICON_SIZE = 60;
 

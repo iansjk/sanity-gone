@@ -1,4 +1,6 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
+
 import { professionToClass, subProfessionToSubclass } from "../utils/globals";
 import GroupSynergyIcon from "./icons/GroupSynergyIcon";
 import OperatorPortrait from "./OperatorPortrait";
@@ -101,32 +103,32 @@ const styles = (theme: Theme) => css`
 
       .operator-name {
         margin: 0;
-        font-size: ${theme.typography.generalHeadingBold.fontSize};
+        font-size: ${theme.typography.generalHeadingBold.fontSize}px;
         font-weight: ${theme.typography.generalHeadingBold.fontWeight};
         line-height: ${theme.typography.generalHeadingBold.lineHeight};
       }
 
       .synergy-quality {
-        font-size: ${theme.typography.label2.size};
+        font-size: ${theme.typography.label2.fontSize}px;
         text-transform: uppercase;
         line-height: ${theme.typography.label2.lineHeight};
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
 
         &.quality--1 {
-          color: ${theme.palette.red};
+          color: ${theme.palette.red.main};
         }
 
         &.quality-1 {
-          color: ${theme.palette.blue};
+          color: ${theme.palette.blue.main};
         }
 
         &.quality-2 {
-          color: ${theme.palette.lime};
+          color: ${theme.palette.lime.main};
         }
       }
 
       .synergy-operator-info {
-        font-size: ${theme.typography.body3.fontSize};
+        font-size: ${theme.typography.body3.fontSize}px;
         line-height: ${theme.typography.body3.lineHeight};
 
         .operator-class,

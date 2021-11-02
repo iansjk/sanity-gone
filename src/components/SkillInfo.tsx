@@ -1,4 +1,6 @@
-import { ClassNames, css, Theme } from "@emotion/react";
+import { ClassNames, css } from "@emotion/react";
+import { Theme } from "@mui/material";
+
 import {
   descriptionToHtml,
   InterpolatedValue,
@@ -151,14 +153,14 @@ const styles = (theme: Theme) => css`
       border-top-right-radius: ${theme.spacing(0.5)};
     }
   }
-  
+
   ${theme.breakpoints.down("mobile")} {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, max-content);
   }
 
   & > * {
-    background-color: ${theme.palette.midtoneDarker};
+    background-color: ${theme.palette.midtoneDarker.main};
   }
 
   .skill-name-and-type {
@@ -175,7 +177,7 @@ const styles = (theme: Theme) => css`
     }
 
     .skill-name {
-      font-size: ${theme.typography.skillTalentHeading.fontSize};
+      font-size: ${theme.typography.skillTalentHeading.fontSize}px;
       line-height: ${theme.typography.skillTalentHeading.lineHeight};
       font-weight: ${theme.typography.skillTalentHeading.fontWeight};
       margin: 0;
@@ -186,29 +188,29 @@ const styles = (theme: Theme) => css`
       width: 50px;
       height: 50px;
       box-sizing: border-box;
-      border: ${theme.spacing(0.25)} solid ${theme.palette.white};
+      border: ${theme.spacing(0.25)} solid ${theme.palette.white.main};
       border-radius: ${theme.spacing(0.5)};
     }
 
     .skill-and-sp-type {
       display: block;
-      font-size: ${theme.typography.body2.fontSize};
+      font-size: ${theme.typography.body2.fontSize}px;
       line-height: ${theme.typography.body2.lineHeight};
 
       .sp-type-1 {
-        color: ${theme.palette.lime};
+        color: ${theme.palette.lime.main};
       }
 
       .sp-type-2 {
-        color: ${theme.palette.orange};
+        color: ${theme.palette.orange.main};
       }
 
       .sp-type-4 {
-        color: ${theme.palette.yellow};
+        color: ${theme.palette.yellow.main};
       }
 
       .skill-type {
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
       }
     }
   }
@@ -228,19 +230,19 @@ const styles = (theme: Theme) => css`
 
     .initial-sp {
       svg path {
-        fill: ${theme.palette.white};
+        fill: ${theme.palette.white.main};
       }
     }
 
     .sp-cost {
       svg path {
-        fill: ${theme.palette.lime};
+        fill: ${theme.palette.lime.main};
       }
     }
 
     .duration {
       svg path {
-        fill: ${theme.palette.pink};
+        fill: ${theme.palette.pink.main};
       }
     }
   }
@@ -253,17 +255,17 @@ const styles = (theme: Theme) => css`
     border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
 
     .value-up {
-      color: ${theme.palette.blue};
+      color: ${theme.palette.blue.main};
     }
 
     .value-down {
-      color: ${theme.palette.orange};
+      color: ${theme.palette.orange.main};
     }
 
     .reminder-text {
-      color: ${theme.palette.yellow};
+      color: ${theme.palette.yellow.main};
     }
-    
+
     .skill-tooltip {
       // maybe change this in future to be Underline when we implement tooltips
       // text-decoration: underline;

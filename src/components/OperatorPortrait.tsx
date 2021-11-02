@@ -1,4 +1,6 @@
-import { css, Theme, useTheme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { useTheme, Theme } from "@mui/material";
+
 import { operatorImage } from "../utils/images";
 import TiltedStarIcon from "./icons/TiltedStarIcon";
 import StarIcon from "./icons/StarIcon";
@@ -74,8 +76,8 @@ export default OperatorPortrait;
 const styles = (theme: Theme) => css`
   position: relative;
   border-radius: ${theme.spacing(0.5)};
-  border: ${theme.spacing(0.25)} solid ${theme.palette.white};
-  background: ${theme.palette.midtoneExtra};
+  border: ${theme.spacing(0.25)} solid ${theme.palette.white.main};
+  background: ${theme.palette.midtoneExtra.main};
 
   &.normal {
     margin-bottom: 9px;
@@ -100,13 +102,13 @@ const styles = (theme: Theme) => css`
       position: relative;
       top: -1px;
       padding: 0 2px;
-      font-size: ${theme.typography.body2.fontSize};
+      font-size: ${theme.typography.body2.fontSize}px;
       font-weight: ${theme.typography.body2Bold.fontWeight};
       line-height: 1;
-      color: ${theme.palette.red};
+      color: ${theme.palette.red.main};
       text-transform: uppercase;
       text-align: center;
-      background-color: ${theme.palette.midtoneExtra};
+      background-color: ${theme.palette.midtoneExtra.main};
       border-radius: ${theme.spacing(0.25)};
     }
   }
@@ -130,33 +132,33 @@ const styles = (theme: Theme) => css`
         margin-right: -6px;
 
         path {
-          fill: ${theme.palette.white};
-          stroke: ${theme.palette.midtoneExtra};
+          fill: ${theme.palette.white.main};
+          stroke: ${theme.palette.midtoneExtra.main};
           stroke-width: ${theme.spacing(0.25)};
         }
       }
 
       &.rarity-6-stars {
         svg path {
-          fill: ${theme.palette.orange};
+          fill: ${theme.palette.orange.main};
         }
       }
 
       &.rarity-5-stars {
         svg path {
-          fill: ${theme.palette.yellow};
+          fill: ${theme.palette.yellow.main};
         }
       }
 
       &.rarity-4-stars {
         svg path {
-          fill: ${theme.palette.softBlue};
+          fill: ${theme.palette.softBlue.main};
         }
       }
 
       &.rarity-3-stars {
         svg path {
-          fill: ${theme.palette.blue};
+          fill: ${theme.palette.blue.main};
         }
       }
     }
@@ -166,16 +168,16 @@ const styles = (theme: Theme) => css`
     bottom: -15px;
 
     .rarity {
-      color: ${theme.palette.midtoneExtra};
-      font-size: ${theme.typography.smallPortraitRarity.fontSize};
+      color: ${theme.palette.midtoneExtra.main};
+      font-size: ${theme.typography.smallPortraitRarity.fontSize}px;
       line-height: ${theme.typography.smallPortraitRarity.lineHeight};
       font-weight: ${theme.typography.smallPortraitRarity.fontWeight};
       display: inline-flex;
       align-items: center;
       padding: ${theme.spacing(0, 0.5)};
       border-radius: ${theme.spacing(0.5)};
-      border: ${theme.spacing(0.25)} solid ${theme.palette.midtoneExtra};
-      background-color: ${theme.palette.white};
+      border: ${theme.spacing(0.25)} solid ${theme.palette.midtoneExtra.main};
+      background-color: ${theme.palette.white.main};
 
       svg {
         margin-left: 1px;
@@ -183,19 +185,19 @@ const styles = (theme: Theme) => css`
       }
 
       &.rarity-6-stars {
-        background-color: ${theme.palette.orange};
+        background-color: ${theme.palette.orange.main};
       }
 
       &.rarity-5-stars {
-        background-color: ${theme.palette.yellow};
+        background-color: ${theme.palette.yellow.main};
       }
 
       &.rarity-4-stars {
-        background-color: ${theme.palette.softBlue};
+        background-color: ${theme.palette.softBlue.main};
       }
 
       &.rarity-3-stars {
-        background-color: ${theme.palette.blue};
+        background-color: ${theme.palette.blue.main};
       }
     }
   }

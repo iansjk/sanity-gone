@@ -1,6 +1,7 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { useMediaQuery, useTheme, Theme } from "@mui/material";
 import { Fragment } from "react";
-import useIsMobile from "../hooks/useIsMobile";
+
 import {
   professionToClass,
   slugify,
@@ -51,7 +52,8 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     subProfessionId,
     description
   );
-  const isMobile = useIsMobile();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
   const [charName, alterName] = name.split(" the ");
 
   return (
@@ -143,23 +145,23 @@ const styles = (theme: Theme) => css`
 
       .operator-name {
         grid-column: span 2;
-        font-size: ${theme.typography.operatorNameHeading.fontSize};
+        font-size: ${theme.typography.operatorNameHeading.fontSize}px;
         font-weight: ${theme.typography.operatorNameHeading.fontWeight};
         line-height: ${theme.typography.operatorNameHeading.lineHeight};
         margin-bottom: ${theme.spacing(1)};
 
         ${theme.breakpoints.down("mobile")} {
           align-items: baseline;
-          font-size: ${theme.typography.generalHeading.fontSize};
+          font-size: ${theme.typography.generalHeading.fontSize}px;
           line-height: ${theme.typography.generalHeading.lineHeight};
           font-weight: ${theme.typography.generalHeadingBold.fontWeight};
 
           .alter-name {
             margin-left: ${theme.spacing(0.5)};
-            color: ${theme.palette.gray};
-            font-size: ${theme.typography.body.fontSize};
-            font-weight: ${theme.typography.body.fontWeight};
-            line-height: ${theme.typography.body.lineHeight};
+            color: ${theme.palette.gray.main};
+            font-size: ${theme.typography.body1.fontSize}px;
+            font-weight: ${theme.typography.body1.fontWeight};
+            line-height: ${theme.typography.body1.lineHeight};
           }
         }
       }
@@ -169,13 +171,13 @@ const styles = (theme: Theme) => css`
         display: flex;
         align-items: center;
         font-weight: ${theme.typography.navigationLinkBold.fontWeight};
-        color: ${theme.palette.white};
-        border: 1px solid ${theme.palette.gray};
+        color: ${theme.palette.white.main};
+        border: 1px solid ${theme.palette.gray.main};
         border-radius: ${theme.spacing(0.5)};
 
         /* &:hover {
-          border-color: ${theme.palette.gray};
-          background-color: ${theme.palette.midtoneBrighter};
+          border-color: ${theme.palette.gray.main};
+          background-color: ${theme.palette.midtoneBrighter.main};
         } */
 
         .class-icon,
@@ -216,7 +218,7 @@ const styles = (theme: Theme) => css`
       }
 
       dd {
-        font-size: ${theme.typography.body.fontSize};
+        font-size: ${theme.typography.body1.fontSize}px;
         font-weight: normal;
 
         ${theme.breakpoints.down("mobile")} {
@@ -229,19 +231,19 @@ const styles = (theme: Theme) => css`
       border-top-left-radius: ${theme.spacing(0.5)};
 
       .physical {
-        color: ${theme.palette.orange};
+        color: ${theme.palette.orange.main};
       }
 
       .arts {
-        color: ${theme.palette.blue};
+        color: ${theme.palette.blue.main};
       }
 
       .healing {
-        color: ${theme.palette.lime};
+        color: ${theme.palette.lime.main};
       }
 
       .none {
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
       }
     }
 

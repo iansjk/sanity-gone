@@ -1,4 +1,5 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 
 const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
@@ -71,6 +72,6 @@ const styles = (theme: Theme) => css`
   line-height: 1;
 
   & > svg > path {
-    fill: ${theme.palette.white};
+    fill: ${theme.palette.white.main};
   }
 `;

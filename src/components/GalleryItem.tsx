@@ -1,4 +1,5 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 interface Props {
   url: string;
   alt: string;
@@ -44,8 +45,8 @@ const styles = (theme: Theme) => css`
   .image-caption {
     display: inline-block;
     margin-top: ${theme.spacing(1)};
-    color: ${theme.palette.gray};
-    font-size: ${theme.typography.body2.fontSize};
+    color: ${theme.palette.gray.main};
+    font-size: ${theme.typography.body2.fontSize}px;
     line-height: ${theme.typography.body2.lineHeight};
   }
 `;

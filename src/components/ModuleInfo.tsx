@@ -1,4 +1,6 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
+
 import { InterpolatedValue } from "../utils/description-parser";
 import { moduleImage } from "../utils/images";
 

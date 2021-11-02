@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from "react";
 import { graphql } from "gatsby";
-import { ClassNames, css, Theme } from "@emotion/react";
+import { ClassNames, css } from "@emotion/react";
+import { Theme } from "@mui/material";
 import { DateTime } from "luxon";
 import gatsbySlugify from "@sindresorhus/slugify";
+
 import Layout from "../../Layout";
 import {
   operatorPortrait,
@@ -160,7 +162,7 @@ const styles = (theme: Theme) => css`
 
   .last-updated {
     .date {
-      font-weight: ${theme.typography.bodyBold.fontWeight};
+      font-weight: ${theme.typography.body1Bold.fontWeight};
     }
   }
 
@@ -169,7 +171,7 @@ const styles = (theme: Theme) => css`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    font-size: ${theme.typography.navigationLink.fontSize};
+    font-size: ${theme.typography.navigationLink.fontSize}px;
     line-height: ${theme.typography.navigationLink.lineHeight};
   }
 
@@ -192,12 +194,12 @@ const styles = (theme: Theme) => css`
       height: 280px;
       flex-grow: 1;
       border-radius: ${theme.spacing(0.5)};
-      background-color: ${theme.palette.black};
+      background-color: ${theme.palette.black.main};
       background-size: cover;
       background-position-y: top;
       background-image: linear-gradient(
           120deg,
-          ${theme.palette.midtoneDarker} 0%,
+          ${theme.palette.midtoneDarker.main} 0%,
           transparent 18%
         ),
         linear-gradient(to bottom, transparent 42%, #000 100%), var(--bg-image);
@@ -228,7 +230,7 @@ const styles = (theme: Theme) => css`
 
       .on-hover {
         display: none;
-        font-size: ${theme.typography.body3.fontSize};
+        font-size: ${theme.typography.body3.fontSize}px;
         line-height: ${theme.typography.body3.lineHeight};
         text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
           rgba(0, 0, 0, 0.5);
@@ -258,7 +260,8 @@ const styles = (theme: Theme) => css`
           filter: brightness(110%);
 
           .on-hover {
-            border-bottom: ${theme.spacing(0.5)} solid ${theme.palette.white};
+            border-bottom: ${theme.spacing(0.5)} solid
+              ${theme.palette.white.main};
           }
         }
       }
@@ -280,14 +283,14 @@ const styles = (theme: Theme) => css`
 
         .operator-name {
           grid-column: span 2;
-          font-size: ${theme.typography.body2.fontSize};
+          font-size: ${theme.typography.body2.fontSize}px;
           line-height: ${theme.typography.body2.lineHeight};
           font-weight: ${theme.typography.body2Bold.fontWeight};
         }
 
         .rarity,
         .operator-class {
-          font-size: ${theme.typography.label2.size};
+          font-size: ${theme.typography.label2.fontSize}px;
           line-height: ${theme.typography.label2.lineHeight};
         }
 

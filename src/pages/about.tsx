@@ -1,5 +1,7 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 import { rgba } from "polished";
+
 import Layout from "../Layout";
 import { sgMemberAvatar, sgPageBanner } from "../utils/images";
 
@@ -17,7 +19,7 @@ const members: { name: string; role: string; avatar: string }[] = [
   {
     name: "Stinggyray",
     role: "Developer",
-    avatar: "sting.png"
+    avatar: "sting.png",
   },
   {
     name: "namtar",
@@ -104,7 +106,7 @@ const styles = (theme: Theme) => css`
 
   h2 {
     margin: ${theme.spacing(8, 0, 0)};
-    font-size: ${theme.typography.operatorNameHeading.fontSize};
+    font-size: ${theme.typography.operatorNameHeading.fontSize}px;
     font-weight: ${theme.typography.operatorNameHeading.fontWeight};
     line-height: ${theme.typography.operatorNameHeading.lineHeight};
   }
@@ -123,7 +125,7 @@ const styles = (theme: Theme) => css`
       display: grid;
       grid-template-rows: repeat(3, max-content);
       justify-items: center;
-      background-color: ${rgba(theme.palette.midtone, 0.66)};
+      background-color: ${rgba(theme.palette.midtone.main, 0.66)};
       backdrop-filter: blur(${theme.spacing(1)});
       box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)}
         ${theme.spacing(1)} rgba(0, 0, 0, 0.15);
@@ -137,13 +139,13 @@ const styles = (theme: Theme) => css`
 
       .member-name {
         margin: ${theme.spacing(2, 0, 0)};
-        font-size: ${theme.typography.generalHeadingBold.fontSize};
+        font-size: ${theme.typography.generalHeadingBold.fontSize}px;
         font-weight: ${theme.typography.generalHeadingBold.fontWeight};
         line-height: ${theme.typography.generalHeadingBold.lineHeight};
       }
 
       .role {
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
       }
     }
   }

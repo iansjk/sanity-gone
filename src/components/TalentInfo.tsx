@@ -1,9 +1,12 @@
-import { css, ClassNames, Theme } from "@emotion/react";
+import { css, ClassNames } from "@emotion/react";
+import { Theme } from "@mui/material";
+
 import {
   descriptionToHtml,
   InterpolatedValue,
 } from "../utils/description-parser";
-import CharacterRange, { RangeObject } from "./CharacterRange";
+import { RangeObject } from "../utils/types";
+import CharacterRange from "./CharacterRange";
 
 /** TalentPhaseObject refers to a given talent at a specific potential level */
 interface TalentPhaseObject {
@@ -88,7 +91,7 @@ const styles = (theme: Theme) => css`
   }
 
   & > * {
-    background-color: ${theme.palette.midtoneDarker};
+    background-color: ${theme.palette.midtoneDarker.main};
   }
 
   &.no-range {
@@ -104,7 +107,7 @@ const styles = (theme: Theme) => css`
   }
 
   .talent-name {
-    font-size: ${theme.typography.skillTalentHeading.fontSize};
+    font-size: ${theme.typography.skillTalentHeading.fontSize}px;
     line-height: ${theme.typography.skillTalentHeading.lineHeight};
     font-weight: ${theme.typography.skillTalentHeading.fontWeight};
     padding: ${theme.spacing(2)};

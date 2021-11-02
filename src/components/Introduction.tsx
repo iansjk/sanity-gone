@@ -1,5 +1,7 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 import parse from "html-react-parser";
+
 import Card from "./Card";
 import OperatorInfo, { OperatorInfoProps } from "./OperatorInfo";
 import StrengthsWeaknesses from "./StrengthsWeaknesses";

@@ -1,4 +1,5 @@
-import { css, Global, Theme } from "@emotion/react";
+import { css, Global } from "@emotion/react";
+import { Theme, useMediaQuery, useTheme } from "@mui/material";
 import { graphql } from "gatsby";
 import { lighten, rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
@@ -19,7 +20,6 @@ import { replaceSelfClosingHtmlTags } from "../../utils/globals";
 import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";
-import useIsMobile from "../../hooks/useIsMobile";
 import { Fragment } from "react";
 import StarIcon from "../../components/icons/StarIcon";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
@@ -69,6 +69,7 @@ const htmlToReact = (
         } else if (domNode.name === "masteryrecommendation") {
           const props = attributesToProps(domNode.attribs);
           return (
+            //@ts-expect-error props will contain level and priority
             <MasteryRecommendation
               {...props}
               //@ts-expect-error children[0].data should exist on a text node
@@ -189,7 +190,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     operator: operatorObject,
     summon: summons.length > 0 ? summons[0] : undefined,
   };
-  const isMobile = useIsMobile();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   const talentAnalyses = [
     contentful.talent1Analysis.childMarkdownRemark.html,
@@ -398,27 +400,33 @@ const globalOverrideStyles =
       a {
         color: ${accentColor};
       }
-      
+
       .heading-block {
-        background: linear-gradient(90deg, ${transparentize(0.9, accentColor)}, transparent), ${transparentize(0.67, theme.palette.midtoneBrighter)};
+        background: linear-gradient(
+            90deg,
+            ${transparentize(0.9, accentColor)},
+            transparent
+          ),
+          ${transparentize(0.67, theme.palette.midtoneBrighter.main)};
       }
 
       header {
         .heading-and-breadcrumb {
           h1 {
-            font-size: ${theme.typography.operatorPageHeading.fontSize};
+            font-size: ${theme.typography.operatorPageHeading.fontSize}px;
             font-weight: ${theme.typography.operatorPageHeading.fontWeight};
             line-height: ${theme.typography.operatorPageHeading.lineHeight};
-            text-shadow: ${theme.typography.operatorPageHeading.textShadow};
+            text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
+              rgba(0, 0, 0, 0.5);
 
             ${theme.breakpoints.down("mobile")} {
-              font-size: ${theme.typography.operatorNameHeading.fontSize};
+              font-size: ${theme.typography.operatorNameHeading.fontSize}px;
               font-weight: ${theme.typography.operatorNameHeading.fontWeight};
               line-height: ${theme.typography.operatorNameHeading.lineHeight};
 
               .alter-name {
                 display: block;
-                font-size: ${theme.typography.generalHeading.fontSize};
+                font-size: ${theme.typography.generalHeading.fontSize}px;
                 line-height: ${theme.typography.generalHeading.lineHeight};
                 font-weight: normal;
               }
@@ -441,7 +449,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
     }
 
     .tabs ~ .swiper-container {
-      background-color: ${transparentize(0.34, theme.palette.dark)};
+      background-color: ${transparentize(0.34, theme.palette.dark.main)};
       backdrop-filter: blur(${theme.spacing(1)});
 
       button {
@@ -452,13 +460,13 @@ const styles = (accentColor: string) => (theme: Theme) =>
         background: none;
         border: none;
         cursor: pointer;
-        font-size: ${theme.typography.cardHeading.fontSize};
+        font-size: ${theme.typography.cardHeading.fontSize}px;
         font-weight: ${theme.typography.cardHeading.fontWeight};
         line-height: ${theme.typography.cardHeading.lineHeight};
         text-transform: ${theme.typography.cardHeading.textTransform};
 
         &:not(.active) {
-          color: ${theme.palette.gray};
+          color: ${theme.palette.gray.main};
         }
 
         &.active {
@@ -497,22 +505,19 @@ const styles = (accentColor: string) => (theme: Theme) =>
         text-align: start;
         line-height: ${theme.typography.navigationLink.lineHeight};
         border: 0;
+        border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
         background: none;
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
         cursor: pointer;
-
-        ${theme.breakpoints.up("maxWidth", theme.spacing(2))} {
-          border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
-        }
 
         :disabled {
           cursor: initial;
-          color: ${rgba(theme.palette.gray, 0.5)};
+          color: ${rgba(theme.palette.gray.main, 0.5)};
         }
 
         &:not(:disabled):not(.active):hover {
-          background-color: ${transparentize(0.9, theme.palette.gray)};
-          color: ${theme.palette.white};
+          background-color: ${transparentize(0.9, theme.palette.gray.main)};
+          color: ${theme.palette.white.main};
         }
 
         &.active {
@@ -523,7 +528,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         }
 
         ${theme.breakpoints.down("mobile")} {
-          font-size: ${theme.typography.cardHeading.fontSize};
+          font-size: ${theme.typography.cardHeading.fontSize}px;
           line-height: ${theme.typography.cardHeading.lineHeight};
           font-weight: ${theme.typography.cardHeading.fontWeight};
           text-transform: ${theme.typography.cardHeading.textTransform};
@@ -542,7 +547,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
       hr {
         border: 0;
-        border-top: 1px solid ${theme.palette.midtoneBrighter};
+        border-top: 1px solid ${theme.palette.midtoneBrighter.main};
         margin: ${theme.spacing(3)} 0 0 0;
       }
 
@@ -564,9 +569,9 @@ const styles = (accentColor: string) => (theme: Theme) =>
       .section-label {
         display: block;
         margin-bottom: ${theme.spacing(1)};
-        font-size: ${theme.typography.body2.fontSize};
+        font-size: ${theme.typography.body2.fontSize}px;
         line-height: ${theme.typography.body2.lineHeight};
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
       }
 
       .metadata {
@@ -602,7 +607,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       grid-column: 2 / span 2;
       margin-left: -1px;
       height: 100%;
-      border-left: 1px solid ${theme.palette.gray};
+      border-left: 1px solid ${theme.palette.gray.main};
       backdrop-filter: blur(${theme.spacing(1)});
 
       ${theme.breakpoints.down("mobile")} {
@@ -621,7 +626,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
           .card-content {
             box-sizing: border-box;
             height: calc(
-              100% - ${theme.typography.cardHeading.fontSize} *
+              100% - ${theme.typography.cardHeading.fontSize}px *
                 ${theme.typography.cardHeading.lineHeight} - ${theme.spacing(4)}
             );
 
@@ -639,14 +644,14 @@ const styles = (accentColor: string) => (theme: Theme) =>
           display: inline-flex;
           margin-top: ${theme.spacing(3)};
           gap: ${theme.spacing(1)};
-          color: ${theme.palette.yellow};
-          font-size: ${theme.typography.skillTalentHeading.fontSize};
+          color: ${theme.palette.yellow.main};
+          font-size: ${theme.typography.skillTalentHeading.fontSize}px;
           font-weight: ${theme.typography.skillTalentHeading.fontWeight};
           line-height: ${theme.typography.skillTalentHeading.lineHeight};
           align-items: center;
 
           svg path {
-            fill: ${theme.palette.yellow};
+            fill: ${theme.palette.yellow.main};
           }
 
           ${theme.breakpoints.down("mobile")} {
@@ -662,7 +667,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
             border-color: ${accentColor};
 
             svg path {
-              fill: ${theme.palette.dark};
+              fill: ${theme.palette.dark.main};
             }
           }
 

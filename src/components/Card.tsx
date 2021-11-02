@@ -1,4 +1,5 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 import { transparentize } from "polished";
 
 export type CardProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -40,16 +41,16 @@ const styles = (theme: Theme) => css`
     h2 {
       margin: 0;
       text-transform: ${theme.typography.cardHeading.textTransform};
-      font-size: ${theme.typography.cardHeading.fontSize};
+      font-size: ${theme.typography.cardHeading.fontSize}px;
       font-weight: ${theme.typography.cardHeading.fontWeight};
       line-height: ${theme.typography.cardHeading.lineHeight};
-      color: ${theme.palette.white};
+      color: ${theme.palette.white.main};
     }
   }
 
   .card-content {
     padding: ${theme.spacing(3, 4, 4)};
-    background: ${transparentize(0.34, theme.palette.midtone)};
+    background: ${transparentize(0.34, theme.palette.midtone.main)};
     border-bottom-right-radius: ${theme.spacing(1)};
 
     ${theme.breakpoints.down("mobile")} {

@@ -1,7 +1,9 @@
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 import { transparentize } from "polished";
 import { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
+
 import CloseIcon from "./icons/CloseIcon";
 import NextArrow from "./icons/NextArrow";
 import PreviousArrow from "./icons/PreviousArrow";
@@ -208,7 +210,7 @@ const styles = (theme: Theme) => css`
 
     &:hover {
       svg path {
-        stroke: ${theme.palette.white};
+        stroke: ${theme.palette.white.main};
       }
     }
   }
@@ -220,7 +222,7 @@ const styles = (theme: Theme) => css`
     transform: translateX(-50%) translateY(-50%);
     width: 80%;
     max-height: 80%;
-    background: ${theme.palette.midtone};
+    background: ${theme.palette.midtone.main};
 
     display: grid;
     grid-template-rows: max-content 1fr max-content;
@@ -232,20 +234,20 @@ const styles = (theme: Theme) => css`
 
     .topbar {
       grid-area: topbar;
-      font-size: ${theme.typography.body.fontSize};
+      font-size: ${theme.typography.body1.fontSize}px;
       text-align: center;
       padding: ${theme.spacing(1)} 0;
       border-radius: ${theme.spacing(1, 1, 0, 0)};
-      background-color: ${theme.palette.dark};
+      background-color: ${theme.palette.dark.main};
 
       .filename {
-        color: ${theme.palette.gray};
+        color: ${theme.palette.gray.main};
       }
 
       .separator {
         display: inline-block;
         margin: 0 ${theme.spacing(2)};
-        color: ${theme.palette.midtoneBrighter};
+        color: ${theme.palette.midtoneBrighter.main};
       }
     }
 
@@ -270,7 +272,7 @@ const styles = (theme: Theme) => css`
           cursor: pointer;
 
           svg path {
-            fill: ${theme.palette.white};
+            fill: ${theme.palette.white.main};
           }
         }
       }
@@ -278,11 +280,11 @@ const styles = (theme: Theme) => css`
 
     .caption {
       grid-area: bottombar;
-      background-color: ${theme.palette.dark};
+      background-color: ${theme.palette.dark.main};
       margin: 0;
       padding: ${theme.spacing(1)};
-      font-size: ${theme.typography.body.fontSize};
-      line-height: ${theme.typography.body.lineHeight};
+      font-size: ${theme.typography.body1.fontSize}px;
+      line-height: ${theme.typography.body1.lineHeight};
       font-weight: normal;
       text-align: center;
       border-radius: ${theme.spacing(0, 0, 1, 1)};

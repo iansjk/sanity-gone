@@ -29,7 +29,7 @@ export default MasteryRecommendation;
 
 const styles = (theme: Theme) => css`
   h3 {
-    font-size: ${theme.typography.generalHeading.fontSize};
+    font-size: ${theme.typography.generalHeading.fontSize}px;
     line-height: ${theme.typography.generalHeading.lineHeight};
     font-weight: ${theme.typography.generalHeadingBold.fontWeight};
   }
@@ -50,9 +50,9 @@ const styles = (theme: Theme) => css`
 
       dd {
         margin: 0;
-        font-size: ${theme.typography.body.fontSize};
-        line-height: ${theme.typography.body.lineHeight};
-        font-weight: ${theme.typography.bodyBold.fontWeight};
+        font-size: ${theme.typography.body1.fontSize}px;
+        line-height: ${theme.typography.body1.lineHeight};
+        font-weight: ${theme.typography.body1Bold.fontWeight};
       }
     }
   }

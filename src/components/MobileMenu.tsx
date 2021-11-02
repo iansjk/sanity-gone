@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import ReactDOM from "react-dom";
-import { css, Theme } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 import { MdClose as CloseIcon } from "react-icons/md";
+
 import SanityGoneLogo from "./SanityGoneLogo";
 
 export interface MobileMenuProps {
@@ -79,7 +81,7 @@ const styles = (theme: Theme) => css`
     display: grid;
     grid-template-columns: max-content 1fr max-content;
     align-items: center;
-    background-color: ${theme.palette.dark};
+    background-color: ${theme.palette.dark.main};
 
     .close-button {
       position: relative;
@@ -90,25 +92,25 @@ const styles = (theme: Theme) => css`
       border: none;
 
       svg {
-        fill: ${theme.palette.white};
+        fill: ${theme.palette.white.main};
       }
     }
   }
 
   .list-header {
     margin: 0;
-    font-size: ${theme.typography.skillTalentHeading.fontSize};
+    font-size: ${theme.typography.skillTalentHeading.fontSize}px;
     font-weight: ${theme.typography.skillTalentHeading.fontWeight};
     line-height: ${theme.typography.skillTalentHeading.lineHeight};
-    color: ${theme.palette.gray};
-    border-bottom: 1px solid ${theme.palette.midtoneBrighterer};
+    color: ${theme.palette.gray.main};
+    border-bottom: 1px solid ${theme.palette.midtoneBrighterer.main};
   }
 
   .list-header,
   ul li a {
     margin: 0;
     padding: ${theme.spacing(3)};
-    background-color: ${theme.palette.midtone};
+    background-color: ${theme.palette.midtone.main};
   }
 
   ul {
@@ -117,7 +119,7 @@ const styles = (theme: Theme) => css`
     list-style: none;
 
     a {
-      color: ${theme.palette.white};
+      color: ${theme.palette.white.main};
     }
   }
 

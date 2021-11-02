@@ -31,6 +31,7 @@ module.exports = {
         path: `./src/data/`,
       },
     },
+    "gatsby-theme-material-ui",
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sitemap",

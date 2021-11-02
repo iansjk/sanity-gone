@@ -219,7 +219,7 @@ const defaultTheme = createTheme({
   },
   breakpoints: {
     values: {
-      mobile: 700,
+      mobile: 1000,
       maxWidth: 1270 + spacingUnit * 3 * 2,
     },
   },

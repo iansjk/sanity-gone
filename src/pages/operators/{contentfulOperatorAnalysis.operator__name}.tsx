@@ -410,6 +410,10 @@ const globalOverrideStyles =
           ${transparentize(0.67, theme.palette.midtoneBrighter.main)};
       }
       
+      .level-slider {
+        color: ${accentColor} !important;
+      }
+      
       header {
         .heading-and-breadcrumb {
           h1 {

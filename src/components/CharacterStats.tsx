@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { useMediaQuery, useTheme, Theme, ButtonGroup, Button, Input, Slider } from "@mui/material";
+import { useMediaQuery, useTheme, Theme, ButtonGroup, Button, Input, SliderUnstyled } from "@mui/material";
 import {
   ArtsResistanceIcon,
   AttackPowerIcon,
@@ -17,7 +17,7 @@ import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import { highestCharacterStats } from "../utils/globals";
 import { summonImage } from "../utils/images";
-import { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import CustomCheckbox from "./CustomCheckbox";
 
 const SUMMON_ICON_SIZE = 60;
@@ -25,6 +25,8 @@ const SUMMON_ICON_SIZE = 60;
 export interface CharacterStatsProps {
   characterObject: CharacterObject;
 }
+
+let lastOpLevel: number;
 
 const CharacterStats: React.VFC<CharacterStatsProps> = ({
   characterObject,
@@ -63,11 +65,23 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
       trustBonus: statsState.trustBonus
     });
   }
-  const setOpLevel = (level: number) => setState({
-    eliteLevel: statsState.eliteLevel,
-    opLevel: level,
-    trustBonus: statsState.trustBonus
-  })
+
+  const setOpLevel = (level: number) => {
+    setState({
+      eliteLevel: statsState.eliteLevel,
+      opLevel: level,
+      trustBonus: statsState.trustBonus
+    })
+    lastOpLevel = level;
+  }
+
+  const setTrustBonus = (trust: boolean) => {
+    setState({
+      eliteLevel: statsState.eliteLevel,
+      opLevel: statsState.opLevel,
+      trustBonus: trust
+    });
+  };
 
   return (
     <section css={styles}>
@@ -75,49 +89,71 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>
       <div className="stats-controls">
-        <ButtonGroup variant="text" className="elite-buttons">
-          <Button
-            className={statsState.eliteLevel === 0 ? "active" : "inactive"}
-            onClick={() => {setEliteLevel(0)}}
-          >
-            <EliteZeroIcon className="elite-zero"/>
-          </Button>
-          <Button
-            className={statsState.eliteLevel === 1 ? "active" : "inactive"}
-            onClick={() => {setEliteLevel(1)}}
-          >
-            <EliteOneIcon/>
-          </Button>
-          <Button
-            className={statsState.eliteLevel === 2 ? "active" : "inactive"}
-            onClick={() => {setEliteLevel(2)}}
-          >
-            <EliteTwoIcon/>
-          </Button>
-          {!isSummon && <CustomCheckbox label="Trust"/>}
-          <div className="spacer"/>
-          <div className="level-slider">
-            <Input
-              value={statsState.opLevel}
-              size="small"
-              onChange={(event) => {
+        <div className="trust-and-elite-buttons">
+          <ButtonGroup variant="text" className="elite-buttons">
+            <Button
+              className={statsState.eliteLevel === 0 ? "active" : "inactive"}
+              onClick={() => {setEliteLevel(0)}}
+            >
+              <EliteZeroIcon className="elite-zero"/>
+            </Button>
+            <Button
+              className={statsState.eliteLevel === 1 ? "active" : "inactive"}
+              onClick={() => {setEliteLevel(1)}}
+            >
+              <EliteOneIcon/>
+            </Button>
+            <Button
+              className={statsState.eliteLevel === 2 ? "active" : "inactive"}
+              onClick={() => {setEliteLevel(2)}}
+            >
+              <EliteTwoIcon/>
+            </Button>
+          </ButtonGroup>
+          <div className="mobile-spacer"/>
+          {!isSummon && <CustomCheckbox
+            label="Trust"
+            checked={statsState.trustBonus}
+            onChange={(event) => {
+              setTrustBonus(event.target.checked);
+            }}
+          />}
+        </div>
+        <div className="spacer"/>
+        <div className="level-slider-container">
+          <p>Level</p>
+          <Input
+            className="level-slider-input"
+            value={statsState.opLevel}
+            onChange={(event) => {
+              if(event.target.value === '') {
+                setOpLevel(1);
+              }
+              else if(!/^\d{1,2}$/.test(event.target.value)) {
+                if(lastOpLevel) {
+                  setOpLevel(lastOpLevel);
+                } else {
+                  setOpLevel(phases[statsState.eliteLevel].maxLevel);
+                }
+              } else {
                 setOpLevel(Number(event.target.value));
-              }}
-              inputProps={{
-                step: 1,
-                min: 1,
-                max: phases[statsState.eliteLevel].maxLevel,
-                type: 'number'
-              }}
-            />
-            <Slider
+              }
+            }}
+            inputProps={{
+              maxLength: 2,
+              onFocus: (event) => event.target.select()
+            }}
+          />
+          <div className="level-slider-border">
+            <SliderUnstyled
+              className="level-slider"
               value={statsState.opLevel}
               onChange={(event: Event) => setOpLevel(Number(event.target.value))} // ts doesn't like this :(
               min={1}
               max={phases[statsState.eliteLevel].maxLevel}
             />
           </div>
-        </ButtonGroup>
+        </div>
       </div>
       <dl className={isSummon ? "summon-stats" : "operator-stats"}>
         {isSummon && (
@@ -206,47 +242,170 @@ export default CharacterStats;
 const styles = (theme: Theme) => css`
   .stats-controls {
     display: flex;
+    flex-direction: row;
     height: ${theme.spacing(8)};
     background: ${theme.palette.midtone.main};
     margin-top: ${theme.spacing(3)};
-    
-    .elite-buttons {
-      button {
-        padding: ${theme.spacing(0, 2)};
-        border: none;
-        border-radius: 0;
-        
-        path {
-          fill: ${theme.palette.midtoneBrighterer.main};
-        }
-        .elite-zero path {
-          fill: transparent;
-          stroke: ${theme.palette.midtoneBrighterer.main};
-        }
-      }
-      button.active {
-        background: ${theme.palette.midtoneBrighter.main};
-        border-bottom: 3px solid ${theme.palette.white.main};
 
-        path {
-          fill: ${theme.palette.white.main};
+    ${theme.breakpoints.down("mobile")} {
+      flex-direction: column-reverse;
+      margin-top: ${theme.spacing(9)};
+    }
+
+    .trust-and-elite-buttons {
+      display: flex;
+      height: ${theme.spacing(8)};
+      background: ${theme.palette.midtone.main};
+      
+      .elite-buttons {
+        height: ${theme.spacing(8)};
+        button {
+          padding: ${theme.spacing(0, 2)};
+          border: none;
+          border-radius: 0;
+
+          ${theme.breakpoints.down("mobile")} {
+            border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+          }
+
+          path {
+            fill: ${theme.palette.midtoneBrighterer.main};
+          }
+
+          .elite-zero path {
+            fill: transparent;
+            stroke: ${theme.palette.midtoneBrighterer.main};
+          }
         }
-        .elite-zero path {
-          fill: transparent;
-          stroke: ${theme.palette.white.main};
+
+        button.active {
+          background: ${theme.palette.midtoneBrighter.main};
+          border-bottom: 3px solid ${theme.palette.white.main};
+    
+          path {
+            fill: ${theme.palette.white.main};
+          }
+  
+          .elite-zero path {
+            fill: transparent;
+            stroke: ${theme.palette.white.main};
+          }
         }
       }
+
       label {
         padding: ${theme.spacing(0, 3)};
         margin: ${theme.spacing(2, 0, 2, 3)};
         border-left: 1px solid ${theme.palette.midtoneBrighter.main};
+
+        ${theme.breakpoints.down("mobile")} {
+          border: none;
+          padding-right: ${theme.spacing(2)};
+        }
+      }
+      
+      .mobile-spacer {
+        ${theme.breakpoints.down("mobile")} {
+          flex: 1 1 0%;
+        }
       }
     }
-    
+
     .spacer {
-      flex-grow: 1;
+      flex: 1 1 0%;
+    }
+
+    .level-slider-container {
+      display: flex;
+      flex-direction: row;
+      margin-right: ${theme.spacing(2)};
+
+      ${theme.breakpoints.down("mobile")} {
+        position: relative;
+        height: ${theme.spacing(8)};
+        background: ${theme.palette.midtone.main};
+        margin-right: 0;
+        padding-left: ${theme.spacing(2)};
+      }
+
+      p {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      .level-slider-input {
+        input {
+          text-align: center;
+        }
+
+        background: ${theme.palette.midtoneDarker.main};
+        width: ${theme.spacing(5)};
+        height: ${theme.spacing(4)};
+        margin: ${theme.spacing(2, 1)};
+        color: ${theme.palette.white.main};
+        border-radius: ${theme.spacing(0.5)};
+      }
+
+      .level-slider-border {
+        width: ${theme.spacing(32)};
+        height: ${theme.spacing(3)};
+        margin: auto 0;
+        padding: ${theme.spacing(0.5, 2.25)};
+        border-radius: ${theme.spacing(0.5)};
+        border: ${theme.spacing(0.25)} solid ${theme.palette.midtoneBrighterer.main};
+
+        ${theme.breakpoints.down("mobile")} {
+          flex-grow: 1;
+          margin-right: ${theme.spacing(2)};
+        }
+        
+        .level-slider {
+          display: inline-block;
+          width: ${theme.spacing(32)};
+          height: ${theme.spacing(3)};
+          position: relative;
+          cursor: pointer;
+
+          ${theme.breakpoints.down("mobile")} {
+            flex-grow: 1;
+            width: 100%;
+          }
+
+          & .MuiSlider-track {
+            display: block;
+            position: absolute;
+            height: ${theme.spacing(3)};
+            margin-left: ${theme.spacing(-1.75)};
+            border-radius: 0;
+            background: ${theme.palette.midtoneBrighter.main};
+          }
+
+          & .MuiSlider-rail {
+            display: block;
+            position: absolute;
+            width: 100%;
+            padding-right: ${theme.spacing(1.75)};
+            height: ${theme.spacing(3)};
+            background: ${theme.palette.midtoneDarker.main};
+            border-radius: 0;
+          }
+
+          & .MuiSlider-thumb {
+            position: absolute;
+            display: grid;
+            margin-left: ${theme.spacing(-1.75)};
+            margin-top: ${theme.spacing(0)};
+            border-radius: ${theme.spacing(0.25)};
+            height: ${theme.spacing(3)};
+            width: ${theme.spacing(3.5)};
+            background-attachment: fixed;
+            background: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.5 0.5C0.776143 0.5 1 0.723858 1 1L1 10C1 10.2761 0.776142 10.5 0.5 10.5C0.223858 10.5 -1.20705e-08 10.2761 0 10L3.93396e-07 1C4.05467e-07 0.723858 0.223858 0.5 0.5 0.5Z' fill='%2387879B'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.5 0.5C5.77614 0.5 6 0.723858 6 1L6 10C6 10.2761 5.77614 10.5 5.5 10.5C5.22386 10.5 5 10.2761 5 10L5 1C5 0.723858 5.22386 0.5 5.5 0.5Z' fill='%2387879B'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 0.5C10.7761 0.5 11 0.723858 11 1V10C11 10.2761 10.7761 10.5 10.5 10.5C10.2239 10.5 10 10.2761 10 10V1C10 0.723858 10.2239 0.5 10.5 0.5Z' fill='%2387879B'/%3E%3C/svg%3E%0A") no-repeat center ${theme.palette.white.main};
+          }
+        }
+      }
     }
   }
+
   dl {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -256,7 +415,6 @@ const styles = (theme: Theme) => css`
 
     ${theme.breakpoints.down("mobile")} {
       grid-auto-flow: unset;
-      margin: ${theme.spacing(2, 0, 0)};
     }
 
     &.operator-stats {

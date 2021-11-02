@@ -53,7 +53,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     description
   );
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile" as any));
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
   const [charName, alterName] = name.split(" the ");
 
   return (

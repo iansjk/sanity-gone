@@ -16,7 +16,7 @@ export type TabButtonsProps = Omit<
 const TabButtons: React.FC<TabButtonsProps> = (props) => {
   const { activeTab, onClick, isSwiper, children, ...rest } = props;
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile" as any));
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   const buttonChildren = React.Children.toArray(children).filter(
     (child) =>

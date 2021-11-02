@@ -20,7 +20,7 @@ exports.onCreatePage = ({ page, reporter }) => {
   }
 }
 
-exports.onPostBootstrap = ({ reporter }) => {
+exports.onPostBuild = ({ reporter }) => {
   reporter.verbose(`Generated Aceship opId to path json: ${JSON.stringify(opIdToPath, null, 2)}`);
   fs.writeFileSync(path.join('public', OUTFILE_NAME), JSON.stringify(opIdToPath));
   reporter.info(`Aceship plugin: wrote ${Object.keys(opIdToPath).length} entries to public/${OUTFILE_NAME}`);

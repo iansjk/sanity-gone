@@ -113,6 +113,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
       <MuiThemeProvider theme={defaultTheme}>
         <EmotionThemeProvider theme={defaultTheme}>
           <Global styles={emotionNormalize} />
+          {/* @ts-expect-error Emotion doesn't like that I'm using MUI's Theme type, but this still works fine */}
           <Global styles={styles({ bannerImageUrl, blendPoint })} />
           <div className="site-wrapper">
             <div className="top-fold">

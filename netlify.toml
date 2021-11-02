@@ -3,3 +3,8 @@
   to = "/operators/"
   status = 302
   force = true
+
+[[headers]]
+  for = "/aceship.json"
+  [headers.values]
+    Access-Control-Allow-Origin: "*"

@@ -409,7 +409,7 @@ const globalOverrideStyles =
           ),
           ${transparentize(0.67, theme.palette.midtoneBrighter.main)};
       }
-
+      
       header {
         .heading-and-breadcrumb {
           h1 {
@@ -812,6 +812,15 @@ export const query = graphql`
             blockCnt
             respawnTime
           }
+        }
+      }
+      favorKeyFrames {
+        level
+        data {
+          atk
+          def
+          magicResistance
+          maxHp
         }
       }
       skillData {

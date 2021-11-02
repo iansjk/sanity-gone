@@ -43,6 +43,7 @@ export interface CharacterObject {
   description: string;
   phases: CharacterPhaseObject[];
   rarity: number; // 0-indexed, so a 1* op has value 0
+  favorKeyFrames: FavorKeyFrame[];
   [otherProperties: string]: unknown;
 }
 
@@ -56,4 +57,17 @@ export interface CharacterStatValues {
   redeployTimeInSeconds: number,
   attacksPerSecond: number,
   rangeObject: RangeObject
+}
+
+// trust bonuses... agh
+// should only ever be HP, ATK, or DEF (RES is included for posterity)
+export interface FavorKeyFrame {
+  level: number,
+  data: {
+    maxHp: number;
+    atk: number;
+    def: number;
+    magicResistance: number;
+    [otherProperties: string]: unknown;
+  }
 }

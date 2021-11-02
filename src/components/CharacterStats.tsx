@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { useMediaQuery, useTheme, Theme } from "@mui/material";
+import { useMediaQuery, useTheme, Theme, ButtonGroup, Button, Input, Slider } from "@mui/material";
 import {
   ArtsResistanceIcon,
   AttackPowerIcon,
@@ -7,6 +7,9 @@ import {
   BlockIcon,
   DPCostIcon,
   DefenseIcon,
+  EliteZeroIcon,
+  EliteOneIcon,
+  EliteTwoIcon,
   HealthIcon,
   RedeployTimeIcon,
 } from "./icons/operatorStats";
@@ -14,6 +17,8 @@ import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import { highestCharacterStats } from "../utils/globals";
 import { summonImage } from "../utils/images";
+import { ChangeEvent, useState } from "react";
+import CustomCheckbox from "./CustomCheckbox";
 
 const SUMMON_ICON_SIZE = 60;
 
@@ -40,11 +45,80 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
+  const phases = characterObject.phases;
+  const maxElite = phases.length - 1;
+  const maxLevel = phases[phases.length - 1].maxLevel;
+
+  const trustBonus = (isSummon) ? null : characterObject.favorKeyFrames[characterObject.favorKeyFrames.length - 1].data;
+
+  const [statsState, setState] = useState({
+    eliteLevel: maxElite,
+    opLevel: maxLevel,
+    trustBonus: true
+  });
+  const setEliteLevel = (level: number) => {
+    setState({
+      eliteLevel: level,
+      opLevel: Math.min(statsState.opLevel, phases[level].maxLevel),
+      trustBonus: statsState.trustBonus
+    });
+  }
+  const setOpLevel = (level: number) => setState({
+    eliteLevel: statsState.eliteLevel,
+    opLevel: level,
+    trustBonus: statsState.trustBonus
+  })
+
   return (
     <section css={styles}>
       <h3 className="visually-hidden">
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>
+      <div className="stats-controls">
+        <ButtonGroup variant="text" className="elite-buttons">
+          <Button
+            className={statsState.eliteLevel === 0 ? "active" : "inactive"}
+            onClick={() => {setEliteLevel(0)}}
+          >
+            <EliteZeroIcon className="elite-zero"/>
+          </Button>
+          <Button
+            className={statsState.eliteLevel === 1 ? "active" : "inactive"}
+            onClick={() => {setEliteLevel(1)}}
+          >
+            <EliteOneIcon/>
+          </Button>
+          <Button
+            className={statsState.eliteLevel === 2 ? "active" : "inactive"}
+            onClick={() => {setEliteLevel(2)}}
+          >
+            <EliteTwoIcon/>
+          </Button>
+          {!isSummon && <CustomCheckbox label="Trust"/>}
+          <div className="spacer"/>
+          <div className="level-slider">
+            <Input
+              value={statsState.opLevel}
+              size="small"
+              onChange={(event) => {
+                setOpLevel(Number(event.target.value));
+              }}
+              inputProps={{
+                step: 1,
+                min: 1,
+                max: phases[statsState.eliteLevel].maxLevel,
+                type: 'number'
+              }}
+            />
+            <Slider
+              value={statsState.opLevel}
+              onChange={(event: Event) => setOpLevel(Number(event.target.value))} // ts doesn't like this :(
+              min={1}
+              max={phases[statsState.eliteLevel].maxLevel}
+            />
+          </div>
+        </ButtonGroup>
+      </div>
       <dl className={isSummon ? "summon-stats" : "operator-stats"}>
         {isSummon && (
           <div className="summon-icon">
@@ -130,12 +204,55 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
 export default CharacterStats;
 
 const styles = (theme: Theme) => css`
+  .stats-controls {
+    display: flex;
+    height: ${theme.spacing(8)};
+    background: ${theme.palette.midtone.main};
+    margin-top: ${theme.spacing(3)};
+    
+    .elite-buttons {
+      button {
+        padding: ${theme.spacing(0, 2)};
+        border: none;
+        border-radius: 0;
+        
+        path {
+          fill: ${theme.palette.midtoneBrighterer.main};
+        }
+        .elite-zero path {
+          fill: transparent;
+          stroke: ${theme.palette.midtoneBrighterer.main};
+        }
+      }
+      button.active {
+        background: ${theme.palette.midtoneBrighter.main};
+        border-bottom: 3px solid ${theme.palette.white.main};
+
+        path {
+          fill: ${theme.palette.white.main};
+        }
+        .elite-zero path {
+          fill: transparent;
+          stroke: ${theme.palette.white.main};
+        }
+      }
+      label {
+        padding: ${theme.spacing(0, 3)};
+        margin: ${theme.spacing(2, 0, 2, 3)};
+        border-left: 1px solid ${theme.palette.midtoneBrighter.main};
+      }
+    }
+    
+    .spacer {
+      flex-grow: 1;
+    }
+  }
   dl {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-auto-flow: column;
     gap: ${theme.spacing(0.25)};
-    margin: ${theme.spacing(3, 0, 0)};
+    margin-top: 0;
 
     ${theme.breakpoints.down("mobile")} {
       grid-auto-flow: unset;

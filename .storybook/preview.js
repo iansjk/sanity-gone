@@ -1,5 +1,6 @@
-import { css, ThemeProvider } from "@emotion/react";
-import { defaultTheme } from "../src/theme";
+import { css } from "@emotion/react";
+import Theme from "../src/gatsby-theme-material-ui-top-layout/theme";
+import TopLayout from "../src/gatsby-theme-material-ui-top-layout/components/top-layout";
 import Layout from "../src/Layout";
 
 export const parameters = {
@@ -15,11 +16,11 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={defaultTheme}>
+    <TopLayout theme={Theme}>
       <Layout css={styles}>
         <Story />
       </Layout>
-    </ThemeProvider>
+    </TopLayout>
   ),
 ];
 

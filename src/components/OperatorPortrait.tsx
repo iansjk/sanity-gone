@@ -51,10 +51,8 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
       />
       {rarity && (
         <span className={`rarity-wrapper ${variant}`}>
-          <span
-            className={`rarity rarity-${rarity}-stars`}
-            aria-label={`Rarity: ${rarity} stars`}
-          >
+          <span className={`rarity rarity-${rarity}-stars`}>
+            <span className="visually-hidden">Rarity: {rarity} stars</span>
             {variant === "normal" ? (
               [...Array(rarity).keys()].map((i) => (
                 <TiltedStarIcon key={i} aria-hidden="true" />

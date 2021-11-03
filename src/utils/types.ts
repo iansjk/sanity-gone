@@ -44,6 +44,7 @@ export interface CharacterObject {
   phases: CharacterPhaseObject[];
   rarity: number; // 0-indexed, so a 1* op has value 0
   favorKeyFrames: FavorKeyFrame[];
+  potentialRanks: PotentialRanks[];
   [otherProperties: string]: unknown;
 }
 
@@ -70,4 +71,19 @@ export interface FavorKeyFrame {
     magicResistance: number;
     [otherProperties: string]: unknown;
   }
+}
+
+// potential bonuses
+// kill me now
+export interface PotentialRanks {
+  buff: {
+    attributes: {
+      attributeModifiers: [{
+        attributeType: number;
+        value: number;
+      }]
+    }
+  } | null;
+  type: number
+  description: string
 }

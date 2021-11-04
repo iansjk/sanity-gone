@@ -212,7 +212,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               >
                 <div>
                   <CustomCheckbox
-                    label="Potential"
+                    label="Pot."
                     checked={statsState.potential}
                     onChange={(event) => {
                       setPotential(event.target.checked);

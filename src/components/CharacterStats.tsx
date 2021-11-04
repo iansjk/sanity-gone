@@ -400,17 +400,18 @@ const styles = (theme: Theme) => css`
       }
 
       .checkbox-container {
-        margin: ${theme.spacing(2, 2, 2, 3)};
-        border-left: 1px solid ${theme.palette.midtoneBrighter.main};
+        margin: ${theme.spacing(2, 2, 2, 0)};
         display: flex;
         flex-direction: row;
 
         ${theme.breakpoints.down("mobile")} {
           border: none;
         }
-        
         .checkbox {
           margin-left: ${theme.spacing(3)};
+          label {
+            margin: ${theme.spacing(0.25)} 0;
+          }
         }
       }
 

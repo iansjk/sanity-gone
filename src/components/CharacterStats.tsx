@@ -163,7 +163,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                       borderRadius: theme.spacing(0.25),
                       fontSize: "14px",
                       lineHeight: "21px",
-                      textAlign: "center",
+                      textAlign: "left",
                     }
                   },
                   arrow: {
@@ -200,7 +200,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                       borderRadius: theme.spacing(0.25),
                       fontSize: "14px",
                       lineHeight: "21px",
-                      textAlign: "center",
+                      textAlign: "left",
                     }
                   },
                   arrow: {
@@ -350,6 +350,7 @@ const styles = (theme: Theme) => css`
     height: ${theme.spacing(8)};
     background: ${theme.palette.midtone.main};
     margin-top: ${theme.spacing(3)};
+    border-bottom: ${theme.spacing(0.125)} solid ${theme.palette.midtoneBrighterer.main};
 
     ${theme.breakpoints.down("mobile")} {
       flex-direction: column-reverse;

@@ -316,10 +316,8 @@ export const getPotentialIncreaseString = (
   if(potDefense !== 0) finalStr += `DEF +${potDefense}\n`;
   if(potRes !== 0) finalStr += `RES +${potRes}\n`;
   if(potAttacksPerSecond !== 0) finalStr += `ASPD +${potAttacksPerSecond}\n`; //might be wrong but i'll fix in future
-  if(potDp) finalStr += `DP ${potDp}\n`;
-  if(potRedeploy) finalStr += `Redep. ${potRedeploy}s\n`;
-
-  return finalStr.trim();
+  if(potDp) finalStr += `DP Cost ${potDp}\n`;
+  if(potRedeploy) finalStr += `Redeploy Time ${potRedeploy}\n`;
 
   return finalStr.trim();
 }

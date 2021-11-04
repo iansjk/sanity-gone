@@ -289,7 +289,7 @@ export const getTrustIncreaseString = (
   } = getMaxTrustStatIncrease(characterObject);
 
   let finalStr = "";
-  if(trustHp) finalStr += `Max HP +${trustHp}\n`;
+  if(trustHp) finalStr += `HP +${trustHp}\n`;
   if(trustAtk) finalStr += `ATK +${trustAtk}\n`;
   if(trustDef) finalStr += `DEF +${trustDef}\n`;
   if(trustRes) finalStr += `RES +${trustRes}\n`;
@@ -311,7 +311,7 @@ export const getPotentialIncreaseString = (
   } = getMaxPotStatIncrease(characterObject);
 
   let finalStr = "";
-  if(potHealth !== 0) finalStr += `Max HP +${potHealth}\n`;
+  if(potHealth !== 0) finalStr += `HP +${potHealth}\n`;
   if(potAttack !== 0) finalStr += `ATK +${potAttack}\n`;
   if(potDefense !== 0) finalStr += `DEF +${potDefense}\n`;
   if(potRes !== 0) finalStr += `RES +${potRes}\n`;

@@ -1,5 +1,15 @@
 import { css } from "@emotion/react";
-import { useMediaQuery, useTheme, Theme, ButtonGroup, Button, Input, SliderUnstyled, Tooltip } from "@mui/material";
+import {
+  useMediaQuery,
+  useTheme,
+  Theme,
+  ButtonGroup,
+  Button,
+  Input,
+  SliderUnstyled,
+  Tooltip,
+  createTheme,
+} from "@mui/material";
 import {
   ArtsResistanceIcon,
   AttackPowerIcon,
@@ -137,36 +147,80 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           </ButtonGroup>
           <div className="mobile-spacer" />
           {!isSummon && <div className="checkbox-container">
-            <Tooltip
-              title={<pre style={{fontFamily: "inherit", textAlign: "center", margin: theme.spacing(0)}}>
-                {getTrustIncreaseString(characterObject)}
-              </pre>}
-              placement="top"
-              arrow={true}
-            >
-              <CustomCheckbox
-                label="Trust"
-                checked={statsState.trustBonus}
-                onChange={(event) => {
-                  setTrustBonus(event.target.checked);
+            <div className="checkbox">
+              <Tooltip
+                title={getTrustIncreaseString(characterObject).split("\n").map((str) => {
+                  const strArray = str.split(" ")
+                  return <p key={str} style={{margin: 0}}>{strArray[0]} <span style={{color: theme.palette.blue.main}}>{strArray[1]}</span></p>
+                })}
+                placement="top"
+                arrow={true}
+                componentsProps={{
+                  tooltip: {
+                    sx: {
+                      backgroundColor: theme.palette.black.main,
+                      padding: theme.spacing(0.5, 1),
+                      borderRadius: theme.spacing(0.25),
+                      fontSize: "14px",
+                      lineHeight: "21px",
+                      textAlign: "center",
+                    }
+                  },
+                  arrow: {
+                    sx: {
+                      color: theme.palette.black.main,
+                    }
+                  }
                 }}
-              />
-            </Tooltip>
-            <Tooltip
-              title={<pre style={{fontFamily: "inherit", textAlign: "center", margin: theme.spacing(0)}}>
-                {getPotentialIncreaseString(characterObject)}
-              </pre>}
-              placement="top"
-              arrow={true}
-            >
-              <CustomCheckbox
-                label="Pot"
-                checked={statsState.potential}
-                onChange={(event) => {
-                  setPotential(event.target.checked);
+              >
+                <div>
+                  <CustomCheckbox
+                    label="Trust"
+                    checked={statsState.trustBonus}
+                    onChange={(event) => {
+                      setTrustBonus(event.target.checked);
+                    }}
+                  />
+                </div>
+              </Tooltip>
+            </div>
+            <div className="checkbox">
+              <Tooltip
+                title={getPotentialIncreaseString(characterObject).split("\n").map((str) => {
+                  const strArray = str.split(" ")
+                  return <p key={str} style={{margin: 0}}>{strArray[0]} <span style={{color: theme.palette.blue.main}}>{strArray[1]}</span></p>
+                })}
+                placement="top"
+                arrow={true}
+                componentsProps={{
+                  tooltip: {
+                    sx: {
+                      backgroundColor: theme.palette.black.main,
+                      padding: theme.spacing(0.5, 1),
+                      borderRadius: theme.spacing(0.25),
+                      fontSize: "14px",
+                      lineHeight: "21px",
+                      textAlign: "center",
+                    }
+                  },
+                  arrow: {
+                    sx: {
+                      color: theme.palette.black.main,
+                    }
+                  }
                 }}
-              />
-            </Tooltip>
+              >
+                <div>
+                  <CustomCheckbox
+                    label="Pot"
+                    checked={statsState.potential}
+                    onChange={(event) => {
+                      setPotential(event.target.checked);
+                    }}
+                  />
+                </div>
+              </Tooltip>
+            </div>
           </div>}
         </div>
         <div className="spacer" />
@@ -345,7 +399,7 @@ const styles = (theme: Theme) => css`
       }
 
       .checkbox-container {
-        margin: ${theme.spacing(2, 0, 2, 2)};
+        margin: ${theme.spacing(2, 2, 2, 3)};
         border-left: 1px solid ${theme.palette.midtoneBrighter.main};
         display: flex;
         flex-direction: row;
@@ -353,8 +407,9 @@ const styles = (theme: Theme) => css`
         ${theme.breakpoints.down("mobile")} {
           border: none;
         }
-        label {
-          padding: ${theme.spacing(0, 2)};
+        
+        .checkbox {
+          margin-left: ${theme.spacing(3)};
         }
       }
 
@@ -430,7 +485,7 @@ const styles = (theme: Theme) => css`
             position: absolute;
             height: ${theme.spacing(3)};
             margin-left: ${theme.spacing(-1.75)};
-            border-radius: 0;
+            border-radius: ${theme.spacing(0.25)};
             background: ${theme.palette.midtoneBrighter.main};
           }
 
@@ -440,8 +495,6 @@ const styles = (theme: Theme) => css`
             width: 100%;
             padding-right: ${theme.spacing(1.75)};
             height: ${theme.spacing(3)};
-            background: ${theme.palette.midtoneDarker.main};
-            border-radius: 0;
           }
 
           .MuiSlider-thumb {

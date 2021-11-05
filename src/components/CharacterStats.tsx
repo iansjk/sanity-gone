@@ -47,11 +47,17 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
   const maxElite = phases.length - 1;
   const maxLevel = phases[phases.length - 1].maxLevel;
 
-  const [eliteLevel, setEliteLevel] = useState(maxElite);
+  const [eliteLevel, setEliteLevelFunc] = useState(maxElite);
   const [opLevel, setOpLevel] = useState(maxLevel);
   const [trustBonus, setTrustBonus] = useState(!isSummon);
   const [potentialBonus, setPotentialBonus] = useState(false);
 
+  const setEliteLevel = (level: number) => {
+    setEliteLevelFunc(level);
+    if(opLevel > phases[eliteLevel].maxLevel) {
+      setOpLevel(phases[eliteLevel].maxLevel);
+    }
+  }
   const getTooltipHtml = (str: string) => {
     return str.split("\n").map((str) => {
       const strArray = str.split(" "); // split the array
@@ -199,7 +205,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               if (e.target.value === "") {
                 setOpLevel(1);
               } else {
-                setOpLevel(Math.min(Number(e.target.value), maxLevel));
+                setOpLevel(Math.min(Number(e.target.value), phases[eliteLevel].maxLevel));
               }
             }}
             onKeyPress={(e) => {

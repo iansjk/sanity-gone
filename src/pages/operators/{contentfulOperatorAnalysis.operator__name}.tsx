@@ -400,6 +400,16 @@ const globalOverrideStyles =
         color: ${accentColor};
       }
 
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+
       .heading-block {
         background: linear-gradient(90deg,
         ${transparentize(0.9, accentColor)},

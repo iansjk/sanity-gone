@@ -29,6 +29,7 @@ interface CharacterPhaseObject {
   range: RangeObject;
   maxLevel: number;
   attributesKeyFrames: AttributeKeyFrame[];
+
   [otherProperties: string]: unknown;
 }
 
@@ -45,6 +46,7 @@ export interface CharacterObject {
   rarity: number; // 0-indexed, so a 1* op has value 0
   favorKeyFrames: FavorKeyFrame[];
   potentialRanks: PotentialRanks[];
+
   [otherProperties: string]: unknown;
 }
 
@@ -56,7 +58,7 @@ export interface CharacterStatValues {
   dpCost: number,
   blockCount: number,
   redeployTimeInSeconds: number,
-  attacksPerSecond: number,
+  secondsPerAttack: number,
   rangeObject: RangeObject
 }
 
@@ -78,12 +80,12 @@ export interface FavorKeyFrame {
 export interface PotentialRanks {
   buff: {
     attributes: {
-      attributeModifiers: [{
+      attributeModifiers: {
         attributeType: number;
         value: number;
-      }]
+      }[];
     }
   } | null;
-  type: number
-  description: string
+  type: number;
+  description: string;
 }

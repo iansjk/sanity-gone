@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { css } from "@emotion/react";
 import {
   useMediaQuery,
@@ -8,7 +9,6 @@ import {
   Input,
   SliderUnstyled,
   Tooltip,
-  createTheme,
 } from "@mui/material";
 import {
   ArtsResistanceIcon,
@@ -27,7 +27,6 @@ import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import { getPotentialIncreaseString, getStatsAtLevel, getTrustIncreaseString } from "../utils/globals";
 import { summonImage } from "../utils/images";
-import React, { useState } from "react";
 import CustomCheckbox from "./CustomCheckbox";
 
 const SUMMON_ICON_SIZE = 60;
@@ -36,11 +35,9 @@ export interface CharacterStatsProps {
   characterObject: CharacterObject;
 }
 
-let lastOpLevel: number;
-
 const CharacterStats: React.VFC<CharacterStatsProps> = ({
-                                                          characterObject,
-                                                        }) => {
+  characterObject,
+}) => {
   const { id, name, profession } = characterObject;
   const isSummon = profession === "TOKEN";
   const theme = useTheme();
@@ -50,61 +47,36 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
   const maxElite = phases.length - 1;
   const maxLevel = phases[phases.length - 1].maxLevel;
 
-  const [statsState, setState] = useState({
-    eliteLevel: maxElite,
-    opLevel: maxLevel,
-    trustBonus: !isSummon,
-    potential: false
-  });
+  const [eliteLevel, setEliteLevel] = useState(maxElite);
+  const [opLevel, setOpLevel] = useState(maxLevel);
+  const [trustBonus, setTrustBonus] = useState(!isSummon);
+  const [potentialBonus, setPotentialBonus] = useState(false);
 
-  const setEliteLevel = (level: number) => {
-    setState({
-      eliteLevel: level,
-      opLevel: Math.min(statsState.opLevel, phases[level].maxLevel),
-      trustBonus: statsState.trustBonus,
-      potential: statsState.potential
-    });
-  };
-
-  const setOpLevel = (level: number) => {
-    setState({
-      eliteLevel: statsState.eliteLevel,
-      opLevel: level,
-      trustBonus: statsState.trustBonus,
-      potential: statsState.potential
-    });
-    lastOpLevel = level;
-  };
-
-  const setTrustBonus = (trust: boolean) => {
-    setState({
-      eliteLevel: statsState.eliteLevel,
-      opLevel: statsState.opLevel,
-      trustBonus: trust,
-      potential: statsState.potential
-    });
-  };
-
-  const setPotential = (potential: boolean) => {
-    setState({
-      eliteLevel: statsState.eliteLevel,
-      opLevel: statsState.opLevel,
-      trustBonus: statsState.trustBonus,
-      potential: potential
+  const getTooltipHtml = (str: string) => {
+    return str.split("\n").map((str) => {
+      const strArray = str.split(" "); // split the array
+      // we want to take the last part of the string, and wrap it in a blue span
+      return <p key={str} style={{ margin: 0 }}>{strArray.slice(0, -1).join(" ")} <span
+        style={{ color: theme.palette.blue.main }}>{strArray[strArray.length - 1]}</span></p>;
     });
   };
 
   const {
     artsResistance,
     attackPower,
-    attacksPerSecond,
+    secondsPerAttack,
     blockCount,
     defense,
     dpCost,
     health,
     rangeObject,
     redeployTimeInSeconds,
-  } = getStatsAtLevel(characterObject, statsState.eliteLevel, statsState.opLevel, statsState.trustBonus, statsState.potential);
+  } = getStatsAtLevel(characterObject, {
+    eliteLevel: eliteLevel,
+    level: opLevel,
+    trust: trustBonus,
+    pots: potentialBonus
+  });
 
   return (
     <section css={styles}>
@@ -115,7 +87,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
         <div className="trust-and-elite-buttons">
           <ButtonGroup variant="text" className="elite-buttons">
             <Button
-              className={statsState.eliteLevel === 0 ? "active" : "inactive"}
+              className={"elite-zero-button " + (eliteLevel === 0 ? "active" : "inactive")}
               onClick={() => {
                 setEliteLevel(0);
               }}
@@ -124,8 +96,8 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
             >
               <EliteZeroIcon className="elite-zero" />
             </Button>
-            <Button
-              className={statsState.eliteLevel === 1 ? "active" : "inactive"}
+            {maxElite >= 1 && <Button
+              className={eliteLevel === 1 ? "active" : "inactive"}
               onClick={() => {
                 setEliteLevel(1);
               }}
@@ -133,9 +105,9 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               color="white"
             >
               <EliteOneIcon />
-            </Button>
-            <Button
-              className={statsState.eliteLevel === 2 ? "active" : "inactive"}
+            </Button>}
+            {maxElite >= 2 && <Button
+              className={eliteLevel === 2 ? "active" : "inactive"}
               onClick={() => {
                 setEliteLevel(2);
               }}
@@ -143,16 +115,13 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               color="white"
             >
               <EliteTwoIcon />
-            </Button>
+            </Button>}
           </ButtonGroup>
           <div className="mobile-spacer" />
           {!isSummon && <div className="checkbox-container">
             <div className="checkbox">
               <Tooltip
-                title={getTrustIncreaseString(characterObject).split("\n").map((str) => {
-                  const strArray = str.split(" ")
-                  return <p key={str} style={{margin: 0}}>{strArray[0]} <span style={{color: theme.palette.blue.main}}>{strArray[1]}</span></p>
-                })}
+                title={getTooltipHtml(getTrustIncreaseString(characterObject))}
                 placement="top"
                 arrow={true}
                 componentsProps={{
@@ -161,24 +130,24 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                       backgroundColor: theme.palette.black.main,
                       padding: theme.spacing(0.5, 1),
                       borderRadius: theme.spacing(0.25),
-                      fontSize: "14px",
-                      lineHeight: "21px",
+                      fontSize: theme.typography.body3.fontSize,
+                      lineHeight: theme.typography.body3.lineHeight,
                       textAlign: "left",
-                    }
+                    },
                   },
                   arrow: {
                     sx: {
                       color: theme.palette.black.main,
-                    }
-                  }
+                    },
+                  },
                 }}
               >
                 <div>
                   <CustomCheckbox
                     label="Trust"
-                    checked={statsState.trustBonus}
-                    onChange={(event) => {
-                      setTrustBonus(event.target.checked);
+                    checked={trustBonus}
+                    onChange={(e) => {
+                      setTrustBonus(e.target.checked);
                     }}
                   />
                 </div>
@@ -186,10 +155,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
             </div>
             <div className="checkbox">
               <Tooltip
-                title={getPotentialIncreaseString(characterObject).split("\n").map((str) => {
-                  const strArray = str.split(" ")
-                  return <p key={str} style={{margin: 0}}>{strArray.slice(0, -1).join(" ")} <span style={{color: theme.palette.blue.main}}>{strArray[strArray.length - 1]}</span></p>
-                })}
+                title={getTooltipHtml(getPotentialIncreaseString(characterObject))}
                 placement="top"
                 arrow={true}
                 componentsProps={{
@@ -198,24 +164,24 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                       backgroundColor: theme.palette.black.main,
                       padding: theme.spacing(0.5, 1),
                       borderRadius: theme.spacing(0.25),
-                      fontSize: "14px",
-                      lineHeight: "21px",
+                      fontSize: theme.typography.body3.fontSize,
+                      lineHeight: theme.typography.body3.lineHeight,
                       textAlign: "left",
-                    }
+                    },
                   },
                   arrow: {
                     sx: {
                       color: theme.palette.black.main,
-                    }
-                  }
+                    },
+                  },
                 }}
               >
                 <div>
                   <CustomCheckbox
-                    label="Pot."
-                    checked={statsState.potential}
-                    onChange={(event) => {
-                      setPotential(event.target.checked);
+                    label={isMobile ? "Pot." : "Potential"}
+                    checked={potentialBonus}
+                    onChange={(e) => {
+                      setPotentialBonus(e.target.checked);
                     }}
                   />
                 </div>
@@ -228,33 +194,33 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           <p>Level</p>
           <Input
             className="level-slider-input"
-            value={statsState.opLevel}
-            onChange={(event) => {
-              if (event.target.value === "") {
+            value={opLevel}
+            onChange={(e) => {
+              if (e.target.value === "") {
                 setOpLevel(1);
-              } else if (!/^\d{1,2}$/.test(event.target.value)) {
-                if (lastOpLevel) {
-                  setOpLevel(lastOpLevel);
-                } else {
-                  setOpLevel(phases[statsState.eliteLevel].maxLevel);
-                }
               } else {
-                setOpLevel(Number(event.target.value));
+                setOpLevel(Math.min(Number(e.target.value), maxLevel));
+              }
+            }}
+            onKeyPress={(e) => {
+              if(!/^\d$/.test(e.key)) {
+                e.preventDefault();
               }
             }}
             inputProps={{
               maxLength: 2,
-              onFocus: (event) => event.target.select(),
+              onFocus: (e) => e.target.select(),
+              type: "number",
             }}
           />
           <div className="level-slider-border">
             <SliderUnstyled
               className="level-slider"
-              value={statsState.opLevel}
+              value={opLevel}
               // @ts-expect-error MUI typing tells me to do this
-              onChange={(event: Event) => setOpLevel(Number(event.target.value))}
+              onChange={(e: Event) => setOpLevel(Number(e.target.value))}
               min={1}
-              max={phases[statsState.eliteLevel].maxLevel}
+              max={phases[eliteLevel].maxLevel}
             />
           </div>
         </div>
@@ -298,7 +264,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
             <AttackSpeedIcon aria-hidden="true" />{" "}
             {isMobile ? "ASPD" : "Attack Speed"}
           </dt>
-          <dd>{attacksPerSecond} sec</dd>
+          <dd>{Math.round(secondsPerAttack * 100) / 100} sec</dd>
         </div>
 
         <div className="arts-resistance">
@@ -351,16 +317,18 @@ const styles = (theme: Theme) => css`
     background: ${theme.palette.midtone.main};
     margin-top: ${theme.spacing(3)};
     border-bottom: ${theme.spacing(0.125)} solid ${theme.palette.midtoneBrighterer.main};
+    border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
 
     ${theme.breakpoints.down("mobile")} {
       flex-direction: column-reverse;
+      border-radius: 0;
       margin-top: ${theme.spacing(9)};
     }
 
     .trust-and-elite-buttons {
       display: flex;
       height: ${theme.spacing(8)};
-      background: ${theme.palette.midtone.main};
+
 
       .elite-buttons {
         height: ${theme.spacing(8)};
@@ -382,6 +350,10 @@ const styles = (theme: Theme) => css`
             fill: transparent;
             stroke: ${theme.palette.midtoneBrighterer.main};
           }
+        }
+
+        button.elite-zero-button {
+          border-top-left-radius: ${theme.spacing(0.5)};
         }
 
         button.active {
@@ -407,8 +379,10 @@ const styles = (theme: Theme) => css`
         ${theme.breakpoints.down("mobile")} {
           border: none;
         }
+
         .checkbox {
           margin-left: ${theme.spacing(3)};
+
           label {
             margin: ${theme.spacing(0.25)} 0;
           }
@@ -437,6 +411,7 @@ const styles = (theme: Theme) => css`
         background: ${theme.palette.midtone.main};
         margin-right: 0;
         padding-left: ${theme.spacing(2)};
+        border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
       }
 
       p {
@@ -467,6 +442,7 @@ const styles = (theme: Theme) => css`
 
         ${theme.breakpoints.down("mobile")} {
           flex-grow: 1;
+          width: 100%;
           margin-right: ${theme.spacing(2)};
         }
 
@@ -510,6 +486,7 @@ const styles = (theme: Theme) => css`
             background-attachment: fixed;
             background: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.5 0.5C0.776143 0.5 1 0.723858 1 1L1 10C1 10.2761 0.776142 10.5 0.5 10.5C0.223858 10.5 -1.20705e-08 10.2761 0 10L3.93396e-07 1C4.05467e-07 0.723858 0.223858 0.5 0.5 0.5Z' fill='%23484858'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.5 0.5C5.77614 0.5 6 0.723858 6 1L6 10C6 10.2761 5.77614 10.5 5.5 10.5C5.22386 10.5 5 10.2761 5 10L5 1C5 0.723858 5.22386 0.5 5.5 0.5Z' fill='%23484858'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 0.5C10.7761 0.5 11 0.723858 11 1V10C11 10.2761 10.7761 10.5 10.5 10.5C10.2239 10.5 10 10.2761 10 10V1C10 0.723858 10.2239 0.5 10.5 0.5Z' fill='%23484858'/%3E%3C/svg%3E%0A") no-repeat center ${theme.palette.gray.main};
           }
+
           .MuiSlider-thumb:hover {
             background: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.5 0.5C0.776143 0.5 1 0.723858 1 1L1 10C1 10.2761 0.776142 10.5 0.5 10.5C0.223858 10.5 -1.20705e-08 10.2761 0 10L3.93396e-07 1C4.05467e-07 0.723858 0.223858 0.5 0.5 0.5Z' fill='%2387879B'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.5 0.5C5.77614 0.5 6 0.723858 6 1L6 10C6 10.2761 5.77614 10.5 5.5 10.5C5.22386 10.5 5 10.2761 5 10L5 1C5 0.723858 5.22386 0.5 5.5 0.5Z' fill='%2387879B'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 0.5C10.7761 0.5 11 0.723858 11 1V10C11 10.2761 10.7761 10.5 10.5 10.5C10.2239 10.5 10 10.2761 10 10V1C10 0.723858 10.2239 0.5 10.5 0.5Z' fill='%2387879B'/%3E%3C/svg%3E%0A") no-repeat center ${theme.palette.white.main};
           }
@@ -535,10 +512,6 @@ const styles = (theme: Theme) => css`
       ${theme.breakpoints.down("mobile")} {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, max-content);
-      }
-
-      .health {
-        border-top-left-radius: ${theme.spacing(0.5)};
       }
 
       .attack-power {
@@ -630,7 +603,7 @@ const styles = (theme: Theme) => css`
     .range {
       grid-row-start: span 2;
       position: relative;
-      border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
+      border-radius: ${theme.spacing(0, 0, 0.5, 0)};
 
       ${theme.breakpoints.down("mobile")} {
         grid-row: 5;

@@ -1,6 +1,5 @@
 import defaultSlugify from "slugify";
 import { CharacterObject, CharacterStatValues } from "./types";
-import { Character } from "../scripts/gamedata-types";
 
 
 export function slugify(toSlug: string): string {
@@ -110,8 +109,9 @@ export const highestCharacterStats = (
     cost: dpCost,
     blockCnt: blockCount,
     respawnTime: redeployTimeInSeconds,
-    baseAttackTime: attacksPerSecond,
+    baseAttackTime,
   } = activeKeyFrame.data;
+  const secondsPerAttack = calculateSecondsPerAttack(baseAttackTime, 100);
   return {
     health,
     attackPower,
@@ -120,18 +120,27 @@ export const highestCharacterStats = (
     dpCost,
     blockCount,
     redeployTimeInSeconds,
-    attacksPerSecond,
+    secondsPerAttack,
     rangeObject,
   };
 };
 
 export const getStatsAtLevel = (
   characterObject: CharacterObject,
-  eliteLevel: number,
-  level: number,
-  trust: boolean,
-  pots: boolean
+  values: {
+    eliteLevel: number;
+    level: number;
+    trust: boolean;
+    pots: boolean;
+  }
 ): CharacterStatValues => {
+  const {
+    eliteLevel,
+    level,
+    trust,
+    pots
+  } = values;
+
   const { phases } = characterObject;
   const activePhase = phases[eliteLevel];
   const maxLevel = activePhase.maxLevel;
@@ -142,14 +151,14 @@ export const getStatsAtLevel = (
   const finalKeyFrame = activePhase.attributesKeyFrames[activePhase.attributesKeyFrames.length - 1];
 
   const {
-    maxHp: maxHp,
-    atk: atk,
-    def: def,
+    maxHp,
+    atk,
+    def,
     magicResistance: res,
     cost: dp,
     blockCnt: blockCount,
     respawnTime: redeploy,
-    baseAttackTime: attacksPerSecond,
+    baseAttackTime,
   } = startingKeyFrame.data;
 
   const {
@@ -176,17 +185,17 @@ export const getStatsAtLevel = (
     attackPower: potAttack,
     defense: potDefense,
     artsResistance: potRes,
-    attacksPerSecond: potAttacksPerSecond,
+    attackSpeed: potASPD,
     dpCost: potDp,
-    redeployTimeInSeconds: potRedeploy
+    redeployTimeInSeconds: potRedeploy,
   } = (pots ? getMaxPotStatIncrease(characterObject) : {
     health: 0,
     attackPower: 0,
     defense: 0,
     artsResistance: 0,
-    attacksPerSecond: 0,
+    attackSpeed: 0,
     dpCost: 0,
-    redeployTimeInSeconds: 0
+    redeployTimeInSeconds: 0,
   });
 
   // apply trust-based and potential-based transforms
@@ -196,7 +205,9 @@ export const getStatsAtLevel = (
   const artsResistance = linearInterpolate(level, maxLevel, res, finalMaxRes) + (trust ? trustRes : 0) + potRes;
   const redeployTimeInSeconds = redeploy + potRedeploy;
   const dpCost = dp + potDp;
-  // put something about ASPD here once we know how to handle it
+
+  // ASPD...
+  const secondsPerAttack = calculateSecondsPerAttack(baseAttackTime, 100 + potASPD);
 
   return {
     health,
@@ -206,7 +217,7 @@ export const getStatsAtLevel = (
     dpCost,
     blockCount,
     redeployTimeInSeconds,
-    attacksPerSecond,
+    secondsPerAttack,
     rangeObject,
   };
 };
@@ -215,8 +226,12 @@ const linearInterpolate = (level: number, maxLevel: number, baseValue: number, m
   return Math.round(baseValue + (level - 1) * (maxValue - baseValue) / (maxLevel - 1));
 };
 
+export const calculateSecondsPerAttack = (baseAttackTime: number, aspd: number): number => {
+  return Math.round(baseAttackTime * 30 / (aspd / 100.0)) / 30;
+};
+
 export const getMaxPotStatIncrease = (
-  characterObject: CharacterObject
+  characterObject: CharacterObject,
 ) => {
   const { potentialRanks } = characterObject;
 
@@ -225,13 +240,13 @@ export const getMaxPotStatIncrease = (
     attackPower: 0,
     defense: 0,
     artsResistance: 0,
-    attacksPerSecond: 0,
+    attackSpeed: 0,
     dpCost: 0,
-    redeployTimeInSeconds: 0
-  }
+    redeployTimeInSeconds: 0,
+  };
 
   potentialRanks.forEach((pot) => {
-    if(pot.buff === null) {
+    if (pot.buff === null) {
       return;
     }
     const attribType = pot.buff.attributes.attributeModifiers[0].attributeType;
@@ -245,14 +260,13 @@ export const getMaxPotStatIncrease = (
         statChanges.attackPower += attribChange;
         break;
       case 2:
-        statChanges.attackPower += attribChange;
+        statChanges.defense += attribChange;
         break;
       case 4:
         statChanges.dpCost += attribChange;
         break;
       case 7:
-        // This is an ASPD increase
-        // I have no idea how to handle this so I'll just punt
+        statChanges.attackSpeed += attribChange;
         break;
       case 21:
         statChanges.redeployTimeInSeconds += attribChange;
@@ -261,13 +275,13 @@ export const getMaxPotStatIncrease = (
         console.warn("Unrecognized attribute in potentials");
         break;
     }
-  })
+  });
 
   return statChanges;
-}
+};
 
 export const getMaxTrustStatIncrease = (
-  characterObject: CharacterObject
+  characterObject: CharacterObject,
 ): {
   [p: string]: unknown,
   maxHp: number,
@@ -275,11 +289,11 @@ export const getMaxTrustStatIncrease = (
   def: number,
   magicResistance: number
 } => {
-  return characterObject.favorKeyFrames[characterObject.favorKeyFrames.length - 1].data
-}
+  return characterObject.favorKeyFrames[characterObject.favorKeyFrames.length - 1].data;
+};
 
 export const getTrustIncreaseString = (
-  characterObject: CharacterObject
+  characterObject: CharacterObject,
 ): string => {
   const {
     maxHp: trustHp,
@@ -289,35 +303,35 @@ export const getTrustIncreaseString = (
   } = getMaxTrustStatIncrease(characterObject);
 
   let finalStr = "";
-  if(trustHp) finalStr += `HP +${trustHp}\n`;
-  if(trustAtk) finalStr += `ATK +${trustAtk}\n`;
-  if(trustDef) finalStr += `DEF +${trustDef}\n`;
-  if(trustRes) finalStr += `RES +${trustRes}\n`;
+  if (trustHp) finalStr += `HP +${trustHp}\n`;
+  if (trustAtk) finalStr += `ATK +${trustAtk}\n`;
+  if (trustDef) finalStr += `DEF +${trustDef}\n`;
+  if (trustRes) finalStr += `RES +${trustRes}\n`;
 
   return finalStr.trim();
-}
+};
 
 export const getPotentialIncreaseString = (
-  characterObject: CharacterObject
+  characterObject: CharacterObject,
 ): string => {
   const {
     health: potHealth,
     attackPower: potAttack,
     defense: potDefense,
     artsResistance: potRes,
-    attacksPerSecond: potAttacksPerSecond,
+    attackSpeed: potAttacksPerSecond,
     dpCost: potDp,
-    redeployTimeInSeconds: potRedeploy
+    redeployTimeInSeconds: potRedeploy,
   } = getMaxPotStatIncrease(characterObject);
 
   let finalStr = "";
-  if(potHealth !== 0) finalStr += `HP +${potHealth}\n`;
-  if(potAttack !== 0) finalStr += `ATK +${potAttack}\n`;
-  if(potDefense !== 0) finalStr += `DEF +${potDefense}\n`;
-  if(potRes !== 0) finalStr += `RES +${potRes}\n`;
-  if(potAttacksPerSecond !== 0) finalStr += `ASPD +${potAttacksPerSecond}\n`; //might be wrong but i'll fix in future
-  if(potDp) finalStr += `DP Cost ${potDp}\n`;
-  if(potRedeploy) finalStr += `Redeploy Time ${potRedeploy}\n`;
+  if (potHealth !== 0) finalStr += `HP +${potHealth}\n`;
+  if (potAttack !== 0) finalStr += `ATK +${potAttack}\n`;
+  if (potDefense !== 0) finalStr += `DEF +${potDefense}\n`;
+  if (potRes !== 0) finalStr += `RES +${potRes}\n`;
+  if (potAttacksPerSecond !== 0) finalStr += `ASPD +${potAttacksPerSecond}\n`;
+  if (potDp) finalStr += `DP Cost ${potDp}\n`;
+  if (potRedeploy) finalStr += `Redeploy Time ${potRedeploy}\n`;
 
   return finalStr.trim();
-}
+};

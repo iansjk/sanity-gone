@@ -23,7 +23,7 @@ export default CustomCheckbox;
 const styles = (theme: Theme) => css`
   display: inline-grid;
   grid-auto-flow: column;
-  column-gap: 8px;
+  column-gap: ${theme.spacing(1)};
   align-items: center;
 
   &.disabled {

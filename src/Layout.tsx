@@ -92,9 +92,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
         />
         <html lang="en" {...rest} />
         <meta charSet="utf-8" />
-        <meta name="viewport" content={viewportWidth > 414 ?
+        <meta name="viewport" content={viewportWidth > 416 ?
           "width=device-width, initial-scale=1, shrink-to-fit=no" :
-          "width=414, shrink-to-fit=no"
+          "width=416, shrink-to-fit=no"
         } />
         <meta property="og:title" content={pageTitle ?? "Arknights Hub"} />
         <meta

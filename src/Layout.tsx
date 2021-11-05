@@ -1,7 +1,7 @@
+import { Fragment, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
-import { Fragment, useState } from "react";
 import { Helmet } from "react-helmet";
 import {
   BsDiscord as DiscordLogo,
@@ -13,6 +13,7 @@ import SanityGoneLogo from "./components/SanityGoneLogo";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 import { lighten, rgba } from "polished";
 import MobileMenu from "./components/MobileMenu";
+import useViewportWidth from "./hooks/useViewportWidth";
 
 interface LayoutProps {
   pageTitle: string;
@@ -63,6 +64,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
     siteName,
     image: defaultImage,
   } = data.site.siteMetadata;
+  const viewportWidth = useViewportWidth();
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -90,7 +92,10 @@ const Layout: React.FC<LayoutProps> = (props) => {
         />
         <html lang="en" {...rest} />
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content={viewportWidth > 414 ?
+          "width=device-width, initial-scale=1, shrink-to-fit=no" :
+          "width=414, shrink-to-fit=no"
+        } />
         <meta property="og:title" content={pageTitle ?? "Arknights Hub"} />
         <meta
           property="og:description"

@@ -1,7 +1,6 @@
 import defaultSlugify from "slugify";
 import { CharacterObject, CharacterStatValues } from "./types";
 
-
 export function slugify(toSlug: string): string {
   return defaultSlugify(toSlug.replace(/[().'-]/g, ""), {
     lower: true,
@@ -90,11 +89,11 @@ const selfClosingTagRegex = /<(?<tagName>[A-Za-z]+) \/>/g;
 export const replaceSelfClosingHtmlTags = (htmlString: string): string =>
   htmlString.replace(
     selfClosingTagRegex,
-    (_, tagName: string) => `<${tagName}></${tagName}>`,
+    (_, tagName: string) => `<${tagName}></${tagName}>`
   );
 
 export const highestCharacterStats = (
-  characterObject: CharacterObject,
+  characterObject: CharacterObject
 ): CharacterStatValues => {
   const { phases } = characterObject;
   const activePhase = phases[phases.length - 1];
@@ -134,12 +133,7 @@ export const getStatsAtLevel = (
     pots: boolean;
   }
 ): CharacterStatValues => {
-  const {
-    eliteLevel,
-    level,
-    trust,
-    pots
-  } = values;
+  const { eliteLevel, level, trust, pots } = values;
 
   const { phases } = characterObject;
   const activePhase = phases[eliteLevel];
@@ -148,7 +142,8 @@ export const getStatsAtLevel = (
   const { range: rangeObject } = activePhase;
 
   const startingKeyFrame = activePhase.attributesKeyFrames[0];
-  const finalKeyFrame = activePhase.attributesKeyFrames[activePhase.attributesKeyFrames.length - 1];
+  const finalKeyFrame =
+    activePhase.attributesKeyFrames[activePhase.attributesKeyFrames.length - 1];
 
   const {
     maxHp,
@@ -173,12 +168,14 @@ export const getStatsAtLevel = (
     atk: trustAtk,
     def: trustDef,
     magicResistance: trustRes,
-  } = (trust ? getMaxTrustStatIncrease(characterObject) : {
-    maxHp: 0,
-    atk: 0,
-    def: 0,
-    magicResistance: 0,
-  }); // pass 0 to everything if trust is off to avoid weird errors with summons
+  } = trust
+    ? getMaxTrustStatIncrease(characterObject)
+    : {
+        maxHp: 0,
+        atk: 0,
+        def: 0,
+        magicResistance: 0,
+      }; // pass 0 to everything if trust is off to avoid weird errors with summons
 
   const {
     health: potHealth,
@@ -188,26 +185,43 @@ export const getStatsAtLevel = (
     attackSpeed: potASPD,
     dpCost: potDp,
     redeployTimeInSeconds: potRedeploy,
-  } = (pots ? getMaxPotStatIncrease(characterObject) : {
-    health: 0,
-    attackPower: 0,
-    defense: 0,
-    artsResistance: 0,
-    attackSpeed: 0,
-    dpCost: 0,
-    redeployTimeInSeconds: 0,
-  });
+  } = pots
+    ? getMaxPotStatIncrease(characterObject)
+    : {
+        health: 0,
+        attackPower: 0,
+        defense: 0,
+        artsResistance: 0,
+        attackSpeed: 0,
+        dpCost: 0,
+        redeployTimeInSeconds: 0,
+      };
 
   // apply trust-based and potential-based transforms
-  const health = linearInterpolate(level, maxLevel, maxHp, finalMaxHp) + (trust ? trustHp : 0) + potHealth;
-  const attackPower = linearInterpolate(level, maxLevel, atk, finalMaxAtk) + (trust ? trustAtk : 0) + potAttack;
-  const defense = linearInterpolate(level, maxLevel, def, finalMaxDef) + (trust ? trustDef : 0) + potDefense;
-  const artsResistance = linearInterpolate(level, maxLevel, res, finalMaxRes) + (trust ? trustRes : 0) + potRes;
+  const health =
+    linearInterpolate(level, maxLevel, maxHp, finalMaxHp) +
+    (trust ? trustHp : 0) +
+    potHealth;
+  const attackPower =
+    linearInterpolate(level, maxLevel, atk, finalMaxAtk) +
+    (trust ? trustAtk : 0) +
+    potAttack;
+  const defense =
+    linearInterpolate(level, maxLevel, def, finalMaxDef) +
+    (trust ? trustDef : 0) +
+    potDefense;
+  const artsResistance =
+    linearInterpolate(level, maxLevel, res, finalMaxRes) +
+    (trust ? trustRes : 0) +
+    potRes;
   const redeployTimeInSeconds = redeploy + potRedeploy;
   const dpCost = dp + potDp;
 
   // ASPD...
-  const secondsPerAttack = calculateSecondsPerAttack(baseAttackTime, 100 + potASPD);
+  const secondsPerAttack = calculateSecondsPerAttack(
+    baseAttackTime,
+    100 + potASPD
+  );
 
   return {
     health,
@@ -222,17 +236,25 @@ export const getStatsAtLevel = (
   };
 };
 
-const linearInterpolate = (level: number, maxLevel: number, baseValue: number, maxValue: number): number => {
-  return Math.round(baseValue + (level - 1) * (maxValue - baseValue) / (maxLevel - 1));
+const linearInterpolate = (
+  level: number,
+  maxLevel: number,
+  baseValue: number,
+  maxValue: number
+): number => {
+  return Math.round(
+    baseValue + ((level - 1) * (maxValue - baseValue)) / (maxLevel - 1)
+  );
 };
 
-export const calculateSecondsPerAttack = (baseAttackTime: number, aspd: number): number => {
-  return Math.round(baseAttackTime * 30 / (aspd / 100.0)) / 30;
+export const calculateSecondsPerAttack = (
+  baseAttackTime: number,
+  aspd: number
+): number => {
+  return Math.round((baseAttackTime * 30) / (aspd / 100.0)) / 30;
 };
 
-export const getMaxPotStatIncrease = (
-  characterObject: CharacterObject,
-) => {
+export const getMaxPotStatIncrease = (characterObject: CharacterObject) => {
   const { potentialRanks } = characterObject;
 
   const statChanges = {
@@ -281,19 +303,21 @@ export const getMaxPotStatIncrease = (
 };
 
 export const getMaxTrustStatIncrease = (
-  characterObject: CharacterObject,
+  characterObject: CharacterObject
 ): {
-  [p: string]: unknown,
-  maxHp: number,
-  atk: number,
-  def: number,
-  magicResistance: number
+  [p: string]: unknown;
+  maxHp: number;
+  atk: number;
+  def: number;
+  magicResistance: number;
 } => {
-  return characterObject.favorKeyFrames[characterObject.favorKeyFrames.length - 1].data;
+  return characterObject.favorKeyFrames[
+    characterObject.favorKeyFrames.length - 1
+  ].data;
 };
 
 export const getTrustIncreaseString = (
-  characterObject: CharacterObject,
+  characterObject: CharacterObject
 ): string => {
   const {
     maxHp: trustHp,
@@ -312,7 +336,7 @@ export const getTrustIncreaseString = (
 };
 
 export const getPotentialIncreaseString = (
-  characterObject: CharacterObject,
+  characterObject: CharacterObject
 ): string => {
   const {
     health: potHealth,

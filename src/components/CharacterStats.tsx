@@ -247,6 +247,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           />
           <div className="level-slider-border">
             <SliderUnstyled
+              aria-label="Level slider"
               className="level-slider"
               value={opLevel}
               // @ts-expect-error MUI typing tells me to do this

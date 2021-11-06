@@ -396,6 +396,7 @@ const globalOverrideStyles =
           background-position-x: ${customBgPositionX};
         }
       `}
+
       a {
         color: ${accentColor};
       }

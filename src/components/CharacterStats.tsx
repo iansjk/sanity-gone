@@ -5,10 +5,10 @@ import {
   useTheme,
   Theme,
   ButtonGroup,
-  Button,
   Input,
   SliderUnstyled,
   Tooltip,
+  ButtonBase,
 } from "@mui/material";
 import {
   ArtsResistanceIcon,
@@ -102,7 +102,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
       <div className="stats-controls">
         <div className="trust-and-elite-buttons">
           <ButtonGroup variant="text" className="elite-buttons">
-            <Button
+            <ButtonBase
               className={
                 "elite-zero-button " +
                 (eliteLevel === 0 ? "active" : "inactive")
@@ -110,34 +110,28 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               onClick={() => {
                 setEliteLevel(0);
               }}
-              // @ts-expect-error custom palette color
-              color="white"
             >
               <EliteZeroIcon className="elite-zero" />
-            </Button>
+            </ButtonBase>
             {maxElite >= 1 && (
-              <Button
+              <ButtonBase
                 className={eliteLevel === 1 ? "active" : "inactive"}
                 onClick={() => {
                   setEliteLevel(1);
                 }}
-                // @ts-expect-error custom palette color
-                color="white"
               >
                 <EliteOneIcon />
-              </Button>
+              </ButtonBase>
             )}
             {maxElite >= 2 && (
-              <Button
+              <ButtonBase
                 className={eliteLevel === 2 ? "active" : "inactive"}
                 onClick={() => {
                   setEliteLevel(2);
                 }}
-                // @ts-expect-error custom palette color
-                color="white"
               >
                 <EliteTwoIcon />
-              </Button>
+              </ButtonBase>
             )}
           </ButtonGroup>
           <div className="mobile-spacer" />

@@ -559,4 +559,14 @@ const styles =
       .rarity-3-stars {
         color: ${theme.palette.blue.main};
       }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
     `;

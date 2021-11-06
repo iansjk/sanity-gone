@@ -68,7 +68,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
       // extract last word in the string, and wrap it in a blue span
       return (
         <p key={str} style={{ margin: 0 }}>
-          {strArray.slice(0, -1).join(" ")}
+          {strArray.slice(0, -1).join(" ") + " "}
           <span style={{ color: theme.palette.blue.main }}>
             {strArray[strArray.length - 1]}
           </span>
@@ -423,11 +423,13 @@ const styles = (theme: Theme) => css`
         }
       }
     }
+
     .mobile-spacer {
       ${theme.breakpoints.down("mobile")} {
         flex: 1 1 0;
       }
     }
+
     .spacer {
       flex: 1 1 0;
     }

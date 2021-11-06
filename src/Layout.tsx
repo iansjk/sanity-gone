@@ -64,7 +64,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
     siteName,
     image: defaultImage,
   } = data.site.siteMetadata;
-  const viewportWidth = useViewportWidth();
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -92,10 +91,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
         />
         <html lang="en" {...rest} />
         <meta charSet="utf-8" />
-        <meta name="viewport" content={viewportWidth > 416 ?
-          "width=device-width, initial-scale=1, shrink-to-fit=no" :
-          "width=416, shrink-to-fit=no"
-        } />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content={pageTitle ?? "Arknights Hub"} />
         <meta
           property="og:description"

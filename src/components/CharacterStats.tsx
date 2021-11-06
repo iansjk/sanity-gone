@@ -4,8 +4,6 @@ import {
   useMediaQuery,
   useTheme,
   Theme,
-  ButtonGroup,
-  Button,
   Input,
   SliderUnstyled,
   Tooltip,
@@ -36,6 +34,8 @@ import {
 } from "../utils/globals";
 import { summonImage } from "../utils/images";
 import CustomCheckbox from "./CustomCheckbox";
+import RibbonButton from "./RibbonButton";
+import RibbonButtonGroup from "./RibbonButtonGroup";
 
 const SUMMON_ICON_SIZE = 60;
 
@@ -136,8 +136,8 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
       </h3>
       <div className="stats-controls">
         <div className="trust-and-elite-buttons">
-          <ButtonGroup variant="text" className="elite-buttons">
-            <Button
+          <RibbonButtonGroup className="elite-buttons">
+            <RibbonButton
               className={
                 "elite-zero-button " +
                 (eliteLevel === 0 ? "active" : "inactive")
@@ -146,38 +146,32 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 setEliteLevel(0);
               }}
               aria-label="Elite 0"
-              // @ts-expect-error custom palette color
-              color="white"
             >
               <EliteZeroIcon className="elite-zero" />
-            </Button>
+            </RibbonButton>
             {maxElite >= 1 && (
-              <Button
+              <RibbonButton
                 className={eliteLevel === 1 ? "active" : "inactive"}
                 onClick={() => {
                   setEliteLevel(1);
                 }}
                 aria-label="Elite 1"
-                // @ts-expect-error custom palette color
-                color="white"
               >
                 <EliteOneIcon />
-              </Button>
+              </RibbonButton>
             )}
             {maxElite >= 2 && (
-              <Button
+              <RibbonButton
                 className={eliteLevel === 2 ? "active" : "inactive"}
                 onClick={() => {
                   setEliteLevel(2);
                 }}
                 aria-label="Elite 2"
-                // @ts-expect-error custom palette color
-                color="white"
               >
                 <EliteTwoIcon />
-              </Button>
+              </RibbonButton>
             )}
-          </ButtonGroup>
+          </RibbonButtonGroup>
           <div className="mobile-spacer" />
           {!isSummon && (
             <div className="checkbox-container">
@@ -367,40 +361,16 @@ const styles = (theme: Theme) => css`
         height: ${theme.spacing(8)};
 
         button {
-          padding: ${theme.spacing(0, 2)};
-          border: none;
-          border-radius: 0;
-
-          ${theme.breakpoints.down("mobile")} {
-            padding: ${theme.spacing(0, 1.375)};
-            border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
-          }
-
-          path {
-            fill: ${theme.palette.midtoneBrighterer.main};
-          }
-
           .elite-zero path {
             fill: transparent;
             stroke: ${theme.palette.midtoneBrighterer.main};
           }
-        }
 
-        button.elite-zero-button {
-          border-top-left-radius: ${theme.spacing(0.5)};
-        }
-
-        button.active {
-          background: ${theme.palette.midtoneBrighter.main};
-          border-bottom: 3px solid ${theme.palette.white.main};
-
-          path {
-            fill: ${theme.palette.white.main};
-          }
-
-          .elite-zero path {
-            fill: transparent;
-            stroke: ${theme.palette.white.main};
+          &.active {
+            .elite-zero path {
+              fill: transparent;
+              stroke: ${theme.palette.white.main};
+            }
           }
         }
       }

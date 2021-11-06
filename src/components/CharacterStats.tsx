@@ -64,8 +64,8 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
   };
   const getTooltipHtml = (str: string) => {
     return str.split("\n").map((str) => {
-      const strArray = str.split(" "); // split the array
-      // we want to take the last part of the string, and wrap it in a blue span
+      const strArray = str.split(" "); // split array by space to
+      // extract last word in the string, and wrap it in a blue span
       return (
         <p key={str} style={{ margin: 0 }}>
           {strArray.slice(0, -1).join(" ")}
@@ -206,7 +206,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 >
                   <div>
                     <CustomCheckbox
-                      label={isMobile ? "Pot." : "Potential"}
+                      label="Potential"
                       checked={potentialBonus}
                       onChange={(e) => {
                         setPotentialBonus(e.target.checked);
@@ -409,20 +409,21 @@ const styles = (theme: Theme) => css`
 
         ${theme.breakpoints.down("mobile")} {
           border: none;
+          flex-direction: column;
+          margin: ${theme.spacing(-0.5, 2, 0, 1)};
+          z-index: 1;
         }
 
         .checkbox {
           margin-left: ${theme.spacing(3)};
 
+          ${theme.breakpoints.down("mobile")} {
+            margin-left: ${theme.spacing(2)};
+          }
+
           label {
             margin: ${theme.spacing(0.25)} 0;
           }
-        }
-      }
-
-      .mobile-spacer {
-        ${theme.breakpoints.down("mobile")} {
-          flex: 1 1 0;
         }
       }
     }

@@ -9,6 +9,9 @@ import {
   SliderUnstyled,
   Tooltip,
   ButtonBase,
+  styled,
+  TooltipProps,
+  tooltipClasses,
 } from "@mui/material";
 
 import {
@@ -35,6 +38,27 @@ import { summonImage } from "../utils/images";
 import CustomCheckbox from "./CustomCheckbox";
 
 const SUMMON_ICON_SIZE = 60;
+
+const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
+  <Tooltip
+    {...rest}
+    classes={{ popper: className }}
+    placement="top"
+    arrow={true}
+  />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.black.main,
+    padding: theme.spacing(0.5, 1),
+    borderRadius: theme.spacing(0.25),
+    fontSize: theme.typography.body3.fontSize,
+    lineHeight: theme.typography.body3.lineHeight,
+    textAlign: "left",
+  },
+  [`& .${tooltipClasses.arrow}`]: {
+    color: theme.palette.black.main,
+  },
+}));
 
 export interface CharacterStatsProps {
   characterObject: CharacterObject;
@@ -63,6 +87,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
       setOpLevel(phases[level].maxLevel);
     }
   };
+
   const getTooltipHtml = (str: string) => {
     return str.split("\n").map((str) => {
       const strArray = str.split(" "); // split array by space to
@@ -142,29 +167,10 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           {!isSummon && (
             <div className="checkbox-container">
               <div className="checkbox">
-                <Tooltip
+                <StatsChangeTooltip
                   title={getTooltipHtml(
                     getTrustIncreaseString(characterObject)
                   )}
-                  placement="top"
-                  arrow={true}
-                  componentsProps={{
-                    tooltip: {
-                      sx: {
-                        backgroundColor: theme.palette.black.main,
-                        padding: theme.spacing(0.5, 1),
-                        borderRadius: theme.spacing(0.25),
-                        fontSize: theme.typography.body3.fontSize,
-                        lineHeight: theme.typography.body3.lineHeight,
-                        textAlign: "left",
-                      },
-                    },
-                    arrow: {
-                      sx: {
-                        color: theme.palette.black.main,
-                      },
-                    },
-                  }}
                 >
                   <div>
                     <CustomCheckbox
@@ -175,32 +181,13 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                       }}
                     />
                   </div>
-                </Tooltip>
+                </StatsChangeTooltip>
               </div>
               <div className="checkbox">
-                <Tooltip
+                <StatsChangeTooltip
                   title={getTooltipHtml(
                     getPotentialIncreaseString(characterObject)
                   )}
-                  placement="top"
-                  arrow={true}
-                  componentsProps={{
-                    tooltip: {
-                      sx: {
-                        backgroundColor: theme.palette.black.main,
-                        padding: theme.spacing(0.5, 1),
-                        borderRadius: theme.spacing(0.25),
-                        fontSize: theme.typography.body3.fontSize,
-                        lineHeight: theme.typography.body3.lineHeight,
-                        textAlign: "left",
-                      },
-                    },
-                    arrow: {
-                      sx: {
-                        color: theme.palette.black.main,
-                      },
-                    },
-                  }}
                 >
                   <div>
                     <CustomCheckbox
@@ -211,7 +198,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                       }}
                     />
                   </div>
-                </Tooltip>
+                </StatsChangeTooltip>
               </div>
             </div>
           )}

@@ -54,6 +54,14 @@ const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
     fontSize: theme.typography.body3.fontSize,
     lineHeight: theme.typography.body3.lineHeight,
     textAlign: "left",
+    ul: {
+      margin: 0,
+      padding: 0,
+      listStyleType: "none",
+      ".stat-value": {
+        color: theme.palette.blue.main,
+      },
+    },
   },
   [`& .${tooltipClasses.arrow}`]: {
     color: theme.palette.black.main,
@@ -88,20 +96,21 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
     }
   };
 
-  const getTooltipHtml = (str: string) => {
-    return str.split("\n").map((str) => {
-      const strArray = str.split(" "); // split array by space to
-      // extract last word in the string, and wrap it in a blue span
-      return (
-        <p key={str} style={{ margin: 0 }}>
-          {strArray.slice(0, -1).join(" ") + " "}
-          <span style={{ color: theme.palette.blue.main }}>
-            {strArray[strArray.length - 1]}
-          </span>
-        </p>
-      );
-    });
-  };
+  // str: set of stat changes separated by newlines, e.g. ""DP Cost -3\nRedeploy Time -10"
+  const getTooltipHtml = (str: string) => (
+    <ul>
+      {str.split("\n").map((line) => {
+        const words = line.split(" ");
+        const value = words[words.length - 1];
+        const stat = words.slice(0, -1).join(" ");
+        return (
+          <li key={stat}>
+            {stat} <span className="stat-value">{value}</span>
+          </li>
+        );
+      })}
+    </ul>
+  );
 
   const {
     artsResistance,

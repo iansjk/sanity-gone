@@ -305,7 +305,6 @@ export const getMaxPotStatIncrease = (characterObject: CharacterObject) => {
 export const getMaxTrustStatIncrease = (
   characterObject: CharacterObject
 ): {
-  [p: string]: unknown;
   maxHp: number;
   atk: number;
   def: number;

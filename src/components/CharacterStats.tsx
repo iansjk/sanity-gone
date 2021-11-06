@@ -414,7 +414,11 @@ const styles = (theme: Theme) => css`
           }
 
           label {
-            margin: ${theme.spacing(0.25)} 0;
+            padding: ${theme.spacing(0.25)} 0;
+
+            ${theme.breakpoints.down("mobile")} {
+              padding: ${theme.spacing(0.5)} 0;
+            }
           }
         }
       }

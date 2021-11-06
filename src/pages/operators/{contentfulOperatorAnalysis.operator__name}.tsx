@@ -814,6 +814,27 @@ export const query = graphql`
           }
         }
       }
+      favorKeyFrames {
+        level
+        data {
+          atk
+          def
+          magicResistance
+          maxHp
+        }
+      }
+      potentialRanks {
+        type
+        description
+        buff {
+          attributes {
+            attributeModifiers {
+              attributeType
+              value
+            }
+          }
+        }
+      }
       skillData {
         skillId
         iconId

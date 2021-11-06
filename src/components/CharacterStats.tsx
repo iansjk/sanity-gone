@@ -1,5 +1,19 @@
+import React, { useState } from "react";
 import { css } from "@emotion/react";
-import { useMediaQuery, useTheme, Theme } from "@mui/material";
+import {
+  useMediaQuery,
+  useTheme,
+  Theme,
+  ButtonGroup,
+  Button,
+  Input,
+  SliderUnstyled,
+  Tooltip,
+  styled,
+  TooltipProps,
+  tooltipClasses,
+} from "@mui/material";
+
 import {
   ArtsResistanceIcon,
   AttackPowerIcon,
@@ -7,15 +21,52 @@ import {
   BlockIcon,
   DPCostIcon,
   DefenseIcon,
+  EliteZeroIcon,
+  EliteOneIcon,
+  EliteTwoIcon,
   HealthIcon,
   RedeployTimeIcon,
 } from "./icons/operatorStats";
 import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
-import { highestCharacterStats } from "../utils/globals";
+import {
+  getPotentialIncreaseString,
+  getStatsAtLevel,
+  getTrustIncreaseString,
+} from "../utils/globals";
 import { summonImage } from "../utils/images";
+import CustomCheckbox from "./CustomCheckbox";
 
 const SUMMON_ICON_SIZE = 60;
+
+const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
+  <Tooltip
+    {...rest}
+    classes={{ popper: className }}
+    placement="top"
+    arrow={true}
+  />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.black.main,
+    padding: theme.spacing(0.5, 1),
+    borderRadius: theme.spacing(0.25),
+    fontSize: theme.typography.body3.fontSize,
+    lineHeight: theme.typography.body3.lineHeight,
+    textAlign: "left",
+    ul: {
+      margin: 0,
+      padding: 0,
+      listStyleType: "none",
+      ".stat-value": {
+        color: theme.palette.blue.main,
+      },
+    },
+  },
+  [`& .${tooltipClasses.arrow}`]: {
+    color: theme.palette.black.main,
+  },
+}));
 
 export interface CharacterStatsProps {
   characterObject: CharacterObject;
@@ -24,27 +75,189 @@ export interface CharacterStatsProps {
 const CharacterStats: React.VFC<CharacterStatsProps> = ({
   characterObject,
 }) => {
+  const { id, name, profession } = characterObject;
+  const isSummon = profession === "TOKEN";
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
+
+  const phases = characterObject.phases;
+  const maxElite = phases.length - 1;
+  const maxLevel = phases[phases.length - 1].maxLevel;
+
+  const [eliteLevel, setEliteLevelFunc] = useState(maxElite);
+  const [opLevel, setOpLevel] = useState(maxLevel);
+  const [trustBonus, setTrustBonus] = useState(!isSummon);
+  const [potentialBonus, setPotentialBonus] = useState(false);
+
+  const setEliteLevel = (level: number) => {
+    setEliteLevelFunc(level);
+    if (opLevel > phases[level].maxLevel) {
+      setOpLevel(phases[level].maxLevel);
+    }
+  };
+
+  // str: set of stat changes separated by newlines, e.g. ""DP Cost -3\nRedeploy Time -10"
+  const getTooltipHtml = (str: string) => (
+    <ul>
+      {str.split("\n").map((line) => {
+        const words = line.split(" ");
+        const value = words[words.length - 1];
+        const stat = words.slice(0, -1).join(" ");
+        return (
+          <li key={stat}>
+            {stat} <span className="stat-value">{value}</span>
+          </li>
+        );
+      })}
+    </ul>
+  );
+
   const {
     artsResistance,
     attackPower,
-    attacksPerSecond,
+    secondsPerAttack,
     blockCount,
     defense,
     dpCost,
     health,
     rangeObject,
     redeployTimeInSeconds,
-  } = highestCharacterStats(characterObject);
-  const { id, name, profession } = characterObject;
-  const isSummon = profession === "TOKEN";
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
+  } = getStatsAtLevel(characterObject, {
+    eliteLevel: eliteLevel,
+    level: opLevel,
+    trust: trustBonus,
+    pots: potentialBonus,
+  });
 
   return (
     <section css={styles}>
       <h3 className="visually-hidden">
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>
+      <div className="stats-controls">
+        <div className="trust-and-elite-buttons">
+          <ButtonGroup variant="text" className="elite-buttons">
+            <Button
+              className={
+                "elite-zero-button " +
+                (eliteLevel === 0 ? "active" : "inactive")
+              }
+              onClick={() => {
+                setEliteLevel(0);
+              }}
+              aria-label="Elite 0"
+              // @ts-expect-error custom palette color
+              color="white"
+            >
+              <EliteZeroIcon className="elite-zero" />
+            </Button>
+            {maxElite >= 1 && (
+              <Button
+                className={eliteLevel === 1 ? "active" : "inactive"}
+                onClick={() => {
+                  setEliteLevel(1);
+                }}
+                aria-label="Elite 1"
+                // @ts-expect-error custom palette color
+                color="white"
+              >
+                <EliteOneIcon />
+              </Button>
+            )}
+            {maxElite >= 2 && (
+              <Button
+                className={eliteLevel === 2 ? "active" : "inactive"}
+                onClick={() => {
+                  setEliteLevel(2);
+                }}
+                aria-label="Elite 2"
+                // @ts-expect-error custom palette color
+                color="white"
+              >
+                <EliteTwoIcon />
+              </Button>
+            )}
+          </ButtonGroup>
+          <div className="mobile-spacer" />
+          {!isSummon && (
+            <div className="checkbox-container">
+              <div className="checkbox">
+                <StatsChangeTooltip
+                  title={getTooltipHtml(
+                    getTrustIncreaseString(characterObject)
+                  )}
+                >
+                  <div>
+                    <CustomCheckbox
+                      label="Trust"
+                      checked={trustBonus}
+                      onChange={(e) => {
+                        setTrustBonus(e.target.checked);
+                      }}
+                    />
+                  </div>
+                </StatsChangeTooltip>
+              </div>
+              <div className="checkbox">
+                <StatsChangeTooltip
+                  title={getTooltipHtml(
+                    getPotentialIncreaseString(characterObject)
+                  )}
+                >
+                  <div>
+                    <CustomCheckbox
+                      label={isMobile ? "Pot." : "Potential"}
+                      checked={potentialBonus}
+                      onChange={(e) => {
+                        setPotentialBonus(e.target.checked);
+                      }}
+                    />
+                  </div>
+                </StatsChangeTooltip>
+              </div>
+            </div>
+          )}
+        </div>
+        <div className="spacer" />
+        <div className="level-slider-container">
+          <label htmlFor="level-slider-input">Level</label>
+          <Input
+            id="level-slider-input"
+            className="level-slider-input"
+            value={opLevel}
+            onChange={(e) => {
+              if (e.target.value === "") {
+                setOpLevel(1);
+              } else {
+                setOpLevel(
+                  Math.min(Number(e.target.value), phases[eliteLevel].maxLevel)
+                );
+              }
+            }}
+            onKeyPress={(e) => {
+              if (!/^\d$/.test(e.key)) {
+                e.preventDefault();
+              }
+            }}
+            inputProps={{
+              maxLength: 2,
+              onFocus: (e) => e.target.select(),
+              type: "number",
+            }}
+          />
+          <div className="level-slider-border">
+            <SliderUnstyled
+              aria-label="Level slider"
+              className="level-slider"
+              value={opLevel}
+              // @ts-expect-error MUI typing tells me to do this
+              onChange={(e: Event) => setOpLevel(Number(e.target.value))}
+              min={1}
+              max={phases[eliteLevel].maxLevel}
+            />
+          </div>
+        </div>
+      </div>
       <dl className={isSummon ? "summon-stats" : "operator-stats"}>
         {isSummon && (
           <div className="summon-icon">
@@ -84,7 +297,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
             <AttackSpeedIcon aria-hidden="true" />{" "}
             {isMobile ? "ASPD" : "Attack Speed"}
           </dt>
-          <dd>{attacksPerSecond} sec</dd>
+          <dd>{Math.round(secondsPerAttack * 100) / 100} sec</dd>
         </div>
 
         <div className="arts-resistance">
@@ -130,16 +343,217 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
 export default CharacterStats;
 
 const styles = (theme: Theme) => css`
+  .stats-controls {
+    display: flex;
+    flex-direction: row;
+    height: ${theme.spacing(8)};
+    background: ${theme.palette.midtone.main};
+    margin-top: ${theme.spacing(3)};
+    border-bottom: ${theme.spacing(0.125)} solid
+      ${theme.palette.midtoneBrighterer.main};
+    border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+
+    ${theme.breakpoints.down("mobile")} {
+      flex-direction: column-reverse;
+      border-radius: 0;
+      margin-top: ${theme.spacing(9)};
+    }
+
+    .trust-and-elite-buttons {
+      display: flex;
+      height: ${theme.spacing(8)};
+
+      .elite-buttons {
+        height: ${theme.spacing(8)};
+
+        button {
+          padding: ${theme.spacing(0, 2)};
+          border: none;
+          border-radius: 0;
+
+          ${theme.breakpoints.down("mobile")} {
+            padding: ${theme.spacing(0, 1.375)};
+            border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+          }
+
+          path {
+            fill: ${theme.palette.midtoneBrighterer.main};
+          }
+
+          .elite-zero path {
+            fill: transparent;
+            stroke: ${theme.palette.midtoneBrighterer.main};
+          }
+        }
+
+        button.elite-zero-button {
+          border-top-left-radius: ${theme.spacing(0.5)};
+        }
+
+        button.active {
+          background: ${theme.palette.midtoneBrighter.main};
+          border-bottom: 3px solid ${theme.palette.white.main};
+
+          path {
+            fill: ${theme.palette.white.main};
+          }
+
+          .elite-zero path {
+            fill: transparent;
+            stroke: ${theme.palette.white.main};
+          }
+        }
+      }
+
+      .checkbox-container {
+        margin: ${theme.spacing(2, 2, 2, 0)};
+        display: flex;
+        flex-direction: row;
+
+        ${theme.breakpoints.down("mobile")} {
+          border: none;
+        }
+
+        .checkbox {
+          margin-left: ${theme.spacing(3)};
+
+          ${theme.breakpoints.down("mobile")} {
+            margin-left: ${theme.spacing(2)};
+          }
+
+          label {
+            padding: ${theme.spacing(0.25)} 0;
+
+            ${theme.breakpoints.down("mobile")} {
+              padding: ${theme.spacing(0.5)} 0;
+            }
+          }
+        }
+      }
+    }
+
+    .mobile-spacer {
+      ${theme.breakpoints.down("mobile")} {
+        flex: 1 1 0;
+      }
+    }
+
+    .spacer {
+      flex: 1 1 0;
+    }
+
+    .level-slider-container {
+      display: flex;
+      flex-direction: row;
+      margin-right: ${theme.spacing(2)};
+
+      ${theme.breakpoints.down("mobile")} {
+        position: relative;
+        height: ${theme.spacing(8)};
+        background: ${theme.palette.midtone.main};
+        margin-right: 0;
+        padding-left: ${theme.spacing(2)};
+        border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+      }
+
+      label {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      .level-slider-input {
+        input {
+          text-align: center;
+        }
+
+        background: ${theme.palette.midtoneDarker.main};
+        width: ${theme.spacing(5)};
+        height: ${theme.spacing(4)};
+        margin: ${theme.spacing(2, 1)};
+        color: ${theme.palette.white.main};
+        border-radius: ${theme.spacing(0.5)};
+      }
+
+      .level-slider-border {
+        width: ${theme.spacing(32)};
+        height: ${theme.spacing(3)};
+        margin: auto 0;
+        padding: ${theme.spacing(0.5, 2.25)};
+        border-radius: ${theme.spacing(0.5)};
+        border: ${theme.spacing(0.25)} solid
+          ${theme.palette.midtoneBrighterer.main};
+
+        ${theme.breakpoints.down("mobile")} {
+          flex-grow: 1;
+          width: 100%;
+          margin-right: ${theme.spacing(2)};
+        }
+
+        .level-slider {
+          display: inline-block;
+          width: ${theme.spacing(32)};
+          height: ${theme.spacing(3)};
+          position: relative;
+          cursor: pointer;
+
+          ${theme.breakpoints.down("mobile")} {
+            flex-grow: 1;
+            width: 100%;
+          }
+
+          .MuiSlider-track {
+            display: block;
+            position: absolute;
+            height: ${theme.spacing(3)};
+            margin-left: ${theme.spacing(-1.75)};
+            border-radius: ${theme.spacing(0.25)};
+            background: ${theme.palette.midtoneBrighter.main};
+          }
+
+          .MuiSlider-rail {
+            display: block;
+            position: absolute;
+            width: 100%;
+            padding-right: ${theme.spacing(1.75)};
+            height: ${theme.spacing(3)};
+          }
+
+          .MuiSlider-thumb {
+            position: absolute;
+            display: grid;
+            margin-left: ${theme.spacing(-1.75)};
+            margin-top: ${theme.spacing(0)};
+            border-radius: ${theme.spacing(0.25)};
+            height: ${theme.spacing(3)};
+            width: ${theme.spacing(3.5)};
+            background-attachment: fixed;
+            background: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.5 0.5C0.776143 0.5 1 0.723858 1 1L1 10C1 10.2761 0.776142 10.5 0.5 10.5C0.223858 10.5 -1.20705e-08 10.2761 0 10L3.93396e-07 1C4.05467e-07 0.723858 0.223858 0.5 0.5 0.5Z' fill='%23484858'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.5 0.5C5.77614 0.5 6 0.723858 6 1L6 10C6 10.2761 5.77614 10.5 5.5 10.5C5.22386 10.5 5 10.2761 5 10L5 1C5 0.723858 5.22386 0.5 5.5 0.5Z' fill='%23484858'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 0.5C10.7761 0.5 11 0.723858 11 1V10C11 10.2761 10.7761 10.5 10.5 10.5C10.2239 10.5 10 10.2761 10 10V1C10 0.723858 10.2239 0.5 10.5 0.5Z' fill='%23484858'/%3E%3C/svg%3E%0A")
+              no-repeat center ${theme.palette.gray.main};
+
+            &.Mui-focusVisible {
+              box-shadow: 0 0 0 0.05em #fff,
+                0 0 0.15em 0.1em ${theme.palette.blue.main};
+            }
+          }
+
+          .MuiSlider-thumb:hover {
+            background: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.5 0.5C0.776143 0.5 1 0.723858 1 1L1 10C1 10.2761 0.776142 10.5 0.5 10.5C0.223858 10.5 -1.20705e-08 10.2761 0 10L3.93396e-07 1C4.05467e-07 0.723858 0.223858 0.5 0.5 0.5Z' fill='%2387879B'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.5 0.5C5.77614 0.5 6 0.723858 6 1L6 10C6 10.2761 5.77614 10.5 5.5 10.5C5.22386 10.5 5 10.2761 5 10L5 1C5 0.723858 5.22386 0.5 5.5 0.5Z' fill='%2387879B'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 0.5C10.7761 0.5 11 0.723858 11 1V10C11 10.2761 10.7761 10.5 10.5 10.5C10.2239 10.5 10 10.2761 10 10V1C10 0.723858 10.2239 0.5 10.5 0.5Z' fill='%2387879B'/%3E%3C/svg%3E%0A")
+              no-repeat center ${theme.palette.white.main};
+          }
+        }
+      }
+    }
+  }
+
   dl {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-auto-flow: column;
     gap: ${theme.spacing(0.25)};
-    margin: ${theme.spacing(3, 0, 0)};
+    margin-top: 0;
 
     ${theme.breakpoints.down("mobile")} {
       grid-auto-flow: unset;
-      margin: ${theme.spacing(2, 0, 0)};
     }
 
     &.operator-stats {
@@ -148,10 +562,6 @@ const styles = (theme: Theme) => css`
       ${theme.breakpoints.down("mobile")} {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, max-content);
-      }
-
-      .health {
-        border-top-left-radius: ${theme.spacing(0.5)};
       }
 
       .attack-power {
@@ -243,7 +653,7 @@ const styles = (theme: Theme) => css`
     .range {
       grid-row-start: span 2;
       position: relative;
-      border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
+      border-radius: ${theme.spacing(0, 0, 0.5, 0)};
 
       ${theme.breakpoints.down("mobile")} {
         grid-row: 5;

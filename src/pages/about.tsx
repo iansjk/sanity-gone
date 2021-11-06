@@ -37,6 +37,11 @@ const members: { name: string; role: string; avatar: string }[] = [
     avatar: "thanik.jpg",
   },
   {
+    name: "iana",
+    role: "Writer, Editor",
+    avatar: "iana.png"
+  },
+  {
     name: "Kirahuang",
     role: "Host, Advisor",
     avatar: "kirahuang.png",

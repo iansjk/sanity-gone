@@ -29,6 +29,7 @@ interface CharacterPhaseObject {
   range: RangeObject;
   maxLevel: number;
   attributesKeyFrames: AttributeKeyFrame[];
+
   [otherProperties: string]: unknown;
 }
 
@@ -43,6 +44,9 @@ export interface CharacterObject {
   description: string;
   phases: CharacterPhaseObject[];
   rarity: number; // 0-indexed, so a 1* op has value 0
+  favorKeyFrames: FavorKeyFrame[];
+  potentialRanks: PotentialRanks[];
+
   [otherProperties: string]: unknown;
 }
 
@@ -54,6 +58,34 @@ export interface CharacterStatValues {
   dpCost: number,
   blockCount: number,
   redeployTimeInSeconds: number,
-  attacksPerSecond: number,
+  secondsPerAttack: number,
   rangeObject: RangeObject
+}
+
+// trust bonuses... agh
+// should only ever be HP, ATK, or DEF (RES is included for posterity)
+export interface FavorKeyFrame {
+  level: number,
+  data: {
+    maxHp: number;
+    atk: number;
+    def: number;
+    magicResistance: number;
+    [otherProperties: string]: unknown;
+  }
+}
+
+// potential bonuses
+// kill me now
+export interface PotentialRanks {
+  buff: {
+    attributes: {
+      attributeModifiers: {
+        attributeType: number;
+        value: number;
+      }[];
+    }
+  } | null;
+  type: number;
+  description: string;
 }

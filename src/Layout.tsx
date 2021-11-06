@@ -1,12 +1,9 @@
+import { Fragment, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
-import { Fragment, useState } from "react";
 import { Helmet } from "react-helmet";
-import {
-  BsDiscord as DiscordLogo,
-  BsTwitter as TwitterLogo,
-} from "react-icons/bs";
+import { BsDiscord as DiscordLogo } from "react-icons/bs";
 import "wicg-inert";
 
 import SanityGoneLogo from "./components/SanityGoneLogo";
@@ -561,5 +558,15 @@ const styles =
 
       .rarity-3-stars {
         color: ${theme.palette.blue.main};
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
       }
     `;

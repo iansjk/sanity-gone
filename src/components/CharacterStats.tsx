@@ -25,7 +25,11 @@ import {
 } from "./icons/operatorStats";
 import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
-import { getPotentialIncreaseString, getStatsAtLevel, getTrustIncreaseString } from "../utils/globals";
+import {
+  getPotentialIncreaseString,
+  getStatsAtLevel,
+  getTrustIncreaseString,
+} from "../utils/globals";
 import { summonImage } from "../utils/images";
 import CustomCheckbox from "./CustomCheckbox";
 
@@ -54,16 +58,22 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
 
   const setEliteLevel = (level: number) => {
     setEliteLevelFunc(level);
-    if(opLevel > phases[eliteLevel].maxLevel) {
-      setOpLevel(phases[eliteLevel].maxLevel);
+    if (opLevel > phases[level].maxLevel) {
+      setOpLevel(phases[level].maxLevel);
     }
-  }
+  };
   const getTooltipHtml = (str: string) => {
     return str.split("\n").map((str) => {
       const strArray = str.split(" "); // split the array
       // we want to take the last part of the string, and wrap it in a blue span
-      return <p key={str} style={{ margin: 0 }}>{strArray.slice(0, -1).join(" ")} <span
-        style={{ color: theme.palette.blue.main }}>{strArray[strArray.length - 1]}</span></p>;
+      return (
+        <p key={str} style={{ margin: 0 }}>
+          {strArray.slice(0, -1).join(" ")}
+          <span style={{ color: theme.palette.blue.main }}>
+            {strArray[strArray.length - 1]}
+          </span>
+        </p>
+      );
     });
   };
 
@@ -81,7 +91,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
     eliteLevel: eliteLevel,
     level: opLevel,
     trust: trustBonus,
-    pots: potentialBonus
+    pots: potentialBonus,
   });
 
   return (
@@ -93,7 +103,10 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
         <div className="trust-and-elite-buttons">
           <ButtonGroup variant="text" className="elite-buttons">
             <Button
-              className={"elite-zero-button " + (eliteLevel === 0 ? "active" : "inactive")}
+              className={
+                "elite-zero-button " +
+                (eliteLevel === 0 ? "active" : "inactive")
+              }
               onClick={() => {
                 setEliteLevel(0);
               }}
@@ -102,98 +115,108 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
             >
               <EliteZeroIcon className="elite-zero" />
             </Button>
-            {maxElite >= 1 && <Button
-              className={eliteLevel === 1 ? "active" : "inactive"}
-              onClick={() => {
-                setEliteLevel(1);
-              }}
-              // @ts-expect-error custom palette color
-              color="white"
-            >
-              <EliteOneIcon />
-            </Button>}
-            {maxElite >= 2 && <Button
-              className={eliteLevel === 2 ? "active" : "inactive"}
-              onClick={() => {
-                setEliteLevel(2);
-              }}
-              // @ts-expect-error custom palette color
-              color="white"
-            >
-              <EliteTwoIcon />
-            </Button>}
+            {maxElite >= 1 && (
+              <Button
+                className={eliteLevel === 1 ? "active" : "inactive"}
+                onClick={() => {
+                  setEliteLevel(1);
+                }}
+                // @ts-expect-error custom palette color
+                color="white"
+              >
+                <EliteOneIcon />
+              </Button>
+            )}
+            {maxElite >= 2 && (
+              <Button
+                className={eliteLevel === 2 ? "active" : "inactive"}
+                onClick={() => {
+                  setEliteLevel(2);
+                }}
+                // @ts-expect-error custom palette color
+                color="white"
+              >
+                <EliteTwoIcon />
+              </Button>
+            )}
           </ButtonGroup>
           <div className="mobile-spacer" />
-          {!isSummon && <div className="checkbox-container">
-            <div className="checkbox">
-              <Tooltip
-                title={getTooltipHtml(getTrustIncreaseString(characterObject))}
-                placement="top"
-                arrow={true}
-                componentsProps={{
-                  tooltip: {
-                    sx: {
-                      backgroundColor: theme.palette.black.main,
-                      padding: theme.spacing(0.5, 1),
-                      borderRadius: theme.spacing(0.25),
-                      fontSize: theme.typography.body3.fontSize,
-                      lineHeight: theme.typography.body3.lineHeight,
-                      textAlign: "left",
+          {!isSummon && (
+            <div className="checkbox-container">
+              <div className="checkbox">
+                <Tooltip
+                  title={getTooltipHtml(
+                    getTrustIncreaseString(characterObject)
+                  )}
+                  placement="top"
+                  arrow={true}
+                  componentsProps={{
+                    tooltip: {
+                      sx: {
+                        backgroundColor: theme.palette.black.main,
+                        padding: theme.spacing(0.5, 1),
+                        borderRadius: theme.spacing(0.25),
+                        fontSize: theme.typography.body3.fontSize,
+                        lineHeight: theme.typography.body3.lineHeight,
+                        textAlign: "left",
+                      },
                     },
-                  },
-                  arrow: {
-                    sx: {
-                      color: theme.palette.black.main,
+                    arrow: {
+                      sx: {
+                        color: theme.palette.black.main,
+                      },
                     },
-                  },
-                }}
-              >
-                <div>
-                  <CustomCheckbox
-                    label="Trust"
-                    checked={trustBonus}
-                    onChange={(e) => {
-                      setTrustBonus(e.target.checked);
-                    }}
-                  />
-                </div>
-              </Tooltip>
+                  }}
+                >
+                  <div>
+                    <CustomCheckbox
+                      label="Trust"
+                      checked={trustBonus}
+                      onChange={(e) => {
+                        setTrustBonus(e.target.checked);
+                      }}
+                    />
+                  </div>
+                </Tooltip>
+              </div>
+              <div className="checkbox">
+                <Tooltip
+                  title={getTooltipHtml(
+                    getPotentialIncreaseString(characterObject)
+                  )}
+                  placement="top"
+                  arrow={true}
+                  componentsProps={{
+                    tooltip: {
+                      sx: {
+                        backgroundColor: theme.palette.black.main,
+                        padding: theme.spacing(0.5, 1),
+                        borderRadius: theme.spacing(0.25),
+                        fontSize: theme.typography.body3.fontSize,
+                        lineHeight: theme.typography.body3.lineHeight,
+                        textAlign: "left",
+                      },
+                    },
+                    arrow: {
+                      sx: {
+                        color: theme.palette.black.main,
+                      },
+                    },
+                  }}
+                >
+                  <div>
+                    <CustomCheckbox
+                      label={isMobile ? "Pot." : "Potential"}
+                      checked={potentialBonus}
+                      onChange={(e) => {
+                        setPotentialBonus(e.target.checked);
+                      }}
+                    />
+                  </div>
+                </Tooltip>
+              </div>
             </div>
-            <div className="checkbox">
-              <Tooltip
-                title={getTooltipHtml(getPotentialIncreaseString(characterObject))}
-                placement="top"
-                arrow={true}
-                componentsProps={{
-                  tooltip: {
-                    sx: {
-                      backgroundColor: theme.palette.black.main,
-                      padding: theme.spacing(0.5, 1),
-                      borderRadius: theme.spacing(0.25),
-                      fontSize: theme.typography.body3.fontSize,
-                      lineHeight: theme.typography.body3.lineHeight,
-                      textAlign: "left",
-                    },
-                  },
-                  arrow: {
-                    sx: {
-                      color: theme.palette.black.main,
-                    },
-                  },
-                }}
-              >
-                <div>
-                  <CustomCheckbox
-                    label={isMobile ? "Pot." : "Potential"}
-                    checked={potentialBonus}
-                    onChange={(e) => {
-                      setPotentialBonus(e.target.checked);
-                    }}
-                  />
-                </div>
-              </Tooltip>
-            </div>
-          </div>}
+          )}
         </div>
         <div className="spacer" />
         <div className="level-slider-container">
@@ -205,11 +228,13 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               if (e.target.value === "") {
                 setOpLevel(1);
               } else {
-                setOpLevel(Math.min(Number(e.target.value), phases[eliteLevel].maxLevel));
+                setOpLevel(
+                  Math.min(Number(e.target.value), phases[eliteLevel].maxLevel)
+                );
               }
             }}
             onKeyPress={(e) => {
-              if(!/^\d$/.test(e.key)) {
+              if (!/^\d$/.test(e.key)) {
                 e.preventDefault();
               }
             }}
@@ -322,7 +347,8 @@ const styles = (theme: Theme) => css`
     height: ${theme.spacing(8)};
     background: ${theme.palette.midtone.main};
     margin-top: ${theme.spacing(3)};
-    border-bottom: ${theme.spacing(0.125)} solid ${theme.palette.midtoneBrighterer.main};
+    border-bottom: ${theme.spacing(0.125)} solid
+      ${theme.palette.midtoneBrighterer.main};
     border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
 
     ${theme.breakpoints.down("mobile")} {
@@ -334,7 +360,6 @@ const styles = (theme: Theme) => css`
     .trust-and-elite-buttons {
       display: flex;
       height: ${theme.spacing(8)};
-
 
       .elite-buttons {
         height: ${theme.spacing(8)};
@@ -444,7 +469,8 @@ const styles = (theme: Theme) => css`
         margin: auto 0;
         padding: ${theme.spacing(0.5, 2.25)};
         border-radius: ${theme.spacing(0.5)};
-        border: ${theme.spacing(0.25)} solid ${theme.palette.midtoneBrighterer.main};
+        border: ${theme.spacing(0.25)} solid
+          ${theme.palette.midtoneBrighterer.main};
 
         ${theme.breakpoints.down("mobile")} {
           flex-grow: 1;
@@ -490,11 +516,13 @@ const styles = (theme: Theme) => css`
             height: ${theme.spacing(3)};
             width: ${theme.spacing(3.5)};
             background-attachment: fixed;
-            background: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.5 0.5C0.776143 0.5 1 0.723858 1 1L1 10C1 10.2761 0.776142 10.5 0.5 10.5C0.223858 10.5 -1.20705e-08 10.2761 0 10L3.93396e-07 1C4.05467e-07 0.723858 0.223858 0.5 0.5 0.5Z' fill='%23484858'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.5 0.5C5.77614 0.5 6 0.723858 6 1L6 10C6 10.2761 5.77614 10.5 5.5 10.5C5.22386 10.5 5 10.2761 5 10L5 1C5 0.723858 5.22386 0.5 5.5 0.5Z' fill='%23484858'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 0.5C10.7761 0.5 11 0.723858 11 1V10C11 10.2761 10.7761 10.5 10.5 10.5C10.2239 10.5 10 10.2761 10 10V1C10 0.723858 10.2239 0.5 10.5 0.5Z' fill='%23484858'/%3E%3C/svg%3E%0A") no-repeat center ${theme.palette.gray.main};
+            background: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.5 0.5C0.776143 0.5 1 0.723858 1 1L1 10C1 10.2761 0.776142 10.5 0.5 10.5C0.223858 10.5 -1.20705e-08 10.2761 0 10L3.93396e-07 1C4.05467e-07 0.723858 0.223858 0.5 0.5 0.5Z' fill='%23484858'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.5 0.5C5.77614 0.5 6 0.723858 6 1L6 10C6 10.2761 5.77614 10.5 5.5 10.5C5.22386 10.5 5 10.2761 5 10L5 1C5 0.723858 5.22386 0.5 5.5 0.5Z' fill='%23484858'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 0.5C10.7761 0.5 11 0.723858 11 1V10C11 10.2761 10.7761 10.5 10.5 10.5C10.2239 10.5 10 10.2761 10 10V1C10 0.723858 10.2239 0.5 10.5 0.5Z' fill='%23484858'/%3E%3C/svg%3E%0A")
+              no-repeat center ${theme.palette.gray.main};
           }
 
           .MuiSlider-thumb:hover {
-            background: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.5 0.5C0.776143 0.5 1 0.723858 1 1L1 10C1 10.2761 0.776142 10.5 0.5 10.5C0.223858 10.5 -1.20705e-08 10.2761 0 10L3.93396e-07 1C4.05467e-07 0.723858 0.223858 0.5 0.5 0.5Z' fill='%2387879B'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.5 0.5C5.77614 0.5 6 0.723858 6 1L6 10C6 10.2761 5.77614 10.5 5.5 10.5C5.22386 10.5 5 10.2761 5 10L5 1C5 0.723858 5.22386 0.5 5.5 0.5Z' fill='%2387879B'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 0.5C10.7761 0.5 11 0.723858 11 1V10C11 10.2761 10.7761 10.5 10.5 10.5C10.2239 10.5 10 10.2761 10 10V1C10 0.723858 10.2239 0.5 10.5 0.5Z' fill='%2387879B'/%3E%3C/svg%3E%0A") no-repeat center ${theme.palette.white.main};
+            background: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.5 0.5C0.776143 0.5 1 0.723858 1 1L1 10C1 10.2761 0.776142 10.5 0.5 10.5C0.223858 10.5 -1.20705e-08 10.2761 0 10L3.93396e-07 1C4.05467e-07 0.723858 0.223858 0.5 0.5 0.5Z' fill='%2387879B'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.5 0.5C5.77614 0.5 6 0.723858 6 1L6 10C6 10.2761 5.77614 10.5 5.5 10.5C5.22386 10.5 5 10.2761 5 10L5 1C5 0.723858 5.22386 0.5 5.5 0.5Z' fill='%2387879B'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 0.5C10.7761 0.5 11 0.723858 11 1V10C11 10.2761 10.7761 10.5 10.5 10.5C10.2239 10.5 10 10.2761 10 10V1C10 0.723858 10.2239 0.5 10.5 0.5Z' fill='%2387879B'/%3E%3C/svg%3E%0A")
+              no-repeat center ${theme.palette.white.main};
           }
         }
       }

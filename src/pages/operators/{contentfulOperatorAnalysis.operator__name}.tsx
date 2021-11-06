@@ -35,7 +35,7 @@ interface HTMLToReactContext {
 const htmlToReact = (
   html: string,
   context: HTMLToReactContext,
-  index?: number,
+  index?: number
 ): string | JSX.Element | JSX.Element[] => {
   return parse(replaceSelfClosingHtmlTags(html), {
     replace: (domNode) => {
@@ -62,7 +62,7 @@ const htmlToReact = (
           if (!context.summon) {
             console.log(context);
             throw new Error(
-              "Can't render <SummonStats /> because summon is missing from context. Check your console for context contents",
+              "Can't render <SummonStats /> because summon is missing from context. Check your console for context contents"
             );
           }
           return <CharacterStats characterObject={context.summon} />;
@@ -229,7 +229,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     });
 
   const operatorMap = Object.fromEntries(
-    data.allOperatorsJson.nodes.map(({ name, ...rest }) => [name, rest]),
+    data.allOperatorsJson.nodes.map(({ name, ...rest }) => [name, rest])
   );
 
   const synergies = contentful.synergies.map((syn) => {
@@ -242,9 +242,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     };
     return syn.isGroup
       ? {
-        ...baseProps,
-        iconUrl: syn.customSynergyIcon.localFile.publicURL,
-      }
+          ...baseProps,
+          iconUrl: syn.customSynergyIcon.localFile.publicURL,
+        }
       : { ...baseProps, ...operatorMap[syn.synergyName] };
   });
 
@@ -286,7 +286,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       <Global
         styles={globalOverrideStyles(
           contentful.operator.accentColorInHex,
-          contentful.operator.customBgPositionX,
+          contentful.operator.customBgPositionX
         )}
       />
       <Tabs component="main" css={styles(contentful.operator.accentColorInHex)}>
@@ -302,7 +302,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 <Introduction
                   analysis={htmlToReact(
                     contentful.introduction.childMarkdownRemark.html,
-                    context,
+                    context
                   )}
                   isLimited={contentful.operator.limited}
                   operatorObject={operatorObject}
@@ -354,7 +354,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
             </a>
             <a
               href={`http://prts.wiki/w/${encodeURIComponent(
-                operatorObject.cnName,
+                operatorObject.cnName
               )}`}
               rel="noreferrer noopener"
               target="_blank"
@@ -375,7 +375,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               <span className="section-label">Last updated</span>
               <span className="last-updated">
                 {DateTime.fromISO(contentful.updatedAt).toLocaleString(
-                  DateTime.DATE_FULL,
+                  DateTime.DATE_FULL
                 )}
               </span>
             </div>
@@ -406,15 +406,17 @@ const globalOverrideStyles =
         margin: 0;
       }
 
-      input[type=number] {
+      input[type="number"] {
         -moz-appearance: textfield;
       }
 
       .heading-block {
-        background: linear-gradient(90deg,
-        ${transparentize(0.9, accentColor)},
-        transparent),
-        ${transparentize(0.67, theme.palette.midtoneBrighter.main)};
+        background: linear-gradient(
+            90deg,
+            ${transparentize(0.9, accentColor)},
+            transparent
+          ),
+          ${transparentize(0.67, theme.palette.midtoneBrighter.main)};
       }
 
       header {
@@ -423,7 +425,8 @@ const globalOverrideStyles =
             font-size: ${theme.typography.operatorPageHeading.fontSize}px;
             font-weight: ${theme.typography.operatorPageHeading.fontWeight};
             line-height: ${theme.typography.operatorPageHeading.lineHeight};
-            text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5);
+            text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
+              rgba(0, 0, 0, 0.5);
 
             ${theme.breakpoints.down("mobile")} {
               font-size: ${theme.typography.operatorNameHeading.fontSize}px;
@@ -631,8 +634,10 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
           .card-content {
             box-sizing: border-box;
-            height: calc(100% - ${theme.typography.cardHeading.fontSize}px *
-            ${theme.typography.cardHeading.lineHeight} - ${theme.spacing(4)});
+            height: calc(
+              100% - ${theme.typography.cardHeading.fontSize}px *
+                ${theme.typography.cardHeading.lineHeight} - ${theme.spacing(4)}
+            );
 
             ${theme.breakpoints.down("mobile")} {
               height: 100%;

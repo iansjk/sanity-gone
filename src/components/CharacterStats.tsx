@@ -200,7 +200,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 >
                   <div>
                     <CustomCheckbox
-                      label="Potential"
+                      label={isMobile ? "Pot." : "Potential"}
                       checked={potentialBonus}
                       onChange={(e) => {
                         setPotentialBonus(e.target.checked);
@@ -364,6 +364,7 @@ const styles = (theme: Theme) => css`
           border-radius: 0;
 
           ${theme.breakpoints.down("mobile")} {
+            padding: ${theme.spacing(0, 1.375)};
             border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
           }
 
@@ -403,9 +404,6 @@ const styles = (theme: Theme) => css`
 
         ${theme.breakpoints.down("mobile")} {
           border: none;
-          flex-direction: column;
-          margin: ${theme.spacing(-0.5, 2, 0, 1)};
-          z-index: 1;
         }
 
         .checkbox {
@@ -421,7 +419,11 @@ const styles = (theme: Theme) => css`
         }
       }
     }
-
+    .mobile-spacer {
+      ${theme.breakpoints.down("mobile")} {
+        flex: 1 1 0;
+      }
+    }
     .spacer {
       flex: 1 1 0;
     }

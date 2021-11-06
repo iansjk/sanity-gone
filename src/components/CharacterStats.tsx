@@ -5,10 +5,10 @@ import {
   useTheme,
   Theme,
   ButtonGroup,
+  Button,
   Input,
   SliderUnstyled,
   Tooltip,
-  ButtonBase,
   styled,
   TooltipProps,
   tooltipClasses,
@@ -137,7 +137,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
       <div className="stats-controls">
         <div className="trust-and-elite-buttons">
           <ButtonGroup variant="text" className="elite-buttons">
-            <ButtonBase
+            <Button
               className={
                 "elite-zero-button " +
                 (eliteLevel === 0 ? "active" : "inactive")
@@ -146,30 +146,36 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 setEliteLevel(0);
               }}
               aria-label="Elite 0"
+              // @ts-expect-error custom palette color
+              color="white"
             >
               <EliteZeroIcon className="elite-zero" />
-            </ButtonBase>
+            </Button>
             {maxElite >= 1 && (
-              <ButtonBase
+              <Button
                 className={eliteLevel === 1 ? "active" : "inactive"}
                 onClick={() => {
                   setEliteLevel(1);
                 }}
                 aria-label="Elite 1"
+                // @ts-expect-error custom palette color
+                color="white"
               >
                 <EliteOneIcon />
-              </ButtonBase>
+              </Button>
             )}
             {maxElite >= 2 && (
-              <ButtonBase
+              <Button
                 className={eliteLevel === 2 ? "active" : "inactive"}
                 onClick={() => {
                   setEliteLevel(2);
                 }}
                 aria-label="Elite 2"
+                // @ts-expect-error custom palette color
+                color="white"
               >
                 <EliteTwoIcon />
-              </ButtonBase>
+              </Button>
             )}
           </ButtonGroup>
           <div className="mobile-spacer" />
@@ -362,11 +368,6 @@ const styles = (theme: Theme) => css`
           padding: ${theme.spacing(0, 2)};
           border: none;
           border-radius: 0;
-          transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-
-          &:hover {
-            background-color: rgba(232, 232, 242, 0.04);
-          }
 
           ${theme.breakpoints.down("mobile")} {
             padding: ${theme.spacing(0, 1.375)};

@@ -3,17 +3,13 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
 import { Helmet } from "react-helmet";
-import {
-  BsDiscord as DiscordLogo,
-  BsTwitter as TwitterLogo,
-} from "react-icons/bs";
+import { BsDiscord as DiscordLogo } from "react-icons/bs";
 import "wicg-inert";
 
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 import { lighten, rgba } from "polished";
 import MobileMenu from "./components/MobileMenu";
-import useViewportWidth from "./hooks/useViewportWidth";
 
 interface LayoutProps {
   pageTitle: string;

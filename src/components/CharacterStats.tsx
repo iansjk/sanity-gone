@@ -220,8 +220,9 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
         </div>
         <div className="spacer" />
         <div className="level-slider-container">
-          <p>Level</p>
+          <label htmlFor="level-slider-input">Level</label>
           <Input
+            id="level-slider-input"
             className="level-slider-input"
             value={opLevel}
             onChange={(e) => {
@@ -454,7 +455,7 @@ const styles = (theme: Theme) => css`
         border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
       }
 
-      p {
+      label {
         margin-top: auto;
         margin-bottom: auto;
       }

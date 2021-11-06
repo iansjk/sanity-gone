@@ -363,6 +363,11 @@ const styles = (theme: Theme) => css`
           padding: ${theme.spacing(0, 2)};
           border: none;
           border-radius: 0;
+          transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+          &:hover {
+            background-color: rgba(232, 232, 242, 0.04);
+          }
 
           ${theme.breakpoints.down("mobile")} {
             padding: ${theme.spacing(0, 1.375)};

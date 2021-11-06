@@ -111,6 +111,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               onClick={() => {
                 setEliteLevel(0);
               }}
+              aria-label="Elite 0"
             >
               <EliteZeroIcon className="elite-zero" />
             </ButtonBase>
@@ -120,6 +121,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 onClick={() => {
                   setEliteLevel(1);
                 }}
+                aria-label="Elite 1"
               >
                 <EliteOneIcon />
               </ButtonBase>
@@ -130,6 +132,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 onClick={() => {
                   setEliteLevel(2);
                 }}
+                aria-label="Elite 2"
               >
                 <EliteTwoIcon />
               </ButtonBase>

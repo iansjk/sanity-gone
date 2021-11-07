@@ -202,8 +202,8 @@ const styles = (theme: Theme) => css`
     background: ${theme.palette.midtone.main};
 
     button {
-      /* this is overrides for now, delete if namtar says to use smaller buttons */
       ${theme.breakpoints.down("mobile")} {
+        // change this line to 1.5 when we shrink buttons
         padding: ${theme.spacing(0, 2)};
         border-radius: 0;
       }
@@ -217,18 +217,6 @@ const styles = (theme: Theme) => css`
         &.active {
           path {
             fill: ${theme.palette.white.main};
-          }
-        }
-
-        .elite-zero path {
-          fill: transparent;
-          stroke: ${theme.palette.midtoneBrighterer.main};
-        }
-
-        &.active {
-          .elite-zero path {
-            fill: transparent;
-            stroke: ${theme.palette.white.main};
           }
         }
       }
@@ -252,13 +240,6 @@ const styles = (theme: Theme) => css`
             border-top-right-radius: ${theme.spacing(0.5)};
           }
         }
-
-        /* uncomment this if namtar says to use smaller mobile buttons
-           for consistency - current design is big buttons
-        ${theme.breakpoints.down("mobile")} {
-          border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
-        }
-         */
 
         svg {
           width: 28px;

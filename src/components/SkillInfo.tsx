@@ -209,8 +209,9 @@ const styles = (theme: Theme) => css`
   &.no-range {
     grid-template-columns: 1fr;
 
-    .skill-name-and-type {
-      border-top-right-radius: ${theme.spacing(0.5)};
+    .skill-name-and-type,
+    .sp-and-duration {
+      grid-column: span 2;
     }
   }
 

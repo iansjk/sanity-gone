@@ -5,7 +5,7 @@ import { Fragment } from "react";
 import {
   professionToClass,
   slugify,
-  subProfessionToSubclass,
+  subProfessionIdToSubclass,
   toTitleCase,
 } from "../utils/globals";
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
@@ -40,7 +40,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     position: binaryPosition,
   } = operatorObject;
   const operatorClass = professionToClass(profession);
-  const subclass = subProfessionToSubclass(subProfessionId);
+  const subclass = subProfessionIdToSubclass(subProfessionId);
   const rarity = rawRarity + 1; // 0-indexed;
   const position = description
     .toLowerCase()

@@ -13,7 +13,7 @@ import {
 } from "../../utils/images";
 import {
   professionToClass,
-  subProfessionToSubclass,
+  subProfessionIdToSubclass,
 } from "../../utils/globals";
 import NavigateRightArrow from "../../components/icons/NavigateRightArrow";
 import CustomCheckbox from "../../components/CustomCheckbox";
@@ -87,7 +87,7 @@ const Operators: React.VFC<Props> = (props) => {
         <ul className="operator-list">
           {operatorsToShow.map((op) => {
             const operatorClass = professionToClass(op.profession);
-            const subclass = subProfessionToSubclass(op.subProfessionId);
+            const subclass = subProfessionIdToSubclass(op.subProfessionId);
             const hasGuide = operatorsWithGuides.has(op.name);
             return (
               <ClassNames key={op.id}>

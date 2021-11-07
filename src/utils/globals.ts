@@ -86,8 +86,8 @@ const subProfessionLookup: Record<string, string> = {
   traper: "Trapper",
   dollkeeper: "Puppeteer",
 };
-export const subProfessionToSubclass = (subProfession: string): string =>
-  subProfessionLookup[subProfession];
+export const subProfessionIdToSubclass = (subProfessionId: string): string =>
+  subProfessionLookup[subProfessionId];
 
 const selfClosingTagRegex = /<(?<tagName>[A-Za-z]+) \/>/g;
 export const replaceSelfClosingHtmlTags = (htmlString: string): string =>

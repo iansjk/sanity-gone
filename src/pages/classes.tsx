@@ -37,6 +37,8 @@ const Classes: React.VFC<Props> = ({ data }) => {
   const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
   const [isSubclassMenuOpen, setIsSubclassMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [selectedClass, setSelectedClass] = useState<string | null>(null);
+  const [selectedSubclass, setSelectedSubclass] = useState<string | null>(null);
 
   const handleClassMenuClick: React.MouseEventHandler<HTMLButtonElement> = (
     e
@@ -125,10 +127,14 @@ const Classes: React.VFC<Props> = ({ data }) => {
           </Menu>
         </div>
         <div className="results">
-          <div className="select-class-message">Select operator class</div>
-          <div className="select-subclass-message">
-            Select operator subclass
-          </div>
+          {!selectedClass && (
+            <div className="select-class-message">Select operator class</div>
+          )}
+          {selectedClass && !selectedSubclass && (
+            <div className="select-subclass-message">
+              Select operator subclass
+            </div>
+          )}
         </div>
       </main>
     </Layout>

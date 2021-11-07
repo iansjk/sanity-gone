@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { css, ClassNames } from "@emotion/react";
 import { Theme } from "@mui/material";
 
@@ -18,7 +19,6 @@ import {
 } from "./icons/operatorStats";
 import { RangeObject } from "../utils/types";
 import CharacterRange from "./CharacterRange";
-import { useState } from "react";
 import RibbonButton from "./RibbonButton";
 import RibbonButtonGroup from "./RibbonButtonGroup";
 

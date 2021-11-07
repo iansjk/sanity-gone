@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ClassNames, css } from "@emotion/react";
 import { Theme } from "@mui/material";
 
@@ -15,7 +16,6 @@ import CharacterRange from "./CharacterRange";
 import { RangeObject } from "../utils/types";
 import SliderWithInput from "./SliderWithInput";
 import StarIcon from "./icons/StarIcon";
-import { useState } from "react";
 
 enum SkillType {
   "Passive" = 0,

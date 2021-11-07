@@ -4,8 +4,6 @@ import {
   useMediaQuery,
   useTheme,
   Theme,
-  Input,
-  SliderUnstyled,
   Tooltip,
   styled,
   TooltipProps,

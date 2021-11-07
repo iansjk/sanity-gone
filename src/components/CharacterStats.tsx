@@ -215,8 +215,8 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
         </div>
         <div className="spacer" />
         <SliderWithInput
-          className="level-slider"
           label="Level"
+          identifier={isSummon ? "summon-level" : "operator-level"}
           inputProps={{
             value: opLevel,
             onChange: (e) => {
@@ -402,7 +402,7 @@ const styles = (theme: Theme) => css`
       }
     }
 
-    .level-slider {
+    .slider-container {
       margin-right: ${theme.spacing(2)};
 
       ${theme.breakpoints.down("mobile")} {

@@ -7,23 +7,27 @@ import {
   Theme,
 } from "@mui/material";
 
-import React from "react";
-
-export type SliderWithInputProps = {
+export interface SliderWithInputProps {
   label: string;
+  identifier: string; // ensure there is a unique identifier
   inputProps?: InputProps;
   sliderProps?: SliderUnstyledProps;
-};
+}
+
 const SliderWithInput: React.VFC<SliderWithInputProps> = (props) => {
-  const { label, inputProps, sliderProps, ...rest } = props;
+  const { label, inputProps, sliderProps, identifier, ...rest } = props;
 
   return (
     <div className="slider-container" css={styles} {...rest}>
-      <label htmlFor="slider-input">{label}</label>
-      <Input id="slider-input" className="slider-input" {...inputProps} />
+      <label htmlFor={`slider-input-${identifier}`}>{label}</label>
+      <Input
+        id={`slider-input-${identifier}`}
+        className="slider-input"
+        {...inputProps}
+      />
       <div className="slider-border">
         <SliderUnstyled
-          aria-label={`${label} slider`}
+          aria-label={`${identifier} slider`}
           className="slider"
           {...sliderProps}
         />
@@ -47,6 +51,9 @@ const styles = (theme: Theme) => css`
     input {
       text-align: center;
       min-width: ${theme.spacing(3)};
+      font-size: ${theme.typography.navigationLink.fontSize}px;
+      font-weight: ${theme.typography.navigationLinkBold.fontWeight};
+      line-height: ${theme.typography.navigationLink.lineHeight};
     }
 
     background: ${theme.palette.midtoneDarker.main};

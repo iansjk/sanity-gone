@@ -22,6 +22,8 @@ import {
 import CharacterRange from "./CharacterRange";
 import { RangeObject } from "../utils/types";
 import SliderWithInput from "./SliderWithInput";
+import StarIcon from "./icons/StarIcon";
+import { useState } from "react";
 
 enum SkillType {
   "Passive" = 0,
@@ -69,16 +71,29 @@ export interface SkillObject {
 
 export interface SkillInfoProps {
   skillObject: SkillObject;
+  isRecommended: boolean;
 }
 
 const SkillInfo: React.VFC<
   SkillInfoProps & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
-  const { skillObject, className, ...rest } = props;
+  const { skillObject, className, isRecommended, ...rest } = props;
   const { skillId, iconId, levels } = skillObject;
   const { name, description, spData, range, duration, skillType, blackboard } =
     levels[levels.length - 1];
   const { initSp, spCost, spType } = spData;
+
+  const maxLevel = levels.length;
+
+  const display = (skillLvl: number) => {
+    if (skillLvl >= 8) {
+      return `M${skillLvl - 7}`;
+    }
+    return skillLvl;
+  };
+
+  const [skillLevel, setSkillLevel] = useState(maxLevel);
+
   return (
     <ClassNames>
       {({ cx }) => (
@@ -87,8 +102,44 @@ const SkillInfo: React.VFC<
           className={cx(className, !range && "no-range")}
           {...rest}
         >
-          <div className="skill-controls">
-            <SliderWithInput label="Rank" inputProps={{}} sliderProps={{}} />
+          <div className="skill-header">
+            {isRecommended && (
+              <span className="recommended-skill">
+                <StarIcon aria-hidden="true" /> Recommended Skill
+              </span>
+            )}
+            <div className="spacer" />
+            <SliderWithInput
+              label="Rank"
+              identifier="skill-rank"
+              inputProps={{
+                value: display(skillLevel),
+                onKeyPress: (e) => {
+                  if (!/^\d$/.test(e.key)) {
+                    e.preventDefault();
+                  }
+                },
+                onChange: (e) => {
+                  if (e.target.value === "") {
+                    setSkillLevel(1);
+                  } else if (Number(e.target.value) > maxLevel) {
+                    setSkillLevel(Number(`${e.target.value}`.slice(0, 1)));
+                  } else {
+                    setSkillLevel(Math.min(Number(e.target.value), maxLevel));
+                  }
+                },
+                inputProps: {
+                  onFocus: (e) => e.target.select(),
+                },
+              }}
+              sliderProps={{
+                value: skillLevel,
+                // @ts-expect-error MUI typing tells me to do this
+                onChange: (e: Event) => setSkillLevel(Number(e.target.value)),
+                min: 1,
+                max: maxLevel,
+              }}
+            />
           </div>
           <div className="skill-name-and-type">
             <img
@@ -99,11 +150,11 @@ const SkillInfo: React.VFC<
             <h3 className="skill-name">{name}</h3>
             <span className="skill-and-sp-type">
               <span className={cx("sp-type", `sp-type-${spType}`)}>
-                {SkillSpType[spType]}
+                {SkillSpType[levels[skillLevel - 1].spData.spType]}
               </span>
               <span aria-hidden="true"> · </span>
               <span className={cx("skill-type", `skill-type-${skillType}`)}>
-                {SkillType[skillType]}
+                {SkillType[levels[skillLevel - 1].skillType]}
               </span>
             </span>
           </div>
@@ -112,32 +163,36 @@ const SkillInfo: React.VFC<
               <dt>
                 <InitialSPIcon /> Initial SP
               </dt>
-              <dd>{initSp}</dd>
+              <dd>{levels[skillLevel - 1].spData.initSp}</dd>
             </div>
 
             <div className="sp-cost">
               <dt>
                 <SPCostIcon /> SP Cost
               </dt>
-              <dd>{spCost}</dd>
+              <dd>{levels[skillLevel - 1].spData.spCost}</dd>
             </div>
 
             <div className="duration">
               <dt>
                 <SkillDurationIcon /> Duration
               </dt>
-              <dd>{duration} sec</dd>
+              <dd>{levels[skillLevel - 1].duration} sec</dd>
             </div>
           </dl>
           <p
             className="skill-description"
             dangerouslySetInnerHTML={{
-              __html: descriptionToHtml(description, blackboard),
+              __html: descriptionToHtml(
+                levels[skillLevel - 1].description,
+                levels[skillLevel - 1].blackboard
+              ),
             }}
           />
-          {range && (
+          {levels[skillLevel - 1].range && (
             <div className="range">
-              <CharacterRange rangeObject={range} />
+              {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+              <CharacterRange rangeObject={levels[skillLevel - 1].range!} />
             </div>
           )}
         </section>
@@ -150,7 +205,7 @@ export default SkillInfo;
 const styles = (theme: Theme) => css`
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: max-content max-content 1fr;
+  grid-template-rows: repeat(3, max-content) 1fr;
   gap: ${theme.spacing(0.25)};
   margin-top: ${theme.spacing(3)};
 
@@ -175,8 +230,64 @@ const styles = (theme: Theme) => css`
     background-color: ${theme.palette.midtoneDarker.main};
   }
 
+  .skill-header {
+    grid-row-start: 1;
+    grid-column: span 2;
+    margin-bottom: ${theme.spacing(-0.25)};
+    border-bottom: 1px solid ${theme.palette.midtoneBrighterer.main};
+
+    background: ${theme.palette.midtone.main};
+    border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    ${theme.breakpoints.down("mobile")} {
+      flex-direction: column;
+      margin-right: ${theme.spacing(2)};
+    }
+
+    .recommended-skill {
+      display: inline-flex;
+      color: ${theme.palette.yellow.main};
+      font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+      font-weight: ${theme.typography.skillTalentHeading.fontWeight};
+      line-height: ${theme.typography.skillTalentHeading.lineHeight};
+      align-items: center;
+      white-space: nowrap;
+      margin-left: ${theme.spacing(3)};
+
+      ${theme.breakpoints.down("mobile")} {
+        margin-left: ${theme.spacing(2)};
+        height: ${theme.spacing(8)};
+      }
+
+      svg path {
+        fill: ${theme.palette.yellow.main};
+      }
+
+      svg {
+        margin-right: ${theme.spacing(1)};
+      }
+    }
+    .spacer {
+      flex: 1 1 0;
+    }
+    .slider-container {
+      margin-right: ${theme.spacing(2)};
+      height: ${theme.spacing(8)};
+
+      ${theme.breakpoints.down("mobile")} {
+        position: relative;
+        margin-right: 0;
+        padding-left: ${theme.spacing(2)};
+        border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+      }
+    }
+  }
+
   .skill-name-and-type {
-    border-top-left-radius: ${theme.spacing(0.5)};
+    grid-row-start: 2;
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-template-rows: repeat(2, max-content);
@@ -209,6 +320,11 @@ const styles = (theme: Theme) => css`
       font-size: ${theme.typography.body2.fontSize}px;
       line-height: ${theme.typography.body2.lineHeight};
 
+      ${theme.breakpoints.down("mobile")} {
+        font-size: ${theme.typography.body3.fontSize}px;
+        line-height: ${theme.typography.body3.lineHeight};
+      }
+
       .sp-type-1 {
         color: ${theme.palette.lime.main};
       }
@@ -229,7 +345,7 @@ const styles = (theme: Theme) => css`
 
   .sp-and-duration {
     background-color: inherit;
-    grid-row-start: 2;
+    grid-row-start: 3;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: ${theme.spacing(0.25)};
@@ -260,7 +376,7 @@ const styles = (theme: Theme) => css`
   }
 
   .skill-description {
-    grid-row-start: 3;
+    grid-row-start: 4;
     grid-column-start: span 2;
     padding: ${theme.spacing(2)};
     margin: 0;
@@ -289,10 +405,9 @@ const styles = (theme: Theme) => css`
     align-items: center;
     justify-content: center;
     grid-row-start: span 2;
-    border-top-right-radius: ${theme.spacing(0.5)};
 
     ${theme.breakpoints.down("mobile")} {
-      grid-row: 2;
+      grid-row: 3;
       grid-column: 2;
     }
   }

@@ -25,10 +25,16 @@ const styles = (theme: Theme) => css`
   grid-auto-flow: column;
   column-gap: ${theme.spacing(1)};
   align-items: center;
-  cursor: pointer;
 
   &.disabled {
     opacity: 0.3;
+  }
+
+  &:not(.disabled) {
+    cursor: pointer;
+    .checkbox-input > input {
+      cursor: pointer;
+    }
   }
 
   .checkbox-input {
@@ -42,7 +48,6 @@ const styles = (theme: Theme) => css`
       opacity: 0;
       width: 20px;
       height: 20px;
-      cursor: pointer;
     }
 
     & > * {

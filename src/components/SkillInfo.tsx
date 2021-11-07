@@ -113,6 +113,8 @@ const SkillInfo: React.VFC<
                 onChange: (e) => {
                   if (e.target.value === "") {
                     setSkillLevel(1);
+                  } else if (!/^(M?\d|\d+)$/.test(e.target.value)) {
+                    return; //format isn't being followed, don't set the value
                   } else if (Number(e.target.value) > maxLevel) {
                     setSkillLevel(Number(`${e.target.value}`.slice(0, 1)));
                   } else {

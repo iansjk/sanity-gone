@@ -112,7 +112,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
                   }}
                   aria-label={`Elite ${elite}`}
                 >
-                  {elite === 0 && <EliteZeroIcon />}
+                  {elite === 0 && <EliteZeroIcon className="elite-zero" />}
                   {elite === 1 && <EliteOneIcon />}
                   {elite === 2 && <EliteTwoIcon />}
                 </RibbonButton>
@@ -197,6 +197,10 @@ const styles = (theme: Theme) => css`
     display: flex;
     flex-direction: row;
 
+    margin-bottom: ${theme.spacing(-0.25)};
+    border-bottom: 1px solid ${theme.palette.midtoneBrighterer.main};
+    background: ${theme.palette.midtone.main};
+
     button {
       /* this is overrides for now, delete if namtar says to use smaller buttons */
       ${theme.breakpoints.down("mobile")} {
@@ -205,6 +209,29 @@ const styles = (theme: Theme) => css`
       }
     }
     .elite-buttons {
+      button {
+        path {
+          fill: ${theme.palette.midtoneBrighterer.main};
+        }
+
+        &.active {
+          path {
+            fill: ${theme.palette.white.main};
+          }
+        }
+
+        .elite-zero path {
+          fill: transparent;
+          stroke: ${theme.palette.midtoneBrighterer.main};
+        }
+
+        &.active {
+          .elite-zero path {
+            fill: transparent;
+            stroke: ${theme.palette.white.main};
+          }
+        }
+      }
     }
     .divider {
       margin: ${theme.spacing(2, 3)};

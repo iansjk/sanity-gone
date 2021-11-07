@@ -14,6 +14,7 @@ import {
 
 import Layout from "../Layout";
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
+import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
 
 interface Props {
   data: {
@@ -63,7 +64,12 @@ const Classes: React.VFC<Props> = ({ data }) => {
   };
 
   const handleClassClick = (profession: string) => () => {
-    setSelectedProfession(profession);
+    setSelectedProfession((oldProfession) => {
+      if (oldProfession !== profession) {
+        setSelectedSubProfessionId(null);
+      }
+      return profession;
+    });
     setIsClassMenuOpen(false);
   };
 
@@ -71,6 +77,13 @@ const Classes: React.VFC<Props> = ({ data }) => {
     setSelectedSubProfessionId(subProfessionId);
     setIsSubclassMenuOpen(false);
   };
+
+  const selectedClass =
+    selectedProfession != null ? professionToClass(selectedProfession) : null;
+  const selectedSubclass =
+    selectedSubProfessionId != null
+      ? subProfessionIdToSubclass(selectedSubProfessionId)
+      : null;
 
   return (
     <Layout pageTitle="Classes and Subclasses">
@@ -145,10 +158,20 @@ const Classes: React.VFC<Props> = ({ data }) => {
           </Menu>
         </div>
         <div className="results">
-          {!selectedProfession && (
+          {selectedProfession && selectedClass ? (
+            <div className="class-card">
+              <img src={operatorClassIcon(slugify(selectedClass))} alt="" />
+              <h2>{selectedClass}</h2>
+            </div>
+          ) : (
             <div className="select-class-message">Select operator class</div>
           )}
-          {selectedProfession && !selectedSubProfessionId && (
+          {selectedSubProfessionId && selectedSubclass ? (
+            <div className="subclass-card">
+              <img src={operatorSubclassIcon(selectedSubProfessionId)} alt="" />
+              <h3>{selectedSubclass}</h3>
+            </div>
+          ) : (
             <div className="select-subclass-message">
               Select operator subclass
             </div>

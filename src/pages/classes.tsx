@@ -20,12 +20,16 @@ interface Props {
     allContentfulOperatorClass: {
       nodes: {
         className: string;
+        profession: string;
       }[];
     };
     allContentfulOperatorSubclass: {
       nodes: {
         subclass: string;
         subProfessionId: string;
+        class: {
+          profession: string;
+        };
       }[];
     };
   };
@@ -184,12 +188,16 @@ export const query = graphql`
     allContentfulOperatorClass {
       nodes {
         className
+        profession
       }
     }
     allContentfulOperatorSubclass {
       nodes {
         subclass
         subProfessionId
+        class {
+          profession
+        }
       }
     }
   }

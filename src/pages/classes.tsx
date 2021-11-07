@@ -1,9 +1,11 @@
 import { graphql } from "gatsby";
 import slugify from "@sindresorhus/slugify";
+import { css } from "@emotion/react";
+import { Button, Theme } from "@mui/material";
 
 import Layout from "../Layout";
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
-import { css, Theme } from "@emotion/react";
+import { rgba } from "polished";
 
 interface Props {
   data: {
@@ -28,31 +30,17 @@ const Classes: React.VFC<Props> = ({ data }) => {
   return (
     <Layout pageTitle="Classes and Subclasses">
       <main css={styles}>
-        <h2>Classes</h2>
-        <ul>
-          {operatorClasses.map(({ className }) => (
-            <li key={className}>
-              <img
-                width={64}
-                height={64}
-                src={operatorClassIcon(slugify(className))}
-              />
-            </li>
-          ))}
-        </ul>
-        <br />
-        <h2>Subclasses</h2>
-        <ul>
-          {operatorSubclasses.map(({ subclass, subProfessionId }) => (
-            <li key={subclass}>
-              <img
-                width={64}
-                height={64}
-                src={operatorSubclassIcon(subProfessionId)}
-              />
-            </li>
-          ))}
-        </ul>
+        <div className="class-subclass-select">
+          <label>Select</label>
+          <Button variant="contained">Class</Button>
+          <Button variant="contained">Subclass</Button>
+        </div>
+        <div className="results">
+          <div className="select-class-message">Select operator class</div>
+          <div className="select-subclass-message">
+            Select operator subclass
+          </div>
+        </div>
       </main>
     </Layout>
   );
@@ -60,16 +48,39 @@ const Classes: React.VFC<Props> = ({ data }) => {
 export default Classes;
 
 const styles = (theme: Theme) => css`
-  ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    flex-wrap: wrap;
+  margin: ${theme.spacing(4, 0, 0)};
+  display: flex;
+  flex-direction: column;
+  border-radius: ${theme.spacing(1)};
+  background-color: ${rgba(theme.palette.midtone.main, 0.66)};
+
+  .class-subclass-select,
+  .results {
+    padding: ${theme.spacing(3, 4, 2)};
   }
 
-  img {
-    object-fit: contain;
+  .class-subclass-select {
+    border-bottom: 1px solid ${theme.palette.midtoneBrighterer.main};
+  }
+
+  .results {
+    .select-class-message,
+    .select-subclass-message {
+      display: flex;
+      width: 100%;
+      padding: ${theme.spacing(2, 0)};
+      justify-content: center;
+      align-items: center;
+      color: ${theme.palette.gray.main};
+    }
+
+    .select-class-message {
+      background-color: ${theme.palette.midtone.main};
+    }
+
+    .select-subclass-message {
+      background-color: ${theme.palette.midtoneDarker.main};
+    }
   }
 `;
 

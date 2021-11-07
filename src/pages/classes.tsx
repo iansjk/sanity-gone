@@ -41,8 +41,12 @@ const Classes: React.VFC<Props> = ({ data }) => {
   const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
   const [isSubclassMenuOpen, setIsSubclassMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [selectedClass, setSelectedClass] = useState<string | null>(null);
-  const [selectedSubclass, setSelectedSubclass] = useState<string | null>(null);
+  const [selectedProfession, setSelectedProfession] = useState<string | null>(
+    null
+  );
+  const [selectedSubProfessionId, setSelectedSubProfessionId] = useState<
+    string | null
+  >(null);
 
   const handleClassMenuClick: React.MouseEventHandler<HTMLButtonElement> = (
     e
@@ -58,11 +62,13 @@ const Classes: React.VFC<Props> = ({ data }) => {
     setIsSubclassMenuOpen(true);
   };
 
-  const handleClassClick: React.MouseEventHandler = (e) => {
+  const handleClassClick = (profession: string) => () => {
+    setSelectedProfession(profession);
     setIsClassMenuOpen(false);
   };
 
-  const handleSubclassClick: React.MouseEventHandler = (e) => {
+  const handleSubclassClick = (subProfessionId: string) => () => {
+    setSelectedSubProfessionId(subProfessionId);
     setIsSubclassMenuOpen(false);
   };
 
@@ -91,8 +97,8 @@ const Classes: React.VFC<Props> = ({ data }) => {
             }}
             onClose={() => setIsClassMenuOpen(false)}
           >
-            {operatorClasses.map(({ className }) => (
-              <MenuItem key={className} onClick={handleClassClick}>
+            {operatorClasses.map(({ className, profession }) => (
+              <MenuItem key={className} onClick={handleClassClick(profession)}>
                 <ListItemIcon>
                   <img src={operatorClassIcon(slugify(className))} alt="" />
                 </ListItemIcon>
@@ -120,21 +126,29 @@ const Classes: React.VFC<Props> = ({ data }) => {
             }}
             onClose={() => setIsSubclassMenuOpen(false)}
           >
-            {operatorSubclasses.map(({ subclass, subProfessionId }) => (
-              <MenuItem key={subclass} onClick={handleSubclassClick}>
-                <ListItemIcon>
-                  <img src={operatorSubclassIcon(subProfessionId)} alt="" />
-                </ListItemIcon>
-                <ListItemText>{subclass}</ListItemText>
-              </MenuItem>
-            ))}
+            {operatorSubclasses
+              .filter(
+                ({ class: subclassClass }) =>
+                  subclassClass.profession === selectedProfession
+              )
+              .map(({ subclass, subProfessionId }) => (
+                <MenuItem
+                  key={subclass}
+                  onClick={handleSubclassClick(subProfessionId)}
+                >
+                  <ListItemIcon>
+                    <img src={operatorSubclassIcon(subProfessionId)} alt="" />
+                  </ListItemIcon>
+                  <ListItemText>{subclass}</ListItemText>
+                </MenuItem>
+              ))}
           </Menu>
         </div>
         <div className="results">
-          {!selectedClass && (
+          {!selectedProfession && (
             <div className="select-class-message">Select operator class</div>
           )}
-          {selectedClass && !selectedSubclass && (
+          {selectedProfession && !selectedSubProfessionId && (
             <div className="select-subclass-message">
               Select operator subclass
             </div>

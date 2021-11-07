@@ -11,8 +11,17 @@ import {
   SkillDurationIcon,
   SPCostIcon,
 } from "./icons/skillInfo";
+import {
+  PotentialOneIcon,
+  PotentialTwoIcon,
+  PotentialThreeIcon,
+  PotentialFourIcon,
+  PotentialFiveIcon,
+  PotentialSixIcon,
+} from "./icons/operatorStats";
 import CharacterRange from "./CharacterRange";
 import { RangeObject } from "../utils/types";
+import SliderWithInput from "./SliderWithInput";
 
 enum SkillType {
   "Passive" = 0,
@@ -78,6 +87,9 @@ const SkillInfo: React.VFC<
           className={cx(className, !range && "no-range")}
           {...rest}
         >
+          <div className="skill-controls">
+            <SliderWithInput label="Rank" inputProps={{}} sliderProps={{}} />
+          </div>
           <div className="skill-name-and-type">
             <img
               className="skill-icon"

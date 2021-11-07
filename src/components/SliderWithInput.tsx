@@ -52,7 +52,6 @@ const styles = (theme: Theme) => css`
       text-align: center;
       min-width: ${theme.spacing(3)};
       font-size: ${theme.typography.navigationLink.fontSize}px;
-      font-weight: ${theme.typography.navigationLinkBold.fontWeight};
       line-height: ${theme.typography.navigationLink.lineHeight};
     }
 

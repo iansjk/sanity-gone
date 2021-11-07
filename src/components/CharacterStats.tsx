@@ -361,6 +361,16 @@ const styles = (theme: Theme) => css`
         height: ${theme.spacing(8)};
 
         button {
+          path {
+            fill: ${theme.palette.midtoneBrighterer.main};
+          }
+
+          &.active {
+            path {
+              fill: ${theme.palette.white.main};
+            }
+          }
+
           .elite-zero path {
             fill: transparent;
             stroke: ${theme.palette.midtoneBrighterer.main};

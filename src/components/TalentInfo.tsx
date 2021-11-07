@@ -5,8 +5,22 @@ import {
   descriptionToHtml,
   InterpolatedValue,
 } from "../utils/description-parser";
+import {
+  EliteZeroIcon,
+  EliteOneIcon,
+  EliteTwoIcon,
+  PotentialOneIcon,
+  PotentialTwoIcon,
+  PotentialThreeIcon,
+  PotentialFourIcon,
+  PotentialFiveIcon,
+  PotentialSixIcon,
+} from "./icons/operatorStats";
 import { RangeObject } from "../utils/types";
 import CharacterRange from "./CharacterRange";
+import { useState } from "react";
+import RibbonButton from "./RibbonButton";
+import RibbonButtonGroup from "./RibbonButtonGroup";
 
 /** TalentPhaseObject refers to a given talent at a specific potential level */
 interface TalentPhaseObject {
@@ -36,18 +50,47 @@ export type TalentInfoProps = React.HTMLAttributes<HTMLDivElement> & {
 export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
   const { talentObject, className, ...rest } = props;
 
-  const highestElite = Math.max(
-    ...talentObject.candidates.map(
-      (talentPhase) => talentPhase.unlockCondition.phase
-    )
+  const elitesList = [
+    ...new Set(
+      talentObject.candidates.map(
+        (talentPhase) => talentPhase.unlockCondition.phase
+      )
+    ),
+  ].sort(); //remove duplicates by spreading a set
+  const highestElite = Math.max(...elitesList);
+
+  const potentialsList = [
+    ...new Set(
+      talentObject.candidates.map(
+        (talentPhase) => talentPhase.requiredPotentialRank
+      )
+    ),
+  ].sort(); //remove duplicates by spreading a set
+  const lowestPotentials = Math.min(...potentialsList);
+
+  const getTalentPhase = (
+    eliteLevel: number,
+    potential: number
+  ): TalentPhaseObject => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    return talentObject.candidates.find(
+      (talentPhase) =>
+        talentPhase.requiredPotentialRank === potential &&
+        talentPhase.unlockCondition.phase === eliteLevel
+    )!;
+  };
+
+  // potentials is zero-indexed for some inane reason,
+  // even though they're not zero-indexed in game
+  const [eliteLevel, setEliteLevel] = useState(highestElite);
+  const [potentials, setPotentials] = useState(lowestPotentials);
+
+  const [activePhase, setActivePhase] = useState(
+    getTalentPhase(eliteLevel, potentials)
   );
-  const highestEliteTalentPhases = talentObject.candidates.filter(
-    (talentPhase) => talentPhase.unlockCondition.phase === highestElite
-  );
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const activePhase = highestEliteTalentPhases.find(
-    (talentPhase) => talentPhase.requiredPotentialRank === 0
-  )!;
+
+  const updateActivePhase = (eliteLevel: number, potentials: number) =>
+    setActivePhase(getTalentPhase(eliteLevel, potentials));
 
   return (
     <ClassNames>
@@ -57,6 +100,46 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
           css={styles}
           {...rest}
         >
+          <div className="talent-header">
+            <RibbonButtonGroup className="elite-buttons">
+              {elitesList.map((elite) => (
+                <RibbonButton
+                  key={`Elite ${elite}`}
+                  className={eliteLevel === elite ? "active" : "inactive"}
+                  onClick={() => {
+                    setEliteLevel(elite);
+                    updateActivePhase(elite, potentials);
+                  }}
+                  aria-label={`Elite ${elite}`}
+                >
+                  {elite === 0 && <EliteZeroIcon />}
+                  {elite === 1 && <EliteOneIcon />}
+                  {elite === 2 && <EliteTwoIcon />}
+                </RibbonButton>
+              ))}
+            </RibbonButtonGroup>
+            <div className="divider" />
+            <RibbonButtonGroup className="potential-buttons">
+              {potentialsList.map((pot) => (
+                <RibbonButton
+                  key={`Potential ${pot}`}
+                  className={potentials === pot ? "active" : "inactive"}
+                  onClick={() => {
+                    setPotentials(pot);
+                    updateActivePhase(eliteLevel, pot);
+                  }}
+                  aria-label={`Potential ${pot}`}
+                >
+                  {pot === 0 && <PotentialOneIcon />}
+                  {pot === 1 && <PotentialTwoIcon />}
+                  {pot === 2 && <PotentialThreeIcon />}
+                  {pot === 3 && <PotentialFourIcon />}
+                  {pot === 4 && <PotentialFiveIcon />}
+                  {pot === 5 && <PotentialSixIcon />}
+                </RibbonButton>
+              ))}
+            </RibbonButtonGroup>
+          </div>
           <h3 className="talent-name">{activePhase.name}</h3>
           <p
             className="talent-description"
@@ -81,7 +164,7 @@ export default TalentInfo;
 
 const styles = (theme: Theme) => css`
   display: grid;
-  grid-template-rows: repeat(2, max-content);
+  grid-template-rows: repeat(3, max-content);
   grid-template-columns: 672fr 244fr;
   gap: ${theme.spacing(0.25)};
   margin-top: ${theme.spacing(3)};
@@ -99,10 +182,62 @@ const styles = (theme: Theme) => css`
 
     .talent-name {
       border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+      grid-column-start: 1;
     }
 
     .talent-description {
       border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+      grid-column-start: 1;
+    }
+  }
+
+  .talent-header {
+    grid-row-start: 1;
+    height: ${theme.spacing(8)};
+    display: flex;
+    flex-direction: row;
+
+    button {
+      /* this is overrides for now, delete if namtar says to use smaller buttons */
+      ${theme.breakpoints.down("mobile")} {
+        padding: ${theme.spacing(0, 2)};
+        border-radius: 0;
+      }
+    }
+    .elite-buttons {
+    }
+    .divider {
+      margin: ${theme.spacing(2, 3)};
+      border-right: 1px solid ${theme.palette.midtoneBrighter.main};
+
+      ${theme.breakpoints.down("mobile")} {
+        flex: 1 1 0;
+        margin: 0;
+        border: none;
+      }
+    }
+    .potential-buttons {
+      button {
+        border-radius: 0;
+
+        ${theme.breakpoints.down("mobile")} {
+          :last-of-type {
+            border-top-right-radius: ${theme.spacing(0.5)};
+          }
+        }
+
+        /* uncomment this if namtar says to use smaller mobile buttons
+           for consistency - current design is big buttons
+        ${theme.breakpoints.down("mobile")} {
+          border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+        }
+         */
+
+        svg {
+          width: 28px;
+          height: 26.66px;
+        }
+      }
     }
   }
 
@@ -116,7 +251,7 @@ const styles = (theme: Theme) => css`
   }
 
   .talent-description {
-    grid-column-start: 1;
+    grid-column-start: 2;
     margin: 0;
     padding: ${theme.spacing(2)};
     border-bottom-left-radius: ${theme.spacing(0.5)};

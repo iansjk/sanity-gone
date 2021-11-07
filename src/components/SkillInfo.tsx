@@ -11,14 +11,6 @@ import {
   SkillDurationIcon,
   SPCostIcon,
 } from "./icons/skillInfo";
-import {
-  PotentialOneIcon,
-  PotentialTwoIcon,
-  PotentialThreeIcon,
-  PotentialFourIcon,
-  PotentialFiveIcon,
-  PotentialSixIcon,
-} from "./icons/operatorStats";
 import CharacterRange from "./CharacterRange";
 import { RangeObject } from "../utils/types";
 import SliderWithInput from "./SliderWithInput";
@@ -79,9 +71,8 @@ const SkillInfo: React.VFC<
 > = (props) => {
   const { skillObject, className, isRecommended, ...rest } = props;
   const { skillId, iconId, levels } = skillObject;
-  const { name, description, spData, range, duration, skillType, blackboard } =
-    levels[levels.length - 1];
-  const { initSp, spCost, spType } = spData;
+  const { name, spData, skillType } = levels[levels.length - 1];
+  const { spType } = spData;
 
   const maxLevel = levels.length;
 
@@ -99,7 +90,7 @@ const SkillInfo: React.VFC<
       {({ cx }) => (
         <section
           css={styles}
-          className={cx(className, !range && "no-range")}
+          className={cx(className, !levels[skillLevel - 1].range && "no-range")}
           {...rest}
         >
           <div className="skill-header">

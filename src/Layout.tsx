@@ -252,10 +252,10 @@ const styles =
       }
 
       header {
-        padding: ${theme.spacing(2, 2, 0)};
+        padding: ${theme.spacing(3, 3, 0)};
 
         ${theme.breakpoints.down("mobile")} {
-          padding: ${theme.spacing(3, 3, 0)};
+          padding: ${theme.spacing(2, 2, 0)};
         }
 
         .top-line {

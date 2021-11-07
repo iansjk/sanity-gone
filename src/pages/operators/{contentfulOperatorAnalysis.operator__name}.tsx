@@ -345,6 +345,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         <div className="left-sidebar">
           {!isMobile && <hr />}
           <div className="external-links">
+            <span className="section-label">External Links</span>
             <a
               href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${operatorName}`}
               rel="noreferrer noopener"
@@ -362,7 +363,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               PRTS
             </a>
           </div>
-          <hr />
           <div className="metadata">
             {/* <div className="authors-section">
               <span className="section-label">Written by</span>

@@ -36,6 +36,21 @@ const Classes: React.VFC<Props> = ({ data }) => {
   const { nodes: operatorSubclasses } = data.allContentfulOperatorSubclass;
   const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
   const [isSubclassMenuOpen, setIsSubclassMenuOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  const handleClassMenuClick: React.MouseEventHandler<HTMLButtonElement> = (
+    e
+  ) => {
+    setAnchorEl(e.currentTarget);
+    setIsClassMenuOpen(true);
+  };
+
+  const handleSubclassMenuClick: React.MouseEventHandler<HTMLButtonElement> = (
+    e
+  ) => {
+    setAnchorEl(e.currentTarget);
+    setIsSubclassMenuOpen(true);
+  };
 
   const handleClassClick: React.MouseEventHandler = (e) => {
     setIsClassMenuOpen(false);
@@ -53,13 +68,14 @@ const Classes: React.VFC<Props> = ({ data }) => {
           <Button
             variant="contained"
             aria-label="Select class"
-            onClick={() => setIsClassMenuOpen(true)}
+            onClick={handleClassMenuClick}
           >
             Class
           </Button>
           <Menu
             id="class-menu"
             open={isClassMenuOpen}
+            anchorEl={anchorEl}
             onClose={() => setIsClassMenuOpen(false)}
           >
             {operatorClasses.map(({ className }) => (
@@ -74,13 +90,14 @@ const Classes: React.VFC<Props> = ({ data }) => {
           <Button
             variant="contained"
             aria-label="Select subclass"
-            onClick={() => setIsSubclassMenuOpen(true)}
+            onClick={handleSubclassMenuClick}
           >
             Subclass
           </Button>
           <Menu
             id="subclass-menu"
             open={isSubclassMenuOpen}
+            anchorEl={anchorEl}
             onClose={() => setIsSubclassMenuOpen(false)}
           >
             {operatorSubclasses.map(({ subclass, subProfessionId }) => (

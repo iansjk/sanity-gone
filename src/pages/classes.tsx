@@ -1,11 +1,19 @@
+import React, { useState } from "react";
 import { graphql } from "gatsby";
+import { rgba } from "polished";
 import slugify from "@sindresorhus/slugify";
 import { css } from "@emotion/react";
-import { Button, Theme } from "@mui/material";
+import {
+  Button,
+  ListItemIcon,
+  ListItemText,
+  Menu,
+  MenuItem,
+  Theme,
+} from "@mui/material";
 
 import Layout from "../Layout";
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
-import { rgba } from "polished";
 
 interface Props {
   data: {
@@ -26,14 +34,64 @@ interface Props {
 const Classes: React.VFC<Props> = ({ data }) => {
   const { nodes: operatorClasses } = data.allContentfulOperatorClass;
   const { nodes: operatorSubclasses } = data.allContentfulOperatorSubclass;
+  const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
+  const [isSubclassMenuOpen, setIsSubclassMenuOpen] = useState(false);
+
+  const handleClassClick: React.MouseEventHandler = (e) => {
+    setIsClassMenuOpen(false);
+  };
+
+  const handleSubclassClick: React.MouseEventHandler = (e) => {
+    setIsSubclassMenuOpen(false);
+  };
 
   return (
     <Layout pageTitle="Classes and Subclasses">
       <main css={styles}>
         <div className="class-subclass-select">
-          <label>Select</label>
-          <Button variant="contained">Class</Button>
-          <Button variant="contained">Subclass</Button>
+          <label aria-hidden="true">Select</label>
+          <Button
+            variant="contained"
+            aria-label="Select class"
+            onClick={() => setIsClassMenuOpen(true)}
+          >
+            Class
+          </Button>
+          <Menu
+            id="class-menu"
+            open={isClassMenuOpen}
+            onClose={() => setIsClassMenuOpen(false)}
+          >
+            {operatorClasses.map(({ className }) => (
+              <MenuItem key={className} onClick={handleClassClick}>
+                <ListItemIcon>
+                  <img src={operatorClassIcon(slugify(className))} alt="" />
+                </ListItemIcon>
+                <ListItemText>{className}</ListItemText>
+              </MenuItem>
+            ))}
+          </Menu>
+          <Button
+            variant="contained"
+            aria-label="Select subclass"
+            onClick={() => setIsSubclassMenuOpen(true)}
+          >
+            Subclass
+          </Button>
+          <Menu
+            id="subclass-menu"
+            open={isSubclassMenuOpen}
+            onClose={() => setIsSubclassMenuOpen(false)}
+          >
+            {operatorSubclasses.map(({ subclass, subProfessionId }) => (
+              <MenuItem key={subclass} onClick={handleSubclassClick}>
+                <ListItemIcon>
+                  <img src={operatorSubclassIcon(subProfessionId)} alt="" />
+                </ListItemIcon>
+                <ListItemText>{subclass}</ListItemText>
+              </MenuItem>
+            ))}
+          </Menu>
         </div>
         <div className="results">
           <div className="select-class-message">Select operator class</div>

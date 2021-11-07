@@ -66,8 +66,12 @@ const Classes: React.VFC<Props> = ({ data }) => {
         <div className="class-subclass-select">
           <label aria-hidden="true">Select</label>
           <Button
+            id="class-menu-button"
             variant="contained"
             aria-label="Select class"
+            aria-controls="class-menu"
+            aria-haspopup="true"
+            aria-expanded={isClassMenuOpen ? "true" : undefined}
             onClick={handleClassMenuClick}
           >
             Class
@@ -76,6 +80,9 @@ const Classes: React.VFC<Props> = ({ data }) => {
             id="class-menu"
             open={isClassMenuOpen}
             anchorEl={anchorEl}
+            MenuListProps={{
+              "aria-labelledby": "class-menu-button",
+            }}
             onClose={() => setIsClassMenuOpen(false)}
           >
             {operatorClasses.map(({ className }) => (
@@ -88,8 +95,12 @@ const Classes: React.VFC<Props> = ({ data }) => {
             ))}
           </Menu>
           <Button
+            id="subclass-menu-button"
             variant="contained"
             aria-label="Select subclass"
+            aria-controls="subclass-menu"
+            aria-haspopup="true"
+            aria-expanded={isSubclassMenuOpen ? "true" : undefined}
             onClick={handleSubclassMenuClick}
           >
             Subclass
@@ -98,6 +109,9 @@ const Classes: React.VFC<Props> = ({ data }) => {
             id="subclass-menu"
             open={isSubclassMenuOpen}
             anchorEl={anchorEl}
+            MenuListProps={{
+              "aria-labelledby": "subclass-menu-button",
+            }}
             onClose={() => setIsSubclassMenuOpen(false)}
           >
             {operatorSubclasses.map(({ subclass, subProfessionId }) => (

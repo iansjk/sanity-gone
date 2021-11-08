@@ -131,6 +131,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
           </Menu>
           <Button
             id="subclass-menu-button"
+            disabled={selectedProfession == null}
             variant="contained"
             aria-label="Select subclass"
             aria-controls="subclass-menu"

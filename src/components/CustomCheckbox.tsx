@@ -30,6 +30,13 @@ const styles = (theme: Theme) => css`
     opacity: 0.3;
   }
 
+  &:not(.disabled) {
+    cursor: pointer;
+    .checkbox-input > input {
+      cursor: pointer;
+    }
+  }
+
   .checkbox-input {
     display: grid;
     grid-template-columns: 20px;

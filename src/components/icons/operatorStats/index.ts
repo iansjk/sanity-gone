@@ -7,6 +7,12 @@ import DPCostIcon from "./DPCostIcon";
 import EliteZeroIcon from "./EliteZeroIcon";
 import EliteOneIcon from "./EliteOneIcon";
 import EliteTwoIcon from "./EliteTwoIcon";
+import PotentialOneIcon from "./PotentialOneIcon";
+import PotentialTwoIcon from "./PotentialTwoIcon";
+import PotentialThreeIcon from "./PotentialThreeIcon";
+import PotentialFourIcon from "./PotentialFourIcon";
+import PotentialFiveIcon from "./PotentialFiveIcon";
+import PotentialSixIcon from "./PotentialSixIcon";
 import HealthIcon from "./HealthIcon";
 import HourglassIcon from "../HourglassIcon";
 
@@ -20,6 +26,12 @@ export {
   EliteZeroIcon,
   EliteOneIcon,
   EliteTwoIcon,
+  PotentialOneIcon,
+  PotentialTwoIcon,
+  PotentialThreeIcon,
+  PotentialFourIcon,
+  PotentialFiveIcon,
+  PotentialSixIcon,
   HealthIcon,
-  HourglassIcon as RedeployTimeIcon
+  HourglassIcon as RedeployTimeIcon,
 };

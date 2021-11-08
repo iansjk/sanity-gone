@@ -27,6 +27,7 @@ import { operatorImage } from "../../utils/images";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
+  recommendedSkills: boolean[];
   talents: TalentObject[];
   operator: CharacterObject;
   summon?: CharacterObject;
@@ -46,6 +47,8 @@ const htmlToReact = (
               className="skills-skill-info"
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               skillObject={context.skills[index!]}
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              isRecommended={context.recommendedSkills[index!]}
             />
           );
         } else if (domNode.name === "talentinfo") {
@@ -184,9 +187,15 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     operatorsJson: operatorObject,
   } = data;
   const summons = data.allSummonsJson.nodes;
+  const skillRecommended = [
+    contentful.skill1Recommended ?? false,
+    contentful.skill2Recommended ?? false,
+    contentful.skill3Recommended ?? false,
+  ];
   const context = {
     talents: operatorObject.talents,
     skills: operatorObject.skillData,
+    recommendedSkills: skillRecommended,
     operator: operatorObject,
     summon: summons.length > 0 ? summons[0] : undefined,
   };
@@ -199,11 +208,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   ]
     .filter((html) => !!html)
     .map((html, i) => htmlToReact(html, context, i));
-  const skillRecommended = [
-    contentful.skill1Recommended,
-    contentful.skill2Recommended,
-    contentful.skill3Recommended,
-  ];
+
   const skillAnalyses = [
     contentful.skill1Analysis.childMarkdownRemark.html,
     contentful.skill2Analysis.childMarkdownRemark.html,
@@ -214,16 +219,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       // if this operator has per-skill summons, then pass the correct summon for this skill
       if (summons.length > 1) {
         context.summon = summons[i];
-      }
-      if (skillRecommended[i]) {
-        return (
-          <Fragment>
-            <span className="recommended-skill">
-              <StarIcon aria-hidden="true" /> Recommended Skill
-            </span>
-            {htmlToReact(html, context, i)}
-          </Fragment>
-        );
       }
       return htmlToReact(html, context, i);
     });
@@ -637,25 +632,6 @@ const styles = (accentColor: string) => (theme: Theme) =>
             .tabs-wrapper {
               height: 100%;
             }
-          }
-        }
-
-        .recommended-skill {
-          display: inline-flex;
-          margin-top: ${theme.spacing(3)};
-          gap: ${theme.spacing(1)};
-          color: ${theme.palette.yellow.main};
-          font-size: ${theme.typography.skillTalentHeading.fontSize}px;
-          font-weight: ${theme.typography.skillTalentHeading.fontWeight};
-          line-height: ${theme.typography.skillTalentHeading.lineHeight};
-          align-items: center;
-
-          svg path {
-            fill: ${theme.palette.yellow.main};
-          }
-
-          ${theme.breakpoints.down("mobile")} {
-            margin-top: ${theme.spacing(2)};
           }
         }
       }

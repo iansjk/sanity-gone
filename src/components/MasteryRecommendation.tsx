@@ -1,4 +1,5 @@
-import { Theme, css } from "@emotion/react";
+import { css } from "@emotion/react";
+import { Theme } from "@mui/material";
 
 export interface MasteryRecommendationProps {
   level: "no" | "1" | "2" | "3";
@@ -43,6 +44,18 @@ const styles = (theme: Theme) => css`
       grid-template-columns: unset;
     }
 
+    .recommended-rank {
+      border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+      ${theme.breakpoints.down("mobile")} {
+        border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+      }
+    }
+    .priority {
+      border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
+      ${theme.breakpoints.down("mobile")} {
+        border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+      }
+    }
     .recommended-rank,
     .priority {
       flex-direction: row;

@@ -39,7 +39,7 @@ const members: { name: string; role: string; avatar: string }[] = [
   {
     name: "iana",
     role: "Writer, Editor",
-    avatar: "iana.png"
+    avatar: "iana.png",
   },
   {
     name: "Kirahuang",
@@ -111,18 +111,18 @@ const styles = (theme: Theme) => css`
 
   h2 {
     margin: ${theme.spacing(8, 0, 0)};
-    font-size: ${theme.typography.operatorNameHeading.fontSize}px;
-    font-weight: ${theme.typography.operatorNameHeading.fontWeight};
-    line-height: ${theme.typography.operatorNameHeading.lineHeight};
+    font-size: ${theme.typography.generalHeadingBold.fontSize}px;
+    font-weight: ${theme.typography.generalHeadingBold.fontWeight};
+    line-height: ${theme.typography.generalHeadingBold.lineHeight};
   }
 
   .team-members {
     margin: ${theme.spacing(4, 0, 0)};
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     list-style: none;
-    gap: ${theme.spacing(4)};
+    gap: ${theme.spacing(3)};
     text-align: center;
 
     .member-card {
@@ -137,8 +137,8 @@ const styles = (theme: Theme) => css`
       border-radius: ${theme.spacing(1)};
 
       .avatar {
-        width: 128px;
-        height: 128px;
+        width: 112px;
+        height: 112px;
         border-radius: 50%;
       }
 
@@ -157,7 +157,7 @@ const styles = (theme: Theme) => css`
 
   .special-thanks {
     h3 {
-      margin: ${theme.spacing(4, 0, 0)};
+      margin: ${theme.spacing(3, 0, 0)};
     }
 
     p {

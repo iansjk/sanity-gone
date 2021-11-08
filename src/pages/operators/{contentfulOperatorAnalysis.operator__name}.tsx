@@ -342,6 +342,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           <div className="external-links">
             <span className="section-label">External Links</span>
             <a
+              className="emphasized-link"
               href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${operatorName}`}
               rel="noreferrer noopener"
               target="_blank"
@@ -349,6 +350,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               Aceship
             </a>
             <a
+              className="emphasized-link"
               href={`http://prts.wiki/w/${encodeURIComponent(
                 operatorObject.cnName
               )}`}

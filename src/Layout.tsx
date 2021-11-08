@@ -402,15 +402,6 @@ const styles =
 
               li {
                 margin-top: ${theme.spacing(2)};
-
-                a {
-                  background: none;
-                  transition: none;
-
-                  &:hover {
-                    background: none;
-                  }
-                }
               }
             }
           }
@@ -464,7 +455,7 @@ const styles =
       a:visited {
         text-decoration: none;
 
-        &[target="_blank"] {
+        &.emphasized-link {
           display: inline-block;
           padding: ${theme.spacing(0, 0.5)};
           border-radius: ${theme.spacing(0.25)};

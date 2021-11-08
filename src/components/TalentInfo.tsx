@@ -192,11 +192,10 @@ const styles = (theme: Theme) => css`
   }
 
   .talent-header {
-    grid-row-start: 1;
     height: ${theme.spacing(8)};
     display: flex;
     flex-direction: row;
-
+    grid-column: span 2;
     margin-bottom: ${theme.spacing(-0.25)};
     border-bottom: 1px solid ${theme.palette.midtoneBrighterer.main};
     background: ${theme.palette.midtone.main};
@@ -208,6 +207,7 @@ const styles = (theme: Theme) => css`
         border-radius: 0;
       }
     }
+
     .elite-buttons {
       button {
         path {
@@ -221,6 +221,7 @@ const styles = (theme: Theme) => css`
         }
       }
     }
+
     .divider {
       margin: ${theme.spacing(2, 3)};
       border-right: 1px solid ${theme.palette.midtoneBrighter.main};
@@ -231,6 +232,7 @@ const styles = (theme: Theme) => css`
         border: none;
       }
     }
+
     .potential-buttons {
       button {
         border-radius: 0;
@@ -259,16 +261,14 @@ const styles = (theme: Theme) => css`
   }
 
   .talent-description {
-    grid-column-start: 2;
     margin: 0;
     padding: ${theme.spacing(2)};
     border-bottom-left-radius: ${theme.spacing(0.5)};
   }
 
   .range {
-    grid-row-start: 1;
-    grid-row-end: span 2;
-    grid-column-start: 2;
+    grid-column: 2;
+    grid-row: 2 / span 2;
     display: flex;
     align-items: center;
     justify-content: center;

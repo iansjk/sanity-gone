@@ -20,13 +20,19 @@ import {
   EliteZeroIcon,
   EliteOneIcon,
   EliteTwoIcon,
+  PotentialTwoIcon,
+  PotentialThreeIcon,
+  PotentialFourIcon,
+  PotentialFiveIcon,
+  PotentialSixIcon,
   HealthIcon,
   RedeployTimeIcon,
 } from "./icons/operatorStats";
 import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import {
-  getPotentialIncreaseString,
+  getMaxTrustStatIncrease,
+  getPotStatIncreases,
   getStatsAtLevel,
   getTrustIncreaseString,
 } from "../utils/globals";
@@ -60,6 +66,16 @@ const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
       ".stat-value": {
         color: theme.palette.blue.main,
       },
+      li: {
+        svg: {
+          width: "18px",
+          height: "17px",
+          marginTop: theme.spacing(0.25),
+          marginRight: theme.spacing(0.25),
+        },
+        display: "flex",
+        alignItems: "center",
+      },
     },
   },
   [`& .${tooltipClasses.arrow}`]: {
@@ -83,6 +99,15 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
   const maxElite = phases.length - 1;
   const maxLevel = phases[phases.length - 1].maxLevel;
 
+  const trustIncreases = !isSummon
+    ? getMaxTrustStatIncrease(characterObject)
+    : {
+        maxHp: 0,
+        atk: 0,
+        def: 0,
+        magicResistance: 0,
+      };
+
   const [eliteLevel, setEliteLevelFunc] = useState(maxElite);
   const [opLevel, setOpLevel] = useState(maxLevel);
   const [trustBonus, setTrustBonus] = useState(!isSummon);
@@ -94,22 +119,6 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
       setOpLevel(phases[level].maxLevel);
     }
   };
-
-  // str: set of stat changes separated by newlines, e.g. ""DP Cost -3\nRedeploy Time -10"
-  const getTooltipHtml = (str: string) => (
-    <ul>
-      {str.split("\n").map((line) => {
-        const words = line.split(" ");
-        const value = words[words.length - 1];
-        const stat = words.slice(0, -1).join(" ");
-        return (
-          <li key={stat}>
-            {stat} <span className="stat-value">{value}</span>
-          </li>
-        );
-      })}
-    </ul>
-  );
 
   const {
     artsResistance,
@@ -176,9 +185,50 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
             <div className="checkbox-container">
               <div className="checkbox">
                 <StatsChangeTooltip
-                  title={getTooltipHtml(
-                    getTrustIncreaseString(characterObject)
-                  )}
+                  title={
+                    <ul>
+                      {trustIncreases.maxHp !== 0 && (
+                        <li>
+                          <span>
+                            HP{" "}
+                            <span className="stat-value">
+                              +{trustIncreases.maxHp}
+                            </span>
+                          </span>
+                        </li>
+                      )}
+                      {trustIncreases.atk !== 0 && (
+                        <li>
+                          <span>
+                            ATK{" "}
+                            <span className="stat-value">
+                              +{trustIncreases.atk}
+                            </span>
+                          </span>
+                        </li>
+                      )}
+                      {trustIncreases.def !== 0 && (
+                        <li>
+                          <span>
+                            DEF{" "}
+                            <span className="stat-value">
+                              +{trustIncreases.def}
+                            </span>
+                          </span>
+                        </li>
+                      )}
+                      {trustIncreases.magicResistance !== 0 && (
+                        <li>
+                          <span>
+                            RES{" "}
+                            <span className="stat-value">
+                              +{trustIncreases.magicResistance}
+                            </span>
+                          </span>
+                        </li>
+                      )}
+                    </ul>
+                  }
                 >
                   <div>
                     <CustomCheckbox
@@ -193,9 +243,100 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               </div>
               <div className="checkbox">
                 <StatsChangeTooltip
-                  title={getTooltipHtml(
-                    getPotentialIncreaseString(characterObject)
-                  )}
+                  title={
+                    <ul>
+                      {getPotStatIncreases(characterObject).map((val, i) => {
+                        const potential = i + 2;
+                        return (
+                          val !==
+                            {
+                              health: 0,
+                              attackPower: 0,
+                              defense: 0,
+                              dpCost: 0,
+                              attackSpeed: 0,
+                              redeployTimeInSeconds: 0,
+                            } && (
+                            <li key={`potential-${potential}-stat-change`}>
+                              {potential === 2 && (
+                                <PotentialTwoIcon
+                                  aria-label={`Potential ${potential}`}
+                                />
+                              )}
+                              {potential === 3 && (
+                                <PotentialThreeIcon
+                                  aria-label={`Potential ${potential}`}
+                                />
+                              )}
+                              {potential === 4 && (
+                                <PotentialFourIcon
+                                  aria-label={`Potential ${potential}`}
+                                />
+                              )}
+                              {potential === 5 && (
+                                <PotentialFiveIcon
+                                  aria-label={`Potential ${potential}`}
+                                />
+                              )}
+                              {potential === 6 && (
+                                <PotentialSixIcon
+                                  aria-label={`Potential ${potential}`}
+                                />
+                              )}
+                              {val.health !== 0 && (
+                                <span>
+                                  HP{" "}
+                                  <span className="stat-value">
+                                    +{val.health}
+                                  </span>
+                                </span>
+                              )}
+                              {val.attackPower !== 0 && (
+                                <span>
+                                  ATK{" "}
+                                  <span className="stat-value">
+                                    +{val.attackPower}
+                                  </span>
+                                </span>
+                              )}
+                              {val.defense !== 0 && (
+                                <span>
+                                  DEF{" "}
+                                  <span className="stat-value">
+                                    +{val.defense}
+                                  </span>
+                                </span>
+                              )}
+                              {val.dpCost !== 0 && (
+                                <span>
+                                  DP Cost{" "}
+                                  <span className="stat-value">
+                                    {val.dpCost}
+                                  </span>
+                                </span>
+                              )}
+                              {val.attackSpeed !== 0 && (
+                                <span>
+                                  ASPD{" "}
+                                  <span className="stat-value">
+                                    +{val.attackSpeed}
+                                  </span>
+                                </span>
+                              )}
+                              {val.redeployTimeInSeconds !== 0 && (
+                                <span>
+                                  Attack{" "}
+                                  <span className="stat-value">
+                                    {val.redeployTimeInSeconds}
+                                  </span>
+                                </span>
+                              )}
+                            </li>
+                          )
+                        );
+                      })}
+                    </ul>
+                  }
                 >
                   <div>
                     <CustomCheckbox

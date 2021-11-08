@@ -171,9 +171,13 @@ const Classes: React.VFC<Props> = ({ data }) => {
         <div className="results">
           {selectedProfession && selectedClass ? (
             <section className="class-card">
-              <img src={operatorClassIcon(slugify(selectedClass))} alt="" />
-              <h2>{selectedClass}</h2>
-              <a className="emphasized-link">Browse</a>
+              <div className="icon-container">
+                <img src={operatorClassIcon(slugify(selectedClass))} alt="" />
+              </div>
+              <div className="name-container">
+                <h2>{selectedClass}</h2>
+                <a className="emphasized-link">Browse</a>
+              </div>
               <div
                 className="analysis"
                 dangerouslySetInnerHTML={{
@@ -187,11 +191,18 @@ const Classes: React.VFC<Props> = ({ data }) => {
           ) : (
             <div className="select-class-message">Select operator class</div>
           )}
-          {selectedSubProfessionId && selectedSubclass ? (
+          {selectedSubProfessionId && selectedSubclass && (
             <section className="subclass-card">
-              <img src={operatorSubclassIcon(selectedSubProfessionId)} alt="" />
-              <h3>{selectedSubclass}</h3>
-              <a className="emphasized-link">Browse</a>
+              <div className="icon-container">
+                <img
+                  src={operatorSubclassIcon(selectedSubProfessionId)}
+                  alt=""
+                />
+              </div>
+              <div className="name-container">
+                <h3>{selectedSubclass}</h3>
+                <a className="emphasized-link">Browse</a>
+              </div>
               <div
                 className="analysis"
                 dangerouslySetInnerHTML={{
@@ -203,7 +214,8 @@ const Classes: React.VFC<Props> = ({ data }) => {
                 }}
               />
             </section>
-          ) : (
+          )}
+          {selectedProfession && !selectedSubProfessionId && (
             <div className="select-subclass-message">
               Select operator subclass
             </div>
@@ -222,16 +234,37 @@ const styles = (theme: Theme) => css`
   border-radius: ${theme.spacing(1)};
   background-color: ${rgba(theme.palette.midtone.main, 0.66)};
 
-  .class-subclass-select,
-  .results {
-    padding: ${theme.spacing(3, 4, 2)};
-  }
-
   .class-subclass-select {
+    display: flex;
+    align-items: center;
+    padding: ${theme.spacing(3, 4)};
     border-bottom: 1px solid ${theme.palette.midtoneBrighterer.main};
+
+    *:not(:last-child) {
+      margin-right: ${theme.spacing(2)};
+    }
+
+    label {
+      font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+      line-height: ${theme.typography.skillTalentHeading.lineHeight};
+      font-weight: ${theme.typography.skillTalentHeading.fontWeight};
+    }
   }
 
   .results {
+    padding: ${theme.spacing(3, 4)};
+
+    img {
+      width: ${theme.spacing(8)};
+      height: ${theme.spacing(8)};
+      object-fit: contain;
+
+      ${theme.breakpoints.down("mobile")} {
+        width: ${theme.spacing(3)};
+        height: ${theme.spacing(3)};
+      }
+    }
+
     .select-class-message,
     .select-subclass-message {
       display: flex;
@@ -244,10 +277,76 @@ const styles = (theme: Theme) => css`
 
     .select-class-message {
       background-color: ${theme.palette.midtone.main};
+      border-radius: ${theme.spacing(0.5)};
     }
 
     .select-subclass-message {
       background-color: ${theme.palette.midtoneDarker.main};
+      border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+    }
+
+    .class-card,
+    .subclass-card {
+      display: grid;
+      grid-template-rows: max-content 1fr;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+
+      .icon-container {
+        box-sizing: border-box;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        grid-row: span 2;
+        padding: ${theme.spacing(3)};
+
+        img {
+          margin: auto;
+        }
+      }
+
+      .name-container {
+        display: flex;
+        align-items: center;
+        padding: ${theme.spacing(2, 0, 0, 2)};
+
+        h2,
+        h3 {
+          margin: ${theme.spacing(0, 2, 0, 0)};
+          font-size: ${theme.typography.generalHeading.fontSize}px;
+          line-height: ${theme.typography.generalHeading.lineHeight};
+          font-weight: ${theme.typography.generalHeadingBold.fontWeight};
+        }
+      }
+
+      .analysis {
+        padding: ${theme.spacing(2)};
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .class-card {
+      background-color: ${theme.palette.midtone.main};
+      border-bottom: 1px solid ${theme.palette.midtoneBrighterer.main};
+      border-top-right-radius: ${theme.spacing(0.5)};
+
+      .icon-container {
+        border-top-left-radius: ${theme.spacing(0.5)};
+        background-color: ${theme.palette.midtoneBrighter.main};
+      }
+    }
+
+    .subclass-card {
+      background-color: ${theme.palette.midtoneDarker.main};
+      border-bottom-right-radius: ${theme.spacing(0.5)};
+
+      .icon-container {
+        border-bottom-left-radius: ${theme.spacing(0.5)};
+        background-color: ${theme.palette.midtone.main};
+      }
     }
   }
 `;

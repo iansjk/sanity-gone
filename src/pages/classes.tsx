@@ -173,6 +173,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
             <section className="class-card">
               <img src={operatorClassIcon(slugify(selectedClass))} alt="" />
               <h2>{selectedClass}</h2>
+              <a className="emphasized-link">Browse</a>
               <div
                 className="analysis"
                 dangerouslySetInnerHTML={{
@@ -190,6 +191,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
             <section className="subclass-card">
               <img src={operatorSubclassIcon(selectedSubProfessionId)} alt="" />
               <h3>{selectedSubclass}</h3>
+              <a className="emphasized-link">Browse</a>
               <div
                 className="analysis"
                 dangerouslySetInnerHTML={{

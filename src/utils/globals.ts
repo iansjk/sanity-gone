@@ -85,6 +85,7 @@ const subProfessionLookup: Record<string, string> = {
   merchant: "Merchant",
   traper: "Trapper",
   dollkeeper: "Puppeteer",
+  fortress: "Fortress",
 };
 export const subProfessionIdToSubclass = (subProfessionId: string): string =>
   subProfessionLookup[subProfessionId];

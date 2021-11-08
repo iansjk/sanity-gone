@@ -22,6 +22,11 @@ interface Props {
       nodes: {
         className: string;
         profession: string;
+        analysis: {
+          childMarkdownRemark: {
+            html: string;
+          };
+        };
       }[];
     };
     allContentfulOperatorSubclass: {
@@ -30,6 +35,11 @@ interface Props {
         subProfessionId: string;
         class: {
           profession: string;
+        };
+        analysis: {
+          childMarkdownRemark: {
+            html: string;
+          };
         };
       }[];
     };
@@ -159,18 +169,37 @@ const Classes: React.VFC<Props> = ({ data }) => {
         </div>
         <div className="results">
           {selectedProfession && selectedClass ? (
-            <div className="class-card">
+            <section className="class-card">
               <img src={operatorClassIcon(slugify(selectedClass))} alt="" />
               <h2>{selectedClass}</h2>
-            </div>
+              <div
+                className="analysis"
+                dangerouslySetInnerHTML={{
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                  __html: operatorClasses.find(
+                    ({ profession }) => profession === selectedProfession
+                  )!.analysis.childMarkdownRemark.html,
+                }}
+              />
+            </section>
           ) : (
             <div className="select-class-message">Select operator class</div>
           )}
           {selectedSubProfessionId && selectedSubclass ? (
-            <div className="subclass-card">
+            <section className="subclass-card">
               <img src={operatorSubclassIcon(selectedSubProfessionId)} alt="" />
               <h3>{selectedSubclass}</h3>
-            </div>
+              <div
+                className="analysis"
+                dangerouslySetInnerHTML={{
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                  __html: operatorSubclasses.find(
+                    ({ subProfessionId }) =>
+                      subProfessionId === selectedSubProfessionId
+                  )!.analysis.childMarkdownRemark.html,
+                }}
+              />
+            </section>
           ) : (
             <div className="select-subclass-message">
               Select operator subclass
@@ -226,12 +255,22 @@ export const query = graphql`
       nodes {
         className
         profession
+        analysis {
+          childMarkdownRemark {
+            html
+          }
+        }
       }
     }
     allContentfulOperatorSubclass {
       nodes {
         subclass
         subProfessionId
+        analysis {
+          childMarkdownRemark {
+            html
+          }
+        }
         class {
           profession
         }

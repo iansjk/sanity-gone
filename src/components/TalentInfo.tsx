@@ -219,6 +219,18 @@ const styles = (theme: Theme) => css`
             fill: ${theme.palette.white.main};
           }
         }
+
+        .elite-zero path {
+          fill: transparent;
+          stroke: ${theme.palette.midtoneBrighterer.main};
+        }
+
+        &.active {
+          .elite-zero path {
+            fill: transparent;
+            stroke: ${theme.palette.white.main};
+          }
+        }
       }
     }
 

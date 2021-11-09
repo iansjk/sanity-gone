@@ -196,7 +196,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
               </div>
               <div className="name-container">
                 <h2>{selectedClass}</h2>
-                <a className="emphasized-link">Browse</a>
+                {/* <a className="emphasized-link">Browse</a> */}
               </div>
               <div
                 className="analysis"
@@ -221,7 +221,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
               </div>
               <div className="name-container">
                 <h3>{selectedSubclass}</h3>
-                <a className="emphasized-link">Browse</a>
+                {/* <a className="emphasized-link">Browse</a> */}
               </div>
               <div
                 className="analysis"

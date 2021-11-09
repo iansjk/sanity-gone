@@ -69,9 +69,9 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
               name
             )}
           </div>
-          <span
+          <a
             className="class-and-subclass"
-            // href={`/classes/${operatorClass.toLowerCase()}#${subclass.toLowerCase()}`}
+            href={`/classes#${slugify(operatorClass)}-${slugify(subclass)}`}
           >
             <img
               className="class-icon"
@@ -85,7 +85,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
               alt=""
             />
             {subclass}
-          </span>
+          </a>
         </div>
         <OperatorPortrait
           variant={isMobile ? "small" : "normal"}
@@ -175,10 +175,10 @@ const styles = (theme: Theme) => css`
         border: 1px solid ${theme.palette.gray.main};
         border-radius: ${theme.spacing(0.5)};
 
-        /* &:hover {
+        &:hover {
           border-color: ${theme.palette.gray.main};
           background-color: ${theme.palette.midtoneBrighter.main};
-        } */
+        }
 
         .class-icon,
         .subclass-icon {

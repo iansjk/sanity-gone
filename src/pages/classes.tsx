@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import { rgba } from "polished";
 import slugify from "@sindresorhus/slugify";
@@ -14,7 +14,13 @@ import {
 
 import Layout from "../Layout";
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
-import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
+import {
+  classToProfession,
+  professionToClass,
+  subclassToSubProfessionId,
+  subProfessionIdToSubclass,
+  toTitleCase,
+} from "../utils/globals";
 
 interface Props {
   data: {
@@ -58,6 +64,20 @@ const Classes: React.VFC<Props> = ({ data }) => {
   const [selectedSubProfessionId, setSelectedSubProfessionId] = useState<
     string | null
   >(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash.length > 0) {
+        const [opClass, ...opSubclassWords] = hash.substr(1).split("-");
+        const opSubclass = opSubclassWords
+          .map((word) => toTitleCase(word))
+          .join(" ");
+        setSelectedProfession(classToProfession(toTitleCase(opClass)));
+        setSelectedSubProfessionId(subclassToSubProfessionId(opSubclass));
+      }
+    }
+  }, []);
 
   const handleClassMenuClick: React.MouseEventHandler<HTMLButtonElement> = (
     e

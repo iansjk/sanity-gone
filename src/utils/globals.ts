@@ -18,22 +18,25 @@ export function toTitleCase(string: string): string {
     .join("");
 }
 
-export function professionToClass(profession: string): string {
-  switch (profession) {
-    case "PIONEER":
-      return "Vanguard";
-    case "WARRIOR":
-      return "Guard";
-    case "SPECIAL":
-      return "Specialist";
-    case "TANK":
-      return "Defender";
-    case "SUPPORT":
-      return "Supporter";
-    default:
-      return toTitleCase(profession);
-  }
-}
+const professionLookup: Record<string, string> = {
+  Vanguard: "PIONEER",
+  Guard: "WARRIOR",
+  Specialist: "SPECIAL",
+  Defender: "TANK",
+  Supporter: "SUPPORT",
+  Sniper: "SNIPER",
+  Medic: "MEDIC",
+  Caster: "CASTER",
+};
+const reverseProfessionLookup = Object.fromEntries(
+  Object.entries(professionLookup).map(([k, v]) => [v, k])
+);
+
+export const classToProfession = (className: string): string =>
+  professionLookup[className];
+
+export const professionToClass = (profession: string): string =>
+  reverseProfessionLookup[profession];
 
 const subProfessionLookup: Record<string, string> = {
   pioneer: "Pioneer",
@@ -87,8 +90,13 @@ const subProfessionLookup: Record<string, string> = {
   dollkeeper: "Puppeteer",
   fortress: "Fortress",
 };
+const reverseSubProfessionLookup = Object.fromEntries(
+  Object.entries(subProfessionLookup).map(([k, v]) => [v, k])
+);
 export const subProfessionIdToSubclass = (subProfessionId: string): string =>
   subProfessionLookup[subProfessionId];
+export const subclassToSubProfessionId = (subclass: string): string =>
+  reverseSubProfessionLookup[subclass];
 
 const selfClosingTagRegex = /<(?<tagName>[A-Za-z]+) \/>/g;
 export const replaceSelfClosingHtmlTags = (htmlString: string): string =>

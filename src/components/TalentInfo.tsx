@@ -210,6 +210,13 @@ const styles = (theme: Theme) => css`
 
     .elite-buttons {
       button {
+        ${theme.breakpoints.down("mobile")} {
+          border-radius: 0;
+          &:first-of-type {
+            border-top-left-radius: ${theme.spacing(0.5)};
+          }
+        }
+
         path {
           fill: ${theme.palette.midtoneBrighterer.main};
         }

@@ -272,8 +272,6 @@ const styles = (theme: Theme) => css`
   }
 
   .results {
-    padding: ${theme.spacing(3, 4)};
-
     img {
       width: ${theme.spacing(8)};
       height: ${theme.spacing(8)};

@@ -31,6 +31,7 @@ const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
   "& .MuiListItemIcon-root": {
     minWidth: "unset",
     marginRight: theme.spacing(1),
+    objectFit: "contain",
   },
   "& .MuiListItemText-root": {
     padding: theme.spacing(1, 0),

@@ -22,6 +22,8 @@ import {
   toTitleCase,
 } from "../utils/globals";
 
+const MENU_ICON_SIZE = 18;
+
 interface Props {
   data: {
     allContentfulOperatorClass: {
@@ -143,7 +145,12 @@ const Classes: React.VFC<Props> = ({ data }) => {
             {operatorClasses.map(({ className, profession }) => (
               <MenuItem key={className} onClick={handleClassClick(profession)}>
                 <ListItemIcon>
-                  <img src={operatorClassIcon(slugify(className))} alt="" />
+                  <img
+                    src={operatorClassIcon(slugify(className))}
+                    alt=""
+                    width={MENU_ICON_SIZE}
+                    height={MENU_ICON_SIZE}
+                  />
                 </ListItemIcon>
                 <ListItemText>{className}</ListItemText>
               </MenuItem>
@@ -181,7 +188,12 @@ const Classes: React.VFC<Props> = ({ data }) => {
                   onClick={handleSubclassClick(subProfessionId)}
                 >
                   <ListItemIcon>
-                    <img src={operatorSubclassIcon(subProfessionId)} alt="" />
+                    <img
+                      src={operatorSubclassIcon(subProfessionId)}
+                      alt=""
+                      width={MENU_ICON_SIZE}
+                      height={MENU_ICON_SIZE}
+                    />
                   </ListItemIcon>
                   <ListItemText>{subclass}</ListItemText>
                 </MenuItem>

@@ -79,6 +79,27 @@ declare module "@mui/material/styles" {
   }
 }
 
+declare module "@mui/material/Button" {
+  interface ButtonPropsColorOverrides {
+    lime: true;
+    blue: true;
+    softBlue: true;
+    yellow: true;
+    orange: true;
+    red: true;
+    pink: true;
+    white: true;
+    gray: true;
+    black: true;
+    dark: true;
+    midtoneDarker: true;
+    midtone: true;
+    midtoneBrighter: true;
+    midtoneBrighterer: true;
+    midtoneExtra: true;
+  }
+}
+
 const spacingUnit = 8;
 
 const defaultTheme = createTheme({

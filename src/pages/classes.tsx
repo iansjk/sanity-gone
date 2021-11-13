@@ -28,6 +28,9 @@ const MENU_ICON_SIZE = 18;
 const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
   padding: theme.spacing(0, 1.5),
   minHeight: "unset",
+  "&.selected": {
+    backgroundColor: theme.palette.midtoneBrighterer.main,
+  },
   "& .MuiListItemIcon-root": {
     minWidth: "unset",
     marginRight: theme.spacing(1),
@@ -160,6 +163,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
               <ClassSubclassMenuItem
                 key={className}
                 onClick={handleClassClick(profession)}
+                className={selectedProfession === profession ? "selected" : ""}
               >
                 <ListItemIcon>
                   <img
@@ -203,6 +207,11 @@ const Classes: React.VFC<Props> = ({ data }) => {
                 <ClassSubclassMenuItem
                   key={subclass}
                   onClick={handleSubclassClick(subProfessionId)}
+                  className={
+                    selectedSubProfessionId === subProfessionId
+                      ? "selected"
+                      : undefined
+                  }
                 >
                   <ListItemIcon>
                     <img

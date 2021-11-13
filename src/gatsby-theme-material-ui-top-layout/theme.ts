@@ -102,7 +102,8 @@ declare module "@mui/material/Button" {
 
 const spacingUnit = 8;
 
-const defaultTheme = createTheme({
+const baseTheme = createTheme({
+  spacing: spacingUnit,
   palette: {
     lime: {
       main: "#a7e855",
@@ -251,4 +252,64 @@ const defaultTheme = createTheme({
   },
 });
 
+export const customShadows = {
+  titleShadow: `0 ${baseTheme.spacing(0.25)} ${baseTheme.spacing(
+    1
+  )} rgba(0, 0, 0, 0.5);`,
+  baseShadow: `${baseTheme.spacing(0.25)} ${baseTheme.spacing(
+    0.25
+  )} ${baseTheme.spacing(1)} rgba(0, 0, 0, 0.15)`,
+};
+
+const defaultTheme = createTheme({
+  ...baseTheme,
+  components: {
+    MuiButton: {
+      defaultProps: {
+        color: "midtoneBrighter",
+      },
+      styleOverrides: {
+        root: {
+          boxShadow: customShadows.baseShadow,
+          textTransform: "none",
+          "&:hover": {
+            backgroundColor: baseTheme.palette.midtoneBrighterer.main,
+          },
+          "&:disabled": {
+            color: baseTheme.palette.midtoneBrighterer.main,
+            backgroundColor: baseTheme.palette.dark.main,
+          },
+        },
+      },
+    },
+    MuiPopover: {
+      styleOverrides: {
+        paper: {
+          color: baseTheme.palette.white.main,
+          backgroundColor: baseTheme.palette.midtoneBrighter.main,
+          boxShadow: customShadows.baseShadow,
+        },
+      },
+    },
+    MuiMenu: {
+      styleOverrides: {
+        paper: {
+          margin: baseTheme.spacing(1, 0, 0),
+        },
+        list: {
+          padding: 0,
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          "&:hover": {
+            backgroundColor: baseTheme.palette.midtoneBrighterer.main,
+          },
+        },
+      },
+    },
+  },
+});
 export default defaultTheme;

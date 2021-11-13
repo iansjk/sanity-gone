@@ -10,6 +10,7 @@ import SanityGoneLogo from "./components/SanityGoneLogo";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 import { lighten, rgba } from "polished";
 import MobileMenu from "./components/MobileMenu";
+import SearchBar from "./components/SearchBar";
 
 interface LayoutProps {
   pageTitle: string;
@@ -108,6 +109,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
           <div className="header-main-wrapper">
             <header>
               <div className="top-line">
+                <SearchBar />
                 <SanityGoneLogo />
                 <div className="header-links">
                   <a href="/operators">Operators</a>

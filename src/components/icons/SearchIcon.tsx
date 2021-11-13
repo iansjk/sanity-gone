@@ -1,7 +1,7 @@
 const SearchIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
-      width="15"
+      width="16"
       height="16"
       viewBox="0 0 15 16"
       fill="none"

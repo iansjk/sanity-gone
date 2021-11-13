@@ -125,6 +125,11 @@ module.exports = {
                 }
               }
             }
+            allContentfulOperatorClass {
+              nodes {
+                profession
+              }
+            }
           }
         `,
         ref: "name",
@@ -145,6 +150,14 @@ module.exports = {
               type: "subclass",
               name: subProfessionToSubclass(node.subProfessionId),
               class: professionToClass(node.class.profession),
+              subProfession: node.subProfessionId,
+            }))
+          );
+          results.push(
+            ...data.allContentfulOperatorClass.nodes.map((node) => ({
+              type: "class",
+              name: professionToClass(node.profession),
+              class: professionToClass(node.profession),
               subProfession: node.subProfessionId,
             }))
           );

@@ -5,8 +5,8 @@ const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <a href="/" css={styles}>
       <svg
-        width="192"
-        height="24"
+        width="156"
+        height="19.5"
         viewBox="0 0 192 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

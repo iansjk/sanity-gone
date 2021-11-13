@@ -1,12 +1,17 @@
 import { graphql, useStaticQuery } from "gatsby";
 import { useMemo, useState } from "react";
-import { InputBase, Theme } from "@mui/material";
+import { InputBase, InputBaseProps, Theme } from "@mui/material";
 import FlexSearch from "flexsearch";
-import { operatorImage, operatorSubclassIcon } from "../utils/images";
+import {
+  operatorClassIcon,
+  operatorImage,
+  operatorSubclassIcon,
+} from "../utils/images";
 import gatsbySlugify from "@sindresorhus/slugify";
 import { css } from "@emotion/react";
 import { slugify } from "../utils/globals";
 import SearchIcon from "./icons/SearchIcon";
+import { transparentize } from "polished";
 
 interface SearchQuery {
   localSearchGlobal: {
@@ -31,7 +36,13 @@ interface SearchResult {
   subProfession?: string;
 }
 
-const SearchBar: React.VFC = () => {
+interface SearchBarProps {
+  placeholder: string;
+  onInputChange?(input: string): void;
+}
+
+const SearchBar: React.VFC<SearchBarProps> = (props) => {
+  const { placeholder, onInputChange, ...rest } = props;
   const search: SearchQuery = useStaticQuery(graphql`
     query SearchQuery {
       localSearchGlobal {
@@ -69,13 +80,17 @@ const SearchBar: React.VFC = () => {
   }, [index, query, store]);
 
   return (
-    <div className="search" css={styles}>
+    <div className="search" css={styles} {...rest}>
       <div className={query ? "search-bar menu-down" : "search-bar"}>
         <SearchIcon className="search-icon" />
         <InputBase
           className="search-input"
+          placeholder={placeholder}
           onChange={(e) => {
             setQuery(e.target.value);
+            if (onInputChange) {
+              onInputChange(e.target.value);
+            }
           }}
         />
       </div>
@@ -122,15 +137,17 @@ const SearchBar: React.VFC = () => {
                   })}
               </div>
             )}
-            {results.filter((res) => res.type === "subclass").length > 0 && (
-              <div className="archetype-results">
-                <div className="category-label">Archetypes</div>
+            {results.filter(
+              (res) => res.type === "subclass" || res.type === "class"
+            ).length > 0 && (
+              <div className="classes-results">
+                <div className="category-label">Classes</div>
                 {results
                   .filter((res) => res.type === "subclass")
                   .map((res) => {
                     return (
                       <a
-                        className="archetype-card"
+                        className="classes-card"
                         key={res.name}
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                         href={`/classes#${slugify(res.class!)}-${slugify(
@@ -142,11 +159,31 @@ const SearchBar: React.VFC = () => {
                           src={operatorSubclassIcon(res.subProfession!)}
                           alt={res.subProfession}
                         />
-                        <div className="archetype-info">
+                        <div className="classes-info">
                           {res.name}
-                          <span className="class-name">
-                            {res.class} Subclass
-                          </span>
+                          <span className="class-name">{res.class} Branch</span>
+                        </div>
+                      </a>
+                    );
+                  })}
+                {results
+                  .filter((res) => res.type === "class")
+                  .map((res) => {
+                    return (
+                      <a
+                        className="classes-card"
+                        key={res.name}
+                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                        href={`/classes#${slugify(res.class!)}`}
+                      >
+                        <img
+                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                          src={operatorClassIcon(res.class!)}
+                          alt={res.class}
+                        />
+                        <div className="classes-info">
+                          {res.name}
+                          <span className="class-name">Class</span>
                         </div>
                       </a>
                     );
@@ -165,21 +202,38 @@ const SearchBar: React.VFC = () => {
 export default SearchBar;
 
 const styles = (theme: Theme) => css`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: ${theme.spacing(52)};
+
   .search-bar {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: ${theme.spacing(52)};
+    width: 100%;
     height: ${theme.spacing(4.5)};
     border-radius: ${theme.spacing(0.5)};
-    border: 1px solid ${theme.palette.gray.main};
+    border: 1px solid ${transparentize(0.9, theme.palette.white.main)};
+
+    &:hover {
+      border: 1px solid ${transparentize(0.8, theme.palette.white.main)};
+      background: ${transparentize(0.67, theme.palette.dark.main)};
+    }
+
+    &:focus-within {
+      border: 1px solid ${theme.palette.gray.main};
+      background: ${theme.palette.dark.main};
+    }
 
     &.menu-down {
       border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
     }
+
     .search-icon {
       margin: ${theme.spacing(0, 2)};
     }
+
     .search-input {
       flex: 1 1 0;
       color: ${theme.palette.white.main};
@@ -189,10 +243,11 @@ const styles = (theme: Theme) => css`
   }
 
   .results {
-    width: ${theme.spacing(52)};
     display: flex;
     flex-direction: column;
     position: absolute;
+    top: 100%;
+    width: 100%;
     z-index: 5;
     background-color: ${theme.palette.midtone.main};
     border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
@@ -242,6 +297,7 @@ const styles = (theme: Theme) => css`
             .rarity {
               width: ${theme.spacing(3)};
             }
+
             .class-and-subclass {
               color: ${theme.palette.gray.main};
             }
@@ -259,11 +315,11 @@ const styles = (theme: Theme) => css`
       }
     }
 
-    .archetype-results {
+    .classes-results {
       display: flex;
       flex-direction: column;
 
-      a.archetype-card {
+      a.classes-card {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -276,7 +332,7 @@ const styles = (theme: Theme) => css`
           border-radius: ${theme.spacing(0.5)};
         }
 
-        .archetype-info {
+        .classes-info {
           display: flex;
           flex-direction: column;
           color: ${theme.palette.white.main};

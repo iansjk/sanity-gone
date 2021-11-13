@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import { rgba } from "polished";
 import slugify from "@sindresorhus/slugify";
@@ -147,8 +147,24 @@ const Classes: React.VFC<Props> = ({ data }) => {
             aria-haspopup="true"
             aria-expanded={isClassMenuOpen ? "true" : undefined}
             onClick={handleClassMenuClick}
+            className={
+              selectedProfession != null ? "has-selection" : "no-selection"
+            }
           >
-            Class
+            {selectedProfession ? (
+              <Fragment>
+                <img
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                  src={operatorClassIcon(slugify(selectedClass!))}
+                  alt=""
+                  width={MENU_ICON_SIZE}
+                  height={MENU_ICON_SIZE}
+                />
+                {selectedClass}
+              </Fragment>
+            ) : (
+              "Class"
+            )}
           </Button>
           <Menu
             id="class-menu"
@@ -186,8 +202,23 @@ const Classes: React.VFC<Props> = ({ data }) => {
             aria-haspopup="true"
             aria-expanded={isSubclassMenuOpen ? "true" : undefined}
             onClick={handleSubclassMenuClick}
+            className={
+              selectedSubProfessionId ? "has-selection" : "no-selection"
+            }
           >
-            Subclass
+            {selectedSubProfessionId ? (
+              <Fragment>
+                <img
+                  src={operatorSubclassIcon(selectedSubProfessionId)}
+                  alt=""
+                  width={MENU_ICON_SIZE}
+                  height={MENU_ICON_SIZE}
+                />
+                {selectedSubclass}
+              </Fragment>
+            ) : (
+              "Subclass"
+            )}
           </Button>
           <Menu
             id="subclass-menu"
@@ -298,7 +329,7 @@ const styles = (theme: Theme) => css`
     padding: ${theme.spacing(3, 4)};
     border-bottom: 1px solid ${theme.palette.midtoneBrighterer.main};
 
-    *:not(:last-child) {
+    & > *:not(:last-child) {
       margin-right: ${theme.spacing(2)};
     }
 
@@ -306,6 +337,19 @@ const styles = (theme: Theme) => css`
       font-size: ${theme.typography.skillTalentHeading.fontSize}px;
       line-height: ${theme.typography.skillTalentHeading.lineHeight};
       font-weight: ${theme.typography.skillTalentHeading.fontWeight};
+    }
+
+    button {
+      transition-property: background-color, box-shadow, border-color;
+
+      &.no-selection {
+        color: ${theme.palette.gray.main};
+      }
+
+      img {
+        object-fit: contain;
+        margin-right: ${theme.spacing(1)};
+      }
     }
   }
 

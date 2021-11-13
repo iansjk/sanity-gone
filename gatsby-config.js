@@ -107,7 +107,9 @@ module.exports = {
         },
         query: `
           {
-            allOperatorsJson {
+            allOperatorsJson (
+              filter: { isNotObtainable: { eq: false } }
+            ) {
               nodes {
                 name
                 profession
@@ -143,6 +145,7 @@ module.exports = {
               type: "subclass",
               name: subProfessionToSubclass(node.subProfessionId),
               class: professionToClass(node.class.profession),
+              subProfession: node.subProfessionId,
             }))
           );
           return results;

@@ -270,6 +270,9 @@ const defaultTheme = createTheme({
       },
       styleOverrides: {
         root: {
+          padding: baseTheme.spacing(1, 1.5),
+          fontSize: baseTheme.typography.navigationLink.fontSize,
+          lineHeight: baseTheme.typography.navigationLink.lineHeight,
           boxShadow: customShadows.baseShadow,
           textTransform: "none",
           "&:hover": {
@@ -306,6 +309,11 @@ const defaultTheme = createTheme({
         root: {
           "&:hover": {
             backgroundColor: baseTheme.palette.midtoneBrighterer.main,
+          },
+          "& .MuiTypography-root": {
+            fontSize: baseTheme.typography.navigationLink.fontSize,
+            lineHeight: baseTheme.typography.navigationLink.lineHeight,
+            fontWeight: baseTheme.typography.navigationLinkBold.fontWeight,
           },
         },
       },

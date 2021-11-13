@@ -186,7 +186,6 @@ const styles = (theme: Theme) => css`
           height: ${theme.spacing(3)};
           line-height: 1;
           margin-right: ${theme.spacing(1)};
-          object-fit: contain;
         }
 
         .subclass-icon {

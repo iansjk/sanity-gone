@@ -560,4 +560,8 @@ const styles =
       input[type="number"] {
         -moz-appearance: textfield;
       }
+
+      img {
+        object-fit: contain;
+      }
     `;

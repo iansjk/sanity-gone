@@ -34,7 +34,6 @@ const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
   "& .MuiListItemIcon-root": {
     minWidth: "unset",
     marginRight: theme.spacing(1),
-    objectFit: "contain",
   },
   "& .MuiListItemText-root": {
     padding: theme.spacing(1, 0),
@@ -347,7 +346,6 @@ const styles = (theme: Theme) => css`
       }
 
       img {
-        object-fit: contain;
         margin-right: ${theme.spacing(1)};
       }
     }
@@ -357,7 +355,6 @@ const styles = (theme: Theme) => css`
     img {
       width: ${theme.spacing(8)};
       height: ${theme.spacing(8)};
-      object-fit: contain;
 
       ${theme.breakpoints.down("mobile")} {
         width: ${theme.spacing(3)};

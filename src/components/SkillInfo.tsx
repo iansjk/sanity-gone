@@ -366,6 +366,7 @@ const styles = (theme: Theme) => css`
       svg path {
         fill: ${theme.palette.pink.main};
       }
+      // there is a weird 1px gap to the right of this div on desktop. TODO: Fix it.
     }
   }
 

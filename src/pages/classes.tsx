@@ -9,6 +9,7 @@ import {
   ListItemText,
   Menu,
   MenuItem,
+  styled,
   Theme,
 } from "@mui/material";
 
@@ -23,6 +24,18 @@ import {
 } from "../utils/globals";
 
 const MENU_ICON_SIZE = 18;
+
+const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
+  padding: theme.spacing(0, 1.5),
+  minHeight: "unset",
+  "& .MuiListItemIcon-root": {
+    minWidth: "unset",
+    marginRight: theme.spacing(1),
+  },
+  "& .MuiListItemText-root": {
+    padding: theme.spacing(1, 0),
+  },
+}));
 
 interface Props {
   data: {
@@ -143,7 +156,10 @@ const Classes: React.VFC<Props> = ({ data }) => {
             onClose={() => setIsClassMenuOpen(false)}
           >
             {operatorClasses.map(({ className, profession }) => (
-              <MenuItem key={className} onClick={handleClassClick(profession)}>
+              <ClassSubclassMenuItem
+                key={className}
+                onClick={handleClassClick(profession)}
+              >
                 <ListItemIcon>
                   <img
                     src={operatorClassIcon(slugify(className))}
@@ -153,7 +169,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
                   />
                 </ListItemIcon>
                 <ListItemText>{className}</ListItemText>
-              </MenuItem>
+              </ClassSubclassMenuItem>
             ))}
           </Menu>
           <Button
@@ -183,7 +199,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
                   subclassClass.profession === selectedProfession
               )
               .map(({ subclass, subProfessionId }) => (
-                <MenuItem
+                <ClassSubclassMenuItem
                   key={subclass}
                   onClick={handleSubclassClick(subProfessionId)}
                 >
@@ -196,7 +212,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
                     />
                   </ListItemIcon>
                   <ListItemText>{subclass}</ListItemText>
-                </MenuItem>
+                </ClassSubclassMenuItem>
               ))}
           </Menu>
         </div>

@@ -341,6 +341,10 @@ const styles = (theme: Theme) => css`
     button {
       transition-property: background-color, box-shadow, border-color;
 
+      &.has-selection {
+        font-weight: ${theme.typography.navigationLinkBold.fontWeight};
+      }
+
       &.no-selection {
         color: ${theme.palette.gray.main};
       }

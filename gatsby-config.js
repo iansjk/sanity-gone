@@ -160,7 +160,6 @@ module.exports = {
               type: "class",
               name: professionToClass(node.profession),
               class: professionToClass(node.profession),
-              subProfession: node.subProfessionId,
             }))
           );
           return results;

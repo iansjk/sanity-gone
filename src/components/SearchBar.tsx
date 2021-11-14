@@ -43,7 +43,7 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.VFC<SearchBarProps> = (props) => {
-  const { placeholder, onInputChange, ...rest } = props;
+  const { placeholder, ...rest } = props;
   const search: SearchQuery = useStaticQuery(graphql`
     query SearchQuery {
       localSearchGlobal {
@@ -120,8 +120,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
           placeholder={placeholder}
           onChange={(e) => {
             setQuery(e.target.value);
-            if (onInputChange) {
-              onInputChange(e.target.value);
+            if (props.onInputChange) {
+              props.onInputChange(e.target.value);
             }
           }}
         />
@@ -166,6 +166,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                             </span>
                           </div>
                         </div>
+                        {!hasGuide && <div className="gray-overlay" />}
                       </a>
                     );
                   })}
@@ -344,11 +345,11 @@ const styles = (theme: Theme) => css`
         }
 
         &.disabled {
-          // cursor: default;
+          cursor: default;
+          opacity: 25%;
         }
 
-        &:hover {
-          // add :not(.disabled)
+        &:hover:not(.disabled) {
           background: ${theme.palette.midtoneBrighter.main};
         }
       }

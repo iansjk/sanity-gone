@@ -241,6 +241,10 @@ const styles = (theme: Theme) => css`
   flex-direction: column;
   max-width: ${theme.spacing(52)};
 
+  img {
+    object-fit: contain;
+  }
+
   .search-bar {
     display: flex;
     flex-direction: row;

@@ -149,6 +149,10 @@ const styles = (theme: Theme) => css`
           font-size: ${theme.typography.skillTalentHeading.fontSize}px;
         }
       }
+
+      .results {
+        padding-top: ${theme.spacing(2)};
+      }
     }
 
     .results {

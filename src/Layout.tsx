@@ -308,6 +308,7 @@ const styles =
             }
 
             height: 77px;
+            backdrop-filter: blur(${theme.spacing(1)});
           }
         }
 

@@ -134,6 +134,8 @@ module.exports = {
         `,
         ref: "name",
         index: ["name"],
+        // maps the data from the query into an array of results for indexing
+        // this maps everything into the spec of a SearchResult object in SearchBar.tsx
         normalizer: ({ data }) => {
           const results = [];
           results.push(

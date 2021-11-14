@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { InputBase, Theme } from "@mui/material";
 import FlexSearch from "flexsearch";
@@ -28,6 +28,10 @@ interface SearchQuery {
   };
 }
 
+// Interface representing a search result.
+// This could be either a class, subclass, or operator (denoted by "type").
+// This involves a certain amount of weird hacking, because each type of search
+// result has different keys available to it.
 interface SearchResult {
   type: string;
   name: string;
@@ -37,13 +41,38 @@ interface SearchResult {
   subProfession?: string;
 }
 
+// the onInputChange function prop is necessary to hide the other elements in
+// the mobile menu while the search is active (CSS doesn't let me do it).
 interface SearchBarProps {
   placeholder: string;
   onInputChange?(input: string): void;
 }
 
+// helper method to sort the results, because FlexSearch isn't very good at it
+// compares prefix first, then if both are either prefixed or not prefixed,
+// it compares based on Levenshtein distance instead
+// I know, my naming skills are impeccable
+const prefenshteinCompare = (query: string, a: string, b: string) => {
+  a = a.toLowerCase();
+  b = b.toLowerCase();
+  const lowercaseQuery = query.toLowerCase();
+
+  const startsWithA = a.startsWith(lowercaseQuery);
+  const startsWithB = b.startsWith(lowercaseQuery);
+  if (startsWithA && !startsWithB) {
+    return -1;
+  }
+  if (startsWithB && !startsWithA) {
+    return 1;
+  }
+  return levenshtein(lowercaseQuery, a) - levenshtein(lowercaseQuery, b);
+};
+
 const SearchBar: React.VFC<SearchBarProps> = (props) => {
   const { placeholder, ...rest } = props;
+
+  // need to read the list of guides, to disable the links to operators without
+  // guides yet
   const search: SearchQuery = useStaticQuery(graphql`
     query SearchQuery {
       localSearchGlobal {
@@ -71,6 +100,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
   const [query, setQuery] = useState("");
   const [isFocused, setFocus] = useState(false);
 
+  // Gets the results based on the current query state
+  // This uses memoization, so the same query will not be repeated twice
   const results = useMemo((): SearchResult[] => {
     if (!query || !index || !store) return [];
 
@@ -79,25 +110,6 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
 
     return rawResults.map((name: string): SearchResult => store[name]);
   }, [index, query, store]);
-
-  // compares prefix first, then if both are either prefixed or not prefixed,
-  // it compares based on Levenshtein distance instead
-  // I know, my naming skills are impeccable
-  const prefenshteinCompare = (query: string, a: string, b: string) => {
-    a = a.toLowerCase();
-    b = b.toLowerCase();
-    const lowercaseQuery = query.toLowerCase();
-
-    const startsWithA = a.startsWith(lowercaseQuery);
-    const startsWithB = b.startsWith(lowercaseQuery);
-    if (startsWithA && !startsWithB) {
-      return -1;
-    }
-    if (startsWithB && !startsWithA) {
-      return 1;
-    }
-    return levenshtein(lowercaseQuery, a) - levenshtein(lowercaseQuery, b);
-  };
 
   return (
     <div
@@ -136,7 +148,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                 {results
                   .filter((res) => res.type === "operator")
                   .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
-                  .slice(0, 5)
+                  .slice(0, 5) // limit of 5 operator results
                   .map((res) => {
                     const hasGuide = operatorsWithGuides.has(res.name);
                     return (
@@ -182,7 +194,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                     (res) => res.type === "subclass" || res.type === "class"
                   )
                   .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
-                  .slice(0, 3)
+                  .slice(0, 3) // limit of 3 subclass or class results
                   .map((res) => {
                     return res.type === "subclass" ? (
                       <a
@@ -348,6 +360,7 @@ const styles = (theme: Theme) => css`
           }
         }
 
+        // logic for disabled buttons
         &.disabled {
           cursor: default;
           opacity: 25%;

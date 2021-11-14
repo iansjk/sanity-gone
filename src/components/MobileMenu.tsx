@@ -145,6 +145,10 @@ const styles = (theme: Theme) => css`
         padding: ${theme.spacing(0)};
         margin: ${theme.spacing(0, 2)};
 
+        &.menu-down {
+          border-radius: ${theme.spacing(0.5)};
+        }
+
         .search-input {
           font-size: ${theme.typography.skillTalentHeading.fontSize}px;
         }

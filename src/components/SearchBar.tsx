@@ -266,10 +266,6 @@ const styles = (theme: Theme) => css`
 
     &.menu-down {
       border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
-
-      ${theme.breakpoints.down("mobile")} {
-        border-radius: ${theme.spacing(0.5)};
-      }
     }
 
     .search-icon {

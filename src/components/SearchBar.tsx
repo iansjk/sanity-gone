@@ -12,6 +12,7 @@ import { css } from "@emotion/react";
 import { slugify } from "../utils/globals";
 import SearchIcon from "./icons/SearchIcon";
 import { transparentize } from "polished";
+import levenshtein from "js-levenshtein";
 
 interface SearchQuery {
   localSearchGlobal: {
@@ -73,11 +74,29 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
     if (!query || !index || !store) return [];
 
     // @ts-expect-error trust me bro its a string array
-    const rawResults: string[] = index.search(query, 5); //limit of 5 results
+    const rawResults: string[] = index.search(query);
 
-    console.log(rawResults);
     return rawResults.map((name: string): SearchResult => store[name]);
   }, [index, query, store]);
+
+  // compares prefix first, then if both are either prefixed or not prefixed,
+  // it compares based on Levenshtein distance instead
+  // I know, my naming skills are impeccable
+  const prefenshteinCompare = (query: string, a: string, b: string) => {
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+    const lowercaseQuery = query.toLowerCase();
+
+    const startsWithA = a.startsWith(lowercaseQuery);
+    const startsWithB = b.startsWith(lowercaseQuery);
+    if (startsWithA && !startsWithB) {
+      return -1;
+    }
+    if (startsWithB && !startsWithA) {
+      return 1;
+    }
+    return levenshtein(lowercaseQuery, a) - levenshtein(lowercaseQuery, b);
+  };
 
   return (
     <div className="search" css={styles} {...rest}>
@@ -103,6 +122,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                 <div className="category-label">Operators</div>
                 {results
                   .filter((res) => res.type === "operator")
+                  .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
+                  .slice(0, 5)
                   .map((res) => {
                     const hasGuide = operatorsWithGuides.has(res.name);
                     return (
@@ -143,9 +164,13 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
               <div className="classes-results">
                 <div className="category-label">Classes</div>
                 {results
-                  .filter((res) => res.type === "subclass")
+                  .filter(
+                    (res) => res.type === "subclass" || res.type === "class"
+                  )
+                  .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
+                  .slice(0, 3)
                   .map((res) => {
-                    return (
+                    return res.type === "subclass" ? (
                       <a
                         className="classes-card"
                         key={res.name}
@@ -164,12 +189,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           <span className="class-name">{res.class} Branch</span>
                         </div>
                       </a>
-                    );
-                  })}
-                {results
-                  .filter((res) => res.type === "class")
-                  .map((res) => {
-                    return (
+                    ) : (
                       <a
                         className="classes-card"
                         key={res.name}

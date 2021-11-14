@@ -92,8 +92,8 @@ const styles = (theme: Theme) => css`
   }
 
   .top-bar {
-    height: 29px;
-    padding: ${theme.spacing(3)};
+    height: 77px;
+    padding: ${theme.spacing(0, 3)};
     display: grid;
     grid-template-columns: max-content 1fr max-content;
     align-items: center;
@@ -134,15 +134,20 @@ const styles = (theme: Theme) => css`
     padding: ${theme.spacing(2, 0)};
     margin: 0;
 
-    .search-bar {
-      background: ${theme.palette.dark.main} !important;
+    .search {
       max-width: unset;
-      height: ${theme.spacing(5)};
-      padding: ${theme.spacing(0)};
-      margin: ${theme.spacing(0, 2)};
 
-      .search-input {
-        font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+      .search-bar {
+        background: ${theme.palette.dark.main} !important;
+        max-width: unset;
+        width: auto;
+        height: ${theme.spacing(5)};
+        padding: ${theme.spacing(0)};
+        margin: ${theme.spacing(0, 2)};
+
+        .search-input {
+          font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+        }
       }
     }
 

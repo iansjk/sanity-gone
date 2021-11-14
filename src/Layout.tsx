@@ -307,7 +307,7 @@ const styles =
               display: none;
             }
 
-            height: ${theme.spacing(9.5)};
+            height: 77px;
           }
         }
 

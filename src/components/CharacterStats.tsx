@@ -20,21 +20,15 @@ import {
   EliteZeroIcon,
   EliteOneIcon,
   EliteTwoIcon,
-  PotentialTwoIcon,
-  PotentialThreeIcon,
-  PotentialFourIcon,
-  PotentialFiveIcon,
-  PotentialSixIcon,
   HealthIcon,
   RedeployTimeIcon,
 } from "./icons/operatorStats";
 import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import {
+  getMaxPotStatIncrease,
   getMaxTrustStatIncrease,
-  getPotStatIncreases,
   getStatsAtLevel,
-  getTrustIncreaseString,
 } from "../utils/globals";
 import { summonImage } from "../utils/images";
 import CustomCheckbox from "./CustomCheckbox";
@@ -106,6 +100,17 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
         atk: 0,
         def: 0,
         magicResistance: 0,
+      };
+
+  const potentialIncreases = !isSummon
+    ? getMaxPotStatIncrease(characterObject)
+    : {
+        health: 0,
+        attackPower: 0,
+        defense: 0,
+        dpCost: 0,
+        attackSpeed: 0,
+        redeployTimeInSeconds: 0,
       };
 
   const [eliteLevel, setEliteLevelFunc] = useState(maxElite);
@@ -245,96 +250,54 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 <StatsChangeTooltip
                   title={
                     <ul>
-                      {getPotStatIncreases(characterObject).map((val, i) => {
-                        const potential = i + 2;
-                        return (
-                          val !==
-                            {
-                              health: 0,
-                              attackPower: 0,
-                              defense: 0,
-                              dpCost: 0,
-                              attackSpeed: 0,
-                              redeployTimeInSeconds: 0,
-                            } && (
-                            <li key={`potential-${potential}-stat-change`}>
-                              {potential === 2 && (
-                                <PotentialTwoIcon
-                                  aria-label={`Potential ${potential}`}
-                                />
-                              )}
-                              {potential === 3 && (
-                                <PotentialThreeIcon
-                                  aria-label={`Potential ${potential}`}
-                                />
-                              )}
-                              {potential === 4 && (
-                                <PotentialFourIcon
-                                  aria-label={`Potential ${potential}`}
-                                />
-                              )}
-                              {potential === 5 && (
-                                <PotentialFiveIcon
-                                  aria-label={`Potential ${potential}`}
-                                />
-                              )}
-                              {potential === 6 && (
-                                <PotentialSixIcon
-                                  aria-label={`Potential ${potential}`}
-                                />
-                              )}
-                              {val.health !== 0 && (
-                                <span>
-                                  HP{" "}
-                                  <span className="stat-value">
-                                    +{val.health}
-                                  </span>
-                                </span>
-                              )}
-                              {val.attackPower !== 0 && (
-                                <span>
-                                  ATK{" "}
-                                  <span className="stat-value">
-                                    +{val.attackPower}
-                                  </span>
-                                </span>
-                              )}
-                              {val.defense !== 0 && (
-                                <span>
-                                  DEF{" "}
-                                  <span className="stat-value">
-                                    +{val.defense}
-                                  </span>
-                                </span>
-                              )}
-                              {val.dpCost !== 0 && (
-                                <span>
-                                  DP Cost{" "}
-                                  <span className="stat-value">
-                                    {val.dpCost}
-                                  </span>
-                                </span>
-                              )}
-                              {val.attackSpeed !== 0 && (
-                                <span>
-                                  ASPD{" "}
-                                  <span className="stat-value">
-                                    +{val.attackSpeed}
-                                  </span>
-                                </span>
-                              )}
-                              {val.redeployTimeInSeconds !== 0 && (
-                                <span>
-                                  Attack{" "}
-                                  <span className="stat-value">
-                                    {val.redeployTimeInSeconds}
-                                  </span>
-                                </span>
-                              )}
-                            </li>
-                          )
-                        );
-                      })}
+                      {potentialIncreases.health !== 0 && (
+                        <li>
+                          HP&nbsp;
+                          <span className="stat-value">
+                            +{potentialIncreases.health}
+                          </span>
+                        </li>
+                      )}
+                      {potentialIncreases.attackPower !== 0 && (
+                        <li>
+                          ATK&nbsp;
+                          <span className="stat-value">
+                            +{potentialIncreases.attackPower}
+                          </span>
+                        </li>
+                      )}
+                      {potentialIncreases.defense !== 0 && (
+                        <li>
+                          DEF&nbsp;
+                          <span className="stat-value">
+                            +{potentialIncreases.defense}
+                          </span>
+                        </li>
+                      )}
+                      {potentialIncreases.dpCost !== 0 && (
+                        <li>
+                          DP Cost&nbsp;
+                          <span className="stat-value">
+                            {potentialIncreases.dpCost}
+                          </span>
+                        </li>
+                      )}
+                      {potentialIncreases.attackSpeed !== 0 && (
+                        <li>
+                          ASPD&nbsp;
+                          <span className="stat-value">
+                            +{potentialIncreases.attackSpeed}
+                          </span>
+                        </li>
+                      )}
+                      {potentialIncreases.redeployTimeInSeconds !== 0 && (
+                        <li>
+                          Redeploy Time&nbsp;
+                          <span className="stat-value">
+                            {potentialIncreases.redeployTimeInSeconds}
+                          </span>
+                        </li>
+                      )}
                     </ul>
                   }
                 >

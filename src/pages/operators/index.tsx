@@ -67,6 +67,8 @@ const Operators: React.VFC<Props> = (props) => {
       pageTitle="Operator List"
       bannerImageUrl={sgPageBanner("operators")}
       blendPoint={496}
+      previousLocation="Home"
+      previousLocationLink="/"
     >
       <main css={styles}>
         <span className="last-updated">

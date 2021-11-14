@@ -275,8 +275,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       bannerImageUrl={contentful.operator.bannerImage.localFile.publicURL}
       image={operatorImage(operatorName)}
       description={contentful.customByline ?? description}
-      // previousLocation="Operators"
-      // previousLocationLink="/operators"
+      previousLocation="Operators"
+      previousLocationLink="/operators"
     >
       <Global
         styles={globalOverrideStyles(

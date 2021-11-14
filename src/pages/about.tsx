@@ -60,7 +60,12 @@ const members: { name: string; role: string; avatar: string }[] = [
 
 const About: React.VFC = () => {
   return (
-    <Layout pageTitle="About" bannerImageUrl={sgPageBanner("about")}>
+    <Layout
+      pageTitle="About"
+      bannerImageUrl={sgPageBanner("about")}
+      previousLocation="Home"
+      previousLocationLink="/"
+    >
       <main css={styles}>
         <h2>Sanity;Gone Team</h2>
         <ul className="team-members">

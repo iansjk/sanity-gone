@@ -12,7 +12,7 @@ import { lighten, rgba, transparentize } from "polished";
 import MobileMenu from "./components/MobileMenu";
 import SearchBar from "./components/SearchBar";
 import WeirdDeathSphere from "./components/WeirdDeathSphere";
-import LogoBackground from "./components/icons/LogoBackground";
+import BreadcrumbBackIcon from "./components/icons/BreadcrumbBackIcon";
 
 interface LayoutProps {
   pageTitle: string;
@@ -21,6 +21,8 @@ interface LayoutProps {
   customPageHeading?: React.ReactNode;
   blendPoint?: number;
   bannerImageUrl?: string;
+  previousLocation: string;
+  previousLocationLink: string;
 }
 
 interface SiteMetadataQuery {
@@ -43,6 +45,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
     bannerImageUrl,
     blendPoint,
     children,
+    previousLocation,
+    previousLocationLink,
     ...rest
   } = props;
   const data: SiteMetadataQuery = useStaticQuery(graphql`
@@ -111,7 +115,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
           <div className="navbar">
             <div className="navbar-background">
               <div className="background-spacer" />
-              <LogoBackground className="logo-bg" />
+              <div className="logo-bg" />
               <WeirdDeathSphere className="weird-death-sphere" />
               <div className="background-spacer" />
             </div>
@@ -148,18 +152,19 @@ const Layout: React.FC<LayoutProps> = (props) => {
           <div className="header-main-wrapper">
             <header>
               <div className="heading-and-breadcrumb">
+                <div className="heading-spacer" />
+                {previousLocation && previousLocationLink && (
+                  <div className="breadcrumb">
+                    <a
+                      href={previousLocationLink}
+                      aria-label={`Back to ${previousLocation}`}
+                    >
+                      <BreadcrumbBackIcon />
+                      {previousLocation}
+                    </a>
+                  </div>
+                )}
                 {customPageHeading || <h1>{pageTitle}</h1>}
-                {/* {previousLocation && previousLocationLink && (
-                    <div className="breadcrumb">
-                      <a
-                        href={previousLocationLink}
-                        aria-label={`Back to ${previousLocation}`}
-                      >
-                        <BreadcrumbBackIcon />
-                        {previousLocation}
-                      </a>
-                    </div>
-                  )} */}
               </div>
             </header>
             <div className="page-content">{children}</div>
@@ -282,6 +287,15 @@ const styles =
           height: ${theme.spacing(8.5)};
           width: 100%;
           backdrop-filter: blur(8px);
+
+          .logo-bg {
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0) 70.31%,
+                rgba(0, 0, 0, 0.33) 100%
+              )
+              ${transparentize(0.8, theme.palette.black.main)};
+          }
 
           .background-spacer {
             background: linear-gradient(
@@ -426,8 +440,12 @@ const styles =
 
         .heading-and-breadcrumb {
           display: flex;
-          flex-direction: column-reverse;
+          flex-direction: column;
           margin-top: 165px;
+
+          .heading-spacer {
+            flex: 1 1 0;
+          }
 
           h1 {
             margin: 0;
@@ -442,7 +460,7 @@ const styles =
             }
           }
 
-          /* .breadcrumb {
+          .breadcrumb {
             line-height: 1;
 
             a {
@@ -461,7 +479,7 @@ const styles =
                 }
               }
             }
-          } */
+          }
         }
       }
 

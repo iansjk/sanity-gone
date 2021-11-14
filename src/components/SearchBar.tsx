@@ -69,6 +69,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
   );
 
   const [query, setQuery] = useState("");
+  const [isFocused, setFocus] = useState(false);
 
   const results = useMemo((): SearchResult[] => {
     if (!query || !index || !store) return [];
@@ -99,8 +100,14 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
   };
 
   return (
-    <div className="search" css={styles} {...rest}>
-      <div className={query ? "search-bar menu-down" : "search-bar"}>
+    <div
+      className={`search ${isFocused ? "focused" : "not-focused"}`}
+      css={styles}
+      onFocus={() => setFocus(true)}
+      onBlur={() => setFocus(false)}
+      {...rest}
+    >
+      <div className={`search-bar ${query && isFocused ? " menu-down" : ""}`}>
         <SearchIcon className="search-icon" />
         <InputBase
           className="search-input"
@@ -259,6 +266,12 @@ const styles = (theme: Theme) => css`
       color: ${theme.palette.white.main};
       margin: ${theme.spacing(1, 0)};
       font-size: ${theme.typography.body2.fontSize}px;
+    }
+  }
+
+  &.not-focused {
+    .results {
+      display: none;
     }
   }
 

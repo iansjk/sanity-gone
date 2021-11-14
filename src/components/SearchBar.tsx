@@ -1,6 +1,6 @@
+import React, { useMemo, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { useMemo, useState } from "react";
-import { InputBase, InputBaseProps, Theme } from "@mui/material";
+import { InputBase, Theme } from "@mui/material";
 import FlexSearch from "flexsearch";
 import {
   operatorClassIcon,
@@ -103,9 +103,15 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
     <div
       className={`search ${isFocused ? "focused" : "not-focused"}`}
       css={styles}
-      onFocus={() => setFocus(true)}
-      onBlur={() => setFocus(false)}
       {...rest}
+      onFocus={() => setFocus(true)}
+      onBlur={(e: React.FocusEvent<HTMLDivElement>) => {
+        // @ts-expect-error React docs tells me to do this
+        if (e.currentTarget.contains(e.relatedTarget)) {
+          return;
+        }
+        setFocus(false);
+      }}
     >
       <div className={`search-bar ${query && isFocused ? " menu-down" : ""}`}>
         <SearchIcon className="search-icon" />
@@ -123,7 +129,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
       {results &&
         query &&
         (results.length > 0 ? (
-          <div className="results">
+          <div className={`results`}>
             {results.filter((res) => res.type === "operator").length > 0 && (
               <div className="operator-results">
                 <div className="category-label">Operators</div>

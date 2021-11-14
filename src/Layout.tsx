@@ -11,7 +11,7 @@ import MobileMenuIcon from "./components/icons/MobileMenuIcon";
 import { lighten, rgba, transparentize } from "polished";
 import MobileMenu from "./components/MobileMenu";
 import SearchBar from "./components/SearchBar";
-import WeirdDeathSphere from "./components/icons/WeirdDeathSphere";
+import WeirdDeathSphere from "./components/WeirdDeathSphere";
 import LogoBackground from "./components/icons/LogoBackground";
 
 interface LayoutProps {
@@ -281,6 +281,7 @@ const styles =
           display: flex;
           height: ${theme.spacing(8.5)};
           width: 100%;
+          backdrop-filter: blur(8px);
 
           .background-spacer {
             background: linear-gradient(
@@ -308,7 +309,7 @@ const styles =
             }
 
             height: 77px;
-            backdrop-filter: blur(${theme.spacing(1)});
+            backdrop-filter: blur(8px);
           }
         }
 

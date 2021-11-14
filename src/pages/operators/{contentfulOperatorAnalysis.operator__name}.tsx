@@ -445,7 +445,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
     .tabs ~ .swiper-container {
       background-color: ${transparentize(0.34, theme.palette.dark.main)};
-      backdrop-filter: blur(${theme.spacing(1)});
+      backdrop-filter: blur(8px);
 
       button {
         box-sizing: border-box;
@@ -603,7 +603,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       margin-left: -1px;
       height: 100%;
       border-left: 1px solid ${theme.palette.gray.main};
-      backdrop-filter: blur(${theme.spacing(1)});
+      backdrop-filter: blur(8px);
 
       ${theme.breakpoints.down("mobile")} {
         grid-row: 2;

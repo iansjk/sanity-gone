@@ -2,6 +2,16 @@
 const gatsbySlugify = require("@sindresorhus/slugify");
 const { DateTime } = require("luxon");
 require("dotenv").config();
+require("ts-node").register({
+  compilerOptions: {
+    module: "commonjs",
+    target: "es2017",
+  },
+});
+const {
+  professionToClass,
+  subProfessionToSubclass,
+} = require("./src/utils/globals.ts");
 
 module.exports = {
   siteMetadata: {
@@ -168,86 +178,3 @@ module.exports = {
     },
   ],
 };
-
-/*
- * This is actually a nightmare and the worst thing ever, but it's a temporary
- * solution while we figure out ES6 and CJS...
- */
-function toTitleCase(string) {
-  return [...string.toLowerCase()]
-    .map((char, i) => (i === 0 ? char.toUpperCase() : char))
-    .join("");
-}
-
-function professionToClass(profession) {
-  switch (profession) {
-    case "PIONEER":
-      return "Vanguard";
-    case "WARRIOR":
-      return "Guard";
-    case "SPECIAL":
-      return "Specialist";
-    case "TANK":
-      return "Defender";
-    case "SUPPORT":
-      return "Supporter";
-    default:
-      return toTitleCase(profession);
-  }
-}
-
-const subProfessionLookup = {
-  pioneer: "Pioneer",
-  charger: "Spearhead",
-  tactician: "Tactician",
-  bearer: "Flagbearer",
-  centurion: "Assault",
-  fighter: "Brawler",
-  artsfghter: "Spellblade",
-  instructor: "Instructor",
-  lord: "Warlord",
-  sword: "Swordmaster",
-  musha: "Musha",
-  fearless: "Fearless",
-  reaper: "Reaper",
-  librator: "Liberator",
-  protector: "Ironguard",
-  guardian: "Guardian",
-  unyield: "Unyielding",
-  artsprotector: "Arts Ironguard",
-  duelist: "Champion",
-  fastshot: "Rapid Fire",
-  closerange: "Heavy",
-  aoesniper: "Cannoneer",
-  longrange: "Marksman",
-  reaperrange: "Spreadshot",
-  siegesniper: "Siege",
-  bombarder: "Bombardier",
-  corecaster: "Core",
-  splashcaster: "Dispersal",
-  funnel: "Magitech",
-  phalanx: "Formation",
-  mystic: "Mystic",
-  chain: "Chain",
-  blastcaster: "Barrage",
-  physician: "Healer",
-  ringhealer: "Mass Healer",
-  healer: "Mender",
-  slower: "Inhibitor",
-  underminer: "Weakener",
-  bard: "Bard",
-  blessing: "Protector",
-  summoner: "Summoner",
-  executor: "Executioner",
-  pusher: "Pusher",
-  stalker: "Stalker",
-  hookmaster: "Grappler",
-  geek: "Geek",
-  merchant: "Merchant",
-  traper: "Trapper",
-  dollkeeper: "Puppeteer",
-};
-
-function subProfessionToSubclass(string) {
-  return subProfessionLookup[string];
-}

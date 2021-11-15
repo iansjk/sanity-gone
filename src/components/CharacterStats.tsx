@@ -192,43 +192,35 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 <StatsChangeTooltip
                   title={
                     <ul>
-                      {trustIncreases.maxHp !== 0 && (
+                      {trustIncreases.maxHp > 0 && (
                         <li>
-                          <span>
-                            HP{" "}
-                            <span className="stat-value">
-                              +{trustIncreases.maxHp}
-                            </span>
+                          HP&nbsp;
+                          <span className="stat-value">
+                            +{trustIncreases.maxHp}
                           </span>
                         </li>
                       )}
-                      {trustIncreases.atk !== 0 && (
+                      {trustIncreases.atk > 0 && (
                         <li>
-                          <span>
-                            ATK{" "}
-                            <span className="stat-value">
-                              +{trustIncreases.atk}
-                            </span>
+                          ATK&nbsp;
+                          <span className="stat-value">
+                            +{trustIncreases.atk}
                           </span>
                         </li>
                       )}
-                      {trustIncreases.def !== 0 && (
+                      {trustIncreases.def > 0 && (
                         <li>
-                          <span>
-                            DEF{" "}
-                            <span className="stat-value">
-                              +{trustIncreases.def}
-                            </span>
+                          DEF&nbsp;
+                          <span className="stat-value">
+                            +{trustIncreases.def}
                           </span>
                         </li>
                       )}
-                      {trustIncreases.magicResistance !== 0 && (
+                      {trustIncreases.magicResistance > 0 && (
                         <li>
-                          <span>
-                            RES{" "}
-                            <span className="stat-value">
-                              +{trustIncreases.magicResistance}
-                            </span>
+                          RES&nbsp;
+                          <span className="stat-value">
+                            +{trustIncreases.magicResistance}
                           </span>
                         </li>
                       )}
@@ -250,7 +242,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 <StatsChangeTooltip
                   title={
                     <ul>
-                      {potentialIncreases.health !== 0 && (
+                      {potentialIncreases.health > 0 && (
                         <li>
                           HP&nbsp;
                           <span className="stat-value">
@@ -258,7 +250,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                           </span>
                         </li>
                       )}
-                      {potentialIncreases.attackPower !== 0 && (
+                      {potentialIncreases.attackPower > 0 && (
                         <li>
                           ATK&nbsp;
                           <span className="stat-value">
@@ -266,7 +258,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                           </span>
                         </li>
                       )}
-                      {potentialIncreases.defense !== 0 && (
+                      {potentialIncreases.defense > 0 && (
                         <li>
                           DEF&nbsp;
                           <span className="stat-value">
@@ -274,7 +266,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                           </span>
                         </li>
                       )}
-                      {potentialIncreases.dpCost !== 0 && (
+                      {potentialIncreases.dpCost < 0 && (
                         <li>
                           DP Cost&nbsp;
                           <span className="stat-value">
@@ -282,7 +274,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                           </span>
                         </li>
                       )}
-                      {potentialIncreases.attackSpeed !== 0 && (
+                      {potentialIncreases.attackSpeed > 0 && (
                         <li>
                           ASPD&nbsp;
                           <span className="stat-value">
@@ -290,7 +282,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                           </span>
                         </li>
                       )}
-                      {potentialIncreases.redeployTimeInSeconds !== 0 && (
+                      {potentialIncreases.redeployTimeInSeconds < 0 && (
                         <li>
                           Redeploy Time&nbsp;
                           <span className="stat-value">

@@ -265,7 +265,7 @@ export const getPotStatIncreases = (
   const statChanges: PotentialStatChange[] = [];
 
   potentialRanks.forEach((pot) => {
-    if (pot.buff === null) {
+    if (pot.buff == null) {
       return;
     }
     const curStats: PotentialStatChange = {

@@ -256,7 +256,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   const [baseChar, alterName] = operatorName.split(" the ");
   const description = `${
     contentful.introduction.childMarkdownRemark.html
-      .replaceAll(/<\/?[A-za-z-]*>/g, "")
+      .replace(/<\/?[A-za-z-]*>/g, "")
       .split(/(\.)\s*/)[0]
   }.`;
 

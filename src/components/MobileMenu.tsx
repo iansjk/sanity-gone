@@ -156,6 +156,7 @@ const styles = (theme: Theme) => css`
 
       .results {
         padding-top: ${theme.spacing(2)};
+        border-radius: 0;
       }
     }
 

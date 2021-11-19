@@ -120,33 +120,35 @@ const Layout: React.FC<LayoutProps> = (props) => {
               <WeirdDeathSphere className="weird-death-sphere" />
               <div className="background-spacer" />
             </div>
-            <div className="navbar-content">
-              <div className="navbar-left">
-                <SearchBar placeholder="Search operators and guides" />
-              </div>
-              <div className="navbar-center">
-                <div className="center-container">
-                  <SanityGoneLogo />
+            <div className="navbar-container">
+              <div className="navbar-content">
+                <div className="navbar-left">
+                  <SearchBar placeholder="Search operators and guides" />
                 </div>
-              </div>
-              <div className="navbar-right">
-                <div className="header-links">
-                  <div className="link-spacer" />
-                  <a href="/operators">Operators</a>
-                  <a href="/about">About</a>
+                <div className="navbar-center">
+                  <div className="center-container">
+                    <SanityGoneLogo />
+                  </div>
                 </div>
-                <button className="mobile-menu-button" aria-label="Open menu">
-                  <MobileMenuIcon
-                    className="mobile-menu"
-                    role="button"
-                    aria-label="Open Menu"
-                    onClick={handleMenuToggle}
-                  />
-                  <MobileMenu
-                    open={isMobileMenuOpen}
-                    onClose={() => setMobileMenuOpen(false)}
-                  />
-                </button>
+                <div className="navbar-right">
+                  <div className="header-links">
+                    <div className="link-spacer" />
+                    <a href="/operators">Operators</a>
+                    <a href="/about">About</a>
+                  </div>
+                  <button className="mobile-menu-button" aria-label="Open menu">
+                    <MobileMenuIcon
+                      className="mobile-menu"
+                      role="button"
+                      aria-label="Open Menu"
+                      onClick={handleMenuToggle}
+                    />
+                    <MobileMenu
+                      open={isMobileMenuOpen}
+                      onClose={() => setMobileMenuOpen(false)}
+                    />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -325,99 +327,106 @@ const styles =
           height: 77px;
         }
 
-        .navbar-content {
+        .navbar-container {
           z-index: 3;
           width: 100%;
           max-width: ${theme.breakpoints.values["maxWidth"]}px;
           margin: 0 auto;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: ${theme.spacing(0, 3)};
-          ${theme.breakpoints.down("mobile")} {
-            padding: unset;
-          }
 
-          .navbar-left {
-            flex: 1 1 0;
+          .navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: ${theme.spacing(0, 3)};
 
             ${theme.breakpoints.down("mobile")} {
-              display: none;
-            }
-          }
-          .navbar-center {
-            flex: none;
-            width: ${theme.spacing(47)};
-
-            .center-container {
-              width: ${theme.spacing(19.5)};
-              margin: auto;
-              a {
-                display: block;
-              }
+              padding: unset;
             }
 
-            ${theme.breakpoints.down("mobile")} {
-              width: auto;
+            .navbar-left {
               flex: 1 1 0;
-
-              .center-container {
-                margin: ${theme.spacing(0, 0, 0, 3)};
-              }
-            }
-          }
-          .navbar-right {
-            flex: 1 1 0;
-
-            ${theme.breakpoints.down("mobile")} {
-              flex: 0;
-              margin-right: ${theme.spacing(3)};
-            }
-
-            .header-links {
-              flex-grow: 1;
-              text-align: end;
-              display: flex;
-              align-items: center;
-
-              .link-spacer {
-                flex: 1 1 0;
-              }
 
               ${theme.breakpoints.down("mobile")} {
                 display: none;
               }
+            }
 
-              a {
-                margin-left: ${theme.spacing(8)};
-                color: ${theme.palette.white.main};
-                height: 100%;
-                text-decoration: none;
-                text-transform: uppercase;
-                letter-spacing: 0.04em;
-                font-size: ${theme.typography.operatorBrowserNameHeading
-                  .fontSize}px;
-                line-height: ${theme.typography.operatorBrowserNameHeading
-                  .lineHeight};
-                font-weight: ${theme.typography.operatorBrowserNameHeading
-                  .fontWeight};
+            .navbar-center {
+              flex: none;
+              width: ${theme.spacing(47)};
+
+              .center-container {
+                width: ${theme.spacing(21)};
+                margin: auto;
+
+                a {
+                  display: block;
+                }
+              }
+
+              ${theme.breakpoints.down("mobile")} {
+                width: auto;
+                flex: 1 1 0;
+
+                .center-container {
+                  margin: ${theme.spacing(0, 0, 0, 3)};
+                }
               }
             }
 
-            .mobile-menu-button {
-              padding: 0;
-              background: none;
-              border: none;
+            .navbar-right {
+              flex: 1 1 0;
 
-              ${theme.breakpoints.up("mobile")} {
-                display: none;
+              ${theme.breakpoints.down("mobile")} {
+                flex: 0;
+                margin-right: ${theme.spacing(3)};
               }
-            }
 
-            .mobile-menu {
-              align-self: center;
-              position: relative;
-              top: -2px;
+              .header-links {
+                flex-grow: 1;
+                text-align: end;
+                display: flex;
+                align-items: center;
+
+                .link-spacer {
+                  flex: 1 1 0;
+                }
+
+                ${theme.breakpoints.down("mobile")} {
+                  display: none;
+                }
+
+                a {
+                  margin-left: ${theme.spacing(8)};
+                  color: ${theme.palette.white.main};
+                  height: 100%;
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  letter-spacing: 0.04em;
+                  font-size: ${theme.typography.operatorBrowserNameHeading
+                    .fontSize}px;
+                  line-height: ${theme.typography.operatorBrowserNameHeading
+                    .lineHeight};
+                  font-weight: ${theme.typography.operatorBrowserNameHeading
+                    .fontWeight};
+                }
+              }
+
+              .mobile-menu-button {
+                padding: 0;
+                background: none;
+                border: none;
+
+                ${theme.breakpoints.up("mobile")} {
+                  display: none;
+                }
+              }
+
+              .mobile-menu {
+                align-self: center;
+                position: relative;
+                top: -2px;
+              }
             }
           }
         }

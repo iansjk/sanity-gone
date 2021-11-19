@@ -452,6 +452,7 @@ const globalOverrideStyles =
 
 const styles = (accentColor: string) => (theme: Theme) =>
   css`
+    padding: ${theme.spacing(0, 3)};
     margin: ${theme.spacing(3, 0, 0)};
     display: grid;
     grid-template-rows: max-content max-content 1fr;
@@ -459,6 +460,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
     ${theme.breakpoints.down("mobile")} {
       margin: ${theme.spacing(2, 0, 0)};
+      padding: 0;
       grid-template-columns: 1fr;
     }
 

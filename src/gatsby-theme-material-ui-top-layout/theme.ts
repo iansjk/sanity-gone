@@ -13,6 +13,7 @@ declare module "@mui/material/styles" {
     white: Palette["primary"];
     gray: Palette["primary"];
     black: Palette["primary"];
+    blackest: Palette["primary"];
     dark: Palette["primary"];
     midtoneDarker: Palette["primary"];
     midtone: Palette["primary"];
@@ -32,6 +33,7 @@ declare module "@mui/material/styles" {
     white: PaletteOptions["primary"];
     gray: PaletteOptions["primary"];
     black: PaletteOptions["primary"];
+    blackest: PaletteOptions["primary"];
     dark: PaletteOptions["primary"];
     midtoneDarker: PaletteOptions["primary"];
     midtone: PaletteOptions["primary"];
@@ -110,6 +112,9 @@ const defaultTheme = createTheme({
     },
     black: {
       main: "#101014",
+    },
+    blackest: {
+      main: "#050507",
     },
     dark: {
       main: "#14141b",

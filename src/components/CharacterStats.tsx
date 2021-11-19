@@ -54,7 +54,7 @@ const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
   />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: theme.palette.black.main,
+    backgroundColor: theme.palette.blackest.main,
     padding: theme.spacing(0.5, 1),
     borderRadius: theme.spacing(0.25),
     fontSize: theme.typography.body2.fontSize,
@@ -79,7 +79,7 @@ const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
     },
   },
   [`& .${tooltipClasses.arrow}`]: {
-    color: theme.palette.black.main,
+    color: theme.palette.blackest.main,
   },
   ".potential-description": {
     color: theme.palette.midtoneBrighterer.main,

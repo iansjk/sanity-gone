@@ -209,7 +209,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
                 {selectedClass}
               </Fragment>
             ) : (
-              "Class"
+              "All Classes"
             )}
           </Button>
           <Menu
@@ -263,7 +263,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
                 {selectedSubclass}
               </Fragment>
             ) : (
-              "Subclass"
+              "All Branches"
             )}
           </Button>
           <Menu

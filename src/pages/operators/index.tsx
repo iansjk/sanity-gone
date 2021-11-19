@@ -156,9 +156,14 @@ const Operators: React.VFC<Props> = ({ data }) => {
       ? subProfessionIdToSubclass(selectedSubProfessionId)
       : null;
 
-  const operatorsToShow = showOnlyGuideAvailable
-    ? operators.filter((op) => operatorsWithGuides.has(op.name))
-    : operators;
+  const operatorsToShow = operators.filter((op) => {
+    return (
+      (!showOnlyGuideAvailable || operatorsWithGuides.has(op.name)) &&
+      (selectedProfession == null || op.profession === selectedProfession) &&
+      (selectedSubProfessionId == null ||
+        op.subProfessionId === selectedSubProfessionId)
+    );
+  });
 
   return (
     <Layout

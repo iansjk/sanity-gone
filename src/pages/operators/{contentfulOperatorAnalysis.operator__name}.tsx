@@ -265,9 +265,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       pageTitle={`${operatorName} Guide`}
       customPageHeading={
         alterName ? (
-          <h1>
-            {baseChar} <span className="alter-name">The {alterName}</span>
-          </h1>
+          <Fragment>
+            <h1>{baseChar}</h1>
+            <h1>
+              <span className="alter-name">The {alterName}</span>
+            </h1>
+          </Fragment>
         ) : (
           <h1>{baseChar}</h1>
         )
@@ -282,7 +285,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         styles={globalOverrideStyles(
           contentful.operator.accentColorInHex,
           contentful.operator.customBgPositionX
-        )}
+        )(theme)}
       />
       <Tabs component="main" css={styles(contentful.operator.accentColorInHex)}>
         <TabButtons className="tabs" isSwiper>
@@ -406,6 +409,8 @@ const globalOverrideStyles =
       }
 
       header {
+        height: ${theme.spacing(30.5)};
+
         .heading-and-breadcrumb {
           h1 {
             font-size: ${theme.typography.operatorPageHeading.fontSize}px;
@@ -414,17 +419,31 @@ const globalOverrideStyles =
             text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
               rgba(0, 0, 0, 0.5);
 
+            .alter-name {
+              display: block;
+              font-size: ${theme.typography.generalHeading.fontSize}px;
+              line-height: ${theme.typography.generalHeading.lineHeight};
+              font-weight: normal;
+            }
+
             ${theme.breakpoints.down("mobile")} {
               font-size: ${theme.typography.operatorNameHeading.fontSize}px;
               font-weight: ${theme.typography.operatorNameHeading.fontWeight};
               line-height: ${theme.typography.operatorNameHeading.lineHeight};
+              margin-top: 0;
 
               .alter-name {
-                display: block;
-                font-size: ${theme.typography.generalHeading.fontSize}px;
-                line-height: ${theme.typography.generalHeading.lineHeight};
                 font-weight: normal;
               }
+            }
+          }
+          .breadcrumb > a {
+            color: ${rgba(lighten(0.27, accentColor), 0.66)};
+            background-color: ${rgba(accentColor, 0.08)};
+
+            &:hover {
+              color: ${lighten(0.27, accentColor)};
+              background-color: ${rgba(accentColor, 0.4)};
             }
           }
         }

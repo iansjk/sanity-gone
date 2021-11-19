@@ -133,14 +133,14 @@ const defaultTheme = createTheme({
   typography: {
     fontFamily: "Source Sans Pro",
     pageHeading: {
-      fontSize: 64,
-      lineHeight: 1.25,
+      fontSize: 48,
+      lineHeight: 1,
       fontWeight: 600,
     },
     operatorPageHeading: {
       fontWeight: 600,
-      fontSize: 96,
-      lineHeight: 1.25,
+      fontSize: 72,
+      lineHeight: 1,
     },
     operatorNameHeading: {
       fontSize: 36,

@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { graphql } from "gatsby";
-import { ClassNames, css } from "@emotion/react";
+import { ClassNames, css, Global } from "@emotion/react";
 import { Theme } from "@mui/material";
 import { DateTime } from "luxon";
 import gatsbySlugify from "@sindresorhus/slugify";
@@ -17,6 +17,7 @@ import {
 } from "../../utils/globals";
 import NavigateRightArrow from "../../components/icons/NavigateRightArrow";
 import CustomCheckbox from "../../components/CustomCheckbox";
+import theme from "../../gatsby-theme-material-ui-top-layout/theme";
 
 interface Props {
   data: {
@@ -67,9 +68,12 @@ const Operators: React.VFC<Props> = (props) => {
       pageTitle="Operator List"
       bannerImageUrl={sgPageBanner("operators")}
       blendPoint={496}
+      /* No previous location for now
       previousLocation="Home"
       previousLocationLink="/"
+       */
     >
+      <Global styles={globalOverrideStyles(theme)} />
       <main css={styles}>
         <span className="last-updated">
           Last Updated:{" "}
@@ -159,11 +163,23 @@ const Operators: React.VFC<Props> = (props) => {
 };
 export default Operators;
 
+const globalOverrideStyles = (theme: Theme) => css`
+  header {
+    .heading-and-breadcrumb {
+      h1 {
+        font-size: ${theme.typography.operatorPageHeading.fontSize}px;
+        font-weight: ${theme.typography.operatorPageHeading.fontWeight};
+        line-height: ${theme.typography.operatorPageHeading.lineHeight};
+      }
+    }
+  }
+`;
+
 const styles = (theme: Theme) => css`
-  padding: ${theme.spacing(0, 3)};
+  padding: ${theme.spacing(1, 3, 0, 3)};
 
   ${theme.breakpoints.down("mobile")} {
-    padding: ${theme.spacing(0, 2)};
+    padding: ${theme.spacing(1, 2, 0, 2)};
   }
 
   .last-updated {

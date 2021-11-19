@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { Theme } from "@mui/material";
+import { Theme, useMediaQuery } from "@mui/material";
 import { css, Global } from "@emotion/react";
 import { Helmet } from "react-helmet";
 import { BsDiscord as DiscordLogo } from "react-icons/bs";
@@ -12,7 +12,7 @@ import { lighten, rgba, transparentize } from "polished";
 import MobileMenu from "./components/MobileMenu";
 import SearchBar from "./components/SearchBar";
 import WeirdDeathSphere from "./components/WeirdDeathSphere";
-import BreadcrumbBackIcon from "./components/icons/BreadcrumbBackIcon";
+import theme from "./gatsby-theme-material-ui-top-layout/theme";
 
 interface LayoutProps {
   pageTitle: string;
@@ -21,8 +21,8 @@ interface LayoutProps {
   customPageHeading?: React.ReactNode;
   blendPoint?: number;
   bannerImageUrl?: string;
-  previousLocation: string;
-  previousLocationLink: string;
+  previousLocation?: string;
+  previousLocationLink?: string;
 }
 
 interface SiteMetadataQuery {
@@ -69,6 +69,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
   } = data.site.siteMetadata;
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   const title = pageTitle
     ? `${pageTitle} / Arknights Hub - ${siteName}`
@@ -153,15 +154,15 @@ const Layout: React.FC<LayoutProps> = (props) => {
             <header>
               <div className="heading-and-breadcrumb">
                 <div className="heading-spacer" />
-                {previousLocation && previousLocationLink && (
+                {!isMobile && previousLocation && previousLocationLink && (
                   <div className="breadcrumb">
                     <a
                       href={previousLocationLink}
                       aria-label={`Back to ${previousLocation}`}
                     >
-                      <BreadcrumbBackIcon />
                       {previousLocation}
                     </a>
+                    /
                   </div>
                 )}
                 {customPageHeading || <h1>{pageTitle}</h1>}
@@ -287,23 +288,14 @@ const styles =
           height: ${theme.spacing(8.5)};
           width: 100%;
           backdrop-filter: blur(8px);
-
-          .logo-bg {
-            background: linear-gradient(
-                180deg,
-                rgba(0, 0, 0, 0) 70.31%,
-                rgba(0, 0, 0, 0.33) 100%
-              )
-              ${transparentize(0.8, theme.palette.black.main)};
-          }
+          background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0) 70.31%,
+              rgba(0, 0, 0, 0.4) 100%
+            )
+            ${transparentize(0.8, theme.palette.black.main)};
 
           .background-spacer {
-            background: linear-gradient(
-                180deg,
-                rgba(0, 0, 0, 0) 70.31%,
-                rgba(0, 0, 0, 0.33) 100%
-              )
-              ${transparentize(0.8, theme.palette.black.main)};
             flex: 1 1 0;
           }
           svg.weird-death-sphere {
@@ -433,27 +425,32 @@ const styles =
 
       header {
         padding: ${theme.spacing(3, 3, 0)};
+        height: ${theme.spacing(22.5)};
 
         ${theme.breakpoints.down("mobile")} {
           padding: ${theme.spacing(2, 2, 0)};
         }
 
+        display: flex;
+        flex-direction: column-reverse;
+
         .heading-and-breadcrumb {
           display: flex;
           flex-direction: column;
-          margin-top: 165px;
 
           .heading-spacer {
             flex: 1 1 0;
           }
 
           h1 {
-            margin: 0;
             font-size: ${theme.typography.pageHeading.fontSize}px;
             font-weight: ${theme.typography.pageHeading.fontWeight};
             line-height: ${theme.typography.pageHeading.lineHeight};
             text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
               rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+            margin-top: ${theme.spacing(1)};
+            margin-bottom: 0;
 
             ${theme.breakpoints.down("mobile")} {
               font-size: ${theme.typography.operatorNameHeading.fontSize}px;
@@ -461,22 +458,24 @@ const styles =
           }
 
           .breadcrumb {
-            line-height: 1;
+            line-height: 1.5;
+            font-size: ${theme.typography.navigationLink.fontSize}px;
 
             a {
-              display: inline-flex;
-              align-items: center;
+              display: inline-block;
               text-decoration: none;
               font-style: normal;
-              line-height: ${theme.typography.navigationLink.lineHeight};
               text-shadow: ${theme.typography.operatorPageHeading.textShadow};
+              margin-right: ${theme.spacing(1)};
+              padding: ${theme.spacing(0, 0.5)};
+              border-radius: ${theme.spacing(0.25)};
 
-              svg {
-                margin-right: ${theme.spacing(1)};
+              color: ${rgba(lighten(0.27, theme.palette.blue.main), 0.66)};
+              background-color: ${rgba(theme.palette.blue.main, 0.08)};
 
-                path {
-                  fill: ${theme.palette.white.main};
-                }
+              &:hover {
+                color: ${lighten(0.27, theme.palette.blue.main)};
+                background-color: ${rgba(theme.palette.blue.main, 0.4)};
               }
             }
           }

@@ -12,18 +12,13 @@ const WeirdDeathSphere: React.VFC<React.HTMLAttributes<SVGElement>> = (
     >
       <path
         d="M368 188C368 287.411 287.411 368 188 368C88.5887 368 8 287.411 8 188C8 88.5887 88.5887 8 188 8C287.411 8 368 88.5887 368 188Z"
-        fill="url(#paint0_radial_2681_11756)"
-        fillOpacity="0.66"
-      />
-      <path
-        d="M368 188C368 287.411 287.411 368 188 368C88.5887 368 8 287.411 8 188C8 88.5887 88.5887 8 188 8C287.411 8 368 88.5887 368 188Z"
-        fill="url(#paint1_radial_2681_11756)"
+        fill="url(#paint0_radial_2681_15249)"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M188 371C289.068 371 371 289.068 371 188C371 86.9319 289.068 5 188 5C86.9319 5 5 86.9319 5 188C5 289.068 86.9319 371 188 371ZM188 372C289.62 372 372 289.62 372 188C372 86.3796 289.62 4 188 4C86.3796 4 4 86.3796 4 188C4 289.62 86.3796 372 188 372Z"
-        fill="url(#paint2_linear_2681_11756)"
+        fill="url(#paint1_linear_2681_15249)"
       />
       <path
         fillRule="evenodd"
@@ -53,30 +48,18 @@ const WeirdDeathSphere: React.VFC<React.HTMLAttributes<SVGElement>> = (
       />
       <defs>
         <radialGradient
-          id="paint0_radial_2681_11756"
+          id="paint0_radial_2681_15249"
           cx="0"
           cy="0"
           r="1"
           gradientUnits="userSpaceOnUse"
-          gradientTransform="translate(188 279) rotate(90) scale(89 139.842)"
+          gradientTransform="translate(188 188) rotate(90) scale(180 345.333)"
         >
-          <stop stopColor="#14141B" stopOpacity="0" />
-          <stop offset="1" stopColor="#191920" />
-        </radialGradient>
-        <radialGradient
-          id="paint1_radial_2681_11756"
-          cx="0"
-          cy="0"
-          r="1"
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="translate(188 188) rotate(90) scale(180 292.164)"
-        >
-          <stop offset="0.598958" stopColor="#24242E" stopOpacity="0" />
-          <stop offset="0.895629" stopColor="#24242E" />
-          <stop offset="1" stopColor="#14141B" />
+          <stop offset="0.598958" stopColor="#121217" stopOpacity="0" />
+          <stop offset="0.895629" stopColor="#121217" />
         </radialGradient>
         <linearGradient
-          id="paint2_linear_2681_11756"
+          id="paint1_linear_2681_15249"
           x1="188"
           y1="279"
           x2="188"

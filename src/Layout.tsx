@@ -339,7 +339,7 @@ const styles =
 
       footer {
         margin-top: ${theme.spacing(8)};
-        background-color: ${theme.palette.black.main};
+        background-color: ${theme.palette.blackest.main};
 
         ${theme.breakpoints.down("mobile")} {
           margin-top: ${theme.spacing(4)};

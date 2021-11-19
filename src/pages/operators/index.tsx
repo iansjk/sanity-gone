@@ -1,12 +1,21 @@
 import React, { Fragment, useState } from "react";
 import { graphql } from "gatsby";
 import { ClassNames, css } from "@emotion/react";
-import { Theme } from "@mui/material";
+import {
+  Button,
+  ListItemIcon,
+  ListItemText,
+  Menu,
+  MenuItem,
+  styled,
+  Theme,
+} from "@mui/material";
 import { DateTime } from "luxon";
-import gatsbySlugify from "@sindresorhus/slugify";
+import slugify from "@sindresorhus/slugify";
 
 import Layout from "../../Layout";
 import {
+  operatorClassIcon,
   operatorPortrait,
   operatorSubclassIcon,
   sgPageBanner,
@@ -17,7 +26,24 @@ import {
 } from "../../utils/globals";
 import NavigateRightArrow from "../../components/icons/NavigateRightArrow";
 import CustomCheckbox from "../../components/CustomCheckbox";
+import FilterIcon from "../../components/icons/FilterIcon";
 
+const MENU_ICON_SIZE = 18;
+
+const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
+  padding: theme.spacing(0, 1.5),
+  minHeight: "unset",
+  "&.selected": {
+    backgroundColor: theme.palette.midtoneBrighterer.main,
+  },
+  "& .MuiListItemIcon-root": {
+    minWidth: "unset",
+    marginRight: theme.spacing(1),
+  },
+  "& .MuiListItemText-root": {
+    padding: theme.spacing(1, 0),
+  },
+}));
 interface Props {
   data: {
     allOperatorsJson: {
@@ -38,12 +64,39 @@ interface Props {
         updatedAt: string;
       }[];
     };
+    allContentfulOperatorClass: {
+      nodes: {
+        className: string;
+        profession: string;
+        analysis: {
+          childMarkdownRemark: {
+            html: string;
+          };
+        };
+      }[];
+    };
+    allContentfulOperatorSubclass: {
+      nodes: {
+        subclass: string;
+        subProfessionId: string;
+        class: {
+          profession: string;
+        };
+        analysis: {
+          childMarkdownRemark: {
+            html: string;
+          };
+        };
+      }[];
+    };
   };
 }
 
-const Operators: React.VFC<Props> = (props) => {
-  const { nodes: operators } = props.data.allOperatorsJson;
-  const { nodes: guideNodes } = props.data.allContentfulOperatorAnalysis;
+const Operators: React.VFC<Props> = ({ data }) => {
+  const { nodes: operators } = data.allOperatorsJson;
+  const { nodes: guideNodes } = data.allContentfulOperatorAnalysis;
+  const { nodes: operatorClasses } = data.allContentfulOperatorClass;
+  const { nodes: operatorSubclasses } = data.allContentfulOperatorSubclass;
   const operatorsWithGuides = new Set(
     guideNodes.map((node) => node.operator.name)
   );
@@ -51,12 +104,57 @@ const Operators: React.VFC<Props> = (props) => {
     .map((node) => DateTime.fromISO(node.updatedAt))
     .reduce((prev, curr) => (curr > prev ? curr : prev));
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
+  const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
+  const [isSubclassMenuOpen, setIsSubclassMenuOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [selectedProfession, setSelectedProfession] = useState<string | null>(
+    null
+  );
+  const [selectedSubProfessionId, setSelectedSubProfessionId] = useState<
+    string | null
+  >(null);
 
   const handleGuideAvailableChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     setShowOnlyGuideAvailable(e.target.checked);
   };
+
+  const handleClassMenuClick: React.MouseEventHandler<HTMLButtonElement> = (
+    e
+  ) => {
+    setAnchorEl(e.currentTarget);
+    setIsClassMenuOpen(true);
+  };
+
+  const handleSubclassMenuClick: React.MouseEventHandler<HTMLButtonElement> = (
+    e
+  ) => {
+    setAnchorEl(e.currentTarget);
+    setIsSubclassMenuOpen(true);
+  };
+
+  const handleClassClick = (profession: string) => () => {
+    setSelectedProfession((oldProfession) => {
+      if (oldProfession !== profession) {
+        setSelectedSubProfessionId(null);
+      }
+      return profession;
+    });
+    setIsClassMenuOpen(false);
+  };
+
+  const handleSubclassClick = (subProfessionId: string) => () => {
+    setSelectedSubProfessionId(subProfessionId);
+    setIsSubclassMenuOpen(false);
+  };
+
+  const selectedClass =
+    selectedProfession != null ? professionToClass(selectedProfession) : null;
+  const selectedSubclass =
+    selectedSubProfessionId != null
+      ? subProfessionIdToSubclass(selectedSubProfessionId)
+      : null;
 
   const operatorsToShow = showOnlyGuideAvailable
     ? operators.filter((op) => operatorsWithGuides.has(op.name))
@@ -78,6 +176,131 @@ const Operators: React.VFC<Props> = (props) => {
           </span>
         </span>
         <div className="sort-and-filter-options">
+          <div className="filter-options">
+            <span className="filter-visual-label" aria-hidden="true">
+              <FilterIcon />
+              Filters
+            </span>
+            <Button
+              id="class-menu-button"
+              variant="contained"
+              aria-label="Select class"
+              aria-controls="class-menu"
+              aria-haspopup="true"
+              aria-expanded={isClassMenuOpen ? "true" : undefined}
+              onClick={handleClassMenuClick}
+              className={
+                selectedProfession != null ? "has-selection" : "no-selection"
+              }
+            >
+              {selectedProfession ? (
+                <Fragment>
+                  <img
+                    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                    src={operatorClassIcon(slugify(selectedClass!))}
+                    alt=""
+                    width={MENU_ICON_SIZE}
+                    height={MENU_ICON_SIZE}
+                  />
+                  {selectedClass}
+                </Fragment>
+              ) : (
+                "Class"
+              )}
+            </Button>
+            <Menu
+              id="class-menu"
+              open={isClassMenuOpen}
+              anchorEl={anchorEl}
+              MenuListProps={{
+                "aria-labelledby": "class-menu-button",
+              }}
+              onClose={() => setIsClassMenuOpen(false)}
+            >
+              {operatorClasses.map(({ className, profession }) => (
+                <ClassSubclassMenuItem
+                  key={className}
+                  onClick={handleClassClick(profession)}
+                  className={
+                    selectedProfession === profession ? "selected" : ""
+                  }
+                >
+                  <ListItemIcon>
+                    <img
+                      src={operatorClassIcon(slugify(className))}
+                      alt=""
+                      width={MENU_ICON_SIZE}
+                      height={MENU_ICON_SIZE}
+                    />
+                  </ListItemIcon>
+                  <ListItemText>{className}</ListItemText>
+                </ClassSubclassMenuItem>
+              ))}
+            </Menu>
+            <Button
+              id="subclass-menu-button"
+              disabled={selectedProfession == null}
+              variant="contained"
+              aria-label="Select subclass"
+              aria-controls="subclass-menu"
+              aria-haspopup="true"
+              aria-expanded={isSubclassMenuOpen ? "true" : undefined}
+              onClick={handleSubclassMenuClick}
+              className={
+                selectedSubProfessionId ? "has-selection" : "no-selection"
+              }
+            >
+              {selectedSubProfessionId ? (
+                <Fragment>
+                  <img
+                    src={operatorSubclassIcon(selectedSubProfessionId)}
+                    alt=""
+                    width={MENU_ICON_SIZE}
+                    height={MENU_ICON_SIZE}
+                  />
+                  {selectedSubclass}
+                </Fragment>
+              ) : (
+                "Subclass"
+              )}
+            </Button>
+            <Menu
+              id="subclass-menu"
+              open={isSubclassMenuOpen}
+              anchorEl={anchorEl}
+              MenuListProps={{
+                "aria-labelledby": "subclass-menu-button",
+              }}
+              onClose={() => setIsSubclassMenuOpen(false)}
+            >
+              {operatorSubclasses
+                .filter(
+                  ({ class: subclassClass }) =>
+                    subclassClass.profession === selectedProfession
+                )
+                .map(({ subclass, subProfessionId }) => (
+                  <ClassSubclassMenuItem
+                    key={subclass}
+                    onClick={handleSubclassClick(subProfessionId)}
+                    className={
+                      selectedSubProfessionId === subProfessionId
+                        ? "selected"
+                        : undefined
+                    }
+                  >
+                    <ListItemIcon>
+                      <img
+                        src={operatorSubclassIcon(subProfessionId)}
+                        alt=""
+                        width={MENU_ICON_SIZE}
+                        height={MENU_ICON_SIZE}
+                      />
+                    </ListItemIcon>
+                    <ListItemText>{subclass}</ListItemText>
+                  </ClassSubclassMenuItem>
+                ))}
+            </Menu>
+          </div>
           <CustomCheckbox
             label="Guide available"
             onChange={handleGuideAvailableChange}
@@ -138,9 +361,7 @@ const Operators: React.VFC<Props> = (props) => {
                       }}
                     >
                       {hasGuide ? (
-                        <a href={`/operators/${gatsbySlugify(op.name)}`}>
-                          {inner}
-                        </a>
+                        <a href={`/operators/${slugify(op.name)}`}>{inner}</a>
                       ) : (
                         inner
                       )}
@@ -346,6 +567,31 @@ export const query = graphql`
           name
         }
         updatedAt
+      }
+    }
+    allContentfulOperatorClass {
+      nodes {
+        className
+        profession
+        analysis {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+    }
+    allContentfulOperatorSubclass {
+      nodes {
+        subclass
+        subProfessionId
+        analysis {
+          childMarkdownRemark {
+            html
+          }
+        }
+        class {
+          profession
+        }
       }
     }
   }

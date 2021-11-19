@@ -266,6 +266,19 @@ export const getPotStatIncreases = (
 
   potentialRanks.forEach((pot) => {
     if (pot.buff == null) {
+      let desc = pot.description;
+      if (desc.startsWith("Improves ")) {
+        desc = desc.replace("Improves ", "") + " Enhancement";
+      }
+      statChanges.push({
+        health: 0,
+        attackPower: 0,
+        defense: 0,
+        dpCost: 0,
+        attackSpeed: 0,
+        redeployTimeInSeconds: 0,
+        description: desc,
+      });
       return;
     }
     const curStats: PotentialStatChange = {
@@ -275,6 +288,7 @@ export const getPotStatIncreases = (
       dpCost: 0,
       attackSpeed: 0,
       redeployTimeInSeconds: 0,
+      description: null,
     };
     const attribType = pot.buff.attributes.attributeModifiers[0].attributeType;
     const attribChange = pot.buff.attributes.attributeModifiers[0].value;
@@ -321,6 +335,7 @@ export const getMaxPotStatIncrease = (
         attackSpeed: vals.attackSpeed + previous.attackSpeed,
         redeployTimeInSeconds:
           vals.redeployTimeInSeconds + previous.redeployTimeInSeconds,
+        description: null,
       };
     },
     {
@@ -330,6 +345,7 @@ export const getMaxPotStatIncrease = (
       dpCost: 0,
       attackSpeed: 0,
       redeployTimeInSeconds: 0,
+      description: null,
     }
   );
 };

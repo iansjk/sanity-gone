@@ -22,12 +22,19 @@ import {
   EliteTwoIcon,
   HealthIcon,
   RedeployTimeIcon,
+  PotentialOneIcon,
+  PotentialTwoIcon,
+  PotentialThreeIcon,
+  PotentialFourIcon,
+  PotentialFiveIcon,
+  PotentialSixIcon,
 } from "./icons/operatorStats";
 import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import {
   getMaxPotStatIncrease,
   getMaxTrustStatIncrease,
+  getPotStatIncreases,
   getStatsAtLevel,
 } from "../utils/globals";
 import { summonImage } from "../utils/images";
@@ -50,8 +57,8 @@ const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
     backgroundColor: theme.palette.black.main,
     padding: theme.spacing(0.5, 1),
     borderRadius: theme.spacing(0.25),
-    fontSize: theme.typography.body3.fontSize,
-    lineHeight: theme.typography.body3.lineHeight,
+    fontSize: theme.typography.body2.fontSize,
+    lineHeight: theme.typography.body2.lineHeight,
     textAlign: "left",
     ul: {
       margin: 0,
@@ -64,8 +71,7 @@ const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
         svg: {
           width: "18px",
           height: "17px",
-          marginTop: theme.spacing(0.25),
-          marginRight: theme.spacing(0.25),
+          marginRight: theme.spacing(1),
         },
         display: "flex",
         alignItems: "center",
@@ -74,6 +80,9 @@ const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
   },
   [`& .${tooltipClasses.arrow}`]: {
     color: theme.palette.black.main,
+  },
+  ".potential-description": {
+    color: theme.palette.midtoneBrighterer.main,
   },
 }));
 
@@ -100,17 +109,6 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
         atk: 0,
         def: 0,
         magicResistance: 0,
-      };
-
-  const potentialIncreases = !isSummon
-    ? getMaxPotStatIncrease(characterObject)
-    : {
-        health: 0,
-        attackPower: 0,
-        defense: 0,
-        dpCost: 0,
-        attackSpeed: 0,
-        redeployTimeInSeconds: 0,
       };
 
   const [eliteLevel, setEliteLevelFunc] = useState(maxElite);
@@ -242,54 +240,68 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 <StatsChangeTooltip
                   title={
                     <ul>
-                      {potentialIncreases.health > 0 && (
-                        <li>
-                          HP&nbsp;
-                          <span className="stat-value">
-                            +{potentialIncreases.health}
-                          </span>
-                        </li>
-                      )}
-                      {potentialIncreases.attackPower > 0 && (
-                        <li>
-                          ATK&nbsp;
-                          <span className="stat-value">
-                            +{potentialIncreases.attackPower}
-                          </span>
-                        </li>
-                      )}
-                      {potentialIncreases.defense > 0 && (
-                        <li>
-                          DEF&nbsp;
-                          <span className="stat-value">
-                            +{potentialIncreases.defense}
-                          </span>
-                        </li>
-                      )}
-                      {potentialIncreases.dpCost < 0 && (
-                        <li>
-                          DP Cost&nbsp;
-                          <span className="stat-value">
-                            {potentialIncreases.dpCost}
-                          </span>
-                        </li>
-                      )}
-                      {potentialIncreases.attackSpeed > 0 && (
-                        <li>
-                          ASPD&nbsp;
-                          <span className="stat-value">
-                            +{potentialIncreases.attackSpeed}
-                          </span>
-                        </li>
-                      )}
-                      {potentialIncreases.redeployTimeInSeconds < 0 && (
-                        <li>
-                          Redeploy Time&nbsp;
-                          <span className="stat-value">
-                            {potentialIncreases.redeployTimeInSeconds}
-                          </span>
-                        </li>
-                      )}
+                      {getPotStatIncreases(characterObject).map((pot, i) => {
+                        return (
+                          <li key={`potential-${i}-stat-change`}>
+                            {i === 0 && <PotentialTwoIcon />}
+                            {i === 1 && <PotentialThreeIcon />}
+                            {i === 2 && <PotentialFourIcon />}
+                            {i === 3 && <PotentialFiveIcon />}
+                            {i === 4 && <PotentialSixIcon />}
+                            {pot.health > 0 && (
+                              <span>
+                                HP&nbsp;
+                                <span className="stat-value">
+                                  +{pot.health}
+                                </span>
+                              </span>
+                            )}
+                            {pot.attackPower > 0 && (
+                              <span>
+                                ATK&nbsp;
+                                <span className="stat-value">
+                                  +{pot.attackPower}
+                                </span>
+                              </span>
+                            )}
+                            {pot.defense > 0 && (
+                              <span>
+                                DEF&nbsp;
+                                <span className="stat-value">
+                                  +{pot.defense}
+                                </span>
+                              </span>
+                            )}
+                            {pot.dpCost < 0 && (
+                              <span>
+                                DP Cost&nbsp;
+                                <span className="stat-value">{pot.dpCost}</span>
+                              </span>
+                            )}
+                            {pot.attackSpeed > 0 && (
+                              <span>
+                                ASPD&nbsp;
+                                <span className="stat-value">
+                                  +{pot.attackSpeed}
+                                </span>
+                              </span>
+                            )}
+                            {pot.redeployTimeInSeconds < 0 && (
+                              <span>
+                                Redeploy Time&nbsp;
+                                <span className="stat-value">
+                                  {pot.redeployTimeInSeconds}
+                                </span>
+                              </span>
+                            )}
+                            {pot.description && (
+                              <span className="potential-description">
+                                {pot.description}
+                              </span>
+                            )}
+                          </li>
+                        );
+                      })}
                     </ul>
                   }
                 >

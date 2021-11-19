@@ -97,4 +97,5 @@ export interface PotentialStatChange {
   dpCost: number;
   attackSpeed: number;
   redeployTimeInSeconds: number;
+  description: string | null;
 }

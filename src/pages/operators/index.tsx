@@ -417,6 +417,15 @@ const styles = (theme: Theme) => css`
         margin-right: ${theme.spacing(1)};
       }
     }
+
+    button {
+      transition-property: background-color, box-shadow, border-color;
+      font-weight: ${theme.typography.navigationLinkBold.fontWeight};
+
+      img {
+        margin-right: ${theme.spacing(1)};
+      }
+    }
   }
 
   ul.operator-list {

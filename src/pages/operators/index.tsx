@@ -170,6 +170,10 @@ const globalOverrideStyles = (theme: Theme) => css`
         font-size: ${theme.typography.operatorPageHeading.fontSize}px;
         font-weight: ${theme.typography.operatorPageHeading.fontWeight};
         line-height: ${theme.typography.operatorPageHeading.lineHeight};
+
+        ${theme.breakpoints.down("mobile")} {
+          font-size: ${theme.typography.operatorNameHeading.fontSize}px;
+        }
       }
     }
   }

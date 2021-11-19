@@ -309,71 +309,82 @@ const Operators: React.VFC<Props> = ({ data }) => {
             checked={showOnlyGuideAvailable}
           />
         </div>
-        <ul className="operator-list">
-          {operatorsToShow.map((op) => {
-            const operatorClass = professionToClass(op.profession);
-            const subclass = subProfessionIdToSubclass(op.subProfessionId);
-            const hasGuide = operatorsWithGuides.has(op.name);
-            return (
-              <ClassNames key={op.id}>
-                {({ cx }) => {
-                  const inner = (
-                    <Fragment>
-                      <div className="operator-info">
-                        <span className="operator-name">{op.name}</span>
-                        <span
+        <section className="results">
+          <h2>Operators</h2>
+          {operatorsToShow.length > 0 ? (
+            <ul className="operator-list">
+              {operatorsToShow.map((op) => {
+                const operatorClass = professionToClass(op.profession);
+                const subclass = subProfessionIdToSubclass(op.subProfessionId);
+                const hasGuide = operatorsWithGuides.has(op.name);
+                return (
+                  <ClassNames key={op.id}>
+                    {({ cx }) => {
+                      const inner = (
+                        <Fragment>
+                          <div className="operator-info">
+                            <span className="operator-name">{op.name}</span>
+                            <span
+                              className={cx(
+                                "rarity",
+                                `rarity-${op.rarity + 1}-stars`
+                              )}
+                              aria-label={`${op.rarity + 1} stars`}
+                            >
+                              {op.rarity + 1} ★
+                            </span>
+                            <span className="operator-class">
+                              {operatorClass}
+                            </span>
+                          </div>
+                          <span className="operator-subclass">
+                            <img
+                              className="operator-subclass-icon"
+                              src={operatorSubclassIcon(op.subProfessionId)}
+                              alt={subclass}
+                            />
+                          </span>
+                          <div className="on-hover">
+                            {hasGuide ? (
+                              <Fragment>
+                                <span>Read Guide</span>
+                                <NavigateRightArrow className="go-to-guide-icon" />
+                              </Fragment>
+                            ) : (
+                              <span>Guide Unavailable</span>
+                            )}
+                          </div>
+                        </Fragment>
+                      );
+                      return (
+                        <li
                           className={cx(
-                            "rarity",
-                            `rarity-${op.rarity + 1}-stars`
+                            "operator",
+                            hasGuide ? "has-guide" : "no-guide"
                           )}
-                          aria-label={`${op.rarity + 1} stars`}
+                          style={{
+                            //@ts-expect-error css variable
+                            "--bg-image": `url("${operatorPortrait(op.name)}")`,
+                          }}
                         >
-                          {op.rarity + 1} ★
-                        </span>
-                        <span className="operator-class">{operatorClass}</span>
-                      </div>
-                      <span className="operator-subclass">
-                        <img
-                          className="operator-subclass-icon"
-                          src={operatorSubclassIcon(op.subProfessionId)}
-                          alt={subclass}
-                        />
-                      </span>
-                      <div className="on-hover">
-                        {hasGuide ? (
-                          <Fragment>
-                            <span>Read Guide</span>
-                            <NavigateRightArrow className="go-to-guide-icon" />
-                          </Fragment>
-                        ) : (
-                          <span>Guide Unavailable</span>
-                        )}
-                      </div>
-                    </Fragment>
-                  );
-                  return (
-                    <li
-                      className={cx(
-                        "operator",
-                        hasGuide ? "has-guide" : "no-guide"
-                      )}
-                      style={{
-                        //@ts-expect-error css variable
-                        "--bg-image": `url("${operatorPortrait(op.name)}")`,
-                      }}
-                    >
-                      {hasGuide ? (
-                        <a href={`/operators/${slugify(op.name)}`}>{inner}</a>
-                      ) : (
-                        inner
-                      )}
-                    </li>
-                  );
-                }}
-              </ClassNames>
-            );
-          })}
-        </ul>
+                          {hasGuide ? (
+                            <a href={`/operators/${slugify(op.name)}`}>
+                              {inner}
+                            </a>
+                          ) : (
+                            inner
+                          )}
+                        </li>
+                      );
+                    }}
+                  </ClassNames>
+                );
+              })}
+            </ul>
+          ) : (
+            <div className="no-results">No Results</div>
+          )}
+        </section>
       </main>
     </Layout>
   );
@@ -381,13 +392,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
 export default Operators;
 
 const styles = (theme: Theme) => css`
-  padding: ${theme.spacing(0, 3)};
-
-  ${theme.breakpoints.down("mobile")} {
-    padding: ${theme.spacing(0, 2)};
-  }
-
   .last-updated {
+    padding: ${theme.spacing(0, 3)};
+
     .date {
       font-weight: ${theme.typography.body1Bold.fontWeight};
     }
@@ -395,6 +402,7 @@ const styles = (theme: Theme) => css`
 
   .sort-and-filter-options {
     margin: ${theme.spacing(4, 0, 0)};
+    padding: ${theme.spacing(0, 3)};
     display: flex;
     align-items: center;
     font-size: ${theme.typography.navigationLink.fontSize}px;
@@ -428,148 +436,174 @@ const styles = (theme: Theme) => css`
     }
   }
 
-  ul.operator-list {
-    margin: ${theme.spacing(3, 0, 0)};
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: ${theme.spacing(3)};
-    list-style: none;
+  .results {
+    margin: ${theme.spacing(4, 0, -8, 0)};
+    padding: ${theme.spacing(3)};
+    background-color: ${theme.palette.black.main};
 
     ${theme.breakpoints.down("mobile")} {
-      margin: ${theme.spacing(2, 0, 0)};
-      grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
-      gap: ${theme.spacing(2)};
+      margin-top: ${theme.spacing(-4)};
     }
 
-    li.operator {
-      width: 100%;
-      height: 280px;
-      flex-grow: 1;
-      border-radius: ${theme.spacing(0.5)};
-      background-color: ${theme.palette.black.main};
-      background-size: cover;
-      background-position-y: top;
-      background-image: linear-gradient(
-          120deg,
-          ${theme.palette.midtoneDarker.main} 0%,
-          transparent 18%
-        ),
-        linear-gradient(to bottom, transparent 42%, #000 100%), var(--bg-image);
-      box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)}
-        ${theme.spacing(1)} rgba(0, 0, 0, 0.15);
-      transition: all 0.15s ease-in-out;
+    h2 {
+      margin: 0;
+      font-size: ${theme.typography.generalHeading.fontSize}px;
+      line-height: ${theme.typography.generalHeading.lineHeight};
+      font-weight: ${theme.typography.generalHeadingBold.fontWeight};
+    }
+
+    ul.operator-list {
+      margin: ${theme.spacing(3, 0, 0)};
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: ${theme.spacing(3)};
+      list-style: none;
 
       ${theme.breakpoints.down("mobile")} {
-        width: 148px;
+        margin: ${theme.spacing(2, 0, 0)};
+        grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+        gap: ${theme.spacing(2)};
       }
 
-      &.no-guide {
-        opacity: 0.5;
-        cursor: initial;
-      }
-
-      &.no-guide,
-      &.has-guide a {
-        display: grid;
-        grid-template-rows: max-content 1fr max-content;
-      }
-
-      &.has-guide a {
+      li.operator {
         width: 100%;
-        height: 100%;
-        color: inherit;
-      }
+        height: 280px;
+        flex-grow: 1;
+        border-radius: ${theme.spacing(0.5)};
+        background-color: ${theme.palette.black.main};
+        background-size: cover;
+        background-position-y: top;
+        background-image: linear-gradient(
+            120deg,
+            ${theme.palette.midtoneDarker.main} 0%,
+            transparent 18%
+          ),
+          linear-gradient(to bottom, transparent 42%, #000 100%),
+          var(--bg-image);
+        box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)}
+          ${theme.spacing(1)} rgba(0, 0, 0, 0.15);
+        transition: all 0.15s ease-in-out;
 
-      .on-hover {
-        display: none;
-        font-size: ${theme.typography.body3.fontSize}px;
-        line-height: ${theme.typography.body3.lineHeight};
-        text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
-          rgba(0, 0, 0, 0.5);
-      }
+        ${theme.breakpoints.down("mobile")} {
+          width: 148px;
+        }
 
-      &:hover {
-        .operator-info {
-          display: none;
+        &.no-guide {
+          opacity: 0.5;
+          cursor: initial;
+        }
+
+        &.no-guide,
+        &.has-guide a {
+          display: grid;
+          grid-template-rows: max-content 1fr max-content;
+        }
+
+        &.has-guide a {
+          width: 100%;
+          height: 100%;
+          color: inherit;
         }
 
         .on-hover {
-          margin-top: -4px;
-          padding: ${theme.spacing(2)};
-          display: grid;
-          grid-template-columns: max-content 1fr max-content;
-          align-items: flex-end;
-          border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
-
-          .go-to-guide-icon {
-            grid-column: 3;
-            height: ${theme.typography.body3.lineHeight};
-          }
-        }
-
-        &.has-guide {
-          transform: scale(1.1);
-          filter: brightness(110%);
-
-          .on-hover {
-            border-bottom: ${theme.spacing(0.5)} solid
-              ${theme.palette.white.main};
-          }
-        }
-      }
-
-      .operator-info {
-        grid-row: 3;
-        display: grid;
-        grid-template-rows: repeat(2, max-content);
-        grid-template-columns: 1fr max-content;
-        padding: ${theme.spacing(2)};
-        row-gap: ${theme.spacing(1)};
-
-        .operator-name,
-        .rarity,
-        .operator-class {
+          display: none;
+          font-size: ${theme.typography.body3.fontSize}px;
+          line-height: ${theme.typography.body3.lineHeight};
           text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
             rgba(0, 0, 0, 0.5);
         }
 
-        .operator-name {
-          grid-column: span 2;
-          font-size: ${theme.typography.body2.fontSize}px;
-          line-height: ${theme.typography.body2.lineHeight};
-          font-weight: ${theme.typography.body2Bold.fontWeight};
+        &:hover {
+          .operator-info {
+            display: none;
+          }
+
+          .on-hover {
+            margin-top: -4px;
+            padding: ${theme.spacing(2)};
+            display: grid;
+            grid-template-columns: max-content 1fr max-content;
+            align-items: flex-end;
+            border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+
+            .go-to-guide-icon {
+              grid-column: 3;
+              height: ${theme.typography.body3.lineHeight};
+            }
+          }
+
+          &.has-guide {
+            transform: scale(1.1);
+            filter: brightness(110%);
+
+            .on-hover {
+              border-bottom: ${theme.spacing(0.5)} solid
+                ${theme.palette.white.main};
+            }
+          }
         }
 
-        .rarity,
-        .operator-class {
-          font-size: ${theme.typography.label2.fontSize}px;
-          line-height: ${theme.typography.label2.lineHeight};
+        .operator-info {
+          grid-row: 3;
+          display: grid;
+          grid-template-rows: repeat(2, max-content);
+          grid-template-columns: 1fr max-content;
+          padding: ${theme.spacing(2)};
+          row-gap: ${theme.spacing(1)};
+
+          .operator-name,
+          .rarity,
+          .operator-class {
+            text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
+              rgba(0, 0, 0, 0.5);
+          }
+
+          .operator-name {
+            grid-column: span 2;
+            font-size: ${theme.typography.body2.fontSize}px;
+            line-height: ${theme.typography.body2.lineHeight};
+            font-weight: ${theme.typography.body2Bold.fontWeight};
+          }
+
+          .rarity,
+          .operator-class {
+            font-size: ${theme.typography.label2.fontSize}px;
+            line-height: ${theme.typography.label2.lineHeight};
+          }
+
+          .rarity {
+            grid-column: 2;
+          }
+
+          .operator-class {
+            grid-row: 2;
+            text-transform: uppercase;
+          }
         }
 
-        .rarity {
-          grid-column: 2;
-        }
+        .operator-subclass {
+          grid-row: 1;
 
-        .operator-class {
-          grid-row: 2;
-          text-transform: uppercase;
+          .operator-subclass-icon {
+            width: 40px;
+            height: 40px;
+            margin: ${theme.spacing(1, 0, 0, 1)};
+            line-height: 1;
+            filter: drop-shadow(
+              0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)
+            );
+          }
         }
       }
+    }
 
-      .operator-subclass {
-        grid-row: 1;
-
-        .operator-subclass-icon {
-          width: 40px;
-          height: 40px;
-          margin: ${theme.spacing(1, 0, 0, 1)};
-          line-height: 1;
-          filter: drop-shadow(
-            0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)
-          );
-        }
-      }
+    .no-results {
+      margin-top: ${theme.spacing(3)};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: ${theme.palette.midtoneBrighterer.main};
     }
   }
 `;

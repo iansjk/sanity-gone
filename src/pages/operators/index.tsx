@@ -309,6 +309,31 @@ const Operators: React.VFC<Props> = ({ data }) => {
             checked={showOnlyGuideAvailable}
           />
         </div>
+        <div className="class-subclass-descriptions">
+          {selectedProfession && (
+            <div
+              className="class-description"
+              dangerouslySetInnerHTML={{
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                __html: operatorClasses.find(
+                  ({ profession }) => profession === selectedProfession
+                )!.analysis.childMarkdownRemark.html,
+              }}
+            />
+          )}
+          {selectedSubProfessionId && (
+            <div
+              className="subclass-description"
+              dangerouslySetInnerHTML={{
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                __html: operatorSubclasses.find(
+                  ({ subProfessionId }) =>
+                    subProfessionId === selectedSubProfessionId
+                )!.analysis.childMarkdownRemark.html,
+              }}
+            />
+          )}
+        </div>
         <section className="results">
           <h2>Operators</h2>
           {operatorsToShow.length > 0 ? (
@@ -434,6 +459,10 @@ const styles = (theme: Theme) => css`
         margin-right: ${theme.spacing(1)};
       }
     }
+  }
+
+  .class-subclass-descriptions {
+    padding: ${theme.spacing(0, 3)};
   }
 
   .results {

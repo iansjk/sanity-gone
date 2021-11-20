@@ -135,7 +135,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
     setIsSubclassMenuOpen(true);
   };
 
-  const handleClassClick = (profession: string) => () => {
+  const handleClassClick = (profession: string | null) => () => {
     setSelectedProfession((oldProfession) => {
       if (oldProfession !== profession) {
         setSelectedSubProfessionId(null);
@@ -145,7 +145,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
     setIsClassMenuOpen(false);
   };
 
-  const handleSubclassClick = (subProfessionId: string) => () => {
+  const handleSubclassClick = (subProfessionId: string | null) => () => {
     setSelectedSubProfessionId(subProfessionId);
     setIsSubclassMenuOpen(false);
   };
@@ -222,6 +222,12 @@ const Operators: React.VFC<Props> = ({ data }) => {
             }}
             onClose={() => setIsClassMenuOpen(false)}
           >
+            <ClassSubclassMenuItem
+              onClick={handleClassClick(null)}
+              className={selectedProfession == null ? "selected" : ""}
+            >
+              <ListItemText>All Classes</ListItemText>
+            </ClassSubclassMenuItem>
             {operatorClasses.map(({ className, profession }) => (
               <ClassSubclassMenuItem
                 key={className}
@@ -276,6 +282,12 @@ const Operators: React.VFC<Props> = ({ data }) => {
             }}
             onClose={() => setIsSubclassMenuOpen(false)}
           >
+            <ClassSubclassMenuItem
+              onClick={handleSubclassClick(null)}
+              className={selectedProfession == null ? "selected" : ""}
+            >
+              <ListItemText>All Branches</ListItemText>
+            </ClassSubclassMenuItem>
             {operatorSubclasses
               .filter(
                 ({ class: subclassClass }) =>

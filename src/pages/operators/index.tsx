@@ -13,6 +13,7 @@ import {
 import { DateTime } from "luxon";
 import slugify from "@sindresorhus/slugify";
 import { rgba } from "polished";
+import { MdArrowForwardIos } from "react-icons/md";
 
 import Layout from "../../Layout";
 import {
@@ -105,6 +106,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
     .map((node) => DateTime.fromISO(node.updatedAt))
     .reduce((prev, curr) => (curr > prev ? curr : prev));
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
+  const [showClassDescriptions, setShowClassDescriptions] = useState(true);
   const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
   const [isSubclassMenuOpen, setIsSubclassMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -323,59 +325,78 @@ const Operators: React.VFC<Props> = ({ data }) => {
           />
         </div>
         <div className="class-subclass-descriptions">
-          {selectedProfession && selectedClass && (
-            <section className="class-card">
-              <div className="icon-container">
-                <img src={operatorClassIcon(slugify(selectedClass))} alt="" />
-              </div>
-              <div className="name-container">
-                <h2>
-                  <span className="visually-hidden">Selected class: </span>
-                  {selectedClass}
-                </h2>
-                <span className="heading-type" aria-hidden="true">
-                  Class
-                </span>
-              </div>
-              <div
-                className="class-description"
-                dangerouslySetInnerHTML={{
-                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  __html: operatorClasses.find(
-                    ({ profession }) => profession === selectedProfession
-                  )!.analysis.childMarkdownRemark.html,
-                }}
-              />
-            </section>
+          {selectedProfession != null && (
+            <button
+              className="toggle-class-descriptions-button"
+              aria-expanded={showClassDescriptions ? "true" : undefined}
+              aria-controls="class-subclass-card-container"
+              onClick={() => setShowClassDescriptions((curr) => !curr)}
+            >
+              Class Description
+              <MdArrowForwardIos />
+            </button>
           )}
-          {selectedSubProfessionId && (
-            <section className="subclass-card">
-              <div className="icon-container">
-                <img
-                  src={operatorSubclassIcon(selectedSubProfessionId)}
-                  alt=""
-                />
-              </div>
-              <div className="name-container">
-                <h3>
-                  <span className="visually-hidden">Selected branch: </span>
-                  {selectedSubclass}
-                </h3>
-                <span className="heading-type" aria-hidden="true">
-                  Branch
-                </span>
-              </div>
-              <div
-                className="subclass-description"
-                dangerouslySetInnerHTML={{
-                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  __html: operatorSubclasses.find(
-                    ({ subProfessionId }) =>
-                      subProfessionId === selectedSubProfessionId
-                  )!.analysis.childMarkdownRemark.html,
-                }}
-              />
-            </section>
+
+          {showClassDescriptions && (
+            <div id="class-subclass-card-container">
+              {selectedProfession && selectedClass && (
+                <section className="class-card">
+                  <div className="icon-container">
+                    <img
+                      src={operatorClassIcon(slugify(selectedClass))}
+                      alt=""
+                    />
+                  </div>
+                  <div className="name-container">
+                    <h2>
+                      <span className="visually-hidden">Selected class: </span>
+                      {selectedClass}
+                    </h2>
+                    <span className="heading-type" aria-hidden="true">
+                      Class
+                    </span>
+                  </div>
+                  <div
+                    className="class-description"
+                    dangerouslySetInnerHTML={{
+                      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                      __html: operatorClasses.find(
+                        ({ profession }) => profession === selectedProfession
+                      )!.analysis.childMarkdownRemark.html,
+                    }}
+                  />
+                </section>
+              )}
+              {selectedSubProfessionId && (
+                <section className="subclass-card">
+                  <div className="icon-container">
+                    <img
+                      src={operatorSubclassIcon(selectedSubProfessionId)}
+                      alt=""
+                    />
+                  </div>
+                  <div className="name-container">
+                    <h3>
+                      <span className="visually-hidden">Selected branch: </span>
+                      {selectedSubclass}
+                    </h3>
+                    <span className="heading-type" aria-hidden="true">
+                      Branch
+                    </span>
+                  </div>
+                  <div
+                    className="subclass-description"
+                    dangerouslySetInnerHTML={{
+                      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                      __html: operatorSubclasses.find(
+                        ({ subProfessionId }) =>
+                          subProfessionId === selectedSubProfessionId
+                      )!.analysis.childMarkdownRemark.html,
+                    }}
+                  />
+                </section>
+              )}
+            </div>
           )}
         </div>
         <section className="results">
@@ -507,6 +528,32 @@ const styles = (theme: Theme) => css`
 
   .class-subclass-descriptions {
     padding: ${theme.spacing(0, 3)};
+
+    .toggle-class-descriptions-button {
+      margin: ${theme.spacing(4, 0, 0)};
+      padding: ${theme.spacing(0, 1, 0, 0.5)};
+      display: flex;
+      align-items: center;
+      background-color: rgba(232, 232, 242, 0.08);
+      color: rgba(232, 232, 242, 0.8);
+      border: none;
+      border-radius: ${theme.spacing(0.25)};
+      line-height: ${theme.typography.body1.lineHeight};
+      cursor: pointer;
+
+      svg {
+        transition: transform 50ms ease-in-out;
+        margin-left: 10px;
+        width: 13px;
+        height: 13px;
+      }
+
+      &[aria-expanded="true"] {
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
 
     .class-card,
     .subclass-card {

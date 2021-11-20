@@ -1,5 +1,9 @@
 import defaultSlugify from "slugify";
-import { CharacterObject, CharacterStatValues } from "./types";
+import {
+  CharacterObject,
+  CharacterStatValues,
+  PotentialStatChange,
+} from "./types";
 
 export function slugify(toSlug: string): string {
   return defaultSlugify(toSlug.replace(/[().'-]/g, ""), {
@@ -181,7 +185,6 @@ export const getStatsAtLevel = (
     health: potHealth,
     attackPower: potAttack,
     defense: potDefense,
-    artsResistance: potRes,
     attackSpeed: potASPD,
     dpCost: potDp,
     redeployTimeInSeconds: potRedeploy,
@@ -191,7 +194,6 @@ export const getStatsAtLevel = (
         health: 0,
         attackPower: 0,
         defense: 0,
-        artsResistance: 0,
         attackSpeed: 0,
         dpCost: 0,
         redeployTimeInSeconds: 0,
@@ -212,8 +214,7 @@ export const getStatsAtLevel = (
     potDefense;
   const artsResistance =
     linearInterpolate(level, maxLevel, res, finalMaxRes) +
-    (trust ? trustRes : 0) +
-    potRes;
+    (trust ? trustRes : 0);
   const redeployTimeInSeconds = redeploy + potRedeploy;
   const dpCost = dp + potDp;
 
@@ -254,52 +255,99 @@ export const calculateSecondsPerAttack = (
   return Math.round((baseAttackTime * 30) / (aspd / 100.0)) / 30;
 };
 
-export const getMaxPotStatIncrease = (characterObject: CharacterObject) => {
+// Returns an array of CharacterStatValues changes at each potential level,
+// with Pot2 at index 0 and Pot6 at index 4.
+export const getPotStatIncreases = (
+  characterObject: CharacterObject
+): PotentialStatChange[] => {
   const { potentialRanks } = characterObject;
 
-  const statChanges = {
-    health: 0,
-    attackPower: 0,
-    defense: 0,
-    artsResistance: 0,
-    attackSpeed: 0,
-    dpCost: 0,
-    redeployTimeInSeconds: 0,
-  };
+  const statChanges: PotentialStatChange[] = [];
 
   potentialRanks.forEach((pot) => {
-    if (pot.buff === null) {
+    if (pot.buff == null) {
+      let desc = pot.description;
+      if (desc.startsWith("Improves ")) {
+        desc = desc.replace("Improves ", "") + " Enhancement";
+      }
+      statChanges.push({
+        health: 0,
+        attackPower: 0,
+        defense: 0,
+        dpCost: 0,
+        attackSpeed: 0,
+        redeployTimeInSeconds: 0,
+        description: desc,
+      });
       return;
     }
+    const curStats: PotentialStatChange = {
+      health: 0,
+      attackPower: 0,
+      defense: 0,
+      dpCost: 0,
+      attackSpeed: 0,
+      redeployTimeInSeconds: 0,
+      description: null,
+    };
     const attribType = pot.buff.attributes.attributeModifiers[0].attributeType;
     const attribChange = pot.buff.attributes.attributeModifiers[0].value;
 
     switch (attribType) {
       case 0:
-        statChanges.health += attribChange;
+        curStats.health += attribChange;
         break;
       case 1:
-        statChanges.attackPower += attribChange;
+        curStats.attackPower += attribChange;
         break;
       case 2:
-        statChanges.defense += attribChange;
+        curStats.defense += attribChange;
         break;
       case 4:
-        statChanges.dpCost += attribChange;
+        curStats.dpCost += attribChange;
         break;
       case 7:
-        statChanges.attackSpeed += attribChange;
+        curStats.attackSpeed += attribChange;
         break;
       case 21:
-        statChanges.redeployTimeInSeconds += attribChange;
+        curStats.redeployTimeInSeconds += attribChange;
         break;
       default:
         console.warn("Unrecognized attribute in potentials");
         break;
     }
+    statChanges.push(curStats);
   });
 
   return statChanges;
+};
+
+export const getMaxPotStatIncrease = (
+  characterObject: CharacterObject
+): PotentialStatChange => {
+  return getPotStatIncreases(characterObject).reduce(
+    (vals: PotentialStatChange, previous: PotentialStatChange) => {
+      return {
+        health: vals.health + previous.health,
+        attackPower: vals.attackPower + previous.attackPower,
+        defense: vals.defense + previous.defense,
+        dpCost: vals.dpCost + previous.dpCost,
+        attackSpeed: vals.attackSpeed + previous.attackSpeed,
+        redeployTimeInSeconds:
+          vals.redeployTimeInSeconds + previous.redeployTimeInSeconds,
+        description: null,
+      };
+    },
+    {
+      health: 0,
+      attackPower: 0,
+      defense: 0,
+      dpCost: 0,
+      attackSpeed: 0,
+      redeployTimeInSeconds: 0,
+      description: null,
+    }
+  );
 };
 
 export const getMaxTrustStatIncrease = (
@@ -313,48 +361,4 @@ export const getMaxTrustStatIncrease = (
   return characterObject.favorKeyFrames[
     characterObject.favorKeyFrames.length - 1
   ].data;
-};
-
-export const getTrustIncreaseString = (
-  characterObject: CharacterObject
-): string => {
-  const {
-    maxHp: trustHp,
-    atk: trustAtk,
-    def: trustDef,
-    magicResistance: trustRes,
-  } = getMaxTrustStatIncrease(characterObject);
-
-  let finalStr = "";
-  if (trustHp) finalStr += `HP +${trustHp}\n`;
-  if (trustAtk) finalStr += `ATK +${trustAtk}\n`;
-  if (trustDef) finalStr += `DEF +${trustDef}\n`;
-  if (trustRes) finalStr += `RES +${trustRes}\n`;
-
-  return finalStr.trim();
-};
-
-export const getPotentialIncreaseString = (
-  characterObject: CharacterObject
-): string => {
-  const {
-    health: potHealth,
-    attackPower: potAttack,
-    defense: potDefense,
-    artsResistance: potRes,
-    attackSpeed: potAttacksPerSecond,
-    dpCost: potDp,
-    redeployTimeInSeconds: potRedeploy,
-  } = getMaxPotStatIncrease(characterObject);
-
-  let finalStr = "";
-  if (potHealth !== 0) finalStr += `HP +${potHealth}\n`;
-  if (potAttack !== 0) finalStr += `ATK +${potAttack}\n`;
-  if (potDefense !== 0) finalStr += `DEF +${potDefense}\n`;
-  if (potRes !== 0) finalStr += `RES +${potRes}\n`;
-  if (potAttacksPerSecond !== 0) finalStr += `ASPD +${potAttacksPerSecond}\n`;
-  if (potDp) finalStr += `DP Cost ${potDp}\n`;
-  if (potRedeploy) finalStr += `Redeploy Time ${potRedeploy}\n`;
-
-  return finalStr.trim();
 };

@@ -51,28 +51,28 @@ export interface CharacterObject {
 }
 
 export interface CharacterStatValues {
-  health: number,
-  attackPower: number,
-  defense: number,
-  artsResistance: number,
-  dpCost: number,
-  blockCount: number,
-  redeployTimeInSeconds: number,
-  secondsPerAttack: number,
-  rangeObject: RangeObject
+  health: number;
+  attackPower: number;
+  defense: number;
+  artsResistance: number;
+  dpCost: number;
+  blockCount: number;
+  redeployTimeInSeconds: number;
+  secondsPerAttack: number;
+  rangeObject: RangeObject;
 }
 
 // trust bonuses... agh
 // should only ever be HP, ATK, or DEF (RES is included for posterity)
 export interface FavorKeyFrame {
-  level: number,
+  level: number;
   data: {
     maxHp: number;
     atk: number;
     def: number;
     magicResistance: number;
     [otherProperties: string]: unknown;
-  }
+  };
 }
 
 // potential bonuses
@@ -84,8 +84,18 @@ export interface PotentialRanks {
         attributeType: number;
         value: number;
       }[];
-    }
+    };
   } | null;
   type: number;
   description: string;
+}
+
+export interface PotentialStatChange {
+  health: number;
+  attackPower: number;
+  defense: number;
+  dpCost: number;
+  attackSpeed: number;
+  redeployTimeInSeconds: number;
+  description: string | null;
 }

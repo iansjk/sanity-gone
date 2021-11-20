@@ -22,7 +22,6 @@ import {
   EliteTwoIcon,
   HealthIcon,
   RedeployTimeIcon,
-  PotentialOneIcon,
   PotentialTwoIcon,
   PotentialThreeIcon,
   PotentialFourIcon,
@@ -32,7 +31,6 @@ import {
 import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import {
-  getMaxPotStatIncrease,
   getMaxTrustStatIncrease,
   getPotStatIncreases,
   getStatsAtLevel,

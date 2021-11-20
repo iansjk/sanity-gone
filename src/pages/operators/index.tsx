@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { DateTime } from "luxon";
 import slugify from "@sindresorhus/slugify";
+import { rgba } from "polished";
 
 import Layout from "../../Layout";
 import {
@@ -310,28 +311,59 @@ const Operators: React.VFC<Props> = ({ data }) => {
           />
         </div>
         <div className="class-subclass-descriptions">
-          {selectedProfession && (
-            <div
-              className="class-description"
-              dangerouslySetInnerHTML={{
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                __html: operatorClasses.find(
-                  ({ profession }) => profession === selectedProfession
-                )!.analysis.childMarkdownRemark.html,
-              }}
-            />
+          {selectedProfession && selectedClass && (
+            <section className="class-card">
+              <div className="icon-container">
+                <img src={operatorClassIcon(slugify(selectedClass))} alt="" />
+              </div>
+              <div className="name-container">
+                <h2>
+                  <span className="visually-hidden">Selected class: </span>
+                  {selectedClass}
+                </h2>
+                <span className="heading-type" aria-hidden="true">
+                  Class
+                </span>
+              </div>
+              <div
+                className="class-description"
+                dangerouslySetInnerHTML={{
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                  __html: operatorClasses.find(
+                    ({ profession }) => profession === selectedProfession
+                  )!.analysis.childMarkdownRemark.html,
+                }}
+              />
+            </section>
           )}
           {selectedSubProfessionId && (
-            <div
-              className="subclass-description"
-              dangerouslySetInnerHTML={{
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                __html: operatorSubclasses.find(
-                  ({ subProfessionId }) =>
-                    subProfessionId === selectedSubProfessionId
-                )!.analysis.childMarkdownRemark.html,
-              }}
-            />
+            <section className="subclass-card">
+              <div className="icon-container">
+                <img
+                  src={operatorSubclassIcon(selectedSubProfessionId)}
+                  alt=""
+                />
+              </div>
+              <div className="name-container">
+                <h3>
+                  <span className="visually-hidden">Selected branch: </span>
+                  {selectedSubclass}
+                </h3>
+                <span className="heading-type" aria-hidden="true">
+                  Branch
+                </span>
+              </div>
+              <div
+                className="subclass-description"
+                dangerouslySetInnerHTML={{
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                  __html: operatorSubclasses.find(
+                    ({ subProfessionId }) =>
+                      subProfessionId === selectedSubProfessionId
+                  )!.analysis.childMarkdownRemark.html,
+                }}
+              />
+            </section>
           )}
         </div>
         <section className="results">
@@ -463,6 +495,86 @@ const styles = (theme: Theme) => css`
 
   .class-subclass-descriptions {
     padding: ${theme.spacing(0, 3)};
+
+    .class-card,
+    .subclass-card {
+      display: grid;
+      grid-template-rows: max-content 1fr;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+
+      .icon-container {
+        box-sizing: border-box;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        grid-row: span 2;
+        padding: ${theme.spacing(4)};
+
+        img {
+          margin: auto;
+          width: ${theme.spacing(8)};
+          height: ${theme.spacing(8)};
+
+          ${theme.breakpoints.down("mobile")} {
+            width: ${theme.spacing(3)};
+            height: ${theme.spacing(3)};
+          }
+        }
+      }
+
+      .name-container {
+        display: flex;
+        align-items: center;
+        padding: ${theme.spacing(3, 0, 0, 4)};
+
+        h2,
+        h3 {
+          margin: ${theme.spacing(0, 1.5, 0, 0)};
+          font-size: ${theme.typography.generalHeading.fontSize}px;
+          line-height: ${theme.typography.generalHeading.lineHeight};
+          font-weight: ${theme.typography.generalHeadingBold.fontWeight};
+          text-transform: uppercase;
+        }
+
+        .heading-type {
+          color: ${rgba(theme.palette.white.main, 0.5)};
+          font-size: ${theme.typography.generalHeading.fontSize}px;
+          line-height: ${theme.typography.generalHeading.lineHeight};
+        }
+      }
+
+      .class-description,
+      .subclass-description {
+        padding: ${theme.spacing(3, 4)};
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .class-card {
+      margin-top: ${theme.spacing(3)};
+    }
+
+    .class-card:not(:last-child) {
+      .icon-container {
+        border-bottom: ${theme.spacing(1)} solid ${theme.palette.gray.main};
+      }
+    }
+
+    .subclass-card {
+      background-color: ${theme.palette.midtoneExtra.main};
+      border-top: 1px solid ${theme.palette.midtoneBrighterer.main};
+      border-bottom-left-radius: ${theme.spacing(1)};
+      border-bottom-right-radius: ${theme.spacing(1)};
+
+      .icon-container {
+        background-color: ${theme.palette.midtone.main};
+        border-bottom-left-radius: ${theme.spacing(1)};
+      }
+    }
   }
 
   .results {

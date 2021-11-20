@@ -534,8 +534,8 @@ const styles = (theme: Theme) => css`
       padding: ${theme.spacing(0, 1, 0, 0.5)};
       display: flex;
       align-items: center;
-      background-color: rgba(232, 232, 242, 0.08);
-      color: rgba(232, 232, 242, 0.8);
+      background-color: ${rgba(theme.palette.white.main, 0.08)};
+      color: ${rgba(theme.palette.white.main, 0.8)};
       border: none;
       border-radius: ${theme.spacing(0.25)};
       line-height: ${theme.typography.body1.lineHeight};

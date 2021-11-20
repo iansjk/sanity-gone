@@ -9,11 +9,14 @@ import {
   MenuItem,
   styled,
   Theme,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { DateTime } from "luxon";
 import slugify from "@sindresorhus/slugify";
-import { rgba } from "polished";
+import { lighten, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 import Layout from "../../Layout";
 import {
@@ -116,6 +119,8 @@ const Operators: React.VFC<Props> = ({ data }) => {
   const [selectedSubProfessionId, setSelectedSubProfessionId] = useState<
     string | null
   >(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   const handleGuideAvailableChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -168,6 +173,148 @@ const Operators: React.VFC<Props> = ({ data }) => {
     );
   });
 
+  const sortAndFilterContainer = (
+    <div className="sort-and-filter-options">
+      <span className="filter-visual-label" aria-hidden="true">
+        <FilterIcon />
+        Filters
+      </span>
+      <Button
+        id="class-menu-button"
+        variant="contained"
+        aria-label="Select class"
+        aria-controls="class-menu"
+        aria-haspopup="true"
+        aria-expanded={isClassMenuOpen ? "true" : undefined}
+        onClick={handleClassMenuClick}
+        className={
+          selectedProfession != null ? "has-selection" : "no-selection"
+        }
+      >
+        {selectedProfession ? (
+          <Fragment>
+            <img
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              src={operatorClassIcon(slugify(selectedClass!))}
+              alt=""
+              width={MENU_ICON_SIZE}
+              height={MENU_ICON_SIZE}
+            />
+            {selectedClass}
+          </Fragment>
+        ) : (
+          "All Classes"
+        )}
+      </Button>
+      <Menu
+        id="class-menu"
+        open={isClassMenuOpen}
+        anchorEl={anchorEl}
+        MenuListProps={{
+          "aria-labelledby": "class-menu-button",
+        }}
+        onClose={() => setIsClassMenuOpen(false)}
+      >
+        <ClassSubclassMenuItem
+          onClick={handleClassClick(null)}
+          className={selectedProfession == null ? "selected" : ""}
+        >
+          <ListItemText>All Classes</ListItemText>
+        </ClassSubclassMenuItem>
+        {operatorClasses.map(({ className, profession }) => (
+          <ClassSubclassMenuItem
+            key={className}
+            onClick={handleClassClick(profession)}
+            className={selectedProfession === profession ? "selected" : ""}
+          >
+            <ListItemIcon>
+              <img
+                src={operatorClassIcon(slugify(className))}
+                alt=""
+                width={MENU_ICON_SIZE}
+                height={MENU_ICON_SIZE}
+              />
+            </ListItemIcon>
+            <ListItemText>{className}</ListItemText>
+          </ClassSubclassMenuItem>
+        ))}
+      </Menu>
+      <Button
+        id="subclass-menu-button"
+        disabled={selectedProfession == null}
+        variant="contained"
+        aria-label="Select subclass"
+        aria-controls="subclass-menu"
+        aria-haspopup="true"
+        aria-expanded={isSubclassMenuOpen ? "true" : undefined}
+        onClick={handleSubclassMenuClick}
+        className={selectedSubProfessionId ? "has-selection" : "no-selection"}
+      >
+        {selectedSubProfessionId ? (
+          <Fragment>
+            <img
+              src={operatorSubclassIcon(selectedSubProfessionId)}
+              alt=""
+              width={MENU_ICON_SIZE}
+              height={MENU_ICON_SIZE}
+            />
+            {selectedSubclass}
+          </Fragment>
+        ) : (
+          "All Branches"
+        )}
+      </Button>
+      <Menu
+        id="subclass-menu"
+        open={isSubclassMenuOpen}
+        anchorEl={anchorEl}
+        MenuListProps={{
+          "aria-labelledby": "subclass-menu-button",
+        }}
+        onClose={() => setIsSubclassMenuOpen(false)}
+      >
+        <ClassSubclassMenuItem
+          onClick={handleSubclassClick(null)}
+          className={selectedProfession == null ? "selected" : ""}
+        >
+          <ListItemText>All Branches</ListItemText>
+        </ClassSubclassMenuItem>
+        {operatorSubclasses
+          .filter(
+            ({ class: subclassClass }) =>
+              subclassClass.profession === selectedProfession
+          )
+          .map(({ subclass, subProfessionId }) => (
+            <ClassSubclassMenuItem
+              key={subclass}
+              onClick={handleSubclassClick(subProfessionId)}
+              className={
+                selectedSubProfessionId === subProfessionId
+                  ? "selected"
+                  : undefined
+              }
+            >
+              <ListItemIcon>
+                <img
+                  src={operatorSubclassIcon(subProfessionId)}
+                  alt=""
+                  width={MENU_ICON_SIZE}
+                  height={MENU_ICON_SIZE}
+                />
+              </ListItemIcon>
+              <ListItemText>{subclass}</ListItemText>
+            </ClassSubclassMenuItem>
+          ))}
+      </Menu>
+      <div className="spacer" />
+      <CustomCheckbox
+        label="Guide available"
+        onChange={handleGuideAvailableChange}
+        checked={showOnlyGuideAvailable}
+      />
+    </div>
+  );
+
   return (
     <Layout
       pageTitle="Operator List"
@@ -183,147 +330,13 @@ const Operators: React.VFC<Props> = ({ data }) => {
               .toLocaleString(DateTime.DATE_FULL)}
           </span>
         </span>
-        <div className="sort-and-filter-options">
-          <span className="filter-visual-label" aria-hidden="true">
-            <FilterIcon />
-            Filters
-          </span>
-          <Button
-            id="class-menu-button"
-            variant="contained"
-            aria-label="Select class"
-            aria-controls="class-menu"
-            aria-haspopup="true"
-            aria-expanded={isClassMenuOpen ? "true" : undefined}
-            onClick={handleClassMenuClick}
-            className={
-              selectedProfession != null ? "has-selection" : "no-selection"
-            }
-          >
-            {selectedProfession ? (
-              <Fragment>
-                <img
-                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  src={operatorClassIcon(slugify(selectedClass!))}
-                  alt=""
-                  width={MENU_ICON_SIZE}
-                  height={MENU_ICON_SIZE}
-                />
-                {selectedClass}
-              </Fragment>
-            ) : (
-              "All Classes"
-            )}
-          </Button>
-          <Menu
-            id="class-menu"
-            open={isClassMenuOpen}
-            anchorEl={anchorEl}
-            MenuListProps={{
-              "aria-labelledby": "class-menu-button",
-            }}
-            onClose={() => setIsClassMenuOpen(false)}
-          >
-            <ClassSubclassMenuItem
-              onClick={handleClassClick(null)}
-              className={selectedProfession == null ? "selected" : ""}
-            >
-              <ListItemText>All Classes</ListItemText>
-            </ClassSubclassMenuItem>
-            {operatorClasses.map(({ className, profession }) => (
-              <ClassSubclassMenuItem
-                key={className}
-                onClick={handleClassClick(profession)}
-                className={selectedProfession === profession ? "selected" : ""}
-              >
-                <ListItemIcon>
-                  <img
-                    src={operatorClassIcon(slugify(className))}
-                    alt=""
-                    width={MENU_ICON_SIZE}
-                    height={MENU_ICON_SIZE}
-                  />
-                </ListItemIcon>
-                <ListItemText>{className}</ListItemText>
-              </ClassSubclassMenuItem>
-            ))}
-          </Menu>
-          <Button
-            id="subclass-menu-button"
-            disabled={selectedProfession == null}
-            variant="contained"
-            aria-label="Select subclass"
-            aria-controls="subclass-menu"
-            aria-haspopup="true"
-            aria-expanded={isSubclassMenuOpen ? "true" : undefined}
-            onClick={handleSubclassMenuClick}
-            className={
-              selectedSubProfessionId ? "has-selection" : "no-selection"
-            }
-          >
-            {selectedSubProfessionId ? (
-              <Fragment>
-                <img
-                  src={operatorSubclassIcon(selectedSubProfessionId)}
-                  alt=""
-                  width={MENU_ICON_SIZE}
-                  height={MENU_ICON_SIZE}
-                />
-                {selectedSubclass}
-              </Fragment>
-            ) : (
-              "All Branches"
-            )}
-          </Button>
-          <Menu
-            id="subclass-menu"
-            open={isSubclassMenuOpen}
-            anchorEl={anchorEl}
-            MenuListProps={{
-              "aria-labelledby": "subclass-menu-button",
-            }}
-            onClose={() => setIsSubclassMenuOpen(false)}
-          >
-            <ClassSubclassMenuItem
-              onClick={handleSubclassClick(null)}
-              className={selectedProfession == null ? "selected" : ""}
-            >
-              <ListItemText>All Branches</ListItemText>
-            </ClassSubclassMenuItem>
-            {operatorSubclasses
-              .filter(
-                ({ class: subclassClass }) =>
-                  subclassClass.profession === selectedProfession
-              )
-              .map(({ subclass, subProfessionId }) => (
-                <ClassSubclassMenuItem
-                  key={subclass}
-                  onClick={handleSubclassClick(subProfessionId)}
-                  className={
-                    selectedSubProfessionId === subProfessionId
-                      ? "selected"
-                      : undefined
-                  }
-                >
-                  <ListItemIcon>
-                    <img
-                      src={operatorSubclassIcon(subProfessionId)}
-                      alt=""
-                      width={MENU_ICON_SIZE}
-                      height={MENU_ICON_SIZE}
-                    />
-                  </ListItemIcon>
-                  <ListItemText>{subclass}</ListItemText>
-                </ClassSubclassMenuItem>
-              ))}
-          </Menu>
-          <div className="spacer" />
-          <CustomCheckbox
-            label="Guide available"
-            onChange={handleGuideAvailableChange}
-            checked={showOnlyGuideAvailable}
-          />
-        </div>
+        {isMobile ? (
+          <ScrollContainer className="mobile-sort-filter-scroller">
+            {sortAndFilterContainer}
+          </ScrollContainer>
+        ) : (
+          sortAndFilterContainer
+        )}
         <div className="class-subclass-descriptions">
           {selectedProfession != null && (
             <button
@@ -490,6 +503,10 @@ const styles = (theme: Theme) => css`
     }
   }
 
+  .mobile-sort-filter-scroller {
+    white-space: nowrap;
+  }
+
   .sort-and-filter-options {
     margin: ${theme.spacing(4, 0, 0)};
     padding: ${theme.spacing(0, 3)};
@@ -540,6 +557,12 @@ const styles = (theme: Theme) => css`
       border-radius: ${theme.spacing(0.25)};
       line-height: ${theme.typography.body1.lineHeight};
       cursor: pointer;
+      transition: all 50ms ease-out;
+
+      &:hover {
+        color: ${lighten(0.27, theme.palette.white.main)};
+        background-color: ${rgba(theme.palette.white.main, 0.4)};
+      }
 
       svg {
         transition: transform 50ms ease-in-out;

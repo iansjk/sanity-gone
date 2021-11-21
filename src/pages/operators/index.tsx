@@ -523,7 +523,10 @@ const styles = (theme: Theme) => css`
     padding: ${theme.spacing(2)};
     font-size: ${theme.typography.navigationLink.fontSize}px;
     line-height: ${theme.typography.navigationLink.lineHeight};
-    background-color: ${rgba(theme.palette.dark.main, 0.66)};
+
+    ${theme.breakpoints.down("mobile")} {
+      background-color: ${rgba(theme.palette.dark.main, 0.66)};
+    }
 
     .spacer {
       flex-grow: 1;

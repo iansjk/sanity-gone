@@ -308,9 +308,6 @@ const styles =
           }
 
           ${theme.breakpoints.down("mobile")} {
-            .background-spacer {
-              background: ${transparentize(0.34, theme.palette.dark.main)};
-            }
             svg.weird-death-sphere,
             .logo-bg {
               display: none;
@@ -324,7 +321,7 @@ const styles =
         height: ${theme.spacing(8.5)};
 
         ${theme.breakpoints.down("mobile")} {
-          height: 77px;
+          height: 75px;
         }
 
         .navbar-container {
@@ -416,16 +413,12 @@ const styles =
                 padding: 0;
                 background: none;
                 border: none;
+                display: flex;
+                align-items: center;
 
                 ${theme.breakpoints.up("mobile")} {
                   display: none;
                 }
-              }
-
-              .mobile-menu {
-                align-self: center;
-                position: relative;
-                top: -2px;
               }
             }
           }

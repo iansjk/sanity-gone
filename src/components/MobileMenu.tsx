@@ -37,6 +37,7 @@ const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
           <div className="mobile-menu-inner">
             <div className="top-bar">
               <SanityGoneLogo />
+              <div className="spacer" />
               <button
                 className="close-button"
                 aria-label="Close menu"
@@ -92,23 +93,28 @@ const styles = (theme: Theme) => css`
   }
 
   .top-bar {
-    height: 77px;
+    height: 75px;
     padding: ${theme.spacing(0, 3)};
-    display: grid;
-    grid-template-columns: max-content 1fr max-content;
+    display: flex;
     align-items: center;
     background-color: ${theme.palette.dark.main};
 
+    .spacer {
+      flex: 1 1 0;
+    }
+
     .close-button {
       position: relative;
-      right: -7px;
-      top: -1px;
-      grid-column: 3;
       background: none;
       border: none;
+      display: flex;
+      align-items: center;
 
       svg {
         fill: ${theme.palette.white.main};
+        height: 24px;
+        width: 24px;
+        margin-right: ${theme.spacing(-1)};
       }
     }
   }
@@ -138,7 +144,8 @@ const styles = (theme: Theme) => css`
       max-width: unset;
 
       .search-bar {
-        background: ${theme.palette.dark.main} !important;
+        border: none !important;
+        background: ${theme.palette.midtoneDarker.main};
         max-width: unset;
         width: auto;
         height: ${theme.spacing(5)};
@@ -147,6 +154,10 @@ const styles = (theme: Theme) => css`
 
         &.menu-down {
           border-radius: ${theme.spacing(0.5)};
+        }
+
+        &:focus-within {
+          background: ${theme.palette.dark.main};
         }
 
         .search-input {

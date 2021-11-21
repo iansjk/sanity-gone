@@ -289,6 +289,10 @@ const styles = (theme: Theme) => css`
       color: ${theme.palette.white.main};
       margin: ${theme.spacing(1, 0)};
       font-size: ${theme.typography.body2.fontSize}px;
+
+      & > input::placeholder {
+        opacity: 0.66;
+      }
     }
   }
 

@@ -141,7 +141,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
       {results &&
         query &&
         (results.length > 0 ? (
-          <div className={`results`}>
+          <div className="search-results">
             {results.filter((res) => res.type === "operator").length > 0 && (
               <div className="operator-results">
                 <div className="category-label">Operators</div>
@@ -238,7 +238,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
             )}
           </div>
         ) : (
-          <div className="results">
+          <div className="search-results">
             <div className="category-label">No results found!</div>
           </div>
         ))}
@@ -297,12 +297,12 @@ const styles = (theme: Theme) => css`
   }
 
   &.not-focused {
-    .results {
+    .search-results {
       display: none;
     }
   }
 
-  .results {
+  .search-results {
     display: flex;
     flex-direction: column;
     position: absolute;

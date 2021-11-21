@@ -165,13 +165,13 @@ const styles = (theme: Theme) => css`
         }
       }
 
-      .results {
+      .search-results {
         padding-top: ${theme.spacing(2)};
         border-radius: 0;
       }
     }
 
-    .results {
+    .search-results {
       width: 100%;
       max-width: unset;
       margin-right: ${theme.spacing(2)};

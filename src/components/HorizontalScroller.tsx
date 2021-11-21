@@ -34,12 +34,14 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
 
   return (
     <div ref={containerRef} css={styles}>
-      <div
-        className={cx("scroller-contents", className)}
-        onScroll={handleScroll}
-        {...rest}
-      >
-        {children}
+      <div className="container">
+        <div
+          className={cx("scroller-contents", className)}
+          onScroll={handleScroll}
+          {...rest}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
@@ -48,16 +50,22 @@ export default HorizontalScroller;
 
 const styles = (theme: Theme) => css`
   box-sizing: border-box;
-  width: 100vw;
+
+  overflow: hidden;
   --scroll-left: 0px;
   --offset-width: 0px;
   --scroll-width: 999px;
+
+  .container {
+    width: 100%;
+  }
 
   .scroller-contents {
     display: flex;
     align-items: center;
     white-space: nowrap;
-    overflow: auto;
+    width: 100%;
+    overflow-x: auto;
 
     mask-image: linear-gradient(
       to right,

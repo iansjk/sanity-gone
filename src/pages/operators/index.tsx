@@ -360,8 +360,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
         ) : (
           <div className="sort-and-filter-options">{sortAndFilterOptions}</div>
         )}
-        <div className="class-subclass-descriptions">
-          {selectedProfession != null && (
+
+        {selectedProfession != null && (
+          <div className="toggle-button-container">
             <button
               className="toggle-class-descriptions-button"
               aria-expanded={showClassDescriptions ? "true" : undefined}
@@ -371,8 +372,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
               Class Description
               <MdArrowForwardIos />
             </button>
-          )}
-
+          </div>
+        )}
+        <div className="class-subclass-descriptions">
           {showClassDescriptions && (
             <div id="class-subclass-card-container">
               {selectedProfession && selectedClass && (
@@ -534,12 +536,12 @@ const globalOverrideStyles = (theme: Theme) => css`
 `;
 
 const styles = (theme: Theme) => css`
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   padding: ${theme.spacing(1, 3, 0, 3)};
 
   ${theme.breakpoints.down("mobile")} {
-    padding: ${theme.spacing(1, 2, 0, 2)};
+    padding: 0;
   }
 
   .last-updated {
@@ -563,12 +565,12 @@ const styles = (theme: Theme) => css`
     align-items: center;
     column-gap: ${theme.spacing(2)};
     margin: ${theme.spacing(2, 0, 0)};
-    padding: ${theme.spacing(2)};
     font-size: ${theme.typography.navigationLink.fontSize}px;
     line-height: ${theme.typography.navigationLink.lineHeight};
 
     ${theme.breakpoints.down("mobile")} {
       background-color: ${rgba(theme.palette.dark.main, 0.66)};
+      padding: ${theme.spacing(2)};
     }
 
     .spacer {
@@ -595,6 +597,48 @@ const styles = (theme: Theme) => css`
     }
   }
 
+  .toggle-button-container {
+    ${theme.breakpoints.down("mobile")} {
+      background-color: ${rgba(theme.palette.midtone.main, 0.66)};
+    }
+  }
+  .toggle-class-descriptions-button {
+    display: flex;
+    align-items: center;
+    background-color: ${rgba(theme.palette.white.main, 0.08)};
+    color: ${rgba(theme.palette.white.main, 0.8)};
+    border: none;
+    border-radius: ${theme.spacing(0.25)};
+    line-height: ${theme.typography.body1.lineHeight};
+    cursor: pointer;
+    transition: all 50ms ease-out, margin-bottom 0ms;
+    margin: ${theme.spacing(2, 2, 2, 0)};
+
+    ${theme.breakpoints.down("mobile")} {
+      margin: ${theme.spacing(2)};
+    }
+
+    &:hover {
+      color: ${lighten(0.27, theme.palette.white.main)};
+      background-color: ${rgba(theme.palette.white.main, 0.4)};
+    }
+
+    svg {
+      transition: transform 50ms ease-in-out;
+      margin-left: 10px;
+      width: 13px;
+      height: 13px;
+    }
+
+    &[aria-expanded="true"] {
+      margin-bottom: 0;
+
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
   .class-subclass-descriptions {
     margin: ${theme.spacing(1, 0, 0)};
     padding: ${theme.spacing(0, 2)};
@@ -603,40 +647,6 @@ const styles = (theme: Theme) => css`
       margin: 0;
       padding: 0;
       background-color: ${rgba(theme.palette.midtone.main, 0.66)};
-    }
-
-    .toggle-class-descriptions-button {
-      display: flex;
-      align-items: center;
-      background-color: ${rgba(theme.palette.white.main, 0.08)};
-      color: ${rgba(theme.palette.white.main, 0.8)};
-      border: none;
-      border-radius: ${theme.spacing(0.25)};
-      line-height: ${theme.typography.body1.lineHeight};
-      cursor: pointer;
-      transition: all 50ms ease-out;
-
-      ${theme.breakpoints.down("mobile")} {
-        margin: ${theme.spacing(2, 2, 0)};
-      }
-
-      &:hover {
-        color: ${lighten(0.27, theme.palette.white.main)};
-        background-color: ${rgba(theme.palette.white.main, 0.4)};
-      }
-
-      svg {
-        transition: transform 50ms ease-in-out;
-        margin-left: 10px;
-        width: 13px;
-        height: 13px;
-      }
-
-      &[aria-expanded="true"] {
-        svg {
-          transform: rotate(90deg);
-        }
-      }
     }
 
     .class-card,

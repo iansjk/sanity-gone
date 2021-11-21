@@ -10,7 +10,7 @@ require("ts-node").register({
 });
 const {
   professionToClass,
-  subProfessionToSubclass,
+  subProfessionIdToSubclass,
 } = require("./src/utils/globals.ts");
 
 module.exports = {
@@ -153,14 +153,14 @@ module.exports = {
               type: "operator",
               name: node.name,
               class: professionToClass(node.profession),
-              subclass: subProfessionToSubclass(node.subProfessionId),
+              subclass: subProfessionIdToSubclass(node.subProfessionId),
               rarity: node.rarity + 1,
             }))
           );
           results.push(
             ...data.allContentfulOperatorSubclass.nodes.map((node) => ({
               type: "subclass",
-              name: subProfessionToSubclass(node.subProfessionId),
+              name: subProfessionIdToSubclass(node.subProfessionId),
               class: professionToClass(node.class.profession),
               subProfession: node.subProfessionId,
             }))

@@ -486,7 +486,7 @@ const styles =
 
       footer {
         margin-top: ${theme.spacing(8)};
-        background-color: ${theme.palette.black.main};
+        background-color: ${theme.palette.blackest.main};
 
         ${theme.breakpoints.down("mobile")} {
           margin-top: ${theme.spacing(4)};
@@ -549,15 +549,6 @@ const styles =
 
               li {
                 margin-top: ${theme.spacing(2)};
-
-                a {
-                  background: none;
-                  transition: none;
-
-                  &:hover {
-                    background: none;
-                  }
-                }
               }
             }
           }
@@ -611,7 +602,7 @@ const styles =
       a:visited {
         text-decoration: none;
 
-        &[target="_blank"] {
+        &.emphasized-link {
           display: inline-block;
           padding: ${theme.spacing(0, 0.5)};
           border-radius: ${theme.spacing(0.25)};
@@ -715,5 +706,9 @@ const styles =
 
       input[type="number"] {
         -moz-appearance: textfield;
+      }
+
+      img {
+        object-fit: contain;
       }
     `;

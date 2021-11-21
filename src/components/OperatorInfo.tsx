@@ -5,7 +5,7 @@ import { Fragment } from "react";
 import {
   professionToClass,
   slugify,
-  subProfessionToSubclass,
+  subProfessionIdToSubclass,
   toTitleCase,
 } from "../utils/globals";
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
@@ -40,7 +40,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     position: binaryPosition,
   } = operatorObject;
   const operatorClass = professionToClass(profession);
-  const subclass = subProfessionToSubclass(subProfessionId);
+  const subclass = subProfessionIdToSubclass(subProfessionId);
   const rarity = rawRarity + 1; // 0-indexed;
   const position = description
     .toLowerCase()
@@ -69,9 +69,9 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
               name
             )}
           </div>
-          <span
+          <a
             className="class-and-subclass"
-            // href={`/classes/${operatorClass.toLowerCase()}#${subclass.toLowerCase()}`}
+            href={`/operators#${slugify(operatorClass)}-${slugify(subclass)}`}
           >
             <img
               className="class-icon"
@@ -85,7 +85,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
               alt=""
             />
             {subclass}
-          </span>
+          </a>
         </div>
         <OperatorPortrait
           variant={isMobile ? "small" : "normal"}
@@ -175,10 +175,10 @@ const styles = (theme: Theme) => css`
         border: 1px solid ${theme.palette.gray.main};
         border-radius: ${theme.spacing(0.5)};
 
-        /* &:hover {
+        &:hover {
           border-color: ${theme.palette.gray.main};
           background-color: ${theme.palette.midtoneBrighter.main};
-        } */
+        }
 
         .class-icon,
         .subclass-icon {
@@ -186,7 +186,6 @@ const styles = (theme: Theme) => css`
           height: ${theme.spacing(3)};
           line-height: 1;
           margin-right: ${theme.spacing(1)};
-          object-fit: contain;
         }
 
         .subclass-icon {

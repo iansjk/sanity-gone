@@ -13,6 +13,7 @@ declare module "@mui/material/styles" {
     white: Palette["primary"];
     gray: Palette["primary"];
     black: Palette["primary"];
+    blackest: Palette["primary"];
     dark: Palette["primary"];
     midtoneDarker: Palette["primary"];
     midtone: Palette["primary"];
@@ -32,6 +33,7 @@ declare module "@mui/material/styles" {
     white: PaletteOptions["primary"];
     gray: PaletteOptions["primary"];
     black: PaletteOptions["primary"];
+    blackest: PaletteOptions["primary"];
     dark: PaletteOptions["primary"];
     midtoneDarker: PaletteOptions["primary"];
     midtone: PaletteOptions["primary"];
@@ -77,9 +79,31 @@ declare module "@mui/material/styles" {
   }
 }
 
+declare module "@mui/material/Button" {
+  interface ButtonPropsColorOverrides {
+    lime: true;
+    blue: true;
+    softBlue: true;
+    yellow: true;
+    orange: true;
+    red: true;
+    pink: true;
+    white: true;
+    gray: true;
+    black: true;
+    dark: true;
+    midtoneDarker: true;
+    midtone: true;
+    midtoneBrighter: true;
+    midtoneBrighterer: true;
+    midtoneExtra: true;
+  }
+}
+
 const spacingUnit = 8;
 
-const defaultTheme = createTheme({
+const baseTheme = createTheme({
+  spacing: spacingUnit,
   palette: {
     lime: {
       main: "#a7e855",
@@ -110,6 +134,9 @@ const defaultTheme = createTheme({
     },
     black: {
       main: "#101014",
+    },
+    blackest: {
+      main: "#050507",
     },
     dark: {
       main: "#14141b",
@@ -225,4 +252,72 @@ const defaultTheme = createTheme({
   },
 });
 
+export const customShadows = {
+  titleShadow: `0 ${baseTheme.spacing(0.25)} ${baseTheme.spacing(
+    1
+  )} rgba(0, 0, 0, 0.5);`,
+  baseShadow: `${baseTheme.spacing(0.25)} ${baseTheme.spacing(
+    0.25
+  )} ${baseTheme.spacing(1)} rgba(0, 0, 0, 0.15)`,
+};
+
+const defaultTheme = createTheme({
+  ...baseTheme,
+  components: {
+    MuiButton: {
+      defaultProps: {
+        color: "midtoneBrighter",
+      },
+      styleOverrides: {
+        root: {
+          padding: baseTheme.spacing(1, 1.5),
+          fontSize: baseTheme.typography.navigationLink.fontSize,
+          lineHeight: baseTheme.typography.navigationLink.lineHeight,
+          boxShadow: customShadows.baseShadow,
+          textTransform: "none",
+          "&:hover": {
+            backgroundColor: baseTheme.palette.midtoneBrighterer.main,
+          },
+          "&:disabled": {
+            color: baseTheme.palette.midtoneBrighterer.main,
+            backgroundColor: baseTheme.palette.dark.main,
+          },
+        },
+      },
+    },
+    MuiPopover: {
+      styleOverrides: {
+        paper: {
+          color: baseTheme.palette.white.main,
+          backgroundColor: baseTheme.palette.midtoneBrighter.main,
+          boxShadow: customShadows.baseShadow,
+        },
+      },
+    },
+    MuiMenu: {
+      styleOverrides: {
+        paper: {
+          margin: baseTheme.spacing(1, 0, 0),
+        },
+        list: {
+          padding: 0,
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          "&:hover": {
+            backgroundColor: baseTheme.palette.midtoneBrighterer.main,
+          },
+          "& .MuiTypography-root": {
+            fontSize: baseTheme.typography.navigationLink.fontSize,
+            lineHeight: baseTheme.typography.navigationLink.lineHeight,
+            fontWeight: baseTheme.typography.navigationLinkBold.fontWeight,
+          },
+        },
+      },
+    },
+  },
+});
 export default defaultTheme;

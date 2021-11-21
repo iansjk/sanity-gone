@@ -88,6 +88,7 @@ const About: React.VFC = () => {
             <li>
               <b>Kengxxiao</b> for their{" "}
               <a
+                className="emphasized-link"
                 href="https://github.com/Kengxxiao/ArknightsGameData"
                 target="_blank"
                 rel="noreferrer noopener"

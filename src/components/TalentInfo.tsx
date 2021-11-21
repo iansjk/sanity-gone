@@ -183,11 +183,13 @@ const styles = (theme: Theme) => css`
     .talent-name {
       border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
       grid-column-start: 1;
+      grid-column: span 2;
     }
 
     .talent-description {
       border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
       grid-column-start: 1;
+      grid-column: span 2;
     }
   }
 
@@ -199,6 +201,7 @@ const styles = (theme: Theme) => css`
     margin-bottom: ${theme.spacing(-0.25)};
     border-bottom: 1px solid ${theme.palette.midtoneBrighterer.main};
     background: ${theme.palette.midtone.main};
+    border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
 
     button {
       ${theme.breakpoints.down("mobile")} {
@@ -210,6 +213,13 @@ const styles = (theme: Theme) => css`
 
     .elite-buttons {
       button {
+        ${theme.breakpoints.down("mobile")} {
+          border-radius: 0;
+          &:first-of-type {
+            border-top-left-radius: ${theme.spacing(0.5)};
+          }
+        }
+
         path {
           fill: ${theme.palette.midtoneBrighterer.main};
         }

@@ -71,7 +71,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
           </div>
           <a
             className="class-and-subclass"
-            href={`/classes#${slugify(operatorClass)}-${slugify(subclass)}`}
+            href={`/operators#${slugify(operatorClass)}-${slugify(subclass)}`}
           >
             <img
               className="class-icon"

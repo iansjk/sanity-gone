@@ -323,14 +323,14 @@ const Operators: React.VFC<Props> = ({ data }) => {
       blendPoint={496}
     >
       <main css={styles}>
-        <span className="last-updated">
+        {/* <span className="last-updated">
           Last Updated:{" "}
           <span className="date">
             {lastUpdatedAt
               .setLocale("en-GB")
               .toLocaleString(DateTime.DATE_FULL)}
           </span>
-        </span>
+        </span> */}
         {isMobile ? (
           <HorizontalScroller className="sort-and-filter-options">
             {sortAndFilterOptions}

@@ -1,10 +1,11 @@
-import { css, Theme } from "@mui/material";
 import React from "react";
+import { css, Theme } from "@mui/material";
+import cx from "clsx";
 
 export type HorizontalScrollerProps = React.HTMLAttributes<HTMLDivElement>;
 
 const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
-  const { children, ...rest } = props;
+  const { children, className, onScroll, ...rest } = props;
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
@@ -28,11 +29,16 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
         );
       }
     }
+    onScroll && onScroll(e);
   };
 
   return (
-    <div ref={containerRef} css={styles} {...rest}>
-      <div className="scroller-contents" onScroll={handleScroll}>
+    <div ref={containerRef} css={styles}>
+      <div
+        className={cx("scroller-contents", className)}
+        onScroll={handleScroll}
+        {...rest}
+      >
         {children}
       </div>
     </div>

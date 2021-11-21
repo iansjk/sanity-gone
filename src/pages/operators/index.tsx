@@ -16,7 +16,6 @@ import { DateTime } from "luxon";
 import slugify from "@sindresorhus/slugify";
 import { lighten, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
-import ScrollContainer from "react-indiana-drag-scroll";
 
 import Layout from "../../Layout";
 import {
@@ -32,6 +31,7 @@ import {
 import NavigateRightArrow from "../../components/icons/NavigateRightArrow";
 import CustomCheckbox from "../../components/CustomCheckbox";
 import FilterIcon from "../../components/icons/FilterIcon";
+import HorizontalScroller from "../../components/HorizontalScroller";
 
 const MENU_ICON_SIZE = 18;
 
@@ -49,6 +49,7 @@ const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
     padding: theme.spacing(1, 0),
   },
 }));
+
 interface Props {
   data: {
     allOperatorsJson: {
@@ -173,8 +174,8 @@ const Operators: React.VFC<Props> = ({ data }) => {
     );
   });
 
-  const sortAndFilterContainer = (
-    <div className="sort-and-filter-options">
+  const sortAndFilterOptions = (
+    <Fragment>
       <span className="filter-visual-label" aria-hidden="true">
         <FilterIcon />
         Filters
@@ -306,13 +307,13 @@ const Operators: React.VFC<Props> = ({ data }) => {
             </ClassSubclassMenuItem>
           ))}
       </Menu>
-      <div className="spacer" />
+      {!isMobile && <div className="spacer" />}
       <CustomCheckbox
         label="Guide available"
         onChange={handleGuideAvailableChange}
         checked={showOnlyGuideAvailable}
       />
-    </div>
+    </Fragment>
   );
 
   return (
@@ -331,11 +332,11 @@ const Operators: React.VFC<Props> = ({ data }) => {
           </span>
         </span>
         {isMobile ? (
-          <ScrollContainer className="mobile-sort-filter-scroller">
-            {sortAndFilterContainer}
-          </ScrollContainer>
+          <HorizontalScroller className="sort-and-filter-options">
+            {sortAndFilterOptions}
+          </HorizontalScroller>
         ) : (
-          sortAndFilterContainer
+          <div className="sort-and-filter-options">{sortAndFilterOptions}</div>
         )}
         <div className="class-subclass-descriptions">
           {selectedProfession != null && (
@@ -495,6 +496,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
 export default Operators;
 
 const styles = (theme: Theme) => css`
+  display: grid;
+  grid-template-columns: 1fr;
+
   .last-updated {
     padding: ${theme.spacing(0, 3)};
 
@@ -508,16 +512,12 @@ const styles = (theme: Theme) => css`
   }
 
   .sort-and-filter-options {
-    margin: ${theme.spacing(4, 0, 0)};
-    padding: ${theme.spacing(0, 3)};
     display: flex;
     align-items: center;
+    padding: ${theme.spacing(2)};
     font-size: ${theme.typography.navigationLink.fontSize}px;
     line-height: ${theme.typography.navigationLink.lineHeight};
-
-    & > * + * {
-      margin-left: ${theme.spacing(2)};
-    }
+    column-gap: ${theme.spacing(2)};
 
     .spacer {
       flex-grow: 1;
@@ -663,10 +663,6 @@ const styles = (theme: Theme) => css`
     margin: ${theme.spacing(4, 0, -8, 0)};
     padding: ${theme.spacing(3)};
     background-color: ${theme.palette.black.main};
-
-    ${theme.breakpoints.down("mobile")} {
-      margin-top: ${theme.spacing(-4)};
-    }
 
     h2 {
       margin: 0;

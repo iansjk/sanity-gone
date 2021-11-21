@@ -41,8 +41,8 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
 export default HorizontalScroller;
 
 const styles = (theme: Theme) => css`
+  box-sizing: border-box;
   width: 100vw;
-  position: relative;
   --scroll-left: 0px;
   --offset-width: 0px;
   --scroll-width: 999px;

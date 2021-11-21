@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { graphql } from "gatsby";
-import { ClassNames, css } from "@emotion/react";
+import { ClassNames, css, Global } from "@emotion/react";
 import {
   Button,
   ListItemIcon,
@@ -321,7 +321,12 @@ const Operators: React.VFC<Props> = ({ data }) => {
       pageTitle="Operator List"
       bannerImageUrl={sgPageBanner("operators")}
       blendPoint={496}
+      /* No previous location for now
+      previousLocation="Home"
+      previousLocationLink="/"
+       */
     >
+      <Global styles={globalOverrideStyles(theme)} />
       <main css={styles}>
         {/* <span className="last-updated">
           Last Updated:{" "}
@@ -495,9 +500,30 @@ const Operators: React.VFC<Props> = ({ data }) => {
 };
 export default Operators;
 
+const globalOverrideStyles = (theme: Theme) => css`
+  header {
+    .heading-and-breadcrumb {
+      h1 {
+        font-size: ${theme.typography.operatorPageHeading.fontSize}px;
+        font-weight: ${theme.typography.operatorPageHeading.fontWeight};
+        line-height: ${theme.typography.operatorPageHeading.lineHeight};
+
+        ${theme.breakpoints.down("mobile")} {
+          font-size: ${theme.typography.operatorNameHeading.fontSize}px;
+        }
+      }
+    }
+  }
+`;
+
 const styles = (theme: Theme) => css`
   display: grid;
   grid-template-columns: 1fr;
+  padding: ${theme.spacing(1, 3, 0, 3)};
+
+  ${theme.breakpoints.down("mobile")} {
+    padding: ${theme.spacing(1, 2, 0, 2)};
+  }
 
   .last-updated {
     padding: ${theme.spacing(0, 3)};

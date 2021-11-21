@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { Theme } from "@mui/material";
+import { Theme, useMediaQuery } from "@mui/material";
 import { css, Global } from "@emotion/react";
 import { Helmet } from "react-helmet";
 import { BsDiscord as DiscordLogo } from "react-icons/bs";
@@ -8,8 +8,11 @@ import "wicg-inert";
 
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
-import { lighten, rgba } from "polished";
+import { lighten, rgba, transparentize } from "polished";
 import MobileMenu from "./components/MobileMenu";
+import SearchBar from "./components/SearchBar";
+import WeirdDeathSphere from "./components/WeirdDeathSphere";
+import theme from "./gatsby-theme-material-ui-top-layout/theme";
 
 interface LayoutProps {
   pageTitle: string;
@@ -18,6 +21,8 @@ interface LayoutProps {
   customPageHeading?: React.ReactNode;
   blendPoint?: number;
   bannerImageUrl?: string;
+  previousLocation?: string;
+  previousLocationLink?: string;
 }
 
 interface SiteMetadataQuery {
@@ -40,6 +45,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
     bannerImageUrl,
     blendPoint,
     children,
+    previousLocation,
+    previousLocationLink,
     ...rest
   } = props;
   const data: SiteMetadataQuery = useStaticQuery(graphql`
@@ -62,6 +69,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
   } = data.site.siteMetadata;
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   const title = pageTitle
     ? `${pageTitle} / Arknights Hub - ${siteName}`
@@ -105,40 +113,61 @@ const Layout: React.FC<LayoutProps> = (props) => {
       <Global styles={styles({ bannerImageUrl, blendPoint })} />
       <div className="site-wrapper">
         <div className="top-fold">
+          <div className="navbar">
+            <div className="navbar-background">
+              <div className="background-spacer" />
+              <div className="logo-bg" />
+              <WeirdDeathSphere className="weird-death-sphere" />
+              <div className="background-spacer" />
+            </div>
+            <div className="navbar-container">
+              <div className="navbar-content">
+                <div className="navbar-left">
+                  <SearchBar placeholder="Search operators and guides" />
+                </div>
+                <div className="navbar-center">
+                  <div className="center-container">
+                    <SanityGoneLogo />
+                  </div>
+                </div>
+                <div className="navbar-right">
+                  <div className="header-links">
+                    <div className="link-spacer" />
+                    <a href="/operators">Operators</a>
+                    <a href="/about">About</a>
+                  </div>
+                  <button className="mobile-menu-button" aria-label="Open menu">
+                    <MobileMenuIcon
+                      className="mobile-menu"
+                      role="button"
+                      aria-label="Open Menu"
+                      onClick={handleMenuToggle}
+                    />
+                    <MobileMenu
+                      open={isMobileMenuOpen}
+                      onClose={() => setMobileMenuOpen(false)}
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="header-main-wrapper">
             <header>
-              <div className="top-line">
-                <SanityGoneLogo />
-                <div className="header-links">
-                  <a href="/operators">Operators</a>
-                  <a href="/about">About</a>
-                </div>
-                <button className="mobile-menu-button" aria-label="Open menu">
-                  <MobileMenuIcon
-                    className="mobile-menu"
-                    role="button"
-                    aria-label="Open Menu"
-                    onClick={handleMenuToggle}
-                  />
-                  <MobileMenu
-                    open={isMobileMenuOpen}
-                    onClose={() => setMobileMenuOpen(false)}
-                  />
-                </button>
-              </div>
               <div className="heading-and-breadcrumb">
+                <div className="heading-spacer" />
+                {!isMobile && previousLocation && previousLocationLink && (
+                  <div className="breadcrumb">
+                    <a
+                      href={previousLocationLink}
+                      aria-label={`Back to ${previousLocation}`}
+                    >
+                      {previousLocation}
+                    </a>
+                    /
+                  </div>
+                )}
                 {customPageHeading || <h1>{pageTitle}</h1>}
-                {/* {previousLocation && previousLocationLink && (
-                    <div className="breadcrumb">
-                      <a
-                        href={previousLocationLink}
-                        aria-label={`Back to ${previousLocation}`}
-                      >
-                        <BreadcrumbBackIcon />
-                        {previousLocation}
-                      </a>
-                    </div>
-                  )} */}
               </div>
             </header>
             <div className="page-content">{children}</div>
@@ -251,89 +280,214 @@ const styles =
         margin: auto;
       }
 
+      .navbar {
+        display: flex;
+        align-items: center;
+
+        .navbar-background {
+          position: absolute;
+          display: flex;
+          height: ${theme.spacing(8.5)};
+          width: 100%;
+          backdrop-filter: blur(8px);
+          background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0) 70.31%,
+              rgba(0, 0, 0, 0.4) 100%
+            )
+            ${transparentize(0.8, theme.palette.black.main)};
+
+          .background-spacer {
+            flex: 1 1 0;
+          }
+          svg.weird-death-sphere {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -29px;
+          }
+
+          ${theme.breakpoints.down("mobile")} {
+            .background-spacer {
+              background: ${transparentize(0.34, theme.palette.dark.main)};
+            }
+            svg.weird-death-sphere,
+            .logo-bg {
+              display: none;
+            }
+
+            height: 77px;
+            backdrop-filter: blur(8px);
+          }
+        }
+
+        height: ${theme.spacing(8.5)};
+
+        ${theme.breakpoints.down("mobile")} {
+          height: 77px;
+        }
+
+        .navbar-container {
+          z-index: 3;
+          width: 100%;
+          max-width: ${theme.breakpoints.values["maxWidth"]}px;
+          margin: 0 auto;
+
+          .navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: ${theme.spacing(0, 3)};
+
+            ${theme.breakpoints.down("mobile")} {
+              padding: unset;
+            }
+
+            .navbar-left {
+              flex: 1 1 0;
+
+              ${theme.breakpoints.down("mobile")} {
+                display: none;
+              }
+            }
+
+            .navbar-center {
+              flex: none;
+              width: ${theme.spacing(47)};
+
+              .center-container {
+                width: ${theme.spacing(21)};
+                margin: auto;
+
+                a {
+                  display: block;
+                }
+              }
+
+              ${theme.breakpoints.down("mobile")} {
+                width: auto;
+                flex: 1 1 0;
+
+                .center-container {
+                  margin: ${theme.spacing(0, 0, 0, 3)};
+                }
+              }
+            }
+
+            .navbar-right {
+              flex: 1 1 0;
+
+              ${theme.breakpoints.down("mobile")} {
+                flex: 0;
+                margin-right: ${theme.spacing(3)};
+              }
+
+              .header-links {
+                flex-grow: 1;
+                text-align: end;
+                display: flex;
+                align-items: center;
+
+                .link-spacer {
+                  flex: 1 1 0;
+                }
+
+                ${theme.breakpoints.down("mobile")} {
+                  display: none;
+                }
+
+                a {
+                  margin-left: ${theme.spacing(8)};
+                  color: ${theme.palette.white.main};
+                  height: 100%;
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  letter-spacing: 0.04em;
+                  font-size: ${theme.typography.operatorBrowserNameHeading
+                    .fontSize}px;
+                  line-height: ${theme.typography.operatorBrowserNameHeading
+                    .lineHeight};
+                  font-weight: ${theme.typography.operatorBrowserNameHeading
+                    .fontWeight};
+                }
+              }
+
+              .mobile-menu-button {
+                padding: 0;
+                background: none;
+                border: none;
+
+                ${theme.breakpoints.up("mobile")} {
+                  display: none;
+                }
+              }
+
+              .mobile-menu {
+                align-self: center;
+                position: relative;
+                top: -2px;
+              }
+            }
+          }
+        }
+      }
+
       header {
         padding: ${theme.spacing(3, 3, 0)};
+        height: ${theme.spacing(22.5)};
 
         ${theme.breakpoints.down("mobile")} {
           padding: ${theme.spacing(2, 2, 0)};
         }
 
-        .top-line {
-          height: 39px; // FIXME delete this once site-wide search is implemented
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-
-          .header-links {
-            flex-grow: 1;
-            text-align: end;
-
-            ${theme.breakpoints.down("mobile")} {
-              display: none;
-            }
-
-            a {
-              margin-left: ${theme.spacing(8)};
-              color: ${theme.palette.white.main};
-              text-decoration: none;
-            }
-          }
-
-          .mobile-menu-button {
-            padding: 0;
-            background: none;
-            border: none;
-
-            ${theme.breakpoints.up("mobile")} {
-              display: none;
-            }
-          }
-
-          .mobile-menu {
-            align-self: center;
-            position: relative;
-            top: -2px;
-          }
-        }
+        display: flex;
+        flex-direction: column-reverse;
 
         .heading-and-breadcrumb {
           display: flex;
-          flex-direction: column-reverse;
-          margin-top: 165px;
+          flex-direction: column;
+
+          .heading-spacer {
+            flex: 1 1 0;
+          }
 
           h1 {
-            margin: 0;
             font-size: ${theme.typography.pageHeading.fontSize}px;
             font-weight: ${theme.typography.pageHeading.fontWeight};
             line-height: ${theme.typography.pageHeading.lineHeight};
             text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
               rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+            margin-top: ${theme.spacing(1)};
+            margin-bottom: 0;
 
             ${theme.breakpoints.down("mobile")} {
               font-size: ${theme.typography.operatorNameHeading.fontSize}px;
             }
           }
 
-          /* .breadcrumb {
-            line-height: 1;
+          .breadcrumb {
+            line-height: 1.5;
+            font-size: ${theme.typography.navigationLink.fontSize}px;
 
             a {
-              display: inline-flex;
-              align-items: center;
+              display: inline-block;
               text-decoration: none;
               font-style: normal;
-              line-height: ${theme.typography.navigationLink.lineHeight};
               text-shadow: ${theme.typography.operatorPageHeading.textShadow};
+              margin-right: ${theme.spacing(1)};
+              padding: ${theme.spacing(0, 0.5)};
+              border-radius: ${theme.spacing(0.25)};
 
-              svg {
-                margin-right: ${theme.spacing(1)};
+              color: ${rgba(lighten(0.27, theme.palette.blue.main), 0.66)};
+              background-color: ${rgba(theme.palette.blue.main, 0.08)};
 
-                path {
-                  fill: ${theme.palette.white.main};
-                }
+              &:hover {
+                color: ${lighten(0.27, theme.palette.blue.main)};
+                background-color: ${rgba(theme.palette.blue.main, 0.4)};
               }
             }
-          } */
+          }
         }
       }
 

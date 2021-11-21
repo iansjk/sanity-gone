@@ -60,7 +60,12 @@ const members: { name: string; role: string; avatar: string }[] = [
 
 const About: React.VFC = () => {
   return (
-    <Layout pageTitle="About" bannerImageUrl={sgPageBanner("about")}>
+    <Layout
+      pageTitle="About"
+      bannerImageUrl={sgPageBanner("about")}
+      previousLocation="Home"
+      previousLocationLink="/"
+    >
       <main css={styles}>
         <h2>Sanity;Gone Team</h2>
         <ul className="team-members">
@@ -111,7 +116,7 @@ const styles = (theme: Theme) => css`
   padding: ${theme.spacing(0, 2)};
 
   h2 {
-    margin: ${theme.spacing(8, 0, 0)};
+    margin: ${theme.spacing(4, 0, 0)};
     font-size: ${theme.typography.generalHeadingBold.fontSize}px;
     font-weight: ${theme.typography.generalHeadingBold.fontWeight};
     line-height: ${theme.typography.generalHeadingBold.lineHeight};

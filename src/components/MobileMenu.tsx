@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { Fragment, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 import { MdClose as CloseIcon } from "react-icons/md";
 
 import SanityGoneLogo from "./SanityGoneLogo";
+import SearchBar from "./SearchBar";
 
 export interface MobileMenuProps {
   open: boolean;
@@ -20,6 +21,8 @@ const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
       onClose();
     }
   };
+
+  const [isSearchOpen, setSearchOpen] = useState(false);
 
   return typeof window === "undefined"
     ? null
@@ -42,14 +45,27 @@ const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
                 <CloseIcon />
               </button>
             </div>
-            <h2 className="list-header">Navigation</h2>
             <ul>
               <li>
-                <a href="/operators">Operators</a>
+                <div className="search-bar-container">
+                  <SearchBar
+                    placeholder="Search"
+                    onInputChange={(input) => {
+                      setSearchOpen(!!input);
+                    }}
+                  />
+                </div>
               </li>
-              <li>
-                <a href="/about">About</a>
-              </li>
+              {!isSearchOpen && (
+                <Fragment>
+                  <li>
+                    <a href="/operators">Operators</a>
+                  </li>
+                  <li>
+                    <a href="/about">About</a>
+                  </li>
+                </Fragment>
+              )}
             </ul>
           </div>
         </div>,
@@ -76,8 +92,8 @@ const styles = (theme: Theme) => css`
   }
 
   .top-bar {
-    height: 39px;
-    padding: ${theme.spacing(3)};
+    height: 77px;
+    padding: ${theme.spacing(0, 3)};
     display: grid;
     grid-template-columns: max-content 1fr max-content;
     align-items: center;
@@ -107,10 +123,49 @@ const styles = (theme: Theme) => css`
   }
 
   .list-header,
-  ul li a {
+  ul > li > a {
     margin: 0;
     padding: ${theme.spacing(3)};
     background-color: ${theme.palette.midtone.main};
+  }
+
+  ul li .search-bar-container {
+    background: ${theme.palette.midtone.main};
+    padding: ${theme.spacing(2, 0)};
+    margin: 0;
+
+    .search {
+      max-width: unset;
+
+      .search-bar {
+        background: ${theme.palette.dark.main} !important;
+        max-width: unset;
+        width: auto;
+        height: ${theme.spacing(5)};
+        padding: ${theme.spacing(0)};
+        margin: ${theme.spacing(0, 2)};
+
+        &.menu-down {
+          border-radius: ${theme.spacing(0.5)};
+        }
+
+        .search-input {
+          font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+        }
+      }
+
+      .results {
+        padding-top: ${theme.spacing(2)};
+        border-radius: 0;
+      }
+    }
+
+    .results {
+      width: 100%;
+      max-width: unset;
+      margin-right: ${theme.spacing(2)};
+      border: none;
+    }
   }
 
   ul {

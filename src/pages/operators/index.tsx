@@ -502,6 +502,10 @@ const styles = (theme: Theme) => css`
   .last-updated {
     padding: ${theme.spacing(0, 3)};
 
+    ${theme.breakpoints.down("mobile")} {
+      padding: ${theme.spacing(0, 2)};
+    }
+
     .date {
       font-weight: ${theme.typography.body1Bold.fontWeight};
     }
@@ -519,6 +523,7 @@ const styles = (theme: Theme) => css`
     padding: ${theme.spacing(2)};
     font-size: ${theme.typography.navigationLink.fontSize}px;
     line-height: ${theme.typography.navigationLink.lineHeight};
+    background-color: ${rgba(theme.palette.dark.main, 0.66)};
 
     .spacer {
       flex-grow: 1;
@@ -688,12 +693,13 @@ const styles = (theme: Theme) => css`
   }
 
   .results {
-    margin: ${theme.spacing(4, 0, -8, 0)};
+    margin: ${theme.spacing(4, 0, -8)};
     padding: ${theme.spacing(4, 3)};
     background-color: ${theme.palette.black.main};
 
     ${theme.breakpoints.down("mobile")} {
-      margin-bottom: ${theme.spacing(-4)};
+      margin: ${theme.spacing(0, 0, -4)};
+      padding: ${theme.spacing(2)};
     }
 
     h2 {

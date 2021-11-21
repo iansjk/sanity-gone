@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import { ClassNames, css, Global } from "@emotion/react";
 import {
@@ -25,8 +25,11 @@ import {
   sgPageBanner,
 } from "../../utils/images";
 import {
+  classToProfession,
+  subclassToSubProfessionId,
   professionToClass,
   subProfessionIdToSubclass,
+  toTitleCase,
 } from "../../utils/globals";
 import NavigateRightArrow from "../../components/icons/NavigateRightArrow";
 import CustomCheckbox from "../../components/CustomCheckbox";
@@ -122,6 +125,20 @@ const Operators: React.VFC<Props> = ({ data }) => {
   >(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash.length > 0) {
+        const [opClass, ...opSubclassWords] = hash.substr(1).split("-");
+        const opSubclass = opSubclassWords
+          .map((word) => toTitleCase(word))
+          .join(" ");
+        setSelectedProfession(classToProfession(toTitleCase(opClass)));
+        setSelectedSubProfessionId(subclassToSubProfessionId(opSubclass));
+      }
+    }
+  }, []);
 
   const handleGuideAvailableChange = (
     e: React.ChangeEvent<HTMLInputElement>

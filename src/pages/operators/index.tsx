@@ -514,10 +514,11 @@ const styles = (theme: Theme) => css`
   .sort-and-filter-options {
     display: flex;
     align-items: center;
+    column-gap: ${theme.spacing(2)};
+    margin: ${theme.spacing(2, 0, 0)};
     padding: ${theme.spacing(2)};
     font-size: ${theme.typography.navigationLink.fontSize}px;
     line-height: ${theme.typography.navigationLink.lineHeight};
-    column-gap: ${theme.spacing(2)};
 
     .spacer {
       flex-grow: 1;
@@ -544,11 +545,16 @@ const styles = (theme: Theme) => css`
   }
 
   .class-subclass-descriptions {
-    padding: ${theme.spacing(0, 3)};
+    margin: ${theme.spacing(1, 0, 0)};
+    padding: ${theme.spacing(0, 2)};
+
+    ${theme.breakpoints.down("mobile")} {
+      margin: 0;
+      padding: 0;
+      background-color: ${rgba(theme.palette.midtone.main, 0.66)};
+    }
 
     .toggle-class-descriptions-button {
-      margin: ${theme.spacing(4, 0, 0)};
-      padding: ${theme.spacing(0, 1, 0, 0.5)};
       display: flex;
       align-items: center;
       background-color: ${rgba(theme.palette.white.main, 0.08)};
@@ -558,6 +564,10 @@ const styles = (theme: Theme) => css`
       line-height: ${theme.typography.body1.lineHeight};
       cursor: pointer;
       transition: all 50ms ease-out;
+
+      ${theme.breakpoints.down("mobile")} {
+        margin: ${theme.spacing(2, 2, 0)};
+      }
 
       &:hover {
         color: ${lighten(0.27, theme.palette.white.main)};
@@ -593,6 +603,11 @@ const styles = (theme: Theme) => css`
         grid-row: span 2;
         padding: ${theme.spacing(4)};
 
+        ${theme.breakpoints.down("mobile")} {
+          padding: ${theme.spacing(2, 2, 0, 2)};
+          grid-row: unset;
+        }
+
         img {
           margin: auto;
           width: ${theme.spacing(8)};
@@ -609,6 +624,10 @@ const styles = (theme: Theme) => css`
         display: flex;
         align-items: center;
         padding: ${theme.spacing(3, 0, 0, 4)};
+
+        ${theme.breakpoints.down("mobile")} {
+          padding: ${theme.spacing(2, 0, 0)};
+        }
 
         h2,
         h3 {
@@ -630,19 +649,24 @@ const styles = (theme: Theme) => css`
       .subclass-description {
         padding: ${theme.spacing(3, 4)};
 
+        ${theme.breakpoints.down("mobile")} {
+          padding: ${theme.spacing(2)};
+          grid-column: 1 / span 2;
+        }
+
         p {
           margin: 0;
         }
       }
     }
 
-    .class-card {
-      margin-top: ${theme.spacing(3)};
-    }
-
     .class-card:not(:last-child) {
       .icon-container {
         border-bottom: ${theme.spacing(1)} solid ${theme.palette.gray.main};
+
+        ${theme.breakpoints.down("mobile")} {
+          border-bottom: none;
+        }
       }
     }
 
@@ -651,6 +675,10 @@ const styles = (theme: Theme) => css`
       border-top: 1px solid ${theme.palette.midtoneBrighterer.main};
       border-bottom-left-radius: ${theme.spacing(1)};
       border-bottom-right-radius: ${theme.spacing(1)};
+
+      ${theme.breakpoints.down("mobile")} {
+        background-color: ${theme.palette.midtone.main};
+      }
 
       .icon-container {
         background-color: ${theme.palette.midtone.main};
@@ -661,8 +689,12 @@ const styles = (theme: Theme) => css`
 
   .results {
     margin: ${theme.spacing(4, 0, -8, 0)};
-    padding: ${theme.spacing(3)};
+    padding: ${theme.spacing(4, 3)};
     background-color: ${theme.palette.black.main};
+
+    ${theme.breakpoints.down("mobile")} {
+      margin-bottom: ${theme.spacing(-4)};
+    }
 
     h2 {
       margin: 0;

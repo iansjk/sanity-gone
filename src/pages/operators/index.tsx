@@ -438,6 +438,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
           )}
         </div>
         <section className="results">
+          <div className="results-background" />
           <h2>Operators</h2>
           {operatorsToShow.length > 0 ? (
             <ul className="operator-list">
@@ -749,13 +750,25 @@ const styles = (theme: Theme) => css`
   }
 
   .results {
+    position: relative;
     margin: ${theme.spacing(4, 0, -8)};
     padding: ${theme.spacing(4, 3)};
-    background-color: ${theme.palette.black.main};
 
     ${theme.breakpoints.down("mobile")} {
       margin: ${theme.spacing(0, 0, -4)};
       padding: ${theme.spacing(2)};
+    }
+
+    .results-background {
+      position: absolute;
+      height: 100%;
+      background-color: ${theme.palette.black.main};
+      width: 200vw;
+      left: -50vw;
+    }
+
+    & > :not(.results-background) {
+      z-index: 1;
     }
 
     h2 {
@@ -780,6 +793,7 @@ const styles = (theme: Theme) => css`
       }
 
       li.operator {
+        z-index: 5;
         width: 100%;
         height: 280px;
         flex-grow: 1;

@@ -549,6 +549,7 @@ const globalOverrideStyles = (theme: Theme) => css`
 
   header {
     padding: ${theme.spacing(3, 0, 0, 0)};
+    height: ${theme.spacing(30.5)};
 
     .heading-and-breadcrumb {
       max-width: ${theme.breakpoints.values["maxWidth"]}px;
@@ -805,7 +806,8 @@ const styles = (theme: Theme) => css`
   }
 
   .results-container {
-    background-color: ${theme.palette.black.main};
+    background-color: ${theme.palette.dark.main};
+    border-top: 1px solid ${theme.palette.midtoneBrighter.main};
     flex: 1 1 0;
   }
   .results {

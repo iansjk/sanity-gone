@@ -45,7 +45,7 @@ interface SearchResult {
 // the mobile menu while the search is active (CSS doesn't let me do it).
 interface SearchBarProps {
   placeholder: string;
-  onInputChange?(input: string): void;
+  whenInputChange?: (input: string) => void;
 }
 
 // helper method to sort the results, because FlexSearch isn't very good at it
@@ -132,8 +132,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
           placeholder={placeholder}
           onChange={(e) => {
             setQuery(e.target.value);
-            if (props.onInputChange) {
-              props.onInputChange(e.target.value);
+            if (props.whenInputChange) {
+              props.whenInputChange(e.target.value);
             }
           }}
         />

@@ -51,7 +51,7 @@ const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
                 <div className="search-bar-container">
                   <SearchBar
                     placeholder="Search"
-                    onInputChange={(input) => {
+                    whenInputChange={(input) => {
                       setSearchOpen(!!input);
                     }}
                   />

@@ -553,7 +553,6 @@ const globalOverrideStyles = (theme: Theme) => css`
       width: 100%;
       margin: 0 auto;
       h1 {
-        margin: ${theme.spacing(0, 3)};
         font-size: ${theme.typography.operatorPageHeading.fontSize}px;
         font-weight: ${theme.typography.operatorPageHeading.fontWeight};
         line-height: ${theme.typography.operatorPageHeading.lineHeight};
@@ -809,7 +808,7 @@ const styles = (theme: Theme) => css`
     margin: ${theme.spacing(3)} auto ${theme.spacing(9.5)} auto;
     max-width: ${theme.breakpoints.values["maxWidth"]}px;
     ${theme.breakpoints.down("mobile")} {
-      margin: ${theme.spacing(0, 0, -4)};
+      margin: ${theme.spacing(0, 0, 4)};
       padding: ${theme.spacing(2)};
     }
 

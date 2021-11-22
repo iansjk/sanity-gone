@@ -201,7 +201,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                         className="classes-card"
                         key={res.name}
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        href={`/classes#${slugify(res.class!)}-${slugify(
+                        href={`/operators#${slugify(res.class!)}-${slugify(
                           res.name
                         )}`}
                       >
@@ -220,7 +220,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                         className="classes-card"
                         key={res.name}
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        href={`/classes#${slugify(res.class!)}`}
+                        href={`/operators#${slugify(res.class!)}`}
                       >
                         <img
                           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

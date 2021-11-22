@@ -119,10 +119,9 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
       onFocus={() => setFocus(true)}
       onBlur={(e: React.FocusEvent<HTMLDivElement>) => {
         // @ts-expect-error React docs tells me to do this
-        if (e.currentTarget.contains(e.relatedTarget)) {
-          return;
+        if (!e.currentTarget.contains(e.relatedTarget)) {
+          setFocus(false);
         }
-        setFocus(false);
       }}
     >
       <div className={`search-bar ${query && isFocused ? " menu-down" : ""}`}>

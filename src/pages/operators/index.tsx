@@ -345,7 +345,8 @@ const Operators: React.VFC<Props> = ({ data }) => {
     >
       <Global styles={globalOverrideStyles(theme)} />
       <main css={styles}>
-        {/* <span className="last-updated">
+        <div className="main-container">
+          {/* <span className="last-updated">
           Last Updated:{" "}
           <span className="date">
             {lastUpdatedAt
@@ -353,167 +354,179 @@ const Operators: React.VFC<Props> = ({ data }) => {
               .toLocaleString(DateTime.DATE_FULL)}
           </span>
         </span> */}
-        {isMobile ? (
-          <HorizontalScroller className="sort-and-filter-options">
-            {sortAndFilterOptions}
-          </HorizontalScroller>
-        ) : (
-          <div className="sort-and-filter-options">{sortAndFilterOptions}</div>
-        )}
-
-        {selectedProfession != null && (
-          <div className="toggle-button-container">
-            <button
-              className="toggle-class-descriptions-button"
-              aria-expanded={showClassDescriptions ? "true" : undefined}
-              aria-controls="class-subclass-card-container"
-              onClick={() => setShowClassDescriptions((curr) => !curr)}
-            >
-              Class Description
-              <MdArrowForwardIos />
-            </button>
-          </div>
-        )}
-        <div className="class-subclass-descriptions">
-          {showClassDescriptions && (
-            <div id="class-subclass-card-container">
-              {selectedProfession && selectedClass && (
-                <section className="class-card">
-                  <div className="icon-container">
-                    <img
-                      src={operatorClassIcon(slugify(selectedClass))}
-                      alt=""
-                    />
-                  </div>
-                  <div className="name-container">
-                    <h2>
-                      <span className="visually-hidden">Selected class: </span>
-                      {selectedClass}
-                    </h2>
-                    <span className="heading-type" aria-hidden="true">
-                      Class
-                    </span>
-                  </div>
-                  <div
-                    className="class-description"
-                    dangerouslySetInnerHTML={{
-                      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                      __html: operatorClasses.find(
-                        ({ profession }) => profession === selectedProfession
-                      )!.analysis.childMarkdownRemark.html,
-                    }}
-                  />
-                </section>
-              )}
-              {selectedSubProfessionId && (
-                <section className="subclass-card">
-                  <div className="icon-container">
-                    <img
-                      src={operatorSubclassIcon(selectedSubProfessionId)}
-                      alt=""
-                    />
-                  </div>
-                  <div className="name-container">
-                    <h3>
-                      <span className="visually-hidden">Selected branch: </span>
-                      {selectedSubclass}
-                    </h3>
-                    <span className="heading-type" aria-hidden="true">
-                      Branch
-                    </span>
-                  </div>
-                  <div
-                    className="subclass-description"
-                    dangerouslySetInnerHTML={{
-                      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                      __html: operatorSubclasses.find(
-                        ({ subProfessionId }) =>
-                          subProfessionId === selectedSubProfessionId
-                      )!.analysis.childMarkdownRemark.html,
-                    }}
-                  />
-                </section>
-              )}
+          {isMobile ? (
+            <HorizontalScroller className="sort-and-filter-options">
+              {sortAndFilterOptions}
+            </HorizontalScroller>
+          ) : (
+            <div className="sort-and-filter-options">
+              {sortAndFilterOptions}
             </div>
           )}
-        </div>
-        <section className="results">
-          <div className="results-background" />
-          <h2>Operators</h2>
-          {operatorsToShow.length > 0 ? (
-            <ul className="operator-list">
-              {operatorsToShow.map((op) => {
-                const operatorClass = professionToClass(op.profession);
-                const subclass = subProfessionIdToSubclass(op.subProfessionId);
-                const hasGuide = operatorsWithGuides.has(op.name);
-                return (
-                  <ClassNames key={op.id}>
-                    {({ cx }) => {
-                      const inner = (
-                        <Fragment>
-                          <div className="operator-info">
-                            <span className="operator-name">{op.name}</span>
-                            <span
-                              className={cx(
-                                "rarity",
-                                `rarity-${op.rarity + 1}-stars`
-                              )}
-                              aria-label={`${op.rarity + 1} stars`}
-                            >
-                              {op.rarity + 1} ★
-                            </span>
-                            <span className="operator-class">
-                              {operatorClass}
-                            </span>
-                          </div>
-                          <span className="operator-subclass">
-                            <img
-                              className="operator-subclass-icon"
-                              src={operatorSubclassIcon(op.subProfessionId)}
-                              alt={subclass}
-                            />
-                          </span>
-                          <div className="on-hover">
-                            {hasGuide ? (
-                              <Fragment>
-                                <span>Read Guide</span>
-                                <NavigateRightArrow className="go-to-guide-icon" />
-                              </Fragment>
-                            ) : (
-                              <span>Guide Unavailable</span>
-                            )}
-                          </div>
-                        </Fragment>
-                      );
-                      return (
-                        <li
-                          className={cx(
-                            "operator",
-                            hasGuide ? "has-guide" : "no-guide"
-                          )}
-                          style={{
-                            //@ts-expect-error css variable
-                            "--bg-image": `url("${operatorPortrait(op.name)}")`,
-                          }}
-                        >
-                          {hasGuide ? (
-                            <a href={`/operators/${slugify(op.name)}`}>
-                              {inner}
-                            </a>
-                          ) : (
-                            inner
-                          )}
-                        </li>
-                      );
-                    }}
-                  </ClassNames>
-                );
-              })}
-            </ul>
-          ) : (
-            <div className="no-results">No Results</div>
+
+          {selectedProfession != null && (
+            <div className="toggle-button-container">
+              <button
+                className="toggle-class-descriptions-button"
+                aria-expanded={showClassDescriptions ? "true" : undefined}
+                aria-controls="class-subclass-card-container"
+                onClick={() => setShowClassDescriptions((curr) => !curr)}
+              >
+                Class Description
+                <MdArrowForwardIos />
+              </button>
+            </div>
           )}
-        </section>
+          <div className="class-subclass-descriptions">
+            {showClassDescriptions && (
+              <div id="class-subclass-card-container">
+                {selectedProfession && selectedClass && (
+                  <section className="class-card">
+                    <div className="icon-container">
+                      <img
+                        src={operatorClassIcon(slugify(selectedClass))}
+                        alt=""
+                      />
+                    </div>
+                    <div className="name-container">
+                      <h2>
+                        <span className="visually-hidden">
+                          Selected class:{" "}
+                        </span>
+                        {selectedClass}
+                      </h2>
+                      <span className="heading-type" aria-hidden="true">
+                        Class
+                      </span>
+                    </div>
+                    <div
+                      className="class-description"
+                      dangerouslySetInnerHTML={{
+                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                        __html: operatorClasses.find(
+                          ({ profession }) => profession === selectedProfession
+                        )!.analysis.childMarkdownRemark.html,
+                      }}
+                    />
+                  </section>
+                )}
+                {selectedSubProfessionId && (
+                  <section className="subclass-card">
+                    <div className="icon-container">
+                      <img
+                        src={operatorSubclassIcon(selectedSubProfessionId)}
+                        alt=""
+                      />
+                    </div>
+                    <div className="name-container">
+                      <h3>
+                        <span className="visually-hidden">
+                          Selected branch:{" "}
+                        </span>
+                        {selectedSubclass}
+                      </h3>
+                      <span className="heading-type" aria-hidden="true">
+                        Branch
+                      </span>
+                    </div>
+                    <div
+                      className="subclass-description"
+                      dangerouslySetInnerHTML={{
+                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                        __html: operatorSubclasses.find(
+                          ({ subProfessionId }) =>
+                            subProfessionId === selectedSubProfessionId
+                        )!.analysis.childMarkdownRemark.html,
+                      }}
+                    />
+                  </section>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="results-container">
+          <section className="results">
+            <h2>Operators</h2>
+            {operatorsToShow.length > 0 ? (
+              <ul className="operator-list">
+                {operatorsToShow.map((op) => {
+                  const operatorClass = professionToClass(op.profession);
+                  const subclass = subProfessionIdToSubclass(
+                    op.subProfessionId
+                  );
+                  const hasGuide = operatorsWithGuides.has(op.name);
+                  return (
+                    <ClassNames key={op.id}>
+                      {({ cx }) => {
+                        const inner = (
+                          <Fragment>
+                            <div className="operator-info">
+                              <span className="operator-name">{op.name}</span>
+                              <span
+                                className={cx(
+                                  "rarity",
+                                  `rarity-${op.rarity + 1}-stars`
+                                )}
+                                aria-label={`${op.rarity + 1} stars`}
+                              >
+                                {op.rarity + 1} ★
+                              </span>
+                              <span className="operator-class">
+                                {operatorClass}
+                              </span>
+                            </div>
+                            <span className="operator-subclass">
+                              <img
+                                className="operator-subclass-icon"
+                                src={operatorSubclassIcon(op.subProfessionId)}
+                                alt={subclass}
+                              />
+                            </span>
+                            <div className="on-hover">
+                              {hasGuide ? (
+                                <Fragment>
+                                  <span>Read Guide</span>
+                                  <NavigateRightArrow className="go-to-guide-icon" />
+                                </Fragment>
+                              ) : (
+                                <span>Guide Unavailable</span>
+                              )}
+                            </div>
+                          </Fragment>
+                        );
+                        return (
+                          <li
+                            className={cx(
+                              "operator",
+                              hasGuide ? "has-guide" : "no-guide"
+                            )}
+                            style={{
+                              //@ts-expect-error css variable
+                              "--bg-image": `url("${operatorPortrait(
+                                op.name
+                              )}")`,
+                            }}
+                          >
+                            {hasGuide ? (
+                              <a href={`/operators/${slugify(op.name)}`}>
+                                {inner}
+                              </a>
+                            ) : (
+                              inner
+                            )}
+                          </li>
+                        );
+                      }}
+                    </ClassNames>
+                  );
+                })}
+              </ul>
+            ) : (
+              <div className="no-results">No Results</div>
+            )}
+          </section>
+        </div>
       </main>
     </Layout>
   );
@@ -521,9 +534,26 @@ const Operators: React.VFC<Props> = ({ data }) => {
 export default Operators;
 
 const globalOverrideStyles = (theme: Theme) => css`
+  .top-fold {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-main-wrapper {
+    max-width: unset;
+    flex: 1 1 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
   header {
     .heading-and-breadcrumb {
+      max-width: ${theme.breakpoints.values["maxWidth"]}px;
+      width: 100%;
+      margin: 0 auto;
       h1 {
+        margin: ${theme.spacing(0, 3)};
         font-size: ${theme.typography.operatorPageHeading.fontSize}px;
         font-weight: ${theme.typography.operatorPageHeading.fontWeight};
         line-height: ${theme.typography.operatorPageHeading.lineHeight};
@@ -534,252 +564,268 @@ const globalOverrideStyles = (theme: Theme) => css`
       }
     }
   }
+  .page-content {
+    flex: 1 1 0;
+    display: flex;
+  }
+  footer {
+    margin-top: 0;
+  }
 `;
 
 const styles = (theme: Theme) => css`
   display: flex;
   flex-direction: column;
-  padding: ${theme.spacing(1, 3, 0, 3)};
+  flex: 1 1 0;
 
-  ${theme.breakpoints.down("mobile")} {
-    padding: 0;
-  }
+  .main-container {
+    max-width: ${theme.breakpoints.values["maxWidth"]}px;
+    margin: 0 auto;
+    width: 100%;
 
-  .last-updated {
-    padding: ${theme.spacing(0, 3)};
+    & > * {
+      padding: ${theme.spacing(0, 3)};
 
-    ${theme.breakpoints.down("mobile")} {
-      padding: ${theme.spacing(0, 2)};
-    }
-
-    .date {
-      font-weight: ${theme.typography.body1Bold.fontWeight};
-    }
-  }
-
-  .mobile-sort-filter-scroller {
-    white-space: nowrap;
-  }
-
-  .sort-and-filter-options {
-    display: flex;
-    align-items: center;
-    column-gap: ${theme.spacing(2)};
-    margin: ${theme.spacing(2, 0, 0)};
-    font-size: ${theme.typography.navigationLink.fontSize}px;
-    line-height: ${theme.typography.navigationLink.lineHeight};
-
-    ${theme.breakpoints.down("mobile")} {
-      background-color: ${rgba(theme.palette.dark.main, 0.66)};
-      padding: ${theme.spacing(2)};
-    }
-
-    .spacer {
-      flex-grow: 1;
-    }
-
-    .filter-visual-label {
-      font-size: ${theme.typography.skillTalentHeading.fontSize}px;
-      line-height: ${theme.typography.skillTalentHeading.lineHeight};
-      font-weight: ${theme.typography.skillTalentHeading.fontWeight};
-
-      svg {
-        margin-right: ${theme.spacing(1)};
+      ${theme.breakpoints.down("mobile")} {
+        padding: 0;
       }
     }
 
-    button {
-      transition-property: background-color, box-shadow, border-color;
-      font-weight: ${theme.typography.navigationLinkBold.fontWeight};
+    .last-updated {
+      padding: ${theme.spacing(0, 3)};
 
-      img {
-        margin-right: ${theme.spacing(1)};
+      ${theme.breakpoints.down("mobile")} {
+        padding: ${theme.spacing(0, 2)};
+      }
+
+      .date {
+        font-weight: ${theme.typography.body1Bold.fontWeight};
       }
     }
-  }
 
-  .toggle-button-container {
-    ${theme.breakpoints.down("mobile")} {
-      background-color: ${rgba(theme.palette.midtone.main, 0.66)};
-    }
-  }
-  .toggle-class-descriptions-button {
-    display: flex;
-    align-items: center;
-    background-color: ${rgba(theme.palette.white.main, 0.08)};
-    color: ${rgba(theme.palette.white.main, 0.8)};
-    border: none;
-    border-radius: ${theme.spacing(0.25)};
-    line-height: ${theme.typography.body1.lineHeight};
-    cursor: pointer;
-    transition: all 50ms ease-out, margin-bottom 0ms;
-    margin: ${theme.spacing(2, 2, 2, 0)};
-
-    ${theme.breakpoints.down("mobile")} {
-      margin: ${theme.spacing(2)};
+    .mobile-sort-filter-scroller {
+      white-space: nowrap;
     }
 
-    &:hover {
-      color: ${lighten(0.27, theme.palette.white.main)};
-      background-color: ${rgba(theme.palette.white.main, 0.4)};
-    }
-
-    svg {
-      transition: transform 50ms ease-in-out;
-      margin-left: 10px;
-      width: 13px;
-      height: 13px;
-    }
-
-    &[aria-expanded="true"] {
-      margin-bottom: 0;
-
-      svg {
-        transform: rotate(90deg);
-      }
-    }
-  }
-
-  .class-subclass-descriptions {
-    margin: ${theme.spacing(1, 0, 0)};
-    padding: ${theme.spacing(0, 2)};
-
-    ${theme.breakpoints.down("mobile")} {
-      margin: 0;
-      padding: 0;
-      background-color: ${rgba(theme.palette.midtone.main, 0.66)};
-    }
-
-    .class-card,
-    .subclass-card {
-      display: grid;
-      grid-template-rows: max-content 1fr;
-      grid-template-columns: max-content 1fr;
+    .sort-and-filter-options {
+      display: flex;
       align-items: center;
+      column-gap: ${theme.spacing(2)};
+      margin: ${theme.spacing(2, 0, 3)};
+      font-size: ${theme.typography.navigationLink.fontSize}px;
+      line-height: ${theme.typography.navigationLink.lineHeight};
 
-      .icon-container {
-        box-sizing: border-box;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        grid-row: span 2;
-        padding: ${theme.spacing(4)};
+      ${theme.breakpoints.down("mobile")} {
+        background-color: ${rgba(theme.palette.dark.main, 0.66)};
+        padding: ${theme.spacing(2)};
+        margin: ${theme.spacing(2, 0, 0)};
+      }
 
-        ${theme.breakpoints.down("mobile")} {
-          padding: ${theme.spacing(2, 2, 0, 2)};
-          grid-row: unset;
+      .spacer {
+        flex-grow: 1;
+      }
+
+      .filter-visual-label {
+        font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+        line-height: ${theme.typography.skillTalentHeading.lineHeight};
+        font-weight: ${theme.typography.skillTalentHeading.fontWeight};
+
+        svg {
+          margin-right: ${theme.spacing(1)};
         }
+      }
+
+      button {
+        transition-property: background-color, box-shadow, border-color;
+        font-weight: ${theme.typography.navigationLinkBold.fontWeight};
 
         img {
-          margin: auto;
-          width: ${theme.spacing(8)};
-          height: ${theme.spacing(8)};
+          margin-right: ${theme.spacing(1)};
+        }
+      }
+    }
+
+    .toggle-button-container {
+      ${theme.breakpoints.down("mobile")} {
+        padding: ${theme.spacing(2, 2, 0)};
+        background-color: ${rgba(theme.palette.midtone.main, 0.66)};
+      }
+      display: flex; // This is literally only here to prevent margin collapsing.
+    }
+    .toggle-class-descriptions-button {
+      display: flex;
+      align-items: center;
+      background-color: ${rgba(theme.palette.white.main, 0.08)};
+      color: ${rgba(theme.palette.white.main, 0.8)};
+      border: none;
+      border-radius: ${theme.spacing(0.25)};
+      line-height: ${theme.typography.body1.lineHeight};
+      cursor: pointer;
+      transition: all 50ms ease-out, margin-bottom 0ms;
+      margin: ${theme.spacing(0, 2, 2, 0)};
+
+      ${theme.breakpoints.down("mobile")} {
+        margin: ${theme.spacing(0, 0, 2, 0)};
+      }
+
+      &:hover {
+        color: ${lighten(0.27, theme.palette.white.main)};
+        background-color: ${rgba(theme.palette.white.main, 0.4)};
+      }
+
+      svg {
+        transition: transform 50ms ease-in-out;
+        margin-left: 10px;
+        width: 13px;
+        height: 13px;
+      }
+
+      &[aria-expanded="true"] {
+        margin-bottom: 0;
+
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    .class-subclass-descriptions {
+      margin: ${theme.spacing(1, 3, 0)};
+      padding: 0;
+
+      ${theme.breakpoints.down("mobile")} {
+        margin: 0;
+        background-color: ${rgba(theme.palette.midtone.main, 0.66)};
+      }
+      .subclass-card {
+        margin-bottom: ${theme.spacing(3)};
+      }
+
+      .class-card,
+      .subclass-card {
+        display: grid;
+        grid-template-rows: max-content 1fr;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+
+        .icon-container {
+          box-sizing: border-box;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          grid-row: span 2;
+          padding: ${theme.spacing(4)};
 
           ${theme.breakpoints.down("mobile")} {
-            width: ${theme.spacing(3)};
-            height: ${theme.spacing(3)};
+            padding: ${theme.spacing(2, 2, 0, 2)};
+            grid-row: unset;
+          }
+
+          img {
+            margin: auto;
+            width: ${theme.spacing(8)};
+            height: ${theme.spacing(8)};
+
+            ${theme.breakpoints.down("mobile")} {
+              width: ${theme.spacing(3)};
+              height: ${theme.spacing(3)};
+            }
+          }
+        }
+
+        .name-container {
+          display: flex;
+          align-items: center;
+          padding: ${theme.spacing(3, 0, 0, 4)};
+
+          ${theme.breakpoints.down("mobile")} {
+            padding: ${theme.spacing(2, 0, 0)};
+          }
+
+          h2,
+          h3 {
+            margin: ${theme.spacing(0, 1.5, 0, 0)};
+            font-size: ${theme.typography.generalHeading.fontSize}px;
+            line-height: ${theme.typography.generalHeading.lineHeight};
+            font-weight: ${theme.typography.generalHeadingBold.fontWeight};
+            text-transform: uppercase;
+          }
+
+          .heading-type {
+            color: ${rgba(theme.palette.white.main, 0.5)};
+            font-size: ${theme.typography.generalHeading.fontSize}px;
+            line-height: ${theme.typography.generalHeading.lineHeight};
+          }
+        }
+
+        .class-description,
+        .subclass-description {
+          padding: ${theme.spacing(3, 4)};
+
+          ${theme.breakpoints.down("mobile")} {
+            padding: ${theme.spacing(2)};
+            grid-column: 1 / span 2;
+          }
+
+          p {
+            margin: 0;
           }
         }
       }
 
-      .name-container {
-        display: flex;
-        align-items: center;
-        padding: ${theme.spacing(3, 0, 0, 4)};
+      .class-card:not(:last-child) {
+        .icon-container {
+          border-bottom: ${theme.spacing(1)} solid ${theme.palette.gray.main};
 
-        ${theme.breakpoints.down("mobile")} {
-          padding: ${theme.spacing(2, 0, 0)};
-        }
-
-        h2,
-        h3 {
-          margin: ${theme.spacing(0, 1.5, 0, 0)};
-          font-size: ${theme.typography.generalHeading.fontSize}px;
-          line-height: ${theme.typography.generalHeading.lineHeight};
-          font-weight: ${theme.typography.generalHeadingBold.fontWeight};
-          text-transform: uppercase;
-        }
-
-        .heading-type {
-          color: ${rgba(theme.palette.white.main, 0.5)};
-          font-size: ${theme.typography.generalHeading.fontSize}px;
-          line-height: ${theme.typography.generalHeading.lineHeight};
+          ${theme.breakpoints.down("mobile")} {
+            border-bottom: none;
+          }
         }
       }
 
-      .class-description,
-      .subclass-description {
-        padding: ${theme.spacing(3, 4)};
-
-        ${theme.breakpoints.down("mobile")} {
-          padding: ${theme.spacing(2)};
-          grid-column: 1 / span 2;
-        }
-
-        p {
-          margin: 0;
-        }
-      }
-    }
-
-    .class-card:not(:last-child) {
-      .icon-container {
-        border-bottom: ${theme.spacing(1)} solid ${theme.palette.gray.main};
-
-        ${theme.breakpoints.down("mobile")} {
-          border-bottom: none;
-        }
-      }
-    }
-
-    .subclass-card {
-      background-color: ${theme.palette.midtoneExtra.main};
-      border-top: 1px solid ${theme.palette.midtoneBrighterer.main};
-      border-bottom-left-radius: ${theme.spacing(1)};
-      border-bottom-right-radius: ${theme.spacing(1)};
-
-      ${theme.breakpoints.down("mobile")} {
-        background-color: ${theme.palette.midtone.main};
-      }
-
-      .icon-container {
-        background-color: ${theme.palette.midtone.main};
+      .subclass-card {
+        background-color: ${theme.palette.midtoneExtra.main};
+        border-top: 1px solid ${theme.palette.midtoneBrighterer.main};
         border-bottom-left-radius: ${theme.spacing(1)};
+        border-bottom-right-radius: ${theme.spacing(1)};
+
+        ${theme.breakpoints.down("mobile")} {
+          background-color: ${theme.palette.midtone.main};
+        }
+
+        .icon-container {
+          background-color: ${theme.palette.midtone.main};
+          border-bottom-left-radius: ${theme.spacing(1)};
+        }
       }
     }
   }
 
+  .results-container {
+    background-color: ${theme.palette.black.main};
+    flex: 1 1 0;
+  }
   .results {
-    position: relative;
-    margin: ${theme.spacing(4, 0, -8)};
-    padding: ${theme.spacing(4, 3)};
-
+    margin: ${theme.spacing(3)} auto ${theme.spacing(9.5)} auto;
+    max-width: ${theme.breakpoints.values["maxWidth"]}px;
     ${theme.breakpoints.down("mobile")} {
       margin: ${theme.spacing(0, 0, -4)};
       padding: ${theme.spacing(2)};
     }
 
-    .results-background {
-      position: absolute;
-      height: 100%;
-      background-color: ${theme.palette.black.main};
-      width: 200vw;
-      left: -50vw;
-    }
-
-    & > :not(.results-background) {
-      z-index: 1;
-    }
-
     h2 {
-      margin: 0;
       font-size: ${theme.typography.generalHeading.fontSize}px;
       line-height: ${theme.typography.generalHeading.lineHeight};
       font-weight: ${theme.typography.generalHeadingBold.fontWeight};
+
+      margin: ${theme.spacing(0, 3)};
+      ${theme.breakpoints.down("mobile")} {
+        margin: 0;
+      }
     }
 
     ul.operator-list {
-      margin: ${theme.spacing(3, 0, 0)};
+      margin: ${theme.spacing(3, 3, 0)};
       padding: 0;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -926,7 +972,7 @@ const styles = (theme: Theme) => css`
     }
 
     .no-results {
-      margin-top: ${theme.spacing(3)};
+      margin: ${theme.spacing(3, 0)};
       display: flex;
       align-items: center;
       justify-content: center;

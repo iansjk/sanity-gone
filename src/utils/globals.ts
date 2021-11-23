@@ -89,6 +89,8 @@ const subProfessionLookup: Record<string, string> = {
   traper: "Trapper",
   dollkeeper: "Puppeteer",
   fortress: "Fortress",
+  wandermedic: "Wandering",
+  craftsman: "Artificer",
 };
 const reverseSubProfessionLookup = Object.fromEntries(
   Object.entries(subProfessionLookup).map(([k, v]) => [v, k])

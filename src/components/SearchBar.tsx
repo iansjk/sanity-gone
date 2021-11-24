@@ -120,7 +120,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
       onBlur={(e: React.FocusEvent<HTMLDivElement>) => {
         // @ts-expect-error React docs tells me to do this
         if (!e.currentTarget.contains(e.relatedTarget)) {
-          setFocus(false);
+          // XXX this is a hack for Safari to make operator links clickable
+          setTimeout(() => setFocus(false), 0);
         }
       }}
     >

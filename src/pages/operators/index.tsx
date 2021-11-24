@@ -861,7 +861,9 @@ const styles = (theme: Theme) => css`
           var(--bg-image);
         box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)}
           ${theme.spacing(1)} rgba(0, 0, 0, 0.15);
-        transition: all 0.15s ease-in-out;
+        transition-property: transform, filter;
+        transition-duration: 0.15s;
+        transition-timing-function: ease-in-out;
 
         ${theme.breakpoints.down("mobile")} {
           width: 148px;

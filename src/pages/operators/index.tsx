@@ -461,37 +461,44 @@ const Operators: React.VFC<Props> = ({ data }) => {
                       {({ cx }) => {
                         const inner = (
                           <Fragment>
-                            <div className="operator-info">
-                              <span className="operator-name">{op.name}</span>
-                              <span
-                                className={cx(
-                                  "rarity",
-                                  `rarity-${op.rarity + 1}-stars`
+                            <img
+                              alt=""
+                              className="operator-portrait"
+                              src={operatorPortrait(op.name)}
+                            />
+                            <div className="operator-text-content">
+                              <div className="operator-info">
+                                <span className="operator-name">{op.name}</span>
+                                <span
+                                  className={cx(
+                                    "rarity",
+                                    `rarity-${op.rarity + 1}-stars`
+                                  )}
+                                  aria-label={`${op.rarity + 1} stars`}
+                                >
+                                  {op.rarity + 1} ★
+                                </span>
+                                <span className="operator-class">
+                                  {operatorClass}
+                                </span>
+                              </div>
+                              <span className="operator-subclass">
+                                <img
+                                  className="operator-subclass-icon"
+                                  src={operatorSubclassIcon(op.subProfessionId)}
+                                  alt={subclass}
+                                />
+                              </span>
+                              <div className="on-hover">
+                                {hasGuide ? (
+                                  <Fragment>
+                                    <span>Read Guide</span>
+                                    <NavigateRightArrow className="go-to-guide-icon" />
+                                  </Fragment>
+                                ) : (
+                                  <span>Guide Unavailable</span>
                                 )}
-                                aria-label={`${op.rarity + 1} stars`}
-                              >
-                                {op.rarity + 1} ★
-                              </span>
-                              <span className="operator-class">
-                                {operatorClass}
-                              </span>
-                            </div>
-                            <span className="operator-subclass">
-                              <img
-                                className="operator-subclass-icon"
-                                src={operatorSubclassIcon(op.subProfessionId)}
-                                alt={subclass}
-                              />
-                            </span>
-                            <div className="on-hover">
-                              {hasGuide ? (
-                                <Fragment>
-                                  <span>Read Guide</span>
-                                  <NavigateRightArrow className="go-to-guide-icon" />
-                                </Fragment>
-                              ) : (
-                                <span>Guide Unavailable</span>
-                              )}
+                              </div>
                             </div>
                           </Fragment>
                         );
@@ -501,12 +508,6 @@ const Operators: React.VFC<Props> = ({ data }) => {
                               "operator",
                               hasGuide ? "has-guide" : "no-guide"
                             )}
-                            style={{
-                              //@ts-expect-error css variable
-                              "--bg-image": `url("${operatorPortrait(
-                                op.name
-                              )}")`,
-                            }}
                           >
                             {hasGuide ? (
                               <a href={`/operators/${slugify(op.name)}`}>
@@ -568,10 +569,12 @@ const globalOverrideStyles = (theme: Theme) => css`
       }
     }
   }
+
   .page-content {
     flex: 1 1 0;
     display: flex;
   }
+
   footer {
     margin-top: 0;
   }
@@ -844,21 +847,10 @@ const styles = (theme: Theme) => css`
       }
 
       li.operator {
-        z-index: 5;
         width: 100%;
         height: 280px;
         flex-grow: 1;
         border-radius: ${theme.spacing(0.5)};
-        background-color: ${theme.palette.black.main};
-        background-size: cover;
-        background-position-y: top;
-        background-image: linear-gradient(
-            120deg,
-            ${theme.palette.midtoneDarker.main} 0%,
-            transparent 18%
-          ),
-          linear-gradient(to bottom, transparent 42%, #000 100%),
-          var(--bg-image);
         box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)}
           ${theme.spacing(1)} rgba(0, 0, 0, 0.15);
         transition-property: transform, filter;
@@ -877,7 +869,7 @@ const styles = (theme: Theme) => css`
         &.no-guide,
         &.has-guide a {
           display: grid;
-          grid-template-rows: max-content 1fr max-content;
+          grid-template-areas: "x";
         }
 
         &.has-guide a {
@@ -895,21 +887,23 @@ const styles = (theme: Theme) => css`
         }
 
         &:hover {
-          .operator-info {
-            display: none;
-          }
+          .operator-text-content {
+            .operator-info {
+              display: none;
+            }
 
-          .on-hover {
-            margin-top: -4px;
-            padding: ${theme.spacing(2)};
-            display: grid;
-            grid-template-columns: max-content 1fr max-content;
-            align-items: flex-end;
-            border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+            .on-hover {
+              margin-top: -4px;
+              padding: ${theme.spacing(2)};
+              display: grid;
+              grid-template-columns: max-content 1fr max-content;
+              align-items: flex-end;
+              border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
 
-            .go-to-guide-icon {
-              grid-column: 3;
-              height: ${theme.typography.body3.lineHeight};
+              .go-to-guide-icon {
+                grid-column: 3;
+                height: ${theme.typography.body3.lineHeight};
+              }
             }
           }
 
@@ -917,63 +911,96 @@ const styles = (theme: Theme) => css`
             transform: scale(1.1);
             filter: brightness(110%);
 
-            .on-hover {
-              border-bottom: ${theme.spacing(0.5)} solid
-                ${theme.palette.white.main};
+            .operator-text-content {
+              .on-hover {
+                border-bottom: ${theme.spacing(0.5)} solid
+                  ${theme.palette.white.main};
+              }
             }
           }
         }
 
-        .operator-info {
-          grid-row: 3;
+        .operator-text-content {
+          grid-area: x;
           display: grid;
-          grid-template-rows: repeat(2, max-content);
-          grid-template-columns: 1fr max-content;
-          padding: ${theme.spacing(2)};
-          row-gap: ${theme.spacing(1)};
+          grid-template-rows: max-content 1fr max-content;
+          background-image: linear-gradient(
+              120deg,
+              ${theme.palette.midtoneDarker.main} 0%,
+              transparent 18%
+            ),
+            linear-gradient(to bottom, transparent 42%, #000 100%);
+          border-radius: ${theme.spacing(0.5)};
 
-          .operator-name,
-          .rarity,
-          .operator-class {
+          .on-hover {
+            display: none;
+            font-size: ${theme.typography.body3.fontSize}px;
+            line-height: ${theme.typography.body3.lineHeight};
             text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
               rgba(0, 0, 0, 0.5);
           }
 
-          .operator-name {
-            grid-column: span 2;
-            font-size: ${theme.typography.body2.fontSize}px;
-            line-height: ${theme.typography.body2.lineHeight};
-            font-weight: ${theme.typography.body2Bold.fontWeight};
+          .operator-info {
+            grid-row: 3;
+            display: grid;
+            grid-template-rows: repeat(2, max-content);
+            grid-template-columns: 1fr max-content;
+            padding: ${theme.spacing(2)};
+            row-gap: ${theme.spacing(1)};
+
+            .operator-name,
+            .rarity,
+            .operator-class {
+              text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
+                rgba(0, 0, 0, 0.5);
+            }
+
+            .operator-name {
+              grid-column: span 2;
+              font-size: ${theme.typography.body2.fontSize}px;
+              line-height: ${theme.typography.body2.lineHeight};
+              font-weight: ${theme.typography.body2Bold.fontWeight};
+            }
+
+            .rarity,
+            .operator-class {
+              font-size: ${theme.typography.label2.fontSize}px;
+              line-height: ${theme.typography.label2.lineHeight};
+            }
+
+            .rarity {
+              grid-column: 2;
+            }
+
+            .operator-class {
+              grid-row: 2;
+              text-transform: uppercase;
+            }
           }
 
-          .rarity,
-          .operator-class {
-            font-size: ${theme.typography.label2.fontSize}px;
-            line-height: ${theme.typography.label2.lineHeight};
-          }
+          .operator-subclass {
+            grid-row: 1;
 
-          .rarity {
-            grid-column: 2;
-          }
-
-          .operator-class {
-            grid-row: 2;
-            text-transform: uppercase;
+            .operator-subclass-icon {
+              width: 40px;
+              height: 40px;
+              margin: ${theme.spacing(1, 0, 0, 1)};
+              line-height: 1;
+              filter: drop-shadow(
+                0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)
+              );
+            }
           }
         }
 
-        .operator-subclass {
-          grid-row: 1;
-
-          .operator-subclass-icon {
-            width: 40px;
-            height: 40px;
-            margin: ${theme.spacing(1, 0, 0, 1)};
-            line-height: 1;
-            filter: drop-shadow(
-              0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)
-            );
-          }
+        img.operator-portrait {
+          grid-area: x;
+          width: 100%;
+          height: 280px;
+          object-fit: cover;
+          object-position: top;
+          background-color: ${theme.palette.black.main};
+          border-radius: ${theme.spacing(0.5)};
         }
       }
     }

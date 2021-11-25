@@ -112,6 +112,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
       {/* @ts-expect-error Emotion doesn't like that I'm using MUI's Theme type, but this still works fine */}
       <Global styles={styles({ bannerImageUrl, blendPoint })} />
       <div className="site-wrapper">
+        {bannerImageUrl && <div className="banner-image-container" />}
         <div className="top-fold">
           <div className="navbar">
             <div className="navbar-background">
@@ -235,27 +236,6 @@ const styles =
   }) =>
   (theme: Theme) =>
     css`
-      ${bannerImageUrl &&
-      css`
-        body {
-          background-image: linear-gradient(
-              to bottom,
-              transparent ${0.3576 * blendPoint}px,
-              ${rgba(theme.palette.dark.main, 0.9)} ${0.8361 * blendPoint}px,
-              ${theme.palette.dark.main} ${blendPoint}px
-            ),
-            url("${bannerImageUrl}"),
-            linear-gradient(
-              to bottom,
-              ${theme.palette.black.main},
-              ${theme.palette.black.main} ${blendPoint}px,
-              ${theme.palette.dark.main} ${blendPoint}px
-            );
-          background-repeat: no-repeat;
-          background-position-x: center;
-        }
-      `}
-
       html {
         font-size: ${theme.typography.body1.fontSize}px;
         color: ${theme.palette.white.main};
@@ -273,6 +253,33 @@ const styles =
         height: 100vh;
         display: grid;
         grid-template-rows: 1fr max-content;
+        grid-template-areas: "top-fold" "footer";
+
+        .top-fold {
+          grid-area: top-fold;
+        }
+
+        .banner-image-container {
+          grid-area: top-fold;
+          ${bannerImageUrl &&
+          css`
+            background-image: linear-gradient(
+                to bottom,
+                transparent ${0.3576 * blendPoint}px,
+                ${rgba(theme.palette.dark.main, 0.9)} ${0.8361 * blendPoint}px,
+                ${theme.palette.dark.main} ${blendPoint}px
+              ),
+              url("${bannerImageUrl}"),
+              linear-gradient(
+                to bottom,
+                ${theme.palette.black.main},
+                ${theme.palette.black.main} ${blendPoint}px,
+                ${theme.palette.dark.main} ${blendPoint}px
+              );
+            background-repeat: no-repeat;
+            background-position-x: center;
+          `}
+        }
       }
 
       .header-main-wrapper {
@@ -486,6 +493,7 @@ const styles =
 
       footer {
         margin-top: ${theme.spacing(8)};
+        grid-area: footer;
         background-color: ${theme.palette.black.main};
 
         ${theme.breakpoints.down("mobile")} {

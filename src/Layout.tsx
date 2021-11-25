@@ -309,7 +309,7 @@ const styles =
           }
           svg.weird-death-sphere {
             position: absolute;
-            left: 50%;
+            left: 50vw;
             transform: translateX(-50%);
             bottom: -29px;
           }

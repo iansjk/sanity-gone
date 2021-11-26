@@ -461,11 +461,13 @@ const Operators: React.VFC<Props> = ({ data }) => {
                       {({ cx }) => {
                         const inner = (
                           <Fragment>
-                            <img
-                              alt=""
-                              className="operator-portrait"
-                              src={operatorPortrait(op.name)}
-                            />
+                            <div className="operator-portrait-container">
+                              <img
+                                alt=""
+                                className="operator-portrait"
+                                src={operatorPortrait(op.name)}
+                              />
+                            </div>
                             <div className="operator-text-content">
                               <div className="operator-info">
                                 <span className="operator-name">{op.name}</span>
@@ -993,14 +995,18 @@ const styles = (theme: Theme) => css`
           }
         }
 
-        img.operator-portrait {
+        .operator-portrait-container {
           grid-area: x;
-          width: 100%;
-          height: 280px;
-          object-fit: cover;
-          object-position: top;
-          background-color: ${theme.palette.black.main};
+          overflow: hidden;
           border-radius: ${theme.spacing(0.5)};
+
+          img.operator-portrait {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            background-color: ${theme.palette.black.main};
+            border-radius: ${theme.spacing(0.5)};
+          }
         }
       }
     }

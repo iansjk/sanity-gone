@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { css, Theme } from "@mui/material";
 import cx from "clsx";
 
@@ -7,6 +7,18 @@ export type HorizontalScrollerProps = React.HTMLAttributes<HTMLDivElement>;
 const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
   const { children, className, onScroll, ...rest } = props;
   const containerRef = React.useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && containerRef.current) {
+      // from https://github.com/mui-org/material-ui/blob/master/packages/mui-utils/src/getScrollbarSize.ts
+      const documentWidth = window.document.documentElement.clientWidth;
+      const scrollbarWidth = Math.abs(window.innerWidth - documentWidth);
+      containerRef.current.style.setProperty(
+        "--scrollbar-width",
+        `${scrollbarWidth}px`
+      );
+    }
+  }, []);
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     if (containerRef.current) {
@@ -47,11 +59,12 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
 export default HorizontalScroller;
 
 const styles = (theme: Theme) => css`
-  box-sizing: border-box;
-  width: 100vw;
   --scroll-left: 0px;
   --offset-width: 0px;
   --scroll-width: 999px;
+  --scrollbar-width: 0px;
+  width: calc(100vw - var(--scrollbar-width));
+  box-sizing: border-box;
 
   .scroller-contents {
     display: flex;

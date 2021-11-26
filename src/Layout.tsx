@@ -719,4 +719,28 @@ const styles =
       img {
         object-fit: contain;
       }
+
+      html {
+        scrollbar-width: ${theme.spacing(2)};
+        scrollbar-color: ${rgba(theme.palette.white.main, 0.8)} transparent;
+      }
+
+      body::-webkit-scrollbar {
+        width: ${theme.spacing(2)};
+      }
+
+      body::-webkit-scrollbar-thumb {
+        border-radius: ${theme.spacing(1)};
+        border: ${theme.spacing(0.5)} solid transparent;
+        background-clip: content-box;
+        background-color: ${rgba(theme.palette.white.main, 0.3)};
+      }
+      
+      body::-webkit-scrollbar-thumb:hover {
+        background-color: ${rgba(theme.palette.white.main, 0.5)};
+      }
+      
+      body::-webkit-scrollbar-thumb:active {
+        background-color: ${rgba(theme.palette.white.main, 0.8)};
+      }
     `;

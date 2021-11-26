@@ -1,4 +1,5 @@
 import { Button, ButtonProps, styled } from "@mui/material";
+import { rgba } from "polished";
 
 const RibbonButton = styled((props: ButtonProps) => (
   <Button {...props} color="white" />
@@ -12,6 +13,10 @@ const RibbonButton = styled((props: ButtonProps) => (
   },
   path: {
     fill: theme.palette.midtoneBrighterer.main,
+  },
+  boxShadow: "none",
+  "&:hover": {
+    backgroundColor: rgba(theme.palette.white.main, 0.04),
   },
   "&.active": {
     background: theme.palette.midtoneBrighter.main,

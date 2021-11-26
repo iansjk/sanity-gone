@@ -708,6 +708,10 @@ const styles = (theme: Theme) => css`
       }
       .subclass-card {
         margin-bottom: ${theme.spacing(3)};
+
+        ${theme.breakpoints.down("mobile")} {
+          margin: 0;
+        }
       }
 
       .class-card,
@@ -814,7 +818,12 @@ const styles = (theme: Theme) => css`
     background-color: ${theme.palette.dark.main};
     border-top: 1px solid ${theme.palette.midtoneBrighter.main};
     flex: 1 1 0;
+
+    ${theme.breakpoints.down("mobile")} {
+      border-top: none;
+    }
   }
+
   .results {
     margin: ${theme.spacing(3)} auto ${theme.spacing(9.5)} auto;
     max-width: ${theme.breakpoints.values["maxWidth"]}px;

@@ -68,6 +68,7 @@ export default SanityGoneLogo;
 
 const styles = (theme: Theme) => css`
   margin-top: 2px;
+  padding: ${theme.spacing(1)};
   line-height: 1;
 
   & > svg > path {

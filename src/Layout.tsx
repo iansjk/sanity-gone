@@ -347,16 +347,9 @@ const styles =
             }
 
             .navbar-center {
-              flex: none;
-              width: ${theme.spacing(47)};
-
               .center-container {
-                width: ${theme.spacing(21)};
-                margin: auto;
-
-                a {
-                  display: block;
-                }
+                display: flex;
+                align-items: center;
               }
 
               ${theme.breakpoints.down("mobile")} {
@@ -364,7 +357,7 @@ const styles =
                 flex: 1 1 0;
 
                 .center-container {
-                  margin: ${theme.spacing(0, 0, 0, 3)};
+                  margin: ${theme.spacing(0, 0, 0, 2)};
                 }
               }
             }

@@ -308,7 +308,7 @@ const styles = (theme: Theme) => css`
     position: absolute;
     top: 100%;
     width: 100%;
-    z-index: 5;
+    z-index: 3;
     background-color: ${theme.palette.midtone.main};
     border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
     border: 1px solid ${theme.palette.midtoneBrighter.main};

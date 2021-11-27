@@ -1,12 +1,20 @@
 import React, { useEffect } from "react";
 import { css, Theme } from "@mui/material";
+import ScrollContainer, {
+  ScrollContainerProps,
+  ScrollEvent,
+} from "react-indiana-drag-scroll";
 import cx from "clsx";
 
-export type HorizontalScrollerProps = React.HTMLAttributes<HTMLDivElement>;
+export type HorizontalScrollerProps = Omit<
+  ScrollContainerProps,
+  "ref" | "innerRef"
+>;
 
 const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
   const { children, className, onScroll, ...rest } = props;
   const containerRef = React.useRef<HTMLDivElement>(null);
+  const contentRef = React.useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined" && containerRef.current) {
@@ -20,10 +28,10 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
     }
   }, []);
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    if (containerRef.current) {
+  const handleScroll = (e: ScrollEvent) => {
+    if (containerRef.current && contentRef.current) {
       const containerStyle = containerRef.current.style;
-      const contentDiv = e.target as HTMLDivElement;
+      const contentDiv = contentRef.current;
       containerStyle.setProperty(
         "--scroll-left",
         `${Math.round(contentDiv.scrollLeft)}px`
@@ -46,13 +54,14 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
 
   return (
     <div ref={containerRef} css={styles}>
-      <div
+      <ScrollContainer
         className={cx("scroller-contents", className)}
         onScroll={handleScroll}
+        innerRef={contentRef}
         {...rest}
       >
         {children}
-      </div>
+      </ScrollContainer>
     </div>
   );
 };
@@ -89,14 +98,6 @@ const styles = (theme: Theme) => css`
         ),
       transparent
     );
-
-    /* Hide scrollbars */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-    &::-webkit-scrollbar {
-      /* Webkit */
-      display: none;
-    }
 
     & > * {
       flex-shrink: 0;

@@ -266,7 +266,7 @@ const styles =
             background-image: linear-gradient(
                 to bottom,
                 transparent ${0.3576 * blendPoint}px,
-                ${rgba(theme.palette.dark.main, 0.9)} ${0.8361 * blendPoint}px,
+                ${rgba(theme.palette.dark.main, 0.75)} ${0.7083 * blendPoint}px,
                 ${theme.palette.dark.main} ${blendPoint}px
               ),
               url("${bannerImageUrl}"),
@@ -502,6 +502,10 @@ const styles =
           .logo-and-description {
             ${theme.breakpoints.down("mobile")} {
               grid-column: span 2;
+            }
+
+            a {
+              padding: 0;
             }
           }
 

@@ -470,7 +470,15 @@ const styles = (theme: Theme) => css`
             stroke: ${theme.palette.midtoneBrighterer.main};
           }
 
+          path {
+            fill: ${theme.palette.midtoneBrighterer.main};
+          }
+
           &.active {
+            path {
+              fill: ${theme.palette.white.main};
+            }
+
             .elite-zero path {
               fill: transparent;
               stroke: ${theme.palette.white.main};

@@ -11,9 +11,6 @@ const RibbonButton = styled((props: ButtonProps) => (
     padding: theme.spacing(0, 1.5),
     borderRadius: theme.spacing(0.5, 0.5, 0, 0),
   },
-  path: {
-    fill: theme.palette.midtoneBrighterer.main,
-  },
   boxShadow: "none",
   "&:hover": {
     backgroundColor: rgba(theme.palette.white.main, 0.04),
@@ -22,9 +19,6 @@ const RibbonButton = styled((props: ButtonProps) => (
     background: theme.palette.midtoneBrighter.main,
     borderBottomStyle: "solid",
     borderBottomWidth: "3px",
-    path: {
-      fill: theme.palette.white.main,
-    },
   },
 }));
 export default RibbonButton;

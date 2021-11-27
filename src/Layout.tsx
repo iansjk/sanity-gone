@@ -347,12 +347,15 @@ const styles =
             }
 
             .navbar-center {
+              margin: ${theme.spacing(0, 10)};
+              
               .center-container {
                 display: flex;
                 align-items: center;
               }
 
               ${theme.breakpoints.down("mobile")} {
+                margin: 0;
                 width: auto;
                 flex: 1 1 0;
 

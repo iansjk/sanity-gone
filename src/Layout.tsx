@@ -288,50 +288,41 @@ const styles =
       }
 
       .navbar {
-        display: flex;
+        height: ${theme.spacing(8.5)};
+        display: grid;
+        grid-template-areas: "navbar";
         align-items: center;
+        backdrop-filter: blur(8px);
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 70.31%,
+            rgba(0, 0, 0, 0.4) 100%
+          )
+          ${transparentize(0.8, theme.palette.black.main)};
 
         .navbar-background {
-          position: absolute;
-          display: flex;
           height: ${theme.spacing(8.5)};
-          width: 100%;
-          backdrop-filter: blur(8px);
-          background: linear-gradient(
-              180deg,
-              rgba(0, 0, 0, 0) 70.31%,
-              rgba(0, 0, 0, 0.4) 100%
-            )
-            ${transparentize(0.8, theme.palette.black.main)};
+          grid-area: navbar;
+          display: flex;
+          justify-content: center;
 
-          .background-spacer {
-            flex: 1 1 0;
-          }
           svg.weird-death-sphere {
-            position: absolute;
-            left: 50vw;
-            transform: translateX(-50%);
-            bottom: -29px;
-          }
+            position: relative;
+            transform: translateY(-100%);
+            top: 97px;
 
-          ${theme.breakpoints.down("mobile")} {
-            svg.weird-death-sphere,
-            .logo-bg {
+            ${theme.breakpoints.down("mobile")} {
               display: none;
             }
-
-            height: 77px;
-            backdrop-filter: blur(8px);
           }
         }
-
-        height: ${theme.spacing(8.5)};
 
         ${theme.breakpoints.down("mobile")} {
           height: 75px;
         }
 
         .navbar-container {
+          grid-area: navbar;
           z-index: 3;
           width: 100%;
           max-width: ${theme.breakpoints.values["maxWidth"]}px;
@@ -735,11 +726,11 @@ const styles =
         background-clip: content-box;
         background-color: ${rgba(theme.palette.white.main, 0.3)};
       }
-      
+
       body::-webkit-scrollbar-thumb:hover {
         background-color: ${rgba(theme.palette.white.main, 0.5)};
       }
-      
+
       body::-webkit-scrollbar-thumb:active {
         background-color: ${rgba(theme.palette.white.main, 0.8)};
       }

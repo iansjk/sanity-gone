@@ -619,10 +619,13 @@ const styles = (theme: Theme) => css`
     .sort-and-filter-options {
       display: flex;
       align-items: center;
-      column-gap: ${theme.spacing(2)};
       margin: ${theme.spacing(2, 0, 3)};
       font-size: ${theme.typography.navigationLink.fontSize}px;
       line-height: ${theme.typography.navigationLink.lineHeight};
+
+      & > * ~ * {
+        margin-left: ${theme.spacing(2)};
+      }
 
       ${theme.breakpoints.down("mobile")} {
         background-color: ${rgba(theme.palette.dark.main, 0.66)};

@@ -142,18 +142,20 @@ interface OperatorAnalysisData {
   skill2Analysis: MarkdownNode;
   skill3Recommended?: boolean;
   skill3Analysis: MarkdownNode;
-  synergies: {
-    synergyName: string;
-    isGroup: boolean;
-    synergyQuality: SynergyQuality;
-    synergyDescription: MarkdownNode;
-    shouldInvertIconOnHighlight?: boolean;
-    customSynergyIcon: {
-      localFile: {
-        publicURL: string;
-      };
-    };
-  }[];
+  synergies:
+    | {
+        synergyName: string;
+        isGroup: boolean;
+        synergyQuality: SynergyQuality;
+        synergyDescription: MarkdownNode;
+        shouldInvertIconOnHighlight?: boolean;
+        customSynergyIcon: {
+          localFile: {
+            publicURL: string;
+          };
+        };
+      }[]
+    | null;
   strengths: MarkdownHtmlAstNode;
   weaknesses: MarkdownHtmlAstNode;
   updatedAt: string; // ISO 8601 timestamp
@@ -227,7 +229,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     data.allOperatorsJson.nodes.map(({ name, ...rest }) => [name, rest])
   );
 
-  const synergies = contentful.synergies.map((syn) => {
+  const synergies = (contentful.synergies ?? []).map((syn) => {
     const baseProps = {
       name: syn.synergyName,
       isGroup: syn.isGroup,
@@ -289,51 +291,60 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       />
       <Tabs component="main" css={styles(contentful.operator.accentColorInHex)}>
         <TabButtons className="tabs" isSwiper>
-          {["Introduction", "Talents", "Skills", "Synergies"].map((label) => (
+          {[
+            ...["Introduction", "Talents", "Skills"],
+            ...(synergies.length > 0 ? ["Synergies"] : []),
+          ].map((label) => (
             <button key={label}>{label}</button>
           ))}
         </TabButtons>
         <TabPanels className="panels">
           {[
-            {
-              component: (
-                <Introduction
-                  analysis={htmlToReact(
-                    contentful.introduction.childMarkdownRemark.html,
-                    context
-                  )}
-                  isLimited={contentful.operator.limited}
-                  operatorObject={operatorObject}
-                  strengths={strengths}
-                  weaknesses={weaknesses}
-                />
-              ),
-              className: "introduction",
-            },
-            {
-              component: (
-                <CardWithTabs
-                  header="Talents"
-                  panelContent={talentAnalyses}
-                  buttonLabelFn={(i) => `talent ${i + 1}`}
-                />
-              ),
-              className: "talents",
-            },
-            {
-              component: (
-                <CardWithTabs
-                  header="Skills"
-                  panelContent={skillAnalyses}
-                  buttonLabelFn={(i) => `skill ${i + 1}`}
-                />
-              ),
-              className: "skills",
-            },
-            {
-              component: <Synergies synergies={synergies} />,
-              className: "synergies",
-            },
+            ...[
+              {
+                component: (
+                  <Introduction
+                    analysis={htmlToReact(
+                      contentful.introduction.childMarkdownRemark.html,
+                      context
+                    )}
+                    isLimited={contentful.operator.limited}
+                    operatorObject={operatorObject}
+                    strengths={strengths}
+                    weaknesses={weaknesses}
+                  />
+                ),
+                className: "introduction",
+              },
+              {
+                component: (
+                  <CardWithTabs
+                    header="Talents"
+                    panelContent={talentAnalyses}
+                    buttonLabelFn={(i) => `talent ${i + 1}`}
+                  />
+                ),
+                className: "talents",
+              },
+              {
+                component: (
+                  <CardWithTabs
+                    header="Skills"
+                    panelContent={skillAnalyses}
+                    buttonLabelFn={(i) => `skill ${i + 1}`}
+                  />
+                ),
+                className: "skills",
+              },
+            ],
+            ...(synergies.length > 0
+              ? [
+                  {
+                    component: <Synergies synergies={synergies} />,
+                    className: "synergies",
+                  },
+                ]
+              : []),
           ].map(({ component, className }, i) => (
             <div className={`analysis-section ${className}`} key={i}>
               {component}

@@ -40,9 +40,9 @@ export const professionToClass = (profession: string): string =>
 
 const subProfessionLookup: Record<string, string> = {
   pioneer: "Pioneer",
-  charger: "Spearhead",
+  charger: "Charger",
   tactician: "Tactician",
-  bearer: "Flagbearer",
+  bearer: "Standard Bearer",
   centurion: "Assault",
   fighter: "Brawler",
   artsfghter: "Spellblade",
@@ -50,7 +50,7 @@ const subProfessionLookup: Record<string, string> = {
   lord: "Warlord",
   sword: "Swordmaster",
   musha: "Musha",
-  fearless: "Fearless",
+  fearless: "Dreadnought",
   reaper: "Reaper",
   librator: "Liberator",
   protector: "Ironguard",
@@ -58,25 +58,25 @@ const subProfessionLookup: Record<string, string> = {
   unyield: "Unyielding",
   artsprotector: "Arts Ironguard",
   duelist: "Champion",
-  fastshot: "Rapid Fire",
+  fastshot: "Marksman",
   closerange: "Heavy",
   aoesniper: "Cannoneer",
-  longrange: "Marksman",
+  longrange: "Deadeye",
   reaperrange: "Spreadshot",
   siegesniper: "Siege",
   bombarder: "Bombardier",
   corecaster: "Core",
-  splashcaster: "Dispersal",
+  splashcaster: "Dispersion",
   funnel: "Magitech",
   phalanx: "Formation",
   mystic: "Mystic",
   chain: "Chain",
-  blastcaster: "Barrage",
+  blastcaster: "Blast",
   physician: "Healer",
   ringhealer: "Mass Healer",
   healer: "Mender",
   slower: "Inhibitor",
-  underminer: "Weakener",
+  underminer: "Witherer",
   bard: "Bard",
   blessing: "Protector",
   summoner: "Summoner",
@@ -88,9 +88,9 @@ const subProfessionLookup: Record<string, string> = {
   merchant: "Merchant",
   traper: "Trapper",
   dollkeeper: "Puppeteer",
-  fortress: "Fortress",
-  wandermedic: "Wandering",
   craftsman: "Artificer",
+  wandermedic: "Wandering",
+  fortress: "Fortress",
 };
 const reverseSubProfessionLookup = Object.fromEntries(
   Object.entries(subProfessionLookup).map(([k, v]) => [v, k])
@@ -280,6 +280,12 @@ export const getPotStatIncreases = (
       let desc = pot.description;
       if (desc.startsWith("Improves ")) {
         desc = desc.replace("Improves ", "") + " Enhancement";
+      } else if (desc === "天赋效果增强") {
+        desc = "Talent Enhancement";
+      } else if (desc === "第一天赋效果增强") {
+        desc = "First Talent Enhancement";
+      } else if (desc === "第二天赋效果增强") {
+        desc = "Second Talent Enhancement";
       }
       statChanges.push({
         health: 0,

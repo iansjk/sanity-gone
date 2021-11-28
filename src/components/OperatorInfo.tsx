@@ -167,7 +167,7 @@ const styles = (theme: Theme) => css`
       }
 
       .class-and-subclass {
-        padding: ${theme.spacing(1, 2)};
+        padding: ${theme.spacing(1, 1.5)};
         display: flex;
         align-items: center;
         font-weight: ${theme.typography.navigationLinkBold.fontWeight};

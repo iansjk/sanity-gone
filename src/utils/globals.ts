@@ -272,6 +272,12 @@ export const getPotStatIncreases = (
       let desc = pot.description;
       if (desc.startsWith("Improves ")) {
         desc = desc.replace("Improves ", "") + " Enhancement";
+      } else if (desc === "天赋效果增强") {
+        desc = "Talent Enhancement";
+      } else if (desc === "第一天赋效果增强") {
+        desc = "First Talent Enhancement";
+      } else if (desc === "第二天赋效果增强") {
+        desc = "Second Talent Enhancement";
       }
       statChanges.push({
         health: 0,

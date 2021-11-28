@@ -47,7 +47,7 @@ const subProfessionLookup: Record<string, string> = {
   lord: "Warlord",
   sword: "Swordmaster",
   musha: "Musha",
-  fearless: "Fearless",
+  fearless: "Dreadnought",
   reaper: "Reaper",
   librator: "Liberator",
   protector: "Ironguard",

@@ -1,4 +1,4 @@
-import defaultSlugify from "slugify";
+import defaultSlugify from "@sindresorhus/slugify";
 import {
   CharacterObject,
   CharacterStatValues,
@@ -6,10 +6,7 @@ import {
 } from "./types";
 
 export function slugify(toSlug: string): string {
-  return defaultSlugify(toSlug.replace(/[().'-]/g, ""), {
-    lower: true,
-    replacement: "-",
-  });
+  return defaultSlugify(toSlug);
 }
 
 export function toTitleCase(string: string): string {

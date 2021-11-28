@@ -113,7 +113,7 @@ const About: React.VFC = () => {
 export default About;
 
 const styles = (theme: Theme) => css`
-  padding: ${theme.spacing(0, 2)};
+  padding: ${theme.spacing(0, 3)};
 
   h2 {
     margin: ${theme.spacing(4, 0, 0)};

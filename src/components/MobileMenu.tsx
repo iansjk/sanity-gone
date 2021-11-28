@@ -94,7 +94,7 @@ const styles = (theme: Theme) => css`
 
   .top-bar {
     height: 75px;
-    padding: ${theme.spacing(0, 3)};
+    padding: ${theme.spacing(0, 3, 0, 2)};
     display: flex;
     align-items: center;
     background-color: ${theme.palette.dark.main};

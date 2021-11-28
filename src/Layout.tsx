@@ -288,14 +288,21 @@ const styles =
       }
 
       .navbar {
-        display: flex;
+        display: grid;
+        grid-template-areas: "navbar";
         align-items: center;
+        height: ${theme.spacing(8.5)};
+
+        ${theme.breakpoints.down("mobile")} {
+          height: 75px;
+        }
 
         .navbar-background {
-          position: absolute;
-          display: flex;
+          grid-area: navbar;
           height: ${theme.spacing(8.5)};
           width: 100%;
+          display: flex;
+          justify-content: center;
           backdrop-filter: blur(8px);
           background: linear-gradient(
               180deg,
@@ -307,11 +314,11 @@ const styles =
           .background-spacer {
             flex: 1 1 0;
           }
+
           svg.weird-death-sphere {
-            position: absolute;
-            left: 50vw;
-            transform: translateX(-50%);
-            bottom: -29px;
+            position: relative;
+            transform: translateY(-100%);
+            top: 97px;
           }
 
           ${theme.breakpoints.down("mobile")} {
@@ -325,13 +332,8 @@ const styles =
           }
         }
 
-        height: ${theme.spacing(8.5)};
-
-        ${theme.breakpoints.down("mobile")} {
-          height: 75px;
-        }
-
         .navbar-container {
+          grid-area: navbar;
           z-index: 3;
           width: 100%;
           max-width: ${theme.breakpoints.values["maxWidth"]}px;
@@ -357,7 +359,7 @@ const styles =
 
             .navbar-center {
               margin: ${theme.spacing(0, 10)};
-              
+
               .center-container {
                 display: flex;
                 align-items: center;
@@ -735,11 +737,11 @@ const styles =
         background-clip: content-box;
         background-color: ${rgba(theme.palette.white.main, 0.3)};
       }
-      
+
       body::-webkit-scrollbar-thumb:hover {
         background-color: ${rgba(theme.palette.white.main, 0.5)};
       }
-      
+
       body::-webkit-scrollbar-thumb:active {
         background-color: ${rgba(theme.palette.white.main, 0.8)};
       }

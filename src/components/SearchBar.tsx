@@ -224,7 +224,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                       >
                         <img
                           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                          src={operatorClassIcon(res.class!)}
+                          src={operatorClassIcon(res.class!.toLowerCase())}
                           alt={res.class}
                         />
                         <div className="classes-info">

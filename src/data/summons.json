@@ -20394,7 +20394,994 @@
     ],
     "cnName": "全自动造型仪",
     "isCnOnly": true,
-    "fileIndex": 234,
+    "fileIndex": 241,
     "operatorName": "Roberta"
+  },
+  {
+    "name": "Blazing Sun",
+    "description": "能够阻挡两个敌人",
+    "canUseGeneralPotentialItem": true,
+    "potentialItemId": "",
+    "nationId": null,
+    "groupId": null,
+    "teamId": null,
+    "displayNumber": null,
+    "tokenKey": null,
+    "appellation": "Blazing Sun",
+    "position": "MELEE",
+    "tagList": null,
+    "itemUsage": null,
+    "itemDesc": null,
+    "itemObtainApproach": null,
+    "isNotObtainable": false,
+    "isSpChar": false,
+    "maxPotentialLevel": 0,
+    "rarity": 5,
+    "profession": "TOKEN",
+    "subProfessionId": "notchar1",
+    "trait": null,
+    "phases": [
+      {
+        "characterPrefabKey": "token_10019_nearl2_sword",
+        "rangeId": "0-1",
+        "maxLevel": 50,
+        "attributesKeyFrames": [
+          {
+            "level": 1,
+            "data": {
+              "maxHp": 6000,
+              "atk": 10,
+              "def": 422,
+              "magicResistance": 20,
+              "cost": 0,
+              "blockCnt": 2,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 1,
+              "respawnTime": 0,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          },
+          {
+            "level": 50,
+            "data": {
+              "maxHp": 6000,
+              "atk": 10,
+              "def": 422,
+              "magicResistance": 20,
+              "cost": 0,
+              "blockCnt": 2,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 1,
+              "respawnTime": 0,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          }
+        ],
+        "evolveCost": null,
+        "range": {
+          "id": "0-1",
+          "direction": 1,
+          "grids": [
+            {
+              "row": 0,
+              "col": 0
+            }
+          ]
+        }
+      },
+      {
+        "characterPrefabKey": "token_10019_nearl2_sword",
+        "rangeId": "0-1",
+        "maxLevel": 80,
+        "attributesKeyFrames": [
+          {
+            "level": 1,
+            "data": {
+              "maxHp": 6000,
+              "atk": 10,
+              "def": 422,
+              "magicResistance": 20,
+              "cost": 0,
+              "blockCnt": 2,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 1,
+              "respawnTime": 0,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          },
+          {
+            "level": 80,
+            "data": {
+              "maxHp": 6000,
+              "atk": 10,
+              "def": 480,
+              "magicResistance": 20,
+              "cost": 0,
+              "blockCnt": 2,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 1,
+              "respawnTime": 0,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          }
+        ],
+        "evolveCost": null,
+        "range": {
+          "id": "0-1",
+          "direction": 1,
+          "grids": [
+            {
+              "row": 0,
+              "col": 0
+            }
+          ]
+        }
+      },
+      {
+        "characterPrefabKey": "token_10019_nearl2_sword",
+        "rangeId": "0-1",
+        "maxLevel": 90,
+        "attributesKeyFrames": [
+          {
+            "level": 1,
+            "data": {
+              "maxHp": 6000,
+              "atk": 10,
+              "def": 540,
+              "magicResistance": 20,
+              "cost": 0,
+              "blockCnt": 2,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 1,
+              "respawnTime": 0,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          },
+          {
+            "level": 90,
+            "data": {
+              "maxHp": 6000,
+              "atk": 10,
+              "def": 600,
+              "magicResistance": 20,
+              "cost": 0,
+              "blockCnt": 2,
+              "moveSpeed": 1,
+              "attackSpeed": 100,
+              "baseAttackTime": 1,
+              "respawnTime": 0,
+              "hpRecoveryPerSec": 0,
+              "spRecoveryPerSec": 1,
+              "maxDeployCount": 1,
+              "maxDeckStackCnt": 0,
+              "tauntLevel": 0,
+              "massLevel": 0,
+              "baseForceLevel": 0,
+              "stunImmune": false,
+              "silenceImmune": false,
+              "sleepImmune": false
+            }
+          }
+        ],
+        "evolveCost": null,
+        "range": {
+          "id": "0-1",
+          "direction": 1,
+          "grids": [
+            {
+              "row": 0,
+              "col": 0
+            }
+          ]
+        }
+      }
+    ],
+    "skills": [
+      {
+        "skillId": null,
+        "overridePrefabKey": null,
+        "overrideTokenKey": null,
+        "levelUpCostCond": [
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          }
+        ],
+        "unlockCond": {
+          "phase": 0,
+          "level": 1
+        }
+      },
+      {
+        "skillId": null,
+        "overridePrefabKey": null,
+        "overrideTokenKey": null,
+        "levelUpCostCond": [
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          }
+        ],
+        "unlockCond": {
+          "phase": 1,
+          "level": 1
+        }
+      },
+      {
+        "skillId": "sktok_nearl2_3",
+        "overridePrefabKey": null,
+        "overrideTokenKey": null,
+        "levelUpCostCond": [
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          },
+          {
+            "unlockCond": {
+              "phase": 2,
+              "level": 1
+            },
+            "lvlUpTime": 0,
+            "levelUpCost": null
+          }
+        ],
+        "unlockCond": {
+          "phase": 2,
+          "level": 1
+        }
+      }
+    ],
+    "talents": [
+      {
+        "candidates": [
+          {
+            "unlockCondition": {
+              "phase": 2,
+              "level": 1
+            },
+            "requiredPotentialRank": 0,
+            "prefabKey": "1",
+            "name": null,
+            "description": "-",
+            "rangeId": null,
+            "blackboard": [],
+            "range": null
+          }
+        ]
+      }
+    ],
+    "potentialRanks": [],
+    "favorKeyFrames": [
+      {
+        "level": 0,
+        "data": {
+          "maxHp": 0,
+          "atk": 0,
+          "def": 0,
+          "magicResistance": 0,
+          "cost": 0,
+          "blockCnt": 0,
+          "moveSpeed": 0,
+          "attackSpeed": 0,
+          "baseAttackTime": 0,
+          "respawnTime": 0,
+          "hpRecoveryPerSec": 0,
+          "spRecoveryPerSec": 0,
+          "maxDeployCount": 0,
+          "maxDeckStackCnt": 0,
+          "tauntLevel": 0,
+          "massLevel": 0,
+          "baseForceLevel": 0,
+          "stunImmune": false,
+          "silenceImmune": false,
+          "sleepImmune": false
+        }
+      },
+      {
+        "level": 50,
+        "data": {
+          "maxHp": 0,
+          "atk": 0,
+          "def": 0,
+          "magicResistance": 0,
+          "cost": 0,
+          "blockCnt": 0,
+          "moveSpeed": 0,
+          "attackSpeed": 0,
+          "baseAttackTime": 0,
+          "respawnTime": 0,
+          "hpRecoveryPerSec": 0,
+          "spRecoveryPerSec": 0,
+          "maxDeployCount": 0,
+          "maxDeckStackCnt": 0,
+          "tauntLevel": 0,
+          "massLevel": 0,
+          "baseForceLevel": 0,
+          "stunImmune": false,
+          "silenceImmune": false,
+          "sleepImmune": false
+        }
+      }
+    ],
+    "allSkillLvlup": [
+      {
+        "unlockCond": {
+          "phase": 0,
+          "level": 1
+        },
+        "lvlUpCost": null
+      },
+      {
+        "unlockCond": {
+          "phase": 0,
+          "level": 1
+        },
+        "lvlUpCost": null
+      },
+      {
+        "unlockCond": {
+          "phase": 0,
+          "level": 1
+        },
+        "lvlUpCost": null
+      },
+      {
+        "unlockCond": {
+          "phase": 1,
+          "level": 1
+        },
+        "lvlUpCost": null
+      },
+      {
+        "unlockCond": {
+          "phase": 1,
+          "level": 1
+        },
+        "lvlUpCost": null
+      },
+      {
+        "unlockCond": {
+          "phase": 1,
+          "level": 1
+        },
+        "lvlUpCost": null
+      }
+    ],
+    "id": "token_10019_nearl2_sword",
+    "skillData": [
+      {
+        "skillId": "sktok_nearl2_3",
+        "iconId": null,
+        "hidden": false,
+        "levels": [
+          {
+            "name": "\"耀阳\"",
+            "rangeId": "x-5",
+            "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
+            "skillType": 0,
+            "spData": {
+              "spType": 8,
+              "levelUpCost": null,
+              "maxChargeTime": 0,
+              "spCost": 0,
+              "initSp": 0,
+              "increment": 0
+            },
+            "prefabId": "sktok_nearl2_3",
+            "duration": -1,
+            "blackboard": [
+              {
+                "key": "atk_scale",
+                "value": 0.8
+              },
+              {
+                "key": "stun",
+                "value": 3
+              }
+            ],
+            "range": {
+              "id": "x-5",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                }
+              ]
+            }
+          },
+          {
+            "name": "\"耀阳\"",
+            "rangeId": "x-5",
+            "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
+            "skillType": 0,
+            "spData": {
+              "spType": 8,
+              "levelUpCost": null,
+              "maxChargeTime": 0,
+              "spCost": 0,
+              "initSp": 0,
+              "increment": 0
+            },
+            "prefabId": "sktok_nearl2_3",
+            "duration": -1,
+            "blackboard": [
+              {
+                "key": "atk_scale",
+                "value": 0.8
+              },
+              {
+                "key": "stun",
+                "value": 3
+              }
+            ],
+            "range": {
+              "id": "x-5",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                }
+              ]
+            }
+          },
+          {
+            "name": "\"耀阳\"",
+            "rangeId": "x-5",
+            "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
+            "skillType": 0,
+            "spData": {
+              "spType": 8,
+              "levelUpCost": null,
+              "maxChargeTime": 0,
+              "spCost": 0,
+              "initSp": 0,
+              "increment": 0
+            },
+            "prefabId": "sktok_nearl2_3",
+            "duration": -1,
+            "blackboard": [
+              {
+                "key": "atk_scale",
+                "value": 0.8
+              },
+              {
+                "key": "stun",
+                "value": 3
+              }
+            ],
+            "range": {
+              "id": "x-5",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                }
+              ]
+            }
+          },
+          {
+            "name": "\"耀阳\"",
+            "rangeId": "x-5",
+            "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
+            "skillType": 0,
+            "spData": {
+              "spType": 8,
+              "levelUpCost": null,
+              "maxChargeTime": 0,
+              "spCost": 0,
+              "initSp": 0,
+              "increment": 0
+            },
+            "prefabId": "sktok_nearl2_3",
+            "duration": -1,
+            "blackboard": [
+              {
+                "key": "atk_scale",
+                "value": 0.9
+              },
+              {
+                "key": "stun",
+                "value": 3
+              }
+            ],
+            "range": {
+              "id": "x-5",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                }
+              ]
+            }
+          },
+          {
+            "name": "\"耀阳\"",
+            "rangeId": "x-5",
+            "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
+            "skillType": 0,
+            "spData": {
+              "spType": 8,
+              "levelUpCost": null,
+              "maxChargeTime": 0,
+              "spCost": 0,
+              "initSp": 0,
+              "increment": 0
+            },
+            "prefabId": "sktok_nearl2_3",
+            "duration": -1,
+            "blackboard": [
+              {
+                "key": "atk_scale",
+                "value": 0.9
+              },
+              {
+                "key": "stun",
+                "value": 3
+              }
+            ],
+            "range": {
+              "id": "x-5",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                }
+              ]
+            }
+          },
+          {
+            "name": "\"耀阳\"",
+            "rangeId": "x-5",
+            "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
+            "skillType": 0,
+            "spData": {
+              "spType": 8,
+              "levelUpCost": null,
+              "maxChargeTime": 0,
+              "spCost": 0,
+              "initSp": 0,
+              "increment": 0
+            },
+            "prefabId": "sktok_nearl2_3",
+            "duration": -1,
+            "blackboard": [
+              {
+                "key": "atk_scale",
+                "value": 0.9
+              },
+              {
+                "key": "stun",
+                "value": 3
+              }
+            ],
+            "range": {
+              "id": "x-5",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                }
+              ]
+            }
+          },
+          {
+            "name": "\"耀阳\"",
+            "rangeId": "x-5",
+            "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
+            "skillType": 0,
+            "spData": {
+              "spType": 8,
+              "levelUpCost": null,
+              "maxChargeTime": 0,
+              "spCost": 0,
+              "initSp": 0,
+              "increment": 0
+            },
+            "prefabId": "sktok_nearl2_3",
+            "duration": -1,
+            "blackboard": [
+              {
+                "key": "atk_scale",
+                "value": 1
+              },
+              {
+                "key": "stun",
+                "value": 3
+              }
+            ],
+            "range": {
+              "id": "x-5",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                }
+              ]
+            }
+          },
+          {
+            "name": "\"耀阳\"",
+            "rangeId": "x-5",
+            "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
+            "skillType": 0,
+            "spData": {
+              "spType": 8,
+              "levelUpCost": null,
+              "maxChargeTime": 0,
+              "spCost": 0,
+              "initSp": 0,
+              "increment": 0
+            },
+            "prefabId": "sktok_nearl2_3",
+            "duration": -1,
+            "blackboard": [
+              {
+                "key": "atk_scale",
+                "value": 1.1
+              },
+              {
+                "key": "stun",
+                "value": 3
+              }
+            ],
+            "range": {
+              "id": "x-5",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                }
+              ]
+            }
+          },
+          {
+            "name": "\"耀阳\"",
+            "rangeId": "x-5",
+            "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
+            "skillType": 0,
+            "spData": {
+              "spType": 8,
+              "levelUpCost": null,
+              "maxChargeTime": 0,
+              "spCost": 0,
+              "initSp": 0,
+              "increment": 0
+            },
+            "prefabId": "sktok_nearl2_3",
+            "duration": -1,
+            "blackboard": [
+              {
+                "key": "atk_scale",
+                "value": 1.1
+              },
+              {
+                "key": "stun",
+                "value": 3
+              }
+            ],
+            "range": {
+              "id": "x-5",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                }
+              ]
+            }
+          },
+          {
+            "name": "\"耀阳\"",
+            "rangeId": "x-5",
+            "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
+            "skillType": 0,
+            "spData": {
+              "spType": 8,
+              "levelUpCost": null,
+              "maxChargeTime": 0,
+              "spCost": 0,
+              "initSp": 0,
+              "increment": 0
+            },
+            "prefabId": "sktok_nearl2_3",
+            "duration": -1,
+            "blackboard": [
+              {
+                "key": "atk_scale",
+                "value": 1.1
+              },
+              {
+                "key": "stun",
+                "value": 3
+              }
+            ],
+            "range": {
+              "id": "x-5",
+              "direction": 1,
+              "grids": [
+                {
+                  "row": 1,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": -1
+                },
+                {
+                  "row": 0,
+                  "col": 0
+                },
+                {
+                  "row": 0,
+                  "col": 1
+                },
+                {
+                  "row": -1,
+                  "col": 0
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "cnName": "“耀阳”",
+    "isCnOnly": true,
+    "fileIndex": 242,
+    "operatorName": "Nearl the Radiant Knight"
   }
 ]

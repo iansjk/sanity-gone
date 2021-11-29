@@ -623,10 +623,22 @@ const styles = (theme: Theme) => css`
       font-size: ${theme.typography.navigationLink.fontSize}px;
       line-height: ${theme.typography.navigationLink.lineHeight};
 
+      & > * ~ * {
+        margin-left: ${theme.spacing(2)};
+      }
+
       ${theme.breakpoints.down("mobile")} {
         background-color: ${rgba(theme.palette.dark.main, 0.66)};
         padding: ${theme.spacing(2)};
         margin: ${theme.spacing(2, 0, 0)};
+
+        & > * ~ * {
+          margin: 0;
+        }
+
+        .scroller-contents > * ~ * {
+          margin-left: ${theme.spacing(2)};
+        }
       }
 
       .spacer {
@@ -650,10 +662,6 @@ const styles = (theme: Theme) => css`
         img {
           margin-right: ${theme.spacing(1)};
         }
-      }
-
-      .scroller-contents > * ~ * {
-        margin-left: ${theme.spacing(2)};
       }
     }
 

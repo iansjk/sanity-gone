@@ -326,9 +326,6 @@ const styles =
             .logo-bg {
               display: none;
             }
-
-            height: 77px;
-            backdrop-filter: blur(8px);
           }
         }
 

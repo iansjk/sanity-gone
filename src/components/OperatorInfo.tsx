@@ -24,7 +24,8 @@ const getAttackType = (
 ): "Physical" | "Arts" | "Healing" | "None" => {
   if (subProfessionId === "bard") return "None";
   if (operatorClass === "Medic") return "Healing";
-  return description.toLowerCase().includes("arts damage")
+  return description.toLowerCase().includes("arts damage") ||
+    description.includes("法术伤害")
     ? "Arts"
     : "Physical";
 };

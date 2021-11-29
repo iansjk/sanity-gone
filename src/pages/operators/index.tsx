@@ -623,10 +623,6 @@ const styles = (theme: Theme) => css`
       font-size: ${theme.typography.navigationLink.fontSize}px;
       line-height: ${theme.typography.navigationLink.lineHeight};
 
-      & > * ~ * {
-        margin-left: ${theme.spacing(2)};
-      }
-
       ${theme.breakpoints.down("mobile")} {
         background-color: ${rgba(theme.palette.dark.main, 0.66)};
         padding: ${theme.spacing(2)};
@@ -655,6 +651,10 @@ const styles = (theme: Theme) => css`
           margin-right: ${theme.spacing(1)};
         }
       }
+
+      .scroller-contents > * ~ * {
+        margin-left: ${theme.spacing(2)};
+      }
     }
 
     .toggle-button-container {
@@ -664,6 +664,7 @@ const styles = (theme: Theme) => css`
       }
       display: flex; // This is literally only here to prevent margin collapsing.
     }
+
     .toggle-class-descriptions-button {
       display: flex;
       align-items: center;
@@ -709,6 +710,7 @@ const styles = (theme: Theme) => css`
         margin: 0;
         background-color: ${rgba(theme.palette.midtone.main, 0.66)};
       }
+
       .subclass-card {
         margin-bottom: ${theme.spacing(3)};
 

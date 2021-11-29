@@ -4,15 +4,15 @@ import ScrollContainer, {
   ScrollContainerProps,
   ScrollEvent,
 } from "react-indiana-drag-scroll";
-import cx from "clsx";
 
-export type HorizontalScrollerProps = Omit<
-  ScrollContainerProps,
-  "ref" | "innerRef"
->;
+export type HorizontalScrollerProps = React.HTMLAttributes<HTMLDivElement> & {
+  scrollContainerProps?: Omit<ScrollContainerProps, "ref" | "innerRef">;
+};
 
 const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
-  const { children, className, onScroll, ...rest } = props;
+  const { children, scrollContainerProps, ...rest } = props;
+  const { onScroll, ...remainingScrollContainerProps } =
+    scrollContainerProps ?? {};
   const containerRef = React.useRef<HTMLDivElement>(null);
   const contentRef = React.useRef<HTMLElement>(null);
 
@@ -53,12 +53,12 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
   };
 
   return (
-    <div ref={containerRef} css={styles}>
+    <div ref={containerRef} css={styles} {...rest}>
       <ScrollContainer
-        className={cx("scroller-contents", className)}
+        className="scroller-contents"
         onScroll={handleScroll}
         innerRef={contentRef}
-        {...rest}
+        {...remainingScrollContainerProps}
       >
         {children}
       </ScrollContainer>

@@ -636,8 +636,11 @@ const styles = (theme: Theme) => css`
           margin: 0;
         }
 
-        .scroller-contents > * ~ * {
-          margin-left: ${theme.spacing(2)};
+        .scroller-contents {
+          flex-grow: 1;
+          
+          & > * ~ * {
+          margin-left: ${theme.spacing(2)};}
         }
       }
 

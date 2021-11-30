@@ -26,7 +26,8 @@ export const decorators = [
 
 const styles = (theme) => css`
   header,
-  footer {
+  footer,
+  .navbar {
     display: none;
   }
 

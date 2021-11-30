@@ -322,6 +322,8 @@ const styles =
           }
 
           ${theme.breakpoints.down("mobile")} {
+            height: 75px;
+
             svg.weird-death-sphere,
             .logo-bg {
               display: none;

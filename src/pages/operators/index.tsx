@@ -629,7 +629,7 @@ const styles = (theme: Theme) => css`
 
       ${theme.breakpoints.down("mobile")} {
         background-color: ${rgba(theme.palette.dark.main, 0.66)};
-        padding: ${theme.spacing(2)};
+        padding: ${theme.spacing(2)} 0;
         margin: ${theme.spacing(2, 0, 0)};
 
         & > * ~ * {
@@ -637,6 +637,7 @@ const styles = (theme: Theme) => css`
         }
 
         .scroller-contents {
+          padding: ${theme.spacing(0, 2)};
           flex-grow: 1;
 
           & > * ~ * {

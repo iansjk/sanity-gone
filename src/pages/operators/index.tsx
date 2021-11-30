@@ -638,9 +638,10 @@ const styles = (theme: Theme) => css`
 
         .scroller-contents {
           flex-grow: 1;
-          
+
           & > * ~ * {
-          margin-left: ${theme.spacing(2)};}
+            margin-left: ${theme.spacing(2)};
+          }
         }
       }
 
@@ -1023,12 +1024,14 @@ const styles = (theme: Theme) => css`
         .operator-portrait-container {
           grid-area: x;
           overflow: hidden;
+          display: flex;
+          justify-content: center;
           border-radius: ${theme.spacing(0.5)};
 
           img.operator-portrait {
-            width: 100%;
             height: 360px;
-            object-fit: cover;
+            object-fit: none;
+            object-position: bottom;
             background-color: ${theme.palette.black.main};
             border-radius: ${theme.spacing(0.5)};
           }

@@ -119,6 +119,7 @@ const styles = (theme: Theme) => css`
         box-sizing: border-box;
         border: ${theme.spacing(0.25)} solid
           ${theme.palette.midtoneBrighter.main};
+        padding: 0;
         margin-bottom: ${theme.spacing(2)};
         display: flex;
         align-items: center;

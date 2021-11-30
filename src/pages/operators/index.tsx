@@ -926,7 +926,8 @@ const styles = (theme: Theme) => css`
               padding: ${theme.spacing(2)};
               display: grid;
               grid-template-columns: max-content 1fr max-content;
-              align-items: flex-end;
+              align-items: center;
+              align-content: flex-end;
               border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
 
               .go-to-guide-icon {

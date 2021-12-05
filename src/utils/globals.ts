@@ -185,6 +185,7 @@ export const getStatsAtLevel = (
     health: potHealth,
     attackPower: potAttack,
     defense: potDefense,
+    artsResistance: potRes,
     attackSpeed: potASPD,
     dpCost: potDp,
     redeployTimeInSeconds: potRedeploy,
@@ -194,6 +195,7 @@ export const getStatsAtLevel = (
         health: 0,
         attackPower: 0,
         defense: 0,
+        artsResistance: 0,
         attackSpeed: 0,
         dpCost: 0,
         redeployTimeInSeconds: 0,
@@ -214,7 +216,8 @@ export const getStatsAtLevel = (
     potDefense;
   const artsResistance =
     linearInterpolate(level, maxLevel, res, finalMaxRes) +
-    (trust ? trustRes : 0);
+    (trust ? trustRes : 0) +
+    potRes;
   const redeployTimeInSeconds = redeploy + potRedeploy;
   const dpCost = dp + potDp;
 
@@ -280,6 +283,7 @@ export const getPotStatIncreases = (
         health: 0,
         attackPower: 0,
         defense: 0,
+        artsResistance: 0,
         dpCost: 0,
         attackSpeed: 0,
         redeployTimeInSeconds: 0,
@@ -291,6 +295,7 @@ export const getPotStatIncreases = (
       health: 0,
       attackPower: 0,
       defense: 0,
+      artsResistance: 0,
       dpCost: 0,
       attackSpeed: 0,
       redeployTimeInSeconds: 0,
@@ -308,6 +313,9 @@ export const getPotStatIncreases = (
         break;
       case 2:
         curStats.defense += attribChange;
+        break;
+      case 3:
+        curStats.artsResistance += attribChange;
         break;
       case 4:
         curStats.dpCost += attribChange;
@@ -337,6 +345,7 @@ export const getMaxPotStatIncrease = (
         health: vals.health + previous.health,
         attackPower: vals.attackPower + previous.attackPower,
         defense: vals.defense + previous.defense,
+        artsResistance: vals.artsResistance + previous.artsResistance,
         dpCost: vals.dpCost + previous.dpCost,
         attackSpeed: vals.attackSpeed + previous.attackSpeed,
         redeployTimeInSeconds:
@@ -348,6 +357,7 @@ export const getMaxPotStatIncrease = (
       health: 0,
       attackPower: 0,
       defense: 0,
+      artsResistance: 0,
       dpCost: 0,
       attackSpeed: 0,
       redeployTimeInSeconds: 0,

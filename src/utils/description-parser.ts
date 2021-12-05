@@ -38,8 +38,6 @@ export const descriptionToHtml = (
       }
     );
 
-    console.log(recursiveMatch);
-
     if (recursiveMatch.length > 0) {
       let resultingString = "";
       for (let i = 0; i < recursiveMatch.length; i++) {

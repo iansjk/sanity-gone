@@ -84,9 +84,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
   // potentials is zero-indexed for some inane reason,
   // even though they're not zero-indexed in game
   const [eliteLevel, setEliteLevel] = useState(highestElite);
-  const [potentials, setPotentials] = useState(
-    potentialsMap[highestElite][potentialsMap[highestElite].length - 1]
-  );
+  const [potentials, setPotentials] = useState(potentialsMap[highestElite][0]);
 
   const [activePhase, setActivePhase] = useState(
     getTalentPhase(eliteLevel, potentials)

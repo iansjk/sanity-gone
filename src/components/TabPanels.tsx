@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { css } from "@mui/material";
+import { css, Theme } from "@mui/material";
 
 export type TabPanelsProps = React.HTMLAttributes<HTMLDivElement> &
   Partial<{
@@ -42,10 +42,16 @@ const TabPanels: React.FC<TabPanelsProps> = (props) => {
 };
 export default TabPanels;
 
-const styles = css`
+const styles = (theme: Theme) => css`
   & > * {
     &:focus:not(:focus-visible) {
       outline: none;
+    }
+
+    ${theme.breakpoints.down("maxWidth")} {
+      &:focus {
+        outline: none;
+      }
     }
   }
 `;

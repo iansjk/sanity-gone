@@ -72,7 +72,7 @@ const styles = (theme: Theme) => css`
       background-color: ${theme.palette.blue.main};
     }
 
-    input:focus + .checkbox-control {
+    input:focus-visible + .checkbox-control {
       box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em ${theme.palette.blue.main};
     }
   }

@@ -94,6 +94,7 @@ export interface PotentialStatChange {
   health: number;
   attackPower: number;
   defense: number;
+  artsResistance: number;
   dpCost: number;
   attackSpeed: number;
   redeployTimeInSeconds: number;

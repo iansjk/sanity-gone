@@ -5,7 +5,7 @@ export interface InterpolatedValue {
   value: number;
 }
 
-const descriptionTagLeftDelim = "<(?!span)[^>/]+>";
+const descriptionTagLeftDelim = "<(?:@ba.|\\$)[^>]+>";
 const descriptionTagRightDelim = "</>";
 
 const descriptionInterpolationRegex =
@@ -77,7 +77,10 @@ export const descriptionToHtml = (
   } while (recursiveMatch.length > 0);
 
   // replace any newlines with <br> tags to get past HTML whitespace collapsing
-  htmlDescription = htmlDescription.replace(/\n/g, "<br>");
+  htmlDescription = htmlDescription
+    .replace(/\n/g, "<br>")
+    .replace(/<\/br>/g, "<br>")
+    .replace(/<(?!\/?span)(?!br)([^>]+)>/g, "&lt;$1&gt;");
 
   do {
     match = descriptionInterpolationRegex.exec(htmlDescription);

@@ -270,6 +270,14 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                                 </span>
                               </span>
                             )}
+                            {pot.artsResistance > 0 && (
+                              <span>
+                                RES&nbsp;
+                                <span className="stat-value">
+                                  +{pot.artsResistance}%
+                                </span>
+                              </span>
+                            )}
                             {pot.dpCost < 0 && (
                               <span>
                                 DP Cost&nbsp;

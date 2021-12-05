@@ -79,7 +79,7 @@ export const descriptionToHtml = (
   // replace any newlines with <br> tags to get past HTML whitespace collapsing
   htmlDescription = htmlDescription
     .replace(/\n/g, "<br>")
-    .replace(/<(?!\/?span)(?!br)([^>]+)>/g, "&lt;$1&gt;");
+    .replace(/<(?!\/?span)(?!\/?br)([^>]+)>/g, "&lt;$1&gt;");
 
   do {
     match = descriptionInterpolationRegex.exec(htmlDescription);

@@ -72,28 +72,38 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
   const getTalentPhase = (
     eliteLevel: number,
     potential: number
-  ): TalentPhaseObject => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    return talentObject.candidates.find(
-      (talentPhase) =>
-        talentPhase.requiredPotentialRank === potential &&
-        talentPhase.unlockCondition.phase === eliteLevel
-    )!;
+  ): TalentPhaseObject | null => {
+    return (
+      talentObject.candidates.find(
+        (talentPhase) =>
+          talentPhase.requiredPotentialRank === potential &&
+          talentPhase.unlockCondition.phase === eliteLevel
+      ) ?? null
+    );
   };
 
   // potentials is zero-indexed for some inane reason,
   // even though they're not zero-indexed in game
   const [eliteLevel, setEliteLevel] = useState(highestElite);
-  const [potentials, setPotentials] = useState(potentialsMap[highestElite][0]);
+  const [potential, setPotential] = useState(potentialsMap[highestElite][0]);
 
   const [activePhase, setActivePhase] = useState(
-    getTalentPhase(eliteLevel, potentials)
+    getTalentPhase(eliteLevel, potential)
   );
 
-  const updateActivePhase = (eliteLevel: number, potentials: number) =>
-    setActivePhase(getTalentPhase(eliteLevel, potentials));
+  const updateActivePhase = (eliteLevel: number, potential: number) => {
+    let newActivePhase = getTalentPhase(eliteLevel, potential);
+    if (!newActivePhase) {
+      newActivePhase = getTalentPhase(eliteLevel, 0);
+      setPotential(0);
+    } else {
+      setPotential(potential);
+    }
+    setEliteLevel(eliteLevel);
+    setActivePhase(newActivePhase);
+  };
 
-  return (
+  return activePhase ? (
     <ClassNames>
       {({ cx }) => (
         <section
@@ -108,8 +118,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
                   key={`Elite ${elite}`}
                   className={eliteLevel === elite ? "active" : "inactive"}
                   onClick={() => {
-                    setEliteLevel(elite);
-                    updateActivePhase(elite, potentials);
+                    updateActivePhase(elite, potential);
                   }}
                   aria-label={`Elite ${elite}`}
                 >
@@ -124,9 +133,8 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
               {potentialsMap[eliteLevel].map((pot) => (
                 <RibbonButton
                   key={`Potential ${pot}`}
-                  className={potentials === pot ? "active" : "inactive"}
+                  className={potential === pot ? "active" : "inactive"}
                   onClick={() => {
-                    setPotentials(pot);
                     updateActivePhase(eliteLevel, pot);
                   }}
                   aria-label={`Potential ${pot}`}
@@ -159,7 +167,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
         </section>
       )}
     </ClassNames>
-  );
+  ) : null;
 };
 export default TalentInfo;
 

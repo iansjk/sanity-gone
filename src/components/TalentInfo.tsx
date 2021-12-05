@@ -59,14 +59,15 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
   ].sort(); //remove duplicates by spreading a set
   const highestElite = Math.max(...elitesList);
 
-  const potentialsList = [
-    ...new Set(
-      talentObject.candidates.map(
-        (talentPhase) => talentPhase.requiredPotentialRank
-      )
-    ),
-  ].sort(); //remove duplicates by spreading a set
-  const lowestPotentials = Math.min(...potentialsList);
+  const potentialsMap: { [eliteLevel: number]: number[] } = {};
+  talentObject.candidates.forEach((talentPhase) => {
+    const { phase: eliteLevel } = talentPhase.unlockCondition;
+    const { requiredPotentialRank: potential } = talentPhase;
+    potentialsMap[eliteLevel] = [
+      ...(potentialsMap[eliteLevel] ?? []),
+      potential,
+    ];
+  });
 
   const getTalentPhase = (
     eliteLevel: number,
@@ -83,7 +84,9 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
   // potentials is zero-indexed for some inane reason,
   // even though they're not zero-indexed in game
   const [eliteLevel, setEliteLevel] = useState(highestElite);
-  const [potentials, setPotentials] = useState(lowestPotentials);
+  const [potentials, setPotentials] = useState(
+    potentialsMap[highestElite][potentialsMap[highestElite].length - 1]
+  );
 
   const [activePhase, setActivePhase] = useState(
     getTalentPhase(eliteLevel, potentials)
@@ -120,7 +123,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
             </RibbonButtonGroup>
             <div className="divider" />
             <RibbonButtonGroup className="potential-buttons">
-              {potentialsList.map((pot) => (
+              {potentialsMap[eliteLevel].map((pot) => (
                 <RibbonButton
                   key={`Potential ${pot}`}
                   className={potentials === pot ? "active" : "inactive"}

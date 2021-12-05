@@ -80,7 +80,7 @@ export const descriptionToHtml = (
   htmlDescription = htmlDescription
     .replace(/\n/g, "<br>")
     .replace(/<\/br>/g, "<br>")
-    .replace(/<(?!\/?span)(?!\/?br)([^>]+)>/g, "&lt;$1&gt;");
+    .replace(/<(?!\/?span)(?!br)([^>]+)>/g, "&lt;$1&gt;");
 
   do {
     match = descriptionInterpolationRegex.exec(htmlDescription);

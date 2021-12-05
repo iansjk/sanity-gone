@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { Fragment, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 import { MdClose as CloseIcon } from "react-icons/md";
 
 import SanityGoneLogo from "./SanityGoneLogo";
+import SearchBar from "./SearchBar";
 
 export interface MobileMenuProps {
   open: boolean;
@@ -21,6 +22,8 @@ const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
     }
   };
 
+  const [isSearchOpen, setSearchOpen] = useState(false);
+
   return typeof window === "undefined"
     ? null
     : ReactDOM.createPortal(
@@ -34,6 +37,7 @@ const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
           <div className="mobile-menu-inner">
             <div className="top-bar">
               <SanityGoneLogo />
+              <div className="spacer" />
               <button
                 className="close-button"
                 aria-label="Close menu"
@@ -42,14 +46,27 @@ const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
                 <CloseIcon />
               </button>
             </div>
-            <h2 className="list-header">Navigation</h2>
             <ul>
               <li>
-                <a href="/operators">Operators</a>
+                <div className="search-bar-container">
+                  <SearchBar
+                    placeholder="Search"
+                    whenInputChange={(input) => {
+                      setSearchOpen(!!input);
+                    }}
+                  />
+                </div>
               </li>
-              <li>
-                <a href="/about">About</a>
-              </li>
+              {!isSearchOpen && (
+                <Fragment>
+                  <li>
+                    <a href="/operators">Operators</a>
+                  </li>
+                  <li>
+                    <a href="/about">About</a>
+                  </li>
+                </Fragment>
+              )}
             </ul>
           </div>
         </div>,
@@ -76,23 +93,28 @@ const styles = (theme: Theme) => css`
   }
 
   .top-bar {
-    height: 39px;
-    padding: ${theme.spacing(3)};
-    display: grid;
-    grid-template-columns: max-content 1fr max-content;
+    height: 75px;
+    padding: ${theme.spacing(0, 3, 0, 2)};
+    display: flex;
     align-items: center;
     background-color: ${theme.palette.dark.main};
 
+    .spacer {
+      flex: 1 1 0;
+    }
+
     .close-button {
       position: relative;
-      right: -7px;
-      top: -1px;
-      grid-column: 3;
       background: none;
       border: none;
+      display: flex;
+      align-items: center;
 
       svg {
         fill: ${theme.palette.white.main};
+        height: 24px;
+        width: 24px;
+        margin-right: ${theme.spacing(-1)};
       }
     }
   }
@@ -107,10 +129,54 @@ const styles = (theme: Theme) => css`
   }
 
   .list-header,
-  ul li a {
+  ul > li > a {
     margin: 0;
     padding: ${theme.spacing(3)};
     background-color: ${theme.palette.midtone.main};
+  }
+
+  ul li .search-bar-container {
+    background: ${theme.palette.midtone.main};
+    padding: ${theme.spacing(2, 0)};
+    margin: 0;
+
+    .search {
+      max-width: unset;
+
+      .search-bar {
+        border: none !important;
+        background: ${theme.palette.midtoneDarker.main};
+        max-width: unset;
+        width: auto;
+        height: ${theme.spacing(5)};
+        padding: ${theme.spacing(0)};
+        margin: ${theme.spacing(0, 2)};
+
+        &.menu-down {
+          border-radius: ${theme.spacing(0.5)};
+        }
+
+        &:focus-within {
+          background: ${theme.palette.dark.main};
+        }
+
+        .search-input {
+          font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+        }
+      }
+
+      .search-results {
+        padding-top: ${theme.spacing(2)};
+        border-radius: 0;
+      }
+    }
+
+    .search-results {
+      width: 100%;
+      max-width: unset;
+      margin-right: ${theme.spacing(2)};
+      border: none;
+    }
   }
 
   ul {

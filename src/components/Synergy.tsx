@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 
-import { professionToClass, subProfessionToSubclass } from "../utils/globals";
+import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
 import GroupSynergyIcon from "./icons/GroupSynergyIcon";
 import OperatorPortrait from "./OperatorPortrait";
 
@@ -64,7 +64,7 @@ const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
                 </span>
                 <span className="subclass">
                   {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
-                  {subProfessionToSubclass(subProfessionId!)}
+                  {subProfessionIdToSubclass(subProfessionId!)}
                 </span>
               </div>
             )}

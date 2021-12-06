@@ -66,7 +66,7 @@ const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
     },
   },
   ".potential-description": {
-    color: theme.palette.midtoneBrighterer.main,
+    color: theme.palette.gray.main,
   },
 }));
 

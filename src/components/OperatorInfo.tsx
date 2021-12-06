@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
 import { useMediaQuery, useTheme, Theme } from "@mui/material";
 import { Fragment } from "react";
-import { customShadows } from "../gatsby-theme-material-ui-top-layout/theme";
 
 import {
   professionToClass,
@@ -179,7 +178,7 @@ const styles = (theme: Theme) => css`
         color: ${theme.palette.white.main};
         border: 1px solid ${theme.palette.midtoneBrighter.main};
         border-radius: ${theme.spacing(0.5)};
-        box-shadow: ${customShadows.baseShadow};
+        box-shadow: ${theme.customShadows.baseShadow};
 
         &:hover {
           border: 1px solid ${theme.palette.midtoneBrighterer.main};

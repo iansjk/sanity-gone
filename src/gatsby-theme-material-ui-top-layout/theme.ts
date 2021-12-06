@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { createTheme } from "@mui/material";
+import { createTheme, ThemeOptions } from "@mui/material";
 
 declare module "@mui/material/styles" {
   interface SGPalette {
@@ -76,6 +76,14 @@ declare module "@mui/material/styles" {
     xl: false;
     mobile: true;
     maxWidth: true;
+  }
+
+  interface ThemeOptions {
+    customShadows: typeof customShadows;
+  }
+
+  interface Theme {
+    customShadows: typeof customShadows;
   }
 }
 
@@ -250,7 +258,7 @@ const baseTheme = createTheme({
       maxWidth: 1270 + spacingUnit * 3 * 2,
     },
   },
-});
+} as ThemeOptions);
 
 export const customShadows = {
   titleShadow: `0 ${baseTheme.spacing(0.25)} ${baseTheme.spacing(
@@ -263,6 +271,7 @@ export const customShadows = {
 
 const defaultTheme = createTheme({
   ...baseTheme,
+  customShadows,
   components: {
     MuiButton: {
       defaultProps: {

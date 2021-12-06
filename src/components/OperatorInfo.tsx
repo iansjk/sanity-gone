@@ -192,6 +192,10 @@ const styles = (theme: Theme) => css`
           }
         }
 
+        ${theme.breakpoints.down("mobile")} {
+          font-size: ${theme.typography.body1.fontSize}px;
+        }
+
         .class-icon,
         .subclass-icon {
           width: ${theme.spacing(3)};

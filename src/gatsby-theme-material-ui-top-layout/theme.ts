@@ -327,6 +327,25 @@ const defaultTheme = createTheme({
         },
       },
     },
+    MuiTooltip: {
+      defaultProps: {
+        arrow: true,
+        placement: "top",
+      },
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: baseTheme.palette.blackest.main,
+          padding: baseTheme.spacing(0.5, 1),
+          borderRadius: baseTheme.spacing(0.25),
+          fontSize: baseTheme.typography.body2.fontSize,
+          lineHeight: baseTheme.typography.body2.lineHeight,
+          textAlign: "left",
+        },
+        arrow: {
+          color: baseTheme.palette.blackest.main,
+        },
+      },
+    },
   },
 });
 export default defaultTheme;

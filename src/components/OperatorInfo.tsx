@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { useMediaQuery, useTheme, Theme } from "@mui/material";
+import { useMediaQuery, useTheme, Theme, Tooltip } from "@mui/material";
 import { Fragment } from "react";
 
 import {
@@ -75,11 +75,13 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
             href={`/operators#${slugify(operatorClass)}-${slugify(subclass)}`}
           >
             <span className="class-icon-container">
-              <img
-                className="class-icon"
-                src={operatorClassIcon(operatorClass.toLowerCase())}
-                alt={operatorClass}
-              />
+              <Tooltip title={operatorClass}>
+                <img
+                  className="class-icon"
+                  src={operatorClassIcon(operatorClass.toLowerCase())}
+                  alt=""
+                />
+              </Tooltip>
             </span>
             <span className="subclass-icon-container">
               <img

@@ -178,19 +178,17 @@ const styles = (theme: Theme) => css`
         font-weight: ${theme.typography.navigationLinkBold.fontWeight};
         line-height: 1;
         color: ${theme.palette.white.main};
-        border: 1px solid ${theme.palette.midtoneBrighter.main};
-        border-radius: ${theme.spacing(0.5)};
         box-shadow: ${theme.customShadows.baseShadow};
 
         &:hover {
-          border: 1px solid ${theme.palette.midtoneBrighterer.main};
-
           .class-icon-container {
+            border: 1px solid ${theme.palette.midtoneBrighterer.main};
             background-color: ${theme.palette.midtoneBrighter.main};
           }
 
           .subclass-icon-container {
             background-color: ${theme.palette.midtoneBrighterer.main};
+            border: 1px solid ${theme.palette.midtoneBrighterer.main};
           }
         }
 
@@ -206,6 +204,8 @@ const styles = (theme: Theme) => css`
           display: flex;
           align-items: center;
           background-color: ${theme.palette.midtoneExtra.main};
+          border: 1px solid ${theme.palette.midtoneBrighter.main};
+          border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
         }
 
         .subclass-icon-container {
@@ -213,6 +213,8 @@ const styles = (theme: Theme) => css`
           display: flex;
           align-items: center;
           background-color: ${theme.palette.midtoneBrighter.main};
+          border: 1px solid ${theme.palette.midtoneBrighter.main};
+          border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
 
           .subclass-icon {
             margin-right: ${theme.spacing(1)};

@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { useMediaQuery, useTheme, Theme } from "@mui/material";
+import { useMediaQuery, useTheme, Theme, Tooltip } from "@mui/material";
 import { Fragment } from "react";
 
 import {
@@ -74,18 +74,23 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
             className="class-and-subclass"
             href={`/operators#${slugify(operatorClass)}-${slugify(subclass)}`}
           >
-            <img
-              className="class-icon"
-              src={operatorClassIcon(operatorClass.toLowerCase())}
-              alt=""
-            />
-            {operatorClass}
-            <img
-              className="subclass-icon"
-              src={operatorSubclassIcon(subProfessionId)}
-              alt=""
-            />
-            {subclass}
+            <span className="class-icon-container">
+              <Tooltip title={operatorClass}>
+                <img
+                  className="class-icon"
+                  src={operatorClassIcon(operatorClass.toLowerCase())}
+                  alt=""
+                />
+              </Tooltip>
+            </span>
+            <span className="subclass-icon-container">
+              <img
+                className="subclass-icon"
+                src={operatorSubclassIcon(subProfessionId)}
+                alt=""
+              />
+              {subclass}
+            </span>
           </a>
         </div>
         <OperatorPortrait
@@ -168,17 +173,27 @@ const styles = (theme: Theme) => css`
       }
 
       .class-and-subclass {
-        padding: ${theme.spacing(1, 1.5)};
         display: flex;
         align-items: center;
         font-weight: ${theme.typography.navigationLinkBold.fontWeight};
+        line-height: 1;
         color: ${theme.palette.white.main};
-        border: 1px solid ${theme.palette.gray.main};
-        border-radius: ${theme.spacing(0.5)};
+        box-shadow: ${theme.customShadows.baseShadow};
 
         &:hover {
-          border-color: ${theme.palette.gray.main};
-          background-color: ${theme.palette.midtoneBrighter.main};
+          .class-icon-container {
+            border: 1px solid ${theme.palette.midtoneBrighterer.main};
+            background-color: ${theme.palette.midtoneBrighter.main};
+          }
+
+          .subclass-icon-container {
+            background-color: ${theme.palette.midtoneBrighterer.main};
+            border: 1px solid ${theme.palette.midtoneBrighterer.main};
+          }
+        }
+
+        ${theme.breakpoints.down("mobile")} {
+          font-size: ${theme.typography.body1.fontSize}px;
         }
 
         .class-icon,
@@ -186,11 +201,28 @@ const styles = (theme: Theme) => css`
           width: ${theme.spacing(3)};
           height: ${theme.spacing(3)};
           line-height: 1;
-          margin-right: ${theme.spacing(1)};
         }
 
-        .subclass-icon {
-          margin-left: ${theme.spacing(1)};
+        .class-icon-container {
+          padding: ${theme.spacing(1)};
+          display: flex;
+          align-items: center;
+          background-color: ${theme.palette.midtoneExtra.main};
+          border: 1px solid ${theme.palette.midtoneBrighter.main};
+          border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+        }
+
+        .subclass-icon-container {
+          padding: ${theme.spacing(1, 1.5)};
+          display: flex;
+          align-items: center;
+          background-color: ${theme.palette.midtoneBrighter.main};
+          border: 1px solid ${theme.palette.midtoneBrighter.main};
+          border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
+
+          .subclass-icon {
+            margin-right: ${theme.spacing(1)};
+          }
         }
       }
     }

@@ -44,20 +44,9 @@ import SliderWithInput from "./SliderWithInput";
 const SUMMON_ICON_SIZE = 60;
 
 const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
-  <Tooltip
-    {...rest}
-    classes={{ popper: className }}
-    placement="top"
-    arrow={true}
-  />
+  <Tooltip {...rest} classes={{ popper: className }} />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: theme.palette.blackest.main,
-    padding: theme.spacing(0.5, 1),
-    borderRadius: theme.spacing(0.25),
-    fontSize: theme.typography.body2.fontSize,
-    lineHeight: theme.typography.body2.lineHeight,
-    textAlign: "left",
     ul: {
       margin: 0,
       padding: 0,
@@ -76,11 +65,8 @@ const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
       },
     },
   },
-  [`& .${tooltipClasses.arrow}`]: {
-    color: theme.palette.blackest.main,
-  },
   ".potential-description": {
-    color: theme.palette.midtoneBrighterer.main,
+    color: theme.palette.gray.main,
   },
 }));
 

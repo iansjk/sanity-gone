@@ -9,6 +9,7 @@ import {
   MenuItem,
   styled,
   Theme,
+  Tooltip,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
@@ -484,13 +485,17 @@ const Operators: React.VFC<Props> = ({ data }) => {
                                   {operatorClass}
                                 </span>
                               </div>
-                              <div className="operator-subclass">
-                                <img
-                                  className="operator-subclass-icon"
-                                  src={operatorSubclassIcon(op.subProfessionId)}
-                                  alt={subclass}
-                                />
-                              </div>
+                              <Tooltip title={subclass}>
+                                <div className="operator-subclass">
+                                  <img
+                                    className="operator-subclass-icon"
+                                    src={operatorSubclassIcon(
+                                      op.subProfessionId
+                                    )}
+                                    alt={""}
+                                  />
+                                </div>
+                              </Tooltip>
                               <div className="on-hover">
                                 {hasGuide ? (
                                   <Fragment>

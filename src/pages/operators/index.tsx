@@ -470,6 +470,14 @@ const Operators: React.VFC<Props> = ({ data }) => {
                               />
                             </div>
                             <div className="operator-text-content">
+                              {hasGuide && (
+                                <a
+                                  className="dummy-clickable-area"
+                                  href={`/operators/${slugify(op.name)}`}
+                                  tabIndex={-1}
+                                  aria-hidden="true"
+                                />
+                              )}
                               <div className="operator-info">
                                 <span className="operator-name">{op.name}</span>
                                 <span
@@ -975,6 +983,13 @@ const styles = (theme: Theme) => css`
             line-height: ${theme.typography.body3.lineHeight};
             text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
               rgba(0, 0, 0, 0.5);
+          }
+
+          .dummy-clickable-area {
+            grid-row: 1;
+            grid-column: 2;
+            width: 100%;
+            height: 100%;
           }
 
           .operator-info {

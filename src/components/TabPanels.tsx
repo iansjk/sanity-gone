@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { css, Theme } from "@mui/material";
 
 export type TabPanelsProps = React.HTMLAttributes<HTMLDivElement> &
   Partial<{
@@ -24,7 +25,7 @@ const TabPanels: React.FC<TabPanelsProps> = (props) => {
   }, [activeTab, userActed]);
 
   return (
-    <div {...rest} ref={panelsRef}>
+    <div css={styles} {...rest} ref={panelsRef}>
       {React.Children.map(panelChildren, (child, i) => {
         const isActiveTab = i === activeTab;
         return React.cloneElement<
@@ -40,3 +41,17 @@ const TabPanels: React.FC<TabPanelsProps> = (props) => {
   );
 };
 export default TabPanels;
+
+const styles = (theme: Theme) => css`
+  & > * {
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    ${theme.breakpoints.down("maxWidth")} {
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+`;

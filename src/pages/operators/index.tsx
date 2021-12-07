@@ -887,7 +887,7 @@ const styles = (theme: Theme) => css`
         border-radius: ${theme.spacing(0.5)};
         box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)}
           ${theme.spacing(1)} rgba(0, 0, 0, 0.15);
-        transition-property: transform, filter;
+        transition-property: filter;
         transition-duration: 0.15s;
         transition-timing-function: ease-in-out;
 
@@ -945,7 +945,6 @@ const styles = (theme: Theme) => css`
           }
 
           &.has-guide {
-            transform: scale(1.1);
             filter: brightness(110%);
 
             .operator-text-content {

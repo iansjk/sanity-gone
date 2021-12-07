@@ -484,13 +484,13 @@ const Operators: React.VFC<Props> = ({ data }) => {
                                   {operatorClass}
                                 </span>
                               </div>
-                              <span className="operator-subclass">
+                              <div className="operator-subclass">
                                 <img
                                   className="operator-subclass-icon"
                                   src={operatorSubclassIcon(op.subProfessionId)}
                                   alt={subclass}
                                 />
-                              </span>
+                              </div>
                               <div className="on-hover">
                                 {hasGuide ? (
                                   <Fragment>
@@ -924,6 +924,8 @@ const styles = (theme: Theme) => css`
             .on-hover {
               margin-top: -4px;
               padding: ${theme.spacing(2)};
+              grid-row: 2;
+              grid-column: span 2;
               display: grid;
               grid-template-columns: max-content 1fr max-content;
               align-items: center;
@@ -953,6 +955,7 @@ const styles = (theme: Theme) => css`
         .operator-text-content {
           grid-area: x;
           display: grid;
+          grid-template-columns: max-content 1fr;
           grid-template-rows: max-content 1fr max-content;
           background-image: linear-gradient(
               120deg,
@@ -972,6 +975,7 @@ const styles = (theme: Theme) => css`
 
           .operator-info {
             grid-row: 3;
+            grid-column: span 2;
             display: grid;
             grid-template-rows: repeat(2, max-content);
             grid-template-columns: 1fr max-content;
@@ -1010,11 +1014,16 @@ const styles = (theme: Theme) => css`
 
           .operator-subclass {
             grid-row: 1;
+            padding: ${theme.spacing(0.75)};
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: ${rgba(theme.palette.dark.main, 0.66)};
+            border-bottom-right-radius: ${theme.spacing(1)};
 
             .operator-subclass-icon {
-              width: 40px;
-              height: 40px;
-              margin: ${theme.spacing(1, 0, 0, 1)};
+              width: ${theme.spacing(4)};
+              height: ${theme.spacing(4)};
               line-height: 1;
               filter: drop-shadow(
                 0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)

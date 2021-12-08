@@ -1038,6 +1038,7 @@ const styles = (theme: Theme) => css`
             background-color: ${rgba(theme.palette.dark.main, 0.66)};
             border: none;
             border-bottom-right-radius: ${theme.spacing(1)};
+            cursor: pointer;
 
             .operator-subclass-icon {
               width: ${theme.spacing(4)};

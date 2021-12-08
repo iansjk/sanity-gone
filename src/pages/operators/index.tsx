@@ -498,13 +498,16 @@ const Operators: React.VFC<Props> = ({ data }) => {
                             : {})}
                         >
                           <span className="operator-name">
-                            {alterName ? charName : op.name}
+                            {alterName ? (
+                              <Fragment>
+                                <span className="base-name">{charName}</span>
+                                <span className="alter-name">{alterName}</span>
+                              </Fragment>
+                            ) : (
+                              op.name
+                            )}
                           </span>
-                          {alterName && (
-                            <span className="operator-alter-name">
-                              {alterName}
-                            </span>
-                          )}
+
                           <span
                             className={cx(
                               "rarity",
@@ -1008,9 +1011,24 @@ const styles = (theme: Theme) => css`
 
             .operator-name {
               grid-column: span 2;
-              font-size: ${theme.typography.body2.fontSize}px;
-              line-height: ${theme.typography.body2.lineHeight};
-              font-weight: ${theme.typography.body2Bold.fontWeight};
+              font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+              line-height: ${theme.typography.skillTalentHeading.lineHeight};
+              font-weight: ${theme.typography.skillTalentHeading.fontWeight};
+
+              .base-name {
+                display: inline-block;
+              }
+
+              .alter-name {
+                display: inline-block;
+                font-size: ${theme.typography.operatorCardAlterName.fontSize}px;
+                font-weight: ${theme.typography.operatorCardAlterName
+                  .fontWeight};
+                line-height: ${theme.typography.operatorCardAlterName
+                  .lineHeight};
+                text-transform: ${theme.typography.operatorCardAlterName
+                  .textTransform};
+              }
             }
 
             .rarity,

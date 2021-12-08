@@ -531,18 +531,19 @@ const Operators: React.VFC<Props> = ({ data }) => {
                           </button>
                         </Tooltip>
                         {/* TODO "NEW" should go here */}
-                        <div className="on-hover">
-                          {hasGuide ? (
-                            <Fragment>
-                              <a href={`/operators/${slugify(op.name)}`}>
-                                Read Guide
-                              </a>
-                              <NavigateRightArrow className="go-to-guide-icon" />
-                            </Fragment>
-                          ) : (
-                            <span>Guide Unavailable</span>
-                          )}
-                        </div>
+                        {hasGuide ? (
+                          <a
+                            className="go-to-guide-link"
+                            href={`/operators/${slugify(op.name)}`}
+                          >
+                            Read Guide
+                            <NavigateRightArrow className="go-to-guide-icon" />
+                          </a>
+                        ) : (
+                          <span className="no-guide-text">
+                            Guide Unavailable
+                          </span>
+                        )}
                       </div>
                     </li>
                   );
@@ -909,59 +910,15 @@ const styles = (theme: Theme) => css`
           ${theme.spacing(1)} rgba(0, 0, 0, 0.15);
         transition: filter 0.15s ease-in-out;
 
-        ${theme.breakpoints.down("mobile")} {
-          width: 148px;
-        }
-
         &.no-guide {
           opacity: 0.33;
         }
 
         &.has-guide {
           cursor: pointer;
-        }
 
-        .on-hover {
-          display: none;
-          font-size: ${theme.typography.body3.fontSize}px;
-          line-height: ${theme.typography.body3.lineHeight};
-          text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
-            rgba(0, 0, 0, 0.5);
-        }
-
-        &:hover {
-          .operator-card-content {
-            .operator-info {
-              display: none;
-            }
-
-            .on-hover {
-              margin-top: -4px;
-              padding: ${theme.spacing(2)};
-              grid-row: 2;
-              grid-column: span 2;
-              display: grid;
-              grid-template-columns: max-content 1fr max-content;
-              align-items: center;
-              align-content: flex-end;
-              border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
-
-              .go-to-guide-icon {
-                grid-column: 3;
-                height: ${theme.typography.body3.lineHeight};
-              }
-            }
-          }
-
-          &.has-guide {
+          &:hover {
             filter: brightness(110%);
-
-            .operator-card-content {
-              .on-hover {
-                border-bottom: ${theme.spacing(0.5)} solid
-                  ${theme.palette.white.main};
-              }
-            }
           }
         }
 
@@ -977,14 +934,6 @@ const styles = (theme: Theme) => css`
             ),
             linear-gradient(to bottom, transparent 42%, #000 100%);
           border-radius: ${theme.spacing(0.5)};
-
-          .on-hover {
-            display: none;
-            font-size: ${theme.typography.body3.fontSize}px;
-            line-height: ${theme.typography.body3.lineHeight};
-            text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
-              rgba(0, 0, 0, 0.5);
-          }
 
           .dummy-clickable-area {
             grid-row: 1;

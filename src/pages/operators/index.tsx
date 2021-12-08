@@ -1,8 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { graphql } from "gatsby";
-import { ClassNames, css, Global } from "@emotion/react";
 import {
   Button,
+  css,
+  GlobalStyles,
   ListItemIcon,
   ListItemText,
   Menu,
@@ -17,6 +18,7 @@ import { DateTime } from "luxon";
 import slugify from "@sindresorhus/slugify";
 import { lighten, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
+import cx from "clsx";
 
 import Layout from "../../Layout";
 import {
@@ -110,9 +112,6 @@ const Operators: React.VFC<Props> = ({ data }) => {
   const operatorsWithGuides = new Set(
     guideNodes.map((node) => node.operator.name)
   );
-  const lastUpdatedAt = guideNodes
-    .map((node) => DateTime.fromISO(node.updatedAt))
-    .reduce((prev, curr) => (curr > prev ? curr : prev));
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
   const [showClassDescriptions, setShowClassDescriptions] = useState(true);
   const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
@@ -174,6 +173,12 @@ const Operators: React.VFC<Props> = ({ data }) => {
   const handleSubclassClick = (subProfessionId: string | null) => () => {
     setSelectedSubProfessionId(subProfessionId);
     setIsSubclassMenuOpen(false);
+  };
+
+  const handleOperatorCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const url = e.currentTarget.getAttribute("data-href")!;
+    window.location.href = url;
   };
 
   const selectedClass =
@@ -344,7 +349,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
       previousLocationLink="/"
        */
     >
-      <Global styles={globalOverrideStyles(theme)} />
+      <GlobalStyles styles={globalOverrideStyles(theme)} />
       <main css={styles}>
         <div className="main-container">
           {/* <span className="last-updated">
@@ -457,84 +462,86 @@ const Operators: React.VFC<Props> = ({ data }) => {
                     op.subProfessionId
                   );
                   const hasGuide = operatorsWithGuides.has(op.name);
+                  const [charName, alterName] = op.name.split(" the ");
+
                   return (
-                    <ClassNames key={op.id}>
-                      {({ cx }) => {
-                        const inner = (
-                          <Fragment>
-                            <div className="operator-portrait-container">
-                              <img
-                                alt=""
-                                className="operator-portrait"
-                                src={operatorPortrait(op.name)}
-                              />
-                            </div>
-                            <div className="operator-text-content">
-                              {hasGuide && (
-                                <a
-                                  className="dummy-clickable-area"
-                                  href={`/operators/${slugify(op.name)}`}
-                                  tabIndex={-1}
-                                  aria-hidden="true"
-                                />
-                              )}
-                              <div className="operator-info">
-                                <span className="operator-name">{op.name}</span>
-                                <span
-                                  className={cx(
-                                    "rarity",
-                                    `rarity-${op.rarity + 1}-stars`
-                                  )}
-                                  aria-label={`${op.rarity + 1} stars`}
-                                >
-                                  {op.rarity + 1} ★
-                                </span>
-                                <span className="operator-class">
-                                  {operatorClass}
-                                </span>
-                              </div>
-                              <Tooltip title={subclass}>
-                                <div className="operator-subclass">
-                                  <img
-                                    className="operator-subclass-icon"
-                                    src={operatorSubclassIcon(
-                                      op.subProfessionId
-                                    )}
-                                    alt={""}
-                                  />
-                                </div>
-                              </Tooltip>
-                              <div className="on-hover">
-                                {hasGuide ? (
-                                  <Fragment>
-                                    <span>Read Guide</span>
-                                    <NavigateRightArrow className="go-to-guide-icon" />
-                                  </Fragment>
-                                ) : (
-                                  <span>Guide Unavailable</span>
-                                )}
-                              </div>
-                            </div>
-                          </Fragment>
-                        );
-                        return (
-                          <li
+                    <li
+                      key={op.name}
+                      className={cx(
+                        "operator-card",
+                        hasGuide ? "has-guide" : "no-guide"
+                      )}
+                    >
+                      <div className="operator-portrait-container">
+                        <img
+                          alt=""
+                          className="operator-portrait"
+                          src={operatorPortrait(op.name)}
+                        />
+                      </div>
+                      <div className="operator-card-content">
+                        {hasGuide && (
+                          <a
+                            className="dummy-clickable-area"
+                            href={`/operators/${slugify(op.name)}`}
+                            tabIndex={-1}
+                            aria-hidden="true"
+                          />
+                        )}
+                        <div
+                          className="operator-info"
+                          {...(hasGuide
+                            ? {
+                                onClick: handleOperatorCardClick,
+                                "data-href": `/operators/${slugify(op.name)}`,
+                              }
+                            : {})}
+                        >
+                          <span className="operator-name">
+                            {alterName ? charName : op.name}
+                          </span>
+                          {alterName && (
+                            <span className="operator-alter-name">
+                              {alterName}
+                            </span>
+                          )}
+                          <span
                             className={cx(
-                              "operator",
-                              hasGuide ? "has-guide" : "no-guide"
+                              "rarity",
+                              `rarity-${op.rarity + 1}-stars`
                             )}
+                            aria-label={`${op.rarity + 1} stars`}
                           >
-                            {hasGuide ? (
+                            {op.rarity + 1} ★
+                          </span>
+                          <span key="opClass" className="operator-class">
+                            {operatorClass}
+                          </span>
+                        </div>
+                        <Tooltip title={subclass}>
+                          <button className="operator-subclass">
+                            <img
+                              className="operator-subclass-icon"
+                              src={operatorSubclassIcon(op.subProfessionId)}
+                              alt={""}
+                            />
+                          </button>
+                        </Tooltip>
+                        {/* TODO "NEW" should go here */}
+                        <div className="on-hover">
+                          {hasGuide ? (
+                            <Fragment>
                               <a href={`/operators/${slugify(op.name)}`}>
-                                {inner}
+                                Read Guide
                               </a>
-                            ) : (
-                              inner
-                            )}
-                          </li>
-                        );
-                      }}
-                    </ClassNames>
+                              <NavigateRightArrow className="go-to-guide-icon" />
+                            </Fragment>
+                          ) : (
+                            <span>Guide Unavailable</span>
+                          )}
+                        </div>
+                      </div>
+                    </li>
                   );
                 })}
               </ul>
@@ -888,36 +895,27 @@ const styles = (theme: Theme) => css`
         gap: ${theme.spacing(2)};
       }
 
-      li.operator {
+      li.operator-card {
         width: 100%;
         height: 280px;
         flex-grow: 1;
+        display: grid;
+        grid-template-areas: "x";
         border-radius: ${theme.spacing(0.5)};
         box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)}
           ${theme.spacing(1)} rgba(0, 0, 0, 0.15);
-        transition-property: filter;
-        transition-duration: 0.15s;
-        transition-timing-function: ease-in-out;
+        transition: filter 0.15s ease-in-out;
 
         ${theme.breakpoints.down("mobile")} {
           width: 148px;
         }
 
         &.no-guide {
-          opacity: 0.5;
-          cursor: initial;
+          opacity: 0.33;
         }
 
-        &.no-guide,
-        &.has-guide a {
-          display: grid;
-          grid-template-areas: "x";
-        }
-
-        &.has-guide a {
-          width: 100%;
-          height: 100%;
-          color: inherit;
+        &.has-guide {
+          cursor: pointer;
         }
 
         .on-hover {
@@ -929,7 +927,7 @@ const styles = (theme: Theme) => css`
         }
 
         &:hover {
-          .operator-text-content {
+          .operator-card-content {
             .operator-info {
               display: none;
             }
@@ -955,7 +953,7 @@ const styles = (theme: Theme) => css`
           &.has-guide {
             filter: brightness(110%);
 
-            .operator-text-content {
+            .operator-card-content {
               .on-hover {
                 border-bottom: ${theme.spacing(0.5)} solid
                   ${theme.palette.white.main};
@@ -964,7 +962,7 @@ const styles = (theme: Theme) => css`
           }
         }
 
-        .operator-text-content {
+        .operator-card-content {
           grid-area: x;
           display: grid;
           grid-template-columns: max-content 1fr;
@@ -1031,13 +1029,14 @@ const styles = (theme: Theme) => css`
             }
           }
 
-          .operator-subclass {
+          button.operator-subclass {
             grid-row: 1;
             padding: ${theme.spacing(0.75)};
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: ${rgba(theme.palette.dark.main, 0.66)};
+            border: none;
             border-bottom-right-radius: ${theme.spacing(1)};
 
             .operator-subclass-icon {

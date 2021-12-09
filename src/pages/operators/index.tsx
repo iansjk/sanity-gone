@@ -469,7 +469,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
                       className={cx(
                         "operator-card",
                         hasGuide ? "has-guide" : "no-guide",
-                        `rarity-${op.rarity + 1}-stars`
+                        `rarity-${op.rarity + 1}-star${
+                          op.rarity > 0 ? "s" : ""
+                        }`
                       )}
                     >
                       <div className="operator-portrait-container">
@@ -924,6 +926,74 @@ const styles = (theme: Theme) => css`
           }
         }
 
+        &.rarity-1-star {
+          /* fighting high specificity on the base style */
+          .rarity-star {
+            color: white !important;
+            background-clip: unset !important;
+          }
+        }
+
+        &.rarity-2-stars {
+          .operator-class,
+          .rarity-number {
+            color: #d3ff77;
+          }
+
+          .rarity-star,
+          .go-to-guide-link {
+            background: linear-gradient(to right, #d3ff77, #a7e855);
+          }
+        }
+
+        &.rarity-3-stars {
+          .operator-class,
+          .rarity-number {
+            color: #7cd8ff;
+          }
+
+          .rarity-star,
+          .go-to-guide-link {
+            background: linear-gradient(to right, #7cd8ff, #49b3ff);
+          }
+        }
+
+        &.rarity-4-stars {
+          .operator-class,
+          .rarity-number {
+            color: #d1d0ee;
+          }
+
+          .rarity-star,
+          .go-to-guide-link {
+            background: linear-gradient(to right, #d1d0ee, #9d9bf4);
+          }
+        }
+
+        &.rarity-5-stars {
+          .operator-class,
+          .rarity-number {
+            color: #ffe9b0;
+          }
+
+          .rarity-star,
+          .go-to-guide-link {
+            background: linear-gradient(to right, #ffe9b0, #e5c675);
+          }
+        }
+
+        &.rarity-6-stars {
+          .operator-class,
+          .rarity-number {
+            color: #ff9254;
+          }
+
+          .rarity-star,
+          .go-to-guide-link {
+            background: linear-gradient(to right, #ff9254, #ede637);
+          }
+        }
+
         .operator-card-content {
           grid-area: x;
           display: grid;
@@ -943,6 +1013,7 @@ const styles = (theme: Theme) => css`
             ),
             linear-gradient(to bottom, transparent 42%, #000 100%);
           border-radius: ${theme.spacing(0.5)};
+          color: ${theme.palette.white.main};
 
           .dummy-clickable-area {
             grid-area: dummy;
@@ -993,6 +1064,11 @@ const styles = (theme: Theme) => css`
                 .fontWeight};
               line-height: ${theme.typography.operatorBrowserNameHeading
                 .lineHeight};
+
+              .rarity-star {
+                color: transparent;
+                background-clip: text;
+              }
             }
 
             .operator-class {

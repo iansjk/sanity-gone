@@ -1129,6 +1129,7 @@ const styles = (theme: Theme) => css`
             transition: height 0.15s ease-in-out;
             height: ${theme.spacing(0.5)};
 
+            &:hover,
             &:focus {
               height: ${theme.spacing(3.75)};
             }

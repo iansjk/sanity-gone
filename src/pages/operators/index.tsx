@@ -968,16 +968,14 @@ const styles = (theme: Theme) => css`
 
             .operator-name {
               grid-column: span 2;
+              display: flex;
+              flex-direction: column;
               font-size: ${theme.typography.skillTalentHeading.fontSize}px;
               line-height: ${theme.typography.skillTalentHeading.lineHeight};
               font-weight: ${theme.typography.skillTalentHeading.fontWeight};
 
-              .base-name {
-                display: inline-block;
-              }
-
               .alter-name {
-                display: inline-block;
+                margin-top: ${theme.spacing(0.75)};
                 font-size: ${theme.typography.operatorCardAlterName.fontSize}px;
                 font-weight: ${theme.typography.operatorCardAlterName
                   .fontWeight};

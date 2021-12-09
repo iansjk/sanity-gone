@@ -34,7 +34,6 @@ import {
   subProfessionIdToSubclass,
   toTitleCase,
 } from "../../utils/globals";
-import NavigateRightArrow from "../../components/icons/NavigateRightArrow";
 import CustomCheckbox from "../../components/CustomCheckbox";
 import FilterIcon from "../../components/icons/FilterIcon";
 import HorizontalScroller from "../../components/HorizontalScroller";

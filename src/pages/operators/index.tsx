@@ -512,7 +512,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
                               "rarity",
                               `rarity-${op.rarity + 1}-stars`
                             )}
-                            aria-label={`${op.rarity + 1} stars`}
+                            title={`${op.rarity + 1} stars`}
                           >
                             {op.rarity + 1} ★
                           </span>

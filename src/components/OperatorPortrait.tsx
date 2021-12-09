@@ -36,7 +36,7 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
     >
       {isLimited && variant === "normal" && (
         <span className="limited-wrapper">
-          <span className="limited" aria-label="Limited operator">
+          <span className="limited" title="Limited operator">
             Limited
           </span>
         </span>

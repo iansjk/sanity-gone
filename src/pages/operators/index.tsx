@@ -537,10 +537,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
                             href={`/operators/${slugify(op.name)}`}
                           >
                             Read Guide
-                            <NavigateRightArrow className="go-to-guide-icon" />
                           </a>
                         ) : (
-                          <span className="no-guide-text">
+                          <span className="visually-hidden">
                             Guide Unavailable
                           </span>
                         )}
@@ -919,14 +918,24 @@ const styles = (theme: Theme) => css`
 
           &:hover {
             filter: brightness(110%);
+
+            a.go-to-guide-link {
+              bottom: 0;
+            }
           }
         }
 
         .operator-card-content {
           grid-area: x;
           display: grid;
+          position: relative;
+          grid-template-areas:
+            "subclass dummy"
+            ". ."
+            "info info";
           grid-template-columns: max-content 1fr;
           grid-template-rows: max-content 1fr max-content;
+          overflow: hidden;
           background-image: linear-gradient(
               120deg,
               ${theme.palette.midtoneDarker.main} 0%,
@@ -936,15 +945,13 @@ const styles = (theme: Theme) => css`
           border-radius: ${theme.spacing(0.5)};
 
           .dummy-clickable-area {
-            grid-row: 1;
-            grid-column: 2;
+            grid-area: dummy;
             width: 100%;
             height: 100%;
           }
 
           .operator-info {
-            grid-row: 3;
-            grid-column: span 2;
+            grid-area: info;
             display: grid;
             grid-template-rows: repeat(2, max-content);
             grid-template-columns: 1fr max-content;
@@ -997,7 +1004,7 @@ const styles = (theme: Theme) => css`
           }
 
           button.operator-subclass {
-            grid-row: 1;
+            grid-area: subclass;
             padding: ${theme.spacing(0.75)};
             display: flex;
             align-items: center;
@@ -1014,6 +1021,28 @@ const styles = (theme: Theme) => css`
               filter: drop-shadow(
                 0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)
               );
+            }
+          }
+
+          a.go-to-guide-link {
+            grid-area: info;
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            bottom: -26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: ${theme.typography.label2.fontSize}px;
+            line-height: ${theme.typography.label2.lineHeight};
+            font-weight: ${theme.typography.label2.fontWeight};
+            text-transform: uppercase;
+            color: ${theme.palette.blackest.main};
+            background-color: ${theme.palette.white.main};
+            transition: bottom 0.15s ease-in-out;
+
+            &:focus {
+              bottom: 0;
             }
           }
         }

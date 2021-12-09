@@ -468,7 +468,8 @@ const Operators: React.VFC<Props> = ({ data }) => {
                       key={op.name}
                       className={cx(
                         "operator-card",
-                        hasGuide ? "has-guide" : "no-guide"
+                        hasGuide ? "has-guide" : "no-guide",
+                        `rarity-${op.rarity + 1}-stars`
                       )}
                     >
                       <div className="operator-portrait-container">
@@ -506,15 +507,14 @@ const Operators: React.VFC<Props> = ({ data }) => {
                               op.name
                             )}
                           </span>
-
                           <span
-                            className={cx(
-                              "rarity",
-                              `rarity-${op.rarity + 1}-stars`
-                            )}
-                            title={`${op.rarity + 1} stars`}
+                            className="rarity"
+                            title={`Rarity: ${op.rarity + 1} stars`}
                           >
-                            {op.rarity + 1} ★
+                            <span className="rarity-number">
+                              {op.rarity + 1}
+                            </span>{" "}
+                            <span className="rarity-star">★</span>
                           </span>
                           <span key="opClass" className="operator-class">
                             {operatorClass}

@@ -536,7 +536,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
                             className="go-to-guide-link"
                             href={`/operators/${slugify(op.name)}`}
                           >
-                            Read Guide
+                            <span className="go-to-guide-text">Read Guide</span>
                           </a>
                         ) : (
                           <span className="visually-hidden">
@@ -920,7 +920,7 @@ const styles = (theme: Theme) => css`
             filter: brightness(110%);
 
             a.go-to-guide-link {
-              bottom: 0;
+              height: 30px;
             }
           }
         }
@@ -932,9 +932,10 @@ const styles = (theme: Theme) => css`
           grid-template-areas:
             "subclass dummy"
             ". ."
-            "info info";
+            "info info"
+            "link link";
           grid-template-columns: max-content 1fr;
-          grid-template-rows: max-content 1fr max-content;
+          grid-template-rows: max-content 1fr max-content min-content;
           overflow: hidden;
           background-image: linear-gradient(
               120deg,
@@ -1025,24 +1026,25 @@ const styles = (theme: Theme) => css`
           }
 
           a.go-to-guide-link {
-            grid-area: info;
-            position: absolute;
+            grid-area: link;
             width: 100%;
-            height: 30px;
-            bottom: -26px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-size: ${theme.typography.label2.fontSize}px;
             line-height: ${theme.typography.label2.lineHeight};
             font-weight: ${theme.typography.label2.fontWeight};
             text-transform: uppercase;
+            text-align: center;
             color: ${theme.palette.blackest.main};
             background-color: ${theme.palette.white.main};
-            transition: bottom 0.15s ease-in-out;
+            transition: height 0.15s ease-in-out;
+            height: 4px;
 
             &:focus {
-              bottom: 0;
+              height: 30px;
+            }
+
+            .go-to-guide-text {
+              display: inline-block;
+              margin-top: 6px;
             }
           }
         }

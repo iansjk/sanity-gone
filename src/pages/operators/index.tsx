@@ -1034,15 +1034,15 @@ const styles = (theme: Theme) => css`
             color: ${theme.palette.blackest.main};
             background-color: ${theme.palette.white.main};
             transition: height 0.15s ease-in-out;
-            height: 4px;
+            height: ${theme.spacing(0.5)};
 
             &:focus {
-              height: 30px;
+              height: ${theme.spacing(3.75)};
             }
 
             .go-to-guide-text {
               display: inline-block;
-              margin-top: 6px;
+              margin-top: ${theme.spacing(0.75)};
             }
           }
         }

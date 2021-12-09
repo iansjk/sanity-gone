@@ -1042,7 +1042,7 @@ const styles = (theme: Theme) => css`
             display: grid;
             grid-template-rows: repeat(2, max-content);
             grid-template-columns: 1fr max-content;
-            padding: ${theme.spacing(2)};
+            padding: ${theme.spacing(1.5)};
             row-gap: ${theme.spacing(1)};
 
             .operator-name,

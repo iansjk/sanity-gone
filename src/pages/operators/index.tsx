@@ -986,19 +986,20 @@ const styles = (theme: Theme) => css`
               }
             }
 
-            .rarity,
-            .operator-class {
-              font-size: ${theme.typography.label2.fontSize}px;
-              line-height: ${theme.typography.label2.lineHeight};
-            }
-
             .rarity {
               grid-column: 2;
+              font-size: ${theme.typography.operatorBrowserNameHeading
+                .fontSize}px;
+              font-weight: ${theme.typography.operatorBrowserNameHeading
+                .fontWeight};
+              line-height: ${theme.typography.operatorBrowserNameHeading
+                .lineHeight};
             }
 
             .operator-class {
               grid-row: 2;
-              text-transform: uppercase;
+              font-size: ${theme.typography.body3.fontSize}px;
+              line-height: ${theme.typography.body3.lineHeight};
             }
           }
 

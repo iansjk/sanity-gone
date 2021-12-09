@@ -180,6 +180,14 @@ const Operators: React.VFC<Props> = ({ data }) => {
     window.location.href = url;
   };
 
+  const handleSubclassFilter = (
+    profession: string,
+    subProfessionId: string
+  ) => {
+    setSelectedProfession(profession);
+    setSelectedSubProfessionId(subProfessionId);
+  };
+
   const selectedClass =
     selectedProfession != null ? professionToClass(selectedProfession) : null;
   const selectedSubclass =
@@ -523,7 +531,15 @@ const Operators: React.VFC<Props> = ({ data }) => {
                           </span>
                         </div>
                         <Tooltip title={subclass}>
-                          <button className="operator-subclass">
+                          <button
+                            className="operator-subclass"
+                            onClick={() =>
+                              handleSubclassFilter(
+                                op.profession,
+                                op.subProfessionId
+                              )
+                            }
+                          >
                             <img
                               className="operator-subclass-icon"
                               src={operatorSubclassIcon(op.subProfessionId)}

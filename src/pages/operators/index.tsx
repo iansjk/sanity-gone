@@ -174,12 +174,6 @@ const Operators: React.VFC<Props> = ({ data }) => {
     setIsSubclassMenuOpen(false);
   };
 
-  const handleOperatorCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const url = e.currentTarget.getAttribute("data-href")!;
-    window.location.href = url;
-  };
-
   const handleSubclassFilter = (
     profession: string,
     subProfessionId: string
@@ -498,38 +492,45 @@ const Operators: React.VFC<Props> = ({ data }) => {
                             aria-hidden="true"
                           />
                         )}
-                        <div
-                          className="operator-info"
-                          {...(hasGuide
-                            ? {
-                                onClick: handleOperatorCardClick,
-                                "data-href": `/operators/${slugify(op.name)}`,
-                              }
-                            : {})}
-                        >
-                          <span className="operator-name">
-                            {alterName ? (
-                              <Fragment>
-                                <span className="base-name">{charName}</span>
-                                <span className="alter-name">{alterName}</span>
-                              </Fragment>
-                            ) : (
-                              op.name
-                            )}
-                          </span>
-                          <span
-                            className="rarity"
-                            title={`Rarity: ${op.rarity + 1} stars`}
-                          >
-                            <span className="rarity-number">
-                              {op.rarity + 1}
-                            </span>{" "}
-                            <span className="rarity-star">★</span>
-                          </span>
-                          <span key="opClass" className="operator-class">
-                            {operatorClass}
-                          </span>
-                        </div>
+                        {React.createElement(
+                          hasGuide ? "a" : "div",
+                          {
+                            className: "operator-info",
+                            ...(hasGuide
+                              ? {
+                                  href: `/operators/${slugify(op.name)}`,
+                                  role: "presentation",
+                                  tabIndex: -1,
+                                }
+                              : {}),
+                          },
+                          <Fragment>
+                            <span className="operator-name">
+                              {alterName ? (
+                                <Fragment>
+                                  <span className="base-name">{charName}</span>
+                                  <span className="alter-name">
+                                    {alterName}
+                                  </span>
+                                </Fragment>
+                              ) : (
+                                op.name
+                              )}
+                            </span>
+                            <span
+                              className="rarity"
+                              title={`Rarity: ${op.rarity + 1} stars`}
+                            >
+                              <span className="rarity-number">
+                                {op.rarity + 1}
+                              </span>{" "}
+                              <span className="rarity-star">★</span>
+                            </span>
+                            <span key="opClass" className="operator-class">
+                              {operatorClass}
+                            </span>
+                          </Fragment>
+                        )}
                         <Tooltip title={subclass}>
                           <button
                             className="operator-subclass"
@@ -1045,6 +1046,7 @@ const styles = (theme: Theme) => css`
             grid-template-columns: 1fr max-content;
             padding: ${theme.spacing(1.5)};
             row-gap: ${theme.spacing(1)};
+            color: ${theme.palette.white.main};
 
             .operator-name,
             .rarity,

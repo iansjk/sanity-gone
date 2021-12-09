@@ -935,10 +935,6 @@ const styles = (theme: Theme) => css`
 
           &:hover {
             filter: brightness(110%);
-
-            a.go-to-guide-link {
-              height: 30px;
-            }
           }
         }
 
@@ -1016,11 +1012,10 @@ const styles = (theme: Theme) => css`
           position: relative;
           grid-template-areas:
             "subclass dummy"
-            ". ."
             "info info"
             "link link";
           grid-template-columns: max-content 1fr;
-          grid-template-rows: max-content 1fr max-content min-content;
+          grid-template-rows: max-content 1fr min-content;
           overflow: hidden;
           background-image: linear-gradient(
               120deg,
@@ -1031,6 +1026,11 @@ const styles = (theme: Theme) => css`
           border-radius: ${theme.spacing(0.5)};
           color: ${theme.palette.white.main};
 
+          .dummy-clickable-area:hover ~ a.go-to-guide-link,
+          .operator-info:hover ~ a.go-to-guide-link {
+            height: 30px;
+          }
+
           .dummy-clickable-area {
             grid-area: dummy;
             width: 100%;
@@ -1039,6 +1039,7 @@ const styles = (theme: Theme) => css`
 
           .operator-info {
             grid-area: info;
+            align-content: end;
             display: grid;
             grid-template-rows: repeat(2, max-content);
             grid-template-columns: 1fr max-content;

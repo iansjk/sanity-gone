@@ -66,8 +66,6 @@ interface Props {
 
 const About: React.VFC<Props> = ({ data }) => {
   const { nodes: imageNodes } = data.allFile;
-  console.log(members.map(({ name }) => slugify(name)));
-  console.log(imageNodes.map(({ name: imageName }) => imageName));
 
   return (
     <Layout pageTitle="About" bannerImageUrl={sgPageBanner("about")}>

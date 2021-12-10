@@ -504,7 +504,6 @@ const Operators: React.VFC<Props> = ({ data }) => {
                         className="operator-portrait-container"
                         imgClassName="operator-portrait"
                         image={portraitNode.childImageSharp.gatsbyImageData}
-                        objectPosition="bottom"
                         alt=""
                       />
                       <div className="operator-card-content">
@@ -1250,10 +1249,10 @@ export const query = graphql`
         name
         childImageSharp {
           gatsbyImageData(
-            transformOptions: { fit: INSIDE }
-            placeholder: BLURRED
-            layout: FULL_WIDTH
-            aspectRatio: 0.5
+            height: 360
+            width: 180
+            transformOptions: { fit: CONTAIN, cropFocus: SOUTH }
+            backgroundColor: "transparent"
           )
         }
       }

@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useMemo } from "react";
 import { graphql } from "gatsby";
 import {
   Button,
@@ -147,6 +147,12 @@ const Operators: React.VFC<Props> = ({ data }) => {
       }
     }
   }, []);
+
+  const nameToSlugMap = useMemo(() => {
+    return Object.fromEntries(
+      operators.map((op) => [op.name, slugify(op.name)])
+    );
+  }, [operators]);
 
   const handleGuideAvailableChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -474,7 +480,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
                   const hasGuide = operatorsWithGuides.has(op.name);
                   const [charName, alterName] = op.name.split(" the ");
                   const portraitNode = portraitNodes.find(
-                    ({ name }) => name === slugify(op.name)
+                    ({ name: filename }) => filename === nameToSlugMap[op.name]
                   );
                   if (!portraitNode) {
                     throw new Error(

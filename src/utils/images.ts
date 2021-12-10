@@ -28,8 +28,5 @@ export const skillIcon = (iconId: string | null, skillId: string): string =>
 export const moduleImage = (moduleId: string): string =>
   `/images/equip/${moduleId}.png`;
 
-export const sgMemberAvatar = (filename: string): string =>
-  `/images/member-avatars/${filename}`;
-
 export const sgPageBanner = (pageName: string): string =>
   `/images/page-banners/${pageName}.jpg`;

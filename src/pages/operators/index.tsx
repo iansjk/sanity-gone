@@ -19,11 +19,11 @@ import slugify from "@sindresorhus/slugify";
 import { lighten, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
 import cx from "clsx";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 import Layout from "../../Layout";
 import {
   operatorClassIcon,
-  operatorPortrait,
   operatorSubclassIcon,
   sgPageBanner,
 } from "../../utils/images";
@@ -100,6 +100,14 @@ interface Props {
         };
       }[];
     };
+    portraits: {
+      nodes: {
+        name: string;
+        childImageSharp: {
+          gatsbyImageData: IGatsbyImageData;
+        };
+      }[];
+    };
   };
 }
 
@@ -108,6 +116,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
   const { nodes: guideNodes } = data.allContentfulOperatorAnalysis;
   const { nodes: operatorClasses } = data.allContentfulOperatorClass;
   const { nodes: operatorSubclasses } = data.allContentfulOperatorSubclass;
+  const { nodes: portraitNodes } = data.portraits;
   const operatorsWithGuides = new Set(
     guideNodes.map((node) => node.operator.name)
   );
@@ -464,7 +473,16 @@ const Operators: React.VFC<Props> = ({ data }) => {
                   );
                   const hasGuide = operatorsWithGuides.has(op.name);
                   const [charName, alterName] = op.name.split(" the ");
-
+                  const portraitNode = portraitNodes.find(
+                    ({ name }) => name === slugify(op.name)
+                  );
+                  if (!portraitNode) {
+                    throw new Error(
+                      `Couldn't find portrait for ${
+                        op.name
+                      }, expecting ${slugify(op.name)}`
+                    );
+                  }
                   return (
                     <li
                       key={op.name}
@@ -476,15 +494,13 @@ const Operators: React.VFC<Props> = ({ data }) => {
                         }`
                       )}
                     >
-                      <div className="operator-portrait-container">
-                        <div className="operator-portrait-scaler">
-                          <img
-                            alt=""
-                            className="operator-portrait"
-                            src={operatorPortrait(op.name)}
-                          />
-                        </div>
-                      </div>
+                      <GatsbyImage
+                        className="operator-portrait-container"
+                        imgClassName="operator-portrait"
+                        image={portraitNode.childImageSharp.gatsbyImageData}
+                        objectPosition="bottom"
+                        alt=""
+                      />
                       <div className="operator-card-content">
                         {hasGuide && (
                           <a
@@ -1151,20 +1167,10 @@ const styles = (theme: Theme) => css`
           justify-content: center;
           border-radius: ${theme.spacing(0.5)};
 
-          .operator-portrait-scaler {
+          img.operator-portrait {
             width: 100%;
-            height: 0;
-            padding-bottom: 200%; /* 1:2 ratio */
-            position: relative;
-
-            img.operator-portrait {
-              width: 100%;
-              height: 100%;
-              position: absolute;
-              object-position: bottom;
-              background-color: ${theme.palette.black.main};
-              border-radius: ${theme.spacing(0.5)};
-            }
+            background-color: ${theme.palette.black.main};
+            border-radius: ${theme.spacing(0.5)};
           }
         }
       }
@@ -1225,6 +1231,24 @@ export const query = graphql`
         }
         class {
           profession
+        }
+      }
+    }
+    portraits: allFile(
+      filter: {
+        sourceInstanceName: { eq: "images" }
+        relativeDirectory: { eq: "portraits" }
+      }
+    ) {
+      nodes {
+        name
+        childImageSharp {
+          gatsbyImageData(
+            transformOptions: { fit: INSIDE }
+            placeholder: BLURRED
+            layout: FULL_WIDTH
+            aspectRatio: 0.5
+          )
         }
       }
     }

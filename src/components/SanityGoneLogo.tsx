@@ -3,7 +3,7 @@ import { Theme } from "@mui/material";
 
 const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
-    <a href="/" css={styles}>
+    <a aria-label="Sanity Gone" href="/" css={styles}>
       <svg
         width="168"
         height="27"

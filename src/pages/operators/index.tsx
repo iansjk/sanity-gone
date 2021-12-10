@@ -455,120 +455,118 @@ const Operators: React.VFC<Props> = ({ data }) => {
         <div className="results-container">
           <section className="results">
             <h2>Operators</h2>
-            {operatorsToShow.length > 0 ? (
-              <ul className="operator-list">
-                {operatorsToShow.map((op) => {
-                  const operatorClass = professionToClass(op.profession);
-                  const subclass = subProfessionIdToSubclass(
-                    op.subProfessionId
-                  );
-                  const hasGuide = operatorsWithGuides.has(op.name);
-                  const [charName, alterName] = op.name.split(" the ");
+            <ul className="operator-list">
+              {operators.map((op) => {
+                const operatorClass = professionToClass(op.profession);
+                const subclass = subProfessionIdToSubclass(op.subProfessionId);
+                const hasGuide = operatorsWithGuides.has(op.name);
+                const [charName, alterName] = op.name.split(" the ");
 
-                  return (
-                    <li
-                      key={op.name}
-                      className={cx(
-                        "operator-card",
-                        hasGuide ? "has-guide" : "no-guide",
-                        `rarity-${op.rarity + 1}-star${
-                          op.rarity > 0 ? "s" : ""
-                        }`
+                return (
+                  <li
+                    key={op.name}
+                    className={cx(
+                      "operator-card",
+                      hasGuide ? "has-guide" : "no-guide",
+                      `rarity-${op.rarity + 1}-star${op.rarity > 0 ? "s" : ""}`
+                    )}
+                    style={
+                      !operatorsToShow.find((opToShow) => opToShow.id === op.id)
+                        ? { display: "none" }
+                        : {}
+                    }
+                  >
+                    <div className="operator-portrait-container">
+                      <div className="operator-portrait-scaler">
+                        <img
+                          alt=""
+                          className="operator-portrait"
+                          src={operatorPortrait(op.name)}
+                        />
+                      </div>
+                    </div>
+                    <div className="operator-card-content">
+                      {hasGuide && (
+                        <a
+                          className="dummy-clickable-area"
+                          href={`/operators/${slugify(op.name)}`}
+                          tabIndex={-1}
+                          aria-hidden="true"
+                        />
                       )}
-                    >
-                      <div className="operator-portrait-container">
-                        <div className="operator-portrait-scaler">
-                          <img
-                            alt=""
-                            className="operator-portrait"
-                            src={operatorPortrait(op.name)}
-                          />
-                        </div>
-                      </div>
-                      <div className="operator-card-content">
-                        {hasGuide && (
-                          <a
-                            className="dummy-clickable-area"
-                            href={`/operators/${slugify(op.name)}`}
-                            tabIndex={-1}
-                            aria-hidden="true"
-                          />
-                        )}
-                        {React.createElement(
-                          hasGuide ? "a" : "div",
-                          {
-                            className: "operator-info",
-                            ...(hasGuide
-                              ? {
-                                  href: `/operators/${slugify(op.name)}`,
-                                  role: "presentation",
-                                  tabIndex: -1,
-                                }
-                              : {}),
-                          },
-                          <Fragment>
-                            <span className="operator-name">
-                              {alterName ? (
-                                <Fragment>
-                                  <span className="base-name">{charName}</span>
-                                  <span className="alter-name">
-                                    {alterName}
-                                  </span>
-                                </Fragment>
-                              ) : (
-                                op.name
-                              )}
-                            </span>
-                            <span
-                              className="rarity"
-                              title={`Rarity: ${op.rarity + 1} stars`}
-                            >
-                              <span className="rarity-number">
-                                {op.rarity + 1}
-                              </span>{" "}
-                              <span className="rarity-star">★</span>
-                            </span>
-                            <span key="opClass" className="operator-class">
-                              {operatorClass}
-                            </span>
-                          </Fragment>
-                        )}
-                        <Tooltip title={subclass}>
-                          <button
-                            className="operator-subclass"
-                            onClick={() =>
-                              handleSubclassFilter(
-                                op.profession,
-                                op.subProfessionId
-                              )
-                            }
-                          >
-                            <img
-                              className="operator-subclass-icon"
-                              src={operatorSubclassIcon(op.subProfessionId)}
-                              alt={""}
-                            />
-                          </button>
-                        </Tooltip>
-                        {/* TODO "NEW" should go here */}
-                        {hasGuide ? (
-                          <a
-                            className="go-to-guide-link"
-                            href={`/operators/${slugify(op.name)}`}
-                          >
-                            <span className="go-to-guide-text">Read Guide</span>
-                          </a>
-                        ) : (
-                          <span className="visually-hidden">
-                            Guide Unavailable
+                      {React.createElement(
+                        hasGuide ? "a" : "div",
+                        {
+                          className: "operator-info",
+                          ...(hasGuide
+                            ? {
+                                href: `/operators/${slugify(op.name)}`,
+                                role: "presentation",
+                                tabIndex: -1,
+                              }
+                            : {}),
+                        },
+                        <Fragment>
+                          <span className="operator-name">
+                            {alterName ? (
+                              <Fragment>
+                                <span className="base-name">{charName}</span>
+                                <span className="alter-name">{alterName}</span>
+                              </Fragment>
+                            ) : (
+                              op.name
+                            )}
                           </span>
-                        )}
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            ) : (
+                          <span
+                            className="rarity"
+                            title={`Rarity: ${op.rarity + 1} stars`}
+                          >
+                            <span className="rarity-number">
+                              {op.rarity + 1}
+                            </span>{" "}
+                            <span className="rarity-star">★</span>
+                          </span>
+                          <span key="opClass" className="operator-class">
+                            {operatorClass}
+                          </span>
+                        </Fragment>
+                      )}
+                      <Tooltip title={subclass}>
+                        <button
+                          className="operator-subclass"
+                          onClick={() =>
+                            handleSubclassFilter(
+                              op.profession,
+                              op.subProfessionId
+                            )
+                          }
+                        >
+                          <img
+                            className="operator-subclass-icon"
+                            src={operatorSubclassIcon(op.subProfessionId)}
+                            alt={""}
+                          />
+                        </button>
+                      </Tooltip>
+                      {/* TODO "NEW" should go here */}
+                      {hasGuide ? (
+                        <a
+                          className="go-to-guide-link"
+                          href={`/operators/${slugify(op.name)}`}
+                        >
+                          <span className="go-to-guide-text">Read Guide</span>
+                        </a>
+                      ) : (
+                        <span className="visually-hidden">
+                          Guide Unavailable
+                        </span>
+                      )}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+            {operatorsToShow.length === 0 && (
               <div className="no-results">No Results</div>
             )}
           </section>

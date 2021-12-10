@@ -1251,6 +1251,7 @@ export const query = graphql`
             width: 180
             transformOptions: { fit: CONTAIN, cropFocus: SOUTH }
             backgroundColor: "transparent"
+            placeholder: BLURRED
           )
         }
       }

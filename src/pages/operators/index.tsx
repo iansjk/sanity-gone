@@ -477,11 +477,13 @@ const Operators: React.VFC<Props> = ({ data }) => {
                       )}
                     >
                       <div className="operator-portrait-container">
-                        <img
-                          alt=""
-                          className="operator-portrait"
-                          src={operatorPortrait(op.name)}
-                        />
+                        <div className="operator-portrait-scaler">
+                          <img
+                            alt=""
+                            className="operator-portrait"
+                            src={operatorPortrait(op.name)}
+                          />
+                        </div>
                       </div>
                       <div className="operator-card-content">
                         {hasGuide && (
@@ -1149,12 +1151,20 @@ const styles = (theme: Theme) => css`
           justify-content: center;
           border-radius: ${theme.spacing(0.5)};
 
-          img.operator-portrait {
-            height: 360px;
-            object-fit: none;
-            object-position: bottom;
-            background-color: ${theme.palette.black.main};
-            border-radius: ${theme.spacing(0.5)};
+          .operator-portrait-scaler {
+            width: 100%;
+            height: 0;
+            padding-bottom: 200%; /* 1:2 ratio */
+            position: relative;
+
+            img.operator-portrait {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              object-position: bottom;
+              background-color: ${theme.palette.black.main};
+              border-radius: ${theme.spacing(0.5)};
+            }
           }
         }
       }

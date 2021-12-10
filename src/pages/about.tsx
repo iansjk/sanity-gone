@@ -1,76 +1,98 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
+import { graphql } from "gatsby";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { rgba } from "polished";
 
 import Layout from "../Layout";
-import { sgMemberAvatar, sgPageBanner } from "../utils/images";
+import { slugify } from "../utils/globals";
+import { sgPageBanner } from "../utils/images";
 
-const members: { name: string; role: string; avatar: string }[] = [
+const members: { name: string; role: string }[] = [
   {
     name: "nikoleye",
     role: "Project Lead, Writer",
-    avatar: "nikoleye.png",
   },
   {
     name: "samidare",
     role: "Developer",
-    avatar: "samidare.png",
   },
   {
     name: "Stinggyray",
     role: "Developer",
-    avatar: "sting.png",
   },
   {
     name: "namtar",
     role: "Founder, Designer",
-    avatar: "namtar.jpg",
   },
   {
     name: "kawa",
     role: "Editor-in-Chief",
-    avatar: "kawa.jpg",
   },
   {
     name: "Thanik",
     role: "Writer, Editor",
-    avatar: "thanik.jpg",
   },
   {
     name: "iana",
     role: "Writer, Editor",
-    avatar: "iana.png",
   },
   {
     name: "Kirahuang",
     role: "Host, Advisor",
-    avatar: "kirahuang.png",
   },
   {
     name: "Noël",
     role: "Founder, Advisor",
-    avatar: "noel.png",
   },
   {
     name: "pepegaturtle",
     role: ":pepegaturtle:",
-    avatar: "pepegaturtle.png",
   },
 ];
 
-const About: React.VFC = () => {
+interface Props {
+  data: {
+    allFile: {
+      nodes: {
+        name: string;
+        childImageSharp: {
+          gatsbyImageData: IGatsbyImageData;
+        };
+      }[];
+    };
+  };
+}
+
+const About: React.VFC<Props> = ({ data }) => {
+  const { nodes: imageNodes } = data.allFile;
+
   return (
     <Layout pageTitle="About" bannerImageUrl={sgPageBanner("about")}>
       <main css={styles}>
         <h2>Sanity;Gone Team</h2>
         <ul className="team-members">
-          {members.map(({ name, role, avatar }) => (
-            <li className="member-card" key={name}>
-              <img className="avatar" src={sgMemberAvatar(avatar)} alt="" />
-              <span className="member-name">{name}</span>
-              <span className="role">{role}</span>
-            </li>
-          ))}
+          {members.map(({ name, role }) => {
+            const fileNode = imageNodes.find(
+              (node) => node.name === slugify(name)
+            );
+            if (fileNode == null) {
+              throw new Error(
+                `Couldn't find avatar for ${name}, expected ${slugify(name)}`
+              );
+            }
+            return (
+              <li className="member-card" key={name}>
+                <GatsbyImage
+                  className="avatar"
+                  image={fileNode.childImageSharp.gatsbyImageData}
+                  alt=""
+                />
+                <span className="member-name">{name}</span>
+                <span className="role">{role}</span>
+              </li>
+            );
+          })}
         </ul>
 
         <section className="special-thanks">
@@ -162,6 +184,24 @@ const styles = (theme: Theme) => css`
 
     p {
       margin: ${theme.spacing(2, 0, 0)};
+    }
+  }
+`;
+
+export const query = graphql`
+  query {
+    allFile(
+      filter: {
+        sourceInstanceName: { eq: "images" }
+        relativeDirectory: { eq: "member-avatars" }
+      }
+    ) {
+      nodes {
+        name
+        childImageSharp {
+          gatsbyImageData(width: 112, height: 112)
+        }
+      }
     }
   }
 `;

@@ -1,8 +1,9 @@
 import React, { Fragment, useMemo } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { Tooltip } from "@mui/material";
+import { css, Theme, Tooltip } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
 import cx from "clsx";
+import { rgba } from "polished";
 
 import { OperatorListOperator, PortraitNode } from "../pages/operators";
 import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
@@ -32,7 +33,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
   }, [operators]);
 
   return (
-    <ul className="operator-list">
+    <ul className="operator-list" css={styles}>
       {operators.map((op) => {
         const operatorClass = professionToClass(op.profession);
         const subclass = subProfessionIdToSubclass(op.subProfessionId);
@@ -146,3 +147,256 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
 });
 OperatorList.displayName = "OperatorList";
 export default OperatorList;
+
+const styles = (theme: Theme) => css`
+  margin: ${theme.spacing(3, 3, 0)};
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: ${theme.spacing(3)};
+  list-style: none;
+
+  ${theme.breakpoints.down("mobile")} {
+    margin: ${theme.spacing(2, 0, 0)};
+    gap: ${theme.spacing(2)};
+  }
+
+  li.operator-card {
+    width: 100%;
+    height: 280px;
+    flex-grow: 1;
+    display: grid;
+    grid-template-areas: "x";
+    border-radius: ${theme.spacing(0.5)};
+    box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)} ${theme.spacing(1)}
+      rgba(0, 0, 0, 0.15);
+    transition: filter 0.15s ease-in-out;
+
+    &.no-guide {
+      opacity: 0.33;
+    }
+
+    &.has-guide {
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(110%);
+      }
+    }
+
+    &.rarity-1-star {
+      /* fighting high specificity on the base style */
+      .rarity-star {
+        color: white !important;
+        background-clip: unset !important;
+      }
+    }
+
+    &.rarity-2-stars {
+      .operator-class,
+      .rarity-number {
+        color: #d3ff77;
+      }
+
+      .rarity-star,
+      .go-to-guide-link {
+        background: linear-gradient(to right, #d3ff77, #a7e855);
+      }
+    }
+
+    &.rarity-3-stars {
+      .operator-class,
+      .rarity-number {
+        color: #7cd8ff;
+      }
+
+      .rarity-star,
+      .go-to-guide-link {
+        background: linear-gradient(to right, #7cd8ff, #49b3ff);
+      }
+    }
+
+    &.rarity-4-stars {
+      .operator-class,
+      .rarity-number {
+        color: #d1d0ee;
+      }
+
+      .rarity-star,
+      .go-to-guide-link {
+        background: linear-gradient(to right, #d1d0ee, #9d9bf4);
+      }
+    }
+
+    &.rarity-5-stars {
+      .operator-class,
+      .rarity-number {
+        color: #ffe9b0;
+      }
+
+      .rarity-star,
+      .go-to-guide-link {
+        background: linear-gradient(to right, #ffe9b0, #e5c675);
+      }
+    }
+
+    &.rarity-6-stars {
+      .operator-class,
+      .rarity-number {
+        color: #ff9254;
+      }
+
+      .rarity-star,
+      .go-to-guide-link {
+        background: linear-gradient(to right, #ff9254, #ede637);
+      }
+    }
+
+    .operator-card-content {
+      grid-area: x;
+      display: grid;
+      position: relative;
+      grid-template-areas:
+        "subclass dummy"
+        "info info"
+        "link link";
+      grid-template-columns: max-content 1fr;
+      grid-template-rows: max-content 1fr min-content;
+      overflow: hidden;
+      background-image: linear-gradient(
+          120deg,
+          ${theme.palette.midtoneDarker.main} 0%,
+          transparent 18%
+        ),
+        linear-gradient(to bottom, transparent 42%, #000 100%);
+      border-radius: ${theme.spacing(0.5)};
+      color: ${theme.palette.white.main};
+
+      .dummy-clickable-area:hover ~ a.go-to-guide-link,
+      .operator-info:hover ~ a.go-to-guide-link {
+        height: 30px;
+      }
+
+      .dummy-clickable-area {
+        grid-area: dummy;
+        width: 100%;
+        height: 100%;
+      }
+
+      .operator-info {
+        grid-area: info;
+        align-content: end;
+        display: grid;
+        grid-template-rows: repeat(2, max-content);
+        grid-template-columns: 1fr max-content;
+        padding: ${theme.spacing(1.5)};
+        row-gap: ${theme.spacing(1)};
+        color: ${theme.palette.white.main};
+
+        .operator-name,
+        .rarity,
+        .operator-class {
+          text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
+            rgba(0, 0, 0, 0.5);
+        }
+
+        .operator-name {
+          grid-column: span 2;
+          display: flex;
+          flex-direction: column;
+          font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+          line-height: ${theme.typography.skillTalentHeading.lineHeight};
+          font-weight: ${theme.typography.skillTalentHeading.fontWeight};
+
+          .alter-name {
+            margin-top: ${theme.spacing(0.75)};
+            font-size: ${theme.typography.operatorCardAlterName.fontSize}px;
+            font-weight: ${theme.typography.operatorCardAlterName.fontWeight};
+            line-height: ${theme.typography.operatorCardAlterName.lineHeight};
+            text-transform: ${theme.typography.operatorCardAlterName
+              .textTransform};
+          }
+        }
+
+        .rarity {
+          grid-column: 2;
+          font-size: ${theme.typography.operatorBrowserNameHeading.fontSize}px;
+          font-weight: ${theme.typography.operatorBrowserNameHeading
+            .fontWeight};
+          line-height: ${theme.typography.operatorBrowserNameHeading
+            .lineHeight};
+
+          .rarity-star {
+            color: transparent;
+            background-clip: text;
+          }
+        }
+
+        .operator-class {
+          grid-row: 2;
+          font-size: ${theme.typography.body3.fontSize}px;
+          line-height: ${theme.typography.body3.lineHeight};
+        }
+      }
+
+      button.operator-subclass {
+        grid-area: subclass;
+        padding: ${theme.spacing(0.75)};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: ${rgba(theme.palette.dark.main, 0.66)};
+        border: none;
+        border-bottom-right-radius: ${theme.spacing(1)};
+        cursor: pointer;
+
+        .operator-subclass-icon {
+          width: ${theme.spacing(4)};
+          height: ${theme.spacing(4)};
+          line-height: 1;
+          filter: drop-shadow(
+            0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)
+          );
+        }
+      }
+
+      a.go-to-guide-link {
+        grid-area: link;
+        width: 100%;
+        font-size: ${theme.typography.label2.fontSize}px;
+        line-height: ${theme.typography.label2.lineHeight};
+        font-weight: ${theme.typography.label2.fontWeight};
+        text-transform: uppercase;
+        text-align: center;
+        color: ${theme.palette.blackest.main};
+        background-color: ${theme.palette.white.main};
+        transition: height 0.15s ease-in-out;
+        height: ${theme.spacing(0.5)};
+
+        &:hover,
+        &:focus {
+          height: ${theme.spacing(3.75)};
+        }
+
+        .go-to-guide-text {
+          display: inline-block;
+          margin-top: ${theme.spacing(0.75)};
+        }
+      }
+    }
+
+    .operator-portrait-container {
+      grid-area: x;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      border-radius: ${theme.spacing(0.5)};
+
+      img.operator-portrait {
+        width: 100%;
+        background-color: ${theme.palette.black.main};
+        border-radius: ${theme.spacing(0.5)};
+      }
+    }
+  }
+`;

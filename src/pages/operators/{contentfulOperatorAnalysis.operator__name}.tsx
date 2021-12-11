@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { css, Global } from "@emotion/react";
 import { Theme, useMediaQuery, useTheme } from "@mui/material";
 import { graphql } from "gatsby";
@@ -20,7 +21,6 @@ import { replaceSelfClosingHtmlTags } from "../../utils/globals";
 import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";
-import { Fragment } from "react";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
 import { operatorImage } from "../../utils/images";
 

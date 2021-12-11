@@ -334,7 +334,9 @@ const styles = (theme: Theme) => css`
 
       .dummy-clickable-area {
         grid-area: dummy;
-        width: 100%;
+        position: relative;
+        width: calc(100% + ${theme.spacing(1)});
+        left: -${theme.spacing(1)};
         height: 100%;
       }
 
@@ -408,6 +410,7 @@ const styles = (theme: Theme) => css`
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 1;
         background-color: ${rgba(theme.palette.dark.main, 0.66)};
         border: none;
         border-bottom-right-radius: ${theme.spacing(1)};

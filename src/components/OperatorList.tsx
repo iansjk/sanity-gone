@@ -417,7 +417,7 @@ const styles = (theme: Theme) => css`
 
       img.operator-portrait {
         width: 100%;
-        background-color: ${theme.palette.black.main};
+        background-color: ${theme.palette.midtone.main};
         border-radius: ${theme.spacing(0.5)};
       }
     }

@@ -321,7 +321,12 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               if (e.target.value === "") {
                 setOpLevel(1);
               } else if (Number(e.target.value) > phases[eliteLevel].maxLevel) {
-                setOpLevel(Number(`${e.target.value}`.slice(0, 2)));
+                setOpLevel(
+                  Math.min(
+                    Number(`${e.target.value}`.slice(0, 2)),
+                    phases[eliteLevel].maxLevel
+                  )
+                );
               } else {
                 setOpLevel(
                   Math.min(Number(e.target.value), phases[eliteLevel].maxLevel)

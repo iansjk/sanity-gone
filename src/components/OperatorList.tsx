@@ -8,6 +8,7 @@ import { rgba } from "polished";
 import { OperatorListOperator, PortraitNode } from "../pages/operators";
 import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
 import { operatorSubclassIcon } from "../utils/images";
+import StarIcon from "./icons/StarIcon";
 
 interface Props {
   operators: OperatorListOperator[];
@@ -106,7 +107,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                     title={`Rarity: ${op.rarity + 1} stars`}
                   >
                     <span className="rarity-number">{op.rarity + 1}</span>{" "}
-                    <span className="rarity-star">★</span>
+                    <StarIcon className="rarity-star" />
                   </span>
                   <span key="opClass" className="operator-class">
                     {operatorClass}
@@ -186,10 +187,8 @@ const styles = (theme: Theme) => css`
     }
 
     &.rarity-1-star {
-      /* fighting high specificity on the base style */
-      .rarity-star {
-        color: white !important;
-        background-clip: unset !important;
+      .rarity-star path {
+        fill: ${theme.palette.white.main};
       }
     }
 
@@ -199,9 +198,12 @@ const styles = (theme: Theme) => css`
         color: #d3ff77;
       }
 
-      .rarity-star,
       .go-to-guide-link {
         background: linear-gradient(to right, #d3ff77, #a7e855);
+      }
+
+      .rarity-star path {
+        fill: url(#rarity-2-gradient);
       }
 
       .operator-card-content .operator-info {
@@ -215,9 +217,12 @@ const styles = (theme: Theme) => css`
         color: #7cd8ff;
       }
 
-      .rarity-star,
       .go-to-guide-link {
         background: linear-gradient(to right, #7cd8ff, #49b3ff);
+      }
+
+      .rarity-star path {
+        fill: url(#rarity-3-gradient);
       }
 
       .operator-card-content .operator-info {
@@ -231,9 +236,12 @@ const styles = (theme: Theme) => css`
         color: #d1d0ee;
       }
 
-      .rarity-star,
       .go-to-guide-link {
         background: linear-gradient(to right, #d1d0ee, #9d9bf4);
+      }
+
+      .rarity-star path {
+        fill: url(#rarity-4-gradient);
       }
 
       .operator-card-content .operator-info {
@@ -247,9 +255,12 @@ const styles = (theme: Theme) => css`
         color: #ffe9b0;
       }
 
-      .rarity-star,
       .go-to-guide-link {
         background: linear-gradient(to right, #ffe9b0, #e5c675);
+      }
+
+      .rarity-star path {
+        fill: url(#rarity-5-gradient);
       }
 
       .operator-card-content .operator-info {
@@ -263,9 +274,12 @@ const styles = (theme: Theme) => css`
         color: #ff9254;
       }
 
-      .rarity-star,
       .go-to-guide-link {
         background: linear-gradient(to right, #ff9254, #ede637);
+      }
+
+      .rarity-star path {
+        fill: url(#rarity-6-gradient);
       }
 
       .operator-card-content .operator-info {
@@ -342,15 +356,16 @@ const styles = (theme: Theme) => css`
 
         .rarity {
           grid-column: 2;
+          display: flex;
+          align-items: center;
           font-size: ${theme.typography.operatorBrowserNameHeading.fontSize}px;
           font-weight: ${theme.typography.operatorBrowserNameHeading
             .fontWeight};
           line-height: ${theme.typography.operatorBrowserNameHeading
             .lineHeight};
 
-          .rarity-star {
-            color: transparent;
-            background-clip: text;
+          .rarity-number {
+            margin-right: ${theme.spacing(0.25)};
           }
         }
 

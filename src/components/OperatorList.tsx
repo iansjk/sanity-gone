@@ -203,6 +203,10 @@ const styles = (theme: Theme) => css`
       .go-to-guide-link {
         background: linear-gradient(to right, #d3ff77, #a7e855);
       }
+
+      .operator-card-content .operator-info {
+        --gradient-end: #1c1e16;
+      }
     }
 
     &.rarity-3-stars {
@@ -214,6 +218,10 @@ const styles = (theme: Theme) => css`
       .rarity-star,
       .go-to-guide-link {
         background: linear-gradient(to right, #7cd8ff, #49b3ff);
+      }
+
+      .operator-card-content .operator-info {
+        --gradient-end: #161b1e;
       }
     }
 
@@ -227,6 +235,10 @@ const styles = (theme: Theme) => css`
       .go-to-guide-link {
         background: linear-gradient(to right, #d1d0ee, #9d9bf4);
       }
+
+      .operator-card-content .operator-info {
+        --gradient-end: #1c1921;
+      }
     }
 
     &.rarity-5-stars {
@@ -239,6 +251,10 @@ const styles = (theme: Theme) => css`
       .go-to-guide-link {
         background: linear-gradient(to right, #ffe9b0, #e5c675);
       }
+
+      .operator-card-content .operator-info {
+        --gradient-end: #201d1a;
+      }
     }
 
     &.rarity-6-stars {
@@ -250,6 +266,10 @@ const styles = (theme: Theme) => css`
       .rarity-star,
       .go-to-guide-link {
         background: linear-gradient(to right, #ff9254, #ede637);
+      }
+
+      .operator-card-content .operator-info {
+        --gradient-end: #201916;
       }
     }
 
@@ -264,12 +284,6 @@ const styles = (theme: Theme) => css`
       grid-template-columns: max-content 1fr;
       grid-template-rows: max-content 1fr min-content;
       overflow: hidden;
-      background-image: linear-gradient(
-          120deg,
-          ${theme.palette.midtoneDarker.main} 0%,
-          transparent 18%
-        ),
-        linear-gradient(to bottom, transparent 42%, #000 100%);
       border-radius: ${theme.spacing(0.5)};
       color: ${theme.palette.white.main};
 
@@ -285,6 +299,7 @@ const styles = (theme: Theme) => css`
       }
 
       .operator-info {
+        --gradient-end: #1c1c1c;
         grid-area: info;
         align-content: end;
         display: grid;
@@ -293,6 +308,12 @@ const styles = (theme: Theme) => css`
         padding: ${theme.spacing(1.5)};
         row-gap: ${theme.spacing(1)};
         color: ${theme.palette.white.main};
+        background: linear-gradient(
+          to bottom,
+          transparent 40%,
+          ${rgba(theme.palette.blackest.main, 0.7)} 67%,
+          var(--gradient-end) 100%
+        );
 
         .operator-name,
         .rarity,

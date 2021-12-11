@@ -1,4 +1,10 @@
-import React, { Fragment, useState, useEffect, useMemo } from "react";
+import React, {
+  Fragment,
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+} from "react";
 import { graphql } from "gatsby";
 import {
   Button,
@@ -10,16 +16,13 @@ import {
   MenuItem,
   styled,
   Theme,
-  Tooltip,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { DateTime } from "luxon";
 import slugify from "@sindresorhus/slugify";
 import { lighten, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
-import cx from "clsx";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 
 import Layout from "../../Layout";
 import {
@@ -37,6 +40,7 @@ import {
 import CustomCheckbox from "../../components/CustomCheckbox";
 import FilterIcon from "../../components/icons/FilterIcon";
 import HorizontalScroller from "../../components/HorizontalScroller";
+import OperatorList from "../../components/OperatorList";
 
 const MENU_ICON_SIZE = 18;
 
@@ -55,17 +59,26 @@ const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
   },
 }));
 
+export interface OperatorListOperator {
+  id: string;
+  name: string;
+  isCnOnly: boolean;
+  profession: string;
+  subProfessionId: string;
+  rarity: number; // 0-indexed
+}
+
+export interface PortraitNode {
+  name: string;
+  childImageSharp: {
+    gatsbyImageData: IGatsbyImageData;
+  };
+}
+
 interface Props {
   data: {
     allOperatorsJson: {
-      nodes: {
-        id: string;
-        name: string;
-        isCnOnly: boolean;
-        profession: string;
-        subProfessionId: string;
-        rarity: number; // 0-indexed
-      }[];
+      nodes: OperatorListOperator[];
     };
     allContentfulOperatorAnalysis: {
       nodes: {
@@ -101,12 +114,7 @@ interface Props {
       }[];
     };
     portraits: {
-      nodes: {
-        name: string;
-        childImageSharp: {
-          gatsbyImageData: IGatsbyImageData;
-        };
-      }[];
+      nodes: PortraitNode[];
     };
   };
 }
@@ -117,9 +125,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
   const { nodes: operatorClasses } = data.allContentfulOperatorClass;
   const { nodes: operatorSubclasses } = data.allContentfulOperatorSubclass;
   const { nodes: portraitNodes } = data.portraits;
-  const operatorsWithGuides = new Set(
-    guideNodes.map((node) => node.operator.name)
-  );
+
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
   const [showClassDescriptions, setShowClassDescriptions] = useState(true);
   const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
@@ -147,12 +153,6 @@ const Operators: React.VFC<Props> = ({ data }) => {
       }
     }
   }, []);
-
-  const nameToSlugMap = useMemo(() => {
-    return Object.fromEntries(
-      operators.map((op) => [op.name, slugify(op.name)])
-    );
-  }, [operators]);
 
   const handleGuideAvailableChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -189,13 +189,13 @@ const Operators: React.VFC<Props> = ({ data }) => {
     setIsSubclassMenuOpen(false);
   };
 
-  const handleSubclassFilter = (
-    profession: string,
-    subProfessionId: string
-  ) => {
-    setSelectedProfession(profession);
-    setSelectedSubProfessionId(subProfessionId);
-  };
+  const handleSubclassFilter = useCallback(
+    (profession: string, subProfessionId: string) => {
+      setSelectedProfession(profession);
+      setSelectedSubProfessionId(subProfessionId);
+    },
+    []
+  );
 
   const selectedClass =
     selectedProfession != null ? professionToClass(selectedProfession) : null;
@@ -204,14 +204,30 @@ const Operators: React.VFC<Props> = ({ data }) => {
       ? subProfessionIdToSubclass(selectedSubProfessionId)
       : null;
 
-  const operatorsToShow = operators.filter((op) => {
-    return (
-      (!showOnlyGuideAvailable || operatorsWithGuides.has(op.name)) &&
-      (selectedProfession == null || op.profession === selectedProfession) &&
-      (selectedSubProfessionId == null ||
-        op.subProfessionId === selectedSubProfessionId)
-    );
-  });
+  const operatorsWithGuides = useMemo(
+    () => guideNodes.map((node) => node.operator.name),
+    [guideNodes]
+  );
+
+  const operatorsToShow = useMemo(
+    () =>
+      operators.filter((op) => {
+        return (
+          (!showOnlyGuideAvailable || operatorsWithGuides.includes(op.name)) &&
+          (selectedProfession == null ||
+            op.profession === selectedProfession) &&
+          (selectedSubProfessionId == null ||
+            op.subProfessionId === selectedSubProfessionId)
+        );
+      }),
+    [
+      operators,
+      operatorsWithGuides,
+      selectedProfession,
+      selectedSubProfessionId,
+      showOnlyGuideAvailable,
+    ]
+  );
 
   const sortAndFilterOptions = (
     <Fragment>
@@ -470,123 +486,13 @@ const Operators: React.VFC<Props> = ({ data }) => {
         <div className="results-container">
           <section className="results">
             <h2>Operators</h2>
-            <ul className="operator-list">
-              {operators.map((op) => {
-                const operatorClass = professionToClass(op.profession);
-                const subclass = subProfessionIdToSubclass(op.subProfessionId);
-                const hasGuide = operatorsWithGuides.has(op.name);
-                const [charName, alterName] = op.name.split(" the ");
-                const portraitNode = portraitNodes.find(
-                  ({ name: filename }) => filename === nameToSlugMap[op.name]
-                );
-                if (!portraitNode) {
-                  throw new Error(
-                    `Couldn't find portrait for ${op.name}, expecting ${slugify(
-                      op.name
-                    )}`
-                  );
-                }
-                return (
-                  <li
-                    key={op.name}
-                    className={cx(
-                      "operator-card",
-                      hasGuide ? "has-guide" : "no-guide",
-                      `rarity-${op.rarity + 1}-star${op.rarity > 0 ? "s" : ""}`
-                    )}
-                    style={
-                      !operatorsToShow.find((opToShow) => opToShow.id === op.id)
-                        ? { display: "none" }
-                        : {}
-                    }
-                  >
-                    <GatsbyImage
-                      className="operator-portrait-container"
-                      imgClassName="operator-portrait"
-                      image={portraitNode.childImageSharp.gatsbyImageData}
-                      alt=""
-                    />
-                    <div className="operator-card-content">
-                      {hasGuide && (
-                        <a
-                          className="dummy-clickable-area"
-                          href={`/operators/${slugify(op.name)}`}
-                          tabIndex={-1}
-                          aria-hidden="true"
-                        />
-                      )}
-                      {React.createElement(
-                        hasGuide ? "a" : "div",
-                        {
-                          className: "operator-info",
-                          ...(hasGuide
-                            ? {
-                                href: `/operators/${slugify(op.name)}`,
-                                role: "presentation",
-                                tabIndex: -1,
-                              }
-                            : {}),
-                        },
-                        <Fragment>
-                          <span className="operator-name">
-                            {alterName ? (
-                              <Fragment>
-                                <span className="base-name">{charName}</span>
-                                <span className="alter-name">{alterName}</span>
-                              </Fragment>
-                            ) : (
-                              op.name
-                            )}
-                          </span>
-                          <span
-                            className="rarity"
-                            title={`Rarity: ${op.rarity + 1} stars`}
-                          >
-                            <span className="rarity-number">
-                              {op.rarity + 1}
-                            </span>{" "}
-                            <span className="rarity-star">★</span>
-                          </span>
-                          <span key="opClass" className="operator-class">
-                            {operatorClass}
-                          </span>
-                        </Fragment>
-                      )}
-                      <Tooltip title={subclass}>
-                        <button
-                          className="operator-subclass"
-                          onClick={() =>
-                            handleSubclassFilter(
-                              op.profession,
-                              op.subProfessionId
-                            )
-                          }
-                        >
-                          <img
-                            className="operator-subclass-icon"
-                            src={operatorSubclassIcon(op.subProfessionId)}
-                            alt={""}
-                          />
-                        </button>
-                      </Tooltip>
-                      {/* TODO "NEW" should go here */}
-                      {hasGuide ? (
-                        <a
-                          className="go-to-guide-link"
-                          href={`/operators/${slugify(op.name)}`}
-                        >
-                          <span className="go-to-guide-text">Read Guide</span>
-                        </a>
-                      ) : (
-                        <span className="visually-hidden">
-                          Guide Unavailable
-                        </span>
-                      )}
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
+            <OperatorList
+              operators={operators}
+              operatorsToShow={operatorsToShow}
+              operatorsWithGuides={operatorsWithGuides}
+              portraitNodes={portraitNodes}
+              onSubclassFilter={handleSubclassFilter}
+            />
             {operatorsToShow.length === 0 && (
               <div className="no-results">No Results</div>
             )}

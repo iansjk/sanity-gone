@@ -371,6 +371,12 @@ const styles = (theme: Theme) => css`
         border: none;
         border-bottom-right-radius: ${theme.spacing(1)};
         cursor: pointer;
+        transition: background-color 0.15s ease-in-out;
+        will-change: background-color;
+
+        &:hover {
+          background-color: ${theme.palette.midtoneDarker.main};
+        }
 
         .operator-subclass-icon {
           width: ${theme.spacing(4)};

@@ -171,6 +171,8 @@ const styles = (theme: Theme) => css`
     box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)} ${theme.spacing(1)}
       rgba(0, 0, 0, 0.15);
     transition: filter 0.15s ease-in-out;
+    will-change: filter;
+    contain: content;
 
     &.no-guide {
       opacity: 0.33;
@@ -372,6 +374,7 @@ const styles = (theme: Theme) => css`
         background-color: ${theme.palette.white.main};
         transition: height 0.15s ease-in-out;
         height: ${theme.spacing(0.5)};
+        will-change: height;
 
         &:hover,
         &:focus {

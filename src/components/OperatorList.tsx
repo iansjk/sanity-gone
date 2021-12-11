@@ -168,8 +168,7 @@ const styles = (theme: Theme) => css`
     display: grid;
     grid-template-areas: "x";
     border-radius: ${theme.spacing(0.5)};
-    box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)} ${theme.spacing(1)}
-      rgba(0, 0, 0, 0.15);
+    box-shadow: ${theme.customShadows.baseShadow};
     transition: filter 0.15s ease-in-out;
     will-change: filter;
     contain: content;

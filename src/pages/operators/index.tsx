@@ -512,10 +512,7 @@ const globalOverrideStyles = (theme: Theme) => css`
 
   .header-main-wrapper {
     max-width: unset;
-    flex: 1 1 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
   }
 
   header {

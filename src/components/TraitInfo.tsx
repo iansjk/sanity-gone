@@ -13,9 +13,9 @@ const TraitInfo: React.VFC<TraitInfoProps> = ({
   subProfessionId,
   showSubclassIcon,
 }) => {
-  const description = traits.find(
-    (entry) => entry.subclass === subProfessionId
-  )!.description;
+  const description = traits[
+    subProfessionId as keyof typeof traits
+  ] as unknown as string;
 
   return (
     <div

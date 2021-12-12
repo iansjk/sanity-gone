@@ -9,13 +9,6 @@ export const operatorImage = (name: string, elite?: number): string =>
 
 export const summonImage = (id: string): string => `/images/summons/${id}.png`;
 
-export const operatorPortrait = (name: string, elite?: number): string =>
-  `/images/portraits/${slugify(name)}${
-    typeof elite !== "undefined" && (elite > 1 || name === "Amiya")
-      ? `-elite-${elite}`
-      : ""
-  }.png`;
-
 export const operatorClassIcon = (operatorClass: string): string =>
   `/images/classes/${operatorClass}.png`;
 
@@ -27,9 +20,6 @@ export const skillIcon = (iconId: string | null, skillId: string): string =>
 
 export const moduleImage = (moduleId: string): string =>
   `/images/equip/${moduleId}.png`;
-
-export const sgMemberAvatar = (filename: string): string =>
-  `/images/member-avatars/${filename}`;
 
 export const sgPageBanner = (pageName: string): string =>
   `/images/page-banners/${pageName}.jpg`;

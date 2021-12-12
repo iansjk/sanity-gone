@@ -164,7 +164,7 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
               )}
             </div>
             <div className="topbar">
-              <span className="filename" aria-label={`Filename: ${filename}`}>
+              <span className="filename" title={`Filename: ${filename}`}>
                 {filename}
               </span>
               <span aria-hidden="true" className="separator">

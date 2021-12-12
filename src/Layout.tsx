@@ -203,7 +203,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                     href="https://discord.gg/bAnrGzw75H"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Sanity Gone Zero Discord Server"
+                    aria-label="Sanity Gone Discord Server"
                   >
                     <DiscordLogo size={24} />
                   </a>
@@ -211,7 +211,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 {/* <li>
                     <a
                       href="https://twitter.com/sanitygonezero"
-                      aria-label="Sanity Gone Zero Twitter"
+                      aria-label="Sanity Gone Twitter"
                     >
                       <TwitterLogo size={24} />
                     </a>

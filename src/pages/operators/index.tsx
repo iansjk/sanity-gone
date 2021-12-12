@@ -1,8 +1,15 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, {
+  Fragment,
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+} from "react";
 import { graphql } from "gatsby";
-import { ClassNames, css, Global } from "@emotion/react";
 import {
   Button,
+  css,
+  GlobalStyles,
   ListItemIcon,
   ListItemText,
   Menu,
@@ -12,15 +19,14 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { DateTime } from "luxon";
 import slugify from "@sindresorhus/slugify";
 import { lighten, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 
 import Layout from "../../Layout";
 import {
   operatorClassIcon,
-  operatorPortrait,
   operatorSubclassIcon,
   sgPageBanner,
 } from "../../utils/images";
@@ -31,10 +37,10 @@ import {
   subProfessionIdToSubclass,
   toTitleCase,
 } from "../../utils/globals";
-import NavigateRightArrow from "../../components/icons/NavigateRightArrow";
 import CustomCheckbox from "../../components/CustomCheckbox";
 import FilterIcon from "../../components/icons/FilterIcon";
 import HorizontalScroller from "../../components/HorizontalScroller";
+import OperatorList from "../../components/OperatorList";
 
 const MENU_ICON_SIZE = 18;
 
@@ -53,17 +59,26 @@ const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
   },
 }));
 
+export interface OperatorListOperator {
+  id: string;
+  name: string;
+  isCnOnly: boolean;
+  profession: string;
+  subProfessionId: string;
+  rarity: number; // 0-indexed
+}
+
+export interface PortraitNode {
+  name: string;
+  childImageSharp: {
+    gatsbyImageData: IGatsbyImageData;
+  };
+}
+
 interface Props {
   data: {
     allOperatorsJson: {
-      nodes: {
-        id: string;
-        name: string;
-        isCnOnly: boolean;
-        profession: string;
-        subProfessionId: string;
-        rarity: number; // 0-indexed
-      }[];
+      nodes: OperatorListOperator[];
     };
     allContentfulOperatorAnalysis: {
       nodes: {
@@ -98,6 +113,9 @@ interface Props {
         };
       }[];
     };
+    portraits: {
+      nodes: PortraitNode[];
+    };
   };
 }
 
@@ -106,12 +124,8 @@ const Operators: React.VFC<Props> = ({ data }) => {
   const { nodes: guideNodes } = data.allContentfulOperatorAnalysis;
   const { nodes: operatorClasses } = data.allContentfulOperatorClass;
   const { nodes: operatorSubclasses } = data.allContentfulOperatorSubclass;
-  const operatorsWithGuides = new Set(
-    guideNodes.map((node) => node.operator.name)
-  );
-  const lastUpdatedAt = guideNodes
-    .map((node) => DateTime.fromISO(node.updatedAt))
-    .reduce((prev, curr) => (curr > prev ? curr : prev));
+  const { nodes: portraitNodes } = data.portraits;
+
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
   const [showClassDescriptions, setShowClassDescriptions] = useState(true);
   const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
@@ -175,6 +189,14 @@ const Operators: React.VFC<Props> = ({ data }) => {
     setIsSubclassMenuOpen(false);
   };
 
+  const handleSubclassFilter = useCallback(
+    (profession: string, subProfessionId: string) => {
+      setSelectedProfession(profession);
+      setSelectedSubProfessionId(subProfessionId);
+    },
+    []
+  );
+
   const selectedClass =
     selectedProfession != null ? professionToClass(selectedProfession) : null;
   const selectedSubclass =
@@ -182,14 +204,30 @@ const Operators: React.VFC<Props> = ({ data }) => {
       ? subProfessionIdToSubclass(selectedSubProfessionId)
       : null;
 
-  const operatorsToShow = operators.filter((op) => {
-    return (
-      (!showOnlyGuideAvailable || operatorsWithGuides.has(op.name)) &&
-      (selectedProfession == null || op.profession === selectedProfession) &&
-      (selectedSubProfessionId == null ||
-        op.subProfessionId === selectedSubProfessionId)
-    );
-  });
+  const operatorsWithGuides = useMemo(
+    () => guideNodes.map((node) => node.operator.name),
+    [guideNodes]
+  );
+
+  const operatorsToShow = useMemo(
+    () =>
+      operators.filter((op) => {
+        return (
+          (!showOnlyGuideAvailable || operatorsWithGuides.includes(op.name)) &&
+          (selectedProfession == null ||
+            op.profession === selectedProfession) &&
+          (selectedSubProfessionId == null ||
+            op.subProfessionId === selectedSubProfessionId)
+        );
+      }),
+    [
+      operators,
+      operatorsWithGuides,
+      selectedProfession,
+      selectedSubProfessionId,
+      showOnlyGuideAvailable,
+    ]
+  );
 
   const sortAndFilterOptions = (
     <Fragment>
@@ -343,7 +381,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
       previousLocationLink="/"
        */
     >
-      <Global styles={globalOverrideStyles(theme)} />
+      <GlobalStyles styles={globalOverrideStyles(theme)} />
       <main css={styles}>
         <div className="main-container">
           {/* <span className="last-updated">
@@ -448,84 +486,14 @@ const Operators: React.VFC<Props> = ({ data }) => {
         <div className="results-container">
           <section className="results">
             <h2>Operators</h2>
-            {operatorsToShow.length > 0 ? (
-              <ul className="operator-list">
-                {operatorsToShow.map((op) => {
-                  const operatorClass = professionToClass(op.profession);
-                  const subclass = subProfessionIdToSubclass(
-                    op.subProfessionId
-                  );
-                  const hasGuide = operatorsWithGuides.has(op.name);
-                  return (
-                    <ClassNames key={op.id}>
-                      {({ cx }) => {
-                        const inner = (
-                          <Fragment>
-                            <div className="operator-portrait-container">
-                              <img
-                                alt=""
-                                className="operator-portrait"
-                                src={operatorPortrait(op.name)}
-                              />
-                            </div>
-                            <div className="operator-text-content">
-                              <div className="operator-info">
-                                <span className="operator-name">{op.name}</span>
-                                <span
-                                  className={cx(
-                                    "rarity",
-                                    `rarity-${op.rarity + 1}-stars`
-                                  )}
-                                  aria-label={`${op.rarity + 1} stars`}
-                                >
-                                  {op.rarity + 1} ★
-                                </span>
-                                <span className="operator-class">
-                                  {operatorClass}
-                                </span>
-                              </div>
-                              <span className="operator-subclass">
-                                <img
-                                  className="operator-subclass-icon"
-                                  src={operatorSubclassIcon(op.subProfessionId)}
-                                  alt={subclass}
-                                />
-                              </span>
-                              <div className="on-hover">
-                                {hasGuide ? (
-                                  <Fragment>
-                                    <span>Read Guide</span>
-                                    <NavigateRightArrow className="go-to-guide-icon" />
-                                  </Fragment>
-                                ) : (
-                                  <span>Guide Unavailable</span>
-                                )}
-                              </div>
-                            </div>
-                          </Fragment>
-                        );
-                        return (
-                          <li
-                            className={cx(
-                              "operator",
-                              hasGuide ? "has-guide" : "no-guide"
-                            )}
-                          >
-                            {hasGuide ? (
-                              <a href={`/operators/${slugify(op.name)}`}>
-                                {inner}
-                              </a>
-                            ) : (
-                              inner
-                            )}
-                          </li>
-                        );
-                      }}
-                    </ClassNames>
-                  );
-                })}
-              </ul>
-            ) : (
+            <OperatorList
+              operators={operators}
+              operatorsToShow={operatorsToShow}
+              operatorsWithGuides={operatorsWithGuides}
+              portraitNodes={portraitNodes}
+              onSubclassFilter={handleSubclassFilter}
+            />
+            {operatorsToShow.length === 0 && (
               <div className="no-results">No Results</div>
             )}
           </section>
@@ -544,10 +512,7 @@ const globalOverrideStyles = (theme: Theme) => css`
 
   .header-main-wrapper {
     max-width: unset;
-    flex: 1 1 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
   }
 
   header {
@@ -861,186 +826,6 @@ const styles = (theme: Theme) => css`
       }
     }
 
-    ul.operator-list {
-      margin: ${theme.spacing(3, 3, 0)};
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: ${theme.spacing(3)};
-      list-style: none;
-
-      ${theme.breakpoints.down("mobile")} {
-        margin: ${theme.spacing(2, 0, 0)};
-        grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
-        gap: ${theme.spacing(2)};
-      }
-
-      li.operator {
-        width: 100%;
-        height: 280px;
-        flex-grow: 1;
-        border-radius: ${theme.spacing(0.5)};
-        box-shadow: ${theme.spacing(0.25)} ${theme.spacing(0.5)}
-          ${theme.spacing(1)} rgba(0, 0, 0, 0.15);
-        transition-property: transform, filter;
-        transition-duration: 0.15s;
-        transition-timing-function: ease-in-out;
-
-        ${theme.breakpoints.down("mobile")} {
-          width: 148px;
-        }
-
-        &.no-guide {
-          opacity: 0.5;
-          cursor: initial;
-        }
-
-        &.no-guide,
-        &.has-guide a {
-          display: grid;
-          grid-template-areas: "x";
-        }
-
-        &.has-guide a {
-          width: 100%;
-          height: 100%;
-          color: inherit;
-        }
-
-        .on-hover {
-          display: none;
-          font-size: ${theme.typography.body3.fontSize}px;
-          line-height: ${theme.typography.body3.lineHeight};
-          text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
-            rgba(0, 0, 0, 0.5);
-        }
-
-        &:hover {
-          .operator-text-content {
-            .operator-info {
-              display: none;
-            }
-
-            .on-hover {
-              margin-top: -4px;
-              padding: ${theme.spacing(2)};
-              display: grid;
-              grid-template-columns: max-content 1fr max-content;
-              align-items: center;
-              align-content: flex-end;
-              border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
-
-              .go-to-guide-icon {
-                grid-column: 3;
-                height: ${theme.typography.body3.lineHeight};
-              }
-            }
-          }
-
-          &.has-guide {
-            transform: scale(1.1);
-            filter: brightness(110%);
-
-            .operator-text-content {
-              .on-hover {
-                border-bottom: ${theme.spacing(0.5)} solid
-                  ${theme.palette.white.main};
-              }
-            }
-          }
-        }
-
-        .operator-text-content {
-          grid-area: x;
-          display: grid;
-          grid-template-rows: max-content 1fr max-content;
-          background-image: linear-gradient(
-              120deg,
-              ${theme.palette.midtoneDarker.main} 0%,
-              transparent 18%
-            ),
-            linear-gradient(to bottom, transparent 42%, #000 100%);
-          border-radius: ${theme.spacing(0.5)};
-
-          .on-hover {
-            display: none;
-            font-size: ${theme.typography.body3.fontSize}px;
-            line-height: ${theme.typography.body3.lineHeight};
-            text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
-              rgba(0, 0, 0, 0.5);
-          }
-
-          .operator-info {
-            grid-row: 3;
-            display: grid;
-            grid-template-rows: repeat(2, max-content);
-            grid-template-columns: 1fr max-content;
-            padding: ${theme.spacing(2)};
-            row-gap: ${theme.spacing(1)};
-
-            .operator-name,
-            .rarity,
-            .operator-class {
-              text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
-                rgba(0, 0, 0, 0.5);
-            }
-
-            .operator-name {
-              grid-column: span 2;
-              font-size: ${theme.typography.body2.fontSize}px;
-              line-height: ${theme.typography.body2.lineHeight};
-              font-weight: ${theme.typography.body2Bold.fontWeight};
-            }
-
-            .rarity,
-            .operator-class {
-              font-size: ${theme.typography.label2.fontSize}px;
-              line-height: ${theme.typography.label2.lineHeight};
-            }
-
-            .rarity {
-              grid-column: 2;
-            }
-
-            .operator-class {
-              grid-row: 2;
-              text-transform: uppercase;
-            }
-          }
-
-          .operator-subclass {
-            grid-row: 1;
-
-            .operator-subclass-icon {
-              width: 40px;
-              height: 40px;
-              margin: ${theme.spacing(1, 0, 0, 1)};
-              line-height: 1;
-              filter: drop-shadow(
-                0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)
-              );
-            }
-          }
-        }
-
-        .operator-portrait-container {
-          grid-area: x;
-          overflow: hidden;
-          display: flex;
-          justify-content: center;
-          border-radius: ${theme.spacing(0.5)};
-
-          img.operator-portrait {
-            height: 360px;
-            object-fit: none;
-            object-position: bottom;
-            background-color: ${theme.palette.black.main};
-            border-radius: ${theme.spacing(0.5)};
-          }
-        }
-      }
-    }
-
     .no-results {
       margin: ${theme.spacing(3, 0)};
       display: flex;
@@ -1096,6 +881,25 @@ export const query = graphql`
         }
         class {
           profession
+        }
+      }
+    }
+    portraits: allFile(
+      filter: {
+        sourceInstanceName: { eq: "images" }
+        relativeDirectory: { eq: "portraits" }
+      }
+    ) {
+      nodes {
+        name
+        childImageSharp {
+          gatsbyImageData(
+            height: 360
+            width: 180
+            transformOptions: { fit: CONTAIN, cropFocus: SOUTH }
+            backgroundColor: "transparent"
+            placeholder: BLURRED
+          )
         }
       }
     }

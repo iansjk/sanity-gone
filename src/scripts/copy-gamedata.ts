@@ -245,17 +245,13 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
         description = fixJetSkillDescriptionTags(
           jetTraitTranslations.full[description].en
         );
-      }
-
-      // trait overrides
-      if (subclass in TRAIT_OVERRIDES) {
+      } else if (subclass in TRAIT_OVERRIDES) {
         description = TRAIT_OVERRIDES[subclass];
       }
 
-      let blackboard: InterpolatedValue[] = [];
-      if (trait) {
-        blackboard = trait.candidates[trait.candidates.length - 1].blackboard;
-      }
+      const blackboard: InterpolatedValue[] = trait
+        ? trait.candidates[trait.candidates.length - 1].blackboard
+        : [];
 
       return {
         subclass: subclass,

@@ -1,3 +1,6 @@
+/* eslint-disable */
+// @ts-nocheck
+
 import fs from "fs";
 import path from "path";
 import enCharacterTable from "../../ArknightsGameData/en_US/gamedata/excel/character_table.json";
@@ -7,7 +10,13 @@ import cnSkillTable from "../../ArknightsGameData/zh_CN/gamedata/excel/skill_tab
 import rangeTable from "../../ArknightsGameData/en_US/gamedata/excel/range_table.json";
 import jetSkillTranslations from "./jet-tls/skills.json";
 import jetTalentTranslations from "./jet-tls/talents.json";
+import jetTraitTranslations from "./jet-tls/traits.json";
 import { Character, SkillAtLevel } from "./gamedata-types";
+import { subProfessionLookup } from "../utils/globals";
+import {
+  descriptionToHtml,
+  InterpolatedValue,
+} from "../utils/description-parser";
 
 const dataDir = path.join(__filename, "../../data");
 const jetSkillDescriptionRegex =
@@ -208,5 +217,39 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
   fs.writeFileSync(
     path.join(dataDir, "skills.json"),
     JSON.stringify(denormalizedSkills, null, 2)
+  );
+
+  const denormalizedTraits = Object.keys(subProfessionLookup).map(
+    (subclass) => {
+      const firstOp = denormalizedOperators.find(
+        ({ subProfessionId }) => subProfessionId === subclass
+      );
+
+      let description = firstOp.description;
+      const trait = firstOp.trait;
+
+      // left in console.log comments - useful for debugging bad trait descriptions
+      // console.log(description);
+      if (description in jetTraitTranslations.full) {
+        // console.log("in descs");
+        description = fixJetSkillDescriptionTags(
+          jetTraitTranslations.full[description].en
+        );
+      }
+
+      let blackboard: InterpolatedValue[] = [];
+      if (trait) {
+        blackboard = trait.candidates[trait.candidates.length - 1].blackboard;
+      }
+
+      return {
+        subclass: subclass,
+        description: descriptionToHtml(description, blackboard),
+      };
+    }
+  );
+  fs.writeFileSync(
+    path.join(dataDir, "traits.json"),
+    JSON.stringify(denormalizedTraits, null, 2)
   );
 })();

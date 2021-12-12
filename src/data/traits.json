@@ -1,210 +1,54 @@
-[
-  {
-    "subclass": "pioneer",
-    "description": "Blocks 2 enemies"
-  },
-  {
-    "subclass": "charger",
-    "description": "Obtain 1 DP after this unit defeats an enemy; Refunds the original DP Cost when retreated"
-  },
-  {
-    "subclass": "tactician",
-    "description": "This unit can designate one <span class=\"keyword\">Tactical Point</span> within attack range to call Reinforcements; ATK is increased to 150% when attacking enemies blocked by Reinforcements"
-  },
-  {
-    "subclass": "bearer",
-    "description": "Cannot block enemies during the skill duration"
-  },
-  {
-    "subclass": "centurion",
-    "description": "Attacks <span class=\"keyword\">all blocked enemies</span>"
-  },
-  {
-    "subclass": "fighter",
-    "description": "Blocks 1 enemy"
-  },
-  {
-    "subclass": "artsfghter",
-    "description": "Deals <span class=\"keyword\">Arts damage</span>"
-  },
-  {
-    "subclass": "instructor",
-    "description": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to 120%"
-  },
-  {
-    "subclass": "lord",
-    "description": "Can launch <span class=\"keyword\">Ranged Attacks</span> that deal 80% of normal ATK"
-  },
-  {
-    "subclass": "sword",
-    "description": "Normal attacks deal damage <span class=\"keyword\">twice</span>"
-  },
-  {
-    "subclass": "musha",
-    "description": "Can't be healed by other units. Recovers <span class=\"keyword\">30/50/70</span> (scales with elite promotion) self HP every time this operator attacks an enemy"
-  },
-  {
-    "subclass": "fearless",
-    "description": "Blocks 1 enemy"
-  },
-  {
-    "subclass": "reaper",
-    "description": "Cannot be healed by allies<br>Attack <span class=\"keyword\">all enemies</span> within range<br>Recovers <span class=\"keyword\">50</span> HP with every enemy hit (up to Block count)"
-  },
-  {
-    "subclass": "librator",
-    "description": "Does not attack and have 0 block count normally<br>Gradually increase attack power up to <span class=\"keyword\">+200%</span> after <span class=\"keyword\">40</span> seconds when skill is not active<br>Attack increase resets after skill ends"
-  },
-  {
-    "subclass": "protector",
-    "description": "Blocks 3 enemies"
-  },
-  {
-    "subclass": "guardian",
-    "description": "Can heal allies by using the skill"
-  },
-  {
-    "subclass": "unyield",
-    "description": "<span class=\"keyword\">Cannot</span> be healed by allies"
-  },
-  {
-    "subclass": "artsprotector",
-    "description": "Normal attacks deal Arts damage while the skill is active"
-  },
-  {
-    "subclass": "duelist",
-    "description": "Only restores SP when blocking enemies"
-  },
-  {
-    "subclass": "fastshot",
-    "description": "Attacks aerial enemies first"
-  },
-  {
-    "subclass": "closerange",
-    "description": "High accuracy point-blank shot"
-  },
-  {
-    "subclass": "aoesniper",
-    "description": "Deals <span class=\"keyword\">AOE Physical damage</span>"
-  },
-  {
-    "subclass": "longrange",
-    "description": "Prioritizes attacking the enemy with <span class=\"keyword\">lowest DEF</span> within range first"
-  },
-  {
-    "subclass": "reaperrange",
-    "description": "Attacks <span class=\"keyword\">all enemies</span> within range, and deals 150% damage to enemies in the row directly in front of this unit."
-  },
-  {
-    "subclass": "siegesniper",
-    "description": "Attacks the heaviest enemy first"
-  },
-  {
-    "subclass": "bombarder",
-    "description": "Attacks deal <span class=\"keyword\">two instances</span> of Physical damage to <span class=\"keyword\">ground</span> enemies in a small area (The second instance is a shockwave that has half the normal ATK)"
-  },
-  {
-    "subclass": "corecaster",
-    "description": "Deals <span class=\"keyword\">Arts damage</span>"
-  },
-  {
-    "subclass": "splashcaster",
-    "description": "Deals <span class=\"keyword\">AOE Arts damage</span>"
-  },
-  {
-    "subclass": "funnel",
-    "description": "Controls a <span class=\"keyword\">Drone</span> to deal <span class=\"keyword\">Arts</span> damage to an enemy; When the Drone continuously attacks the same enemy, its damage will increase (up to 110% of the operator's ATK)"
-  },
-  {
-    "subclass": "phalanx",
-    "description": "Normally <span class=\"keyword\">does not attack</span>, but has <span class=\"keyword\">+200%</span> DEF and <span class=\"keyword\">+20</span> RES; When skill is active, attacks deal <span class=\"keyword\">AoE Arts damage</span>"
-  },
-  {
-    "subclass": "mystic",
-    "description": "Attacks deal <span class=\"keyword\">Arts damage</span>; When unable to find a target, attacks can be <span class=\"keyword\">stored up</span> and fired all at once (Up to 3 charges)"
-  },
-  {
-    "subclass": "chain",
-    "description": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">3</span> (4 at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class=\"skill-tooltip\">Slow</span>"
-  },
-  {
-    "subclass": "blastcaster",
-    "description": "Deals <span class=\"keyword\">AOE Arts damage in a long line</span>"
-  },
-  {
-    "subclass": "physician",
-    "description": "Restores the HP of allies"
-  },
-  {
-    "subclass": "ringhealer",
-    "description": "Restores the HP of 3 allies simultaneously"
-  },
-  {
-    "subclass": "healer",
-    "description": "Has a large healing range, but the healing amount on farther targets is reduced to <span class=\"keyword\">70%</span>"
-  },
-  {
-    "subclass": "slower",
-    "description": "Deals <span class=\"keyword\">Arts damage</span> and <span class=\"skill-tooltip\">Slows</span> the target for a short time"
-  },
-  {
-    "subclass": "underminer",
-    "description": "Deals <span class=\"keyword\">Arts damage</span>"
-  },
-  {
-    "subclass": "bard",
-    "description": "Does not attack but continuously restores the <span class=\"keyword\">HP</span> of all allies within range (the HP restored per second is equal to 10% of self ATK). Self is unaffected by <span class=\"skill-tooltip\">Inspiration</span>"
-  },
-  {
-    "subclass": "blessing",
-    "description": "Deals <span class=\"keyword\">Arts damage</span>"
-  },
-  {
-    "subclass": "summoner",
-    "description": "Deals <span class=\"keyword\">Arts damage</span><br>Can use <span class=\"keyword\">Summons</span> in battles"
-  },
-  {
-    "subclass": "executor",
-    "description": "Significantly <span class=\"keyword\">reduced</span> Redeployment Time"
-  },
-  {
-    "subclass": "pusher",
-    "description": "Can attack <span class=\"keyword\">all blocked enemies</span><br>Can be deployed on Ranged Grids"
-  },
-  {
-    "subclass": "stalker",
-    "description": "Deals Damage to <span class=\"keyword\">all targets</span> within range<br>50% chance to dodge Physical and Arts attacks and is less likely to be <span class=\"keyword\">targeted</span> by enemies"
-  },
-  {
-    "subclass": "hookmaster",
-    "description": "Can <span class=\"keyword\">Shift</span> enemies by using skills<br>Can be deployed on Ranged Grids"
-  },
-  {
-    "subclass": "geek",
-    "description": "Continually loses HP over time"
-  },
-  {
-    "subclass": "merchant",
-    "description": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\">DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">3 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)"
-  },
-  {
-    "subclass": "traper",
-    "description": "Can use traps to assist in combat, but traps cannot be placed <span class=\"keyword\">on tiles already occupied by an enemy</span>"
-  },
-  {
-    "subclass": "dollkeeper",
-    "description": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block). Swaps back to the original after 20 seconds"
-  },
-  {
-    "subclass": "craftsman",
-    "description": "Can block 2 enemies<br>Can use <span class=\"keyword\">Support Devices</span> in battle"
-  },
-  {
-    "subclass": "wandermedic",
-    "description": "Heal friendly unit<br>Recovers <span class=\"\">Elemental damage</span> equal to <span class=\"keyword\">50%</span> of Attack Power<br>(Can heal the <span class=\"\">Elemental damage</span> of unhurt units)"
-  },
-  {
-    "subclass": "fortress",
-    "description": "Prioritize <span class=\"keyword\">Long range splash attack</span> when not blocking"
-  }
-]
+{
+  "pioneer": "Blocks 2 enemies",
+  "charger": "Obtain 1 DP after this unit defeats an enemy; Refunds the original DP Cost when retreated",
+  "tactician": "This unit can designate one <span class=\"keyword\">Tactical Point</span> within attack range to call Reinforcements; ATK is increased to 150% when attacking enemies blocked by Reinforcements",
+  "bearer": "Cannot block enemies during the skill duration",
+  "centurion": "Attacks <span class=\"keyword\">all blocked enemies</span>",
+  "fighter": "Blocks 1 enemy",
+  "artsfghter": "Deals <span class=\"keyword\">Arts damage</span>",
+  "instructor": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to 120%",
+  "lord": "Can launch <span class=\"keyword\">Ranged Attacks</span> that deal 80% of normal ATK",
+  "sword": "Normal attacks deal damage <span class=\"keyword\">twice</span>",
+  "musha": "Can't be healed by other units. Recovers <span class=\"keyword\">30/50/70</span> (scales with elite promotion) self HP every time this operator attacks an enemy",
+  "fearless": "Blocks 1 enemy",
+  "reaper": "Cannot be healed by allies<br>Attack <span class=\"keyword\">all enemies</span> within range<br>Recovers <span class=\"keyword\">50</span> HP with every enemy hit (up to Block count)",
+  "librator": "Does not attack and have 0 block count normally<br>Gradually increase attack power up to <span class=\"keyword\">+200%</span> after <span class=\"keyword\">40</span> seconds when skill is not active<br>Attack increase resets after skill ends",
+  "protector": "Blocks 3 enemies",
+  "guardian": "Can heal allies by using the skill",
+  "unyield": "<span class=\"keyword\">Cannot</span> be healed by allies",
+  "artsprotector": "Normal attacks deal Arts damage while the skill is active",
+  "duelist": "Only restores SP when blocking enemies",
+  "fastshot": "Attacks aerial enemies first",
+  "closerange": "High accuracy point-blank shot",
+  "aoesniper": "Deals <span class=\"keyword\">AOE Physical damage</span>",
+  "longrange": "Prioritizes attacking the enemy with <span class=\"keyword\">lowest DEF</span> within range first",
+  "reaperrange": "Attacks <span class=\"keyword\">all enemies</span> within range, and deals 150% damage to enemies in the row directly in front of this unit.",
+  "siegesniper": "Attacks the heaviest enemy first",
+  "bombarder": "Attacks deal <span class=\"keyword\">two instances</span> of Physical damage to <span class=\"keyword\">ground</span> enemies in a small area (The second instance is a shockwave that has half the normal ATK)",
+  "corecaster": "Deals <span class=\"keyword\">Arts damage</span>",
+  "splashcaster": "Deals <span class=\"keyword\">AOE Arts damage</span>",
+  "funnel": "Controls a <span class=\"keyword\">Drone</span> to deal <span class=\"keyword\">Arts</span> damage to an enemy; When the Drone continuously attacks the same enemy, its damage will increase (up to 110% of the operator's ATK)",
+  "phalanx": "Normally <span class=\"keyword\">does not attack</span>, but has <span class=\"keyword\">+200%</span> DEF and <span class=\"keyword\">+20</span> RES; When skill is active, attacks deal <span class=\"keyword\">AoE Arts damage</span>",
+  "mystic": "Attacks deal <span class=\"keyword\">Arts damage</span>; When unable to find a target, attacks can be <span class=\"keyword\">stored up</span> and fired all at once (Up to 3 charges)",
+  "chain": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">3</span> (4 at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class=\"skill-tooltip\">Slow</span>",
+  "blastcaster": "Deals <span class=\"keyword\">AOE Arts damage in a long line</span>",
+  "physician": "Restores the HP of allies",
+  "ringhealer": "Restores the HP of 3 allies simultaneously",
+  "healer": "Has a large healing range, but the healing amount on farther targets is reduced to <span class=\"keyword\">70%</span>",
+  "slower": "Deals <span class=\"keyword\">Arts damage</span> and <span class=\"skill-tooltip\">Slows</span> the target for a short time",
+  "underminer": "Deals <span class=\"keyword\">Arts damage</span>",
+  "bard": "Does not attack but continuously restores the <span class=\"keyword\">HP</span> of all allies within range (the HP restored per second is equal to 10% of self ATK). Self is unaffected by <span class=\"skill-tooltip\">Inspiration</span>",
+  "blessing": "Deals <span class=\"keyword\">Arts damage</span>",
+  "summoner": "Deals <span class=\"keyword\">Arts damage</span><br>Can use <span class=\"keyword\">Summons</span> in battles",
+  "executor": "Significantly <span class=\"keyword\">reduced</span> Redeployment Time",
+  "pusher": "Can attack <span class=\"keyword\">all blocked enemies</span><br>Can be deployed on Ranged Grids",
+  "stalker": "Deals Damage to <span class=\"keyword\">all targets</span> within range<br>50% chance to dodge Physical and Arts attacks and is less likely to be <span class=\"keyword\">targeted</span> by enemies",
+  "hookmaster": "Can <span class=\"keyword\">Shift</span> enemies by using skills<br>Can be deployed on Ranged Grids",
+  "geek": "Continually loses HP over time",
+  "merchant": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\">DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">3 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)",
+  "traper": "Can use traps to assist in combat, but traps cannot be placed <span class=\"keyword\">on tiles already occupied by an enemy</span>",
+  "dollkeeper": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block). Swaps back to the original after 20 seconds",
+  "craftsman": "Can block 2 enemies<br>Can use <span class=\"keyword\">Support Devices</span> in battle",
+  "wandermedic": "Heal friendly unit<br>Recovers <span class=\"\">Elemental damage</span> equal to <span class=\"keyword\">50%</span> of Attack Power<br>(Can heal the <span class=\"\">Elemental damage</span> of unhurt units)",
+  "fortress": "Prioritize <span class=\"keyword\">Long range splash attack</span> when not blocking"
+}

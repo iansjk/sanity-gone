@@ -117,7 +117,7 @@
   },
   {
     "subclass": "phalanx",
-    "description": "Normally <span class=\"keyword\">does not attack</span>, but has <span class=\"keyword\">greatly increased</span> DEF and RES; When skill is active, attacks deal <span class=\"keyword\">AoE Arts damage</span>"
+    "description": "Normally <span class=\"keyword\">does not attack</span>, but has <span class=\"keyword\">+200%</span> DEF and <span class=\"keyword\">+20</span> RES; When skill is active, attacks deal <span class=\"keyword\">AoE Arts damage</span>"
   },
   {
     "subclass": "mystic",

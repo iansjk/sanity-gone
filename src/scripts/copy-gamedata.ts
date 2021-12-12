@@ -53,6 +53,16 @@ const fixJetSkillDescriptionTags = (description: string): string => {
 const NAME_OVERRIDES: Record<string, string> = {
   "THRM-EX": "Thermal-EX",
 };
+
+const TRAIT_OVERRIDES: Record<string, string> = {
+  musha:
+    "Can't be healed by other units. Recovers <@ba.kw>30/50/70</> (scales with elite promotion) self HP every time this operator attacks an enemy",
+  chain:
+    'Attacks deal <@ba.kw>Arts</> damage and jump between <@ba.kw>3</> (4 at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class="skill-tooltip">Slow</span>',
+  phalanx:
+    "Normally <@ba.kw>does not attack</>, but has <@ba.kw>+200%</> DEF and <@ba.kw>+20</> RES; When skill is active, attacks deal <@ba.kw>AoE Arts damage</>",
+};
+
 const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
 
 (() => {
@@ -219,12 +229,6 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     JSON.stringify(denormalizedSkills, null, 2)
   );
 
-  const traitDescriptionOverrides = {
-    musha:
-      "Can't be healed by other units. Recovers <@ba.kw>30/50/70</> (scales with elite promotion) self HP every time this operator attacks an enemy",
-    chain:
-      'Attacks deal <@ba.kw>Arts</> damage and jump between <@ba.kw>3</> (4 at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class="skill-tooltip">Slow</span>',
-  };
   const denormalizedTraits = Object.keys(subProfessionLookup).map(
     (subclass) => {
       const firstOp = denormalizedOperators.find(
@@ -244,8 +248,8 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
       }
 
       // trait overrides
-      if (subclass in traitDescriptionOverrides) {
-        description = traitDescriptionOverrides[subclass];
+      if (subclass in TRAIT_OVERRIDES) {
+        description = TRAIT_OVERRIDES[subclass];
       }
 
       let blackboard: InterpolatedValue[] = [];

@@ -219,10 +219,16 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     JSON.stringify(denormalizedSkills, null, 2)
   );
 
+  const traitDescriptionOverrides = {
+    musha:
+      "Can't be healed by other units. Recovers <@ba.kw>30/50/70</> (scales with elite promotion) self HP every time this operator attacks an enemy",
+    chain:
+      'Attacks deal <@ba.kw>Arts</> damage and jump between <@ba.kw>3</> (4 at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class="skill-tooltip">Slow</span>',
+  };
   const denormalizedTraits = Object.keys(subProfessionLookup).map(
     (subclass) => {
       const firstOp = denormalizedOperators.find(
-        ({ subProfessionId }) => subProfessionId === subclass
+        (op) => op.subProfessionId === subclass && op.rarity > 1 // no robots
       );
 
       let description = firstOp.description;
@@ -235,6 +241,11 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
         description = fixJetSkillDescriptionTags(
           jetTraitTranslations.full[description].en
         );
+      }
+
+      // trait overrides
+      if (subclass in traitDescriptionOverrides) {
+        description = traitDescriptionOverrides[subclass];
       }
 
       let blackboard: InterpolatedValue[] = [];

@@ -9,7 +9,7 @@
   },
   {
     "subclass": "tactician",
-    "description": "This unit can designate one <span class=\"\">Tactical Point</span> within attack range to call Reinforcements; ATK is increased to 150% when attacking enemies blocked by Reinforcements"
+    "description": "This unit can designate one <span class=\"keyword\">Tactical Point</span> within attack range to call Reinforcements; ATK is increased to 150% when attacking enemies blocked by Reinforcements"
   },
   {
     "subclass": "bearer",
@@ -17,7 +17,7 @@
   },
   {
     "subclass": "centurion",
-    "description": "Attacks <span class=\"\">all blocked enemies</span>"
+    "description": "Attacks <span class=\"keyword\">all blocked enemies</span>"
   },
   {
     "subclass": "fighter",
@@ -25,35 +25,35 @@
   },
   {
     "subclass": "artsfghter",
-    "description": "Deals <span class=\"\">Arts damage</span>"
+    "description": "Deals <span class=\"keyword\">Arts damage</span>"
   },
   {
     "subclass": "instructor",
-    "description": "Can attack enemies <span class=\"\">from range</span>; When attacking enemies not blocked by self, increase ATK to 120%"
+    "description": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to 120%"
   },
   {
     "subclass": "lord",
-    "description": "Can launch <span class=\"\">Ranged Attacks</span> that deal 80% of normal ATK"
+    "description": "Can launch <span class=\"keyword\">Ranged Attacks</span> that deal 80% of normal ATK"
   },
   {
     "subclass": "sword",
-    "description": "Normal attacks deal damage <span class=\"\">twice</span>"
+    "description": "Normal attacks deal damage <span class=\"keyword\">twice</span>"
   },
   {
     "subclass": "musha",
-    "description": "Can't be healed by other units. Recovers <span class=\"\">70</span> self HP every time this operator attacks an enemy"
+    "description": "Can't be healed by other units. Recovers <span class=\"keyword\">30/50/70</span> (scales with elite promotion) self HP every time this operator attacks an enemy"
   },
   {
     "subclass": "fearless",
-    "description": "Blocks 1 enemy and ignores the <span class=\"\">Deployment Limit</span>, but has a long Redeployment Time"
+    "description": "Blocks 1 enemy"
   },
   {
     "subclass": "reaper",
-    "description": "Cannot be healed by allies<br>Attack <span class=\"\">all enemies</span> within range<br>Recovers <span class=\"\">50</span> HP with every enemy hit (up to Block count)"
+    "description": "Cannot be healed by allies<br>Attack <span class=\"keyword\">all enemies</span> within range<br>Recovers <span class=\"keyword\">50</span> HP with every enemy hit (up to Block count)"
   },
   {
     "subclass": "librator",
-    "description": "Does not attack and have 0 block count normally<br>Gradually increase attack power up to <span class=\"\">+200%</span> after <span class=\"\">40</span> seconds when skill is not active<br>Attack increase resets after skill ends"
+    "description": "Does not attack and have 0 block count normally<br>Gradually increase attack power up to <span class=\"keyword\">+200%</span> after <span class=\"keyword\">40</span> seconds when skill is not active<br>Attack increase resets after skill ends"
   },
   {
     "subclass": "protector",
@@ -65,7 +65,7 @@
   },
   {
     "subclass": "unyield",
-    "description": "<span class=\"\">Cannot</span> be healed by allies"
+    "description": "<span class=\"keyword\">Cannot</span> be healed by allies"
   },
   {
     "subclass": "artsprotector",
@@ -85,15 +85,15 @@
   },
   {
     "subclass": "aoesniper",
-    "description": "Deals <span class=\"\">AOE Physical damage</span>"
+    "description": "Deals <span class=\"keyword\">AOE Physical damage</span>"
   },
   {
     "subclass": "longrange",
-    "description": "Prioritizes attacking the enemy with <span class=\"\">lowest DEF</span> within range first"
+    "description": "Prioritizes attacking the enemy with <span class=\"keyword\">lowest DEF</span> within range first"
   },
   {
     "subclass": "reaperrange",
-    "description": "Attacks <span class=\"\">all enemies</span> within range, and deals 150% damage to enemies in the row directly in front of this unit."
+    "description": "Attacks <span class=\"keyword\">all enemies</span> within range, and deals 150% damage to enemies in the row directly in front of this unit."
   },
   {
     "subclass": "siegesniper",
@@ -101,39 +101,39 @@
   },
   {
     "subclass": "bombarder",
-    "description": "Attacks deal <span class=\"\">two instances</span> of Physical damage to <span class=\"\">ground</span> enemies in a small area (The second instance is a shockwave that has half the normal ATK)"
+    "description": "Attacks deal <span class=\"keyword\">two instances</span> of Physical damage to <span class=\"keyword\">ground</span> enemies in a small area (The second instance is a shockwave that has half the normal ATK)"
   },
   {
     "subclass": "corecaster",
-    "description": "Deals <span class=\"\">Arts damage</span>"
+    "description": "Deals <span class=\"keyword\">Arts damage</span>"
   },
   {
     "subclass": "splashcaster",
-    "description": "Deals <span class=\"\">AOE Arts damage</span>"
+    "description": "Deals <span class=\"keyword\">AOE Arts damage</span>"
   },
   {
     "subclass": "funnel",
-    "description": "Controls a <span class=\"\">Drone</span> to deal <span class=\"\">Arts</span> damage to an enemy; When the Drone continuously attacks the same enemy, its damage will increase (up to 110% of the operator's ATK)"
+    "description": "Controls a <span class=\"keyword\">Drone</span> to deal <span class=\"keyword\">Arts</span> damage to an enemy; When the Drone continuously attacks the same enemy, its damage will increase (up to 110% of the operator's ATK)"
   },
   {
     "subclass": "phalanx",
-    "description": "Normally <span class=\"\">does not attack</span>, but has <span class=\"\">greatly increased</span> DEF and RES; When skill is active, attacks deal <span class=\"\">AoE Arts damage</span>"
+    "description": "Normally <span class=\"keyword\">does not attack</span>, but has <span class=\"keyword\">greatly increased</span> DEF and RES; When skill is active, attacks deal <span class=\"keyword\">AoE Arts damage</span>"
   },
   {
     "subclass": "mystic",
-    "description": "Attacks deal <span class=\"\">Arts damage</span>; When unable to find a target, attacks can be <span class=\"\">stored up</span> and fired all at once (Up to 3 charges)"
+    "description": "Attacks deal <span class=\"keyword\">Arts damage</span>; When unable to find a target, attacks can be <span class=\"keyword\">stored up</span> and fired all at once (Up to 3 charges)"
   },
   {
     "subclass": "chain",
-    "description": "Attacks deal <span class=\"\">Arts</span> damage and jump between <span class=\"\">3</span> enemies. Each jump deals 20% less damage and inflicts a brief <span class=\"skill-tooltip\">Slow</span>"
+    "description": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">3</span> (4 at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class=\"skill-tooltip\">Slow</span>"
   },
   {
     "subclass": "blastcaster",
-    "description": "Deals <span class=\"\">AOE Arts damage in a long line</span>"
+    "description": "Deals <span class=\"keyword\">AOE Arts damage in a long line</span>"
   },
   {
     "subclass": "physician",
-    "description": "Restores the HP of allies and ignores the <span class=\"\">Deployment Limit</span>, but has a long Redeployment Time"
+    "description": "Restores the HP of allies"
   },
   {
     "subclass": "ringhealer",
@@ -141,43 +141,43 @@
   },
   {
     "subclass": "healer",
-    "description": "Has a large healing range, but the healing amount on farther targets is reduced to <span class=\"\">70%</span>"
+    "description": "Has a large healing range, but the healing amount on farther targets is reduced to <span class=\"keyword\">70%</span>"
   },
   {
     "subclass": "slower",
-    "description": "Deals <span class=\"\">Arts damage</span> and <span class=\"skill-tooltip\">Slows</span> the target for a short time"
+    "description": "Deals <span class=\"keyword\">Arts damage</span> and <span class=\"skill-tooltip\">Slows</span> the target for a short time"
   },
   {
     "subclass": "underminer",
-    "description": "Deals <span class=\"\">Arts damage</span>"
+    "description": "Deals <span class=\"keyword\">Arts damage</span>"
   },
   {
     "subclass": "bard",
-    "description": "Does not attack but continuously restores the <span class=\"\">HP</span> of all allies within range (the HP restored per second is equal to 10% of self ATK). Self is unaffected by <span class=\"skill-tooltip\">Inspiration</span>"
+    "description": "Does not attack but continuously restores the <span class=\"keyword\">HP</span> of all allies within range (the HP restored per second is equal to 10% of self ATK). Self is unaffected by <span class=\"skill-tooltip\">Inspiration</span>"
   },
   {
     "subclass": "blessing",
-    "description": "Deals <span class=\"\">Arts damage</span>"
+    "description": "Deals <span class=\"keyword\">Arts damage</span>"
   },
   {
     "subclass": "summoner",
-    "description": "Deals <span class=\"\">Arts damage</span><br>Can use <span class=\"\">Summons</span> in battles"
+    "description": "Deals <span class=\"keyword\">Arts damage</span><br>Can use <span class=\"keyword\">Summons</span> in battles"
   },
   {
     "subclass": "executor",
-    "description": "Does not attack and ignores the <span class=\"\">Deployment Limit</span>, but has a long Redeployment Time"
+    "description": "Significantly <span class=\"keyword\">reduced</span> Redeployment Time"
   },
   {
     "subclass": "pusher",
-    "description": "Can attack <span class=\"\">all blocked enemies</span><br>Can be deployed on Ranged Grids"
+    "description": "Can attack <span class=\"keyword\">all blocked enemies</span><br>Can be deployed on Ranged Grids"
   },
   {
     "subclass": "stalker",
-    "description": "Deals Damage to <span class=\"\">all targets</span> within range<br>50% chance to dodge Physical and Arts attacks and is less likely to be <span class=\"\">targeted</span> by enemies"
+    "description": "Deals Damage to <span class=\"keyword\">all targets</span> within range<br>50% chance to dodge Physical and Arts attacks and is less likely to be <span class=\"keyword\">targeted</span> by enemies"
   },
   {
     "subclass": "hookmaster",
-    "description": "Can <span class=\"\">Shift</span> enemies by using skills<br>Can be deployed on Ranged Grids"
+    "description": "Can <span class=\"keyword\">Shift</span> enemies by using skills<br>Can be deployed on Ranged Grids"
   },
   {
     "subclass": "geek",
@@ -185,11 +185,11 @@
   },
   {
     "subclass": "merchant",
-    "description": "Has <span class=\"\">reduced</span> Redeployment Time, but <span class=\"\">DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"\">3 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)"
+    "description": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\">DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">3 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)"
   },
   {
     "subclass": "traper",
-    "description": "Can use traps to assist in combat, but traps cannot be placed <span class=\"\">on tiles already occupied by an enemy</span>"
+    "description": "Can use traps to assist in combat, but traps cannot be placed <span class=\"keyword\">on tiles already occupied by an enemy</span>"
   },
   {
     "subclass": "dollkeeper",
@@ -197,14 +197,14 @@
   },
   {
     "subclass": "craftsman",
-    "description": "Can block 2 enemies<br>Can use <span class=\"\">Support Devices</span> in battle"
+    "description": "Can block 2 enemies<br>Can use <span class=\"keyword\">Support Devices</span> in battle"
   },
   {
     "subclass": "wandermedic",
-    "description": "Heal friendly unit<br>Recovers <span class=\"\">Elemental damage</span> equal to <span class=\"\">50%</span> of Attack Power<br>(Can heal the <span class=\"\">Elemental damage</span> of unhurt units)"
+    "description": "Heal friendly unit<br>Recovers <span class=\"\">Elemental damage</span> equal to <span class=\"keyword\">50%</span> of Attack Power<br>(Can heal the <span class=\"\">Elemental damage</span> of unhurt units)"
   },
   {
     "subclass": "fortress",
-    "description": "Prioritize <span class=\"\">Long range splash attack</span> when not blocking"
+    "description": "Prioritize <span class=\"keyword\">Long range splash attack</span> when not blocking"
   }
 ]

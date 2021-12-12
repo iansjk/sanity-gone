@@ -127,7 +127,12 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
 
   return (
     <section css={styles}>
-      {!isSummon && <TraitInfo characterObject={characterObject} />}
+      {!isSummon && (
+        <TraitInfo
+          subProfessionId={characterObject.subProfessionId}
+          showSubclassIcon={true}
+        />
+      )}
       <h3 className="visually-hidden">
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>

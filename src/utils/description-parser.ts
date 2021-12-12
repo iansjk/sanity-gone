@@ -56,6 +56,9 @@ export const descriptionToHtml = (
             case "@ba.rem":
               className = "reminder-text";
               break;
+            case "@ba.kw":
+              className = "keyword";
+              break;
             default:
               if (tagName.slice(0, 1) === "$") {
                 className = "skill-tooltip";

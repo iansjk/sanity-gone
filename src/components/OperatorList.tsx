@@ -395,6 +395,13 @@ const styles = (theme: Theme) => css`
           .rarity-number {
             margin-right: ${theme.spacing(0.25)};
           }
+
+          .rarity-star {
+            width: 13px;
+            height: 13px;
+            position: relative;
+            top: -1px;
+          }
         }
 
         .operator-class {

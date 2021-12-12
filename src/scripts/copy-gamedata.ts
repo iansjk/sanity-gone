@@ -229,8 +229,8 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     JSON.stringify(denormalizedSkills, null, 2)
   );
 
-  const denormalizedTraits = Object.keys(subProfessionLookup).map(
-    (subclass) => {
+  const denormalizedTraits = Object.fromEntries(
+    Object.keys(subProfessionLookup).map((subclass) => {
       const firstOp = denormalizedOperators.find(
         (op) => op.subProfessionId === subclass && op.rarity > 1 // no robots
       );
@@ -253,11 +253,8 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
         ? trait.candidates[trait.candidates.length - 1].blackboard
         : [];
 
-      return {
-        subclass: subclass,
-        description: descriptionToHtml(description, blackboard),
-      };
-    }
+      return [subclass, descriptionToHtml(description, blackboard)];
+    })
   );
   fs.writeFileSync(
     path.join(dataDir, "traits.json"),

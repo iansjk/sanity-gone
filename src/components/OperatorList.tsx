@@ -436,6 +436,7 @@ const styles = (theme: Theme) => css`
           filter: drop-shadow(
             0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)
           );
+          pointer-events: none;
         }
       }
 

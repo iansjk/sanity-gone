@@ -41,6 +41,7 @@ import CustomCheckbox from "../../components/CustomCheckbox";
 import FilterIcon from "../../components/icons/FilterIcon";
 import HorizontalScroller from "../../components/HorizontalScroller";
 import OperatorList from "../../components/OperatorList";
+import TraitInfo from "../../components/TraitInfo";
 
 const MENU_ICON_SIZE = 18;
 
@@ -467,6 +468,12 @@ const Operators: React.VFC<Props> = ({ data }) => {
                         Branch
                       </span>
                     </div>
+                    {selectedSubProfessionId && (
+                      <TraitInfo
+                        subProfessionId={selectedSubProfessionId}
+                        showSubclassIcon={false}
+                      />
+                    )}
                     <div
                       className="subclass-description"
                       dangerouslySetInnerHTML={{
@@ -697,10 +704,25 @@ const styles = (theme: Theme) => css`
         }
       }
 
+      .class-card {
+        grid-template-rows: max-content 1fr;
+
+        .icon-container {
+          grid-row: span 2;
+        }
+      }
+
+      .subclass-card {
+        grid-template-rows: repeat(3, max-content);
+
+        .icon-container {
+          grid-row: span 3;
+        }
+      }
+
       .class-card,
       .subclass-card {
         display: grid;
-        grid-template-rows: max-content 1fr;
         grid-template-columns: max-content 1fr;
         align-items: center;
 
@@ -709,7 +731,6 @@ const styles = (theme: Theme) => css`
           height: 100%;
           display: flex;
           align-items: center;
-          grid-row: span 2;
           padding: ${theme.spacing(4)};
 
           ${theme.breakpoints.down("mobile")} {
@@ -751,6 +772,14 @@ const styles = (theme: Theme) => css`
             color: ${rgba(theme.palette.white.main, 0.5)};
             font-size: ${theme.typography.generalHeading.fontSize}px;
             line-height: ${theme.typography.generalHeading.lineHeight};
+          }
+        }
+
+        .trait-container {
+          padding: ${theme.spacing(0, 4)};
+          ${theme.breakpoints.down("mobile")} {
+            padding: ${theme.spacing(1, 2, 0)};
+            grid-column: 1 / span 2;
           }
         }
 

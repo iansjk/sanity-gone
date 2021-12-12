@@ -40,6 +40,7 @@ import CustomCheckbox from "./CustomCheckbox";
 import RibbonButton from "./RibbonButton";
 import RibbonButtonGroup from "./RibbonButtonGroup";
 import SliderWithInput from "./SliderWithInput";
+import TraitInfo from "./TraitInfo";
 
 const SUMMON_ICON_SIZE = 60;
 
@@ -126,6 +127,12 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
 
   return (
     <section css={styles}>
+      {!isSummon && (
+        <TraitInfo
+          subProfessionId={characterObject.subProfessionId}
+          showSubclassIcon={true}
+        />
+      )}
       <h3 className="visually-hidden">
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>

@@ -35,7 +35,7 @@ export const classToProfession = (className: string): string =>
 export const professionToClass = (profession: string): string =>
   reverseProfessionLookup[profession];
 
-const subProfessionLookup: Record<string, string> = {
+export const subProfessionLookup: Record<string, string> = {
   pioneer: "Pioneer",
   charger: "Charger",
   tactician: "Tactician",

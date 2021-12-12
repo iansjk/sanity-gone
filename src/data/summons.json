@@ -405,7 +405,7 @@
     "cnName": "医疗探机",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 192,
+    "fileIndex": 196,
     "operatorName": "Silence"
   },
   {
@@ -819,7 +819,7 @@
     "cnName": "触手",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 193,
+    "fileIndex": 197,
     "operatorName": "Deepcolor"
   },
   {
@@ -1406,7 +1406,7 @@
     "cnName": "Mon3tr",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 194,
+    "fileIndex": 198,
     "operatorName": "Kal'tsit"
   },
   {
@@ -1830,7 +1830,7 @@
     "cnName": "幻影",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 195,
+    "fileIndex": 199,
     "operatorName": "Nightingale"
   },
   {
@@ -3319,7 +3319,7 @@
     "cnName": "机械水獭",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 196,
+    "fileIndex": 200,
     "operatorName": "Mayer"
   },
   {
@@ -4514,7 +4514,7 @@
     "cnName": "龙腾.F",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 197,
+    "fileIndex": 201,
     "operatorName": "Magallan"
   },
   {
@@ -5613,7 +5613,7 @@
     "cnName": "龙腾.L",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 198,
+    "fileIndex": 202,
     "operatorName": "Magallan"
   },
   {
@@ -6808,7 +6808,7 @@
     "cnName": "龙腾.A",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 199,
+    "fileIndex": 203,
     "operatorName": "Magallan"
   },
   {
@@ -7537,7 +7537,7 @@
     "cnName": "诅咒娃娃",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 200,
+    "fileIndex": 204,
     "operatorName": "Shamare"
   },
   {
@@ -9445,7 +9445,7 @@
     "cnName": "镜中虚影",
     "subProfessionId": "executor",
     "isCnOnly": false,
-    "fileIndex": 201,
+    "fileIndex": 205,
     "operatorName": "Phantom"
   },
   {
@@ -10136,11 +10136,11 @@
     "cnName": "此面向敌",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 202,
+    "fileIndex": 206,
     "operatorName": "W"
   },
   {
-    "name": "Industrial Reserve Water Cannon",
+    "name": "Industrial Water Cannon",
     "description": null,
     "canUseGeneralPotentialItem": true,
     "potentialItemId": "",
@@ -11437,7 +11437,7 @@
     "cnName": "工程蓄水炮",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 203,
+    "fileIndex": 207,
     "operatorName": "Weedy"
   },
   {
@@ -13217,7 +13217,7 @@
     "cnName": "移动摄影器",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 204,
+    "fileIndex": 208,
     "operatorName": "Scene"
   },
   {
@@ -14334,7 +14334,7 @@
     "cnName": "沙之碑",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 205,
+    "fileIndex": 209,
     "operatorName": "Beeswax"
   },
   {
@@ -15240,7 +15240,7 @@
     "cnName": "迷迭香的战术装备",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 206,
+    "fileIndex": 210,
     "operatorName": "Rosmontis"
   },
   {
@@ -16230,7 +16230,7 @@
     "cnName": "\"夹子\"",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 207,
+    "fileIndex": 211,
     "operatorName": "Robin"
   },
   {
@@ -16614,7 +16614,7 @@
     "cnName": "磐蟹护卫队",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 208,
+    "fileIndex": 212,
     "operatorName": "Beanstalk"
   },
   {
@@ -17185,7 +17185,7 @@
     "cnName": "\"小自在\"",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 209,
+    "fileIndex": 213,
     "operatorName": "Dusk"
   },
   {
@@ -18175,7 +18175,7 @@
     "cnName": "迎宾踏垫",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 210,
+    "fileIndex": 214,
     "operatorName": "Frost"
   },
   {
@@ -19896,7 +19896,7 @@
     "cnName": "斯卡蒂的海嗣",
     "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 211,
+    "fileIndex": 215,
     "operatorName": "Skadi the Corrupting Heart"
   },
   {

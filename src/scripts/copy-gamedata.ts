@@ -1,3 +1,6 @@
+/* eslint-disable */
+// @ts-nocheck
+
 import fs from "fs";
 import path from "path";
 import enCharacterTable from "../../ArknightsGameData/en_US/gamedata/excel/character_table.json";
@@ -7,7 +10,13 @@ import cnSkillTable from "../../ArknightsGameData/zh_CN/gamedata/excel/skill_tab
 import rangeTable from "../../ArknightsGameData/en_US/gamedata/excel/range_table.json";
 import jetSkillTranslations from "./jet-tls/skills.json";
 import jetTalentTranslations from "./jet-tls/talents.json";
+import jetTraitTranslations from "./jet-tls/traits.json";
 import { Character, SkillAtLevel } from "./gamedata-types";
+import { subProfessionLookup } from "../utils/globals";
+import {
+  descriptionToHtml,
+  InterpolatedValue,
+} from "../utils/description-parser";
 
 const dataDir = path.join(__filename, "../../data");
 const jetSkillDescriptionRegex =
@@ -44,6 +53,16 @@ const fixJetSkillDescriptionTags = (description: string): string => {
 const NAME_OVERRIDES: Record<string, string> = {
   "THRM-EX": "Thermal-EX",
 };
+
+const TRAIT_OVERRIDES: Record<string, string> = {
+  musha:
+    "Can't be healed by other units. Recovers <@ba.kw>30/50/70</> (scales with elite promotion) self HP every time this operator attacks an enemy",
+  chain:
+    'Attacks deal <@ba.kw>Arts</> damage and jump between <@ba.kw>3</> (4 at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class="skill-tooltip">Slow</span>',
+  phalanx:
+    "Normally <@ba.kw>does not attack</>, but has <@ba.kw>+200%</> DEF and <@ba.kw>+20</> RES; When skill is active, attacks deal <@ba.kw>AoE Arts damage</>",
+};
+
 const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
 
 (() => {
@@ -208,5 +227,37 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
   fs.writeFileSync(
     path.join(dataDir, "skills.json"),
     JSON.stringify(denormalizedSkills, null, 2)
+  );
+
+  const denormalizedTraits = Object.fromEntries(
+    Object.keys(subProfessionLookup).map((subclass) => {
+      const firstOp = denormalizedOperators.find(
+        (op) => op.subProfessionId === subclass && op.rarity > 1 // no robots
+      );
+
+      let description = firstOp.description;
+      const trait = firstOp.trait;
+
+      // left in console.log comments - useful for debugging bad trait descriptions
+      // console.log(description);
+      if (description in jetTraitTranslations.full) {
+        // console.log("in descs");
+        description = fixJetSkillDescriptionTags(
+          jetTraitTranslations.full[description].en
+        );
+      } else if (subclass in TRAIT_OVERRIDES) {
+        description = TRAIT_OVERRIDES[subclass];
+      }
+
+      const blackboard: InterpolatedValue[] = trait
+        ? trait.candidates[trait.candidates.length - 1].blackboard
+        : [];
+
+      return [subclass, descriptionToHtml(description, blackboard)];
+    })
+  );
+  fs.writeFileSync(
+    path.join(dataDir, "traits.json"),
+    JSON.stringify(denormalizedTraits, null, 2)
   );
 })();

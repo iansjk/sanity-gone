@@ -58,9 +58,14 @@ const TRAIT_OVERRIDES: Record<string, string> = {
   musha:
     "Can't be healed by other units. Recovers <@ba.kw>30/50/70</> (scales with elite promotion) self HP every time this operator attacks an enemy",
   chain:
-    'Attacks deal <@ba.kw>Arts</> damage and jump between <@ba.kw>3</> (4 at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class="skill-tooltip">Slow</span>',
+    'Attacks deal <@ba.kw>Arts</> damage and jump between <@ba.kw>3</> (<@ba.kw>4</> at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class="skill-tooltip">Slow</span>',
   phalanx:
     "Normally <@ba.kw>does not attack</>, but has <@ba.kw>+200%</> DEF and <@ba.kw>+20</> RES; When skill is active, attacks deal <@ba.kw>AoE Arts damage</>",
+  geek: "Continually loses <@ba.kw>3%</> max HP per second",
+  wanderer:
+    "Restores the HP of allies\nRecovers <@ba.dt.element>Elemental damage</> equal to <@ba.kw>{ep_heal_ratio:0%}</> of Attack Power</br>(Can heal <@ba.dt.element>Elemental damage</> of unhurt units)",
+  reaper:
+    "Cannot be healed by allies\nAttack <@ba.kw>all enemies</> within range\nRecovers <@ba.kw>{value}</> HP with every enemy hit (up to block count)",
 };
 
 const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
@@ -240,13 +245,13 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
 
       // left in console.log comments - useful for debugging bad trait descriptions
       // console.log(description);
-      if (description in jetTraitTranslations.full) {
+      if (subclass in TRAIT_OVERRIDES) {
+        description = TRAIT_OVERRIDES[subclass];
+      } else if (description in jetTraitTranslations.full) {
         // console.log("in descs");
         description = fixJetSkillDescriptionTags(
           jetTraitTranslations.full[description].en
         );
-      } else if (subclass in TRAIT_OVERRIDES) {
-        description = TRAIT_OVERRIDES[subclass];
       }
 
       const blackboard: InterpolatedValue[] = trait

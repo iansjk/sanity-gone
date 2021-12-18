@@ -66,6 +66,8 @@ const TRAIT_OVERRIDES: Record<string, string> = {
     "Restores the HP of allies\nRecovers <@ba.dt.element>Elemental damage</> equal to <@ba.kw>{ep_heal_ratio:0%}</> of Attack Power</br>(Can heal <@ba.dt.element>Elemental damage</> of unhurt units)",
   reaper:
     "Cannot be healed by allies\nAttack <@ba.kw>all enemies</> within range\nRecovers <@ba.kw>{value}</> HP with every enemy hit (up to block count)",
+  librator:
+    'Does not attack and has 0 block count normally<br>Gradually increase attack power up to <span class="keyword">+200%</span> after <span class="keyword">40</span> seconds when skill is not active<br>Attack increase resets after skill ends',
 };
 
 const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;

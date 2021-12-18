@@ -49,6 +49,6 @@
   "traper": "Can use traps to assist in combat, but traps cannot be placed <span class=\"keyword\">on tiles already occupied by an enemy</span>",
   "dollkeeper": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block). Swaps back to the original after 20 seconds",
   "craftsman": "Can block 2 enemies<br>Can use <span class=\"keyword\">Support Devices</span> in battle",
-  "wandermedic": "Heal friendly unit<br>Recovers <span class=\"\">Elemental damage</span> equal to <span class=\"keyword\">50%</span> of Attack Power<br>(Can heal the <span class=\"\">Elemental damage</span> of unhurt units)",
+  "wandermedic": "Restores the HP of allies<br>Recovers <span class=\"\">Elemental damage</span> equal to <span class=\"keyword\">50%</span> of Attack Power<br>(Can heal <span class=\"\">Elemental damage</span> of unhurt units)",
   "fortress": "Prioritize <span class=\"keyword\">Long range splash attack</span> when not blocking"
 }

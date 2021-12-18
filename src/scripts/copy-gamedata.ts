@@ -62,7 +62,7 @@ const TRAIT_OVERRIDES: Record<string, string> = {
   phalanx:
     "Normally <@ba.kw>does not attack</>, but has <@ba.kw>+200%</> DEF and <@ba.kw>+20</> RES; When skill is active, attacks deal <@ba.kw>AoE Arts damage</>",
   geek: "Continually loses <@ba.kw>3%</> max HP per second",
-  wanderer:
+  wandermedic:
     "Restores the HP of allies\nRecovers <@ba.dt.element>Elemental damage</> equal to <@ba.kw>{ep_heal_ratio:0%}</> of Attack Power</br>(Can heal <@ba.dt.element>Elemental damage</> of unhurt units)",
   reaper:
     "Cannot be healed by allies\nAttack <@ba.kw>all enemies</> within range\nRecovers <@ba.kw>{value}</> HP with every enemy hit (up to block count)",

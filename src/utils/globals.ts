@@ -73,7 +73,7 @@ export const subProfessionLookup: Record<string, string> = {
   ringhealer: "Mass Healer",
   healer: "Mender",
   slower: "Inhibitor",
-  underminer: "Witherer",
+  underminer: "Hexer",
   bard: "Bard",
   blessing: "Protector",
   summoner: "Summoner",

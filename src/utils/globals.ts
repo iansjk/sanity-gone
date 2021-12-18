@@ -64,7 +64,7 @@ export const subProfessionLookup: Record<string, string> = {
   bombarder: "Bombardier",
   corecaster: "Core",
   splashcaster: "Dispersion",
-  funnel: "Magitech",
+  funnel: "Mech-Accord",
   phalanx: "Formation",
   mystic: "Mystic",
   chain: "Chain",

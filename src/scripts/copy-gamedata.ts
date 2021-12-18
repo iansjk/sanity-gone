@@ -58,7 +58,7 @@ const TRAIT_OVERRIDES: Record<string, string> = {
   musha:
     "Can't be healed by other units. Recovers <@ba.kw>30/50/70</> (scales with elite promotion) self HP every time this operator attacks an enemy",
   chain:
-    'Attacks deal <@ba.kw>Arts</> damage and jump between <@ba.kw>3</> (<@ba.kw>4</> at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class="skill-tooltip">Slow</span>',
+    'Attacks deal <@ba.kw>Arts damage</> and jump between <@ba.kw>3</> (<@ba.kw>4</> at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class="skill-tooltip">Slow</span>',
   phalanx:
     "Normally <@ba.kw>does not attack</>, but has <@ba.kw>+200%</> DEF and <@ba.kw>+20</> RES; When skill is active, attacks deal <@ba.kw>AoE Arts damage</>",
   geek: "Continually loses <@ba.kw>3%</> max HP per second",

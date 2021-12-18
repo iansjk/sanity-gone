@@ -30,7 +30,7 @@
   "funnel": "Controls a <span class=\"keyword\">Drone</span> to deal <span class=\"keyword\">Arts</span> damage to an enemy; When the Drone continuously attacks the same enemy, its damage will increase (up to 110% of the operator's ATK)",
   "phalanx": "Normally <span class=\"keyword\">does not attack</span>, but has <span class=\"keyword\">+200%</span> DEF and <span class=\"keyword\">+20</span> RES; When skill is active, attacks deal <span class=\"keyword\">AoE Arts damage</span>",
   "mystic": "Attacks deal <span class=\"keyword\">Arts damage</span>; When unable to find a target, attacks can be <span class=\"keyword\">stored up</span> and fired all at once (Up to 3 charges)",
-  "chain": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">3</span> (<span class=\"keyword\">4</span> at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class=\"skill-tooltip\">Slow</span>",
+  "chain": "Attacks deal <span class=\"keyword\">Arts damage</span> and jump between <span class=\"keyword\">3</span> (<span class=\"keyword\">4</span> at Elite 2) enemies. Each jump deals 20% less damage and inflicts a brief <span class=\"skill-tooltip\">Slow</span>",
   "blastcaster": "Deals <span class=\"keyword\">AOE Arts damage in a long line</span>",
   "physician": "Restores the HP of allies",
   "ringhealer": "Restores the HP of 3 allies simultaneously",

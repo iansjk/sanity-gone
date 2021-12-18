@@ -27,7 +27,7 @@ const members: { name: string; role: string }[] = [
   },
   {
     name: "kawa",
-    role: "Editor-in-Chief",
+    role: "Mascot",
   },
   {
     name: "Thanik",

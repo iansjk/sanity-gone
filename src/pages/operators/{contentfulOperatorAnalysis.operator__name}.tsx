@@ -123,9 +123,6 @@ interface OperatorAnalysisData {
         publicURL: string;
       };
     };
-    archetype: {
-      archetypeName: string;
-    };
     customBgPositionX: string;
   };
   author: {
@@ -699,9 +696,6 @@ export const query = graphql`
         accentColorInHex
         limited
         name
-        archetype {
-          archetypeName
-        }
         customBgPositionX
         bannerImage {
           localFile {

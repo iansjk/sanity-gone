@@ -79,7 +79,7 @@ const htmlToReact = (
               analysis={domNode.children[0].data}
             />
           );
-        } else if ((domNode.firstChild as Element).name === "img") {
+        } else if ((domNode.firstChild as Element)?.name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")
             .map((imgElement, i) => (

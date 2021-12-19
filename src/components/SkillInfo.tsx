@@ -142,10 +142,14 @@ const SkillInfo: React.VFC<
             />
             <h3 className="skill-name">{name}</h3>
             <span className="skill-and-sp-type">
-              <span className={cx("sp-type", `sp-type-${spType}`)}>
-                {SkillSpType[levels[skillLevel - 1].spData.spType]}
-              </span>
-              <span aria-hidden="true"> · </span>
+              {SkillType[levels[skillLevel - 1].skillType] !== "Passive" && (
+                <span>
+                  <span className={cx("sp-type", `sp-type-${spType}`)}>
+                    {SkillSpType[levels[skillLevel - 1].spData.spType]}
+                  </span>
+                  <span aria-hidden="true"> · </span>
+                </span>
+              )}
               <span className={cx("skill-type", `skill-type-${skillType}`)}>
                 {SkillType[levels[skillLevel - 1].skillType]}
               </span>
@@ -264,9 +268,11 @@ const styles = (theme: Theme) => css`
         margin-right: ${theme.spacing(1)};
       }
     }
+
     .spacer {
       flex: 1 1 0;
     }
+
     .slider-container {
       margin-right: ${theme.spacing(2)};
       height: ${theme.spacing(8)};
@@ -366,6 +372,7 @@ const styles = (theme: Theme) => css`
       svg path {
         fill: ${theme.palette.pink.main};
       }
+
       // there is a weird 1px gap to the right of this div on desktop. TODO: Fix it.
     }
   }

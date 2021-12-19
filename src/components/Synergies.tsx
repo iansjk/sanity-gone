@@ -47,7 +47,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
             <span
               key={qualityLabel}
               className={`synergy-quality quality-${syn.quality}`}
-              aria-label={SynergyQuality[syn.quality]}
+              title={SynergyQuality[syn.quality]}
             >
               {qualityLabel}
             </span>,

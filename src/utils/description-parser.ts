@@ -56,6 +56,9 @@ export const descriptionToHtml = (
             case "@ba.rem":
               className = "reminder-text";
               break;
+            case "@ba.kw":
+              className = "keyword";
+              break;
             default:
               if (tagName.slice(0, 1) === "$") {
                 className = "skill-tooltip";
@@ -85,8 +88,10 @@ export const descriptionToHtml = (
   do {
     match = descriptionInterpolationRegex.exec(htmlDescription);
     if (match?.groups) {
-      const key = match.groups.interpolationKey;
-      const value = interpolation.find((value) => value.key === key)?.value;
+      const key = match.groups.interpolationKey?.toLowerCase();
+      const value = interpolation.find(
+        (value) => value.key?.toLowerCase() === key
+      )?.value;
       if (!value) {
         throw new Error(`Couldn't find matching interpolation key: ${key}`);
       }

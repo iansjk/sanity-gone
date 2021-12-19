@@ -137,7 +137,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
                   onClick={() => {
                     updateActivePhase(eliteLevel, pot);
                   }}
-                  aria-label={`Potential ${pot}`}
+                  aria-label={`Potential ${pot + 1}`}
                 >
                   {pot === 0 && <PotentialOneIcon />}
                   {pot === 1 && <PotentialTwoIcon />}

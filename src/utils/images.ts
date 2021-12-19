@@ -9,13 +9,6 @@ export const operatorImage = (name: string, elite?: number): string =>
 
 export const summonImage = (id: string): string => `/images/summons/${id}.png`;
 
-export const operatorPortrait = (name: string, elite?: number): string =>
-  `/images/portraits/${slugify(name)}${
-    typeof elite !== "undefined" && (elite > 1 || name === "Amiya")
-      ? `-elite-${elite}`
-      : ""
-  }.png`;
-
 export const operatorClassIcon = (operatorClass: string): string =>
   `/images/classes/${operatorClass}.png`;
 

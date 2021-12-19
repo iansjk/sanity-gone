@@ -65,7 +65,6 @@ const styles = (theme: Theme) => css`
   .module-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
   }
 
   .module-attributes {

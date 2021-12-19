@@ -6,7 +6,12 @@ import { sgPageBanner } from "../utils/images";
 
 const Disclaimer: React.VFC = () => {
   return (
-    <Layout pageTitle="Disclaimer" bannerImageUrl={sgPageBanner("disclaimer")}>
+    <Layout
+      pageTitle="Disclaimer"
+      bannerImageUrl={sgPageBanner("disclaimer")}
+      previousLocation="Home"
+      previousLocationLink="/"
+    >
       <main css={styles}>
         <p>
           <b>Sanity;Gone Zero</b> is an unofficial fan project and is not
@@ -40,9 +45,9 @@ const Disclaimer: React.VFC = () => {
 export default Disclaimer;
 
 const styles = (theme: Theme) => css`
-  padding: ${theme.spacing(0, 2)};
+  padding: ${theme.spacing(1, 3, 0, 3)};
 
   ${theme.breakpoints.down("mobile")} {
-    padding: ${theme.spacing(0, 3)};
+    padding: ${theme.spacing(1, 2, 0, 2)};
   }
 `;

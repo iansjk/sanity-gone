@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { css, Global } from "@emotion/react";
 import { Theme, useMediaQuery, useTheme } from "@mui/material";
 import { graphql } from "gatsby";
@@ -20,8 +21,6 @@ import { replaceSelfClosingHtmlTags } from "../../utils/globals";
 import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";
-import { Fragment } from "react";
-import StarIcon from "../../components/icons/StarIcon";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
 import { operatorImage } from "../../utils/images";
 
@@ -80,7 +79,7 @@ const htmlToReact = (
               analysis={domNode.children[0].data}
             />
           );
-        } else if ((domNode.firstChild as Element).name === "img") {
+        } else if ((domNode.firstChild as Element)?.name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")
             .map((imgElement, i) => (
@@ -123,9 +122,6 @@ interface OperatorAnalysisData {
       localFile: {
         publicURL: string;
       };
-    };
-    archetype: {
-      archetypeName: string;
     };
     customBgPositionX: string;
   };
@@ -267,9 +263,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       pageTitle={`${operatorName} Guide`}
       customPageHeading={
         alterName ? (
-          <h1>
-            {baseChar} <span className="alter-name">The {alterName}</span>
-          </h1>
+          <Fragment>
+            <h1>{baseChar}</h1>
+            <h1>
+              <span className="alter-name">The {alterName}</span>
+            </h1>
+          </Fragment>
         ) : (
           <h1>{baseChar}</h1>
         )
@@ -277,14 +276,14 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       bannerImageUrl={contentful.operator.bannerImage.localFile.publicURL}
       image={operatorImage(operatorName)}
       description={contentful.customByline ?? description}
-      // previousLocation="Operators"
-      // previousLocationLink="/operators"
+      previousLocation="Operators"
+      previousLocationLink="/operators"
     >
       <Global
         styles={globalOverrideStyles(
           contentful.operator.accentColorInHex,
           contentful.operator.customBgPositionX
-        )}
+        )(theme)}
       />
       <Tabs component="main" css={styles(contentful.operator.accentColorInHex)}>
         <TabButtons className="tabs" isSwiper>
@@ -353,6 +352,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           <div className="external-links">
             <span className="section-label">External Links</span>
             <a
+              className="emphasized-link"
               href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${operatorName}`}
               rel="noreferrer noopener"
               target="_blank"
@@ -360,6 +360,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               Aceship
             </a>
             <a
+              className="emphasized-link"
               href={`http://prts.wiki/w/${encodeURIComponent(
                 operatorObject.cnName
               )}`}
@@ -417,6 +418,8 @@ const globalOverrideStyles =
       }
 
       header {
+        height: ${theme.spacing(30.5)};
+
         .heading-and-breadcrumb {
           h1 {
             font-size: ${theme.typography.operatorPageHeading.fontSize}px;
@@ -425,17 +428,31 @@ const globalOverrideStyles =
             text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
               rgba(0, 0, 0, 0.5);
 
+            .alter-name {
+              display: block;
+              font-size: ${theme.typography.generalHeading.fontSize}px;
+              line-height: ${theme.typography.generalHeading.lineHeight};
+              font-weight: normal;
+            }
+
             ${theme.breakpoints.down("mobile")} {
               font-size: ${theme.typography.operatorNameHeading.fontSize}px;
               font-weight: ${theme.typography.operatorNameHeading.fontWeight};
               line-height: ${theme.typography.operatorNameHeading.lineHeight};
+              margin-top: 0;
 
               .alter-name {
-                display: block;
-                font-size: ${theme.typography.generalHeading.fontSize}px;
-                line-height: ${theme.typography.generalHeading.lineHeight};
                 font-weight: normal;
               }
+            }
+          }
+          .breadcrumb > a {
+            color: ${rgba(lighten(0.27, accentColor), 0.66)};
+            background-color: ${rgba(accentColor, 0.08)};
+
+            &:hover {
+              color: ${lighten(0.27, accentColor)};
+              background-color: ${rgba(accentColor, 0.4)};
             }
           }
         }
@@ -444,6 +461,7 @@ const globalOverrideStyles =
 
 const styles = (accentColor: string) => (theme: Theme) =>
   css`
+    padding: ${theme.spacing(0, 3)};
     margin: ${theme.spacing(3, 0, 0)};
     display: grid;
     grid-template-rows: max-content max-content 1fr;
@@ -451,12 +469,13 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
     ${theme.breakpoints.down("mobile")} {
       margin: ${theme.spacing(2, 0, 0)};
+      padding: 0;
       grid-template-columns: 1fr;
     }
 
     .tabs ~ .swiper-container {
       background-color: ${transparentize(0.34, theme.palette.dark.main)};
-      backdrop-filter: blur(${theme.spacing(1)});
+      backdrop-filter: blur(8px);
 
       button {
         box-sizing: border-box;
@@ -614,7 +633,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       margin-left: -1px;
       height: 100%;
       border-left: 1px solid ${theme.palette.gray.main};
-      backdrop-filter: blur(${theme.spacing(1)});
+      backdrop-filter: blur(8px);
 
       ${theme.breakpoints.down("mobile")} {
         grid-row: 2;
@@ -677,9 +696,6 @@ export const query = graphql`
         accentColorInHex
         limited
         name
-        archetype {
-          archetypeName
-        }
         customBgPositionX
         bannerImage {
           localFile {

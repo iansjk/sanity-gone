@@ -40,24 +40,14 @@ import CustomCheckbox from "./CustomCheckbox";
 import RibbonButton from "./RibbonButton";
 import RibbonButtonGroup from "./RibbonButtonGroup";
 import SliderWithInput from "./SliderWithInput";
+import TraitInfo from "./TraitInfo";
 
 const SUMMON_ICON_SIZE = 60;
 
 const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
-  <Tooltip
-    {...rest}
-    classes={{ popper: className }}
-    placement="top"
-    arrow={true}
-  />
+  <Tooltip {...rest} classes={{ popper: className }} />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: theme.palette.blackest.main,
-    padding: theme.spacing(0.5, 1),
-    borderRadius: theme.spacing(0.25),
-    fontSize: theme.typography.body2.fontSize,
-    lineHeight: theme.typography.body2.lineHeight,
-    textAlign: "left",
     ul: {
       margin: 0,
       padding: 0,
@@ -76,11 +66,8 @@ const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
       },
     },
   },
-  [`& .${tooltipClasses.arrow}`]: {
-    color: theme.palette.blackest.main,
-  },
   ".potential-description": {
-    color: theme.palette.midtoneBrighterer.main,
+    color: theme.palette.gray.main,
   },
 }));
 
@@ -140,6 +127,12 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
 
   return (
     <section css={styles}>
+      {!isSummon && (
+        <TraitInfo
+          subProfessionId={characterObject.subProfessionId}
+          showSubclassIcon={true}
+        />
+      )}
       <h3 className="visually-hidden">
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>
@@ -335,7 +328,12 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               if (e.target.value === "") {
                 setOpLevel(1);
               } else if (Number(e.target.value) > phases[eliteLevel].maxLevel) {
-                setOpLevel(Number(`${e.target.value}`.slice(0, 2)));
+                setOpLevel(
+                  Math.min(
+                    Number(`${e.target.value}`.slice(0, 2)),
+                    phases[eliteLevel].maxLevel
+                  )
+                );
               } else {
                 setOpLevel(
                   Math.min(Number(e.target.value), phases[eliteLevel].maxLevel)
@@ -473,6 +471,11 @@ const styles = (theme: Theme) => css`
         height: ${theme.spacing(8)};
 
         button {
+          .elite-zero path {
+            fill: transparent;
+            stroke: ${theme.palette.midtoneBrighterer.main};
+          }
+
           path {
             fill: ${theme.palette.midtoneBrighterer.main};
           }
@@ -481,14 +484,7 @@ const styles = (theme: Theme) => css`
             path {
               fill: ${theme.palette.white.main};
             }
-          }
 
-          .elite-zero path {
-            fill: transparent;
-            stroke: ${theme.palette.midtoneBrighterer.main};
-          }
-
-          &.active {
             .elite-zero path {
               fill: transparent;
               stroke: ${theme.palette.white.main};

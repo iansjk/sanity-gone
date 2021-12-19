@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { createTheme } from "@mui/material";
+import { createTheme, ThemeOptions } from "@mui/material";
 
 declare module "@mui/material/styles" {
   interface SGPalette {
@@ -61,6 +61,7 @@ declare module "@mui/material/styles" {
     navigationLink: React.CSSProperties;
     navigationLinkBold: React.CSSProperties;
     operatorBrowserNameHeading: React.CSSProperties;
+    operatorCardAlterName: React.CSSProperties;
   }
 
   interface Palette extends SGPalette {}
@@ -77,11 +78,41 @@ declare module "@mui/material/styles" {
     mobile: true;
     maxWidth: true;
   }
+
+  interface ThemeOptions {
+    customShadows: typeof customShadows;
+  }
+
+  interface Theme {
+    customShadows: typeof customShadows;
+  }
+}
+
+declare module "@mui/material/Button" {
+  interface ButtonPropsColorOverrides {
+    lime: true;
+    blue: true;
+    softBlue: true;
+    yellow: true;
+    orange: true;
+    red: true;
+    pink: true;
+    white: true;
+    gray: true;
+    black: true;
+    dark: true;
+    midtoneDarker: true;
+    midtone: true;
+    midtoneBrighter: true;
+    midtoneBrighterer: true;
+    midtoneExtra: true;
+  }
 }
 
 const spacingUnit = 8;
 
-const defaultTheme = createTheme({
+const baseTheme = createTheme({
+  spacing: spacingUnit,
   palette: {
     lime: {
       main: "#a7e855",
@@ -138,14 +169,14 @@ const defaultTheme = createTheme({
   typography: {
     fontFamily: "Source Sans Pro",
     pageHeading: {
-      fontSize: 64,
-      lineHeight: 1.25,
+      fontSize: 48,
+      lineHeight: 1,
       fontWeight: 600,
     },
     operatorPageHeading: {
       fontWeight: 600,
-      fontSize: 96,
-      lineHeight: 1.25,
+      fontSize: 72,
+      lineHeight: 1,
     },
     operatorNameHeading: {
       fontSize: 36,
@@ -221,6 +252,12 @@ const defaultTheme = createTheme({
       fontWeight: 600,
       lineHeight: 1.25,
     },
+    operatorCardAlterName: {
+      fontSize: 14,
+      fontWeight: 400,
+      lineHeight: 1.25,
+      textTransform: "uppercase",
+    },
   },
   breakpoints: {
     values: {
@@ -228,6 +265,94 @@ const defaultTheme = createTheme({
       maxWidth: 1270 + spacingUnit * 3 * 2,
     },
   },
-});
+} as ThemeOptions);
 
+export const customShadows = {
+  titleShadow: `0 ${baseTheme.spacing(0.25)} ${baseTheme.spacing(
+    1
+  )} rgba(0, 0, 0, 0.5);`,
+  baseShadow: `${baseTheme.spacing(0.25)} ${baseTheme.spacing(
+    0.25
+  )} ${baseTheme.spacing(1)} rgba(0, 0, 0, 0.15)`,
+};
+
+const defaultTheme = createTheme({
+  ...baseTheme,
+  customShadows,
+  components: {
+    MuiButton: {
+      defaultProps: {
+        color: "midtoneBrighter",
+      },
+      styleOverrides: {
+        root: {
+          padding: baseTheme.spacing(1, 1.5),
+          fontSize: baseTheme.typography.navigationLink.fontSize,
+          lineHeight: baseTheme.typography.navigationLink.lineHeight,
+          boxShadow: customShadows.baseShadow,
+          textTransform: "none",
+          "&:hover": {
+            backgroundColor: baseTheme.palette.midtoneBrighterer.main,
+          },
+          "&:disabled": {
+            color: baseTheme.palette.midtoneBrighterer.main,
+            backgroundColor: baseTheme.palette.dark.main,
+          },
+        },
+      },
+    },
+    MuiPopover: {
+      styleOverrides: {
+        paper: {
+          color: baseTheme.palette.white.main,
+          backgroundColor: baseTheme.palette.midtoneBrighter.main,
+          boxShadow: customShadows.baseShadow,
+        },
+      },
+    },
+    MuiMenu: {
+      styleOverrides: {
+        paper: {
+          margin: baseTheme.spacing(1, 0, 0),
+        },
+        list: {
+          padding: 0,
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          "&:hover": {
+            backgroundColor: baseTheme.palette.midtoneBrighterer.main,
+          },
+          "& .MuiTypography-root": {
+            fontSize: baseTheme.typography.navigationLink.fontSize,
+            lineHeight: baseTheme.typography.navigationLink.lineHeight,
+            fontWeight: baseTheme.typography.navigationLinkBold.fontWeight,
+          },
+        },
+      },
+    },
+    MuiTooltip: {
+      defaultProps: {
+        arrow: true,
+        placement: "top",
+      },
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: baseTheme.palette.blackest.main,
+          padding: baseTheme.spacing(0.5, 1),
+          borderRadius: baseTheme.spacing(0.25),
+          fontSize: baseTheme.typography.body2.fontSize,
+          lineHeight: baseTheme.typography.body2.lineHeight,
+          textAlign: "left",
+        },
+        arrow: {
+          color: baseTheme.palette.blackest.main,
+        },
+      },
+    },
+  },
+});
 export default defaultTheme;

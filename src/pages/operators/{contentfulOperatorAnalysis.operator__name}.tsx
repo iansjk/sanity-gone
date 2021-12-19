@@ -233,12 +233,18 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       analysis: syn.synergyDescription.childMarkdownRemark.html,
       shouldInvertIconOnHighlight: syn.shouldInvertIconOnHighlight,
     };
-    return syn.isGroup
-      ? {
-          ...baseProps,
-          iconUrl: syn.customSynergyIcon.localFile.publicURL,
-        }
-      : { ...baseProps, ...operatorMap[syn.synergyName] };
+    if (syn.isGroup) {
+      if (!syn.customSynergyIcon?.localFile?.publicURL) {
+        throw new Error(
+          `Missing customSynergyIcon for group synergy "${syn.synergyName}"`
+        );
+      }
+      return {
+        ...baseProps,
+        iconUrl: syn.customSynergyIcon.localFile.publicURL,
+      };
+    }
+    return { ...baseProps, ...operatorMap[syn.synergyName] };
   });
 
   const strengths =

@@ -3,6 +3,8 @@ import { css } from "@emotion/react";
 import ScrollContainer from "react-indiana-drag-scroll";
 import { useMediaQuery, useTheme } from "@mui/material";
 
+import { Media } from "../Media";
+
 export type TabButtonsProps = Omit<
   React.HTMLAttributes<HTMLDivElement>,
   "onClick"
@@ -93,25 +95,26 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
     }
   }
 
-  return (
+  return isSwiper ? (
     <Fragment>
-      <div
-        role="tablist"
-        {...rest}
-        {...(isSwiper && isMobile ? { style: { display: "none" } } : {})}
-      >
-        {newChildren}
-      </div>
-      {isSwiper && (
+      <Media lessThan="mobile">
         <ScrollContainer
           css={swiperStyles}
           className="tab-buttons swiper-container"
-          style={!isMobile ? { display: "none" } : {}}
         >
           {newChildren}
         </ScrollContainer>
-      )}
+      </Media>
+      <Media greaterThanOrEqual="mobile">
+        <div role="tablist" {...rest}>
+          {newChildren}
+        </div>
+      </Media>
     </Fragment>
+  ) : (
+    <div role="tablist" {...rest}>
+      {newChildren}
+    </div>
   );
 };
 export default TabButtons;

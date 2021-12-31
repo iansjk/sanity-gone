@@ -111,6 +111,11 @@ declare module "@mui/material/Button" {
 
 const spacingUnit = 8;
 
+export const customBreakpoints = {
+  mobile: 1000,
+  maxWidth: 1270 + spacingUnit * 3 * 2,
+};
+
 const baseTheme = createTheme({
   spacing: spacingUnit,
   palette: {
@@ -260,10 +265,7 @@ const baseTheme = createTheme({
     },
   },
   breakpoints: {
-    values: {
-      mobile: 1000,
-      maxWidth: 1270 + spacingUnit * 3 * 2,
-    },
+    values: customBreakpoints,
   },
 } as ThemeOptions);
 

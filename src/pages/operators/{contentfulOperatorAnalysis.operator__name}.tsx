@@ -479,7 +479,11 @@ const styles = (accentColor: string) => (theme: Theme) =>
       grid-template-columns: 1fr;
     }
 
-    .tabs ~ .swiper-container {
+    .fresnel-container {
+      display: grid;
+    }
+
+    .fresnel-container > .swiper-container {
       background-color: ${transparentize(0.34, theme.palette.dark.main)};
       backdrop-filter: blur(8px);
 
@@ -523,7 +527,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       }
     }
 
-    & > .tabs {
+    .fresnel-container > .tabs {
       display: flex;
       flex-direction: column;
       z-index: 1;

@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
-import { useMediaQuery, useTheme, Theme, Tooltip } from "@mui/material";
+import { Theme, Tooltip } from "@mui/material";
 import { Fragment } from "react";
+import { Media } from "../Media";
 
 import {
   professionToClass,
@@ -53,8 +54,6 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     subProfessionId,
     description
   );
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
   const [charName, alterName] = name.split(" the ");
 
   return (
@@ -93,21 +92,27 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
             </span>
           </a>
         </div>
-        <OperatorPortrait
-          variant={isMobile ? "small" : "normal"}
-          name={name}
-          isLimited={isLimited}
-          rarity={rarity}
-        />
+        <Media lessThan="mobile">
+          <OperatorPortrait
+            variant="small"
+            name={name}
+            isLimited={isLimited}
+            rarity={rarity}
+          />
+        </Media>
+        <Media greaterThanOrEqual="mobile">
+          <OperatorPortrait name={name} isLimited={isLimited} rarity={rarity} />
+        </Media>
       </div>
       <dl className="attack-type-and-position">
         <div className="attack-type">
           <dt>Regular Attack</dt>
           <dd className={slugify(attackType)}>
             {attackType}
-            {!isMobile &&
-              (attackType === "Arts" || attackType === "Physical") &&
-              " Damage"}
+            <Media greaterThanOrEqual="mobile">
+              {(attackType === "Arts" || attackType === "Physical") &&
+                " Damage"}
+            </Media>
           </dd>
         </div>
 

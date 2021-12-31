@@ -354,7 +354,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           ))}
         </TabPanels>
         <div className="left-sidebar">
-          <Media lessThan="mobile">
+          <Media greaterThanOrEqual="mobile">
             <hr />
           </Media>
           <div className="external-links">

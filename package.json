@@ -18,6 +18,7 @@
     "update-game-data": "git submodule update --init --recursive --remote && ts-node-script ./src/scripts/copy-gamedata.ts"
   },
   "dependencies": {
+    "@artsy/fresnel": "^3.2.1",
     "@emotion/babel-plugin": "^11.3.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",

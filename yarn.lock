@@ -31,6 +31,11 @@
   dependencies:
     tslib "~2.0.1"
 
+"@artsy/fresnel@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@artsy/fresnel/-/fresnel-3.2.1.tgz#920f5fae518d1af622e790ee02235b52e62a045d"
+  integrity sha512-08mn27qkJzJu7O4CwjxH2KTix7jvbl0gRtgxjjUYTk7o2LAOHOgv3lnEV77tOc06khSV0GWTgGFUzG7cfDSwzQ==
+
 "@babel/code-frame@7.10.4":
   version "7.10.4"
   resolved "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.10.4.tgz#168da1a36e90da68ae8d49c0f1b48c7c6249213a"

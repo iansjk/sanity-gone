@@ -1,10 +1,7 @@
-import { Fragment } from "react";
-import { css, Global } from "@emotion/react";
 import { Theme, useTheme } from "@mui/material";
 import { graphql } from "gatsby";
 import { lighten, rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
-import parse, { attributesToProps } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
 
 import Introduction from "../../components/Introduction";
@@ -269,12 +266,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       pageTitle={`${operatorName} Guide`}
       customPageHeading={
         alterName ? (
-          <Fragment>
+          <>
             <h1>{baseChar}</h1>
             <h1>
               <span className="alter-name">The {alterName}</span>
             </h1>
-          </Fragment>
+          </>
         ) : (
           <h1>{baseChar}</h1>
         )

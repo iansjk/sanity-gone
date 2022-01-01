@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo } from "react";
+import React, { useMemo } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { css, Theme, Tooltip } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
@@ -34,7 +34,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
   }, [operators]);
 
   return (
-    <Fragment>
+    <>
       <svg xmlns="http://www.w3.org/2000/svg" className="visually-hidden">
         <defs>
           <linearGradient id="rarity-6-gradient">
@@ -116,13 +116,13 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                         }
                       : {}),
                   },
-                  <Fragment>
+                  <>
                     <span className="operator-name">
                       {alterName ? (
-                        <Fragment>
+                        <>
                           <span className="base-name">{charName}</span>
                           <span className="alter-name">{alterName}</span>
-                        </Fragment>
+                        </>
                       ) : (
                         op.name
                       )}
@@ -137,7 +137,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                     <span key="opClass" className="operator-class">
                       {operatorClass}
                     </span>
-                  </Fragment>
+                  </>
                 )}
                 <Tooltip title={subclass}>
                   <button
@@ -169,7 +169,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
           );
         })}
       </ul>
-    </Fragment>
+    </>
   );
 });
 OperatorList.displayName = "OperatorList";

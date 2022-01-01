@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { css } from "@emotion/react";
 import ScrollContainer from "react-indiana-drag-scroll";
 
@@ -92,7 +92,7 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
   }
 
   return isSwiper ? (
-    <Fragment>
+    <>
       <Media lessThan="mobile">
         <ScrollContainer
           css={swiperStyles}
@@ -106,7 +106,7 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
           {newChildren}
         </div>
       </Media>
-    </Fragment>
+    </>
   ) : (
     <div role="tablist" {...rest}>
       {newChildren}

@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
@@ -79,8 +79,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
   };
 
   return (
-    // <> shorthand syntax is BROKEN, don't use it.
-    <Fragment>
+    <>
       <Helmet title={title}>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -220,7 +219,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
           </div>
         </footer>
       </div>
-    </Fragment>
+    </>
   );
 };
 export default Layout;

@@ -16,7 +16,6 @@ import {
   MenuItem,
   styled,
   Theme,
-  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
@@ -42,6 +41,7 @@ import FilterIcon from "../../components/icons/FilterIcon";
 import HorizontalScroller from "../../components/HorizontalScroller";
 import OperatorList from "../../components/OperatorList";
 import TraitInfo from "../../components/TraitInfo";
+import { Media } from "../../Media";
 
 const MENU_ICON_SIZE = 18;
 
@@ -139,7 +139,6 @@ const Operators: React.VFC<Props> = ({ data }) => {
     string | null
   >(null);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -363,7 +362,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
             </ClassSubclassMenuItem>
           ))}
       </Menu>
-      {!isMobile && <div className="spacer" />}
+      <Media lessThan="mobile">
+        <div className="spacer" />
+      </Media>
       <CustomCheckbox
         label="Guide available"
         onChange={handleGuideAvailableChange}
@@ -393,15 +394,16 @@ const Operators: React.VFC<Props> = ({ data }) => {
               .toLocaleString(DateTime.DATE_FULL)}
           </span>
         </span> */}
-          {isMobile ? (
+          <Media lessThan="mobile">
             <HorizontalScroller className="sort-and-filter-options">
               {sortAndFilterOptions}
             </HorizontalScroller>
-          ) : (
+          </Media>
+          <Media greaterThanOrEqual="mobile">
             <div className="sort-and-filter-options">
               {sortAndFilterOptions}
             </div>
-          )}
+          </Media>
 
           {selectedProfession != null && (
             <div className="toggle-button-container">

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { css, Global } from "@emotion/react";
-import { Theme, useMediaQuery, useTheme } from "@mui/material";
+import { Theme, useTheme } from "@mui/material";
 import { graphql } from "gatsby";
 import { lighten, rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
@@ -23,6 +23,7 @@ import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
 import { operatorImage } from "../../utils/images";
+import { Media } from "../../Media";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -198,7 +199,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     summon: summons.length > 0 ? summons[0] : undefined,
   };
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   const talentAnalyses = [
     contentful.talent1Analysis.childMarkdownRemark.html,
@@ -354,7 +354,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           ))}
         </TabPanels>
         <div className="left-sidebar">
-          {!isMobile && <hr />}
+          <Media greaterThanOrEqual="mobile">
+            <hr />
+          </Media>
           <div className="external-links">
             <span className="section-label">External Links</span>
             <a
@@ -479,7 +481,11 @@ const styles = (accentColor: string) => (theme: Theme) =>
       grid-template-columns: 1fr;
     }
 
-    .tabs ~ .swiper-container {
+    .fresnel-container {
+      display: grid;
+    }
+
+    .fresnel-container > .swiper-container {
       background-color: ${transparentize(0.34, theme.palette.dark.main)};
       backdrop-filter: blur(8px);
 
@@ -523,7 +529,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       }
     }
 
-    & > .tabs {
+    .fresnel-container > .tabs {
       display: flex;
       flex-direction: column;
       z-index: 1;

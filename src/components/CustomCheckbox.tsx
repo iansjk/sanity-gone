@@ -1,15 +1,15 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
-
+import cx from "clsx";
 export interface CustomCheckboxProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
 }
 
 const CustomCheckbox: React.VFC<CustomCheckboxProps> = (props) => {
-  const { label, disabled, ...rest } = props;
+  const { label, disabled, className, ...rest } = props;
   return (
-    <label className={disabled ? "disabled" : ""} css={styles}>
+    <label className={cx(disabled && "disabled", className)} css={styles}>
       <div className="checkbox-input">
         <input type="checkbox" {...{ disabled, ...rest }} />
         <span className="checkbox-control" aria-hidden="true" />

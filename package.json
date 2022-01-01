@@ -20,6 +20,7 @@
   "dependencies": {
     "@artsy/fresnel": "^3.2.1",
     "@emotion/babel-plugin": "^11.3.0",
+    "@babel/core": "^7.14.8",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@mui/material": "^5.0.6",
@@ -55,7 +56,6 @@
     "xregexp": "^5.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.8",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",

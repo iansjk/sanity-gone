@@ -362,10 +362,8 @@ const Operators: React.VFC<Props> = ({ data }) => {
             </ClassSubclassMenuItem>
           ))}
       </Menu>
-      <Media lessThan="mobile">
-        <div className="spacer" />
-      </Media>
       <CustomCheckbox
+        className="guide-available-checkbox"
         label="Guide available"
         onChange={handleGuideAvailableChange}
         checked={showOnlyGuideAvailable}
@@ -591,7 +589,6 @@ const styles = (theme: Theme) => css`
     }
 
     .sort-and-filter-options {
-      display: flex;
       align-items: center;
       margin: ${theme.spacing(2, 0, 3)};
       font-size: ${theme.typography.navigationLink.fontSize}px;
@@ -602,6 +599,7 @@ const styles = (theme: Theme) => css`
       }
 
       ${theme.breakpoints.down("mobile")} {
+        display: flex;
         background-color: ${rgba(theme.palette.dark.main, 0.66)};
         padding: ${theme.spacing(2)} 0;
         margin: ${theme.spacing(2, 0, 0)};
@@ -620,8 +618,14 @@ const styles = (theme: Theme) => css`
         }
       }
 
-      .spacer {
-        flex-grow: 1;
+      ${theme.breakpoints.up("mobile")} {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(3, auto) 1fr;
+
+        .guide-available-checkbox {
+          grid-column: -1;
+        }
       }
 
       .filter-visual-label {

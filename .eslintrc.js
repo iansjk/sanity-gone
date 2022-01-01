@@ -17,6 +17,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier",
+    "plugin:storybook/recommended",
   ],
   plugins: ["@typescript-eslint", "react", "react-hooks", "prettier"],
   settings: {
@@ -38,9 +39,9 @@ module.exports = {
       "warn",
       {
         varsIgnorePattern: "^_",
-      }
+      },
     ],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
   },
 };

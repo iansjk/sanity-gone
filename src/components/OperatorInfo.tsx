@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { Theme, Tooltip } from "@mui/material";
+import { useMediaQuery, useTheme, Theme, Tooltip } from "@mui/material";
 import { Fragment } from "react";
 import { Media } from "../Media";
 
@@ -54,6 +54,8 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     subProfessionId,
     description
   );
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
   const [charName, alterName] = name.split(" the ");
 
   return (
@@ -109,10 +111,9 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
           <dt>Regular Attack</dt>
           <dd className={slugify(attackType)}>
             {attackType}
-            <Media greaterThanOrEqual="mobile">
-              {(attackType === "Arts" || attackType === "Physical") &&
-                " Damage"}
-            </Media>
+            {!isMobile &&
+              (attackType === "Arts" || attackType === "Physical") &&
+              " Damage"}
           </dd>
         </div>
 

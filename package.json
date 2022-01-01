@@ -25,6 +25,7 @@
     "@mui/material": "^5.0.6",
     "@sindresorhus/slugify": "<2",
     "@types/js-levenshtein": "^1.1.0",
+    "babel-loader": "^8.2.2",
     "clsx": "^1.1.1",
     "dotenv": "^10.0.0",
     "emotion-normalize": "^11.0.1",
@@ -51,6 +52,8 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "react-indiana-drag-scroll": "^2.1.0",
+    "sharp": "^0.29.3",
+    "webpack": "^5.0.0",
     "wicg-inert": "^3.1.1",
     "xregexp": "^5.1.0"
   },
@@ -70,7 +73,6 @@
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
     "babel-eslint": "^10.0.0",
-    "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
@@ -78,9 +80,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-storybook": "^0.5.5",
     "prettier": "^2.3.2",
-    "sharp": "^0.29.3",
-    "typescript": "^4.3.5",
-    "webpack": "^5.0.0"
+    "typescript": "^4.3.5"
   },
   "engines": {
     "node": ">=16"

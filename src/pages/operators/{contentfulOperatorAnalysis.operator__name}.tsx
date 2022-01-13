@@ -1,7 +1,8 @@
-import { Theme, useTheme } from "@mui/material";
+import { Theme, useTheme, css, GlobalStyles } from "@mui/material";
 import { graphql } from "gatsby";
 import { lighten, rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
+import parse, { attributesToProps } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
 
 import Introduction from "../../components/Introduction";
@@ -282,7 +283,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       previousLocation="Operators"
       previousLocationLink="/operators"
     >
-      <Global
+      <GlobalStyles
         styles={globalOverrideStyles(
           contentful.operator.accentColorInHex,
           contentful.operator.customBgPositionX

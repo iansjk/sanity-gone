@@ -36,7 +36,7 @@
     "gatsby-plugin-react-helmet": "^5.4.0",
     "gatsby-plugin-sharp": "4.4.0",
     "gatsby-plugin-sitemap": "5.4.0",
-    "gatsby-source-contentful": "7.3.0-next.3",
+    "gatsby-source-contentful": "^7.3.0",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-theme-material-ui": "^5.0.0",
     "gatsby-theme-material-ui-top-layout": "^5.0.0",

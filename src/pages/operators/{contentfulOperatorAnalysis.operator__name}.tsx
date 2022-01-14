@@ -1,6 +1,4 @@
-import { Fragment } from "react";
-import { css, Global } from "@emotion/react";
-import { Theme, useTheme } from "@mui/material";
+import { Theme, useTheme, css, GlobalStyles } from "@mui/material";
 import { graphql } from "gatsby";
 import { lighten, rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
@@ -269,12 +267,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       pageTitle={`${operatorName} Guide`}
       customPageHeading={
         alterName ? (
-          <Fragment>
+          <>
             <h1>{baseChar}</h1>
             <h1>
               <span className="alter-name">The {alterName}</span>
             </h1>
-          </Fragment>
+          </>
         ) : (
           <h1>{baseChar}</h1>
         )
@@ -285,7 +283,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       previousLocation="Operators"
       previousLocationLink="/operators"
     >
-      <Global
+      <GlobalStyles
         styles={globalOverrideStyles(
           contentful.operator.accentColorInHex,
           contentful.operator.customBgPositionX

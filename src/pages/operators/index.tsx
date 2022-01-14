@@ -1,10 +1,4 @@
-import React, {
-  Fragment,
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-} from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { graphql } from "gatsby";
 import {
   Button,
@@ -230,7 +224,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
   );
 
   const sortAndFilterOptions = (
-    <Fragment>
+    <>
       <span className="filter-visual-label" aria-hidden="true">
         <FilterIcon />
         Filters
@@ -248,7 +242,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
         }
       >
         {selectedProfession ? (
-          <Fragment>
+          <>
             <img
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               src={operatorClassIcon(slugify(selectedClass!))}
@@ -257,7 +251,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
               height={MENU_ICON_SIZE}
             />
             {selectedClass}
-          </Fragment>
+          </>
         ) : (
           "All Classes"
         )}
@@ -307,7 +301,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
         className={selectedSubProfessionId ? "has-selection" : "no-selection"}
       >
         {selectedSubProfessionId ? (
-          <Fragment>
+          <>
             <img
               src={operatorSubclassIcon(selectedSubProfessionId)}
               alt=""
@@ -315,7 +309,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
               height={MENU_ICON_SIZE}
             />
             {selectedSubclass}
-          </Fragment>
+          </>
         ) : (
           "All Branches"
         )}
@@ -368,7 +362,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
         onChange={handleGuideAvailableChange}
         checked={showOnlyGuideAvailable}
       />
-    </Fragment>
+    </>
   );
 
   return (

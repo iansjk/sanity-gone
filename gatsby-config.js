@@ -21,6 +21,8 @@ module.exports = {
     description:
       "Sanity;Gone is a community resource for Arknights players, providing quick guides, reviews, and detailed information about the game.",
   },
+  jsxRuntime: "automatic",
+  jsxImportSource: "@emotion/react",
   plugins: [
     "gatsby-plugin-emotion",
     {

@@ -1,4 +1,4 @@
-import { Fragment, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
@@ -58,14 +58,14 @@ const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
                 </div>
               </li>
               {!isSearchOpen && (
-                <Fragment>
+                <>
                   <li>
                     <a href="/operators">Operators</a>
                   </li>
                   <li>
                     <a href="/about">About</a>
                   </li>
-                </Fragment>
+                </>
               )}
             </ul>
           </div>

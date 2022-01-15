@@ -1,6 +1,6 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { Theme, useMediaQuery } from "@mui/material";
+import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
 import { Helmet } from "react-helmet";
 import { BsDiscord as DiscordLogo } from "react-icons/bs";
@@ -12,7 +12,7 @@ import { lighten, rgba, transparentize } from "polished";
 import MobileMenu from "./components/MobileMenu";
 import SearchBar from "./components/SearchBar";
 import WeirdDeathSphere from "./components/WeirdDeathSphere";
-import theme from "./gatsby-theme-material-ui-top-layout/theme";
+import { Media } from "./Media";
 
 interface LayoutProps {
   pageTitle: string;
@@ -69,7 +69,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
   } = data.site.siteMetadata;
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   const title = pageTitle
     ? `${pageTitle} / Arknights Hub - ${siteName}`
@@ -80,8 +79,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
   };
 
   return (
-    // <> shorthand syntax is BROKEN, don't use it.
-    <Fragment>
+    <>
       <Helmet title={title}>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -157,8 +155,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
             <header>
               <div className="heading-and-breadcrumb">
                 <div className="heading-spacer" />
-                {!isMobile && previousLocation && previousLocationLink && (
-                  <div className="breadcrumb">
+                {previousLocation && previousLocationLink && (
+                  <Media greaterThanOrEqual="mobile" className="breadcrumb">
                     <a
                       href={previousLocationLink}
                       aria-label={`Back to ${previousLocation}`}
@@ -166,7 +164,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                       {previousLocation}
                     </a>
                     /
-                  </div>
+                  </Media>
                 )}
                 {customPageHeading || <h1>{pageTitle}</h1>}
               </div>
@@ -221,7 +219,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
           </div>
         </footer>
       </div>
-    </Fragment>
+    </>
   );
 };
 export default Layout;

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import GalleryItem from "./GalleryItem";
 import GalleryItemFullSizeModal from "./GalleryItemFullSizeModal";
 
@@ -29,7 +29,7 @@ const Gallery: React.FC<GalleryProps> = (props) => {
   ));
 
   return (
-    <Fragment>
+    <>
       <div className="gallery" css={styles}>
         {children}
       </div>
@@ -43,7 +43,7 @@ const Gallery: React.FC<GalleryProps> = (props) => {
         canPrevious={activeItemIndex > 0}
         canNext={activeItemIndex < numImages - 1}
       />
-    </Fragment>
+    </>
   );
 };
 export default Gallery;

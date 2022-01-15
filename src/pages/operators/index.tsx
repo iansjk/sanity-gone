@@ -1,10 +1,4 @@
-import React, {
-  Fragment,
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-} from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { graphql } from "gatsby";
 import {
   Button,
@@ -16,7 +10,6 @@ import {
   MenuItem,
   styled,
   Theme,
-  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
@@ -42,6 +35,7 @@ import FilterIcon from "../../components/icons/FilterIcon";
 import HorizontalScroller from "../../components/HorizontalScroller";
 import OperatorList from "../../components/OperatorList";
 import TraitInfo from "../../components/TraitInfo";
+import { Media } from "../../Media";
 
 const MENU_ICON_SIZE = 18;
 
@@ -139,7 +133,6 @@ const Operators: React.VFC<Props> = ({ data }) => {
     string | null
   >(null);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -231,7 +224,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
   );
 
   const sortAndFilterOptions = (
-    <Fragment>
+    <>
       <span className="filter-visual-label" aria-hidden="true">
         <FilterIcon />
         Filters
@@ -249,7 +242,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
         }
       >
         {selectedProfession ? (
-          <Fragment>
+          <>
             <img
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               src={operatorClassIcon(slugify(selectedClass!))}
@@ -258,7 +251,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
               height={MENU_ICON_SIZE}
             />
             {selectedClass}
-          </Fragment>
+          </>
         ) : (
           "All Classes"
         )}
@@ -308,7 +301,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
         className={selectedSubProfessionId ? "has-selection" : "no-selection"}
       >
         {selectedSubProfessionId ? (
-          <Fragment>
+          <>
             <img
               src={operatorSubclassIcon(selectedSubProfessionId)}
               alt=""
@@ -316,7 +309,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
               height={MENU_ICON_SIZE}
             />
             {selectedSubclass}
-          </Fragment>
+          </>
         ) : (
           "All Branches"
         )}
@@ -363,13 +356,13 @@ const Operators: React.VFC<Props> = ({ data }) => {
             </ClassSubclassMenuItem>
           ))}
       </Menu>
-      {!isMobile && <div className="spacer" />}
       <CustomCheckbox
+        className="guide-available-checkbox"
         label="Guide available"
         onChange={handleGuideAvailableChange}
         checked={showOnlyGuideAvailable}
       />
-    </Fragment>
+    </>
   );
 
   return (
@@ -393,15 +386,16 @@ const Operators: React.VFC<Props> = ({ data }) => {
               .toLocaleString(DateTime.DATE_FULL)}
           </span>
         </span> */}
-          {isMobile ? (
+          <Media lessThan="mobile">
             <HorizontalScroller className="sort-and-filter-options">
               {sortAndFilterOptions}
             </HorizontalScroller>
-          ) : (
+          </Media>
+          <Media greaterThanOrEqual="mobile">
             <div className="sort-and-filter-options">
               {sortAndFilterOptions}
             </div>
-          )}
+          </Media>
 
           {selectedProfession != null && (
             <div className="toggle-button-container">
@@ -589,7 +583,6 @@ const styles = (theme: Theme) => css`
     }
 
     .sort-and-filter-options {
-      display: flex;
       align-items: center;
       margin: ${theme.spacing(2, 0, 3)};
       font-size: ${theme.typography.navigationLink.fontSize}px;
@@ -600,6 +593,7 @@ const styles = (theme: Theme) => css`
       }
 
       ${theme.breakpoints.down("mobile")} {
+        display: flex;
         background-color: ${rgba(theme.palette.dark.main, 0.66)};
         padding: ${theme.spacing(2)} 0;
         margin: ${theme.spacing(2, 0, 0)};
@@ -618,8 +612,14 @@ const styles = (theme: Theme) => css`
         }
       }
 
-      .spacer {
-        flex-grow: 1;
+      ${theme.breakpoints.up("mobile")} {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(3, auto) 1fr;
+
+        .guide-available-checkbox {
+          grid-column: -1;
+        }
       }
 
       .filter-visual-label {

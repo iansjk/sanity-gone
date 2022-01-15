@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import { rgba } from "polished";
 import slugify from "@sindresorhus/slugify";
@@ -151,7 +151,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
             }
           >
             {selectedProfession ? (
-              <Fragment>
+              <>
                 <img
                   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                   src={operatorClassIcon(slugify(selectedClass!))}
@@ -160,7 +160,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
                   height={MENU_ICON_SIZE}
                 />
                 {selectedClass}
-              </Fragment>
+              </>
             ) : (
               "Class"
             )}
@@ -206,7 +206,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
             }
           >
             {selectedSubProfessionId ? (
-              <Fragment>
+              <>
                 <img
                   src={operatorSubclassIcon(selectedSubProfessionId)}
                   alt=""
@@ -214,7 +214,7 @@ const Classes: React.VFC<Props> = ({ data }) => {
                   height={MENU_ICON_SIZE}
                 />
                 {selectedSubclass}
-              </Fragment>
+              </>
             ) : (
               "Subclass"
             )}

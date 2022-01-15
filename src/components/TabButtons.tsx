@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { css } from "@emotion/react";
 import ScrollContainer from "react-indiana-drag-scroll";
-import { useMediaQuery, useTheme } from "@mui/material";
+
+import { Media } from "../Media";
 
 export type TabButtonsProps = Omit<
   React.HTMLAttributes<HTMLDivElement>,
@@ -15,9 +16,6 @@ export type TabButtonsProps = Omit<
 
 const TabButtons: React.FC<TabButtonsProps> = (props) => {
   const { activeTab, onClick, isSwiper, children, ...rest } = props;
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
-
   const buttonChildren = React.Children.toArray(children).filter(
     (child) =>
       React.isValidElement<React.HTMLAttributes<HTMLButtonElement>>(child) &&
@@ -93,25 +91,26 @@ const TabButtons: React.FC<TabButtonsProps> = (props) => {
     }
   }
 
-  return (
-    <Fragment>
-      <div
-        role="tablist"
-        {...rest}
-        {...(isSwiper && isMobile ? { style: { display: "none" } } : {})}
-      >
-        {newChildren}
-      </div>
-      {isSwiper && (
+  return isSwiper ? (
+    <>
+      <Media lessThan="mobile">
         <ScrollContainer
           css={swiperStyles}
           className="tab-buttons swiper-container"
-          style={!isMobile ? { display: "none" } : {}}
         >
           {newChildren}
         </ScrollContainer>
-      )}
-    </Fragment>
+      </Media>
+      <Media greaterThanOrEqual="mobile">
+        <div role="tablist" {...rest}>
+          {newChildren}
+        </div>
+      </Media>
+    </>
+  ) : (
+    <div role="tablist" {...rest}>
+      {newChildren}
+    </div>
   );
 };
 export default TabButtons;

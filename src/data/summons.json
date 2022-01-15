@@ -20,6 +20,7 @@
     "maxPotentialLevel": 0,
     "rarity": 4,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -403,9 +404,8 @@
       }
     ],
     "cnName": "医疗探机",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 196,
+    "fileIndex": 201,
     "operatorName": "Silence"
   },
   {
@@ -429,6 +429,7 @@
     "maxPotentialLevel": 0,
     "rarity": 3,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -817,9 +818,8 @@
     "id": "token_10001_deepcl_tentac",
     "skillData": [],
     "cnName": "触手",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 197,
+    "fileIndex": 202,
     "operatorName": "Deepcolor"
   },
   {
@@ -843,6 +843,7 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -1404,9 +1405,8 @@
     "id": "token_10002_kalts_mon3tr",
     "skillData": [],
     "cnName": "Mon3tr",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 198,
+    "fileIndex": 203,
     "operatorName": "Kal'tsit"
   },
   {
@@ -1430,6 +1430,7 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -1828,9 +1829,8 @@
     "id": "token_10003_cgbird_bird",
     "skillData": [],
     "cnName": "幻影",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 199,
+    "fileIndex": 204,
     "operatorName": "Nightingale"
   },
   {
@@ -1854,6 +1854,7 @@
     "maxPotentialLevel": 0,
     "rarity": 4,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -3317,9 +3318,8 @@
       }
     ],
     "cnName": "机械水獭",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 200,
+    "fileIndex": 205,
     "operatorName": "Mayer"
   },
   {
@@ -3343,6 +3343,7 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -4512,9 +4513,8 @@
       }
     ],
     "cnName": "龙腾.F",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 201,
+    "fileIndex": 206,
     "operatorName": "Magallan"
   },
   {
@@ -4538,6 +4538,7 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -5611,9 +5612,8 @@
       }
     ],
     "cnName": "龙腾.L",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 202,
+    "fileIndex": 207,
     "operatorName": "Magallan"
   },
   {
@@ -5637,6 +5637,7 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -6806,9 +6807,8 @@
       }
     ],
     "cnName": "龙腾.A",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 203,
+    "fileIndex": 208,
     "operatorName": "Magallan"
   },
   {
@@ -6832,6 +6832,7 @@
     "maxPotentialLevel": 0,
     "rarity": 4,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -7535,9 +7536,8 @@
       }
     ],
     "cnName": "诅咒娃娃",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 204,
+    "fileIndex": 209,
     "operatorName": "Shamare"
   },
   {
@@ -7561,6 +7561,7 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
+    "subProfessionId": "executor",
     "trait": null,
     "phases": [
       {
@@ -9443,9 +9444,8 @@
       }
     ],
     "cnName": "镜中虚影",
-    "subProfessionId": "executor",
     "isCnOnly": false,
-    "fileIndex": 205,
+    "fileIndex": 210,
     "operatorName": "Phantom"
   },
   {
@@ -9469,6 +9469,7 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -10134,9 +10135,8 @@
       }
     ],
     "cnName": "此面向敌",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 206,
+    "fileIndex": 211,
     "operatorName": "W"
   },
   {
@@ -10160,6 +10160,7 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -11435,9 +11436,8 @@
       }
     ],
     "cnName": "工程蓄水炮",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 207,
+    "fileIndex": 212,
     "operatorName": "Weedy"
   },
   {
@@ -11461,6 +11461,7 @@
     "maxPotentialLevel": 0,
     "rarity": 4,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -13215,9 +13216,8 @@
       }
     ],
     "cnName": "移动摄影器",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 208,
+    "fileIndex": 213,
     "operatorName": "Scene"
   },
   {
@@ -13241,6 +13241,7 @@
     "maxPotentialLevel": 0,
     "rarity": 4,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -14332,9 +14333,8 @@
       }
     ],
     "cnName": "沙之碑",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 209,
+    "fileIndex": 214,
     "operatorName": "Beeswax"
   },
   {
@@ -14358,6 +14358,7 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -15238,9 +15239,8 @@
       }
     ],
     "cnName": "迷迭香的战术装备",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 210,
+    "fileIndex": 215,
     "operatorName": "Rosmontis"
   },
   {
@@ -15264,6 +15264,7 @@
     "maxPotentialLevel": 0,
     "rarity": 4,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -16228,9 +16229,8 @@
       }
     ],
     "cnName": "\"夹子\"",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 211,
+    "fileIndex": 216,
     "operatorName": "Robin"
   },
   {
@@ -16254,6 +16254,7 @@
     "maxPotentialLevel": 0,
     "rarity": 3,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -16612,9 +16613,8 @@
     "id": "token_10014_bstalk_crab",
     "skillData": [],
     "cnName": "磐蟹护卫队",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 212,
+    "fileIndex": 217,
     "operatorName": "Beanstalk"
   },
   {
@@ -16638,6 +16638,7 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -17183,9 +17184,8 @@
     "id": "token_10015_dusk_drgn",
     "skillData": [],
     "cnName": "\"小自在\"",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 213,
+    "fileIndex": 218,
     "operatorName": "Dusk"
   },
   {
@@ -17209,6 +17209,7 @@
     "maxPotentialLevel": 0,
     "rarity": 4,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": null,
     "phases": [
       {
@@ -18173,9 +18174,8 @@
       }
     ],
     "cnName": "迎宾踏垫",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 214,
+    "fileIndex": 219,
     "operatorName": "Frost"
   },
   {
@@ -18199,6 +18199,7 @@
     "maxPotentialLevel": 0,
     "rarity": 5,
     "profession": "TOKEN",
+    "subProfessionId": "notchar1",
     "trait": {
       "candidates": [
         {
@@ -19894,9 +19895,8 @@
       }
     ],
     "cnName": "斯卡蒂的海嗣",
-    "subProfessionId": "notchar1",
     "isCnOnly": false,
-    "fileIndex": 215,
+    "fileIndex": 220,
     "operatorName": "Skadi the Corrupting Heart"
   },
   {
@@ -19986,7 +19986,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           },
           {
@@ -20011,7 +20012,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           }
         ],
@@ -20058,7 +20060,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           },
           {
@@ -20083,7 +20086,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           }
         ],
@@ -20130,7 +20134,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           },
           {
@@ -20155,7 +20160,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           }
         ],
@@ -20394,7 +20400,7 @@
     ],
     "cnName": "全自动造型仪",
     "isCnOnly": true,
-    "fileIndex": 241,
+    "fileIndex": 247,
     "operatorName": "Roberta"
   },
   {
@@ -20448,7 +20454,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           },
           {
@@ -20473,7 +20480,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           }
         ],
@@ -20516,7 +20524,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           },
           {
@@ -20541,7 +20550,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           }
         ],
@@ -20584,7 +20594,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           },
           {
@@ -20609,7 +20620,8 @@
               "baseForceLevel": 0,
               "stunImmune": false,
               "silenceImmune": false,
-              "sleepImmune": false
+              "sleepImmune": false,
+              "frozenImmune": false
             }
           }
         ],
@@ -20776,7 +20788,8 @@
           "baseForceLevel": 0,
           "stunImmune": false,
           "silenceImmune": false,
-          "sleepImmune": false
+          "sleepImmune": false,
+          "frozenImmune": false
         }
       },
       {
@@ -20801,7 +20814,8 @@
           "baseForceLevel": 0,
           "stunImmune": false,
           "silenceImmune": false,
-          "sleepImmune": false
+          "sleepImmune": false,
+          "frozenImmune": false
         }
       }
     ],
@@ -21381,7 +21395,7 @@
     ],
     "cnName": "“耀阳”",
     "isCnOnly": true,
-    "fileIndex": 242,
+    "fileIndex": 248,
     "operatorName": "Nearl the Radiant Knight"
   }
 ]

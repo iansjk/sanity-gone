@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { css, Theme, Tooltip } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
@@ -9,6 +9,9 @@ import { OperatorListOperator, PortraitNode } from "../pages/operators";
 import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
 import { operatorSubclassIcon } from "../utils/images";
 import StarIcon from "./icons/StarIcon";
+
+const getPortraitFilename = (operatorId: string) =>
+  `${operatorId}_1`;
 
 interface Props {
   operators: OperatorListOperator[];
@@ -26,12 +29,6 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
     portraitNodes,
     onSubclassFilter,
   } = props;
-
-  const nameToSlugMap = useMemo(() => {
-    return Object.fromEntries(
-      operators.map((op) => [op.name, slugify(op.name)])
-    );
-  }, [operators]);
 
   return (
     <>
@@ -65,14 +62,13 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
           const subclass = subProfessionIdToSubclass(op.subProfessionId);
           const hasGuide = operatorsWithGuides.includes(op.name);
           const [charName, alterName] = op.name.split(" the ");
+          const portraitFilename = getPortraitFilename(op.charId);
           const portraitNode = portraitNodes.find(
-            ({ name: filename }) => filename === nameToSlugMap[op.name]
+            ({ name: filename }) => filename === portraitFilename
           );
           if (!portraitNode) {
             throw new Error(
-              `Couldn't find portrait for ${op.name}, expecting ${slugify(
-                op.name
-              )}`
+              `Couldn't find portrait for ${op.name}, expecting ${portraitFilename}`
             );
           }
           return (

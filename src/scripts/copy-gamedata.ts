@@ -98,7 +98,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
 (() => {
   const enCharacterIds = new Set(Object.keys(enCharacterTable));
   const cnOnlyCharacters = Object.entries(cnCharacterTable).filter(
-    ([id]) => !enCharacterIds.has(id)
+    ([charId]) => !enCharacterIds.has(charId)
   );
 
   const summonIdToOperatorName: Record<string, string> = {};
@@ -109,8 +109,8 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     ][]
   )
     .filter(([_, character]) => character.profession !== "TRAP")
-    .map(([id, character], i) => {
-      const isCnOnly = !enCharacterIds.has(id);
+    .map(([charId, character], i) => {
+      const isCnOnly = !enCharacterIds.has(charId);
       const characterName = useNameOverride(
         isCnOnly ? character.appellation : character.name
       );
@@ -141,13 +141,13 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
               try {
                 const talentTL =
                   jetTalentTranslations[
-                    id as keyof typeof jetTalentTranslations
+                    charId as keyof typeof jetTalentTranslations
                   ][talentIndex][phaseIndex];
                 baseCandidateObject.name = talentTL.name;
                 baseCandidateObject.description = talentTL.desc;
               } catch {
                 console.warn(
-                  `No translation found for: character ${id}, talent index ${talentIndex}, phase index ${phaseIndex}`
+                  `No translation found for: character ${charId}, talent index ${talentIndex}, phase index ${phaseIndex}`
                 );
               }
             }
@@ -201,7 +201,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
         .filter((skillData) => !!skillData);
 
       const { name: cnName, subProfessionId } =
-        cnCharacterTable[id as keyof typeof cnCharacterTable];
+        cnCharacterTable[charId as keyof typeof cnCharacterTable];
 
       if (character.tokenKey) {
         summonIdToOperatorName[character.tokenKey] = characterName;
@@ -209,7 +209,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
 
       return {
         ...character,
-        id,
+        charId,
         phases,
         talents,
         skillData,
@@ -234,14 +234,14 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     .filter((character) => character.profession === "TOKEN")
     .map((summon) => ({
       ...summon,
-      operatorName: summonIdToOperatorName[summon.id],
+      operatorName: summonIdToOperatorName[summon.charId],
     }));
   fs.writeFileSync(
     path.join(dataDir, "summons.json"),
     JSON.stringify(denormalizedSummons, null, 2)
   );
 
-  const denormalizedSkills = Object.entries(enSkillTable).map(([id, skill]) => {
+  const denormalizedSkills = Object.entries(enSkillTable).map(([_, skill]) => {
     const levels = skill.levels.map((level) => ({
       ...level,
       range: level.rangeId
@@ -250,7 +250,6 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     }));
     return {
       ...skill,
-      id,
       levels,
     };
   });

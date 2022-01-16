@@ -350,7 +350,7 @@
     "potentialRanks": [],
     "favorKeyFrames": null,
     "allSkillLvlup": [],
-    "id": "token_10000_silent_healrb",
+    "charId": "token_10000_silent_healrb",
     "skillData": [
       {
         "skillId": "skcom_withdraw",
@@ -815,7 +815,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10001_deepcl_tentac",
+    "charId": "token_10001_deepcl_tentac",
     "skillData": [],
     "cnName": "触手",
     "isCnOnly": false,
@@ -1402,7 +1402,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10002_kalts_mon3tr",
+    "charId": "token_10002_kalts_mon3tr",
     "skillData": [],
     "cnName": "Mon3tr",
     "isCnOnly": false,
@@ -1826,7 +1826,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10003_cgbird_bird",
+    "charId": "token_10003_cgbird_bird",
     "skillData": [],
     "cnName": "幻影",
     "isCnOnly": false,
@@ -2252,7 +2252,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10004_otter_motter",
+    "charId": "token_10004_otter_motter",
     "skillData": [
       {
         "skillId": "sktok_motter_1",
@@ -3948,7 +3948,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10005_mgllan_drone1",
+    "charId": "token_10005_mgllan_drone1",
     "skillData": [
       {
         "skillId": "sktok_mgllan_drone1",
@@ -5047,7 +5047,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10005_mgllan_drone2",
+    "charId": "token_10005_mgllan_drone2",
     "skillData": [
       {
         "skillId": "sktok_mgllan_drone2",
@@ -6242,7 +6242,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10005_mgllan_drone3",
+    "charId": "token_10005_mgllan_drone3",
     "skillData": [
       {
         "skillId": "sktok_mgllan_drone3",
@@ -7255,7 +7255,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10006_vodfox_doll",
+    "charId": "token_10006_vodfox_doll",
     "skillData": [
       {
         "skillId": "sktok_vodfox_token",
@@ -8039,7 +8039,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10007_phatom_twin",
+    "charId": "token_10007_phatom_twin",
     "skillData": [
       {
         "skillId": "sktok_phatom_1",
@@ -9854,7 +9854,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10008_cqbw_box",
+    "charId": "token_10008_cqbw_box",
     "skillData": [
       {
         "skillId": "sktok_cqbw_token",
@@ -10705,7 +10705,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10009_weedy_cannon",
+    "charId": "token_10009_weedy_cannon",
     "skillData": [
       {
         "skillId": "sktok_weedy_token",
@@ -12045,7 +12045,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10010_folivo_car",
+    "charId": "token_10010_folivo_car",
     "skillData": [
       {
         "skillId": "sktok_folivo_2",
@@ -13642,7 +13642,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10011_beewax_oblisk",
+    "charId": "token_10011_beewax_oblisk",
     "skillData": [
       {
         "skillId": "sktok_beewax",
@@ -14798,7 +14798,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10012_rosmon_shield",
+    "charId": "token_10012_rosmon_shield",
     "skillData": [
       {
         "skillId": "sktok_rosmon",
@@ -15591,7 +15591,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10013_robin_mine",
+    "charId": "token_10013_robin_mine",
     "skillData": [
       {
         "skillId": "sktok_robin_1",
@@ -16610,7 +16610,7 @@
       }
     ],
     "allSkillLvlup": [],
-    "id": "token_10014_bstalk_crab",
+    "charId": "token_10014_bstalk_crab",
     "skillData": [],
     "cnName": "磐蟹护卫队",
     "isCnOnly": false,
@@ -17181,7 +17181,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10015_dusk_drgn",
+    "charId": "token_10015_dusk_drgn",
     "skillData": [],
     "cnName": "\"小自在\"",
     "isCnOnly": false,
@@ -17536,7 +17536,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10016_rfrost_mine",
+    "charId": "token_10016_rfrost_mine",
     "skillData": [
       {
         "skillId": "sktok_rfrost_1",
@@ -18980,7 +18980,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10017_skadi2_dedant",
+    "charId": "token_10017_skadi2_dedant",
     "skillData": [
       {
         "skillId": "sktok_skadi2_1",
@@ -20345,7 +20345,7 @@
     "potentialRanks": [],
     "favorKeyFrames": null,
     "allSkillLvlup": [],
-    "id": "token_10018_robrta_mach",
+    "charId": "token_10018_robrta_mach",
     "skillData": [
       {
         "skillId": "sktok_robrta",
@@ -20863,7 +20863,7 @@
         "lvlUpCost": null
       }
     ],
-    "id": "token_10019_nearl2_sword",
+    "charId": "token_10019_nearl2_sword",
     "skillData": [
       {
         "skillId": "sktok_nearl2_3",

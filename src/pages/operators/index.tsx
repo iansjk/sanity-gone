@@ -55,7 +55,7 @@ const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
 }));
 
 export interface OperatorListOperator {
-  id: string;
+  charId: string;
   name: string;
   isCnOnly: boolean;
   profession: string;
@@ -872,7 +872,7 @@ export const query = graphql`
       sort: { order: [DESC, DESC], fields: [rarity, fileIndex] }
     ) {
       nodes {
-        id
+        charId
         name
         isCnOnly
         profession

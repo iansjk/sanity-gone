@@ -84,7 +84,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                 `rarity-${op.rarity + 1}-star${op.rarity > 0 ? "s" : ""}`
               )}
               style={
-                !operatorsToShow.find((opToShow) => opToShow.id === op.id)
+                !operatorsToShow.find((opToShow) => opToShow.charId === op.charId)
                   ? { display: "none" }
                   : {}
               }

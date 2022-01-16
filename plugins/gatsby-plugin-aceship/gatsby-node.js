@@ -5,7 +5,9 @@ const fs = require("fs");
 
 const OUTFILE_NAME = "aceship.json";
 
-const opNameToId = Object.fromEntries(operatorsJson.map((op) => [op.name, op.id]));
+const opNameToId = Object.fromEntries(
+  operatorsJson.map((op) => [op.name, op.charId])
+);
 const opIdToPath = {};
 
 exports.onCreatePage = ({ page, reporter }) => {
@@ -18,10 +20,23 @@ exports.onCreatePage = ({ page, reporter }) => {
       opIdToPath[opId] = page.path;
     }
   }
-}
+};
 
 exports.onPostBuild = ({ reporter }) => {
-  reporter.verbose(`Generated Aceship opId to path json: ${JSON.stringify(opIdToPath, null, 2)}`);
-  fs.writeFileSync(path.join('public', OUTFILE_NAME), JSON.stringify(opIdToPath));
-  reporter.info(`Aceship plugin: wrote ${Object.keys(opIdToPath).length} entries to public/${OUTFILE_NAME}`);
-}
+  reporter.verbose(
+    `Generated Aceship opId to path json: ${JSON.stringify(
+      opIdToPath,
+      null,
+      2
+    )}`
+  );
+  fs.writeFileSync(
+    path.join("public", OUTFILE_NAME),
+    JSON.stringify(opIdToPath)
+  );
+  reporter.info(
+    `Aceship plugin: wrote ${
+      Object.keys(opIdToPath).length
+    } entries to public/${OUTFILE_NAME}`
+  );
+};

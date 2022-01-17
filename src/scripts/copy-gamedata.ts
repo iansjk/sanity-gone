@@ -222,6 +222,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
         fileIndex: i,
       };
     });
+
   const denormalizedOperators = denormalizedCharacters.filter(
     (character) => character.profession !== "TOKEN"
   );

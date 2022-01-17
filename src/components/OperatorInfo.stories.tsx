@@ -1263,7 +1263,7 @@ Skalter.args = {
         ],
       },
     ],
-    id: "char_1012_skadi2",
+    charId: "char_1012_skadi2",
     skillData: [
       {
         skillId: "skchr_skadi2_1",

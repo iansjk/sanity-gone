@@ -886,7 +886,7 @@ export const query = graphql`
 
     allSummonsJson(filter: { operatorName: { eq: $operator__name } }) {
       nodes {
-        id
+        charId
         name
         profession
         phases {

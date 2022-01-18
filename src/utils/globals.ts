@@ -9,8 +9,10 @@ import branches from "../data/branches.json";
 export function slugify(toSlug: string): string {
   return defaultSlugify(toSlug);
 }
+// custom slugify exclusively for subclasses in the URL
+// (preserves dashes and nukes spaces, which regular slugify cannot do w/ just options)
 export function subclassSlugify(toSlug: string): string {
-  return defaultSlugify(toSlug, { separator: "_" });
+  return toSlug.replace(/[^a-zA-Z\d-]/g, "_");
 }
 
 export function toTitleCase(string: string): string {

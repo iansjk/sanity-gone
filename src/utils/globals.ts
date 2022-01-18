@@ -38,7 +38,7 @@ export const professionToClass = (profession: string): string =>
 
 const subProfessionLookup: Record<string, string> = Object.fromEntries(
   Object.keys(branches).map((branch) => {
-    return [branch, branches[branch as keyof typeof branches].subclassName];
+    return [branch, branches[branch as keyof typeof branches].branchName];
   })
 );
 const reverseSubProfessionLookup = Object.fromEntries(

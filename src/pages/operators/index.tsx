@@ -336,7 +336,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
           )
           .map(({ subclass, subProfessionId }) => (
             <ClassSubclassMenuItem
-              key={subclass}
+              key={subProfessionIdToSubclass(subProfessionId)}
               onClick={handleSubclassClick(subProfessionId)}
               className={
                 selectedSubProfessionId === subProfessionId
@@ -352,7 +352,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
                   height={MENU_ICON_SIZE}
                 />
               </ListItemIcon>
-              <ListItemText>{subclass}</ListItemText>
+              <ListItemText>
+                {subProfessionIdToSubclass(subProfessionId)}
+              </ListItemText>
             </ClassSubclassMenuItem>
           ))}
       </Menu>

@@ -64,11 +64,26 @@ const EXCLUDED_BRANCHES: Set<String> = new Set([
 
 // These are translations of the branches in CN that are out, but are not yet
 // added to EN.
-const CN_BRANCH_TLS: Record<String, String> = {
+const CN_BRANCH_TLS: Record<string, string> = {
   fortress: "Fortress",
   wandermedic: "Wandering",
   craftsman: "Artificer",
 };
+// Separate EN overrides.
+// Kept separate from the above overrides for the sake of clarity.
+// Notably, these overrides are SUBPROFESSION IDs (to stay consistent with the above).
+const BRANCH_OVERRIDES: Record<string, string> = {
+  physician: "Single-target",
+};
+// the provided parameter is a SUBPROFESSION ID, not a BRANCH NAME.
+const useBranchOverride = (name: string) =>
+  (
+    BRANCH_OVERRIDES[name] ??
+    enUniequipTable.subProfDict[name].subProfessionName
+  )
+    .replace(" Medic", "")
+    .replace(" Caster", "");
+
 const TRAIT_OVERRIDES: Record<string, string> = {
   musha:
     "Can't be healed by other units. Recovers <@ba.kw>30/50/70</> (scales with elite promotion) self HP every time this operator attacks an enemy",
@@ -301,7 +316,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
           return [
             subprof,
             {
-              subclassName: CN_BRANCH_TLS[subprof],
+              branchName: CN_BRANCH_TLS[subprof],
               trait: descriptionToHtml(description, blackboard),
             },
           ];
@@ -310,8 +325,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
         return [
           subprof,
           {
-            subclassName:
-              enUniequipTable.subProfDict[subprof].subProfessionName,
+            branchName: useBranchOverride(subprof),
             trait: descriptionToHtml(description, blackboard),
           },
         ];

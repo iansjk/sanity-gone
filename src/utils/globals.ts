@@ -12,7 +12,7 @@ export function slugify(toSlug: string): string {
 // custom slugify exclusively for subclasses in the URL
 // (preserves dashes and nukes spaces, which regular slugify cannot do w/ just options)
 export function subclassSlugify(toSlug: string): string {
-  return toSlug.replace(/[^a-zA-Z\d-]/g, "_");
+  return toSlug.toLowerCase().replace(/[^a-z\d-]/g, "_");
 }
 
 export function toTitleCase(string: string): string {

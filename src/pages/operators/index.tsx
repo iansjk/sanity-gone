@@ -138,8 +138,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
     if (typeof window !== "undefined") {
       const hash = window.location.hash;
       if (hash.length > 0) {
-        const [opClass, ...opSubclassWords] = hash.substr(1).split("-");
-        const opSubclass = opSubclassWords
+        const [opClass, opSubclassRaw] = hash.substr(1).split("-");
+        const opSubclass = opSubclassRaw
+          .split("_")
           .map((word) => toTitleCase(word))
           .join(" ");
         setSelectedProfession(classToProfession(toTitleCase(opClass)));

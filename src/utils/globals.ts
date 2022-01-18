@@ -9,6 +9,9 @@ import branches from "../data/branches.json";
 export function slugify(toSlug: string): string {
   return defaultSlugify(toSlug);
 }
+export function subclassSlugify(toSlug: string): string {
+  return defaultSlugify(toSlug, { separator: "_" });
+}
 
 export function toTitleCase(string: string): string {
   return [...string.toLowerCase()]

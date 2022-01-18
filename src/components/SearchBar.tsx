@@ -9,7 +9,7 @@ import {
 } from "../utils/images";
 import gatsbySlugify from "@sindresorhus/slugify";
 import { css } from "@emotion/react";
-import { slugify } from "../utils/globals";
+import { slugify, subclassSlugify } from "../utils/globals";
 import SearchIcon from "./icons/SearchIcon";
 import { transparentize } from "polished";
 import levenshtein from "js-levenshtein";
@@ -200,9 +200,9 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                         className="classes-card"
                         key={res.name}
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        href={`/operators#${slugify(res.class!)}-${slugify(
-                          res.name
-                        )}`}
+                        href={`/operators#${slugify(
+                          res.class!
+                        )}-${subclassSlugify(res.name)}`}
                       >
                         <img
                           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

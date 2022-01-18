@@ -138,11 +138,19 @@ const Operators: React.VFC<Props> = ({ data }) => {
     if (typeof window !== "undefined") {
       const hash = window.location.hash;
       if (hash.length > 0) {
-        const [opClass, opSubclassRaw] = hash.substr(1).split("-");
-        const opSubclass = opSubclassRaw
-          .split("_")
-          .map((word) => toTitleCase(word))
-          .join(" ");
+        console.log(hash);
+        const classMatch = /^#([^-]*?)(?:-(.*?))?$/.exec(hash);
+        const opClass = classMatch ? classMatch[1] : "";
+        const opSubclass = classMatch
+          ? classMatch[2]
+            ? classMatch[2]
+                .split("_")
+                .map((word) => toTitleCase(word))
+                .join(" ")
+            : ""
+          : ""; // yes i nested 2 ternary statements, cry about it
+        console.log(classMatch);
+
         setSelectedProfession(classToProfession(toTitleCase(opClass)));
         setSelectedSubProfessionId(subclassToSubProfessionId(opSubclass));
       }

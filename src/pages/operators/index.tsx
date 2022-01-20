@@ -483,10 +483,16 @@ const Operators: React.VFC<Props> = ({ data }) => {
                       className="subclass-description"
                       dangerouslySetInnerHTML={{
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        __html: operatorSubclasses.find(
-                          ({ subProfessionId }) =>
-                            subProfessionId === selectedSubProfessionId
-                        )!.analysis.childMarkdownRemark.html,
+                        __html: operatorSubclasses
+                          .find(
+                            ({ subProfessionId }) =>
+                              subProfessionId === selectedSubProfessionId
+                          )!
+                          .analysis.childMarkdownRemark.html.replace(
+                            "BRANCHNAME",
+                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                            `<strong>${selectedSubclass!} ${selectedClass!}s</strong>`
+                          ),
                       }}
                     />
                   </section>

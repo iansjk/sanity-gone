@@ -6,6 +6,7 @@ import { Media } from "../Media";
 import {
   professionToClass,
   slugify,
+  subclassSlugify,
   subProfessionIdToSubclass,
   toTitleCase,
 } from "../utils/globals";
@@ -73,7 +74,9 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
           </div>
           <a
             className="class-and-subclass"
-            href={`/operators#${slugify(operatorClass)}-${slugify(subclass)}`}
+            href={`/operators#${slugify(operatorClass)}-${subclassSlugify(
+              subclass
+            )}`}
           >
             <span className="class-icon-container">
               <Tooltip title={operatorClass}>

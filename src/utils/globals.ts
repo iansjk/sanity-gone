@@ -4,9 +4,15 @@ import {
   CharacterStatValues,
   PotentialStatChange,
 } from "./types";
+import branches from "../data/branches.json";
 
 export function slugify(toSlug: string): string {
   return defaultSlugify(toSlug);
+}
+// custom slugify exclusively for subclasses in the URL
+// (preserves dashes and nukes spaces, which regular slugify cannot do w/ just options)
+export function subclassSlugify(toSlug: string): string {
+  return toSlug.toLowerCase().replace(/[^a-z\d-]/g, "_");
 }
 
 export function toTitleCase(string: string): string {
@@ -35,60 +41,11 @@ export const classToProfession = (className: string): string =>
 export const professionToClass = (profession: string): string =>
   reverseProfessionLookup[profession];
 
-export const subProfessionLookup: Record<string, string> = {
-  pioneer: "Pioneer",
-  charger: "Charger",
-  tactician: "Tactician",
-  bearer: "Standard Bearer",
-  centurion: "Assault",
-  fighter: "Brawler",
-  artsfghter: "Spellblade",
-  instructor: "Instructor",
-  lord: "Warlord",
-  sword: "Swordmaster",
-  musha: "Musha",
-  fearless: "Dreadnought",
-  reaper: "Reaper",
-  librator: "Liberator",
-  protector: "Ironguard",
-  guardian: "Guardian",
-  unyield: "Unyielding",
-  artsprotector: "Arts Ironguard",
-  duelist: "Duelist",
-  fastshot: "Marksman",
-  closerange: "Heavy",
-  aoesniper: "Cannoneer",
-  longrange: "Deadeye",
-  reaperrange: "Spreadshot",
-  siegesniper: "Siege",
-  bombarder: "Bombardier",
-  corecaster: "Core",
-  splashcaster: "Dispersion",
-  funnel: "Mech-Accord",
-  phalanx: "Formation",
-  mystic: "Mystic",
-  chain: "Chain",
-  blastcaster: "Blast",
-  physician: "Healer",
-  ringhealer: "Mass Healer",
-  healer: "Mender",
-  slower: "Inhibitor",
-  underminer: "Hexer",
-  bard: "Bard",
-  blessing: "Abjurer",
-  summoner: "Summoner",
-  executor: "Executioner",
-  pusher: "Pusher",
-  stalker: "Stalker",
-  hookmaster: "Grappler",
-  geek: "Geek",
-  merchant: "Merchant",
-  traper: "Trapper",
-  dollkeeper: "Puppeteer",
-  craftsman: "Artificer",
-  wandermedic: "Wandering",
-  fortress: "Fortress",
-};
+const subProfessionLookup: Record<string, string> = Object.fromEntries(
+  Object.keys(branches).map((branch) => {
+    return [branch, branches[branch as keyof typeof branches].branchName];
+  })
+);
 const reverseSubProfessionLookup = Object.fromEntries(
   Object.entries(subProfessionLookup).map(([k, v]) => [v, k])
 );

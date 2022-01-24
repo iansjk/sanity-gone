@@ -78,7 +78,7 @@ export interface CharacterStatsProps {
 const CharacterStats: React.VFC<CharacterStatsProps> = ({
   characterObject,
 }) => {
-  const { id, name, profession } = characterObject;
+  const { charId: id, name, profession } = characterObject;
   const isSummon = profession === "TOKEN";
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));

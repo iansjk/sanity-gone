@@ -1022,7 +1022,7 @@ Mudrock.args = {
         ],
       },
     ],
-    id: "char_311_mudrok",
+    charId: "char_311_mudrok",
     skillData: [
       {
         skillId: "skcom_def_up[3]",
@@ -3668,7 +3668,7 @@ Freeling.args = {
         lvlUpCost: null,
       },
     ],
-    id: "token_10015_dusk_drgn",
+    charId: "token_10015_dusk_drgn",
     skillData: [],
     cnName: '"小自在"',
     subProfessionId: "notchar1",

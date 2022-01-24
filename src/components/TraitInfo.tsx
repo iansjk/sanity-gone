@@ -1,5 +1,5 @@
 import React from "react";
-import traits from "../data/traits.json";
+import branches from "../data/branches.json";
 import { Theme } from "@mui/material";
 import { css } from "@emotion/react";
 import { operatorSubclassIcon } from "../utils/images";
@@ -13,9 +13,8 @@ const TraitInfo: React.VFC<TraitInfoProps> = ({
   subProfessionId,
   showSubclassIcon,
 }) => {
-  const description = traits[
-    subProfessionId as keyof typeof traits
-  ] as unknown as string;
+  const description = branches[subProfessionId as keyof typeof branches]
+    .trait as unknown as string;
 
   return (
     <div

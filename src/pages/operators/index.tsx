@@ -55,7 +55,7 @@ const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
 }));
 
 export interface OperatorListOperator {
-  id: string;
+  charId: string;
   name: string;
   isCnOnly: boolean;
   profession: string;
@@ -138,10 +138,19 @@ const Operators: React.VFC<Props> = ({ data }) => {
     if (typeof window !== "undefined") {
       const hash = window.location.hash;
       if (hash.length > 0) {
-        const [opClass, ...opSubclassWords] = hash.substr(1).split("-");
-        const opSubclass = opSubclassWords
-          .map((word) => toTitleCase(word))
-          .join(" ");
+        console.log(hash);
+        const classMatch = /^#([^-]*?)(?:-(.*?))?$/.exec(hash);
+        const opClass = classMatch ? classMatch[1] : "";
+        const opSubclass = classMatch
+          ? classMatch[2]
+            ? classMatch[2]
+                .split("_")
+                .map((word) => toTitleCase(word))
+                .join(" ")
+            : ""
+          : ""; // yes i nested 2 ternary statements, cry about it
+        console.log(classMatch);
+
         setSelectedProfession(classToProfession(toTitleCase(opClass)));
         setSelectedSubProfessionId(subclassToSubProfessionId(opSubclass));
       }
@@ -336,7 +345,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
           )
           .map(({ subclass, subProfessionId }) => (
             <ClassSubclassMenuItem
-              key={subclass}
+              key={subProfessionIdToSubclass(subProfessionId)}
               onClick={handleSubclassClick(subProfessionId)}
               className={
                 selectedSubProfessionId === subProfessionId
@@ -352,7 +361,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
                   height={MENU_ICON_SIZE}
                 />
               </ListItemIcon>
-              <ListItemText>{subclass}</ListItemText>
+              <ListItemText>
+                {subProfessionIdToSubclass(subProfessionId)}
+              </ListItemText>
             </ClassSubclassMenuItem>
           ))}
       </Menu>
@@ -472,10 +483,16 @@ const Operators: React.VFC<Props> = ({ data }) => {
                       className="subclass-description"
                       dangerouslySetInnerHTML={{
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        __html: operatorSubclasses.find(
-                          ({ subProfessionId }) =>
-                            subProfessionId === selectedSubProfessionId
-                        )!.analysis.childMarkdownRemark.html,
+                        __html: operatorSubclasses
+                          .find(
+                            ({ subProfessionId }) =>
+                              subProfessionId === selectedSubProfessionId
+                          )!
+                          .analysis.childMarkdownRemark.html.replace(
+                            "BRANCHNAME",
+                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                            `<strong>${selectedSubclass!} ${selectedClass!}s</strong>`
+                          ),
                       }}
                     />
                   </section>
@@ -872,7 +889,7 @@ export const query = graphql`
       sort: { order: [DESC, DESC], fields: [rarity, fileIndex] }
     ) {
       nodes {
-        id
+        charId
         name
         isCnOnly
         profession

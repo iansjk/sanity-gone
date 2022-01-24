@@ -7,12 +7,13 @@ import enCharacterTable from "../../ArknightsGameData/en_US/gamedata/excel/chara
 import cnCharacterTable from "../../ArknightsGameData/zh_CN/gamedata/excel/character_table.json";
 import enSkillTable from "../../ArknightsGameData/en_US/gamedata/excel/skill_table.json";
 import cnSkillTable from "../../ArknightsGameData/zh_CN/gamedata/excel/skill_table.json";
+import enUniequipTable from "../../ArknightsGameData/en_US/gamedata/excel/uniequip_table.json";
+import cnUniequipTable from "../../ArknightsGameData/zh_CN/gamedata/excel/uniequip_table.json";
 import rangeTable from "../../ArknightsGameData/en_US/gamedata/excel/range_table.json";
 import jetSkillTranslations from "./jet-tls/skills.json";
 import jetTalentTranslations from "./jet-tls/talents.json";
 import jetTraitTranslations from "./jet-tls/traits.json";
 import { Character, SkillAtLevel } from "./gamedata-types";
-import { subProfessionLookup } from "../utils/globals";
 import {
   descriptionToHtml,
   InterpolatedValue,
@@ -54,20 +55,45 @@ const NAME_OVERRIDES: Record<string, string> = {
   "THRM-EX": "Thermal-EX",
 };
 
+const EXCLUDED_BRANCHES: Set<String> = new Set([
+  "notchar1",
+  "notchar2",
+  "none1",
+  "none2",
+]);
+
+// These are translations of the branches in CN that are out, but are not yet
+// added to EN.
+const CN_BRANCH_TLS: Record<string, string> = {
+  fortress: "Fortress",
+  wandermedic: "Wandering",
+  craftsman: "Artificer",
+};
+// Separate EN overrides.
+// Kept separate from the above overrides for the sake of clarity.
+// Notably, these overrides are SUBPROFESSION IDs (to stay consistent with the above).
+const BRANCH_OVERRIDES: Record<string, string> = {
+  physician: "Single-target",
+};
+// the provided parameter is a SUBPROFESSION ID, not a BRANCH NAME.
+const useBranchOverride = (name: string) =>
+  (
+    BRANCH_OVERRIDES[name] ??
+    enUniequipTable.subProfDict[name].subProfessionName
+  )
+    .replace(" Medic", "")
+    .replace(" Caster", "");
+
 const TRAIT_OVERRIDES: Record<string, string> = {
   musha:
     "Can't be healed by other units. Recovers <@ba.kw>30/50/70</> (scales with elite promotion) self HP every time this operator attacks an enemy",
   chain:
-    'Attacks deal <@ba.kw>Arts damage</> and jump between <@ba.kw>3</> (<@ba.kw>4</> at Elite 2) enemies (jump range is <@ba.kw>1.7</> tiles). Each jump deals 20% less damage and inflicts an <@ba.kw>80%</> <span class="skill-tooltip">Slow</span> for <@ba.kw>0.5</> seconds',
+    'Attacks deal <@ba.kw>Arts damage</> and jump between <@ba.kw>3</> (<@ba.kw>4</> at Elite 2) enemies (jump range is <@ba.kw>1.7</> tiles). Each jump deals 15% less damage and inflicts an <@ba.kw>80%</> <span class="skill-tooltip">Slow</span> for <@ba.kw>0.5</> seconds',
   phalanx:
     "Normally <@ba.kw>does not attack</>, but has <@ba.kw>+200%</> DEF and <@ba.kw>+20</> RES; When skill is active, attacks deal <@ba.kw>AoE Arts damage</>",
   geek: "Continually loses <@ba.kw>3%</> max HP per second",
   wandermedic:
     "Restores the HP of allies\nRecovers <@ba.dt.element>Elemental damage</> equal to <@ba.kw>{ep_heal_ratio:0%}</> of Attack Power</br>(Can heal <@ba.dt.element>Elemental damage</> of unhurt units)",
-  reaper:
-    "Cannot be healed by allies\nAttack <@ba.kw>all enemies</> within range\nRecovers <@ba.kw>{value}</> HP with every enemy hit (up to block count)",
-  librator:
-    'Does not attack and has 0 block count normally<br>Gradually increase attack power up to <span class="keyword">+200%</span> after <span class="keyword">40</span> seconds when skill is not active<br>Attack increase resets after skill ends',
   slower:
     'Deals <@ba.kw>Arts damage</> and <span class="skill-tooltip">Slows</span> the target by <@ba.kw>80%</> for <@ba.kw>0.8</> seconds',
   splashcaster:
@@ -79,7 +105,7 @@ const TRAIT_OVERRIDES: Record<string, string> = {
   fortress:
     "Prioritize <@ba.kw>Long range splash attack</> (splash radius of <@ba.kw>1.0</> tiles) when not blocking",
   funnel:
-    "Controls a <@ba.kw>Drone</> to deal <@ba.kw>Arts</> damage to an enemy; When the Drone continuously attacks the same enemy, its damage will increase (from 10% up to 110% of the operator's ATK, linearly)",
+    "Controls a <@ba.kw>Drone</> that deals <@ba.kw>Arts damage</>; When the Drone continuously attacks the same enemy, its damage will increase (from 10% up to 110% of the operator's ATK, linearly)",
 };
 
 const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
@@ -87,7 +113,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
 (() => {
   const enCharacterIds = new Set(Object.keys(enCharacterTable));
   const cnOnlyCharacters = Object.entries(cnCharacterTable).filter(
-    ([id]) => !enCharacterIds.has(id)
+    ([charId]) => !enCharacterIds.has(charId)
   );
 
   const summonIdToOperatorName: Record<string, string> = {};
@@ -98,8 +124,8 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     ][]
   )
     .filter(([_, character]) => character.profession !== "TRAP")
-    .map(([id, character], i) => {
-      const isCnOnly = !enCharacterIds.has(id);
+    .map(([charId, character], i) => {
+      const isCnOnly = !enCharacterIds.has(charId);
       const characterName = useNameOverride(
         isCnOnly ? character.appellation : character.name
       );
@@ -130,13 +156,13 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
               try {
                 const talentTL =
                   jetTalentTranslations[
-                    id as keyof typeof jetTalentTranslations
+                    charId as keyof typeof jetTalentTranslations
                   ][talentIndex][phaseIndex];
                 baseCandidateObject.name = talentTL.name;
                 baseCandidateObject.description = talentTL.desc;
               } catch {
                 console.warn(
-                  `No translation found for: character ${id}, talent index ${talentIndex}, phase index ${phaseIndex}`
+                  `No translation found for: character ${charId}, talent index ${talentIndex}, phase index ${phaseIndex}`
                 );
               }
             }
@@ -190,7 +216,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
         .filter((skillData) => !!skillData);
 
       const { name: cnName, subProfessionId } =
-        cnCharacterTable[id as keyof typeof cnCharacterTable];
+        cnCharacterTable[charId as keyof typeof cnCharacterTable];
 
       if (character.tokenKey) {
         summonIdToOperatorName[character.tokenKey] = characterName;
@@ -198,7 +224,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
 
       return {
         ...character,
-        id,
+        charId,
         phases,
         talents,
         skillData,
@@ -211,6 +237,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
         fileIndex: i,
       };
     });
+
   const denormalizedOperators = denormalizedCharacters.filter(
     (character) => character.profession !== "TOKEN"
   );
@@ -223,14 +250,14 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     .filter((character) => character.profession === "TOKEN")
     .map((summon) => ({
       ...summon,
-      operatorName: summonIdToOperatorName[summon.id],
+      operatorName: summonIdToOperatorName[summon.charId],
     }));
   fs.writeFileSync(
     path.join(dataDir, "summons.json"),
     JSON.stringify(denormalizedSummons, null, 2)
   );
 
-  const denormalizedSkills = Object.entries(enSkillTable).map(([id, skill]) => {
+  const denormalizedSkills = Object.entries(enSkillTable).map(([_, skill]) => {
     const levels = skill.levels.map((level) => ({
       ...level,
       range: level.rangeId
@@ -239,7 +266,6 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     }));
     return {
       ...skill,
-      id,
       levels,
     };
   });
@@ -248,35 +274,65 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
     JSON.stringify(denormalizedSkills, null, 2)
   );
 
-  const denormalizedTraits = Object.fromEntries(
-    Object.keys(subProfessionLookup).map((subclass) => {
-      const firstOp = denormalizedOperators.find(
-        (op) => op.subProfessionId === subclass && op.rarity > 1 // no robots
-      );
-
-      let description = firstOp.description;
-      const trait = firstOp.trait;
-
-      // left in console.log comments - useful for debugging bad trait descriptions
-      // console.log(description);
-      if (subclass in TRAIT_OVERRIDES) {
-        description = TRAIT_OVERRIDES[subclass];
-      } else if (description in jetTraitTranslations.full) {
-        // console.log("in descs");
-        description = fixJetSkillDescriptionTags(
-          jetTraitTranslations.full[description].en
+  const enSubProfessions = new Set(Object.keys(enUniequipTable.subProfDict));
+  const cnOnlySubProfessions = new Set(
+    Object.keys(cnUniequipTable.subProfDict).filter(
+      (subprof) => !enSubProfessions.has(subprof)
+    )
+  );
+  const denormalizedBranchesAndTraits = Object.fromEntries(
+    [...cnOnlySubProfessions, ...enSubProfessions]
+      .filter((name) => !EXCLUDED_BRANCHES.has(name))
+      .map((subprof) => {
+        // Parse trait description for operator
+        const firstOp = denormalizedOperators.find(
+          (op) => op.subProfessionId === subprof && op.rarity > 1 // no robots
         );
-      }
 
-      const blackboard: InterpolatedValue[] = trait
-        ? trait.candidates[trait.candidates.length - 1].blackboard
-        : [];
+        let description = firstOp.description;
+        const trait = firstOp.trait;
 
-      return [subclass, descriptionToHtml(description, blackboard)];
-    })
+        // left in console.log comments - useful for debugging bad trait descriptions
+        // console.log(description);
+        if (subprof in TRAIT_OVERRIDES) {
+          description = TRAIT_OVERRIDES[subprof];
+        } else if (description in jetTraitTranslations.full) {
+          // console.log("in descs");
+          description = fixJetSkillDescriptionTags(
+            jetTraitTranslations.full[description].en
+          );
+        }
+
+        const blackboard: InterpolatedValue[] = trait
+          ? trait.candidates[trait.candidates.length - 1].blackboard
+          : [];
+
+        const isCnOnly = cnOnlySubProfessions.has(subprof);
+        if (isCnOnly) {
+          if (!(subprof in CN_BRANCH_TLS))
+            console.warn(
+              "CN only branch without translation found: " + subprof
+            );
+          return [
+            subprof,
+            {
+              branchName: CN_BRANCH_TLS[subprof],
+              trait: descriptionToHtml(description, blackboard),
+            },
+          ];
+        }
+
+        return [
+          subprof,
+          {
+            branchName: useBranchOverride(subprof),
+            trait: descriptionToHtml(description, blackboard),
+          },
+        ];
+      })
   );
   fs.writeFileSync(
-    path.join(dataDir, "traits.json"),
-    JSON.stringify(denormalizedTraits, null, 2)
+    path.join(dataDir, "branches.json"),
+    JSON.stringify(denormalizedBranchesAndTraits, null, 2)
   );
 })();

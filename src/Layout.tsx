@@ -240,7 +240,7 @@ const styles =
         background-color: ${theme.palette.dark.main};
         line-height: ${theme.typography.body1.lineHeight};
         overflow-y: scroll;
-        font-family: ${theme.typography.body1.fontFamily};
+        font-family: ${theme.typography.body1.fontFamily}, Arial, sans-serif;
 
         ${theme.breakpoints.down("mobile")} {
           font-size: ${theme.typography.body2.fontSize}px;

@@ -130,6 +130,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
           className="search-input"
           placeholder={placeholder}
           onChange={(e) => {
+            setFocus(true);
             setQuery(e.target.value);
             if (props.whenInputChange) {
               props.whenInputChange(e.target.value);

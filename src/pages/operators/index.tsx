@@ -16,6 +16,7 @@ import slugify from "@sindresorhus/slugify";
 import { lighten, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
 import { IGatsbyImageData } from "gatsby-plugin-image";
+import loadable from "@loadable/component";
 
 import Layout from "../../Layout";
 import {
@@ -33,9 +34,10 @@ import {
 import CustomCheckbox from "../../components/CustomCheckbox";
 import FilterIcon from "../../components/icons/FilterIcon";
 import HorizontalScroller from "../../components/HorizontalScroller";
-import OperatorList from "../../components/OperatorList";
 import TraitInfo from "../../components/TraitInfo";
 import { Media } from "../../Media";
+
+const OperatorList = loadable(() => import("../../components/OperatorList"));
 
 const MENU_ICON_SIZE = 18;
 

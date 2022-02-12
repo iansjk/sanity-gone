@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  Suspense,
-} from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { graphql } from "gatsby";
 import {
   Button,
@@ -39,10 +33,9 @@ import {
 import CustomCheckbox from "../../components/CustomCheckbox";
 import FilterIcon from "../../components/icons/FilterIcon";
 import HorizontalScroller from "../../components/HorizontalScroller";
+import OperatorList from "../../components/OperatorList";
 import TraitInfo from "../../components/TraitInfo";
 import { Media } from "../../Media";
-
-const OperatorList = React.lazy(() => import("../../components/OperatorList"));
 
 const MENU_ICON_SIZE = 18;
 
@@ -511,18 +504,16 @@ const Operators: React.VFC<Props> = ({ data }) => {
         <div className="results-container">
           <section className="results">
             <h2>Operators</h2>
-            <Suspense fallback={<span>Placeholder loading content</span>}>
-              <OperatorList
-                operators={operators}
-                operatorsToShow={operatorsToShow}
-                operatorsWithGuides={operatorsWithGuides}
-                portraitNodes={portraitNodes}
-                onSubclassFilter={handleSubclassFilter}
-              />
-              {operatorsToShow.length === 0 && (
-                <div className="no-results">No Results</div>
-              )}
-            </Suspense>
+            <OperatorList
+              operators={operators}
+              operatorsToShow={operatorsToShow}
+              operatorsWithGuides={operatorsWithGuides}
+              portraitNodes={portraitNodes}
+              onSubclassFilter={handleSubclassFilter}
+            />
+            {operatorsToShow.length === 0 && (
+              <div className="no-results">No Results</div>
+            )}
           </section>
         </div>
       </main>

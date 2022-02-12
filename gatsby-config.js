@@ -54,6 +54,7 @@ module.exports = {
     "gatsby-theme-material-ui",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-aceship",
+    "gatsby-plugin-loadable-components-ssr",
     {
       resolve: "gatsby-plugin-sitemap",
       options: {

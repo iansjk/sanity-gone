@@ -15,7 +15,7 @@ import {
 import slugify from "@sindresorhus/slugify";
 import { lighten, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
-import { IGatsbyImageData } from "gatsby-plugin-image";
+import loadable from "@loadable/component";
 
 import Layout from "../../Layout";
 import {
@@ -33,9 +33,10 @@ import {
 import CustomCheckbox from "../../components/CustomCheckbox";
 import FilterIcon from "../../components/icons/FilterIcon";
 import HorizontalScroller from "../../components/HorizontalScroller";
-import OperatorList from "../../components/OperatorList";
 import TraitInfo from "../../components/TraitInfo";
 import { Media } from "../../Media";
+
+const OperatorList = loadable(() => import("../../components/OperatorList"));
 
 const MENU_ICON_SIZE = 18;
 
@@ -61,13 +62,6 @@ export interface OperatorListOperator {
   profession: string;
   subProfessionId: string;
   rarity: number; // 0-indexed
-}
-
-export interface PortraitNode {
-  name: string;
-  childImageSharp: {
-    gatsbyImageData: IGatsbyImageData;
-  };
 }
 
 interface Props {
@@ -108,9 +102,6 @@ interface Props {
         };
       }[];
     };
-    portraits: {
-      nodes: PortraitNode[];
-    };
   };
 }
 
@@ -119,7 +110,6 @@ const Operators: React.VFC<Props> = ({ data }) => {
   const { nodes: guideNodes } = data.allContentfulOperatorAnalysis;
   const { nodes: operatorClasses } = data.allContentfulOperatorClass;
   const { nodes: operatorSubclasses } = data.allContentfulOperatorSubclass;
-  const { nodes: portraitNodes } = data.portraits;
 
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
   const [showClassDescriptions, setShowClassDescriptions] = useState(true);
@@ -508,7 +498,6 @@ const Operators: React.VFC<Props> = ({ data }) => {
               operators={operators}
               operatorsToShow={operatorsToShow}
               operatorsWithGuides={operatorsWithGuides}
-              portraitNodes={portraitNodes}
               onSubclassFilter={handleSubclassFilter}
             />
             {operatorsToShow.length === 0 && (
@@ -927,25 +916,6 @@ export const query = graphql`
         }
         class {
           profession
-        }
-      }
-    }
-    portraits: allFile(
-      filter: {
-        sourceInstanceName: { eq: "images" }
-        relativeDirectory: { eq: "portraits" }
-      }
-    ) {
-      nodes {
-        name
-        childImageSharp {
-          gatsbyImageData(
-            height: 360
-            width: 180
-            transformOptions: { fit: CONTAIN, cropFocus: SOUTH }
-            backgroundColor: "transparent"
-            placeholder: BLURRED
-          )
         }
       }
     }

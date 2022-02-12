@@ -1,34 +1,62 @@
 import React from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { css, Theme, Tooltip } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
 import cx from "clsx";
 import { rgba } from "polished";
 
-import { OperatorListOperator, PortraitNode } from "../pages/operators";
+import { OperatorListOperator } from "../pages/operators";
 import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
 import { operatorSubclassIcon } from "../utils/images";
 import StarIcon from "./icons/StarIcon";
+import { graphql, useStaticQuery } from "gatsby";
 
-const getPortraitFilename = (operatorId: string) =>
-  `${operatorId}_1`;
+const getPortraitFilename = (operatorId: string) => `${operatorId}_1`;
+
+export interface PortraitNode {
+  name: string;
+  childImageSharp: {
+    gatsbyImageData: IGatsbyImageData;
+  };
+}
 
 interface Props {
   operators: OperatorListOperator[];
   operatorsToShow: OperatorListOperator[];
   operatorsWithGuides: string[];
-  portraitNodes: PortraitNode[];
   onSubclassFilter: (profession: string, subProfessionId: string) => void;
 }
 
 const OperatorList: React.VFC<Props> = React.memo((props) => {
-  const {
-    operators,
-    operatorsToShow,
-    operatorsWithGuides,
-    portraitNodes,
-    onSubclassFilter,
-  } = props;
+  const { operators, operatorsToShow, operatorsWithGuides, onSubclassFilter } =
+    props;
+
+  const data = useStaticQuery<{
+    portraits: { nodes: PortraitNode[] };
+  }>(graphql`
+    query {
+      portraits: allFile(
+        filter: {
+          sourceInstanceName: { eq: "images" }
+          relativeDirectory: { eq: "portraits" }
+        }
+      ) {
+        nodes {
+          name
+          childImageSharp {
+            gatsbyImageData(
+              height: 360
+              width: 180
+              transformOptions: { fit: CONTAIN, cropFocus: SOUTH }
+              backgroundColor: "transparent"
+              placeholder: BLURRED
+            )
+          }
+        }
+      }
+    }
+  `);
+  const { nodes: portraitNodes } = data.portraits;
 
   return (
     <>
@@ -80,7 +108,9 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                 `rarity-${op.rarity + 1}-star${op.rarity > 0 ? "s" : ""}`
               )}
               style={
-                !operatorsToShow.find((opToShow) => opToShow.charId === op.charId)
+                !operatorsToShow.find(
+                  (opToShow) => opToShow.charId === op.charId
+                )
                   ? { display: "none" }
                   : {}
               }

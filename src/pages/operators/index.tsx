@@ -90,7 +90,6 @@ interface Props {
     };
     allContentfulOperatorSubclass: {
       nodes: {
-        subclass: string;
         subProfessionId: string;
         class: {
           profession: string;
@@ -333,7 +332,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
             ({ class: subclassClass }) =>
               subclassClass.profession === selectedProfession
           )
-          .map(({ subclass, subProfessionId }) => (
+          .map(({ subProfessionId }) => (
             <ClassSubclassMenuItem
               key={subProfessionIdToSubclass(subProfessionId)}
               onClick={handleSubclassClick(subProfessionId)}
@@ -907,7 +906,6 @@ export const query = graphql`
     }
     allContentfulOperatorSubclass {
       nodes {
-        subclass
         subProfessionId
         analysis {
           childMarkdownRemark {

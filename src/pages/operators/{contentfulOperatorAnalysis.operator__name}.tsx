@@ -28,8 +28,34 @@ interface HTMLToReactContext {
   recommendedSkills: boolean[];
   talents: TalentObject[];
   operator: CharacterObject;
+  contentfulAssets: ContentfulAsset[];
   summon?: CharacterObject;
 }
+
+const contentfulSrcUrlRegex =
+  /\/\/images\.ctfassets.net\/(?<spaceId>[^/]+)\/(?<contentfulId>[^/]+)/;
+
+const contentfulSrcToLocalFilePath = (
+  srcUrl: string,
+  contentfulAssets: ContentfulAsset[]
+): string => {
+  const match = contentfulSrcUrlRegex.exec(srcUrl);
+  if (match?.groups?.spaceId == null || match?.groups?.contentfulId == null) {
+    throw new Error(
+      `Don't know how to convert this contentful asset URL: ${srcUrl}`
+    );
+  }
+  const { spaceId, contentfulId } = match.groups;
+  const asset = contentfulAssets.find(
+    (asset) => asset.spaceId === spaceId && asset.contentful_id === contentfulId
+  );
+  if (asset == null) {
+    throw new Error(
+      `Didn't find a matching asset for this contentful asset URL: ${srcUrl} (spaceId = ${spaceId}, contentfulId = ${contentfulId})`
+    );
+  }
+  return asset.localFile.publicURL;
+};
 
 const htmlToReact = (
   html: string,
@@ -81,9 +107,17 @@ const htmlToReact = (
         } else if ((domNode.firstChild as Element)?.name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")
-            .map((imgElement, i) => (
-              <img key={i} {...attributesToProps(imgElement.attribs)} />
-            ));
+            .map((imgElement, i) => {
+              const { src: contentfulSrc, ...rest } = imgElement.attribs;
+              const patchedAttributes = {
+                src: contentfulSrcToLocalFilePath(
+                  contentfulSrc,
+                  context.contentfulAssets
+                ),
+                ...rest,
+              };
+              return <img key={i} {...attributesToProps(patchedAttributes)} />;
+            });
           return <Gallery contents={contents} />;
         }
       }
@@ -156,6 +190,14 @@ interface OperatorAnalysisData {
   updatedAt: string; // ISO 8601 timestamp
 }
 
+interface ContentfulAsset {
+  spaceId: string;
+  contentful_id: string;
+  localFile: {
+    publicURL: string;
+  };
+}
+
 interface Props {
   data: {
     contentfulOperatorAnalysis: OperatorAnalysisData;
@@ -174,6 +216,9 @@ interface Props {
     allSummonsJson: {
       nodes: CharacterObject[];
     };
+    allContentfulAsset: {
+      nodes: ContentfulAsset[];
+    };
   };
 }
 
@@ -184,6 +229,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     operatorsJson: operatorObject,
   } = data;
   const summons = data.allSummonsJson.nodes;
+  const contentfulAssets = data.allContentfulAsset.nodes;
+
   const skillRecommended = [
     contentful.skill1Recommended ?? false,
     contentful.skill2Recommended ?? false,
@@ -194,6 +241,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     skills: operatorObject.skillData,
     recommendedSkills: skillRecommended,
     operator: operatorObject,
+    contentfulAssets,
     summon: summons.length > 0 ? summons[0] : undefined,
   };
   const theme = useTheme();
@@ -910,6 +958,16 @@ export const query = graphql`
               respawnTime
             }
           }
+        }
+      }
+    }
+
+    allContentfulAsset {
+      nodes {
+        spaceId
+        contentful_id
+        localFile {
+          publicURL
         }
       }
     }

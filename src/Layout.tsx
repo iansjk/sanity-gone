@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
 import { Helmet } from "react-helmet";
@@ -132,8 +132,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <div className="navbar-right">
                   <div className="header-links">
                     <div className="link-spacer" />
-                    <a href="/operators">Operators</a>
-                    <a href="/about">About</a>
+                    <Link to="/operators">Operators</Link>
+                    <Link to="/about">About</Link>
                   </div>
                   <button className="mobile-menu-button" aria-label="Open menu">
                     <MobileMenuIcon
@@ -157,12 +157,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <div className="heading-spacer" />
                 {previousLocation && previousLocationLink && (
                   <Media greaterThanOrEqual="mobile" className="breadcrumb">
-                    <a
-                      href={previousLocationLink}
+                    <Link
+                      to={previousLocationLink}
                       aria-label={`Back to ${previousLocation}`}
                     >
                       {previousLocation}
-                    </a>
+                    </Link>
                     /
                   </Media>
                 )}
@@ -189,7 +189,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   <a href="mailto:admin@sanitygone.help">Contact Email</a>
                 </li>
                 <li>
-                  <a href="/disclaimer">Disclaimer</a>
+                  <Link to="/disclaimer">Disclaimer</Link>
                 </li>
               </ul>
             </div>

@@ -907,7 +907,6 @@ export const query = graphql`
     }
     allContentfulOperatorSubclass {
       nodes {
-        subclass
         subProfessionId
         analysis {
           childMarkdownRemark {

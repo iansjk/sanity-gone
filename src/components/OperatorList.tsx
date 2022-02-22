@@ -9,7 +9,7 @@ import { OperatorListOperator } from "../pages/operators";
 import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
 import { operatorSubclassIcon } from "../utils/images";
 import StarIcon from "./icons/StarIcon";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 
 const getPortraitFilename = (operatorId: string) => `${operatorId}_1`;
 
@@ -123,20 +123,20 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
               />
               <div className="operator-card-content">
                 {hasGuide && (
-                  <a
+                  <Link
                     className="dummy-clickable-area"
-                    href={`/operators/${slugify(op.name)}`}
+                    to={`/operators/${slugify(op.name)}`}
                     tabIndex={-1}
                     aria-hidden="true"
                   />
                 )}
                 {React.createElement(
-                  hasGuide ? "a" : "div",
+                  hasGuide ? Link : "div", // @ts-expect-error this works. I don't want to know why, but it does
                   {
                     className: "operator-info",
                     ...(hasGuide
                       ? {
-                          href: `/operators/${slugify(op.name)}`,
+                          to: `/operators/${slugify(op.name)}`,
                           role: "presentation",
                           tabIndex: -1,
                         }
@@ -181,12 +181,12 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                 </Tooltip>
                 {/* TODO "NEW" should go here */}
                 {hasGuide ? (
-                  <a
+                  <Link
                     className="go-to-guide-link"
-                    href={`/operators/${slugify(op.name)}`}
+                    to={`/operators/${slugify(op.name)}`}
                   >
                     <span className="go-to-guide-text">Read Guide</span>
-                  </a>
+                  </Link>
                 ) : (
                   <span className="visually-hidden">Guide Unavailable</span>
                 )}

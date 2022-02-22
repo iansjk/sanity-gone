@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import { InputBase, Theme } from "@mui/material";
 import FlexSearch from "flexsearch";
 import {
@@ -152,12 +152,12 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                   .map((res) => {
                     const hasGuide = operatorsWithGuides.has(res.name);
                     return (
-                      <a
+                      <Link
                         className={
                           hasGuide ? "operator-card" : "operator-card disabled"
                         }
                         key={res.name}
-                        href={
+                        to={
                           hasGuide
                             ? `/operators/${gatsbySlugify(res.name)}`
                             : "#"
@@ -179,7 +179,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           </div>
                         </div>
                         {!hasGuide && <div className="gray-overlay" />}
-                      </a>
+                      </Link>
                     );
                   })}
               </div>
@@ -197,11 +197,11 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                   .slice(0, 3) // limit of 3 subclass or class results
                   .map((res) => {
                     return res.type === "subclass" ? (
-                      <a
+                      <Link
                         className="classes-card"
                         key={res.name}
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        href={`/operators#${slugify(
+                        to={`/operators#${slugify(
                           res.class!
                         )}-${subclassSlugify(res.name)}`}
                       >
@@ -214,13 +214,13 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           {res.name}
                           <span className="class-name">{res.class} Branch</span>
                         </div>
-                      </a>
+                      </Link>
                     ) : (
-                      <a
+                      <Link
                         className="classes-card"
                         key={res.name}
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        href={`/operators#${slugify(res.class!)}`}
+                        to={`/operators#${slugify(res.class!)}`}
                       >
                         <img
                           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -231,7 +231,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           {res.name}
                           <span className="class-name">Class</span>
                         </div>
-                      </a>
+                      </Link>
                     );
                   })}
               </div>

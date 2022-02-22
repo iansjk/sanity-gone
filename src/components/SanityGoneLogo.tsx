@@ -1,9 +1,11 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
+import { Link } from "gatsby";
 
 const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
-    <a aria-label="Sanity Gone" href="/" css={styles}>
+    // this links to Operators for now because the homepage doesn't exist yet
+    <Link aria-label="Sanity Gone" to="/operators" css={styles}>
       <svg
         width="168"
         height="27"
@@ -61,7 +63,7 @@ const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
           fill="#E8E8F2"
         />
       </svg>
-    </a>
+    </Link>
   );
 };
 export default SanityGoneLogo;

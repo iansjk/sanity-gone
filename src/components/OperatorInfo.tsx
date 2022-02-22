@@ -13,6 +13,7 @@ import {
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
 import { CharacterObject } from "../utils/types";
 import OperatorPortrait from "./OperatorPortrait";
+import { Link } from "gatsby";
 
 export interface OperatorInfoProps {
   operatorObject: CharacterObject;
@@ -72,9 +73,9 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
               name
             )}
           </div>
-          <a
+          <Link
             className="class-and-subclass"
-            href={`/operators#${slugify(operatorClass)}-${subclassSlugify(
+            to={`/operators#${slugify(operatorClass)}-${subclassSlugify(
               subclass
             )}`}
           >
@@ -95,7 +96,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
               />
               {subclass}
             </span>
-          </a>
+          </Link>
         </div>
         <Media lessThan="mobile">
           <OperatorPortrait

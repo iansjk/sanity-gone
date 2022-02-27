@@ -491,16 +491,16 @@
 	"skchr_kjera_2": {
 		"name": "Unrestrained Heart",
 		"desc": [
-			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds. </br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
-			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds. </br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
-			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds. </br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
-			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds. </br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
-			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds. </br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
-			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds. </br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
-			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds. </br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
-			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds. </br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
-			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds. </br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
-			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds. </br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>"
+			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
+			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
+			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
+			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
+			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
+			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
+			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
+			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
+			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>",
+			"Number of Float Units <@ba.vup>+{{attack@cnt}:.0f}</>, ATK <@ba.vup>+{{atk}:.0%}</>. Release the Float Units to lock-on to an enemy and attack. Kjera and the Float Units each have <@ba.vup>{{attack@prob}:.0%}</> chance to <$ba.cold>Chill</> attacked enemies for <@ba.vup>{attack@cold}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed or the skill ends</>"
 		]
 	},
 	"skchr_nightm_1": {
@@ -831,6 +831,51 @@
 			"<@ba.vup>Expand</> Attack Range. ATK gradually increases to <@ba.vup>+{{atk}:.0%}</></br></br><$ba.charged>Charged</> effect: Attacks increase damage taken by the target from Carnelian by <@ba.vup>{{attack@damage_scale}:.0%}</> (up to <@ba.vup>5</> stacks), lasting until the skill ends",
 			"<@ba.vup>Expand</> Attack Range. ATK gradually increases to <@ba.vup>+{{atk}:.0%}</></br></br><$ba.charged>Charged</> effect: Attacks increase damage taken by the target from Carnelian by <@ba.vup>{{attack@damage_scale}:.0%}</> (up to <@ba.vup>5</> stacks), lasting until the skill ends",
 			"<@ba.vup>Expand</> Attack Range. ATK gradually increases to <@ba.vup>+{{atk}:.0%}</></br></br><$ba.charged>Charged</> effect: Attacks increase damage taken by the target from Carnelian by <@ba.vup>{{attack@damage_scale}:.0%}</> (up to <@ba.vup>5</> stacks), lasting until the skill ends"
+		]
+	},
+	"skchr_gdglow_1": {
+		"name": "Scattering Sparks",
+		"desc": [
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. ATK <@ba.vup>+{{atk}:.0%}</>, Attack Speed <@ba.vup>+{{attack_speed}:.0f}</></br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. ATK <@ba.vup>+{{atk}:.0%}</>, Attack Speed <@ba.vup>+{{attack_speed}:.0f}</></br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. ATK <@ba.vup>+{{atk}:.0%}</>, Attack Speed <@ba.vup>+{{attack_speed}:.0f}</></br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. ATK <@ba.vup>+{{atk}:.0%}</>, Attack Speed <@ba.vup>+{{attack_speed}:.0f}</></br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. ATK <@ba.vup>+{{atk}:.0%}</>, Attack Speed <@ba.vup>+{{attack_speed}:.0f}</></br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. ATK <@ba.vup>+{{atk}:.0%}</>, Attack Speed <@ba.vup>+{{attack_speed}:.0f}</></br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. ATK <@ba.vup>+{{atk}:.0%}</>, Attack Speed <@ba.vup>+{{attack_speed}:.0f}</></br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. ATK <@ba.vup>+{{atk}:.0%}</>, Attack Speed <@ba.vup>+{{attack_speed}:.0f}</></br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. ATK <@ba.vup>+{{atk}:.0%}</>, Attack Speed <@ba.vup>+{{attack_speed}:.0f}</></br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. ATK <@ba.vup>+{{atk}:.0%}</>, Attack Speed <@ba.vup>+{{attack_speed}:.0f}</></br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>"
+		]
+	},
+	"skchr_gdglow_2": {
+		"name": "Surging Current",
+		"desc": [
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range, ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>The Float Units will return after the enemy is killed or the Float Unit self-destructs</></br></br><@ba.rem>Infinite duration</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range, ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>The Float Units will return after the enemy is killed or the Float Unit self-destructs</></br></br><@ba.rem>Infinite duration</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range, ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>The Float Units will return after the enemy is killed or the Float Unit self-destructs</></br></br><@ba.rem>Infinite duration</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range, ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>The Float Units will return after the enemy is killed or the Float Unit self-destructs</></br></br><@ba.rem>Infinite duration</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range, ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>The Float Units will return after the enemy is killed or the Float Unit self-destructs</></br></br><@ba.rem>Infinite duration</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range, ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>The Float Units will return after the enemy is killed or the Float Unit self-destructs</></br></br><@ba.rem>Infinite duration</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range, ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>The Float Units will return after the enemy is killed or the Float Unit self-destructs</></br></br><@ba.rem>Infinite duration</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range, ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>The Float Units will return after the enemy is killed or the Float Unit self-destructs</></br></br><@ba.rem>Infinite duration</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range, ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>The Float Units will return after the enemy is killed or the Float Unit self-destructs</></br></br><@ba.rem>Infinite duration</>",
+			"Number of Float Units <@ba.vup>+1</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range, ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>The Float Units will return after the enemy is killed or the Float Unit self-destructs</></br></br><@ba.rem>Infinite duration</>"
+		]
+	},
+	"skchr_gdglow_3": {
+		"name": "Crystalline Shine",
+		"desc": [
+			"Stop attacking enemies. Number of Float Units <@ba.vup>+2</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range to the entire battlefield, ATK <@ba.vup>+{{atk}:.0%}</>. The Float Units' attacks inflict <$ba.sluggish>Slow</> for <@ba.vup>{attack@sluggish}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Stop attacking enemies. Number of Float Units <@ba.vup>+2</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range to the entire battlefield, ATK <@ba.vup>+{{atk}:.0%}</>. The Float Units' attacks inflict <$ba.sluggish>Slow</> for <@ba.vup>{attack@sluggish}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Stop attacking enemies. Number of Float Units <@ba.vup>+2</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range to the entire battlefield, ATK <@ba.vup>+{{atk}:.0%}</>. The Float Units' attacks inflict <$ba.sluggish>Slow</> for <@ba.vup>{attack@sluggish}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Stop attacking enemies. Number of Float Units <@ba.vup>+2</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range to the entire battlefield, ATK <@ba.vup>+{{atk}:.0%}</>. The Float Units' attacks inflict <$ba.sluggish>Slow</> for <@ba.vup>{attack@sluggish}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Stop attacking enemies. Number of Float Units <@ba.vup>+2</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range to the entire battlefield, ATK <@ba.vup>+{{atk}:.0%}</>. The Float Units' attacks inflict <$ba.sluggish>Slow</> for <@ba.vup>{attack@sluggish}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Stop attacking enemies. Number of Float Units <@ba.vup>+2</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range to the entire battlefield, ATK <@ba.vup>+{{atk}:.0%}</>. The Float Units' attacks inflict <$ba.sluggish>Slow</> for <@ba.vup>{attack@sluggish}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Stop attacking enemies. Number of Float Units <@ba.vup>+2</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range to the entire battlefield, ATK <@ba.vup>+{{atk}:.0%}</>. The Float Units' attacks inflict <$ba.sluggish>Slow</> for <@ba.vup>{attack@sluggish}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Stop attacking enemies. Number of Float Units <@ba.vup>+2</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range to the entire battlefield, ATK <@ba.vup>+{{atk}:.0%}</>. The Float Units' attacks inflict <$ba.sluggish>Slow</> for <@ba.vup>{attack@sluggish}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Stop attacking enemies. Number of Float Units <@ba.vup>+2</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range to the entire battlefield, ATK <@ba.vup>+{{atk}:.0%}</>. The Float Units' attacks inflict <$ba.sluggish>Slow</> for <@ba.vup>{attack@sluggish}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>",
+			"Stop attacking enemies. Number of Float Units <@ba.vup>+2</>, release the Float Units to lock-on to an enemy and attack. <@ba.vup>Expand</> Attack Range to the entire battlefield, ATK <@ba.vup>+{{atk}:.0%}</>. The Float Units' attacks inflict <$ba.sluggish>Slow</> for <@ba.vup>{attack@sluggish}</> seconds</br></br><@ba.rem>The Float Units will return after the enemy is killed, the Float Unit self-destructs or the skill ends</>"
 		]
 	},
 	"skcom_heal_self[1]": {
@@ -3866,6 +3911,36 @@
 			"After deployment, ATK <@ba.vup>+{{atk}:.0%}</> and gain <$ba.camou>Camouflage</>"
 		]
 	},
+	"skchr_kroos2_1": {
+		"name": "Traceless",
+		"desc": [
+			"ATK <@ba.vup>+{{atk}:.0%}</>, attacks deal <@ba.vup>2</> hits. Gain <$ba.camou>Camouflage</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, attacks deal <@ba.vup>2</> hits. Gain <$ba.camou>Camouflage</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, attacks deal <@ba.vup>2</> hits. Gain <$ba.camou>Camouflage</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, attacks deal <@ba.vup>2</> hits. Gain <$ba.camou>Camouflage</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, attacks deal <@ba.vup>2</> hits. Gain <$ba.camou>Camouflage</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, attacks deal <@ba.vup>2</> hits. Gain <$ba.camou>Camouflage</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, attacks deal <@ba.vup>2</> hits. Gain <$ba.camou>Camouflage</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, attacks deal <@ba.vup>2</> hits. Gain <$ba.camou>Camouflage</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, attacks deal <@ba.vup>2</> hits. Gain <$ba.camou>Camouflage</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, attacks deal <@ba.vup>2</> hits. Gain <$ba.camou>Camouflage</>"
+		]
+	},
+	"skchr_kroos2_2": {
+		"name": "Silencer",
+		"desc": [
+			"Slightly reduce Attack Interval (<@ba.vup>{{base_attack_time}:.0%}</>), attacks deal <@ba.vup>2</> hits. After <@ba.vup>{{attack@max_stack_count}:.0f}</> hits on enemies, attacks deal <@ba.vup>4</> hits for the remainder of the skill duration",
+			"Slightly reduce Attack Interval (<@ba.vup>{{base_attack_time}:.0%}</>), attacks deal <@ba.vup>2</> hits. After <@ba.vup>{{attack@max_stack_count}:.0f}</> hits on enemies, attacks deal <@ba.vup>4</> hits for the remainder of the skill duration",
+			"Slightly reduce Attack Interval (<@ba.vup>{{base_attack_time}:.0%}</>), attacks deal <@ba.vup>2</> hits. After <@ba.vup>{{attack@max_stack_count}:.0f}</> hits on enemies, attacks deal <@ba.vup>4</> hits for the remainder of the skill duration",
+			"Reduce Attack Interval (<@ba.vup>{{base_attack_time}:.0%}</>), attacks deal <@ba.vup>2</> hits. After <@ba.vup>{{attack@max_stack_count}:.0f}</> hits on enemies, attacks deal <@ba.vup>4</> hits for the remainder of the skill duration",
+			"Reduce Attack Interval (<@ba.vup>{{base_attack_time}:.0%}</>), attacks deal <@ba.vup>2</> hits. After <@ba.vup>{{attack@max_stack_count}:.0f}</> hits on enemies, attacks deal <@ba.vup>4</> hits for the remainder of the skill duration",
+			"Reduce Attack Interval (<@ba.vup>{{base_attack_time}:.0%}</>), attacks deal <@ba.vup>2</> hits. After <@ba.vup>{{attack@max_stack_count}:.0f}</> hits on enemies, attacks deal <@ba.vup>4</> hits for the remainder of the skill duration",
+			"Reduce Attack Interval to a certain extent (<@ba.vup>{{base_attack_time}:.0%}</>), attacks deal <@ba.vup>2</> hits. After <@ba.vup>{{attack@max_stack_count}:.0f}</> hits on enemies, attacks deal <@ba.vup>4</> hits for the remainder of the skill duration",
+			"Reduce Attack Interval to a certain extent (<@ba.vup>{{base_attack_time}:.0%}</>), attacks deal <@ba.vup>2</> hits. After <@ba.vup>{{attack@max_stack_count}:.0f}</> hits on enemies, attacks deal <@ba.vup>4</> hits for the remainder of the skill duration",
+			"Reduce Attack Interval to a certain extent (<@ba.vup>{{base_attack_time}:.0%}</>), attacks deal <@ba.vup>2</> hits. After <@ba.vup>{{attack@max_stack_count}:.0f}</> hits on enemies, attacks deal <@ba.vup>4</> hits for the remainder of the skill duration",
+			"Highly reduce Attack Interval (<@ba.vup>{{base_attack_time}:.1%}</>), attacks deal <@ba.vup>2</> hits. After <@ba.vup>{{attack@max_stack_count}:.0f}</> hits on enemies, attacks deal <@ba.vup>4</> hits for the remainder of the skill duration"
+		]
+	},
 	"skchr_meteo_1": {
 		"name": "Spread Shot",
 		"desc": [
@@ -4991,6 +5066,51 @@
 			"After deployment, immediately deal <@ba.vup>{{atk_scale}:.0%}</> Physical damage to all nearby enemies and push them away with <@ba.vup>small</> force. Additionally, randomly apply one of the following status effects (<$ba.sluggish>Slow</>, <$ba.root>Bind</>, <$ba.stun>Stun</>) for <@ba.vup>{sluggish}</> seconds"
 		]
 	},
+	"skchr_lmlee_1": {
+		"name": "Stern Admonishment",
+		"desc": [
+			"ATK <@ba.vup>+{{atk}:.0%}</>, gain <@ba.vup>{{prob}:.0%}</> Arts Evasion</br></br><@ba.rem>Infinite duration</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, gain <@ba.vup>{{prob}:.0%}</> Arts Evasion</br></br><@ba.rem>Infinite duration</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, gain <@ba.vup>{{prob}:.0%}</> Arts Evasion</br></br><@ba.rem>Infinite duration</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, gain <@ba.vup>{{prob}:.0%}</> Arts Evasion</br></br><@ba.rem>Infinite duration</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, gain <@ba.vup>{{prob}:.0%}</> Arts Evasion</br></br><@ba.rem>Infinite duration</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, gain <@ba.vup>{{prob}:.0%}</> Arts Evasion</br></br><@ba.rem>Infinite duration</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, gain <@ba.vup>{{prob}:.0%}</> Arts Evasion</br></br><@ba.rem>Infinite duration</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, gain <@ba.vup>{{prob}:.0%}</> Arts Evasion</br></br><@ba.rem>Infinite duration</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, gain <@ba.vup>{{prob}:.0%}</> Arts Evasion</br></br><@ba.rem>Infinite duration</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>, gain <@ba.vup>{{prob}:.0%}</> Arts Evasion</br></br><@ba.rem>Infinite duration</>"
+		]
+	},
+	"skchr_lmlee_2": {
+		"name": "Exorcise Evil",
+		"desc": [
+			"Passive: Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>; Active: Mark the target and increase their Taunt level. The mark explodes after <@ba.vup>{{paper_duration}:.0f}</> seconds, dealing <@ba.vup>{{default_atk_scale}:.0%}</> Arts damage to nearby enemies. Every hit on the marked target increases the explosion damage by <@ba.vup>{{factor_atk_scale}:.0%}</> of Lee's ATK (increases up to <@ba.vup>{{max_stack_cnt}:.0f}</> times, prematurely explodes if the limit is reached or the target dies)",
+			"Passive: Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>; Active: Mark the target and increase their Taunt level. The mark explodes after <@ba.vup>{{paper_duration}:.0f}</> seconds, dealing <@ba.vup>{{default_atk_scale}:.0%}</> Arts damage to nearby enemies. Every hit on the marked target increases the explosion damage by <@ba.vup>{{factor_atk_scale}:.0%}</> of Lee's ATK (increases up to <@ba.vup>{{max_stack_cnt}:.0f}</> times, prematurely explodes if the limit is reached or the target dies)",
+			"Passive: Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>; Active: Mark the target and increase their Taunt level. The mark explodes after <@ba.vup>{{paper_duration}:.0f}</> seconds, dealing <@ba.vup>{{default_atk_scale}:.0%}</> Arts damage to nearby enemies. Every hit on the marked target increases the explosion damage by <@ba.vup>{{factor_atk_scale}:.0%}</> of Lee's ATK (increases up to <@ba.vup>{{max_stack_cnt}:.0f}</> times, prematurely explodes if the limit is reached or the target dies)",
+			"Passive: Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>; Active: Mark the target and increase their Taunt level. The mark explodes after <@ba.vup>{{paper_duration}:.0f}</> seconds, dealing <@ba.vup>{{default_atk_scale}:.0%}</> Arts damage to nearby enemies. Every hit on the marked target increases the explosion damage by <@ba.vup>{{factor_atk_scale}:.0%}</> of Lee's ATK (increases up to <@ba.vup>{{max_stack_cnt}:.0f}</> times, prematurely explodes if the limit is reached or the target dies)",
+			"Passive: Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>; Active: Mark the target and increase their Taunt level. The mark explodes after <@ba.vup>{{paper_duration}:.0f}</> seconds, dealing <@ba.vup>{{default_atk_scale}:.0%}</> Arts damage to nearby enemies. Every hit on the marked target increases the explosion damage by <@ba.vup>{{factor_atk_scale}:.0%}</> of Lee's ATK (increases up to <@ba.vup>{{max_stack_cnt}:.0f}</> times, prematurely explodes if the limit is reached or the target dies)",
+			"Passive: Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>; Active: Mark the target and increase their Taunt level. The mark explodes after <@ba.vup>{{paper_duration}:.0f}</> seconds, dealing <@ba.vup>{{default_atk_scale}:.0%}</> Arts damage to nearby enemies. Every hit on the marked target increases the explosion damage by <@ba.vup>{{factor_atk_scale}:.0%}</> of Lee's ATK (increases up to <@ba.vup>{{max_stack_cnt}:.0f}</> times, prematurely explodes if the limit is reached or the target dies)",
+			"Passive: Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>; Active: Mark the target and increase their Taunt level. The mark explodes after <@ba.vup>{{paper_duration}:.0f}</> seconds, dealing <@ba.vup>{{default_atk_scale}:.0%}</> Arts damage to nearby enemies. Every hit on the marked target increases the explosion damage by <@ba.vup>{{factor_atk_scale}:.0%}</> of Lee's ATK (increases up to <@ba.vup>{{max_stack_cnt}:.0f}</> times, prematurely explodes if the limit is reached or the target dies)",
+			"Passive: Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>; Active: Mark the target and increase their Taunt level. The mark explodes after <@ba.vup>{{paper_duration}:.0f}</> seconds, dealing <@ba.vup>{{default_atk_scale}:.0%}</> Arts damage to nearby enemies. Every hit on the marked target increases the explosion damage by <@ba.vup>{{factor_atk_scale}:.0%}</> of Lee's ATK (increases up to <@ba.vup>{{max_stack_cnt}:.0f}</> times, prematurely explodes if the limit is reached or the target dies)",
+			"Passive: Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>; Active: Mark the target and increase their Taunt level. The mark explodes after <@ba.vup>{{paper_duration}:.0f}</> seconds, dealing <@ba.vup>{{default_atk_scale}:.0%}</> Arts damage to nearby enemies. Every hit on the marked target increases the explosion damage by <@ba.vup>{{factor_atk_scale}:.0%}</> of Lee's ATK (increases up to <@ba.vup>{{max_stack_cnt}:.0f}</> times, prematurely explodes if the limit is reached or the target dies)",
+			"Passive: Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>; Active: Mark the target and increase their Taunt level. The mark explodes after <@ba.vup>{{paper_duration}:.0f}</> seconds, dealing <@ba.vup>{{default_atk_scale}:.0%}</> Arts damage to nearby enemies. Every hit on the marked target increases the explosion damage by <@ba.vup>{{factor_atk_scale}:.0%}</> of Lee's ATK (increases up to <@ba.vup>{{max_stack_cnt}:.0f}</> times, prematurely explodes if the limit is reached or the target dies)"
+		]
+	},
+	"skchr_lmlee_3": {
+		"name": "Honored Guests",
+		"desc": [
+			"<@ba.vup>Expand</> Attack Range, ATK and DEF <@ba.vup>+{{atk}:.0%}</>. Attacks push all enemies within range except the current target away with <@ba.vup>small</> force. Increase Taunt level and gain <@ba.vup>{{prob}:.0%}</> Physical and Arts Evasion against attacks coming from outside his Attack Range</br></br><@ba.rem>Infinite duration</>",
+			"<@ba.vup>Expand</> Attack Range, ATK and DEF <@ba.vup>+{{atk}:.0%}</>. Attacks push all enemies within range except the current target away with <@ba.vup>small</> force. Increase Taunt level and gain <@ba.vup>{{prob}:.0%}</> Physical and Arts Evasion against attacks coming from outside his Attack Range</br></br><@ba.rem>Infinite duration</>",
+			"<@ba.vup>Expand</> Attack Range, ATK and DEF <@ba.vup>+{{atk}:.0%}</>. Attacks push all enemies within range except the current target away with <@ba.vup>small</> force. Increase Taunt level and gain <@ba.vup>{{prob}:.0%}</> Physical and Arts Evasion against attacks coming from outside his Attack Range</br></br><@ba.rem>Infinite duration</>",
+			"<@ba.vup>Expand</> Attack Range, ATK and DEF <@ba.vup>+{{atk}:.0%}</>. Attacks push all enemies within range except the current target away with <@ba.vup>small</> force. Increase Taunt level and gain <@ba.vup>{{prob}:.0%}</> Physical and Arts Evasion against attacks coming from outside his Attack Range</br></br><@ba.rem>Infinite duration</>",
+			"<@ba.vup>Expand</> Attack Range, ATK and DEF <@ba.vup>+{{atk}:.0%}</>. Attacks push all enemies within range except the current target away with <@ba.vup>small</> force. Increase Taunt level and gain <@ba.vup>{{prob}:.0%}</> Physical and Arts Evasion against attacks coming from outside his Attack Range</br></br><@ba.rem>Infinite duration</>",
+			"<@ba.vup>Expand</> Attack Range, ATK and DEF <@ba.vup>+{{atk}:.0%}</>. Attacks push all enemies within range except the current target away with <@ba.vup>small</> force. Increase Taunt level and gain <@ba.vup>{{prob}:.0%}</> Physical and Arts Evasion against attacks coming from outside his Attack Range</br></br><@ba.rem>Infinite duration</>",
+			"<@ba.vup>Expand</> Attack Range, ATK and DEF <@ba.vup>+{{atk}:.0%}</>. Attacks push all enemies within range except the current target away with <@ba.vup>small</> force. Increase Taunt level and gain <@ba.vup>{{prob}:.0%}</> Physical and Arts Evasion against attacks coming from outside his Attack Range</br></br><@ba.rem>Infinite duration</>",
+			"<@ba.vup>Expand</> Attack Range, ATK and DEF <@ba.vup>+{{atk}:.0%}</>. Attacks push all enemies within range except the current target away with <@ba.vup>small</> force. Increase Taunt level and gain <@ba.vup>{{prob}:.0%}</> Physical and Arts Evasion against attacks coming from outside his Attack Range</br></br><@ba.rem>Infinite duration</>",
+			"<@ba.vup>Expand</> Attack Range, ATK and DEF <@ba.vup>+{{atk}:.0%}</>. Attacks push all enemies within range except the current target away with <@ba.vup>small</> force. Increase Taunt level and gain <@ba.vup>{{prob}:.0%}</> Physical and Arts Evasion against attacks coming from outside his Attack Range</br></br><@ba.rem>Infinite duration</>",
+			"<@ba.vup>Expand</> Attack Range, ATK and DEF <@ba.vup>+{{atk}:.0%}</>. Attacks push all enemies within range except the current target away with <@ba.vup>small</> force. Increase Taunt level and gain <@ba.vup>{{prob}:.0%}</> Physical and Arts Evasion against attacks coming from outside his Attack Range</br></br><@ba.rem>Infinite duration</>"
+		]
+	},
 	"skchr_weedy_1": {
 		"name": "Cannon Strike",
 		"desc": [
@@ -5528,6 +5648,66 @@
 			"Stop attacking enemies. Change Talent activation requirement to <@ba.vup>{{talent@hp_ratio}:.0%}</> HP and increase the <$ba.protect>Shelter</> effect to <@ba.vup>{talent_scale}x</>. All allies within Attack Range are healed for <@ba.vup>{{attack@atk_to_hp_recovery_ratio}:.0%}</> of Tsukinogi's ATK every second"
 		]
 	},
+	"skchr_ncdeer_1": {
+		"name": "Fortune Bringer of the Mortal Realm",
+		"desc": [
+			"ATK <@ba.vup>+{{atk}:.0%}</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</>"
+		]
+	},
+	"skchr_ncdeer_2": {
+		"name": "Return to the Immortal Mountains",
+		"desc": [
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Self gains <@ba.vup>{{prob}:.0%}</> ranged Physical block. Change Talent activation requirement to <@ba.vup>{{talent@hp_ratio}:.0%}</> HP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Self gains <@ba.vup>{{prob}:.0%}</> ranged Physical block. Change Talent activation requirement to <@ba.vup>{{talent@hp_ratio}:.0%}</> HP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Self gains <@ba.vup>{{prob}:.0%}</> ranged Physical block. Change Talent activation requirement to <@ba.vup>{{talent@hp_ratio}:.0%}</> HP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Self gains <@ba.vup>{{prob}:.0%}</> ranged Physical block. Change Talent activation requirement to <@ba.vup>{{talent@hp_ratio}:.0%}</> HP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Self gains <@ba.vup>{{prob}:.0%}</> ranged Physical block. Change Talent activation requirement to <@ba.vup>{{talent@hp_ratio}:.0%}</> HP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Self gains <@ba.vup>{{prob}:.0%}</> ranged Physical block. Change Talent activation requirement to <@ba.vup>{{talent@hp_ratio}:.0%}</> HP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Self gains <@ba.vup>{{prob}:.0%}</> ranged Physical block. Change Talent activation requirement to <@ba.vup>{{talent@hp_ratio}:.0%}</> HP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Self gains <@ba.vup>{{prob}:.0%}</> ranged Physical block. Change Talent activation requirement to <@ba.vup>{{talent@hp_ratio}:.0%}</> HP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Self gains <@ba.vup>{{prob}:.0%}</> ranged Physical block. Change Talent activation requirement to <@ba.vup>{{talent@hp_ratio}:.0%}</> HP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Self gains <@ba.vup>{{prob}:.0%}</> ranged Physical block. Change Talent activation requirement to <@ba.vup>{{talent@hp_ratio}:.0%}</> HP"
+		]
+	},
+	"skchr_quercu_1": {
+		"name": "Terra's Benevolence",
+		"desc": [
+			"ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>Infinite duration, skill can be manually deactivated</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>Infinite duration, skill can be manually deactivated</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>Infinite duration, skill can be manually deactivated</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>Infinite duration, skill can be manually deactivated</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>Infinite duration, skill can be manually deactivated</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>Infinite duration, skill can be manually deactivated</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>Infinite duration, skill can be manually deactivated</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>Infinite duration, skill can be manually deactivated</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>Infinite duration, skill can be manually deactivated</>",
+			"ATK <@ba.vup>+{{atk}:.0%}</></br></br><@ba.rem>Infinite duration, skill can be manually deactivated</>"
+		]
+	},
+	"skchr_quercu_2": {
+		"name": "Echo of Life",
+		"desc": [
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Healed allies recover <@ba.vup>1</> SP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Healed allies recover <@ba.vup>1</> SP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Healed allies recover <@ba.vup>1</> SP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Healed allies recover <@ba.vup>1</> SP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Healed allies recover <@ba.vup>1</> SP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Healed allies recover <@ba.vup>1</> SP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Healed allies recover <@ba.vup>1</> SP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Healed allies recover <@ba.vup>1</> SP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Healed allies recover <@ba.vup>1</> SP",
+			"Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. Healed allies recover <@ba.vup>1</> SP"
+		]
+	},
 	"skchr_gnosis_1": {
 		"name": "High-Speed Cogitation",
 		"desc": [
@@ -5751,6 +5931,51 @@
 			"Trait changes to losing <@ba.vdown>{{hp_ratio}:.0%}</> self HP every second. Deal <@ba.vup>{{atk_scale}:.0%}</> <@ba.vup>True damage</> to all enemies within Attack Range every second (damage from self and Seaborn stacks). Grant <$ba.inspire>Inspire</> effect equal to <@ba.vup>{{atk}:.0%}</> of Skadi's ATK to all allies within Attack Range",
 			"Trait changes to losing <@ba.vdown>{{hp_ratio}:.0%}</> self HP every second. Deal <@ba.vup>{{atk_scale}:.0%}</> <@ba.vup>True damage</> to all enemies within Attack Range every second (damage from self and Seaborn stacks). Grant <$ba.inspire>Inspire</> effect equal to <@ba.vup>{{atk}:.0%}</> of Skadi's ATK to all allies within Attack Range",
 			"Trait changes to losing <@ba.vdown>{{hp_ratio}:.0%}</> self HP every second. Deal <@ba.vup>{{atk_scale}:.0%}</> <@ba.vup>True damage</> to all enemies within Attack Range every second (damage from self and Seaborn stacks). Grant <$ba.inspire>Inspire</> effect equal to <@ba.vup>{{atk}:.0%}</> of Skadi's ATK to all allies within Attack Range"
+		]
+	},
+	"skchr_ling_1": {
+		"name": "Sips of Wine",
+		"desc": [
+			"Passive: Summons can only be deployed on melee tiles</br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. The summons' attacks deal <@ba.vup>Arts damage</></br></br><@ba.rem>When skill is activated, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles</br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. The summons' attacks deal <@ba.vup>Arts damage</></br></br><@ba.rem>When skill is activated, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles</br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. The summons' attacks deal <@ba.vup>Arts damage</></br></br><@ba.rem>When skill is activated, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles</br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. The summons' attacks deal <@ba.vup>Arts damage</></br></br><@ba.rem>When skill is activated, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles</br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. The summons' attacks deal <@ba.vup>Arts damage</></br></br><@ba.rem>When skill is activated, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles</br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. The summons' attacks deal <@ba.vup>Arts damage</></br></br><@ba.rem>When skill is activated, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles</br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. The summons' attacks deal <@ba.vup>Arts damage</></br></br><@ba.rem>When skill is activated, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles</br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. The summons' attacks deal <@ba.vup>Arts damage</></br></br><@ba.rem>When skill is activated, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles</br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. The summons' attacks deal <@ba.vup>Arts damage</></br></br><@ba.rem>When skill is activated, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles</br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and Attack Speed <@ba.vup>+{{attack_speed}:.0f}</>. The summons' attacks deal <@ba.vup>Arts damage</></br></br><@ba.rem>When skill is activated, obtain 1 summon</>"
+		]
+	},
+	"skchr_ling_2": {
+		"name": "Amidst Pleasant Melodies",
+		"desc": [
+			"Passive: Summons can only be deployed on ranged tiles and deal <@ba.vup>Arts damage</></br></br>Active: Ling and her summons deal <@ba.vup>{{atk_scale}:.0%}</> Arts damage to <@ba.vup>2</> enemies within Attack Range and <$ba.root>Bind</> them for <@ba.vup>{ling_s2_unmovable.duration}</> seconds</br></br><@ba.rem>When the skill ends, retrieve all summons with less than 50% HP. Can hold {{value}:.0f} charges</>",
+			"Passive: Summons can only be deployed on ranged tiles and deal <@ba.vup>Arts damage</></br></br>Active: Ling and her summons deal <@ba.vup>{{atk_scale}:.0%}</> Arts damage to <@ba.vup>2</> enemies within Attack Range and <$ba.root>Bind</> them for <@ba.vup>{ling_s2_unmovable.duration}</> seconds</br></br><@ba.rem>When the skill ends, retrieve all summons with less than 50% HP. Can hold {{value}:.0f} charges</>",
+			"Passive: Summons can only be deployed on ranged tiles and deal <@ba.vup>Arts damage</></br></br>Active: Ling and her summons deal <@ba.vup>{{atk_scale}:.0%}</> Arts damage to <@ba.vup>2</> enemies within Attack Range and <$ba.root>Bind</> them for <@ba.vup>{ling_s2_unmovable.duration}</> seconds</br></br><@ba.rem>When the skill ends, retrieve all summons with less than 50% HP. Can hold {{value}:.0f} charges</>",
+			"Passive: Summons can only be deployed on ranged tiles and deal <@ba.vup>Arts damage</></br></br>Active: Ling and her summons deal <@ba.vup>{{atk_scale}:.0%}</> Arts damage to <@ba.vup>2</> enemies within Attack Range and <$ba.root>Bind</> them for <@ba.vup>{ling_s2_unmovable.duration}</> seconds</br></br><@ba.rem>When the skill ends, retrieve all summons with less than 50% HP. Can hold {{value}:.0f} charges</>",
+			"Passive: Summons can only be deployed on ranged tiles and deal <@ba.vup>Arts damage</></br></br>Active: Ling and her summons deal <@ba.vup>{{atk_scale}:.0%}</> Arts damage to <@ba.vup>2</> enemies within Attack Range and <$ba.root>Bind</> them for <@ba.vup>{ling_s2_unmovable.duration}</> seconds</br></br><@ba.rem>When the skill ends, retrieve all summons with less than 50% HP. Can hold {{value}:.0f} charges</>",
+			"Passive: Summons can only be deployed on ranged tiles and deal <@ba.vup>Arts damage</></br></br>Active: Ling and her summons deal <@ba.vup>{{atk_scale}:.0%}</> Arts damage to <@ba.vup>2</> enemies within Attack Range and <$ba.root>Bind</> them for <@ba.vup>{ling_s2_unmovable.duration}</> seconds</br></br><@ba.rem>When the skill ends, retrieve all summons with less than 50% HP. Can hold {{value}:.0f} charges</>",
+			"Passive: Summons can only be deployed on ranged tiles and deal <@ba.vup>Arts damage</></br></br>Active: Ling and her summons deal <@ba.vup>{{atk_scale}:.0%}</> Arts damage to <@ba.vup>2</> enemies within Attack Range and <$ba.root>Bind</> them for <@ba.vup>{ling_s2_unmovable.duration}</> seconds</br></br><@ba.rem>When the skill ends, retrieve all summons with less than 50% HP. Can hold {{value}:.0f} charges</>",
+			"Passive: Summons can only be deployed on ranged tiles and deal <@ba.vup>Arts damage</></br></br>Active: Ling and her summons deal <@ba.vup>{{atk_scale}:.0%}</> Arts damage to <@ba.vup>2</> enemies within Attack Range and <$ba.root>Bind</> them for <@ba.vup>{ling_s2_unmovable.duration}</> seconds</br></br><@ba.rem>When the skill ends, retrieve all summons with less than 50% HP. Can hold {{value}:.0f} charges</>",
+			"Passive: Summons can only be deployed on ranged tiles and deal <@ba.vup>Arts damage</></br></br>Active: Ling and her summons deal <@ba.vup>{{atk_scale}:.0%}</> Arts damage to <@ba.vup>2</> enemies within Attack Range and <$ba.root>Bind</> them for <@ba.vup>{ling_s2_unmovable.duration}</> seconds</br></br><@ba.rem>When the skill ends, retrieve all summons with less than 50% HP. Can hold {{value}:.0f} charges</>",
+			"Passive: Summons can only be deployed on ranged tiles and deal <@ba.vup>Arts damage</></br></br>Active: Ling and her summons deal <@ba.vup>{{atk_scale}:.0%}</> Arts damage to <@ba.vup>2</> enemies within Attack Range and <$ba.root>Bind</> them for <@ba.vup>{ling_s2_unmovable.duration}</> seconds</br></br><@ba.rem>When the skill ends, retrieve all summons with less than 50% HP. Can hold {{value}:.0f} charges</>"
+		]
+	},
+	"skchr_ling_3": {
+		"name": "To Remain Oneself",
+		"desc": [
+			"Passive: Summons can only be deployed on melee tiles. If there are other summons within Attack Range, combine with them into a <@ba.vup>Higher form</></br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and DEF <@ba.vup>+{{def}:.0%}</>. Each summon deals Arts damage equal to <@ba.vup>{{atk_scale}:.0%}</> of Ling's ATK every <@ba.vup>{interval}</> seconds to enemies within the 4 adjacent tiles</br></br><@ba.rem>When the skill ends, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles. If there are other summons within Attack Range, combine with them into a <@ba.vup>Higher form</></br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and DEF <@ba.vup>+{{def}:.0%}</>. Each summon deals Arts damage equal to <@ba.vup>{{atk_scale}:.0%}</> of Ling's ATK every <@ba.vup>{interval}</> seconds to enemies within the 4 adjacent tiles</br></br><@ba.rem>When the skill ends, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles. If there are other summons within Attack Range, combine with them into a <@ba.vup>Higher form</></br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and DEF <@ba.vup>+{{def}:.0%}</>. Each summon deals Arts damage equal to <@ba.vup>{{atk_scale}:.0%}</> of Ling's ATK every <@ba.vup>{interval}</> seconds to enemies within the 4 adjacent tiles</br></br><@ba.rem>When the skill ends, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles. If there are other summons within Attack Range, combine with them into a <@ba.vup>Higher form</></br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and DEF <@ba.vup>+{{def}:.0%}</>. Each summon deals Arts damage equal to <@ba.vup>{{atk_scale}:.0%}</> of Ling's ATK every <@ba.vup>{interval}</> seconds to enemies within the 4 adjacent tiles</br></br><@ba.rem>When the skill ends, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles. If there are other summons within Attack Range, combine with them into a <@ba.vup>Higher form</></br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and DEF <@ba.vup>+{{def}:.0%}</>. Each summon deals Arts damage equal to <@ba.vup>{{atk_scale}:.0%}</> of Ling's ATK every <@ba.vup>{interval}</> seconds to enemies within the 4 adjacent tiles</br></br><@ba.rem>When the skill ends, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles. If there are other summons within Attack Range, combine with them into a <@ba.vup>Higher form</></br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and DEF <@ba.vup>+{{def}:.0%}</>. Each summon deals Arts damage equal to <@ba.vup>{{atk_scale}:.0%}</> of Ling's ATK every <@ba.vup>{interval}</> seconds to enemies within the 4 adjacent tiles</br></br><@ba.rem>When the skill ends, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles. If there are other summons within Attack Range, combine with them into a <@ba.vup>Higher form</></br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and DEF <@ba.vup>+{{def}:.0%}</>. Each summon deals Arts damage equal to <@ba.vup>{{atk_scale}:.0%}</> of Ling's ATK every <@ba.vup>{interval}</> seconds to enemies within the 4 adjacent tiles</br></br><@ba.rem>When the skill ends, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles. If there are other summons within Attack Range, combine with them into a <@ba.vup>Higher form</></br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and DEF <@ba.vup>+{{def}:.0%}</>. Each summon deals Arts damage equal to <@ba.vup>{{atk_scale}:.0%}</> of Ling's ATK every <@ba.vup>{interval}</> seconds to enemies within the 4 adjacent tiles</br></br><@ba.rem>When the skill ends, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles. If there are other summons within Attack Range, combine with them into a <@ba.vup>Higher form</></br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and DEF <@ba.vup>+{{def}:.0%}</>. Each summon deals Arts damage equal to <@ba.vup>{{atk_scale}:.0%}</> of Ling's ATK every <@ba.vup>{interval}</> seconds to enemies within the 4 adjacent tiles</br></br><@ba.rem>When the skill ends, obtain 1 summon</>",
+			"Passive: Summons can only be deployed on melee tiles. If there are other summons within Attack Range, combine with them into a <@ba.vup>Higher form</></br></br>Active: Ling and her summons gain ATK <@ba.vup>+{{atk}:.0%}</> and DEF <@ba.vup>+{{def}:.0%}</>. Each summon deals Arts damage equal to <@ba.vup>{{atk_scale}:.0%}</> of Ling's ATK every <@ba.vup>{interval}</> seconds to enemies within the 4 adjacent tiles</br></br><@ba.rem>When the skill ends, obtain 1 summon</>"
 		]
 	},
 	"skcom_charge_cost[1]": {
@@ -6045,6 +6270,36 @@
 			"Stop attacking enemies and gradually obtain <@ba.vup>{{value}:.0f}</> DP while the skill is active. Lock-on to at most <@ba.vup>{{max_target}:.0f}</> nearby enemies, inflicting <@ba.vup>{{move_speed}:.0%}</> Movement Speed, <@ba.vup>{{def}:.0%}</> DEF and removing <$ba.invisible>Stealth</>",
 			"Stop attacking enemies and gradually obtain <@ba.vup>{{value}:.0f}</> DP while the skill is active. Lock-on to at most <@ba.vup>{{max_target}:.0f}</> nearby enemies, inflicting <@ba.vup>{{move_speed}:.0%}</> Movement Speed, <@ba.vup>{{def}:.0%}</> DEF and removing <$ba.invisible>Stealth</>",
 			"Stop attacking enemies and gradually obtain <@ba.vup>{{value}:.0f}</> DP while the skill is active. Lock-on to at most <@ba.vup>{{max_target}:.0f}</> nearby enemies, inflicting <@ba.vup>{{move_speed}:.0%}</> Movement Speed, <@ba.vup>{{def}:.0%}</> DEF and removing <$ba.invisible>Stealth</>"
+		]
+	},
+	"skchr_blkngt_1": {
+		"name": "Drowsiness",
+		"desc": [
+			"Immediately obtain <@ba.vup>{{cost}:.0f}</> DP. The Hypnos falls asleep and recovers <@ba.vup>{{hp_recovery_per_sec_by_max_hp_ratio}:.0%}</> Max HP every second. Upon receiving damage, the Hypnos wakes up and gains ATK <@ba.vup>+{{blkngt_hypnos_s_1[rage].atk}:.0%}</> and Attack Speed <@ba.vup>+{{blkngt_hypnos_s_1[rage].attack_speed}:.0%}</> for <@ba.vup>{{blkngt_hypnos_s_1[rage].duration}:.0f}</> seconds",
+			"Immediately obtain <@ba.vup>{{cost}:.0f}</> DP. The Hypnos falls asleep and recovers <@ba.vup>{{hp_recovery_per_sec_by_max_hp_ratio}:.0%}</> Max HP every second. Upon receiving damage, the Hypnos wakes up and gains ATK <@ba.vup>+{{blkngt_hypnos_s_1[rage].atk}:.0%}</> and Attack Speed <@ba.vup>+{{blkngt_hypnos_s_1[rage].attack_speed}:.0%}</> for <@ba.vup>{{blkngt_hypnos_s_1[rage].duration}:.0f}</> seconds",
+			"Immediately obtain <@ba.vup>{{cost}:.0f}</> DP. The Hypnos falls asleep and recovers <@ba.vup>{{hp_recovery_per_sec_by_max_hp_ratio}:.0%}</> Max HP every second. Upon receiving damage, the Hypnos wakes up and gains ATK <@ba.vup>+{{blkngt_hypnos_s_1[rage].atk}:.0%}</> and Attack Speed <@ba.vup>+{{blkngt_hypnos_s_1[rage].attack_speed}:.0%}</> for <@ba.vup>{{blkngt_hypnos_s_1[rage].duration}:.0f}</> seconds",
+			"Immediately obtain <@ba.vup>{{cost}:.0f}</> DP. The Hypnos falls asleep and recovers <@ba.vup>{{hp_recovery_per_sec_by_max_hp_ratio}:.0%}</> Max HP every second. Upon receiving damage, the Hypnos wakes up and gains ATK <@ba.vup>+{{blkngt_hypnos_s_1[rage].atk}:.0%}</> and Attack Speed <@ba.vup>+{{blkngt_hypnos_s_1[rage].attack_speed}:.0%}</> for <@ba.vup>{{blkngt_hypnos_s_1[rage].duration}:.0f}</> seconds",
+			"Immediately obtain <@ba.vup>{{cost}:.0f}</> DP. The Hypnos falls asleep and recovers <@ba.vup>{{hp_recovery_per_sec_by_max_hp_ratio}:.0%}</> Max HP every second. Upon receiving damage, the Hypnos wakes up and gains ATK <@ba.vup>+{{blkngt_hypnos_s_1[rage].atk}:.0%}</> and Attack Speed <@ba.vup>+{{blkngt_hypnos_s_1[rage].attack_speed}:.0%}</> for <@ba.vup>{{blkngt_hypnos_s_1[rage].duration}:.0f}</> seconds",
+			"Immediately obtain <@ba.vup>{{cost}:.0f}</> DP. The Hypnos falls asleep and recovers <@ba.vup>{{hp_recovery_per_sec_by_max_hp_ratio}:.0%}</> Max HP every second. Upon receiving damage, the Hypnos wakes up and gains ATK <@ba.vup>+{{blkngt_hypnos_s_1[rage].atk}:.0%}</> and Attack Speed <@ba.vup>+{{blkngt_hypnos_s_1[rage].attack_speed}:.0%}</> for <@ba.vup>{{blkngt_hypnos_s_1[rage].duration}:.0f}</> seconds",
+			"Immediately obtain <@ba.vup>{{cost}:.0f}</> DP. The Hypnos falls asleep and recovers <@ba.vup>{{hp_recovery_per_sec_by_max_hp_ratio}:.0%}</> Max HP every second. Upon receiving damage, the Hypnos wakes up and gains ATK <@ba.vup>+{{blkngt_hypnos_s_1[rage].atk}:.0%}</> and Attack Speed <@ba.vup>+{{blkngt_hypnos_s_1[rage].attack_speed}:.0%}</> for <@ba.vup>{{blkngt_hypnos_s_1[rage].duration}:.0f}</> seconds",
+			"Immediately obtain <@ba.vup>{{cost}:.0f}</> DP. The Hypnos falls asleep and recovers <@ba.vup>{{hp_recovery_per_sec_by_max_hp_ratio}:.0%}</> Max HP every second. Upon receiving damage, the Hypnos wakes up and gains ATK <@ba.vup>+{{blkngt_hypnos_s_1[rage].atk}:.0%}</> and Attack Speed <@ba.vup>+{{blkngt_hypnos_s_1[rage].attack_speed}:.0%}</> for <@ba.vup>{{blkngt_hypnos_s_1[rage].duration}:.0f}</> seconds",
+			"Immediately obtain <@ba.vup>{{cost}:.0f}</> DP. The Hypnos falls asleep and recovers <@ba.vup>{{hp_recovery_per_sec_by_max_hp_ratio}:.0%}</> Max HP every second. Upon receiving damage, the Hypnos wakes up and gains ATK <@ba.vup>+{{blkngt_hypnos_s_1[rage].atk}:.0%}</> and Attack Speed <@ba.vup>+{{blkngt_hypnos_s_1[rage].attack_speed}:.0%}</> for <@ba.vup>{{blkngt_hypnos_s_1[rage].duration}:.0f}</> seconds",
+			"Immediately obtain <@ba.vup>{{cost}:.0f}</> DP. The Hypnos falls asleep and recovers <@ba.vup>{{hp_recovery_per_sec_by_max_hp_ratio}:.0%}</> Max HP every second. Upon receiving damage, the Hypnos wakes up and gains ATK <@ba.vup>+{{blkngt_hypnos_s_1[rage].atk}:.0%}</> and Attack Speed <@ba.vup>+{{blkngt_hypnos_s_1[rage].attack_speed}:.0%}</> for <@ba.vup>{{blkngt_hypnos_s_1[rage].duration}:.0f}</> seconds"
+		]
+	},
+	"skchr_blkngt_2": {
+		"name": "Peaceful Slumber",
+		"desc": [
+			"Immediately inflict <$ba.sleep>Slumber</> to all ground enemies around the Tactical Point for <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds and obtain <@ba.vup>{{cost}:.0f}</> DP. For <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds, the Hypnos' attacks change to Arts splash attacks that deal <@ba.vup>{{blkngt_s_2.atk_scale}:.0%}</> damage against <$ba.sleep>Slumbering</> targets</br></br><@ba.rem>Can hold 1 charge</>",
+			"Immediately inflict <$ba.sleep>Slumber</> to all ground enemies around the Tactical Point for <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds and obtain <@ba.vup>{{cost}:.0f}</> DP. For <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds, the Hypnos' attacks change to Arts splash attacks that deal <@ba.vup>{{blkngt_s_2.atk_scale}:.0%}</> damage against <$ba.sleep>Slumbering</> targets</br></br><@ba.rem>Can hold 1 charge</>",
+			"Immediately inflict <$ba.sleep>Slumber</> to all ground enemies around the Tactical Point for <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds and obtain <@ba.vup>{{cost}:.0f}</> DP. For <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds, the Hypnos' attacks change to Arts splash attacks that deal <@ba.vup>{{blkngt_s_2.atk_scale}:.0%}</> damage against <$ba.sleep>Slumbering</> targets</br></br><@ba.rem>Can hold 1 charge</>",
+			"Immediately inflict <$ba.sleep>Slumber</> to all ground enemies around the Tactical Point for <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds and obtain <@ba.vup>{{cost}:.0f}</> DP. For <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds, the Hypnos' attacks change to Arts splash attacks that deal <@ba.vup>{{blkngt_s_2.atk_scale}:.0%}</> damage against <$ba.sleep>Slumbering</> targets</br></br><@ba.rem>Can hold 1 charge</>",
+			"Immediately inflict <$ba.sleep>Slumber</> to all ground enemies around the Tactical Point for <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds and obtain <@ba.vup>{{cost}:.0f}</> DP. For <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds, the Hypnos' attacks change to Arts splash attacks that deal <@ba.vup>{{blkngt_s_2.atk_scale}:.0%}</> damage against <$ba.sleep>Slumbering</> targets</br></br><@ba.rem>Can hold 1 charge</>",
+			"Immediately inflict <$ba.sleep>Slumber</> to all ground enemies around the Tactical Point for <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds and obtain <@ba.vup>{{cost}:.0f}</> DP. For <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds, the Hypnos' attacks change to Arts splash attacks that deal <@ba.vup>{{blkngt_s_2.atk_scale}:.0%}</> damage against <$ba.sleep>Slumbering</> targets</br></br><@ba.rem>Can hold 1 charge</>",
+			"Immediately inflict <$ba.sleep>Slumber</> to all ground enemies around the Tactical Point for <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds and obtain <@ba.vup>{{cost}:.0f}</> DP. For <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds, the Hypnos' attacks change to Arts splash attacks that deal <@ba.vup>{{blkngt_s_2.atk_scale}:.0%}</> damage against <$ba.sleep>Slumbering</> targets</br></br><@ba.rem>Can hold 2 charges</>",
+			"Immediately inflict <$ba.sleep>Slumber</> to all ground enemies around the Tactical Point for <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds and obtain <@ba.vup>{{cost}:.0f}</> DP. For <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds, the Hypnos' attacks change to Arts splash attacks that deal <@ba.vup>{{blkngt_s_2.atk_scale}:.0%}</> damage against <$ba.sleep>Slumbering</> targets</br></br><@ba.rem>Can hold 2 charges</>",
+			"Immediately inflict <$ba.sleep>Slumber</> to all ground enemies around the Tactical Point for <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds and obtain <@ba.vup>{{cost}:.0f}</> DP. For <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds, the Hypnos' attacks change to Arts splash attacks that deal <@ba.vup>{{blkngt_s_2.atk_scale}:.0%}</> damage against <$ba.sleep>Slumbering</> targets</br></br><@ba.rem>Can hold 2 charges</>",
+			"Immediately inflict <$ba.sleep>Slumber</> to all ground enemies around the Tactical Point for <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds and obtain <@ba.vup>{{cost}:.0f}</> DP. For <@ba.vup>{{blkngt_s_2.duration}:.0f}</> seconds, the Hypnos' attacks change to Arts splash attacks that deal <@ba.vup>{{blkngt_s_2.atk_scale}:.0%}</> damage against <$ba.sleep>Slumbering</> targets</br></br><@ba.rem>Can hold 2 charges</>"
 		]
 	},
 	"skchr_grani_2": {

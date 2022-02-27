@@ -625,6 +625,36 @@
 			}
 		]
 	],
+	"char_377_gdglow": [
+		[
+			{
+				"name": "Beacons' Wrath",
+				"desc": "When skill is active, Float Units have 10% chance to self-destruct when attacking (will return to the operator's side), dealing 200% Arts damage to enemies in a small area"
+			},
+			{
+				"name": "Beacons' Wrath",
+				"desc": "When skill is active, Float Units have 10% chance to self-destruct when attacking (will return to the operator's side), dealing 215% (+15%) Arts damage to enemies in a small area"
+			},
+			{
+				"name": "Beacons' Wrath",
+				"desc": "When skill is active, Float Units have 10% chance to self-destruct when attacking (will return to the operator's side), dealing 300% Arts damage to enemies in a small area"
+			},
+			{
+				"name": "Beacons' Wrath",
+				"desc": "When skill is active, Float Units have 10% chance to self-destruct when attacking (will return to the operator's side), dealing 315% (+15%) Arts damage to enemies in a small area"
+			}
+		],
+		[
+			{
+				"name": "Precise Redirection",
+				"desc": "Self and Float Units ignore 15 Arts Resistance"
+			},
+			{
+				"name": "Precise Redirection",
+				"desc": "Self and Float Units ignore 18 (+3) Arts Resistance"
+			}
+		]
+	],
 	"char_500_noirc": [
 		[
 			{
@@ -2897,6 +2927,26 @@
 			}
 		]
 	],
+	"char_1021_kroos2": [
+		[
+			{
+				"name": "Bullseye",
+				"desc": "When attacking, 10% chance to deal 150% damage and Stun the target for 0.2 seconds"
+			},
+			{
+				"name": "Bullseye",
+				"desc": "When attacking, 10% chance to deal 160% (+10%) damage and Stun the target for 0.2 seconds"
+			},
+			{
+				"name": "Bullseye",
+				"desc": "When attacking, 20% chance to deal 150% damage and Stun the target for 0.2 seconds"
+			},
+			{
+				"name": "Bullseye",
+				"desc": "When attacking, 20% chance to deal 160% (+10%) damage and Stun the target for 0.2 seconds"
+			}
+		]
+	],
 	"char_103_angel": [
 		[
 			{
@@ -3601,6 +3651,32 @@
 			}
 		]
 	],
+	"char_322_lmlee": [
+		[
+			{
+				"name": "Kindness Begets Prosperity",
+				"desc": "When Lee is blocking an enemy, Lee gains Attack Speed +7 and the enemy gets Attack Speed -7; If there is only one enemy within the 8 surrounding tiles, the effect is doubled"
+			},
+			{
+				"name": "Kindness Begets Prosperity",
+				"desc": "When Lee is blocking an enemy, Lee gains Attack Speed +8 (+1) and the enemy gets Attack Speed -8 (+1); If there is only one enemy within the 8 surrounding tiles, the effect is doubled"
+			},
+			{
+				"name": "Kindness Begets Prosperity",
+				"desc": "When Lee is blocking an enemy, Lee gains Attack Speed +14 and the enemy gets Attack Speed -14; If there is only one enemy within the 8 surrounding tiles, the effect is doubled"
+			},
+			{
+				"name": "Kindness Begets Prosperity",
+				"desc": "When Lee is blocking an enemy, Lee gains Attack Speed +15 (+1) and the enemy gets Attack Speed -15 (+1); If there is only one enemy within the 8 surrounding tiles, the effect is doubled"
+			}
+		],
+		[
+			{
+				"name": "Preparedness Averts Peril",
+				"desc": "When DP is consumed by Trait effect, if there is sufficient DP, consume an additional 2 DP to block the next Stun/Freeze inflicted on Lee and Stun the attacker for 3 seconds"
+			}
+		]
+	],
 	"char_278_orchid": [
 		[
 			{
@@ -3839,6 +3915,42 @@
 			}
 		]
 	],
+	"char_4019_ncdeer": [
+		[
+			{
+				"name": "Ethereal Iridescent Clouds",
+				"desc": "Apply 8% Shelter effect to allies with less than 40% HP within Attack Range"
+			},
+			{
+				"name": "Ethereal Iridescent Clouds",
+				"desc": "Apply 14% Shelter effect to allies with less than 40% HP within Attack Range"
+			},
+			{
+				"name": "Ethereal Iridescent Clouds",
+				"desc": "Apply 20% Shelter effect to allies with less than 40% HP within Attack Range"
+			}
+		]
+	],
+	"char_492_quercu": [
+		[
+			{
+				"name": "Forest Sanctuary",
+				"desc": "Apply 8% Shelter effect to allies with more than 70% HP within Attack Range"
+			},
+			{
+				"name": "Forest Sanctuary",
+				"desc": "Apply 10% (+2%) Shelter effect to allies with more than 70% HP within Attack Range"
+			},
+			{
+				"name": "Forest Sanctuary",
+				"desc": "Apply 14% Shelter effect to allies with more than 70% HP within Attack Range"
+			},
+			{
+				"name": "Forest Sanctuary",
+				"desc": "Apply 16% (+2%) Shelter effect to allies with more than 70% HP within Attack Range"
+			}
+		]
+	],
 	"char_291_aglina": [
 		[
 			{
@@ -3970,6 +4082,40 @@
 			{
 				"name": "Two Paths, One Goal",
 				"desc": "10 seconds after deployment, all [Karlan Trading] operators gain Resist"
+			}
+		]
+	],
+	"char_2023_ling": [
+		[
+			{
+				"name": "Lantern Alight, To Recall One's Dream",
+				"desc": "Can use 3 summons (can only deploy 3 together). Summon functionality changes depending on selected skill"
+			},
+			{
+				"name": "Lantern Alight, To Recall One's Dream",
+				"desc": "Can use 4 summons (can only deploy 3 together). Summon functionality changes depending on selected skill"
+			},
+			{
+				"name": "Lantern Alight, To Recall One's Dream",
+				"desc": "Can use 5 summons (can only deploy 3 together). Summon functionality changes depending on selected skill"
+			}
+		],
+		[
+			{
+				"name": "Thus Inscribed, An Ode to Wine",
+				"desc": "When a summon is defeated/absorbed/retrieved, Ling gains an additional 2 SP and ATK +2% (ATK increase stacks up to 5 layers)"
+			},
+			{
+				"name": "Thus Inscribed, An Ode to Wine",
+				"desc": "When a summon is defeated/absorbed/retrieved, Ling gains an additional 3 (+1) SP and ATK +2% (ATK increase stacks up to 5 layers)"
+			},
+			{
+				"name": "Thus Inscribed, An Ode to Wine",
+				"desc": "When a summon is defeated/absorbed/retrieved, Ling gains an additional 3 SP and ATK +3% (ATK increase stacks up to 5 layers)"
+			},
+			{
+				"name": "Thus Inscribed, An Ode to Wine",
+				"desc": "When a summon is defeated/absorbed/retrieved, Ling gains an additional 4 (+1) SP and ATK +3% (ATK increase stacks up to 5 layers)"
 			}
 		]
 	],
@@ -4206,6 +4352,22 @@
 			{
 				"name": "Forward March",
 				"desc": "After deployment, deployment cost of all undeployed [Guard] operators -1 (each operator can have a maximum of -5 deployment cost before each deployment)"
+			}
+		]
+	],
+	"char_476_blkngt": [
+		[
+			{
+				"name": "Nightwalker",
+				"desc": "Can summon a Hypnos at the tactical point. The Hypnos will automatically respawn 20 seconds after being defeated"
+			},
+			{
+				"name": "Nightwalker",
+				"desc": "Can summon a Hypnos at the tactical point. The Hypnos will automatically respawn 17 seconds after being defeated"
+			},
+			{
+				"name": "Nightwalker",
+				"desc": "Can summon a Hypnos at the tactical point. The Hypnos will automatically respawn 15 seconds after being defeated"
 			}
 		]
 	],

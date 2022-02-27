@@ -18,6 +18,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier",
     "plugin:storybook/recommended",
+    "next/core-web-vitals",
   ],
   plugins: ["@typescript-eslint", "react", "react-hooks", "prettier"],
   settings: {
@@ -44,4 +45,5 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
   },
+  ignorePatterns: ["**/*.stories.tsx"],
 };

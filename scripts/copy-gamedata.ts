@@ -3,13 +3,13 @@
 
 import fs from "fs";
 import path from "path";
-import enCharacterTable from "../../ArknightsGameData/en_US/gamedata/excel/character_table.json";
-import cnCharacterTable from "../../ArknightsGameData/zh_CN/gamedata/excel/character_table.json";
-import enSkillTable from "../../ArknightsGameData/en_US/gamedata/excel/skill_table.json";
-import cnSkillTable from "../../ArknightsGameData/zh_CN/gamedata/excel/skill_table.json";
-import enUniequipTable from "../../ArknightsGameData/en_US/gamedata/excel/uniequip_table.json";
-import cnUniequipTable from "../../ArknightsGameData/zh_CN/gamedata/excel/uniequip_table.json";
-import rangeTable from "../../ArknightsGameData/en_US/gamedata/excel/range_table.json";
+import enCharacterTable from "../ArknightsGameData/en_US/gamedata/excel/character_table.json";
+import cnCharacterTable from "../ArknightsGameData/zh_CN/gamedata/excel/character_table.json";
+import enSkillTable from "../ArknightsGameData/en_US/gamedata/excel/skill_table.json";
+import cnSkillTable from "../ArknightsGameData/zh_CN/gamedata/excel/skill_table.json";
+import enUniequipTable from "../ArknightsGameData/en_US/gamedata/excel/uniequip_table.json";
+import cnUniequipTable from "../ArknightsGameData/zh_CN/gamedata/excel/uniequip_table.json";
+import rangeTable from "../ArknightsGameData/en_US/gamedata/excel/range_table.json";
 import jetSkillTranslations from "./jet-tls/skills.json";
 import jetTalentTranslations from "./jet-tls/talents.json";
 import jetTraitTranslations from "./jet-tls/traits.json";
@@ -17,7 +17,7 @@ import { Character, SkillAtLevel } from "./gamedata-types";
 import {
   descriptionToHtml,
   InterpolatedValue,
-} from "../utils/description-parser";
+} from "../src/utils/description-parser";
 
 const dataDir = path.join(__filename, "../../data");
 const jetSkillDescriptionRegex =

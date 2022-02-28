@@ -1,11 +1,11 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
-import { Link } from "gatsby";
+import Link from "next/link"
 
 const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     // this links to Operators for now because the homepage doesn't exist yet
-    <Link aria-label="Sanity Gone" to="/operators" css={styles}>
+    <Link aria-label="Sanity Gone" href="/operators" css={styles} passHref>
       <svg
         width="168"
         height="27"

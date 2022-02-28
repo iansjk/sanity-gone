@@ -13,7 +13,7 @@ import {
 import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
 import { CharacterObject } from "../utils/types";
 import OperatorPortrait from "./OperatorPortrait";
-import { Link } from "gatsby";
+import Link from "next/link";
 
 export interface OperatorInfoProps {
   operatorObject: CharacterObject;
@@ -74,28 +74,29 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
             )}
           </div>
           <Link
-            className="class-and-subclass"
-            to={`/operators#${slugify(operatorClass)}-${subclassSlugify(
+            href={`/operators#${slugify(operatorClass)}-${subclassSlugify(
               subclass
             )}`}
           >
-            <span className="class-icon-container">
-              <Tooltip title={operatorClass}>
+            <a className="class-and-subclass">
+              <span className="class-icon-container">
+                <Tooltip title={operatorClass}>
+                  <img
+                    className="class-icon"
+                    src={operatorClassIcon(operatorClass.toLowerCase())}
+                    alt=""
+                  />
+                </Tooltip>
+              </span>
+              <span className="subclass-icon-container">
                 <img
-                  className="class-icon"
-                  src={operatorClassIcon(operatorClass.toLowerCase())}
+                  className="subclass-icon"
+                  src={operatorSubclassIcon(subProfessionId)}
                   alt=""
                 />
-              </Tooltip>
-            </span>
-            <span className="subclass-icon-container">
-              <img
-                className="subclass-icon"
-                src={operatorSubclassIcon(subProfessionId)}
-                alt=""
-              />
-              {subclass}
-            </span>
+                {subclass}
+              </span>
+            </a>
           </Link>
         </div>
         <Media lessThan="mobile">

@@ -71,12 +71,6 @@
     "incremental": true,
     "moduleResolution": "node"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "src/emotion.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

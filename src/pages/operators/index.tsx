@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
-import { graphql } from "gatsby";
 import {
   Button,
   css,
@@ -18,11 +17,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 import loadable from "@loadable/component";
 
 import Layout from "../../Layout";
-import {
-  operatorClassIcon,
-  operatorSubclassIcon,
-  sgPageBanner,
-} from "../../utils/images";
+import { sgPageBanner } from "../../utils/images";
 import {
   classToProfession,
   subclassToSubProfessionId,
@@ -35,6 +30,10 @@ import FilterIcon from "../../components/icons/FilterIcon";
 import HorizontalScroller from "../../components/HorizontalScroller";
 import TraitInfo from "../../components/TraitInfo";
 import { Media } from "../../Media";
+import { fetchContentfulGraphQl } from "../../utils/fetch";
+import Image from "next/image";
+import { GetStaticProps } from "next";
+import { DenormalizedCharacter } from "../../../scripts/types";
 
 const OperatorList = loadable(() => import("../../components/OperatorList"));
 
@@ -65,51 +64,114 @@ export interface OperatorListOperator {
 }
 
 interface Props {
-  data: {
-    allOperatorsJson: {
-      nodes: OperatorListOperator[];
+  allOperators: OperatorListOperator[];
+  classes: {
+    className: string;
+    profession: string;
+    analysis: string; // MDX
+  }[];
+  branches: {
+    subProfessionId: string;
+    analysis: string; // MDX
+    class: {
+      profession: string;
     };
-    allContentfulOperatorAnalysis: {
-      nodes: {
-        operator: {
-          name: string;
-        };
-        updatedAt: string;
-      }[];
-    };
-    allContentfulOperatorClass: {
-      nodes: {
+  }[];
+  operatorsWithGuides: string[]; // names
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const operatorsJson = await import("../../../data/operators.json");
+  const allOperators = Object.values(operatorsJson.default).map(
+    (operator: DenormalizedCharacter) => {
+      const { charId, name, isCnOnly, profession, subProfessionId, rarity } =
+        operator;
+      return {
+        charId,
+        name,
+        isCnOnly,
+        profession,
+        subProfessionId,
+        rarity,
+      };
+    }
+  );
+  const query = `
+    query {
+      operatorClassCollection {
+        items {
+          className
+          profession
+          analysis
+        }
+      }
+      operatorSubclassCollection {
+        items {
+          subProfessionId
+          analysis
+          class {
+            profession
+          }
+        }
+      }
+      operatorAnalysisCollection {
+        items {
+          operator {
+            name
+            sys {
+              publishedAt
+            }
+          }
+        }
+      }
+    }
+  `;
+  const {
+    operatorClassCollection,
+    operatorSubclassCollection,
+    operatorAnalysisCollection,
+  } = await fetchContentfulGraphQl<{
+    operatorClassCollection: {
+      items: {
         className: string;
         profession: string;
-        analysis: {
-          childMarkdownRemark: {
-            html: string;
-          };
-        };
+        analysis: string;
       }[];
     };
-    allContentfulOperatorSubclass: {
-      nodes: {
-        subclass: string;
+    operatorSubclassCollection: {
+      items: {
         subProfessionId: string;
+        analysis: string;
         class: {
           profession: string;
         };
-        analysis: {
-          childMarkdownRemark: {
-            html: string;
+      }[];
+    };
+    operatorAnalysisCollection: {
+      items: {
+        operator: {
+          name: string;
+          sys: {
+            publishedAt: string;
           };
         };
       }[];
     };
-  };
-}
+  }>(query);
 
-const Operators: React.VFC<Props> = ({ data }) => {
-  const { nodes: operators } = data.allOperatorsJson;
-  const { nodes: guideNodes } = data.allContentfulOperatorAnalysis;
-  const { nodes: operatorClasses } = data.allContentfulOperatorClass;
-  const { nodes: operatorSubclasses } = data.allContentfulOperatorSubclass;
+  const props: Props = {
+    allOperators,
+    classes: operatorClassCollection.items,
+    branches: operatorSubclassCollection.items,
+    operatorsWithGuides: operatorAnalysisCollection.items.map(
+      (item) => item.operator.name
+    ),
+  };
+  return { props };
+};
+
+const Operators: React.VFC<Props> = (props) => {
+  const { allOperators, classes, branches, operatorsWithGuides } = props;
 
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
   const [showClassDescriptions, setShowClassDescriptions] = useState(true);
@@ -197,14 +259,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
       ? subProfessionIdToSubclass(selectedSubProfessionId)
       : null;
 
-  const operatorsWithGuides = useMemo(
-    () => guideNodes.map((node) => node.operator.name),
-    [guideNodes]
-  );
-
   const operatorsToShow = useMemo(
     () =>
-      operators.filter((op) => {
+      allOperators.filter((op) => {
         return (
           (!showOnlyGuideAvailable || operatorsWithGuides.includes(op.name)) &&
           (selectedProfession == null ||
@@ -214,7 +271,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
         );
       }),
     [
-      operators,
+      allOperators,
       operatorsWithGuides,
       selectedProfession,
       selectedSubProfessionId,
@@ -242,9 +299,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
       >
         {selectedProfession ? (
           <>
-            <img
+            <Image
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              src={operatorClassIcon(slugify(selectedClass!))}
+              src={`/classes/${slugify(selectedClass!)}.png`}
               alt=""
               width={MENU_ICON_SIZE}
               height={MENU_ICON_SIZE}
@@ -270,15 +327,15 @@ const Operators: React.VFC<Props> = ({ data }) => {
         >
           <ListItemText>All Classes</ListItemText>
         </ClassSubclassMenuItem>
-        {operatorClasses.map(({ className, profession }) => (
+        {classes.map(({ className, profession }) => (
           <ClassSubclassMenuItem
             key={className}
             onClick={handleClassClick(profession)}
             className={selectedProfession === profession ? "selected" : ""}
           >
             <ListItemIcon>
-              <img
-                src={operatorClassIcon(slugify(className))}
+              <Image
+                src={`/classes/${slugify(className)}.png`}
                 alt=""
                 width={MENU_ICON_SIZE}
                 height={MENU_ICON_SIZE}
@@ -301,8 +358,8 @@ const Operators: React.VFC<Props> = ({ data }) => {
       >
         {selectedSubProfessionId ? (
           <>
-            <img
-              src={operatorSubclassIcon(selectedSubProfessionId)}
+            <Image
+              src={`/branches/${selectedSubProfessionId}.png`}
               alt=""
               width={MENU_ICON_SIZE}
               height={MENU_ICON_SIZE}
@@ -328,12 +385,12 @@ const Operators: React.VFC<Props> = ({ data }) => {
         >
           <ListItemText>All Branches</ListItemText>
         </ClassSubclassMenuItem>
-        {operatorSubclasses
+        {branches
           .filter(
             ({ class: subclassClass }) =>
               subclassClass.profession === selectedProfession
           )
-          .map(({ subclass, subProfessionId }) => (
+          .map(({ subProfessionId }) => (
             <ClassSubclassMenuItem
               key={subProfessionIdToSubclass(subProfessionId)}
               onClick={handleSubclassClick(subProfessionId)}
@@ -344,8 +401,8 @@ const Operators: React.VFC<Props> = ({ data }) => {
               }
             >
               <ListItemIcon>
-                <img
-                  src={operatorSubclassIcon(subProfessionId)}
+                <Image
+                  src={`/branches/${subProfessionId}.png`}
                   alt=""
                   width={MENU_ICON_SIZE}
                   height={MENU_ICON_SIZE}
@@ -417,9 +474,11 @@ const Operators: React.VFC<Props> = ({ data }) => {
                 {selectedProfession && selectedClass && (
                   <section className="class-card">
                     <div className="icon-container">
-                      <img
-                        src={operatorClassIcon(slugify(selectedClass))}
+                      <Image
+                        src={`/classes/${slugify(selectedClass)}.png`}
                         alt=""
+                        width={64}
+                        height={64}
                       />
                     </div>
                     <div className="name-container">
@@ -437,9 +496,9 @@ const Operators: React.VFC<Props> = ({ data }) => {
                       className="class-description"
                       dangerouslySetInnerHTML={{
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        __html: operatorClasses.find(
+                        __html: classes.find(
                           ({ profession }) => profession === selectedProfession
-                        )!.analysis.childMarkdownRemark.html,
+                        )!.analysis,
                       }}
                     />
                   </section>
@@ -447,9 +506,11 @@ const Operators: React.VFC<Props> = ({ data }) => {
                 {selectedSubProfessionId && (
                   <section className="subclass-card">
                     <div className="icon-container">
-                      <img
-                        src={operatorSubclassIcon(selectedSubProfessionId)}
+                      <Image
+                        src={`/branches/${selectedSubProfessionId}.png`}
                         alt=""
+                        width={64}
+                        height={64}
                       />
                     </div>
                     <div className="name-container">
@@ -473,12 +534,12 @@ const Operators: React.VFC<Props> = ({ data }) => {
                       className="subclass-description"
                       dangerouslySetInnerHTML={{
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        __html: operatorSubclasses
+                        __html: branches
                           .find(
                             ({ subProfessionId }) =>
                               subProfessionId === selectedSubProfessionId
                           )!
-                          .analysis.childMarkdownRemark.html.replace(
+                          .analysis.replace(
                             "BRANCHNAME",
                             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                             `<strong>${selectedSubclass!} ${selectedClass!}s</strong>`
@@ -495,7 +556,7 @@ const Operators: React.VFC<Props> = ({ data }) => {
           <section className="results">
             <h2>Operators</h2>
             <OperatorList
-              operators={operators}
+              operators={allOperators}
               operatorsToShow={operatorsToShow}
               operatorsWithGuides={operatorsWithGuides}
               onSubclassFilter={handleSubclassFilter}
@@ -867,56 +928,6 @@ const styles = (theme: Theme) => css`
       align-items: center;
       justify-content: center;
       color: ${theme.palette.midtoneBrighterer.main};
-    }
-  }
-`;
-
-export const query = graphql`
-  query {
-    allOperatorsJson(
-      filter: { isNotObtainable: { eq: false } }
-      sort: { order: [DESC, DESC], fields: [rarity, fileIndex] }
-    ) {
-      nodes {
-        charId
-        name
-        isCnOnly
-        profession
-        subProfessionId
-        rarity
-      }
-    }
-    allContentfulOperatorAnalysis {
-      nodes {
-        operator {
-          name
-        }
-        updatedAt
-      }
-    }
-    allContentfulOperatorClass {
-      nodes {
-        className
-        profession
-        analysis {
-          childMarkdownRemark {
-            html
-          }
-        }
-      }
-    }
-    allContentfulOperatorSubclass {
-      nodes {
-        subProfessionId
-        analysis {
-          childMarkdownRemark {
-            html
-          }
-        }
-        class {
-          profession
-        }
-      }
     }
   }
 `;

@@ -1,5 +1,5 @@
+import React from "react";
 import { Theme, useTheme, css, GlobalStyles } from "@mui/material";
-import { graphql } from "gatsby";
 import { lighten, rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
 import parse, { attributesToProps } from "html-react-parser";
@@ -9,7 +9,6 @@ import Introduction from "../../components/Introduction";
 import CharacterStats from "../../components/CharacterStats";
 import SkillInfo, { SkillObject } from "../../components/SkillInfo";
 import Synergies from "../../components/Synergies";
-import { SynergyQuality } from "../../components/Synergy";
 import Tabs from "../../components/Tabs";
 import TabButtons from "../../components/TabButtons";
 import TabPanels from "../../components/TabPanels";
@@ -22,6 +21,8 @@ import { CharacterObject } from "../../utils/types";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
 import { operatorImage } from "../../utils/images";
 import { Media } from "../../Media";
+import { GetStaticPaths, GetStaticProps } from "next";
+import { fetchContentfulGraphQl } from "../../utils/fetch";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -92,102 +93,176 @@ const htmlToReact = (
   });
 };
 
-interface MarkdownNode {
-  childMarkdownRemark: {
-    html: string;
-  };
-}
-
-interface AstNode {
-  type: string;
-  tagName: string;
-  properties: Record<string, string>;
-  children: AstNode[];
-  value: string;
-}
-
-interface MarkdownHtmlAstNode {
-  childMarkdownRemark: {
-    htmlAst: AstNode;
-  };
-}
-
-interface OperatorAnalysisData {
-  operator: {
-    accentColorInHex: string;
-    limited: boolean;
-    name: string;
-    bannerImage: {
-      localFile: {
-        publicURL: string;
-      };
-    };
-    customBgPositionX: string;
-  };
-  author: {
-    name: string;
-  }[];
-  introduction: MarkdownNode;
-  customByline?: string;
-  talent1Analysis: MarkdownNode;
-  talent2Analysis: MarkdownNode;
-  skill1Recommended?: boolean;
-  skill1Analysis: MarkdownNode;
-  skill2Recommended?: boolean;
-  skill2Analysis: MarkdownNode;
-  skill3Recommended?: boolean;
-  skill3Analysis: MarkdownNode;
-  synergies:
-    | {
-        synergyName: string;
-        isGroup: boolean;
-        synergyQuality: SynergyQuality;
-        synergyDescription: MarkdownNode;
-        shouldInvertIconOnHighlight?: boolean;
-        customSynergyIcon: {
-          localFile: {
-            publicURL: string;
-          };
+export const getStaticPaths: GetStaticPaths = async () => {
+  const query = `
+    query {
+      operatorAnalysisCollection {
+        items {
+          operator {
+            slug
+          }
+        }
+      }
+    }
+  `;
+  const data = await fetchContentfulGraphQl<{
+    operatorAnalysisCollection: {
+      items: {
+        operator: {
+          slug: string;
         };
-      }[]
-    | null;
-  strengths: MarkdownHtmlAstNode;
-  weaknesses: MarkdownHtmlAstNode;
-  updatedAt: string; // ISO 8601 timestamp
-}
-
-interface Props {
-  data: {
-    contentfulOperatorAnalysis: OperatorAnalysisData;
-    operatorsJson: CharacterObject & {
-      talents: TalentObject[];
-      skillData: SkillObject[];
-    };
-    allOperatorsJson: {
-      nodes: {
-        name: string;
-        rarity: number;
-        profession: string;
-        subProfessionId: string;
       }[];
     };
-    allSummonsJson: {
-      nodes: CharacterObject[];
-    };
+  }>(query);
+  const paths = data.operatorAnalysisCollection.items.map((item) => ({
+    params: {
+      slug: item.operator.slug
+    },
+  }));
+  return {
+    paths,
+    fallback: false,
   };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { slug } = params!;
+  const query = `
+    query {
+      operatorAnalysisCollection (where: {operator: {slug: "${slug as string}" }} limit: 1) {
+        items {
+          operator {
+            name
+            limited
+            bannerImage {
+              url
+            }
+            accentColorInHex
+            customBgPositionX
+          }
+          customByline
+          sys {
+            publishedAt
+          }
+          introduction
+          strengths
+          weaknesses
+          talent1Analysis
+          talent2Analysis
+          skill1Recommended
+          skill1Analysis
+          skill2Recommended
+          skill2Analysis
+          skill3Recommended
+          skill3Analysis
+          synergiesCollection {
+            items {
+              synergyName
+              isGroup
+              customSynergyIcon {
+                url
+              }
+              shouldInvertIconOnHighlight
+              synergyDescription
+            }
+          }
+        }
+      }
+    }  
+  `;
+  const data = await fetchContentfulGraphQl<{
+    operatorAnalysisCollection: {
+      items: Props["guide"][];
+    }
+  }>(query);
+
+  const [operatorsJson, summonsJson] = (
+    await Promise.all([
+      import("../../../data/operators.json"),
+      import("../../../data/summons.json"),
+    ])
+  ).map((json) => json.default);
+  const operatorAnalysis = data.operatorAnalysisCollection.items[0];
+  const { name: operatorName } = operatorAnalysis.operator;
+  const operatorObject = operatorsJson[operatorName as keyof typeof operatorsJson];
+  const summons = summonsJson[operatorName as keyof typeof summonsJson] ?? [];
+
+  const props: Props = {
+    guide: operatorAnalysis,
+    operatorObject,
+    summons,
+    allOperators: operatorsJson as any,
+  };
+  return { props };
+};
+
+interface Props {
+  guide: {
+    operator: {
+      accentColorInHex: string;
+      limited: boolean;
+      name: string;
+      bannerImage: {
+        url: string;
+      };
+      customBgPositionX: string;
+    };
+    customByline?: string;
+    sys: {
+      publishedAt: string; // ISO 8601 timestamp
+    };
+    introduction: string;
+    strengths: string;
+    weaknesses: string;
+    talent1Analysis: string;
+    talent2Analysis: string;
+    skill1Recommended?: boolean;
+    skill1Analysis: string;
+    skill2Recommended?: boolean;
+    skill2Analysis: string;
+    skill3Recommended?: boolean;
+    skill3Analysis: string;
+    synergiesCollection: {
+      items: {
+        synergyName: string;
+        isGroup: boolean;
+        customSynergyIcon: {
+          url: string;
+        };
+        shouldInvertIconOnHighlight?: boolean;
+        synergyDescription: string;
+      }[]
+    }      | null;
+  };
+  operatorObject: CharacterObject;
+  summons: CharacterObject[];
+  allOperators: { [operatorName: string]: CharacterObject };
 }
 
 const OperatorAnalysis: React.VFC<Props> = (props) => {
-  const { data } = props;
+  const { guide, operatorObject, summons, allOperators } = props;
   const {
-    contentfulOperatorAnalysis: contentful,
-    operatorsJson: operatorObject,
-  } = data;
-  const summons = data.allSummonsJson.nodes;
+    operator,
+    customByline,
+    sys,
+    introduction,
+    strengths,
+    weaknesses,
+    talent1Analysis,
+    talent2Analysis,
+    skill1Recommended,
+    skill2Recommended,
+    skill3Recommended,
+    skill1Analysis,
+    skill2Analysis,
+    skill3Analysis,
+    synergiesCollection,
+  } = guide;
+  const { publishedAt } = sys;
   const skillRecommended = [
-    contentful.skill1Recommended ?? false,
-    contentful.skill2Recommended ?? false,
-    contentful.skill3Recommended ?? false,
+    skill1Recommended ?? false,
+    skill2Recommended ?? false,
+    skill3Recommended ?? false,
   ];
   const context = {
     talents: operatorObject.talents,
@@ -198,18 +273,11 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   };
   const theme = useTheme();
 
-  const talentAnalyses = [
-    contentful.talent1Analysis.childMarkdownRemark.html,
-    contentful.talent2Analysis?.childMarkdownRemark.html,
-  ]
+  const talentAnalyses = [talent1Analysis, talent2Analysis]
     .filter((html) => !!html)
     .map((html, i) => htmlToReact(html, context, i));
 
-  const skillAnalyses = [
-    contentful.skill1Analysis.childMarkdownRemark.html,
-    contentful.skill2Analysis.childMarkdownRemark.html,
-    contentful.skill3Analysis?.childMarkdownRemark.html,
-  ]
+  const skillAnalyses = [skill1Analysis, skill2Analysis, skill3Analysis]
     .filter((html) => !!html)
     .map((html, i) => {
       // if this operator has per-skill summons, then pass the correct summon for this skill
@@ -219,47 +287,40 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       return htmlToReact(html, context, i);
     });
 
-  const operatorMap = Object.fromEntries(
-    data.allOperatorsJson.nodes.map(({ name, ...rest }) => [name, rest])
-  );
-
-  const synergies = (contentful.synergies ?? []).map((syn) => {
+  const synergies = (synergiesCollection?.items ?? []).map((syn) => {
     const baseProps = {
       name: syn.synergyName,
       isGroup: syn.isGroup,
-      quality: syn.synergyQuality,
-      analysis: syn.synergyDescription.childMarkdownRemark.html,
+      analysis: syn.synergyDescription,
       shouldInvertIconOnHighlight: syn.shouldInvertIconOnHighlight,
     };
     if (syn.isGroup) {
-      if (!syn.customSynergyIcon?.localFile?.publicURL) {
+      if (!syn.customSynergyIcon.url) {
         throw new Error(
           `Missing customSynergyIcon for group synergy "${syn.synergyName}"`
         );
       }
       return {
         ...baseProps,
-        iconUrl: syn.customSynergyIcon.localFile.publicURL,
+        iconUrl: syn.customSynergyIcon.url
       };
     }
-    return { ...baseProps, ...operatorMap[syn.synergyName] };
+    return { ...baseProps, ...allOperators[syn.synergyName] };
   });
 
-  const strengths =
-    contentful.strengths.childMarkdownRemark.htmlAst.children[0].children
-      .filter((child) => child.tagName === "li")
-      .map((child) => child.children[0].value);
-  const weaknesses =
-    contentful.weaknesses.childMarkdownRemark.htmlAst.children[0].children
-      .filter((child) => child.tagName === "li")
-      .map((child) => child.children[0].value);
+  // const strengths =
+  //   contentful.strengths.childMarkdownRemark.htmlAst.children[0].children
+  //     .filter((child) => child.tagName === "li")
+  //     .map((child) => child.children[0].value);
+  // const weaknesses =
+  //   contentful.weaknesses.childMarkdownRemark.htmlAst.children[0].children
+  //     .filter((child) => child.tagName === "li")
+  //     .map((child) => child.children[0].value);
 
-  const operatorName = contentful.operator.name;
+  const operatorName = operator.name;
   const [baseChar, alterName] = operatorName.split(" the ");
   const description = `${
-    contentful.introduction.childMarkdownRemark.html
-      .replace(/<\/?[A-za-z-]*>/g, "")
-      .split(/(\.)\s*/)[0]
+    introduction.replace(/<\/?[A-za-z-]*>/g, "").split(/(\.)\s*/)[0]
   }.`;
 
   return (
@@ -277,19 +338,19 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           <h1>{baseChar}</h1>
         )
       }
-      bannerImageUrl={contentful.operator.bannerImage.localFile.publicURL}
+      bannerImageUrl={guide.operator.bannerImage.url}
       image={operatorImage(operatorName)}
-      description={contentful.customByline ?? description}
+      description={customByline ?? description}
       previousLocation="Operators"
       previousLocationLink="/operators"
     >
       <GlobalStyles
         styles={globalOverrideStyles(
-          contentful.operator.accentColorInHex,
-          contentful.operator.customBgPositionX
+          operator.accentColorInHex,
+          operator.customBgPositionX
         )(theme)}
       />
-      <Tabs component="main" css={styles(contentful.operator.accentColorInHex)}>
+      <Tabs component="main" css={styles(operator.accentColorInHex)}>
         <TabButtons className="tabs" isSwiper>
           {[
             ...["Introduction", "Talents", "Skills"],
@@ -304,14 +365,11 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               {
                 component: (
                   <Introduction
-                    analysis={htmlToReact(
-                      contentful.introduction.childMarkdownRemark.html,
-                      context
-                    )}
-                    isLimited={contentful.operator.limited}
+                    analysis={htmlToReact(introduction, context)}
+                    isLimited={operator.limited}
                     operatorObject={operatorObject}
-                    strengths={strengths}
-                    weaknesses={weaknesses}
+                    strengths={strengths.split("\n")}
+                    weaknesses={weaknesses.split("\n")}
                   />
                 ),
                 className: "introduction",
@@ -387,7 +445,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
             <div className="last-updated-section">
               <span className="section-label">Last updated</span>
               <span className="last-updated">
-                {DateTime.fromISO(contentful.updatedAt).toLocaleString(
+                {DateTime.fromISO(publishedAt).toLocaleString(
                   DateTime.DATE_FULL
                 )}
               </span>
@@ -698,220 +756,3 @@ const styles = (accentColor: string) => (theme: Theme) =>
       }
     }
   `;
-
-export const query = graphql`
-  query ($id: String!, $operator__name: String!) {
-    contentfulOperatorAnalysis(id: { eq: $id }) {
-      operator {
-        accentColorInHex
-        limited
-        name
-        customBgPositionX
-        bannerImage {
-          localFile {
-            publicURL
-          }
-        }
-      }
-      introduction {
-        childMarkdownRemark {
-          html
-        }
-      }
-      customByline
-      talent1Analysis {
-        childMarkdownRemark {
-          html
-        }
-      }
-      talent2Analysis {
-        childMarkdownRemark {
-          html
-        }
-      }
-      skill1Recommended
-      skill1Analysis {
-        childMarkdownRemark {
-          html
-        }
-      }
-      skill2Recommended
-      skill2Analysis {
-        childMarkdownRemark {
-          html
-        }
-      }
-      skill3Recommended
-      skill3Analysis {
-        childMarkdownRemark {
-          html
-        }
-      }
-      synergies {
-        synergyName
-        isGroup
-        synergyQuality
-        synergyDescription {
-          childMarkdownRemark {
-            html
-          }
-        }
-        customSynergyIcon {
-          localFile {
-            publicURL
-          }
-        }
-        shouldInvertIconOnHighlight
-      }
-      strengths {
-        childMarkdownRemark {
-          htmlAst
-        }
-      }
-      weaknesses {
-        childMarkdownRemark {
-          htmlAst
-        }
-      }
-      updatedAt
-    }
-
-    operatorsJson(name: { eq: $operator__name }) {
-      name
-      cnName
-      profession
-      subProfessionId
-      position
-      description
-      rarity
-      talents {
-        candidates {
-          unlockCondition {
-            phase
-            level
-          }
-          requiredPotentialRank
-          name
-          description
-          range {
-            grids {
-              row
-              col
-            }
-          }
-          blackboard {
-            key
-            value
-          }
-        }
-      }
-      phases {
-        range {
-          grids {
-            row
-            col
-          }
-        }
-        maxLevel
-        attributesKeyFrames {
-          level
-          data {
-            maxHp
-            atk
-            def
-            baseAttackTime
-            magicResistance
-            cost
-            blockCnt
-            respawnTime
-          }
-        }
-      }
-      favorKeyFrames {
-        level
-        data {
-          atk
-          def
-          magicResistance
-          maxHp
-        }
-      }
-      potentialRanks {
-        type
-        description
-        buff {
-          attributes {
-            attributeModifiers {
-              attributeType
-              value
-            }
-          }
-        }
-      }
-      skillData {
-        skillId
-        iconId
-        levels {
-          name
-          description
-          range {
-            grids {
-              row
-              col
-            }
-          }
-          skillType
-          spData {
-            spType
-            spCost
-            initSp
-          }
-          duration
-          blackboard {
-            key
-            value
-          }
-        }
-      }
-    }
-
-    allOperatorsJson {
-      nodes {
-        name
-        rarity
-        profession
-        subProfessionId
-      }
-    }
-
-    allSummonsJson(filter: { operatorName: { eq: $operator__name } }) {
-      nodes {
-        charId
-        name
-        profession
-        phases {
-          range {
-            grids {
-              row
-              col
-            }
-          }
-          maxLevel
-          attributesKeyFrames {
-            level
-            data {
-              maxHp
-              atk
-              def
-              baseAttackTime
-              magicResistance
-              cost
-              blockCnt
-              respawnTime
-            }
-          }
-        }
-      }
-    }
-  }
-`;

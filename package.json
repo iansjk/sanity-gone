@@ -10,7 +10,8 @@
     "preview": "next start",
     "lint": "next lint",
     "update-game-data": "git submodule update --init --recursive --remote && ts-node-script ./scripts/copy-gamedata.ts",
-    "build-storybook": "NODE_ENV=test build-storybook -s public"
+    "storybook": "NODE_ENV=test start-storybook -p 6006",
+    "build-storybook": "NODE_ENV=test build-storybook"
   },
   "dependencies": {
     "@artsy/fresnel": "^3.4.0",
@@ -43,14 +44,16 @@
     "xregexp": "^5.1.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.4.9",
-    "@storybook/addon-essentials": "^6.4.9",
-    "@storybook/addon-links": "^6.4.9",
-    "@storybook/builder-webpack5": "^6.4.9",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
     "@storybook/components": "^6.4.9",
     "@storybook/core-events": "^6.4.9",
-    "@storybook/manager-webpack5": "^6.4.9",
-    "@storybook/react": "^6.4.9",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "^0.0.9",
     "@storybook/theming": "^6.4.9",
     "@types/flexsearch": "^0.7.2",
     "@types/js-levenshtein": "^1.1.1",

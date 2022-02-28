@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
 import { InputBase, Theme } from "@mui/material";
 import FlexSearch from "flexsearch";
 import {
@@ -13,26 +12,13 @@ import { slugify, subclassSlugify } from "../utils/globals";
 import SearchIcon from "./icons/SearchIcon";
 import { transparentize } from "polished";
 import levenshtein from "js-levenshtein";
-
-interface SearchQuery {
-  localSearchGlobal: {
-    index: string;
-    store: Record<string, SearchResult>;
-  };
-  allContentfulOperatorAnalysis: {
-    nodes: {
-      operator: {
-        name: string;
-      };
-    }[];
-  };
-}
+import search from "../../data/search.json";
 
 // Interface representing a search result.
 // This could be either a class, subclass, or operator (denoted by "type").
 // This involves a certain amount of weird hacking, because each type of search
 // result has different keys available to it.
-interface SearchResult {
+export interface SearchResult {
   type: string;
   name: string;
   class?: string;
@@ -71,31 +57,13 @@ const prefenshteinCompare = (query: string, a: string, b: string) => {
 const SearchBar: React.VFC<SearchBarProps> = (props) => {
   const { placeholder, ...rest } = props;
 
-  // need to read the list of guides, to disable the links to operators without
-  // guides yet
-  const search: SearchQuery = useStaticQuery(graphql`
-    query SearchQuery {
-      localSearchGlobal {
-        index
-        store
-      }
-      allContentfulOperatorAnalysis {
-        nodes {
-          operator {
-            name
-          }
-        }
-      }
-    }
-  `);
+  const index = FlexSearch.create({
+    tokenize: "full",
+  });
+  index.import(search.index);
 
-  const store = search.localSearchGlobal.store;
-  const index = FlexSearch.create();
-  index.import(search.localSearchGlobal.index);
-
-  const operatorsWithGuides = new Set(
-    search.allContentfulOperatorAnalysis.nodes.map((node) => node.operator.name)
-  );
+  const store: Record<string, SearchResult> = search.store;
+  const operatorsWithGuides = search.operatorsWithGuides;
 
   const [query, setQuery] = useState("");
   const [isFocused, setFocus] = useState(false);
@@ -105,10 +73,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
   const results = useMemo((): SearchResult[] => {
     if (!query || !index || !store) return [];
 
-    // @ts-expect-error trust me bro its a string array
-    const rawResults: string[] = index.search(query);
-
-    return rawResults.map((name: string): SearchResult => store[name]);
+    const rawResults = index.search(query);
+    return rawResults.map((index): SearchResult => store[index.toString()]);
   }, [index, query, store]);
 
   return (
@@ -150,14 +116,14 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                   .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
                   .slice(0, 5) // limit of 5 operator results
                   .map((res) => {
-                    const hasGuide = operatorsWithGuides.has(res.name);
+                    const hasGuide = operatorsWithGuides.includes(res.name);
                     return (
-                      <Link
+                      <a
                         className={
                           hasGuide ? "operator-card" : "operator-card disabled"
                         }
                         key={res.name}
-                        to={
+                        href={
                           hasGuide
                             ? `/operators/${gatsbySlugify(res.name)}`
                             : "#"
@@ -179,29 +145,29 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           </div>
                         </div>
                         {!hasGuide && <div className="gray-overlay" />}
-                      </Link>
+                      </a>
                     );
                   })}
               </div>
             )}
             {results.filter(
-              (res) => res.type === "subclass" || res.type === "class"
+              (res) => res.type === "branch" || res.type === "class"
             ).length > 0 && (
               <div className="classes-results">
                 <div className="category-label">Classes</div>
                 {results
                   .filter(
-                    (res) => res.type === "subclass" || res.type === "class"
+                    (res) => res.type === "branch" || res.type === "class"
                   )
                   .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
                   .slice(0, 3) // limit of 3 subclass or class results
                   .map((res) => {
-                    return res.type === "subclass" ? (
-                      <Link
+                    return res.type === "branch" ? (
+                      <a
                         className="classes-card"
                         key={res.name}
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        to={`/operators#${slugify(
+                        href={`/operators#${slugify(
                           res.class!
                         )}-${subclassSlugify(res.name)}`}
                       >
@@ -214,13 +180,13 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           {res.name}
                           <span className="class-name">{res.class} Branch</span>
                         </div>
-                      </Link>
+                      </a>
                     ) : (
-                      <Link
+                      <a
                         className="classes-card"
                         key={res.name}
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        to={`/operators#${slugify(res.class!)}`}
+                        href={`/operators#${slugify(res.class!)}`}
                       >
                         <img
                           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -231,7 +197,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           {res.name}
                           <span className="class-name">Class</span>
                         </div>
-                      </Link>
+                      </a>
                     );
                   })}
               </div>

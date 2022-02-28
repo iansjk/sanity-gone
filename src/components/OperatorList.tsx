@@ -73,7 +73,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
             >
               <Image
                 className="operator-portrait"
-                src={`/portraits/${portraitFilename}`}
+                src={`/images/portraits/${portraitFilename}`}
                 alt=""
                 width={180}
                 height={360}
@@ -133,7 +133,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                       width={24}
                       height={24}
                       className="operator-subclass-icon"
-                      src={`/branches/${op.subProfessionId}.png`}
+                      src={`/images/branches/${op.subProfessionId}.png`}
                       alt={""}
                     />
                   </button>

@@ -1,5 +1,5 @@
 import { createMedia } from "@artsy/fresnel";
-import { customBreakpoints } from "./gatsby-theme-material-ui-top-layout/theme";
+import { customBreakpoints } from "./theme";
 
 const AppMedia = createMedia({
   breakpoints: {

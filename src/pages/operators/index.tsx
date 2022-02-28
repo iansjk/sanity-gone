@@ -301,7 +301,7 @@ const Operators: React.VFC<Props> = (props) => {
           <>
             <Image
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              src={`/classes/${slugify(selectedClass!)}.png`}
+              src={`/images/classes/${slugify(selectedClass!)}.png`}
               alt=""
               width={MENU_ICON_SIZE}
               height={MENU_ICON_SIZE}
@@ -335,7 +335,7 @@ const Operators: React.VFC<Props> = (props) => {
           >
             <ListItemIcon>
               <Image
-                src={`/classes/${slugify(className)}.png`}
+                src={`/images/classes/${slugify(className)}.png`}
                 alt=""
                 width={MENU_ICON_SIZE}
                 height={MENU_ICON_SIZE}
@@ -359,7 +359,7 @@ const Operators: React.VFC<Props> = (props) => {
         {selectedSubProfessionId ? (
           <>
             <Image
-              src={`/branches/${selectedSubProfessionId}.png`}
+              src={`/images/branches/${selectedSubProfessionId}.png`}
               alt=""
               width={MENU_ICON_SIZE}
               height={MENU_ICON_SIZE}
@@ -402,7 +402,7 @@ const Operators: React.VFC<Props> = (props) => {
             >
               <ListItemIcon>
                 <Image
-                  src={`/branches/${subProfessionId}.png`}
+                  src={`/images/branches/${subProfessionId}.png`}
                   alt=""
                   width={MENU_ICON_SIZE}
                   height={MENU_ICON_SIZE}
@@ -475,7 +475,7 @@ const Operators: React.VFC<Props> = (props) => {
                   <section className="class-card">
                     <div className="icon-container">
                       <Image
-                        src={`/classes/${slugify(selectedClass)}.png`}
+                        src={`/images/classes/${slugify(selectedClass)}.png`}
                         alt=""
                         width={64}
                         height={64}
@@ -507,7 +507,7 @@ const Operators: React.VFC<Props> = (props) => {
                   <section className="subclass-card">
                     <div className="icon-container">
                       <Image
-                        src={`/branches/${selectedSubProfessionId}.png`}
+                        src={`/images/branches/${selectedSubProfessionId}.png`}
                         alt=""
                         width={64}
                         height={64}

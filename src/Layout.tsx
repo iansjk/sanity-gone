@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import Head from "next/head";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
-import { Helmet } from "react-helmet";
 import { BsDiscord as DiscordLogo } from "react-icons/bs";
 import "wicg-inert";
 
@@ -13,6 +12,7 @@ import MobileMenu from "./components/MobileMenu";
 import SearchBar from "./components/SearchBar";
 import WeirdDeathSphere from "./components/WeirdDeathSphere";
 import { Media } from "./Media";
+import config from "./config";
 
 interface LayoutProps {
   pageTitle: string;
@@ -23,17 +23,6 @@ interface LayoutProps {
   bannerImageUrl?: string;
   previousLocation?: string;
   previousLocationLink?: string;
-}
-
-interface SiteMetadataQuery {
-  site: {
-    siteMetadata: {
-      siteUrl: string;
-      siteName: string;
-      image: string;
-      description: string;
-    };
-  };
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
@@ -49,24 +38,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
     previousLocationLink,
     ...rest
   } = props;
-  const data: SiteMetadataQuery = useStaticQuery(graphql`
-    query SiteMetadataQuery {
-      site {
-        siteMetadata {
-          siteUrl
-          description
-          siteName
-          image
-        }
-      }
-    }
-  `);
   const {
-    siteUrl,
-    description: defaultDescription,
     siteName,
+    description: defaultDescription,
     image: defaultImage,
-  } = data.site.siteMetadata;
+    siteUrl,
+  } = config;
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -80,20 +57,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
 
   return (
     <>
-      <Helmet title={title}>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
-          rel="stylesheet"
-        />
-        <html lang="en" {...rest} />
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <Head>
+        <title>{title}</title>
         <meta property="og:title" content={pageTitle ?? "Arknights Hub"} />
         <meta
           property="og:description"
@@ -106,8 +71,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
           content={`${siteUrl}${image ?? defaultImage}`}
         />
         <meta name="description" content={description ?? defaultDescription} />
-      </Helmet>
-      {/* @ts-expect-error Emotion doesn't like that I'm using MUI's Theme type, but this still works fine */}
+      </Head>
+
       <Global styles={styles({ bannerImageUrl, blendPoint })} />
       <div className="site-wrapper">
         {bannerImageUrl && <div className="banner-image-container" />}
@@ -122,7 +87,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
             <div className="navbar-container">
               <div className="navbar-content">
                 <div className="navbar-left">
-                  <SearchBar placeholder="Search operators and guides" />
+                  {<SearchBar placeholder="Search operators and guides" />}
                 </div>
                 <div className="navbar-center">
                   <div className="center-container">
@@ -132,8 +97,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <div className="navbar-right">
                   <div className="header-links">
                     <div className="link-spacer" />
-                    <Link to="/operators">Operators</Link>
-                    <Link to="/about">About</Link>
+                    <a href="/operators">Operators</a>
+                    <a href="/about">About</a>
                   </div>
                   <button className="mobile-menu-button" aria-label="Open menu">
                     <MobileMenuIcon
@@ -157,12 +122,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <div className="heading-spacer" />
                 {previousLocation && previousLocationLink && (
                   <Media greaterThanOrEqual="mobile" className="breadcrumb">
-                    <Link
-                      to={previousLocationLink}
+                    <a
+                      href={previousLocationLink}
                       aria-label={`Back to ${previousLocation}`}
                     >
                       {previousLocation}
-                    </Link>
+                    </a>
                     /
                   </Media>
                 )}
@@ -189,7 +154,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   <a href="mailto:admin@sanitygone.help">Contact Email</a>
                 </li>
                 <li>
-                  <Link to="/disclaimer">Disclaimer</Link>
+                  <a href="/disclaimer">Disclaimer</a>
                 </li>
               </ul>
             </div>

@@ -4,7 +4,7 @@ import {
   CharacterStatValues,
   PotentialStatChange,
 } from "./types";
-import branches from "../data/branches.json";
+import branches from "../../data/branches.json";
 
 export function slugify(toSlug: string): string {
   return defaultSlugify(toSlug);

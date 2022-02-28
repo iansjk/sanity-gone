@@ -1,5 +1,5 @@
 import React from "react";
-import branches from "../data/branches.json";
+import branches from "../../data/branches.json";
 import { Theme } from "@mui/material";
 import { css } from "@emotion/react";
 import { operatorSubclassIcon } from "../utils/images";

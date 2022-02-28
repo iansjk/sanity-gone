@@ -1,25 +1,31 @@
-/* eslint-disable */
-// @ts-nocheck
-
 import fs from "fs";
 import path from "path";
-import enCharacterTable from "../ArknightsGameData/en_US/gamedata/excel/character_table.json";
-import cnCharacterTable from "../ArknightsGameData/zh_CN/gamedata/excel/character_table.json";
-import enSkillTable from "../ArknightsGameData/en_US/gamedata/excel/skill_table.json";
-import cnSkillTable from "../ArknightsGameData/zh_CN/gamedata/excel/skill_table.json";
-import enUniequipTable from "../ArknightsGameData/en_US/gamedata/excel/uniequip_table.json";
-import cnUniequipTable from "../ArknightsGameData/zh_CN/gamedata/excel/uniequip_table.json";
-import rangeTable from "../ArknightsGameData/en_US/gamedata/excel/range_table.json";
+import enCharacterTable from "./ArknightsGameData/en_US/gamedata/excel/character_table.json";
+import cnCharacterTable from "./ArknightsGameData/zh_CN/gamedata/excel/character_table.json";
+import enSkillTable from "./ArknightsGameData/en_US/gamedata/excel/skill_table.json";
+import cnSkillTable from "./ArknightsGameData/zh_CN/gamedata/excel/skill_table.json";
+import enUniequipTable from "./ArknightsGameData/en_US/gamedata/excel/uniequip_table.json";
+import cnUniequipTable from "./ArknightsGameData/zh_CN/gamedata/excel/uniequip_table.json";
+import rangeTable from "./ArknightsGameData/en_US/gamedata/excel/range_table.json";
 import jetSkillTranslations from "./jet-tls/skills.json";
 import jetTalentTranslations from "./jet-tls/talents.json";
 import jetTraitTranslations from "./jet-tls/traits.json";
-import { Character, SkillAtLevel } from "./gamedata-types";
 import {
-  descriptionToHtml,
-  InterpolatedValue,
-} from "../src/utils/description-parser";
+  GameDataCharacter,
+  DenormalizedCharacter,
+  SkillAtLevel,
+  SearchResult,
+} from "./types";
+import { descriptionToHtml } from "../src/utils/description-parser";
+import {
+  professionToClass,
+  subProfessionIdToSubclass,
+} from "../src/utils/globals";
+import FlexSearch from "flexsearch";
+import { fetchContentfulGraphQl } from "../src/utils/fetch";
 
-const dataDir = path.join(__filename, "../../data");
+const dataDir = path.join(__dirname, "../data");
+fs.mkdirSync(dataDir, { recursive: true });
 const jetSkillDescriptionRegex =
   /{{(?<tagName>[^}]+)}(:(?<formatString>[0-9.%f]+))?}/;
 const fixJetSkillDescriptionTags = (description: string): string => {
@@ -55,7 +61,7 @@ const NAME_OVERRIDES: Record<string, string> = {
   "THRM-EX": "Thermal-EX",
 };
 
-const EXCLUDED_BRANCHES: Set<String> = new Set([
+const EXCLUDED_BRANCHES: Set<string> = new Set([
   "notchar1",
   "notchar2",
   "none1",
@@ -79,7 +85,9 @@ const BRANCH_OVERRIDES: Record<string, string> = {
 const useBranchOverride = (name: string) =>
   (
     BRANCH_OVERRIDES[name] ??
-    enUniequipTable.subProfDict[name].subProfessionName
+    enUniequipTable.subProfDict[
+      name as keyof typeof enUniequipTable.subProfDict
+    ].subProfessionName
   )
     .replace(" Medic", "")
     .replace(" Caster", "");
@@ -110,17 +118,17 @@ const TRAIT_OVERRIDES: Record<string, string> = {
 
 const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
 
-(() => {
+void (async () => {
   const enCharacterIds = new Set(Object.keys(enCharacterTable));
   const cnOnlyCharacters = Object.entries(cnCharacterTable).filter(
     ([charId]) => !enCharacterIds.has(charId)
   );
 
   const summonIdToOperatorName: Record<string, string> = {};
-  const denormalizedCharacters = (
+  const denormalizedCharacters: DenormalizedCharacter[] = (
     [...Object.entries(enCharacterTable), ...cnOnlyCharacters] as [
       string,
-      Character
+      GameDataCharacter
     ][]
   )
     .filter(([_, character]) => character.profession !== "TRAP")
@@ -173,11 +181,9 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
       });
 
       const skillData = character.skills
+        .filter((skill) => skill.skillId != null)
         .map((skill) => {
-          const skillId = skill.skillId;
-          if (!skillId) {
-            return null;
-          }
+          const skillId = skill.skillId!;
           const baseSkillObject = isCnOnly
             ? cnSkillTable[skillId as keyof typeof cnSkillTable]
             : enSkillTable[skillId as keyof typeof enSkillTable];
@@ -241,9 +247,12 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
   const denormalizedOperators = denormalizedCharacters.filter(
     (character) => character.profession !== "TOKEN"
   );
+  const operatorsJson = Object.fromEntries(
+    denormalizedOperators.map((character) => [character.name, character])
+  );
   fs.writeFileSync(
     path.join(dataDir, "operators.json"),
-    JSON.stringify(denormalizedOperators, null, 2)
+    JSON.stringify(operatorsJson, null, 2)
   );
 
   const denormalizedSummons = denormalizedCharacters
@@ -252,9 +261,17 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
       ...summon,
       operatorName: summonIdToOperatorName[summon.charId],
     }));
+  const summonsJson = denormalizedSummons.reduce((allSummons, summon) => {
+    if (allSummons[summon.operatorName] != null) {
+      allSummons[summon.operatorName].push(summon);
+    } else {
+      allSummons[summon.operatorName] = [summon];
+    }
+    return allSummons;
+  }, {} as Record<string, DenormalizedCharacter[]>);
   fs.writeFileSync(
     path.join(dataDir, "summons.json"),
-    JSON.stringify(denormalizedSummons, null, 2)
+    JSON.stringify(summonsJson, null, 2)
   );
 
   const denormalizedSkills = Object.entries(enSkillTable).map(([_, skill]) => {
@@ -269,9 +286,12 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
       levels,
     };
   });
+  const skillsJson = Object.fromEntries(
+    denormalizedSkills.map((skill) => [skill.skillId, skill])
+  );
   fs.writeFileSync(
     path.join(dataDir, "skills.json"),
-    JSON.stringify(denormalizedSkills, null, 2)
+    JSON.stringify(skillsJson, null, 2)
   );
 
   const enSubProfessions = new Set(Object.keys(enUniequipTable.subProfDict));
@@ -287,10 +307,11 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
         // Parse trait description for operator
         const firstOp = denormalizedOperators.find(
           (op) => op.subProfessionId === subprof && op.rarity > 1 // no robots
-        );
+        )!;
 
         let description = firstOp.description;
         const trait = firstOp.trait;
+        const className = professionToClass(firstOp.profession);
 
         // left in console.log comments - useful for debugging bad trait descriptions
         // console.log(description);
@@ -299,11 +320,13 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
         } else if (description in jetTraitTranslations.full) {
           // console.log("in descs");
           description = fixJetSkillDescriptionTags(
-            jetTraitTranslations.full[description].en
+            jetTraitTranslations.full[
+              description as keyof typeof jetTraitTranslations.full
+            ].en
           );
         }
 
-        const blackboard: InterpolatedValue[] = trait
+        const blackboard = trait
           ? trait.candidates[trait.candidates.length - 1].blackboard
           : [];
 
@@ -318,6 +341,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
             {
               branchName: CN_BRANCH_TLS[subprof],
               trait: descriptionToHtml(description, blackboard),
+              class: className,
             },
           ];
         }
@@ -327,6 +351,7 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
           {
             branchName: useBranchOverride(subprof),
             trait: descriptionToHtml(description, blackboard),
+            class: className,
           },
         ];
       })
@@ -334,5 +359,94 @@ const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
   fs.writeFileSync(
     path.join(dataDir, "branches.json"),
     JSON.stringify(denormalizedBranchesAndTraits, null, 2)
+  );
+
+  const searchArray: SearchResult[] = [];
+  const searchStore: Record<string, SearchResult> = {};
+  denormalizedOperators
+    .filter((e) => !e.isNotObtainable)
+    .forEach((op) => {
+      searchArray.push({
+        type: "operator",
+        name: op.name,
+        class: professionToClass(op.profession),
+        subclass: subProfessionIdToSubclass(op.subProfessionId),
+        rarity: `${op.rarity + 1}`,
+      });
+    });
+  [
+    "Vanguard",
+    "Guard",
+    "Specialist",
+    "Defender",
+    "Supporter",
+    "Sniper",
+    "Medic",
+    "Caster",
+  ].forEach((className) => {
+    searchArray.push({
+      type: "class",
+      name: className,
+      class: className,
+    });
+  });
+  Object.entries(denormalizedBranchesAndTraits).forEach(
+    ([branchName, branch]) => {
+      searchArray.push({
+        type: "branch",
+        name: branch.branchName,
+        class: branch.class,
+        subProfession: branchName,
+      });
+    }
+  );
+  searchArray.forEach((value: SearchResult, i) => {
+    searchStore[i] = value;
+  });
+
+  const index = FlexSearch.create({
+    tokenize: "full",
+  });
+
+  Object.entries(searchStore).forEach(([key, value]) => {
+    index.add(+key, value.name);
+  });
+
+  const contentfulQuery = `
+  query {
+    operatorAnalysisCollection {
+      items {
+        operator {
+          name
+        }
+      }
+    }
+  }
+  `;
+  const { operatorAnalysisCollection } = await fetchContentfulGraphQl<{
+    operatorAnalysisCollection: {
+      items: {
+        operator: {
+          name: string;
+        };
+      }[];
+    };
+  }>(contentfulQuery);
+
+  const operatorsWithGuides = operatorAnalysisCollection.items.map(
+    (item) => item.operator.name
+  );
+
+  fs.writeFileSync(
+    path.join(dataDir, "search.json"),
+    JSON.stringify(
+      {
+        index: index.export(),
+        store: searchStore,
+        operatorsWithGuides: operatorsWithGuides,
+      },
+      null,
+      2
+    )
   );
 })();

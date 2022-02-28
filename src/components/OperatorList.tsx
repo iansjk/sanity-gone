@@ -1,5 +1,4 @@
 import React from "react";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { css, Theme, Tooltip } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
 import cx from "clsx";
@@ -7,18 +6,10 @@ import { rgba } from "polished";
 
 import { OperatorListOperator } from "../pages/operators";
 import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
-import { operatorSubclassIcon } from "../utils/images";
 import StarIcon from "./icons/StarIcon";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import Image from "next/image";
 
-const getPortraitFilename = (operatorId: string) => `${operatorId}_1`;
-
-export interface PortraitNode {
-  name: string;
-  childImageSharp: {
-    gatsbyImageData: IGatsbyImageData;
-  };
-}
+const getPortraitFilename = (operatorId: string) => `${operatorId}_1.png`;
 
 interface Props {
   operators: OperatorListOperator[];
@@ -30,33 +21,6 @@ interface Props {
 const OperatorList: React.VFC<Props> = React.memo((props) => {
   const { operators, operatorsToShow, operatorsWithGuides, onSubclassFilter } =
     props;
-
-  const data = useStaticQuery<{
-    portraits: { nodes: PortraitNode[] };
-  }>(graphql`
-    query {
-      portraits: allFile(
-        filter: {
-          sourceInstanceName: { eq: "images" }
-          relativeDirectory: { eq: "portraits" }
-        }
-      ) {
-        nodes {
-          name
-          childImageSharp {
-            gatsbyImageData(
-              height: 360
-              width: 180
-              transformOptions: { fit: CONTAIN, cropFocus: SOUTH }
-              backgroundColor: "transparent"
-              placeholder: BLURRED
-            )
-          }
-        }
-      }
-    }
-  `);
-  const { nodes: portraitNodes } = data.portraits;
 
   return (
     <>
@@ -91,14 +55,6 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
           const hasGuide = operatorsWithGuides.includes(op.name);
           const [charName, alterName] = op.name.split(" the ");
           const portraitFilename = getPortraitFilename(op.charId);
-          const portraitNode = portraitNodes.find(
-            ({ name: filename }) => filename === portraitFilename
-          );
-          if (!portraitNode) {
-            throw new Error(
-              `Couldn't find portrait for ${op.name}, expecting ${portraitFilename}`
-            );
-          }
           return (
             <li
               key={op.name}
@@ -115,28 +71,29 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   : {}
               }
             >
-              <GatsbyImage
-                className="operator-portrait-container"
-                imgClassName="operator-portrait"
-                image={portraitNode.childImageSharp.gatsbyImageData}
+              <Image
+                className="operator-portrait"
+                src={`/portraits/${portraitFilename}`}
                 alt=""
+                width={180}
+                height={360}
               />
               <div className="operator-card-content">
                 {hasGuide && (
-                  <Link
+                  <a
                     className="dummy-clickable-area"
-                    to={`/operators/${slugify(op.name)}`}
+                    href={`/operators/${slugify(op.name)}`}
                     tabIndex={-1}
                     aria-hidden="true"
                   />
                 )}
                 {React.createElement(
-                  hasGuide ? Link : "div", // @ts-expect-error this works. I don't want to know why, but it does
+                  hasGuide ? "a" : "div",
                   {
                     className: "operator-info",
                     ...(hasGuide
                       ? {
-                          to: `/operators/${slugify(op.name)}`,
+                          href: `/operators/${slugify(op.name)}`,
                           role: "presentation",
                           tabIndex: -1,
                         }
@@ -172,21 +129,23 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                       onSubclassFilter(op.profession, op.subProfessionId)
                     }
                   >
-                    <img
+                    <Image
+                      width={24}
+                      height={24}
                       className="operator-subclass-icon"
-                      src={operatorSubclassIcon(op.subProfessionId)}
+                      src={`/branches/${op.subProfessionId}.png`}
                       alt={""}
                     />
                   </button>
                 </Tooltip>
                 {/* TODO "NEW" should go here */}
                 {hasGuide ? (
-                  <Link
+                  <a
                     className="go-to-guide-link"
-                    to={`/operators/${slugify(op.name)}`}
+                    href={`/operators/${slugify(op.name)}`}
                   >
                     <span className="go-to-guide-text">Read Guide</span>
-                  </Link>
+                  </a>
                 ) : (
                   <span className="visually-hidden">Guide Unavailable</span>
                 )}
@@ -492,7 +451,7 @@ const styles = (theme: Theme) => css`
       }
     }
 
-    .operator-portrait-container {
+    & > span {
       grid-area: x;
       overflow: hidden;
       display: flex;

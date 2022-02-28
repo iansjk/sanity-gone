@@ -1,0 +1,262 @@
+{
+  "fortress": {
+    "branchName": "Fortress",
+    "trait": "Prioritize <span class=\"keyword\">Long range splash attack</span> (splash radius of <span class=\"keyword\">1.0</span> tiles) when not blocking",
+    "class": "Defender"
+  },
+  "wandermedic": {
+    "branchName": "Wandering",
+    "trait": "Restores the HP of allies<br>Recovers <span class=\"\">Elemental damage</span> equal to <span class=\"keyword\">50%</span> of Attack Power<br>(Can heal <span class=\"\">Elemental damage</span> of unhurt units)",
+    "class": "Medic"
+  },
+  "craftsman": {
+    "branchName": "Artificer",
+    "trait": "Can block 2 enemies<br>Can use <span class=\"keyword\">Support Devices</span> in battle",
+    "class": "Supporter"
+  },
+  "pioneer": {
+    "branchName": "Pioneer",
+    "trait": "Blocks 2 enemies",
+    "class": "Vanguard"
+  },
+  "charger": {
+    "branchName": "Charger",
+    "trait": "Obtain 1 DP after this unit defeats an enemy; Refunds the original DP Cost when retreated",
+    "class": "Vanguard"
+  },
+  "tactician": {
+    "branchName": "Tactician",
+    "trait": "This unit can designate one <span class=\"keyword\">Tactical Point</span> within attack range to call Reinforcements; ATK is increased to 150% when attacking enemies blocked by Reinforcements",
+    "class": "Vanguard"
+  },
+  "bearer": {
+    "branchName": "Standard Bearer",
+    "trait": "Cannot block enemies during the skill duration",
+    "class": "Vanguard"
+  },
+  "centurion": {
+    "branchName": "Centurion",
+    "trait": "Attacks <span class=\"keyword\">all blocked enemies</span>",
+    "class": "Guard"
+  },
+  "fighter": {
+    "branchName": "Fighter",
+    "trait": "Blocks 1 enemy",
+    "class": "Guard"
+  },
+  "artsfghter": {
+    "branchName": "Arts Fighter",
+    "trait": "Deals <span class=\"keyword\">Arts damage</span>",
+    "class": "Guard"
+  },
+  "instructor": {
+    "branchName": "Instructor",
+    "trait": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to 120%",
+    "class": "Guard"
+  },
+  "lord": {
+    "branchName": "Lord",
+    "trait": "Can launch <span class=\"keyword\">Ranged Attacks</span> that deal 80% of normal ATK",
+    "class": "Guard"
+  },
+  "sword": {
+    "branchName": "Swordmaster",
+    "trait": "Normal attacks deal damage <span class=\"keyword\">twice</span>",
+    "class": "Guard"
+  },
+  "musha": {
+    "branchName": "Musha",
+    "trait": "Can't be healed by other units. Recovers <span class=\"keyword\">30/50/70</span> (scales with elite promotion) self HP every time this operator attacks an enemy",
+    "class": "Guard"
+  },
+  "fearless": {
+    "branchName": "Dreadnought",
+    "trait": "Blocks 1 enemy",
+    "class": "Guard"
+  },
+  "reaper": {
+    "branchName": "Reaper",
+    "trait": "Cannot be healed by allies; Attacks deal <span class=\"keyword\">AoE damage</span>; Recovers <span class=\"keyword\">50</span> HP for every enemy hit during attacks, up to Block count",
+    "class": "Guard"
+  },
+  "librator": {
+    "branchName": "Liberator",
+    "trait": "Normally does not attack and has 0 Block; When skill is inactive, ATK gradually increases up to <span class=\"keyword\">+200%</span> over <span class=\"keyword\">40</span> seconds. ATK is reset when the skill ends",
+    "class": "Guard"
+  },
+  "protector": {
+    "branchName": "Protector",
+    "trait": "Blocks 3 enemies",
+    "class": "Defender"
+  },
+  "guardian": {
+    "branchName": "Guardian",
+    "trait": "Can heal allies by using the skill",
+    "class": "Defender"
+  },
+  "unyield": {
+    "branchName": "Juggernaut",
+    "trait": "<span class=\"keyword\">Cannot</span> be healed by allies",
+    "class": "Defender"
+  },
+  "artsprotector": {
+    "branchName": "Arts Protector",
+    "trait": "Normal attacks deal Arts damage while the skill is active",
+    "class": "Defender"
+  },
+  "duelist": {
+    "branchName": "Duelist",
+    "trait": "Only restores SP when blocking enemies",
+    "class": "Defender"
+  },
+  "fastshot": {
+    "branchName": "Marksman",
+    "trait": "Attacks aerial enemies first",
+    "class": "Sniper"
+  },
+  "closerange": {
+    "branchName": "Heavyshooter",
+    "trait": "High accuracy point-blank shot",
+    "class": "Sniper"
+  },
+  "aoesniper": {
+    "branchName": "Artilleryman",
+    "trait": "Deals <span class=\"keyword\">AOE Physical damage</span> with a splash radius of <span class=\"keyword\">1.0</span> tiles",
+    "class": "Sniper"
+  },
+  "longrange": {
+    "branchName": "Deadeye",
+    "trait": "Prioritizes attacking the enemy with <span class=\"keyword\">lowest DEF</span> within range first",
+    "class": "Sniper"
+  },
+  "reaperrange": {
+    "branchName": "Spreadshooter",
+    "trait": "Attacks <span class=\"keyword\">all enemies</span> within range, and deals 150% damage to enemies in the row directly in front of this unit.",
+    "class": "Sniper"
+  },
+  "siegesniper": {
+    "branchName": "Besieger",
+    "trait": "Attacks the heaviest enemy first",
+    "class": "Sniper"
+  },
+  "bombarder": {
+    "branchName": "Flinger",
+    "trait": "Attacks deal <span class=\"keyword\">two instances</span> of Physical damage to <span class=\"keyword\">ground</span> enemies in a <span class=\"keyword\">0.9</span> tile area (The second instance is a shockwave that has half the normal ATK)",
+    "class": "Sniper"
+  },
+  "corecaster": {
+    "branchName": "Core",
+    "trait": "Deals <span class=\"keyword\">Arts damage</span>",
+    "class": "Caster"
+  },
+  "splashcaster": {
+    "branchName": "Splash",
+    "trait": "Deals <span class=\"keyword\">AOE Arts damage</span> with a splash radius of <span class=\"keyword\">1.1</span> tiles",
+    "class": "Caster"
+  },
+  "funnel": {
+    "branchName": "Mech-accord",
+    "trait": "Controls a <span class=\"keyword\">Drone</span> that deals <span class=\"keyword\">Arts damage</span>; When the Drone continuously attacks the same enemy, its damage will increase (from 10% up to 110% of the operator's ATK, linearly)",
+    "class": "Caster"
+  },
+  "phalanx": {
+    "branchName": "Phalanx",
+    "trait": "Normally <span class=\"keyword\">does not attack</span>, but has <span class=\"keyword\">+200%</span> DEF and <span class=\"keyword\">+20</span> RES; When skill is active, attacks deal <span class=\"keyword\">AoE Arts damage</span>",
+    "class": "Caster"
+  },
+  "mystic": {
+    "branchName": "Mystic",
+    "trait": "Attacks deal <span class=\"keyword\">Arts damage</span>; When unable to find a target, attacks can be <span class=\"keyword\">stored up</span> and fired all at once (Up to 3 charges)",
+    "class": "Caster"
+  },
+  "chain": {
+    "branchName": "Chain",
+    "trait": "Attacks deal <span class=\"keyword\">Arts damage</span> and jump between <span class=\"keyword\">3</span> (<span class=\"keyword\">4</span> at Elite 2) enemies (jump range is <span class=\"keyword\">1.7</span> tiles). Each jump deals 15% less damage and inflicts an <span class=\"keyword\">80%</span> <span class=\"skill-tooltip\">Slow</span> for <span class=\"keyword\">0.5</span> seconds",
+    "class": "Caster"
+  },
+  "blastcaster": {
+    "branchName": "Blast",
+    "trait": "Deals <span class=\"keyword\">AOE Arts damage in a long line</span>",
+    "class": "Caster"
+  },
+  "physician": {
+    "branchName": "Single-target",
+    "trait": "Restores the HP of allies",
+    "class": "Medic"
+  },
+  "ringhealer": {
+    "branchName": "Multi-target",
+    "trait": "Restores the HP of 3 allies simultaneously",
+    "class": "Medic"
+  },
+  "healer": {
+    "branchName": "Therapist",
+    "trait": "Has a large healing range, but the healing amount on farther targets is reduced to <span class=\"keyword\">80%</span>",
+    "class": "Medic"
+  },
+  "slower": {
+    "branchName": "Decel Binder",
+    "trait": "Deals <span class=\"keyword\">Arts damage</span> and <span class=\"skill-tooltip\">Slows</span> the target by <span class=\"keyword\">80%</span> for <span class=\"keyword\">0.8</span> seconds",
+    "class": "Supporter"
+  },
+  "underminer": {
+    "branchName": "Hexer",
+    "trait": "Deals <span class=\"keyword\">Arts damage</span>",
+    "class": "Supporter"
+  },
+  "bard": {
+    "branchName": "Bard",
+    "trait": "Does not attack but continuously restores the <span class=\"keyword\">HP</span> of all allies within range (the HP restored per second is equal to 10% of self ATK). Self is unaffected by <span class=\"skill-tooltip\">Inspiration</span>",
+    "class": "Supporter"
+  },
+  "blessing": {
+    "branchName": "Abjurer",
+    "trait": "Deals <span class=\"keyword\">Arts damage</span>",
+    "class": "Supporter"
+  },
+  "summoner": {
+    "branchName": "Summoner",
+    "trait": "Deals <span class=\"keyword\">Arts damage</span><br>Can use <span class=\"keyword\">Summons</span> in battles",
+    "class": "Supporter"
+  },
+  "executor": {
+    "branchName": "Executor",
+    "trait": "Significantly <span class=\"keyword\">reduced</span> Redeployment Time",
+    "class": "Specialist"
+  },
+  "pusher": {
+    "branchName": "Push Stroker",
+    "trait": "Can attack <span class=\"keyword\">all blocked enemies</span><br>Can be deployed on Ranged Tiles",
+    "class": "Specialist"
+  },
+  "stalker": {
+    "branchName": "Ambusher",
+    "trait": "Deals Damage to <span class=\"keyword\">all targets</span> within range<br>50% chance to dodge Physical and Arts attacks and is less likely to be <span class=\"keyword\">targeted</span> by enemies",
+    "class": "Specialist"
+  },
+  "hookmaster": {
+    "branchName": "Hookmaster",
+    "trait": "Can <span class=\"keyword\">Shift</span> enemies by using skills<br>Can be deployed on Ranged Tiles",
+    "class": "Specialist"
+  },
+  "geek": {
+    "branchName": "Geek",
+    "trait": "Continually loses <span class=\"keyword\">3%</span> max HP per second",
+    "class": "Specialist"
+  },
+  "merchant": {
+    "branchName": "Merchant",
+    "trait": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\">DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">3 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)",
+    "class": "Specialist"
+  },
+  "traper": {
+    "branchName": "Trapmaster",
+    "trait": "Can use traps to assist in combat, but traps cannot be placed <span class=\"keyword\">on tiles already occupied by an enemy</span>",
+    "class": "Specialist"
+  },
+  "dollkeeper": {
+    "branchName": "Dollkeeper",
+    "trait": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block). Swaps back to the original after 20 seconds",
+    "class": "Specialist"
+  }
+}

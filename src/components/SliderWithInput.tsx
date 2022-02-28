@@ -2,10 +2,12 @@ import { css } from "@emotion/react";
 import {
   Input,
   InputProps,
-  SliderUnstyled,
-  SliderUnstyledProps,
   Theme,
 } from "@mui/material";
+import {
+  SliderUnstyled,
+  SliderUnstyledProps,
+} from "@mui/base";
 
 export interface SliderWithInputProps {
   label: string;

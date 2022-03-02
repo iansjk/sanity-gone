@@ -167,8 +167,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                       <a
                         className="classes-card"
                         key={res.name}
-                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                         href={`/operators#${slugify(
+                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                           res.class!
                         )}-${subclassSlugify(res.name)}`}
                       >

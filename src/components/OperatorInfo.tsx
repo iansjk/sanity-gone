@@ -46,6 +46,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   const operatorClass = professionToClass(profession);
   const subclass = subProfessionIdToSubclass(subProfessionId);
   const rarity = rawRarity + 1; // 0-indexed;
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const position = description!
     .toLowerCase()
     .includes("can be deployed on ranged grids")
@@ -54,6 +55,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   const attackType = getAttackType(
     professionToClass(profession),
     subProfessionId,
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     description!
   );
   const theme = useTheme();

@@ -2,7 +2,6 @@ import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 
 import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
-import GroupSynergyIcon from "./icons/GroupSynergyIcon";
 import OperatorPortrait from "./OperatorPortrait";
 
 export enum SynergyQuality {
@@ -24,56 +23,56 @@ export interface SynergyProps {
   shouldInvertIconOnHighlight?: boolean;
 }
 
-const Synergy: React.VFC<SynergyProps & React.HTMLAttributes<HTMLDivElement>> =
-  (props) => {
-    const {
-      name,
-      quality,
-      isGroup,
-      analysis,
-      iconUrl,
-      rarity: rawRarity,
-      profession,
-      subProfessionId,
-      ...rest
-    } = props;
-    const rarity = rawRarity ? rawRarity + 1 : undefined;
+const Synergy: React.VFC<
+  SynergyProps & React.HTMLAttributes<HTMLDivElement>
+> = (props) => {
+  const {
+    name,
+    isGroup,
+    analysis,
+    iconUrl,
+    rarity: rawRarity,
+    profession,
+    subProfessionId,
+    ...rest
+  } = props;
+  const rarity = rawRarity ? rawRarity + 1 : undefined;
 
-    return (
-      <section css={styles} {...rest}>
-        <div className="synergy-header">
-          <div className="portrait">
-            <OperatorPortrait
-              variant="small"
-              name={name}
-              iconOverride={isGroup ? iconUrl : undefined}
-            />
-          </div>
-          <div className="name-and-quality">
-            <h3 className="operator-name">{name}</h3>
-            {!isGroup && (
-              <div className="synergy-operator-info">
-                {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
-                <span className={`rarity-${rarity!}-stars`}>{rarity} ★</span>
-                <span className="operator-class">
-                  {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
-                  {professionToClass(profession!)}
-                </span>
-                <span className="class-subclass-separator" aria-hidden="true">
-                  ·
-                </span>
-                <span className="subclass">
-                  {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
-                  {subProfessionIdToSubclass(subProfessionId!)}
-                </span>
-              </div>
-            )}
-          </div>
+  return (
+    <section css={styles} {...rest}>
+      <div className="synergy-header">
+        <div className="portrait">
+          <OperatorPortrait
+            variant="small"
+            name={name}
+            iconOverride={isGroup ? iconUrl : undefined}
+          />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: analysis }} />
-      </section>
-    );
-  };
+        <div className="name-and-quality">
+          <h3 className="operator-name">{name}</h3>
+          {!isGroup && (
+            <div className="synergy-operator-info">
+              {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+              <span className={`rarity-${rarity!}-stars`}>{rarity} ★</span>
+              <span className="operator-class">
+                {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+                {professionToClass(profession!)}
+              </span>
+              <span className="class-subclass-separator" aria-hidden="true">
+                ·
+              </span>
+              <span className="subclass">
+                {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
+                {subProfessionIdToSubclass(subProfessionId!)}
+              </span>
+            </div>
+          )}
+        </div>
+      </div>
+      <div dangerouslySetInnerHTML={{ __html: analysis }} />
+    </section>
+  );
+};
 export default Synergy;
 
 const styles = (theme: Theme) => css`

@@ -1,7 +1,6 @@
 import { Meta, Story } from "@storybook/react";
 import { CharacterObject } from "../utils/types";
 import CharacterStats, { CharacterStatsProps } from "./CharacterStats";
-import { SkillObject } from "./SkillInfo";
 import { TalentObject } from "./TalentInfo";
 
 export default {

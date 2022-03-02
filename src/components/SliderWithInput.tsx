@@ -1,13 +1,6 @@
 import { css } from "@emotion/react";
-import {
-  Input,
-  InputProps,
-  Theme,
-} from "@mui/material";
-import {
-  SliderUnstyled,
-  SliderUnstyledProps,
-} from "@mui/base";
+import { Input, InputProps, Theme } from "@mui/material";
+import { SliderUnstyled, SliderUnstyledProps } from "@mui/base";
 
 export interface SliderWithInputProps {
   label: string;

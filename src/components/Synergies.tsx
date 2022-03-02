@@ -30,6 +30,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
             }`}
             style={{
               backgroundImage: `url("${
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 syn.isGroup ? syn.iconUrl! : operatorImage(syn.name)
               }")`,
               backgroundBlendMode: syn.shouldInvertIconOnHighlight
@@ -46,6 +47,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
           return [
             <span
               key={qualityLabel}
+              // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
               className={`synergy-quality quality-${syn.quality}`}
               title={SynergyQuality[syn.quality]}
             >

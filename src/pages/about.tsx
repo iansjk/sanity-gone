@@ -8,56 +8,56 @@ import { sgPageBanner } from "../utils/images";
 
 import type { NextPage } from "next";
 
-const members: { name: string; role: string; imageFilename: string; }[] = [
+const members: { name: string; role: string; imageFilename: string }[] = [
   {
     name: "nikoleye",
     role: "Project Lead, Writer",
-    imageFilename: "nikoleye.png"
+    imageFilename: "nikoleye.png",
   },
   {
     name: "samidare",
     role: "Developer",
-    imageFilename: "samidare.png"
+    imageFilename: "samidare.png",
   },
   {
     name: "Stinggyray",
-    role: "Developer",
-    imageFilename: "stinggyray.png"
+    role: "Developer, Editor",
+    imageFilename: "stinggyray.png",
   },
   {
     name: "namtar",
     role: "Founder, Designer",
-    imageFilename: "namtar.jpg"
+    imageFilename: "namtar.jpg",
   },
   {
     name: "kawa",
     role: "Mascot",
-    imageFilename: "kawa.png"
+    imageFilename: "kawa.png",
   },
   {
     name: "Thanik",
     role: "Writer, Editor",
-    imageFilename: "thanik.jpg"
+    imageFilename: "thanik.jpg",
   },
   {
     name: "iana",
     role: "Writer, Editor",
-    imageFilename: "iana.png"
+    imageFilename: "iana.png",
   },
   {
     name: "Kirahuang",
     role: "Host, Advisor",
-    imageFilename: "kirahuang.png"
+    imageFilename: "kirahuang.png",
   },
   {
     name: "Noël",
     role: "Founder, Advisor",
-    imageFilename: "noel.png"
+    imageFilename: "noel.png",
   },
   {
     name: "pepegaturtle",
     role: ":pepegaturtle:",
-    imageFilename: "pepegaturtle.png"
+    imageFilename: "pepegaturtle.png",
   },
 ];
 

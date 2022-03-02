@@ -35,9 +35,6 @@ export const markdownToHtmlString = async (markdownString: string) => {
             node.value = "";
             node.properties = {};
             node.children = [];
-          } else {
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            console.warn(`Unrecognized raw node: ${node.value}`, node);
           }
         }
       },

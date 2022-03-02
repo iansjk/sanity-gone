@@ -40,11 +40,11 @@ export interface CharacterObject {
   cnName: string;
   profession: string;
   subProfessionId: string;
-  position: "MELEE" | "RANGED";
-  description: string;
+  position: string;
+  description: string | null;
   phases: CharacterPhaseObject[];
   rarity: number; // 0-indexed, so a 1* op has value 0
-  favorKeyFrames: FavorKeyFrame[];
+  favorKeyFrames: FavorKeyFrame[] | null;
   potentialRanks: PotentialRanks[];
 
   [otherProperties: string]: unknown;

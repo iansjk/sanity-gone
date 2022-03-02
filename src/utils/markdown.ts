@@ -9,10 +9,10 @@ const selfClosingTagRegex = /<([^>]+) \/>/;
 
 /**
  * Converts a markdown string to an HTML string.
- * 
+ *
  * Also converts `<SelfClosingComponent />` syntax to `<selfclosingcomponent></selfclosingcomponent>`
  * (so that it can be processed correctly by `html-react-parser` later).
- * 
+ *
  * @param markdown The Markdown string to convert. May contain component references (e.g. `<SomeComponent />`).
  */
 export const markdownToHtmlString = async (markdownString: string) => {

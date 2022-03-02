@@ -131,7 +131,12 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                             : "#"
                         }
                       >
-                        <Image alt={res.name} src={operatorImage(res.name)} />
+                        <Image
+                          alt={res.name}
+                          src={operatorImage(res.name)}
+                          width={40}
+                          height={40}
+                        />
                         <div className="operator-info">
                           {res.name}
                           <div className="rarity-and-class">

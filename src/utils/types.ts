@@ -1,3 +1,6 @@
+import { SkillObject } from "../components/SkillInfo";
+import { TalentObject } from "../components/TalentInfo";
+
 export interface AttributeKeyFrame {
   level: number;
   data: {
@@ -46,6 +49,8 @@ export interface CharacterObject {
   rarity: number; // 0-indexed, so a 1* op has value 0
   favorKeyFrames: FavorKeyFrame[] | null;
   potentialRanks: PotentialRanks[];
+  talents: TalentObject[];
+  skills: SkillObject[];
 
   [otherProperties: string]: unknown;
 }

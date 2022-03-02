@@ -23,6 +23,9 @@ import { operatorImage } from "../../utils/images";
 import { Media } from "../../Media";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { fetchContentfulGraphQl } from "../../utils/fetch";
+import operatorsJson from "../../../data/operators.json";
+import summonsJson from "../../../data/summons.json";
+import { markdownToHtmlString } from "../../utils/markdown";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -116,7 +119,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }>(query);
   const paths = data.operatorAnalysisCollection.items.map((item) => ({
     params: {
-      slug: item.operator.slug
+      slug: item.operator.slug,
     },
   }));
   return {
@@ -126,10 +129,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const { slug } = params!;
   const query = `
     query {
-      operatorAnalysisCollection (where: {operator: {slug: "${slug as string}" }} limit: 1) {
+      operatorAnalysisCollection (where: {operator: {slug: "${
+        slug as string
+      }" }} limit: 1) {
         items {
           operator {
             name
@@ -172,26 +178,102 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   `;
   const data = await fetchContentfulGraphQl<{
     operatorAnalysisCollection: {
-      items: Props["guide"][];
-    }
+      items: [
+        {
+          operator: {
+            name: string;
+            limited: boolean;
+            bannerImage: {
+              url: string;
+            };
+            accentColorInHex: string;
+            customBgPositionX: string;
+          };
+          customByline: string;
+          sys: {
+            publishedAt: string;
+          };
+          introduction: string;
+          strengths: string;
+          weaknesses: string;
+          talent1Analysis: string;
+          talent2Analysis: string;
+          skill1Recommended: boolean;
+          skill1Analysis: string;
+          skill2Recommended: boolean;
+          skill2Analysis: string;
+          skill3Recommended: boolean;
+          skill3Analysis: string;
+          synergiesCollection: {
+            items: [
+              {
+                synergyName: string;
+                isGroup: boolean;
+                customSynergyIcon: {
+                  url: string;
+                };
+                shouldInvertIconOnHighlight: boolean;
+                synergyDescription: string;
+              }
+            ];
+          } | null;
+        }
+      ];
+    };
   }>(query);
 
-  const [operatorsJson, summonsJson] = (
-    await Promise.all([
-      import("../../../data/operators.json"),
-      import("../../../data/summons.json"),
-    ])
-  ).map((json) => json.default);
   const operatorAnalysis = data.operatorAnalysisCollection.items[0];
   const { name: operatorName } = operatorAnalysis.operator;
-  const operatorObject = operatorsJson[operatorName as keyof typeof operatorsJson];
+  const operatorObject =
+    operatorsJson[operatorName as keyof typeof operatorsJson];
   const summons = summonsJson[operatorName as keyof typeof summonsJson] ?? [];
 
+  const markdownListItemRegex = /^\s*-\s(.+)$/;
   const props: Props = {
-    guide: operatorAnalysis,
+    guide: {
+      operator: operatorAnalysis.operator,
+      customByline: operatorAnalysis.customByline,
+      sys: operatorAnalysis.sys,
+      introduction: await markdownToHtmlString(operatorAnalysis.introduction),
+      strengths: operatorAnalysis.strengths
+        .split("\n")
+        .filter((line) => markdownListItemRegex.exec(line))
+        .map((line) => {
+          const match = markdownListItemRegex.exec(line);
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          return match![1];
+        }),
+      weaknesses: operatorAnalysis.weaknesses
+        .split("\n")
+        .filter((line) => markdownListItemRegex.exec(line))
+        .map((line) => {
+          const match = markdownListItemRegex.exec(line);
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          return match![1];
+        }),
+      talent1Analysis: await markdownToHtmlString(
+        operatorAnalysis.talent1Analysis
+      ),
+      talent2Analysis: await markdownToHtmlString(
+        operatorAnalysis.talent2Analysis
+      ),
+      skill1Recommended: operatorAnalysis.skill1Recommended,
+      skill1Analysis: await markdownToHtmlString(
+        operatorAnalysis.skill1Analysis
+      ),
+      skill2Recommended: operatorAnalysis.skill2Recommended,
+      skill2Analysis: await markdownToHtmlString(
+        operatorAnalysis.skill2Analysis
+      ),
+      skill3Recommended: operatorAnalysis.skill3Recommended,
+      skill3Analysis: await markdownToHtmlString(
+        operatorAnalysis.skill3Analysis
+      ),
+      synergies: operatorAnalysis.synergiesCollection?.items ?? [],
+    },
     operatorObject,
     summons,
-    allOperators: operatorsJson as any,
+    allOperators: operatorsJson as Record<string, CharacterObject>,
   };
   return { props };
 };
@@ -212,8 +294,8 @@ interface Props {
       publishedAt: string; // ISO 8601 timestamp
     };
     introduction: string;
-    strengths: string;
-    weaknesses: string;
+    strengths: string[];
+    weaknesses: string[];
     talent1Analysis: string;
     talent2Analysis: string;
     skill1Recommended?: boolean;
@@ -222,17 +304,15 @@ interface Props {
     skill2Analysis: string;
     skill3Recommended?: boolean;
     skill3Analysis: string;
-    synergiesCollection: {
-      items: {
-        synergyName: string;
-        isGroup: boolean;
-        customSynergyIcon: {
-          url: string;
-        };
-        shouldInvertIconOnHighlight?: boolean;
-        synergyDescription: string;
-      }[]
-    }      | null;
+    synergies: {
+      synergyName: string;
+      isGroup: boolean;
+      customSynergyIcon: {
+        url: string;
+      };
+      shouldInvertIconOnHighlight?: boolean;
+      synergyDescription: string;
+    }[];
   };
   operatorObject: CharacterObject;
   summons: CharacterObject[];
@@ -256,7 +336,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     skill1Analysis,
     skill2Analysis,
     skill3Analysis,
-    synergiesCollection,
+    synergies: synergiesRaw,
   } = guide;
   const { publishedAt } = sys;
   const skillRecommended = [
@@ -287,7 +367,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       return htmlToReact(html, context, i);
     });
 
-  const synergies = (synergiesCollection?.items ?? []).map((syn) => {
+  const synergies = synergiesRaw.map((syn) => {
     const baseProps = {
       name: syn.synergyName,
       isGroup: syn.isGroup,
@@ -302,20 +382,11 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       }
       return {
         ...baseProps,
-        iconUrl: syn.customSynergyIcon.url
+        iconUrl: syn.customSynergyIcon.url,
       };
     }
     return { ...baseProps, ...allOperators[syn.synergyName] };
   });
-
-  // const strengths =
-  //   contentful.strengths.childMarkdownRemark.htmlAst.children[0].children
-  //     .filter((child) => child.tagName === "li")
-  //     .map((child) => child.children[0].value);
-  // const weaknesses =
-  //   contentful.weaknesses.childMarkdownRemark.htmlAst.children[0].children
-  //     .filter((child) => child.tagName === "li")
-  //     .map((child) => child.children[0].value);
 
   const operatorName = operator.name;
   const [baseChar, alterName] = operatorName.split(" the ");
@@ -368,8 +439,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                     analysis={htmlToReact(introduction, context)}
                     isLimited={operator.limited}
                     operatorObject={operatorObject}
-                    strengths={strengths.split("\n")}
-                    weaknesses={weaknesses.split("\n")}
+                    strengths={strengths}
+                    weaknesses={weaknesses}
                   />
                 ),
                 className: "introduction",
@@ -435,13 +506,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
             </a>
           </div>
           <div className="metadata">
-            {/* <div className="authors-section">
-              <span className="section-label">Written by</span>
-              <span className="authors">
-                {contentful.author.map((author) => author.name).join(",\n")}
-              </span>
-            </div> */}
-
             <div className="last-updated-section">
               <span className="section-label">Last updated</span>
               <span className="last-updated">

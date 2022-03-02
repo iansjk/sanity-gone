@@ -4,6 +4,7 @@ import { useTheme, Theme } from "@mui/material";
 import { operatorImage } from "../utils/images";
 import TiltedStarIcon from "./icons/TiltedStarIcon";
 import StarIcon from "./icons/StarIcon";
+import Image from "next/image";
 
 const imageSize = {
   normal: 96,
@@ -41,7 +42,7 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
           </span>
         </span>
       )}
-      <img
+      <Image
         className="operator-portrait"
         src={iconOverride ?? operatorImage(name)}
         alt=""

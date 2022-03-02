@@ -16,6 +16,7 @@ import CharacterRange from "./CharacterRange";
 import { RangeObject } from "../utils/types";
 import SliderWithInput from "./SliderWithInput";
 import StarIcon from "./icons/StarIcon";
+import Image from "next/image";
 
 enum SkillType {
   "Passive" = 0,
@@ -135,10 +136,12 @@ const SkillInfo: React.VFC<
             />
           </div>
           <div className="skill-name-and-type">
-            <img
+            <Image
               className="skill-icon"
               src={skillIcon(iconId, skillId)}
               alt=""
+              width={50}
+              height={50}
             />
             <h3 className="skill-name">{name}</h3>
             <span className="skill-and-sp-type">

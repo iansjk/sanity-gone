@@ -12,6 +12,7 @@ import { slugify, subclassSlugify } from "../utils/globals";
 import SearchIcon from "./icons/SearchIcon";
 import { transparentize } from "polished";
 import levenshtein from "js-levenshtein";
+import Image from "next/image";
 import search from "../../data/search.json";
 
 // Interface representing a search result.
@@ -130,7 +131,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                             : "#"
                         }
                       >
-                        <img alt={res.name} src={operatorImage(res.name)} />
+                        <Image alt={res.name} src={operatorImage(res.name)} />
                         <div className="operator-info">
                           {res.name}
                           <div className="rarity-and-class">
@@ -172,10 +173,12 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           res.class!
                         )}-${subclassSlugify(res.name)}`}
                       >
-                        <img
+                        <Image
                           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                           src={operatorSubclassIcon(res.subProfession!)}
                           alt={res.subProfession}
+                          height={40}
+                          width={40}
                         />
                         <div className="classes-info">
                           {res.name}
@@ -189,10 +192,12 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                         href={`/operators#${slugify(res.class!)}`}
                       >
-                        <img
+                        <Image
                           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                           src={operatorClassIcon(res.class!.toLowerCase())}
                           alt={res.class}
+                          width={40}
+                          height={40}
                         />
                         <div className="classes-info">
                           {res.name}

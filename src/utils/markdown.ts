@@ -5,7 +5,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeRewrite from "rehype-rewrite";
 import rehypeStringify from "rehype-stringify";
 
-const selfClosingTagRegex = /<([^>]+) \/>/;
+const selfClosingTagRegex = /^<([^>]+) \/>$/;
 
 /**
  * Converts a markdown string to an HTML string.

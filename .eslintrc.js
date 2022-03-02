@@ -45,5 +45,4 @@ module.exports = {
     "react-hooks/exhaustive-deps": "warn",
     "prettier/prettier": "warn",
   },
-  ignorePatterns: ["**/*.stories.tsx"],
 };

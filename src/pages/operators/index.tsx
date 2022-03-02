@@ -34,6 +34,7 @@ import { fetchContentfulGraphQl } from "../../utils/fetch";
 import Image from "next/image";
 import { GetStaticProps } from "next";
 import { DenormalizedCharacter } from "../../../scripts/types";
+import { markdownToHtmlString } from "../../utils/markdown";
 
 const OperatorList = loadable(() => import("../../components/OperatorList"));
 
@@ -68,11 +69,11 @@ interface Props {
   classes: {
     className: string;
     profession: string;
-    analysis: string; // MDX
+    analysis: string; // html
   }[];
   branches: {
     subProfessionId: string;
-    analysis: string; // MDX
+    analysis: string; // html
     class: {
       profession: string;
     };
@@ -161,8 +162,18 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const props: Props = {
     allOperators,
-    classes: operatorClassCollection.items,
-    branches: operatorSubclassCollection.items,
+    classes: await Promise.all(
+      operatorClassCollection.items.map(async (item) => ({
+        ...item,
+        analysis: await markdownToHtmlString(item.analysis),
+      }))
+    ),
+    branches: await Promise.all(
+      operatorSubclassCollection.items.map(async (item) => ({
+        ...item,
+        analysis: await markdownToHtmlString(item.analysis),
+      }))
+    ),
     operatorsWithGuides: operatorAnalysisCollection.items.map(
       (item) => item.operator.name
     ),

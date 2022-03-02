@@ -271,9 +271,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       ),
       synergies: operatorAnalysis.synergiesCollection?.items ?? [],
     },
-    operatorObject,
-    summons,
-    allOperators: operatorsJson as Record<string, CharacterObject>,
+    operatorObject: operatorObject as unknown as CharacterObject,
+    summons: summons as unknown as CharacterObject[],
+    allOperators: operatorsJson as unknown as Record<string, CharacterObject>,
   };
   return { props };
 };

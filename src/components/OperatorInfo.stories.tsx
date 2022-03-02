@@ -1,4 +1,5 @@
 import { Meta, Story } from "@storybook/react";
+import { CharacterObject } from "../utils/types";
 import OperatorInfo, { OperatorInfoProps } from "./OperatorInfo";
 
 export default {
@@ -230,7 +231,7 @@ Mudrock.args = {
         ],
       },
     ],
-  },
+  } as unknown as CharacterObject,
 };
 
 export const Skalter = Template.bind({});
@@ -2250,5 +2251,5 @@ Skalter.args = {
     cnName: "浊心斯卡蒂",
     isCnOnly: true,
     fileIndex: 227,
-  },
+  } as unknown as CharacterObject,
 };

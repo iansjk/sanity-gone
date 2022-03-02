@@ -58,7 +58,7 @@ export interface SkillObject {
   skillId: string;
   iconId: string | null;
   levels: SkillLevelObject[];
-  hidden: unknown; // unused
+  [otherProperties: string]: unknown;
 }
 
 export interface SkillInfoProps {

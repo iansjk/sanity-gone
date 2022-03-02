@@ -1,5 +1,8 @@
 import { Meta, Story } from "@storybook/react";
+import { CharacterObject } from "../utils/types";
 import CharacterStats, { CharacterStatsProps } from "./CharacterStats";
+import { SkillObject } from "./SkillInfo";
+import { TalentObject } from "./TalentInfo";
 
 export default {
   title: "Introduction/CharacterStats",
@@ -749,7 +752,7 @@ Mudrock.args = {
           },
         ],
       },
-    ],
+    ] as unknown as TalentObject[],
     potentialRanks: [
       {
         type: 0,
@@ -3100,7 +3103,7 @@ Mudrock.args = {
     subProfessionId: "unyield",
     isCnOnly: false,
     fileIndex: 183,
-  },
+  } as unknown as CharacterObject,
 };
 
 export const Freeling = Template.bind({});
@@ -3595,7 +3598,7 @@ Freeling.args = {
           },
         ],
       },
-    ],
+    ] as unknown as TalentObject[],
     potentialRanks: [],
     favorKeyFrames: [
       {
@@ -3675,5 +3678,5 @@ Freeling.args = {
     isCnOnly: false,
     fileIndex: 209,
     operatorName: "Dusk",
-  },
+  } as unknown as CharacterObject,
 };

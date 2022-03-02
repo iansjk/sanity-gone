@@ -74,6 +74,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
     if (!query || !index || !store) return [];
 
     const rawResults = index.search(query);
+    // @ts-expect-error: hacky way to get the results (this is actually a Promise[])
     return rawResults.map((index): SearchResult => store[index.toString()]);
   }, [index, query, store]);
 

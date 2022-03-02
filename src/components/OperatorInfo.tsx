@@ -46,7 +46,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   const operatorClass = professionToClass(profession);
   const subclass = subProfessionIdToSubclass(subProfessionId);
   const rarity = rawRarity + 1; // 0-indexed;
-  const position = description
+  const position = description!
     .toLowerCase()
     .includes("can be deployed on ranged grids")
     ? "Melee or Ranged"
@@ -54,7 +54,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   const attackType = getAttackType(
     professionToClass(profession),
     subProfessionId,
-    description
+    description!
   );
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));

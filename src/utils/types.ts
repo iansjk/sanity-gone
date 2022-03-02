@@ -50,8 +50,7 @@ export interface CharacterObject {
   favorKeyFrames: FavorKeyFrame[] | null;
   potentialRanks: PotentialRanks[];
   talents: TalentObject[];
-  skills: SkillObject[];
-
+  skillData: SkillObject[];
   [otherProperties: string]: unknown;
 }
 
@@ -93,6 +92,7 @@ export interface PotentialRanks {
   } | null;
   type: number;
   description: string;
+  equivalentCost: unknown; // unused
 }
 
 export interface PotentialStatChange {

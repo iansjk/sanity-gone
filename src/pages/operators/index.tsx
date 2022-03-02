@@ -83,20 +83,18 @@ interface Props {
 
 export const getStaticProps: GetStaticProps = async () => {
   const operatorsJson = await import("../../../data/operators.json");
-  const allOperators = Object.values(operatorsJson.default).map(
-    (operator: DenormalizedCharacter) => {
-      const { charId, name, isCnOnly, profession, subProfessionId, rarity } =
-        operator;
-      return {
-        charId,
-        name,
-        isCnOnly,
-        profession,
-        subProfessionId,
-        rarity,
-      };
-    }
-  );
+  const allOperators = Object.values(operatorsJson.default).map((operator) => {
+    const { charId, name, isCnOnly, profession, subProfessionId, rarity } =
+      operator as DenormalizedCharacter;
+    return {
+      charId,
+      name,
+      isCnOnly,
+      profession,
+      subProfessionId,
+      rarity,
+    };
+  });
   const query = `
     query {
       operatorClassCollection {

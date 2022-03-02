@@ -68,6 +68,7 @@ export interface DenormalizedCharacter extends SharedProperties {
         }[];
       }[]
     | null;
+  fileIndex: number;
 }
 
 export interface SearchResult {

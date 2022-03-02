@@ -253,7 +253,15 @@ void (async () => {
     (character) => character.profession !== "TOKEN"
   );
   const operatorsJson = Object.fromEntries(
-    denormalizedOperators.map((character) => [character.name, character])
+    denormalizedOperators
+      .map(
+        (character) =>
+          [character.name, character] as [string, DenormalizedCharacter]
+      )
+      .sort(([_, charA], [__, charB]) => {
+        // sort by descending rarity and descending fileIndex
+        return charB.rarity - charA.rarity || charB.fileIndex - charA.fileIndex;
+      })
   );
   fs.writeFileSync(
     path.join(dataDir, "operators.json"),

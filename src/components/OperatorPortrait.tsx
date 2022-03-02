@@ -1,10 +1,9 @@
-import { css } from "@emotion/react";
-import { useTheme, Theme } from "@mui/material";
+import { css, Theme, useTheme } from "@mui/material";
+import Image from "next/image";
 
 import { operatorImage } from "../utils/images";
 import TiltedStarIcon from "./icons/TiltedStarIcon";
 import StarIcon from "./icons/StarIcon";
-import Image from "next/image";
 
 const imageSize = {
   normal: 96,
@@ -43,12 +42,11 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
         </span>
       )}
       <Image
-        className="operator-portrait"
+        className={`operator-portrait ${variant}`}
         src={iconOverride ?? operatorImage(name)}
         alt=""
         width={imageSize[variant]}
         height={imageSize[variant]}
-        style={{ margin: portraitMargin }}
       />
       {rarity && (
         <span className={`rarity-wrapper ${variant}`}>
@@ -85,6 +83,14 @@ const styles = (theme: Theme) => css`
   .operator-portrait {
     border-radius: ${theme.spacing(0.25)};
     object-fit: scale-down;
+
+    &.normal {
+      margin-bottom: ${theme.spacing(0.5)};
+    }
+
+    &.small {
+      margin-bottom: ${theme.spacing(0.25)};
+    }
   }
 
   .limited-wrapper {

@@ -406,7 +406,7 @@
       ],
       "cnName": "医疗探机",
       "isCnOnly": false,
-      "fileIndex": 201,
+      "fileIndex": 193,
       "operatorName": "Silence"
     }
   ],
@@ -822,7 +822,7 @@
       "skillData": [],
       "cnName": "触手",
       "isCnOnly": false,
-      "fileIndex": 202,
+      "fileIndex": 194,
       "operatorName": "Deepcolor"
     }
   ],
@@ -1411,7 +1411,7 @@
       "skillData": [],
       "cnName": "Mon3tr",
       "isCnOnly": false,
-      "fileIndex": 203,
+      "fileIndex": 195,
       "operatorName": "Kal'tsit"
     }
   ],
@@ -1837,7 +1837,7 @@
       "skillData": [],
       "cnName": "幻影",
       "isCnOnly": false,
-      "fileIndex": 204,
+      "fileIndex": 196,
       "operatorName": "Nightingale"
     }
   ],
@@ -3328,7 +3328,7 @@
       ],
       "cnName": "机械水獭",
       "isCnOnly": false,
-      "fileIndex": 205,
+      "fileIndex": 197,
       "operatorName": "Mayer"
     }
   ],
@@ -4525,7 +4525,7 @@
       ],
       "cnName": "龙腾.F",
       "isCnOnly": false,
-      "fileIndex": 206,
+      "fileIndex": 198,
       "operatorName": "Magallan"
     },
     {
@@ -5624,7 +5624,7 @@
       ],
       "cnName": "龙腾.L",
       "isCnOnly": false,
-      "fileIndex": 207,
+      "fileIndex": 199,
       "operatorName": "Magallan"
     },
     {
@@ -6819,7 +6819,7 @@
       ],
       "cnName": "龙腾.A",
       "isCnOnly": false,
-      "fileIndex": 208,
+      "fileIndex": 200,
       "operatorName": "Magallan"
     }
   ],
@@ -7550,7 +7550,7 @@
       ],
       "cnName": "诅咒娃娃",
       "isCnOnly": false,
-      "fileIndex": 209,
+      "fileIndex": 201,
       "operatorName": "Shamare"
     }
   ],
@@ -9460,7 +9460,7 @@
       ],
       "cnName": "镜中虚影",
       "isCnOnly": false,
-      "fileIndex": 210,
+      "fileIndex": 202,
       "operatorName": "Phantom"
     }
   ],
@@ -10153,7 +10153,7 @@
       ],
       "cnName": "此面向敌",
       "isCnOnly": false,
-      "fileIndex": 211,
+      "fileIndex": 203,
       "operatorName": "W"
     }
   ],
@@ -11456,7 +11456,7 @@
       ],
       "cnName": "工程蓄水炮",
       "isCnOnly": false,
-      "fileIndex": 212,
+      "fileIndex": 204,
       "operatorName": "Weedy"
     }
   ],
@@ -13238,7 +13238,7 @@
       ],
       "cnName": "移动摄影器",
       "isCnOnly": false,
-      "fileIndex": 213,
+      "fileIndex": 205,
       "operatorName": "Scene"
     }
   ],
@@ -14357,7 +14357,7 @@
       ],
       "cnName": "沙之碑",
       "isCnOnly": false,
-      "fileIndex": 214,
+      "fileIndex": 206,
       "operatorName": "Beeswax"
     }
   ],
@@ -15265,7 +15265,7 @@
       ],
       "cnName": "迷迭香的战术装备",
       "isCnOnly": false,
-      "fileIndex": 215,
+      "fileIndex": 207,
       "operatorName": "Rosmontis"
     }
   ],
@@ -16257,7 +16257,7 @@
       ],
       "cnName": "\"夹子\"",
       "isCnOnly": false,
-      "fileIndex": 216,
+      "fileIndex": 208,
       "operatorName": "Robin"
     }
   ],
@@ -16643,7 +16643,7 @@
       "skillData": [],
       "cnName": "磐蟹护卫队",
       "isCnOnly": false,
-      "fileIndex": 217,
+      "fileIndex": 209,
       "operatorName": "Beanstalk"
     }
   ],
@@ -17216,7 +17216,7 @@
       "skillData": [],
       "cnName": "\"小自在\"",
       "isCnOnly": false,
-      "fileIndex": 218,
+      "fileIndex": 210,
       "operatorName": "Dusk"
     }
   ],
@@ -18208,7 +18208,7 @@
       ],
       "cnName": "迎宾踏垫",
       "isCnOnly": false,
-      "fileIndex": 219,
+      "fileIndex": 211,
       "operatorName": "Frost"
     }
   ],
@@ -19931,7 +19931,7 @@
       ],
       "cnName": "斯卡蒂的海嗣",
       "isCnOnly": false,
-      "fileIndex": 220,
+      "fileIndex": 212,
       "operatorName": "Skadi the Corrupting Heart"
     }
   ],
@@ -20437,7 +20437,7 @@
       ],
       "cnName": "全自动造型仪",
       "isCnOnly": true,
-      "fileIndex": 253,
+      "fileIndex": 244,
       "operatorName": "Roberta"
     }
   ],
@@ -21434,7 +21434,7 @@
       ],
       "cnName": "“耀阳”",
       "isCnOnly": true,
-      "fileIndex": 254,
+      "fileIndex": 245,
       "operatorName": "Nearl the Radiant Knight"
     }
   ],
@@ -22477,7 +22477,7 @@
       ],
       "cnName": "“清平”",
       "isCnOnly": true,
-      "fileIndex": 255,
+      "fileIndex": 246,
       "operatorName": "Ling"
     },
     {
@@ -23901,7 +23901,7 @@
       ],
       "cnName": "“逍遥”",
       "isCnOnly": true,
-      "fileIndex": 256,
+      "fileIndex": 247,
       "operatorName": "Ling"
     },
     {
@@ -25709,7 +25709,7 @@
       ],
       "cnName": "“弦惊”",
       "isCnOnly": true,
-      "fileIndex": 257,
+      "fileIndex": 248,
       "operatorName": "Ling"
     }
   ],
@@ -26202,7 +26202,7 @@
       ],
       "cnName": "眠兽",
       "isCnOnly": true,
-      "fileIndex": 258,
+      "fileIndex": 249,
       "operatorName": "Blacknight"
     }
   ]

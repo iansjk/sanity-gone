@@ -8,6 +8,7 @@ interface SharedProperties {
   tokenKey: string | null;
   subProfessionId: string;
   rarity: number;
+  isNotObtainable: boolean;
   trait: {
     candidates: {
       blackboard: InterpolatedValue[];
@@ -52,7 +53,6 @@ interface Range {
 }
 
 export interface DenormalizedCharacter extends SharedProperties {
-  isNotObtainable?: boolean;
   charId: string;
   isCnOnly: boolean;
   phases: {

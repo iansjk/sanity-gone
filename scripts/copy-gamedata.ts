@@ -131,7 +131,10 @@ void (async () => {
       GameDataCharacter
     ][]
   )
-    .filter(([_, character]) => character.profession !== "TRAP")
+    .filter(
+      ([_, character]) =>
+        character.profession !== "TRAP" && !character.isNotObtainable
+    )
     .map(([charId, character], i) => {
       const isCnOnly = !enCharacterIds.has(charId);
       const characterName = useNameOverride(
@@ -141,6 +144,7 @@ void (async () => {
       character.skills
         .filter((skill) => skill.overrideTokenKey != null)
         .forEach((skill) => {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           summonIdToOperatorName[skill.overrideTokenKey!] = characterName;
         });
 
@@ -183,6 +187,7 @@ void (async () => {
       const skillData = character.skills
         .filter((skill) => skill.skillId != null)
         .map((skill) => {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           const skillId = skill.skillId!;
           const baseSkillObject = isCnOnly
             ? cnSkillTable[skillId as keyof typeof cnSkillTable]
@@ -305,6 +310,7 @@ void (async () => {
       .filter((name) => !EXCLUDED_BRANCHES.has(name))
       .map((subprof) => {
         // Parse trait description for operator
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const firstOp = denormalizedOperators.find(
           (op) => op.subProfessionId === subprof && op.rarity > 1 // no robots
         )!;

@@ -14,6 +14,7 @@ import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
 import { CharacterObject } from "../utils/types";
 import OperatorPortrait from "./OperatorPortrait";
 import Link from "next/link";
+import Image from "next/image";
 
 export interface OperatorInfoProps {
   operatorObject: CharacterObject;
@@ -83,18 +84,22 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
             <a className="class-and-subclass">
               <span className="class-icon-container">
                 <Tooltip title={operatorClass}>
-                  <img
+                  <Image
                     className="class-icon"
                     src={operatorClassIcon(operatorClass.toLowerCase())}
                     alt=""
+                    width={24}
+                    height={24}
                   />
                 </Tooltip>
               </span>
               <span className="subclass-icon-container">
-                <img
+                <Image
                   className="subclass-icon"
                   src={operatorSubclassIcon(subProfessionId)}
                   alt=""
+                  width={24}
+                  height={24}
                 />
                 {subclass}
               </span>

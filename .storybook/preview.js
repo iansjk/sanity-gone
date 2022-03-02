@@ -48,4 +48,9 @@ const styles = (theme) => css`
   .navbar {
     display: none !important;
   }
+
+  .header-main-wrapper {
+    margin: unset !important;
+    padding: ${theme.spacing(3)} !important;
+  }
 `;

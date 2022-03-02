@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 import { MdClose as CloseIcon } from "react-icons/md";
+import Link from "next/link";
 
 import SanityGoneLogo from "./SanityGoneLogo";
 import SearchBar from "./SearchBar";
@@ -60,10 +61,14 @@ const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
               {!isSearchOpen && (
                 <>
                   <li>
-                    <a href="/operators">Operators</a>
+                    <Link href="/operators">
+                      <a>Operators</a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/about">About</a>
+                    <Link href="/about">
+                      <a>About</a>
+                    </Link>
                   </li>
                 </>
               )}

@@ -19,7 +19,6 @@ export const markdownToHtmlString = async (markdownString: string) => {
   const vfile = await unified()
     .use(remarkParse)
     .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeRaw)
     .use(rehypeRewrite, {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       rewrite: (node: any) => {
@@ -43,6 +42,7 @@ export const markdownToHtmlString = async (markdownString: string) => {
         }
       },
     })
+    .use(rehypeRaw)
     .use(rehypeStringify)
     .process(markdownString);
   return vfile.toString();

@@ -287,26 +287,6 @@ void (async () => {
     JSON.stringify(summonsJson, null, 2)
   );
 
-  const denormalizedSkills = Object.entries(enSkillTable).map(([_, skill]) => {
-    const levels = skill.levels.map((level) => ({
-      ...level,
-      range: level.rangeId
-        ? rangeTable[level.rangeId as keyof typeof rangeTable]
-        : null,
-    }));
-    return {
-      ...skill,
-      levels,
-    };
-  });
-  const skillsJson = Object.fromEntries(
-    denormalizedSkills.map((skill) => [skill.skillId, skill])
-  );
-  fs.writeFileSync(
-    path.join(dataDir, "skills.json"),
-    JSON.stringify(skillsJson, null, 2)
-  );
-
   const enSubProfessions = new Set(Object.keys(enUniequipTable.subProfDict));
   const cnOnlySubProfessions = new Set(
     Object.keys(cnUniequipTable.subProfDict).filter(

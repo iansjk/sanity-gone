@@ -66,6 +66,7 @@ const styles = (theme: Theme) => css`
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: center;
 
       img {
         display: block;

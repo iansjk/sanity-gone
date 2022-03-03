@@ -273,7 +273,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     operatorObject: operatorObject as unknown as CharacterObject,
     summons: summons as unknown as CharacterObject[],
-    allOperators: operatorsJson as unknown as Record<string, CharacterObject>,
+    allOperators: Object.fromEntries(
+      Object.entries(operatorsJson).map(
+        ([opName, op]: [string, CharacterObject]) => [
+          opName,
+          {
+            rarity: op.rarity,
+            profession: op.profession,
+            subProfessionId: op.subProfessionId,
+          },
+        ]
+      )
+    ),
   };
   return { props };
 };
@@ -316,7 +327,12 @@ interface Props {
   };
   operatorObject: CharacterObject;
   summons: CharacterObject[];
-  allOperators: { [operatorName: string]: CharacterObject };
+  allOperators: {
+    [operatorName: string]: Pick<
+      CharacterObject,
+      "rarity" | "profession" | "subProfessionId"
+    >;
+  };
 }
 
 const OperatorAnalysis: React.VFC<Props> = (props) => {

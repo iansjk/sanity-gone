@@ -85,7 +85,6 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
               <span className="class-icon-container">
                 <Tooltip title={operatorClass}>
                   <Image
-                    className="class-icon"
                     src={operatorClassIcon(operatorClass.toLowerCase())}
                     alt=""
                     width={24}
@@ -95,7 +94,6 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
               </span>
               <span className="subclass-icon-container">
                 <Image
-                  className="subclass-icon"
                   src={operatorSubclassIcon(subProfessionId)}
                   alt=""
                   width={24}
@@ -214,13 +212,6 @@ const styles = (theme: Theme) => css`
           font-size: ${theme.typography.body1.fontSize}px;
         }
 
-        .class-icon,
-        .subclass-icon {
-          width: ${theme.spacing(3)};
-          height: ${theme.spacing(3)};
-          line-height: 1;
-        }
-
         .class-icon-container {
           padding: ${theme.spacing(1)};
           display: flex;
@@ -231,16 +222,14 @@ const styles = (theme: Theme) => css`
         }
 
         .subclass-icon-container {
-          padding: ${theme.spacing(1, 1.5)};
-          display: flex;
+          display: grid;
+          grid-auto-flow: column;
+          column-gap: ${theme.spacing(1)};
           align-items: center;
+          padding: ${theme.spacing(1, 1.5)};
           background-color: ${theme.palette.midtoneBrighter.main};
           border: 1px solid ${theme.palette.midtoneBrighter.main};
           border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
-
-          .subclass-icon {
-            margin-right: ${theme.spacing(1)};
-          }
         }
       }
     }

@@ -72,6 +72,9 @@ export default OperatorPortrait;
 
 const styles = (theme: Theme) => css`
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: ${theme.spacing(0.5)};
   border: ${theme.spacing(0.25)} solid ${theme.palette.white.main};
   background: ${theme.palette.midtoneExtra.main};

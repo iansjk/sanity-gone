@@ -136,13 +136,14 @@ const SkillInfo: React.VFC<
             />
           </div>
           <div className="skill-name-and-type">
-            <Image
-              className="skill-icon"
-              src={skillIcon(iconId, skillId)}
-              alt=""
-              width={50}
-              height={50}
-            />
+            <div className="skill-icon">
+              <Image
+                src={skillIcon(iconId, skillId)}
+                alt=""
+                width={50}
+                height={50}
+              />
+            </div>
             <h3 className="skill-name">{name}</h3>
             <span className="skill-and-sp-type">
               {SkillType[levels[skillLevel - 1].skillType] !== "Passive" && (

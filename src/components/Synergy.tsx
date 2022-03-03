@@ -34,12 +34,11 @@ const Synergy: React.VFC<
     rarity: rawRarity,
     profession,
     subProfessionId,
-    ...rest
   } = props;
   const rarity = rawRarity ? rawRarity + 1 : undefined;
 
   return (
-    <section css={styles} {...rest}>
+    <section css={styles}>
       <div className="synergy-header">
         <div className="portrait">
           <OperatorPortrait

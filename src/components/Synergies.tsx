@@ -58,9 +58,31 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
         }
         return button;
       })}
-      panels={sortedSynergies.map((synOp) => (
-        <Synergy key={synOp.name} {...synOp} />
-      ))}
+      panels={sortedSynergies.map((synOp) => {
+        const {
+          name,
+          analysis,
+          isGroup,
+          iconUrl,
+          rarity,
+          profession,
+          subProfessionId,
+          shouldInvertIconOnHighlight,
+        } = synOp;
+        return (
+          <Synergy
+            key={synOp.name}
+            name={name}
+            isGroup={isGroup}
+            analysis={analysis}
+            iconUrl={iconUrl}
+            rarity={rarity}
+            profession={profession}
+            subProfessionId={subProfessionId}
+            shouldInvertIconOnHighlight={shouldInvertIconOnHighlight}
+          />
+        );
+      })}
     />
   );
 };

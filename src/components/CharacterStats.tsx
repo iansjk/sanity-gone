@@ -589,6 +589,7 @@ const styles = (theme: Theme) => css`
     .summon-icon {
       grid-row-start: span 2;
       border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+      justify-content: center;
 
       ${theme.breakpoints.down("mobile")} {
         grid-row-start: unset;

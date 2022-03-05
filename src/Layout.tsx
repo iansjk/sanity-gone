@@ -98,6 +98,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
                       height: bannerImageProps?.height,
                     }
                   : {})}
+                priority
+                placeholder="blur"
               />
               <div className="banner-image-gradient-overlay" />
             </div>

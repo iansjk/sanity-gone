@@ -7,7 +7,7 @@ import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
 import StarIcon from "./icons/StarIcon";
 import Image from "next/image";
 import Link from "next/link";
-import { operatorSubclassIcon } from "../utils/images";
+import { operatorBranchIcon } from "../utils/images";
 
 const getPortraitFilename = (operatorId: string) => `${operatorId}_1.png`;
 
@@ -159,7 +159,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                       width={32}
                       height={32}
                       className="operator-subclass-icon"
-                      src={operatorSubclassIcon(op.subProfessionId)}
+                      src={operatorBranchIcon(op.subProfessionId)}
                       alt={""}
                     />
                   </button>

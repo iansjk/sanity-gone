@@ -2,7 +2,7 @@ import React from "react";
 import branches from "../../data/branches.json";
 import { Theme } from "@mui/material";
 import { css } from "@emotion/react";
-import { operatorSubclassIcon } from "../utils/images";
+import { operatorBranchIcon } from "../utils/images";
 import Image from "next/image";
 
 interface TraitInfoProps {
@@ -27,7 +27,7 @@ const TraitInfo: React.VFC<TraitInfoProps> = ({
       {showSubclassIcon && (
         <div className="subclass-icon">
           <Image
-            src={operatorSubclassIcon(subProfessionId)}
+            src={operatorBranchIcon(subProfessionId)}
             alt=""
             width={48}
             height={48}

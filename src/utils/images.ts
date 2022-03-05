@@ -12,7 +12,7 @@ export const summonImage = (id: string): string => `/images/summons/${id}.png`;
 export const operatorClassIcon = (operatorClass: string): string =>
   `/images/classes/${operatorClass}.png`;
 
-export const operatorSubclassIcon = (subProfessionId: string): string =>
+export const operatorBranchIcon = (subProfessionId: string): string =>
   `/images/branches/${subProfessionId}.png`;
 
 export const skillIcon = (iconId: string | null, skillId: string): string =>

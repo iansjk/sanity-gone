@@ -38,7 +38,7 @@ import { GetStaticProps } from "next";
 import { DenormalizedCharacter } from "../../../scripts/types";
 import { markdownToHtmlString } from "../../utils/markdown";
 import operatorListBannerImage from "../../images/page-banners/operators.jpg";
-import { operatorClassIcon, operatorSubclassIcon } from "../../utils/images";
+import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
 
 const MENU_ICON_SIZE = 18;
 
@@ -366,7 +366,7 @@ const Operators: React.VFC<Props> = (props) => {
         {selectedSubProfessionId ? (
           <>
             <Image
-              src={operatorSubclassIcon(selectedSubProfessionId)}
+              src={operatorBranchIcon(selectedSubProfessionId)}
               alt=""
               width={MENU_ICON_SIZE}
               height={MENU_ICON_SIZE}
@@ -409,7 +409,7 @@ const Operators: React.VFC<Props> = (props) => {
             >
               <ListItemIcon>
                 <Image
-                  src={operatorSubclassIcon(subProfessionId)}
+                  src={operatorBranchIcon(subProfessionId)}
                   alt=""
                   width={MENU_ICON_SIZE}
                   height={MENU_ICON_SIZE}
@@ -514,7 +514,7 @@ const Operators: React.VFC<Props> = (props) => {
                   <section className="subclass-card">
                     <div className="icon-container">
                       <Image
-                        src={operatorSubclassIcon(selectedSubProfessionId)}
+                        src={operatorBranchIcon(selectedSubProfessionId)}
                         alt=""
                         width={64}
                         height={64}

@@ -10,7 +10,7 @@ import {
   subProfessionIdToSubclass,
   toTitleCase,
 } from "../utils/globals";
-import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
+import { operatorClassIcon, operatorBranchIcon } from "../utils/images";
 import { CharacterObject } from "../utils/types";
 import OperatorPortrait from "./OperatorPortrait";
 import Link from "next/link";
@@ -94,7 +94,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
               </Tooltip>
               <span className="subclass-icon-container">
                 <Image
-                  src={operatorSubclassIcon(subProfessionId)}
+                  src={operatorBranchIcon(subProfessionId)}
                   alt=""
                   width={24}
                   height={24}

@@ -4,7 +4,7 @@ import FlexSearch from "flexsearch";
 import {
   operatorClassIcon,
   operatorImage,
-  operatorSubclassIcon,
+  operatorBranchIcon,
 } from "../utils/images";
 import gatsbySlugify from "@sindresorhus/slugify";
 import { css } from "@emotion/react";
@@ -180,7 +180,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                       >
                         <Image
                           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                          src={operatorSubclassIcon(res.subProfession!)}
+                          src={operatorBranchIcon(res.subProfession!)}
                           alt={res.subProfession}
                           height={40}
                           width={40}

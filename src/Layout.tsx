@@ -93,6 +93,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 src={bannerImage ?? bannerImageProps!.url}
                 priority
+                quality={100}
+                layout="responsive"
+                objectFit="cover"
                 placeholder={bannerImage != null ? "blur" : "empty"}
                 {...(bannerImage == null
                   ? {
@@ -252,11 +255,26 @@ const styles =
 
         .banner-image-container {
           grid-area: top-fold;
+          display: flex;
+          justify-content: center;
+          background: linear-gradient(
+              to bottom,
+              transparent ${0.3576 * blendPoint}px,
+              ${rgba(theme.palette.dark.main, 0.75)} ${0.7083 * blendPoint}px,
+              ${theme.palette.dark.main} ${blendPoint}px
+            ),
+            linear-gradient(
+              to bottom,
+              ${theme.palette.black.main},
+              ${theme.palette.black.main} ${blendPoint}px,
+              ${theme.palette.dark.main} ${blendPoint}px
+            );
 
           .banner-image-wrapper {
             display: grid;
             grid-template-areas: "banner";
-            background-color: ${theme.palette.black.main};
+            width: min(100vw, 1920px);
+            height: 576px;
 
             & > * {
               grid-area: banner;

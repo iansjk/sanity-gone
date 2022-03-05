@@ -411,8 +411,6 @@ const styles = (theme: Theme) => css`
           .rarity-star {
             width: 13px;
             height: 13px;
-            position: relative;
-            top: -1px;
           }
         }
 

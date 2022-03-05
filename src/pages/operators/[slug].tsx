@@ -224,12 +224,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const operatorAnalysis = data.operatorAnalysisCollection.items[0];
   const { name: operatorName } = operatorAnalysis.operator;
-  const operatorObject =
-    operatorsJson[operatorName as keyof typeof operatorsJson];
+  const operatorObject = operatorsJson[
+    operatorName as keyof typeof operatorsJson
+  ] as unknown as CharacterObject;
   const summons = summonsJson[operatorName as keyof typeof summonsJson] ?? [];
 
   const markdownListItemRegex = /^\s*-\s(.+)$/;
   const props: Props = {
+    charId: operatorObject.charId,
     guide: {
       operator: operatorAnalysis.operator,
       customByline: operatorAnalysis.customByline,
@@ -271,7 +273,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       ),
       synergies: operatorAnalysis.synergiesCollection?.items ?? [],
     },
-    operatorObject: operatorObject as unknown as CharacterObject,
+    operatorObject,
     summons: summons as unknown as CharacterObject[],
     allOperators: Object.fromEntries(
       Object.entries(operatorsJson).map(([opName, op]) => [
@@ -288,6 +290,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 interface Props {
+  charId: string; // for aceship.json in postbuild task
   guide: {
     operator: {
       accentColorInHex: string;

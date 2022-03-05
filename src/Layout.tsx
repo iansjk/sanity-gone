@@ -247,8 +247,9 @@ const styles =
       .site-wrapper {
         height: 100vh;
         display: grid;
-        grid-template-rows: 1fr max-content;
         grid-template-areas: "top-fold" "footer";
+        grid-template-rows: 1fr max-content;
+        grid-template-columns: 100%;
 
         .top-fold {
           grid-area: top-fold;

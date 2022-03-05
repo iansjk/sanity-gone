@@ -214,6 +214,7 @@ const Operators: React.VFC<Props> = (props) => {
 
   useEffect(() => {
     window.addEventListener("hashchange", hashChangeCallback);
+    hashChangeCallback(); // run once on mount
     return () => window.removeEventListener("hashchange", hashChangeCallback);
   }, [hashChangeCallback]);
 

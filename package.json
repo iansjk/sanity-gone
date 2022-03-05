@@ -7,6 +7,7 @@
   "scripts": {
     "start": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "preview": "next start",
     "lint": "next lint",
     "update-game-data": "git submodule update --init --recursive --remote && ts-node-script ./scripts/copy-gamedata.ts",
@@ -75,6 +76,7 @@
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-storybook": "^0.5.5",
+    "next-sitemap": "^2.5.4",
     "prettier": "^2.3.2",
     "ts-node": "^10.5.0",
     "typescript": "^4.6.0"

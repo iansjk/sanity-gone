@@ -201,51 +201,49 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                       .slice(0, 3) // limit of 3 subclass or class results
                       .map((res) => {
                         return res.type === "branch" ? (
-                          <Link
+                          <a
                             key={res.name}
+                            className="classes-card"
                             href={`/operators#${slugify(
                               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                               res.class!
                             )}-${subclassSlugify(res.name)}`}
                           >
-                            <a className="classes-card">
-                              <Image
-                                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                                src={operatorBranchIcon(res.subProfession!)}
-                                alt={res.subProfession}
-                                height={40}
-                                width={40}
-                              />
-                              <div className="classes-info">
-                                {res.name}
-                                <span className="class-name">
-                                  {res.class} Branch
-                                </span>
-                              </div>
-                            </a>
-                          </Link>
+                            <Image
+                              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                              src={operatorBranchIcon(res.subProfession!)}
+                              alt={res.subProfession}
+                              height={40}
+                              width={40}
+                            />
+                            <div className="classes-info">
+                              {res.name}
+                              <span className="class-name">
+                                {res.class} Branch
+                              </span>
+                            </div>
+                          </a>
                         ) : (
-                          <Link
+                          <a
                             key={res.name}
+                            className="classes-card"
                             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                             href={`/operators#${slugify(res.class!)}`}
                           >
-                            <a className="classes-card">
-                              <Image
-                                src={operatorClassIcon(
-                                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                                  res.class!.toLowerCase()
-                                )}
-                                alt={res.class}
-                                width={40}
-                                height={40}
-                              />
-                              <div className="classes-info">
-                                {res.name}
-                                <span className="class-name">Class</span>
-                              </div>
-                            </a>
-                          </Link>
+                            <Image
+                              src={operatorClassIcon(
+                                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                                res.class!.toLowerCase()
+                              )}
+                              alt={res.class}
+                              width={40}
+                              height={40}
+                            />
+                            <div className="classes-info">
+                              {res.name}
+                              <span className="class-name">Class</span>
+                            </div>
+                          </a>
                         );
                       })}
                   </div>

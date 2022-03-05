@@ -37,5 +37,8 @@ void (async () => {
       })
   );
   const aceshipJson = Object.fromEntries(mappings);
+  console.log(`[aceship]: found ${mappings.length} entries`);
+  console.log(aceshipJson);
   fs.writeFileSync(outFilePath, JSON.stringify(aceshipJson));
+  console.log(`✅ [aceship] wrote ${outFilePath}`);
 })();

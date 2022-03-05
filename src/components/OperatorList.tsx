@@ -1,10 +1,8 @@
 import React from "react";
 import { Box, css, Theme, Tooltip } from "@mui/material";
-import slugify from "@sindresorhus/slugify";
 import cx from "clsx";
 import { rgba } from "polished";
 
-import { OperatorListOperator } from "../pages/operators";
 import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
 import StarIcon from "./icons/StarIcon";
 import Image from "next/image";
@@ -12,10 +10,19 @@ import Link from "next/link";
 
 const getPortraitFilename = (operatorId: string) => `${operatorId}_1.png`;
 
+export interface OperatorListOperator {
+  charId: string;
+  name: string;
+  isCnOnly: boolean;
+  profession: string;
+  subProfessionId: string;
+  rarity: number; // 0-indexed
+}
+
 interface Props {
   operators: OperatorListOperator[];
   operatorsToShow: OperatorListOperator[];
-  operatorsWithGuides: string[];
+  operatorsWithGuides: { [operatorName: string]: string }; // operator name -> slug
   onSubclassFilter: (profession: string, subProfessionId: string) => void;
 }
 
@@ -53,7 +60,8 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
         {operators.map((op) => {
           const operatorClass = professionToClass(op.profession);
           const subclass = subProfessionIdToSubclass(op.subProfessionId);
-          const hasGuide = operatorsWithGuides.includes(op.name);
+          const url = operatorsWithGuides[op.name];
+          const hasGuide = url != null;
           const [charName, alterName] = op.name.split(" the ");
           const portraitFilename = getPortraitFilename(op.charId);
 
@@ -118,7 +126,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
               </Box>
               <div className="operator-card-content">
                 {hasGuide && (
-                  <Link href={`/operators/${slugify(op.name)}`}>
+                  <Link href={`/operators/${url}`}>
                     <a
                       className="dummy-clickable-area"
                       tabIndex={-1}
@@ -127,7 +135,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   </Link>
                 )}
                 {hasGuide ? (
-                  <Link href={`/operators/${slugify(op.name)}`}>
+                  <Link href={`/operators/${url}`}>
                     <a
                       className="operator-info"
                       role="presentation"
@@ -157,7 +165,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                 </Tooltip>
                 {/* TODO "NEW" should go here */}
                 {hasGuide ? (
-                  <Link href={`/operators/${slugify(op.name)}`}>
+                  <Link href={`/operators/${url}`}>
                     <a className="go-to-guide-link">
                       <span className="go-to-guide-text">Read Guide</span>
                     </a>

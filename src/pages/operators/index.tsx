@@ -27,7 +27,9 @@ import CustomCheckbox from "../../components/CustomCheckbox";
 import FilterIcon from "../../components/icons/FilterIcon";
 import HorizontalScroller from "../../components/HorizontalScroller";
 import TraitInfo from "../../components/TraitInfo";
-import OperatorList from "../../components/OperatorList";
+import OperatorList, {
+  OperatorListOperator,
+} from "../../components/OperatorList";
 
 import { Media } from "../../Media";
 import { fetchContentfulGraphQl } from "../../utils/fetch";
@@ -54,15 +56,6 @@ const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
   },
 }));
 
-export interface OperatorListOperator {
-  charId: string;
-  name: string;
-  isCnOnly: boolean;
-  profession: string;
-  subProfessionId: string;
-  rarity: number; // 0-indexed
-}
-
 interface Props {
   allOperators: OperatorListOperator[];
   classes: {
@@ -77,7 +70,7 @@ interface Props {
       profession: string;
     };
   }[];
-  operatorsWithGuides: string[]; // names
+  operatorsWithGuides: { [operatorName: string]: string }; // operator name -> slug
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -115,6 +108,7 @@ export const getStaticProps: GetStaticProps = async () => {
       operatorAnalysisCollection {
         items {
           operator {
+            slug
             name
             sys {
               publishedAt
@@ -148,6 +142,7 @@ export const getStaticProps: GetStaticProps = async () => {
     operatorAnalysisCollection: {
       items: {
         operator: {
+          slug: string;
           name: string;
           sys: {
             publishedAt: string;
@@ -171,8 +166,11 @@ export const getStaticProps: GetStaticProps = async () => {
         analysis: await markdownToHtmlString(item.analysis),
       }))
     ),
-    operatorsWithGuides: operatorAnalysisCollection.items.map(
-      (item) => item.operator.name
+    operatorsWithGuides: Object.fromEntries(
+      operatorAnalysisCollection.items.map((item) => [
+        item.operator.name,
+        item.operator.slug,
+      ])
     ),
   };
   return { props };
@@ -271,7 +269,7 @@ const Operators: React.VFC<Props> = (props) => {
     () =>
       allOperators.filter((op) => {
         return (
-          (!showOnlyGuideAvailable || operatorsWithGuides.includes(op.name)) &&
+          (!showOnlyGuideAvailable || operatorsWithGuides[op.name] != null) &&
           (selectedProfession == null ||
             op.profession === selectedProfession) &&
           (selectedSubProfessionId == null ||

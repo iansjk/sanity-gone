@@ -13,6 +13,7 @@ import SearchBar from "./components/SearchBar";
 import WeirdDeathSphere from "./components/WeirdDeathSphere";
 import { Media } from "./Media";
 import config from "./config";
+import Link from "next/link";
 
 interface LayoutProps {
   pageTitle: string;
@@ -97,8 +98,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <div className="navbar-right">
                   <div className="header-links">
                     <div className="link-spacer" />
-                    <a href="/operators">Operators</a>
-                    <a href="/about">About</a>
+                    <Link href="/operators">
+                      <a>Operators</a>
+                    </Link>
+                    <Link href="/about">
+                      <a>About</a>
+                    </Link>
                   </div>
                   <button className="mobile-menu-button" aria-label="Open menu">
                     <MobileMenuIcon

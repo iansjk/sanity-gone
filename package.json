@@ -7,7 +7,7 @@
   "scripts": {
     "start": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
+    "postbuild": "next-sitemap && node aceship.mjs",
     "preview": "next start",
     "lint": "next lint",
     "update-game-data": "git submodule update --init --recursive --remote && ts-node-script ./scripts/copy-gamedata.ts",

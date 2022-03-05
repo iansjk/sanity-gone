@@ -47,6 +47,7 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
         alt=""
         width={imageSize[variant]}
         height={imageSize[variant]}
+        objectFit="cover"
       />
       {rarity && (
         <span className={`rarity-wrapper ${variant}`}>

@@ -1,5 +1,5 @@
 import React from "react";
-import { css, Theme, Tooltip } from "@mui/material";
+import { Box, css, Theme, Tooltip } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
 import cx from "clsx";
 import { rgba } from "polished";
@@ -71,13 +71,21 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   : {}
               }
             >
-              <Image
-                className="operator-portrait"
-                src={`/images/portraits/${portraitFilename}`}
-                alt=""
-                width={180}
-                height={360}
-              />
+              <Box gridArea="x" height="100%" overflow="hidden">
+                <Box
+                  position="relative"
+                  width="100%"
+                  height={0}
+                  paddingBottom="200%"
+                >
+                  <Image
+                    className="operator-portrait"
+                    src={`/images/portraits/${portraitFilename}`}
+                    alt=""
+                    layout="fill"
+                  />
+                </Box>
+              </Box>
               <div className="operator-card-content">
                 {hasGuide && (
                   <a
@@ -130,8 +138,8 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                     }
                   >
                     <Image
-                      width={24}
-                      height={24}
+                      width={32}
+                      height={32}
                       className="operator-subclass-icon"
                       src={`/images/branches/${op.subProfessionId}.png`}
                       alt={""}
@@ -415,9 +423,6 @@ const styles = (theme: Theme) => css`
         }
 
         .operator-subclass-icon {
-          width: ${theme.spacing(4)};
-          height: ${theme.spacing(4)};
-          line-height: 1;
           filter: drop-shadow(
             0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)
           );

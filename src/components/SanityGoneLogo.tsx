@@ -5,8 +5,8 @@ import Link from "next/link";
 const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     // this links to Operators for now because the homepage doesn't exist yet
-    <Link aria-label="Sanity Gone" href="/operators" css={styles}>
-      <a>
+    <Link aria-label="Sanity Gone" href="/operators">
+      <a css={styles}>
         <svg
           width="168"
           height="27"

@@ -116,12 +116,14 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   position="relative"
                   width="100%"
                   height={0}
+                  top="-20px"
                   paddingBottom="200%"
                 >
                   <Image
                     src={`/images/portraits/${portraitFilename}`}
                     alt=""
                     layout="fill"
+                    objectPosition="bottom"
                   />
                 </Box>
               </Box>

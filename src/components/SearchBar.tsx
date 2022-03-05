@@ -15,6 +15,7 @@ import Image from "next/image";
 import search from "../../data/search.json";
 import ReactDOM from "react-dom";
 import Link from "next/link";
+import HashCompatibleNextLink from "./HashCompatibleNextLink";
 
 // Interface representing a search result.
 // This could be either a class, subclass, or operator (denoted by "type").
@@ -202,53 +203,51 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                       .slice(0, 3) // limit of 3 subclass or class results
                       .map((res) => {
                         return res.type === "branch" ? (
-                          // don't use next/link here; it doesn't work with hashes if already on /operators
-                          // see https://github.com/vercel/next.js/issues/5161
-                          <a
+                          <HashCompatibleNextLink
                             key={res.name}
-                            className="classes-card"
                             href={`/operators#${slugify(
                               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                               res.class!
                             )}-${subclassSlugify(res.name)}`}
                           >
-                            <Image
-                              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                              src={operatorBranchIcon(res.subProfession!)}
-                              alt={res.subProfession}
-                              height={40}
-                              width={40}
-                            />
-                            <div className="classes-info">
-                              {res.name}
-                              <span className="class-name">
-                                {res.class} Branch
-                              </span>
-                            </div>
-                          </a>
+                            <a className="classes-card">
+                              <Image
+                                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                                src={operatorBranchIcon(res.subProfession!)}
+                                alt={res.subProfession}
+                                height={40}
+                                width={40}
+                              />
+                              <div className="classes-info">
+                                {res.name}
+                                <span className="class-name">
+                                  {res.class} Branch
+                                </span>
+                              </div>
+                            </a>
+                          </HashCompatibleNextLink>
                         ) : (
-                          // don't use next/link here; it doesn't work with hashes if already on /operators
-                          // see https://github.com/vercel/next.js/issues/5161
-                          <a
+                          <HashCompatibleNextLink
                             key={res.name}
-                            className="classes-card"
                             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                             href={`/operators#${slugify(res.class!)}`}
                           >
-                            <Image
-                              src={operatorClassIcon(
-                                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                                res.class!.toLowerCase()
-                              )}
-                              alt={res.class}
-                              width={40}
-                              height={40}
-                            />
-                            <div className="classes-info">
-                              {res.name}
-                              <span className="class-name">Class</span>
-                            </div>
-                          </a>
+                            <a className="classes-card">
+                              <Image
+                                src={operatorClassIcon(
+                                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                                  res.class!.toLowerCase()
+                                )}
+                                alt={res.class}
+                                width={40}
+                                height={40}
+                              />
+                              <div className="classes-info">
+                                {res.name}
+                                <span className="class-name">Class</span>
+                              </div>
+                            </a>
+                          </HashCompatibleNextLink>
                         );
                       })}
                   </div>

@@ -15,6 +15,7 @@ import { Media } from "./Media";
 import config from "./config";
 import Link from "next/link";
 import Image from "next/image";
+import HashCompatibleNextLink from "./components/HashCompatibleNextLink";
 
 interface BannerImageProps {
   width: number;
@@ -129,9 +130,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <div className="navbar-right">
                   <div className="header-links">
                     <div className="link-spacer" />
-                    <Link href="/operators">
+                    <HashCompatibleNextLink href="/operators">
                       <a>Operators</a>
-                    </Link>
+                    </HashCompatibleNextLink>
                     <Link href="/about">
                       <a>About</a>
                     </Link>

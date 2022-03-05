@@ -193,28 +193,29 @@ const Operators: React.VFC<Props> = (props) => {
   >(null);
   const theme = useTheme();
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const hash = window.location.hash;
-      if (hash.length > 0) {
-        console.log(hash);
-        const classMatch = /^#([^-]*?)(?:-(.*?))?$/.exec(hash);
-        const opClass = classMatch ? classMatch[1] : "";
-        const opSubclass = classMatch
+  const hashChangeCallback = useCallback(() => {
+    const hash = window.location.hash;
+    if (hash.length > 0) {
+      console.log(hash);
+      const classMatch = /^#([^-]*?)(?:-(.*?))?$/.exec(hash);
+      const opClass = classMatch ? classMatch[1] : "";
+      const opSubclass = classMatch
+        ? classMatch[2]
           ? classMatch[2]
-            ? classMatch[2]
-                .split("_")
-                .map((word) => toTitleCase(word))
-                .join(" ")
-            : ""
-          : ""; // yes i nested 2 ternary statements, cry about it
-        console.log(classMatch);
-
-        setSelectedProfession(classToProfession(toTitleCase(opClass)));
-        setSelectedSubProfessionId(subclassToSubProfessionId(opSubclass));
-      }
+              .split("_")
+              .map((word) => toTitleCase(word))
+              .join(" ")
+          : ""
+        : ""; // yes i nested 2 ternary statements, cry about it
+      setSelectedProfession(classToProfession(toTitleCase(opClass)));
+      setSelectedSubProfessionId(subclassToSubProfessionId(opSubclass));
     }
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("hashchange", hashChangeCallback);
+    return () => window.removeEventListener("hashchange", hashChangeCallback);
+  }, [hashChangeCallback]);
 
   const handleGuideAvailableChange = (
     e: React.ChangeEvent<HTMLInputElement>

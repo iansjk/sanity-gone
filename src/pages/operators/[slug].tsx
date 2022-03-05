@@ -274,16 +274,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     operatorObject: operatorObject as unknown as CharacterObject,
     summons: summons as unknown as CharacterObject[],
     allOperators: Object.fromEntries(
-      Object.entries(operatorsJson).map(
-        ([opName, op]: [string, CharacterObject]) => [
-          opName,
-          {
-            rarity: op.rarity,
-            profession: op.profession,
-            subProfessionId: op.subProfessionId,
-          },
-        ]
-      )
+      Object.entries(operatorsJson).map(([opName, op]) => [
+        opName,
+        {
+          rarity: op.rarity,
+          profession: op.profession,
+          subProfessionId: op.subProfessionId,
+        },
+      ])
     ),
   };
   return { props };

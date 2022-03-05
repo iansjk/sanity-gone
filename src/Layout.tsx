@@ -92,14 +92,14 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 alt=""
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 src={bannerImage ?? bannerImageProps!.url}
+                priority
+                placeholder={bannerImage != null ? "blur" : "empty"}
                 {...(bannerImage == null
                   ? {
                       width: bannerImageProps?.width,
                       height: bannerImageProps?.height,
                     }
                   : {})}
-                priority
-                placeholder="blur"
               />
               <div className="banner-image-gradient-overlay" />
             </div>

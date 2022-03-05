@@ -186,7 +186,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   <a href="mailto:admin@sanitygone.help">Contact Email</a>
                 </li>
                 <li>
-                  <a href="/disclaimer">Disclaimer</a>
+                  <Link href="/disclaimer">
+                    <a>Disclaimer</a>
+                  </Link>
                 </li>
               </ul>
             </div>

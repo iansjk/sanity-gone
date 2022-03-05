@@ -71,7 +71,14 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   : {}
               }
             >
-              <Box gridArea="x" height="100%" overflow="hidden">
+              <Box
+                gridArea="x"
+                height="100%"
+                overflow="hidden"
+                sx={{
+                  backgroundColor: (theme) => theme.palette.midtone.main,
+                }}
+              >
                 <Box
                   position="relative"
                   width="100%"
@@ -79,7 +86,6 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   paddingBottom="200%"
                 >
                   <Image
-                    className="operator-portrait"
                     src={`/images/portraits/${portraitFilename}`}
                     alt=""
                     layout="fill"
@@ -453,20 +459,6 @@ const styles = (theme: Theme) => css`
           display: inline-block;
           margin-top: ${theme.spacing(0.75)};
         }
-      }
-    }
-
-    & > span {
-      grid-area: x;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      border-radius: ${theme.spacing(0.5)};
-
-      img.operator-portrait {
-        width: 100%;
-        background-color: ${theme.palette.midtone.main};
-        border-radius: ${theme.spacing(0.5)};
       }
     }
   }

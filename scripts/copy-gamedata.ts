@@ -412,6 +412,7 @@ void (async () => {
       items {
         operator {
           name
+          slug
         }
       }
     }
@@ -422,13 +423,17 @@ void (async () => {
       items: {
         operator: {
           name: string;
+          slug: string;
         };
       }[];
     };
   }>(contentfulQuery);
 
-  const operatorsWithGuides = operatorAnalysisCollection.items.map(
-    (item) => item.operator.name
+  const operatorsWithGuides = Object.fromEntries(
+    operatorAnalysisCollection.items.map((item) => [
+      item.operator.name,
+      item.operator.slug,
+    ])
   );
 
   fs.writeFileSync(
@@ -437,7 +442,7 @@ void (async () => {
       {
         index: index.export(),
         store: searchStore,
-        operatorsWithGuides: operatorsWithGuides,
+        operatorsWithGuides,
       },
       null,
       2

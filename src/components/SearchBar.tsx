@@ -6,7 +6,6 @@ import {
   operatorImage,
   operatorBranchIcon,
 } from "../utils/images";
-import gatsbySlugify from "@sindresorhus/slugify";
 import { css } from "@emotion/react";
 import { slugify, subclassSlugify } from "../utils/globals";
 import SearchIcon from "./icons/SearchIcon";
@@ -14,6 +13,8 @@ import { transparentize } from "polished";
 import levenshtein from "js-levenshtein";
 import Image from "next/image";
 import search from "../../data/search.json";
+import ReactDOM from "react-dom";
+import Link from "next/link";
 
 // Interface representing a search result.
 // This could be either a class, subclass, or operator (denoted by "type").
@@ -56,7 +57,8 @@ const prefenshteinCompare = (query: string, a: string, b: string) => {
 };
 
 const SearchBar: React.VFC<SearchBarProps> = (props) => {
-  const { placeholder, ...rest } = props;
+  const { placeholder, whenInputChange: _, ...rest } = props;
+  const [node, setNode] = useState<HTMLDivElement | null>(null);
 
   const index = FlexSearch.create({
     tokenize: "full",
@@ -86,11 +88,16 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
       {...rest}
       onFocus={() => setFocus(true)}
       onBlur={(e: React.FocusEvent<HTMLDivElement>) => {
-        if (!e.currentTarget.contains(e.relatedTarget)) {
+        if (
+          !document
+            .getElementById("search-results-container")
+            ?.contains(e.relatedTarget)
+        ) {
           // XXX this is a hack for Safari to make operator links clickable
           setTimeout(() => setFocus(false), 0);
         }
       }}
+      ref={(node) => setNode(node)}
     >
       <div className={`search-bar ${query && isFocused ? " menu-down" : ""}`}>
         <SearchIcon className="search-icon" />
@@ -108,117 +115,148 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
       </div>
       {results &&
         query &&
-        (results.length > 0 ? (
-          <div className="search-results">
-            {results.filter((res) => res.type === "operator").length > 0 && (
-              <div className="operator-results">
-                <div className="category-label">Operators</div>
-                {results
-                  .filter((res) => res.type === "operator")
-                  .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
-                  .slice(0, 5) // limit of 5 operator results
-                  .map((res) => {
-                    const hasGuide = operatorsWithGuides.includes(res.name);
-                    return (
-                      <a
-                        className={
-                          hasGuide ? "operator-card" : "operator-card disabled"
-                        }
-                        key={res.name}
-                        href={
-                          hasGuide
-                            ? `/operators/${gatsbySlugify(res.name)}`
-                            : "#"
-                        }
-                      >
-                        <Image
-                          alt={res.name}
-                          src={operatorImage(res.name)}
-                          width={40}
-                          height={40}
-                        />
-                        <div className="operator-info">
-                          {res.name}
-                          <div className="rarity-and-class">
-                            <span
-                              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                              className={`rarity rarity-${res.rarity!}-stars`}
-                            >
-                              {res.rarity}★
-                            </span>
-                            <span className="class-and-subclass">
-                              {res.class}&nbsp; •&nbsp; {res.subclass}
-                            </span>
+        typeof window !== "undefined" &&
+        ReactDOM.createPortal(
+          <div
+            id="search-results-container"
+            css={searchResultsStyles}
+            style={{
+              top: node?.getBoundingClientRect().bottom + "px",
+              left: node?.getBoundingClientRect().left + "px",
+              width: node?.getBoundingClientRect().width + "px",
+              display: isFocused ? "block" : "none",
+            }}
+          >
+            {results.length > 0 ? (
+              <div className="search-results">
+                {results.filter((res) => res.type === "operator").length >
+                  0 && (
+                  <div className="operator-results">
+                    <div className="category-label">Operators</div>
+                    {results
+                      .filter((res) => res.type === "operator")
+                      .sort((a, b) =>
+                        prefenshteinCompare(query, a.name, b.name)
+                      )
+                      .slice(0, 5) // limit of 5 operator results
+                      .map((res) => {
+                        const url =
+                          operatorsWithGuides[
+                            res.name as keyof typeof operatorsWithGuides
+                          ];
+                        const hasGuide = url != null;
+                        const cardContent = (
+                          <>
+                            <Image
+                              alt={res.name}
+                              src={operatorImage(res.name)}
+                              width={40}
+                              height={40}
+                            />
+                            <div className="operator-info">
+                              {res.name}
+                              <div className="rarity-and-class">
+                                <span
+                                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                                  className={`rarity rarity-${res.rarity!}-stars`}
+                                >
+                                  {res.rarity}★
+                                </span>
+                                <span className="class-and-subclass">
+                                  {res.class}&nbsp; •&nbsp; {res.subclass}
+                                </span>
+                              </div>
+                            </div>
+                          </>
+                        );
+
+                        return hasGuide ? (
+                          <Link key={res.name} href={url}>
+                            <a className="operator-card">{cardContent}</a>
+                          </Link>
+                        ) : (
+                          <div
+                            key={res.name}
+                            className="operator-card disabled"
+                          >
+                            {cardContent}
+                            <div className="gray-overlay" />
                           </div>
-                        </div>
-                        {!hasGuide && <div className="gray-overlay" />}
-                      </a>
-                    );
-                  })}
+                        );
+                      })}
+                  </div>
+                )}
+                {results.filter(
+                  (res) => res.type === "branch" || res.type === "class"
+                ).length > 0 && (
+                  <div className="classes-results">
+                    <div className="category-label">Classes</div>
+                    {results
+                      .filter(
+                        (res) => res.type === "branch" || res.type === "class"
+                      )
+                      .sort((a, b) =>
+                        prefenshteinCompare(query, a.name, b.name)
+                      )
+                      .slice(0, 3) // limit of 3 subclass or class results
+                      .map((res) => {
+                        return res.type === "branch" ? (
+                          <Link
+                            href={`/operators#${slugify(
+                              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                              res.class!
+                            )}-${subclassSlugify(res.name)}`}
+                          >
+                            <a className="classes-card" key={res.name}>
+                              <Image
+                                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                                src={operatorBranchIcon(res.subProfession!)}
+                                alt={res.subProfession}
+                                height={40}
+                                width={40}
+                              />
+                              <div className="classes-info">
+                                {res.name}
+                                <span className="class-name">
+                                  {res.class} Branch
+                                </span>
+                              </div>
+                            </a>
+                          </Link>
+                        ) : (
+                          <Link
+                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                            href={`/operators#${slugify(res.class!)}`}
+                          >
+                            <a className="classes-card" key={res.name}>
+                              <Image
+                                src={operatorClassIcon(
+                                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                                  res.class!.toLowerCase()
+                                )}
+                                alt={res.class}
+                                width={40}
+                                height={40}
+                              />
+                              <div className="classes-info">
+                                {res.name}
+                                <span className="class-name">Class</span>
+                              </div>
+                            </a>
+                          </Link>
+                        );
+                      })}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="search-results">
+                <div className="category-label">No results found!</div>
               </div>
             )}
-            {results.filter(
-              (res) => res.type === "branch" || res.type === "class"
-            ).length > 0 && (
-              <div className="classes-results">
-                <div className="category-label">Classes</div>
-                {results
-                  .filter(
-                    (res) => res.type === "branch" || res.type === "class"
-                  )
-                  .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
-                  .slice(0, 3) // limit of 3 subclass or class results
-                  .map((res) => {
-                    return res.type === "branch" ? (
-                      <a
-                        className="classes-card"
-                        key={res.name}
-                        href={`/operators#${slugify(
-                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                          res.class!
-                        )}-${subclassSlugify(res.name)}`}
-                      >
-                        <Image
-                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                          src={operatorBranchIcon(res.subProfession!)}
-                          alt={res.subProfession}
-                          height={40}
-                          width={40}
-                        />
-                        <div className="classes-info">
-                          {res.name}
-                          <span className="class-name">{res.class} Branch</span>
-                        </div>
-                      </a>
-                    ) : (
-                      <a
-                        className="classes-card"
-                        key={res.name}
-                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        href={`/operators#${slugify(res.class!)}`}
-                      >
-                        <Image
-                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                          src={operatorClassIcon(res.class!.toLowerCase())}
-                          alt={res.class}
-                          width={40}
-                          height={40}
-                        />
-                        <div className="classes-info">
-                          {res.name}
-                          <span className="class-name">Class</span>
-                        </div>
-                      </a>
-                    );
-                  })}
-              </div>
-            )}
-          </div>
-        ) : (
-          <div className="search-results">
-            <div className="category-label">No results found!</div>
-          </div>
-        ))}
+          </div>,
+          window.document.body
+        )}
     </div>
   );
 };
@@ -272,120 +310,110 @@ const styles = (theme: Theme) => css`
       }
     }
   }
+`;
 
-  &.not-focused {
-    .search-results {
-      display: none;
-    }
+const searchResultsStyles = (theme: Theme) => css`
+  position: absolute;
+  z-index: 1;
+  background-color: ${theme.palette.midtone.main};
+  border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+  border: 1px solid ${theme.palette.midtoneBrighter.main};
+
+  .category-label {
+    height: ${theme.spacing(4.5)};
+    padding-left: ${theme.spacing(2)};
+    display: flex;
+    align-items: center;
+    background: ${theme.palette.midtone.main};
+
+    font-size: ${theme.typography.body3.fontSize}px;
+    line-height: ${theme.typography.body3.lineHeight};
+    color: ${theme.palette.gray.main};
   }
 
-  .search-results {
+  .operator-results {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    z-index: 3;
-    background-color: ${theme.palette.midtone.main};
-    border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
-    border: 1px solid ${theme.palette.midtoneBrighter.main};
 
-    .category-label {
-      height: ${theme.spacing(4.5)};
-      padding-left: ${theme.spacing(2)};
+    .operator-card {
       display: flex;
+      flex-direction: row;
       align-items: center;
-      background: ${theme.palette.midtone.main};
+      height: ${theme.spacing(8)};
+      padding-left: ${theme.spacing(2)};
 
-      font-size: ${theme.typography.body3.fontSize}px;
-      line-height: ${theme.typography.body3.lineHeight};
-      color: ${theme.palette.gray.main};
-    }
-
-    .operator-results {
-      display: flex;
-      flex-direction: column;
-
-      a.operator-card {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: ${theme.spacing(8)};
-        padding-left: ${theme.spacing(2)};
-
-        img {
-          height: ${theme.spacing(5)};
-          border-radius: ${theme.spacing(0.5)};
-          background: ${theme.palette.midtoneDarker.main};
-        }
-
-        .operator-info {
-          display: flex;
-          flex-direction: column;
-          color: ${theme.palette.white.main};
-          margin-left: ${theme.spacing(2)};
-
-          .rarity-and-class {
-            display: flex;
-            flex-direction: row;
-            font-size: ${theme.typography.body3.fontSize}px;
-            line-height: ${theme.typography.body3.lineHeight};
-
-            .rarity {
-              width: ${theme.spacing(3)};
-            }
-
-            .class-and-subclass {
-              color: ${theme.palette.gray.main};
-            }
-          }
-        }
-
-        // logic for disabled buttons
-        &.disabled {
-          cursor: default;
-          opacity: 25%;
-        }
-
-        &:hover:not(.disabled) {
-          background: ${theme.palette.midtoneBrighter.main};
-        }
+      img {
+        height: ${theme.spacing(5)};
+        border-radius: ${theme.spacing(0.5)};
+        background: ${theme.palette.midtoneDarker.main};
       }
-    }
 
-    .classes-results {
-      display: flex;
-      flex-direction: column;
-
-      a.classes-card {
+      .operator-info {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: ${theme.spacing(8)};
-        padding-left: ${theme.spacing(2)};
+        flex-direction: column;
+        color: ${theme.palette.white.main};
+        margin-left: ${theme.spacing(2)};
 
-        img {
-          height: ${theme.spacing(5)};
-          width: ${theme.spacing(5)};
-          border-radius: ${theme.spacing(0.5)};
-        }
-
-        .classes-info {
+        .rarity-and-class {
           display: flex;
-          flex-direction: column;
-          color: ${theme.palette.white.main};
-          margin-left: ${theme.spacing(2)};
+          flex-direction: row;
+          font-size: ${theme.typography.body3.fontSize}px;
+          line-height: ${theme.typography.body3.lineHeight};
 
-          .class-name {
-            font-size: ${theme.typography.body3.fontSize}px;
-            line-height: ${theme.typography.body3.lineHeight};
+          .rarity {
+            width: ${theme.spacing(3)};
+          }
+
+          .class-and-subclass {
             color: ${theme.palette.gray.main};
           }
         }
+      }
 
-        &:hover {
-          background: ${theme.palette.midtoneBrighter.main};
+      // logic for disabled buttons
+      &.disabled {
+        cursor: default;
+        opacity: 25%;
+      }
+
+      &:hover:not(.disabled) {
+        background: ${theme.palette.midtoneBrighter.main};
+      }
+    }
+  }
+
+  .classes-results {
+    display: flex;
+    flex-direction: column;
+
+    a.classes-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: ${theme.spacing(8)};
+      padding-left: ${theme.spacing(2)};
+
+      img {
+        height: ${theme.spacing(5)};
+        width: ${theme.spacing(5)};
+        border-radius: ${theme.spacing(0.5)};
+      }
+
+      .classes-info {
+        display: flex;
+        flex-direction: column;
+        color: ${theme.palette.white.main};
+        margin-left: ${theme.spacing(2)};
+
+        .class-name {
+          font-size: ${theme.typography.body3.fontSize}px;
+          line-height: ${theme.typography.body3.lineHeight};
+          color: ${theme.palette.gray.main};
         }
+      }
+
+      &:hover {
+        background: ${theme.palette.midtoneBrighter.main};
       }
     }
   }

@@ -709,12 +709,11 @@ const styles = (theme: Theme) => css`
       }
 
       button {
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: ${theme.spacing(1)};
         transition-property: background-color, box-shadow, border-color;
         font-weight: ${theme.typography.navigationLinkBold.fontWeight};
-
-        img {
-          margin-right: ${theme.spacing(1)};
-        }
       }
     }
 

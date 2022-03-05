@@ -309,6 +309,7 @@ const Operators: React.VFC<Props> = (props) => {
         {selectedProfession ? (
           <>
             <Image
+              key={selectedProfession}
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               src={operatorClassIcon(slugify(selectedClass!))}
               alt=""
@@ -368,6 +369,7 @@ const Operators: React.VFC<Props> = (props) => {
         {selectedSubProfessionId ? (
           <>
             <Image
+              key={selectedSubProfessionId}
               src={operatorBranchIcon(selectedSubProfessionId)}
               alt=""
               width={MENU_ICON_SIZE}

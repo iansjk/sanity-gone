@@ -140,10 +140,11 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                       )
                       .slice(0, 5) // limit of 5 operator results
                       .map((res) => {
-                        const url =
+                        const slug =
                           operatorsWithGuides[
                             res.name as keyof typeof operatorsWithGuides
                           ];
+                        const url = `/operators/${slug}`;
                         const hasGuide = url != null;
                         const cardContent = (
                           <>

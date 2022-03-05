@@ -81,6 +81,7 @@ const About: NextPage = () => {
                   alt=""
                   width={112}
                   height={112}
+                  objectFit="cover"
                 />
                 <span className="member-name">{name}</span>
                 <span className="role">{role}</span>

@@ -144,7 +144,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           operatorsWithGuides[
                             res.name as keyof typeof operatorsWithGuides
                           ];
-                        const url = `/operators/${slug}`;
+                        const url = slug != null ? `/operators/${slug}` : null;
                         const hasGuide = url != null;
                         const cardContent = (
                           <>

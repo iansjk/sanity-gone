@@ -38,6 +38,7 @@ import { GetStaticProps } from "next";
 import { DenormalizedCharacter } from "../../../scripts/types";
 import { markdownToHtmlString } from "../../utils/markdown";
 import operatorListBannerImage from "../../images/page-banners/operators.jpg";
+import { operatorClassIcon, operatorSubclassIcon } from "../../utils/images";
 
 const MENU_ICON_SIZE = 18;
 
@@ -307,7 +308,7 @@ const Operators: React.VFC<Props> = (props) => {
           <>
             <Image
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              src={`/images/classes/${slugify(selectedClass!)}.png`}
+              src={operatorClassIcon(slugify(selectedClass!))}
               alt=""
               width={MENU_ICON_SIZE}
               height={MENU_ICON_SIZE}
@@ -341,7 +342,7 @@ const Operators: React.VFC<Props> = (props) => {
           >
             <ListItemIcon>
               <Image
-                src={`/images/classes/${slugify(className)}.png`}
+                src={operatorClassIcon(slugify(className))}
                 alt=""
                 width={MENU_ICON_SIZE}
                 height={MENU_ICON_SIZE}
@@ -365,7 +366,7 @@ const Operators: React.VFC<Props> = (props) => {
         {selectedSubProfessionId ? (
           <>
             <Image
-              src={`/images/branches/${selectedSubProfessionId}.png`}
+              src={operatorSubclassIcon(selectedSubProfessionId)}
               alt=""
               width={MENU_ICON_SIZE}
               height={MENU_ICON_SIZE}
@@ -408,7 +409,7 @@ const Operators: React.VFC<Props> = (props) => {
             >
               <ListItemIcon>
                 <Image
-                  src={`/images/branches/${subProfessionId}.png`}
+                  src={operatorSubclassIcon(subProfessionId)}
                   alt=""
                   width={MENU_ICON_SIZE}
                   height={MENU_ICON_SIZE}
@@ -481,7 +482,7 @@ const Operators: React.VFC<Props> = (props) => {
                   <section className="class-card">
                     <div className="icon-container">
                       <Image
-                        src={`/images/classes/${slugify(selectedClass)}.png`}
+                        src={operatorClassIcon(slugify(selectedClass))}
                         alt=""
                         width={64}
                         height={64}
@@ -513,7 +514,7 @@ const Operators: React.VFC<Props> = (props) => {
                   <section className="subclass-card">
                     <div className="icon-container">
                       <Image
-                        src={`/images/branches/${selectedSubProfessionId}.png`}
+                        src={operatorSubclassIcon(selectedSubProfessionId)}
                         alt=""
                         width={64}
                         height={64}

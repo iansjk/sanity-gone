@@ -1,12 +1,12 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
-import Link from "next/link";
+import HashCompatibleNextLink from "./HashCompatibleNextLink";
 
 const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     // this links to Operators for now because the homepage doesn't exist yet
-    <Link aria-label="Sanity Gone" href="/operators" passHref>
-      <a css={styles}>
+    <HashCompatibleNextLink href="/operators" passHref>
+      <a aria-label="Sanity Gone" css={styles}>
         <svg
           width="168"
           height="27"
@@ -65,7 +65,7 @@ const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
           />
         </svg>
       </a>
-    </Link>
+    </HashCompatibleNextLink>
   );
 };
 export default SanityGoneLogo;

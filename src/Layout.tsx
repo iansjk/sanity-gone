@@ -14,6 +14,13 @@ import WeirdDeathSphere from "./components/WeirdDeathSphere";
 import { Media } from "./Media";
 import config from "./config";
 import Link from "next/link";
+import Image from "next/image";
+
+interface BannerImageProps {
+  width: number;
+  height: number;
+  url: string;
+}
 
 interface LayoutProps {
   pageTitle: string;
@@ -21,7 +28,8 @@ interface LayoutProps {
   image?: string;
   customPageHeading?: React.ReactNode;
   blendPoint?: number;
-  bannerImageUrl?: string;
+  bannerImage?: any;
+  bannerImageProps?: BannerImageProps;
   previousLocation?: string;
   previousLocationLink?: string;
 }
@@ -32,7 +40,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
     description,
     image,
     customPageHeading,
-    bannerImageUrl,
+    bannerImage,
+    bannerImageProps,
     blendPoint,
     children,
     previousLocation,
@@ -74,9 +83,26 @@ const Layout: React.FC<LayoutProps> = (props) => {
         <meta name="description" content={description ?? defaultDescription} />
       </Head>
 
-      <Global styles={styles({ bannerImageUrl, blendPoint })} />
+      <Global styles={styles({ blendPoint })} />
       <div className="site-wrapper">
-        {bannerImageUrl && <div className="banner-image-container" />}
+        {(bannerImage != null || bannerImageProps != null) && (
+          <div className="banner-image-container">
+            <div className="banner-image-wrapper">
+              <Image
+                alt=""
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                src={bannerImage ?? bannerImageProps!.url}
+                {...(bannerImage == null
+                  ? {
+                      width: bannerImageProps?.width,
+                      height: bannerImageProps?.height,
+                    }
+                  : {})}
+              />
+              <div className="banner-image-gradient-overlay" />
+            </div>
+          </div>
+        )}
         <div className="top-fold">
           <div className="navbar">
             <div className="navbar-background">
@@ -127,12 +153,11 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <div className="heading-spacer" />
                 {previousLocation && previousLocationLink && (
                   <Media greaterThanOrEqual="mobile" className="breadcrumb">
-                    <a
-                      href={previousLocationLink}
-                      aria-label={`Back to ${previousLocation}`}
-                    >
-                      {previousLocation}
-                    </a>
+                    <Link href={previousLocationLink}>
+                      <a aria-label={`Back to ${previousLocation}`}>
+                        {previousLocation}
+                      </a>
+                    </Link>
                     /
                   </Media>
                 )}
@@ -195,13 +220,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
 export default Layout;
 
 const styles =
-  ({
-    bannerImageUrl,
-    blendPoint = 576,
-  }: {
-    bannerImageUrl?: string;
-    blendPoint?: number;
-  }) =>
+  ({ blendPoint = 576 }: { blendPoint?: number }) =>
   (theme: Theme) =>
     css`
       html {
@@ -229,33 +248,39 @@ const styles =
 
         .banner-image-container {
           grid-area: top-fold;
-          ${bannerImageUrl &&
-          css`
-            background-image: linear-gradient(
+
+          .banner-image-wrapper {
+            display: grid;
+            grid-template-areas: "banner";
+            background-color: ${theme.palette.black.main};
+
+            & > * {
+              grid-area: banner;
+            }
+
+            .banner-image-gradient-overlay {
+              background-image: linear-gradient(
                 to bottom,
                 transparent ${0.3576 * blendPoint}px,
                 ${rgba(theme.palette.dark.main, 0.75)} ${0.7083 * blendPoint}px,
                 ${theme.palette.dark.main} ${blendPoint}px
-              ),
-              url("${bannerImageUrl}"),
-              linear-gradient(
-                to bottom,
-                ${theme.palette.black.main},
-                ${theme.palette.black.main} ${blendPoint}px,
-                ${theme.palette.dark.main} ${blendPoint}px
               );
-            background-repeat: no-repeat;
-            background-position-x: center;
-          `}
+              z-index: 1;
+            }
+          }
         }
       }
 
       .header-main-wrapper {
         max-width: ${theme.breakpoints.values["maxWidth"]}px;
         margin: auto;
+        position: relative;
+        z-index: 1;
       }
 
       .navbar {
+        position: relative;
+        z-index: 1;
         display: grid;
         grid-template-areas: "navbar";
         align-items: center;

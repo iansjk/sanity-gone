@@ -4,7 +4,7 @@ import { rgba } from "polished";
 import Image from "next/image";
 
 import Layout from "../Layout";
-import { sgPageBanner } from "../utils/images";
+import aboutPageBanner from "../images/page-banners/about.jpg";
 
 import type { NextPage } from "next";
 
@@ -63,12 +63,7 @@ const members: { name: string; role: string; imageFilename: string }[] = [
 
 const About: NextPage = () => {
   return (
-    <Layout
-      pageTitle="About"
-      bannerImageUrl={sgPageBanner("about")}
-      previousLocation="Home"
-      previousLocationLink="/"
-    >
+    <Layout pageTitle="About" bannerImage={aboutPageBanner}>
       <main css={styles}>
         <h2>Sanity;Gone Team</h2>
         <ul className="team-members">

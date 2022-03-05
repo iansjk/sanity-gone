@@ -16,7 +16,6 @@ import { lighten, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
 
 import Layout from "../../Layout";
-import { sgPageBanner } from "../../utils/images";
 import {
   classToProfession,
   subclassToSubProfessionId,
@@ -36,6 +35,7 @@ import Image from "next/image";
 import { GetStaticProps } from "next";
 import { DenormalizedCharacter } from "../../../scripts/types";
 import { markdownToHtmlString } from "../../utils/markdown";
+import operatorListBannerImage from "../../images/page-banners/operators.jpg";
 
 const MENU_ICON_SIZE = 18;
 
@@ -434,7 +434,7 @@ const Operators: React.VFC<Props> = (props) => {
   return (
     <Layout
       pageTitle="Operator List"
-      bannerImageUrl={sgPageBanner("operators")}
+      bannerImage={operatorListBannerImage}
       blendPoint={496}
       /* No previous location for now
       previousLocation="Home"

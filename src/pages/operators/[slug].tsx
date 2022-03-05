@@ -142,6 +142,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             limited
             bannerImage {
               url
+              width
+              height
             }
             accentColorInHex
             customBgPositionX
@@ -185,6 +187,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             limited: boolean;
             bannerImage: {
               url: string;
+              width: number;
+              height: number;
             };
             accentColorInHex: string;
             customBgPositionX: string;
@@ -298,6 +302,8 @@ interface Props {
       name: string;
       bannerImage: {
         url: string;
+        width: number;
+        height: number;
       };
       customBgPositionX: string;
     };
@@ -426,7 +432,11 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           <h1>{baseChar}</h1>
         )
       }
-      bannerImageUrl={guide.operator.bannerImage.url}
+      bannerImageProps={{
+        url: guide.operator.bannerImage.url,
+        width: guide.operator.bannerImage.width,
+        height: guide.operator.bannerImage.height,
+      }}
       image={operatorImage(operatorName)}
       description={customByline ?? description}
       previousLocation="Operators"

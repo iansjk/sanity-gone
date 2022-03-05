@@ -202,12 +202,13 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                       .map((res) => {
                         return res.type === "branch" ? (
                           <Link
+                            key={res.name}
                             href={`/operators#${slugify(
                               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                               res.class!
                             )}-${subclassSlugify(res.name)}`}
                           >
-                            <a className="classes-card" key={res.name}>
+                            <a className="classes-card">
                               <Image
                                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                                 src={operatorBranchIcon(res.subProfession!)}
@@ -225,10 +226,11 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           </Link>
                         ) : (
                           <Link
+                            key={res.name}
                             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                             href={`/operators#${slugify(res.class!)}`}
                           >
-                            <a className="classes-card" key={res.name}>
+                            <a className="classes-card">
                               <Image
                                 src={operatorClassIcon(
                                   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

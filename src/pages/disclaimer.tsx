@@ -1,21 +1,17 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
+import type { NextPage } from "next";
 
 import Layout from "../Layout";
-import { sgPageBanner } from "../utils/images";
+import disclaimerPageBanner from "../images/page-banners/disclaimer.jpg";
 
-const Disclaimer: React.VFC = () => {
+const Disclaimer: NextPage = () => {
   return (
-    <Layout
-      pageTitle="Disclaimer"
-      bannerImageUrl={sgPageBanner("disclaimer")}
-      previousLocation="Home"
-      previousLocationLink="/"
-    >
+    <Layout pageTitle="Disclaimer" bannerImage={disclaimerPageBanner}>
       <main css={styles}>
         <p>
-          <b>Sanity;Gone Zero</b> is an unofficial fan project and is not
-          affiliated with or endorsed by Hypergryph/Studio Montagne/Yostar,
+          <b>Sanity;Gone</b> is an unofficial fan project and is not affiliated
+          with or endorsed by Hypergryph/Studio Montagne/Yostar,
           Arknights&rsquo; creators & distributors. The in-game assets used on
           this site are the property of Hypergryph/Yostar.
         </p>

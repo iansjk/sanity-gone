@@ -201,6 +201,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                       .slice(0, 3) // limit of 3 subclass or class results
                       .map((res) => {
                         return res.type === "branch" ? (
+                          // don't use next/link here; it doesn't work with hashes if already on /operators
+                          // see https://github.com/vercel/next.js/issues/5161
                           <a
                             key={res.name}
                             className="classes-card"
@@ -224,6 +226,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                             </div>
                           </a>
                         ) : (
+                          // don't use next/link here; it doesn't work with hashes if already on /operators
+                          // see https://github.com/vercel/next.js/issues/5161
                           <a
                             key={res.name}
                             className="classes-card"

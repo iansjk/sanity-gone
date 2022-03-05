@@ -8,6 +8,7 @@ import { OperatorListOperator } from "../pages/operators";
 import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
 import StarIcon from "./icons/StarIcon";
 import Image from "next/image";
+import Link from "next/link";
 
 const getPortraitFilename = (operatorId: string) => `${operatorId}_1.png`;
 
@@ -55,6 +56,29 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
           const hasGuide = operatorsWithGuides.includes(op.name);
           const [charName, alterName] = op.name.split(" the ");
           const portraitFilename = getPortraitFilename(op.charId);
+
+          const operatorInfo = (
+            <>
+              <span className="operator-name">
+                {alterName ? (
+                  <>
+                    <span className="base-name">{charName}</span>
+                    <span className="alter-name">{alterName}</span>
+                  </>
+                ) : (
+                  op.name
+                )}
+              </span>
+              <span className="rarity" title={`Rarity: ${op.rarity + 1} stars`}>
+                <span className="rarity-number">{op.rarity + 1}</span>{" "}
+                <StarIcon className="rarity-star" />
+              </span>
+              <span key="opClass" className="operator-class">
+                {operatorClass}
+              </span>
+            </>
+          );
+
           return (
             <li
               key={op.name}
@@ -94,47 +118,26 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
               </Box>
               <div className="operator-card-content">
                 {hasGuide && (
-                  <a
-                    className="dummy-clickable-area"
-                    href={`/operators/${slugify(op.name)}`}
-                    tabIndex={-1}
-                    aria-hidden="true"
-                  />
+                  <Link href={`/operators/${slugify(op.name)}`}>
+                    <a
+                      className="dummy-clickable-area"
+                      tabIndex={-1}
+                      aria-hidden="true"
+                    />
+                  </Link>
                 )}
-                {React.createElement(
-                  hasGuide ? "a" : "div",
-                  {
-                    className: "operator-info",
-                    ...(hasGuide
-                      ? {
-                          href: `/operators/${slugify(op.name)}`,
-                          role: "presentation",
-                          tabIndex: -1,
-                        }
-                      : {}),
-                  },
-                  <>
-                    <span className="operator-name">
-                      {alterName ? (
-                        <>
-                          <span className="base-name">{charName}</span>
-                          <span className="alter-name">{alterName}</span>
-                        </>
-                      ) : (
-                        op.name
-                      )}
-                    </span>
-                    <span
-                      className="rarity"
-                      title={`Rarity: ${op.rarity + 1} stars`}
+                {hasGuide ? (
+                  <Link href={`/operators/${slugify(op.name)}`}>
+                    <a
+                      className="operator-info"
+                      role="presentation"
+                      tabIndex={-1}
                     >
-                      <span className="rarity-number">{op.rarity + 1}</span>{" "}
-                      <StarIcon className="rarity-star" />
-                    </span>
-                    <span key="opClass" className="operator-class">
-                      {operatorClass}
-                    </span>
-                  </>
+                      {operatorInfo}
+                    </a>
+                  </Link>
+                ) : (
+                  <div className="operator-info">{operatorInfo}</div>
                 )}
                 <Tooltip title={subclass}>
                   <button
@@ -154,12 +157,11 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                 </Tooltip>
                 {/* TODO "NEW" should go here */}
                 {hasGuide ? (
-                  <a
-                    className="go-to-guide-link"
-                    href={`/operators/${slugify(op.name)}`}
-                  >
-                    <span className="go-to-guide-text">Read Guide</span>
-                  </a>
+                  <Link href={`/operators/${slugify(op.name)}`}>
+                    <a className="go-to-guide-link">
+                      <span className="go-to-guide-text">Read Guide</span>
+                    </a>
+                  </Link>
                 ) : (
                   <span className="visually-hidden">Guide Unavailable</span>
                 )}

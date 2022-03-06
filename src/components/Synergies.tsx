@@ -4,6 +4,8 @@ import { Theme } from "@mui/material";
 import CardWithTabs from "./CardWithTabs";
 import Synergy, { SynergyProps, SynergyQuality } from "./Synergy";
 import { operatorImage } from "../utils/images";
+import Image from "next/image";
+import cx from "clsx";
 
 export interface SynergiesProps {
   synergies: SynergyProps[];
@@ -28,16 +30,19 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
             className={`operator-button synergy-operator-button${
               syn.isGroup ? " synergy-group" : ""
             }`}
-            style={{
-              backgroundImage: `url("${
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                syn.isGroup ? syn.iconUrl! : operatorImage(syn.name)
-              }")`,
-              backgroundBlendMode: syn.shouldInvertIconOnHighlight
-                ? "difference"
-                : "normal",
-            }}
-          />
+          >
+            <Image
+              className={cx(
+                "operator-image",
+                syn.shouldInvertIconOnHighlight && "invert-on-highlight"
+              )}
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              src={syn.isGroup ? syn.iconUrl! : operatorImage(syn.name)}
+              width={48}
+              height={48}
+              alt=""
+            />
+          </button>
         );
         if (
           syn.quality != null &&
@@ -125,6 +130,14 @@ const styles = (theme: Theme) => css`
           position: absolute;
           right: -4px;
           bottom: -2px;
+        }
+
+        .operator-image {
+          border-radius: ${theme.spacing(1)};
+
+          &.invert-on-highlight {
+            mix-blend-mode: difference;
+          }
         }
       }
 

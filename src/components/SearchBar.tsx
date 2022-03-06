@@ -67,7 +67,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
   const operatorsWithGuides = search.operatorsWithGuides;
 
   const [query, setQuery] = useState("");
-  const [isFocused, setFocus] = useState(false);
+  const [isFocused, setFocused] = useState(false);
 
   // Gets the results based on the current query state
   // This uses memoization, so the same query will not be repeated twice
@@ -80,18 +80,18 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
   }, [index, query, store]);
 
   const handleLinkClick = () => {
-    setFocus(false);
+    setFocused(false);
   };
 
   return (
     <div
       className={`search ${isFocused ? "focused" : "not-focused"}`}
       css={styles}
-      onFocus={() => setFocus(true)}
+      onFocus={() => setFocused(true)}
       onBlur={(e: React.FocusEvent<HTMLDivElement>) => {
         if (!e.currentTarget.contains(e.relatedTarget)) {
           // XXX this is a hack for Safari to make operator links clickable
-          setTimeout(() => setFocus(false), 0);
+          setTimeout(() => setFocused(false), 0);
         }
       }}
     >
@@ -101,7 +101,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
           className="search-input"
           placeholder={placeholder}
           onChange={(e) => {
-            setFocus(true);
+            setFocused(true);
             setQuery(e.target.value);
             whenInputChange && whenInputChange(e.target.value);
           }}

@@ -4,8 +4,6 @@ const nextConfig = {
   images: {
     domains: ["images.ctfassets.net"],
     formats: ["image/avif", "image/webp"],
-    // set minimumCacheTTL to 7 days
-    minimumCacheTTL: 604800,
   },
 };
 

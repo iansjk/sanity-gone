@@ -83,7 +83,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
           >
             <a className="class-and-subclass">
               <Tooltip title={operatorClass}>
-                <span className="class-icon-container">
+                <span role="img" className="class-icon-container">
                   <Image
                     src={operatorClassIcon(operatorClass.toLowerCase())}
                     alt=""

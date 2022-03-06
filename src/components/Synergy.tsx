@@ -13,7 +13,7 @@ export enum SynergyQuality {
 
 export interface SynergyProps {
   name: string;
-  quality?: SynergyQuality;
+  quality: SynergyQuality | null;
   isGroup: boolean;
   analysis: string;
   iconUrl?: string;

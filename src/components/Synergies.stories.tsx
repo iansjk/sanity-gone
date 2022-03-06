@@ -21,6 +21,7 @@ Default.args = {
           The synergy with her talent is an obvious one, since Mudrock’s S2 is Defensive Recovery, Blemishine’s first talents will work on it allowing Mudrock to recover 1 SP whenever attacking an enemy, making the skill very spammable and consistent by not relying on enemies to actually hit you. On top of that, Blemishine’s S2 is not actually a direct heal; it’s a regeneration type heal, meaning that Blemi can actually heal Mudrock (and other similar operators) with it. This can easily make a huge difference if your Mudrock is struggling to sustain herself. This makes the two a great defender duo to bring pretty much anywhere.
         </p>
       `,
+      quality: null,
     },
     {
       name: "Aak",

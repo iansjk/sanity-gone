@@ -72,6 +72,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
           rarity,
           profession,
           subProfessionId,
+          quality,
         } = synOp;
         return (
           <Synergy
@@ -83,6 +84,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
             rarity={rarity}
             profession={profession}
             subProfessionId={subProfessionId}
+            quality={quality}
           />
         );
       })}

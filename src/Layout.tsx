@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
@@ -16,6 +16,7 @@ import config from "./config";
 import Link from "next/link";
 import Image from "next/image";
 import HashCompatibleNextLink from "./components/HashCompatibleNextLink";
+import { useRouter } from "next/router";
 
 interface BannerImageProps {
   width: number;
@@ -55,8 +56,17 @@ const Layout: React.FC<LayoutProps> = (props) => {
     image: defaultImage,
     siteUrl,
   } = config;
-
+  const router = useRouter();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleRouteChange = () => {
+    setMobileMenuOpen(false);
+  };
+
+  useEffect(() => {
+    router.events.on("routeChangeStart", handleRouteChange);
+    return () => router.events.off("routeChangeStart", handleRouteChange);
+  }, [router.events]);
 
   const title = pageTitle
     ? `${pageTitle} / Arknights Hub - ${siteName}`

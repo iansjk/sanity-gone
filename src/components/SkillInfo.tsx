@@ -103,7 +103,7 @@ const SkillInfo: React.VFC<
             <div className="spacer" />
             <SliderWithInput
               label="Rank"
-              identifier="skill-rank"
+              identifier={`skill-rank-${skillId}`}
               inputProps={{
                 value: display(skillLevel),
                 onKeyPress: (e) => {

@@ -94,8 +94,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 src={bannerImage ?? bannerImageProps!.url}
                 priority
-                quality={100}
-                layout="responsive"
                 objectFit="cover"
                 placeholder={bannerImage != null ? "blur" : "empty"}
                 {...(bannerImage == null

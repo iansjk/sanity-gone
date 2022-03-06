@@ -307,7 +307,7 @@ const Operators: React.VFC<Props> = (props) => {
         }
       >
         {selectedProfession ? (
-          <div key={selectedProfession}>
+          <>
             <Image
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               src={operatorClassIcon(slugify(selectedClass!))}
@@ -316,7 +316,7 @@ const Operators: React.VFC<Props> = (props) => {
               height={MENU_ICON_SIZE}
             />
             {selectedClass}
-          </div>
+          </>
         ) : (
           "All Classes"
         )}
@@ -366,7 +366,7 @@ const Operators: React.VFC<Props> = (props) => {
         className={selectedSubProfessionId ? "has-selection" : "no-selection"}
       >
         {selectedSubProfessionId ? (
-          <div key={selectedSubProfessionId}>
+          <>
             <Image
               src={operatorBranchIcon(selectedSubProfessionId)}
               alt=""
@@ -374,7 +374,7 @@ const Operators: React.VFC<Props> = (props) => {
               height={MENU_ICON_SIZE}
             />
             {selectedSubclass}
-          </div>
+          </>
         ) : (
           "All Branches"
         )}
@@ -484,6 +484,7 @@ const Operators: React.VFC<Props> = (props) => {
                   <section className="class-card">
                     <div className="icon-container">
                       <Image
+                        key={selectedClass}
                         src={operatorClassIcon(slugify(selectedClass))}
                         alt=""
                         width={64}
@@ -516,6 +517,7 @@ const Operators: React.VFC<Props> = (props) => {
                   <section className="subclass-card">
                     <div className="icon-container">
                       <Image
+                        key={selectedSubProfessionId}
                         src={operatorBranchIcon(selectedSubProfessionId)}
                         alt=""
                         width={64}

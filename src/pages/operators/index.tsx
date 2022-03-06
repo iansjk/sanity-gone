@@ -14,7 +14,6 @@ import {
 import slugify from "@sindresorhus/slugify";
 import { lighten, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
-import { Fragment } from "react";
 
 import Layout from "../../Layout";
 import {
@@ -308,7 +307,7 @@ const Operators: React.VFC<Props> = (props) => {
         }
       >
         {selectedProfession ? (
-          <Fragment key={selectedProfession}>
+          <div key={selectedProfession}>
             <Image
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               src={operatorClassIcon(slugify(selectedClass!))}
@@ -317,7 +316,7 @@ const Operators: React.VFC<Props> = (props) => {
               height={MENU_ICON_SIZE}
             />
             {selectedClass}
-          </Fragment>
+          </div>
         ) : (
           "All Classes"
         )}
@@ -367,7 +366,7 @@ const Operators: React.VFC<Props> = (props) => {
         className={selectedSubProfessionId ? "has-selection" : "no-selection"}
       >
         {selectedSubProfessionId ? (
-          <Fragment key={selectedSubProfessionId}>
+          <div key={selectedSubProfessionId}>
             <Image
               src={operatorBranchIcon(selectedSubProfessionId)}
               alt=""
@@ -375,7 +374,7 @@ const Operators: React.VFC<Props> = (props) => {
               height={MENU_ICON_SIZE}
             />
             {selectedSubclass}
-          </Fragment>
+          </div>
         ) : (
           "All Branches"
         )}

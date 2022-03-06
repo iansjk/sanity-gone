@@ -56,10 +56,6 @@ const htmlToReact = (
         } else if (domNode.name === "talentinfo") {
           return (
             <TalentInfo
-              // key is to force a rerender of this component if using search to navigate
-              // to a different operator guide page
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              key={`${context.operator.charId}-talent-${index!}`}
               className="talents-talent-info"
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               talentObject={context.talents[index!]}
@@ -456,7 +452,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
           operator.customBgPositionX
         )(theme)}
       />
-      <Tabs component="main" css={styles(operator.accentColorInHex)}>
+      {/* we add a key prop here to force rerendering of Tabs if e.g. a user clicks a guide search result while already on a guide page */}
+      <Tabs
+        component="main"
+        key={operator.name}
+        css={styles(operator.accentColorInHex)}
+      >
         <TabButtons className="tabs" isSwiper>
           {[
             ...["Introduction", "Talents", "Skills"],

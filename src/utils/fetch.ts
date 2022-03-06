@@ -15,15 +15,21 @@ export async function fetchContentfulGraphQl<T = any>(
   query: string,
   variables: unknown = {}
 ): Promise<T> {
-  const response = await instance.post<{ data: T }>(
-    "/" + process.env.CONTENTFUL_SPACE_ID!,
-    {
-      query,
-      variables
+  let response = null;
+  try {
+    response = await instance.post<{ data: T }>(
+      "/" + process.env.CONTENTFUL_SPACE_ID!,
+      {
+        query,
+        variables,
+      }
+    );
+    if (response.status !== 200) {
+      throw new Error(response.statusText);
     }
-  );
-  if (response.status !== 200) {
-    throw new Error(response.statusText);
+    return response.data.data;
+  } catch (e) {
+    console.error((e as any).toJSON());
+    throw e;
   }
-  return response.data.data;
 }

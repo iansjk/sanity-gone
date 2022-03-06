@@ -59,15 +59,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
   const router = useRouter();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleRouteChange = () => {
-    setMobileMenuOpen(false);
-  };
-
-  useEffect(() => {
-    router.events.on("routeChangeStart", handleRouteChange);
-    return () => router.events.off("routeChangeStart", handleRouteChange);
-  }, [router.events]);
-
   const title = pageTitle
     ? `${pageTitle} / Arknights Hub - ${siteName}`
     : `Arknights Hub - ${siteName}`;

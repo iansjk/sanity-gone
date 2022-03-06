@@ -55,6 +55,7 @@ const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
                     whenInputChange={(input) => {
                       setSearchOpen(!!input);
                     }}
+                    onLinkClicked={onClose}
                   />
                 </div>
               </li>

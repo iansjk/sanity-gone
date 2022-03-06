@@ -33,6 +33,7 @@ export interface SearchResult {
 // the mobile menu while the search is active (CSS doesn't let me do it).
 interface SearchBarProps {
   placeholder: string;
+  onLinkClicked?: () => void;
   whenInputChange?: (input: string) => void;
 }
 
@@ -57,7 +58,7 @@ const prefenshteinCompare = (query: string, a: string, b: string) => {
 };
 
 const SearchBar: React.VFC<SearchBarProps> = (props) => {
-  const { placeholder, whenInputChange } = props;
+  const { placeholder, onLinkClicked, whenInputChange } = props;
   const index = FlexSearch.create({
     tokenize: "full",
   });
@@ -81,6 +82,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
 
   const handleLinkClick = () => {
     setFocused(false);
+    onLinkClicked && onLinkClicked();
   };
 
   return (

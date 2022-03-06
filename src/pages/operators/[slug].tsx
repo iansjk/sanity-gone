@@ -170,6 +170,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           synergiesCollection {
             items {
               synergyName
+              synergyQuality
               isGroup
               customSynergyIcon {
                 url
@@ -216,6 +217,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             items: [
               {
                 synergyName: string;
+                synergyQuality: number | null;
                 isGroup: boolean;
                 customSynergyIcon: {
                   url: string;
@@ -328,6 +330,7 @@ interface Props {
     skill3Analysis: string;
     synergies: {
       synergyName: string;
+      synergyQuality: number | null;
       isGroup: boolean;
       customSynergyIcon: {
         url: string;
@@ -400,6 +403,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       isGroup: syn.isGroup,
       analysis: syn.synergyDescription,
       shouldInvertIconOnHighlight: syn.shouldInvertIconOnHighlight,
+      quality: syn.synergyQuality,
     };
     if (syn.isGroup) {
       if (!syn.customSynergyIcon.url) {

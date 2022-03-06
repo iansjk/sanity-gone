@@ -79,6 +79,10 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
     return rawResults.map((index): SearchResult => store[index.toString()]);
   }, [index, query, store]);
 
+  const handleLinkClick = () => {
+    setFocus(false);
+  };
+
   return (
     <div
       className={`search ${isFocused ? "focused" : "not-focused"}`}
@@ -148,7 +152,9 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
 
                     return hasGuide ? (
                       <Link key={res.name} href={url}>
-                        <a className="operator-card">{cardContent}</a>
+                        <a className="operator-card" onClick={handleLinkClick}>
+                          {cardContent}
+                        </a>
                       </Link>
                     ) : (
                       <div key={res.name} className="operator-card disabled">
@@ -179,7 +185,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           res.class!
                         )}-${subclassSlugify(res.name)}`}
                       >
-                        <a className="classes-card">
+                        <a className="classes-card" onClick={handleLinkClick}>
                           <Image
                             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                             src={operatorBranchIcon(res.subProfession!)}
@@ -201,7 +207,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                         href={`/operators#${slugify(res.class!)}`}
                       >
-                        <a className="classes-card">
+                        <a className="classes-card" onClick={handleLinkClick}>
                           <Image
                             src={operatorClassIcon(
                               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

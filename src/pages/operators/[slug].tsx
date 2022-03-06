@@ -56,6 +56,10 @@ const htmlToReact = (
         } else if (domNode.name === "talentinfo") {
           return (
             <TalentInfo
+              // key is to force a rerender of this component if using search to navigate
+              // to a different operator guide page
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              key={`${context.operator.charId}-talent-${index!}`}
               className="talents-talent-info"
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               talentObject={context.talents[index!]}
@@ -636,7 +640,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       background-color: ${transparentize(0.34, theme.palette.dark.main)};
       backdrop-filter: blur(8px);
 
-      button {
+      button:not(.synergy-operator-button) {
         box-sizing: border-box;
         padding: ${theme.spacing(2)};
         width: max-content;
@@ -667,7 +671,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         }
       }
 
-      button.active {
+      button:not(.synergy-operator-button).active {
         color: ${accentColor};
 
         &::after {

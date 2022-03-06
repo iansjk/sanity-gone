@@ -304,7 +304,7 @@ const styles =
 
       .navbar {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         display: grid;
         grid-template-areas: "navbar";
         align-items: center;

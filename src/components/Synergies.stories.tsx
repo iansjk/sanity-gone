@@ -23,6 +23,7 @@ Default.args = {
     },
     {
       name: "Aak",
+      charId: "char_225_haak",
       rarity: 5,
       isGroup: false,
       profession: "SPECIAL",
@@ -34,6 +35,7 @@ Default.args = {
     },
     {
       name: "Angelina",
+      charId: "char_291_aglina",
       rarity: 5,
       isGroup: false,
       profession: "SUPPORT",
@@ -45,6 +47,7 @@ Default.args = {
     },
     {
       name: "Whislash",
+      charId: "char_265_sophia",
       rarity: 4,
       isGroup: false,
       profession: "Warrior",
@@ -56,6 +59,7 @@ Default.args = {
     },
     {
       name: "Ch'en",
+      charId: "char_010_chen",
       rarity: 5,
       isGroup: false,
       profession: "WARRIOR",
@@ -67,6 +71,7 @@ Default.args = {
     },
     {
       name: "Elysium",
+      charId: "char_401_elysm",
       rarity: 4,
       isGroup: false,
       profession: "PIONEER",

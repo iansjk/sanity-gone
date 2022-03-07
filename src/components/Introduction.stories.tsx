@@ -13,6 +13,7 @@ const Template: Story<
 > = (args) => <Introduction {...args} />;
 
 const characterObject = {
+  charId: "char_311_mudrok",
   name: "Mudrock",
   description: "<@ba.kw>Cannot</> be healed by allies",
   canUseGeneralPotentialItem: true,

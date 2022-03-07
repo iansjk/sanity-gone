@@ -1,7 +1,7 @@
 import { css, Theme, useTheme } from "@mui/material";
 import Image from "next/image";
 
-import { operatorImage } from "../utils/images";
+import { operatorAvatar } from "../utils/images";
 import TiltedStarIcon from "./icons/TiltedStarIcon";
 import StarIcon from "./icons/StarIcon";
 
@@ -11,7 +11,7 @@ const imageSize = {
 };
 
 export interface OperatorPortraitProps {
-  name: string;
+  charId?: string;
   rarity?: number; // 1-indexed, NOT 0-indexed
   isLimited?: boolean;
   variant?: "normal" | "small";
@@ -22,7 +22,7 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
   variant = "normal",
   ...rest
 }) => {
-  const { name, rarity, isLimited, iconOverride } = rest;
+  const { charId, rarity, isLimited, iconOverride } = rest;
   const theme = useTheme();
 
   const portraitMargin = theme.spacing(variant === "normal" ? 0.5 : 0.25);
@@ -43,7 +43,8 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
       )}
       <Image
         className={`operator-portrait ${variant}`}
-        src={iconOverride ?? operatorImage(name)}
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        src={iconOverride ?? operatorAvatar(charId!)}
         alt=""
         width={imageSize[variant]}
         height={imageSize[variant]}

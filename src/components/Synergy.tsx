@@ -13,6 +13,7 @@ export enum SynergyQuality {
 
 export interface SynergyProps {
   name: string;
+  charId?: string;
   quality: SynergyQuality | null;
   isGroup: boolean;
   analysis: string;
@@ -28,6 +29,7 @@ const Synergy: React.VFC<
 > = (props) => {
   const {
     name,
+    charId,
     isGroup,
     analysis,
     iconUrl,
@@ -44,7 +46,7 @@ const Synergy: React.VFC<
         <div className="portrait">
           <OperatorPortrait
             variant="small"
-            name={name}
+            charId={charId}
             iconOverride={isGroup ? iconUrl : undefined}
           />
         </div>

@@ -1,0 +1,2785 @@
+{
+  "char_248_mgllan": {
+    "hasTranslation": true,
+    "moduleId": "uniequip_002_mgllan",
+    "moduleEffect": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "mgllan_equip_1_1_p1",
+              "target": "TRAIT",
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "The first summoned unit <@ba.kw>does not consume</> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "cnt",
+                        "value": 1
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 100
+            },
+            {
+              "key": "atk",
+              "value": 30
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_336_folivo": {
+    "hasTranslation": true,
+    "moduleId": "uniequip_002_folivo",
+    "moduleEffect": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "folivo_equip_1_1_p1",
+              "target": "TRAIT",
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "The first summoned unit <@ba.kw>does not consume</> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "cnt",
+                        "value": 1
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 20
+            },
+            {
+              "key": "def",
+              "value": 20
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_242_otter": {
+    "hasTranslation": true,
+    "moduleId": "uniequip_002_otter",
+    "moduleEffect": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "otter_equip_1_1_p1",
+              "target": "TRAIT",
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "The first summoned unit <@ba.kw>does not consume</> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "cnt",
+                        "value": 1
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 80
+            },
+            {
+              "key": "atk",
+              "value": 25
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_110_deepcl": {
+    "hasTranslation": true,
+    "moduleId": "uniequip_002_deepcl",
+    "moduleEffect": "Can hold <span class=\"keyword\">+3</span> additional summoned units and summoned unit deployment costs are <span class=\"keyword\">reduced</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "deepcl_equip_1_1_p1",
+              "target": "TRAIT",
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "Can hold <@ba.kw>+{cnt}</> additional summoned units and summoned unit deployment costs are <@ba.kw>reduced</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "cnt",
+                        "value": 3
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 80
+            },
+            {
+              "key": "atk",
+              "value": 20
+            }
+          ],
+          "tokenAttributeBlackboard": {
+            "token_10001_deepcl_tentac": [
+              {
+                "key": "cost",
+                "value": -2
+              },
+              {
+                "key": "max_deploy_count",
+                "value": 3
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "char_485_pallas": {
+    "hasTranslation": true,
+    "moduleId": "uniequip_002_pallas",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "atk_scale",
+                        "value": 1.3
+                      }
+                    ],
+                    "overrideDescripton": "Can attack enemies <@ba.kw>from range</>; When attacking enemies not blocked by self, increase ATK to <@ba.kw>{atk_scale:0%}</>",
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 150
+            },
+            {
+              "key": "atk",
+              "value": 55
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_265_sophia": {
+    "hasTranslation": true,
+    "moduleId": "uniequip_002_sophia",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "atk_scale",
+                        "value": 1.3
+                      }
+                    ],
+                    "overrideDescripton": "Can attack enemies <@ba.kw>from range</>; When attacking enemies not blocked by self, increase ATK to <@ba.kw>{atk_scale:0%}</>",
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 35
+            },
+            {
+              "key": "def",
+              "value": 35
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_308_swire": {
+    "hasTranslation": true,
+    "moduleId": "uniequip_002_swire",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "atk_scale",
+                        "value": 1.3
+                      }
+                    ],
+                    "overrideDescripton": "Can attack enemies <@ba.kw>from range</>; When attacking enemies not blocked by self, increase ATK to <@ba.kw>{atk_scale:0%}</>",
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 120
+            },
+            {
+              "key": "atk",
+              "value": 50
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_130_doberm": {
+    "hasTranslation": true,
+    "moduleId": "uniequip_002_doberm",
+    "moduleEffect": "Can also be deployed on Ranged tiles",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "DISPLAY",
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "Can also be deployed on Ranged tiles",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            },
+            {
+              "resKey": "doberm_equip_1_1_p1",
+              "target": "TALENT",
+              "addOrOverrideTalentDataBundle": {
+                "candidates": [
+                  {
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "prefabKey": "10",
+                    "name": null,
+                    "description": null,
+                    "rangeId": null,
+                    "blackboard": [
+                      {
+                        "key": "buildable_type",
+                        "value": 2
+                      }
+                    ]
+                  }
+                ]
+              },
+              "overrideTraitDataBundle": {
+                "candidates": null
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 35
+            },
+            {
+              "key": "attack_speed",
+              "value": 5
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_179_cgbird": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_cgbird",
+    "moduleEffect": "攻击范围<span class=\"keyword\">扩大</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "DISPLAY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击范围<@ba.kw>扩大</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            },
+            {
+              "resKey": "cgbird_equip_1_1_p1",
+              "target": "TALENT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": [
+                  {
+                    "displayRangeId": true,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "prefabKey": "10",
+                    "name": null,
+                    "description": null,
+                    "rangeId": "y-3",
+                    "blackboard": []
+                  }
+                ]
+              },
+              "overrideTraitDataBundle": {
+                "candidates": null
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 40
+            },
+            {
+              "key": "magic_resistance",
+              "value": 5
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_275_breeze": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_breeze",
+    "moduleEffect": "攻击范围<span class=\"keyword\">扩大</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "DISPLAY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击范围<@ba.kw>扩大</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            },
+            {
+              "resKey": "breeze_equip_1_1_p1",
+              "target": "TALENT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": [
+                  {
+                    "displayRangeId": true,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "prefabKey": "10",
+                    "name": null,
+                    "description": null,
+                    "rangeId": "y-3",
+                    "blackboard": []
+                  }
+                ]
+              },
+              "overrideTraitDataBundle": {
+                "candidates": null
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 60
+            },
+            {
+              "key": "atk",
+              "value": 30
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_128_plosis": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_plosis",
+    "moduleEffect": "攻击范围<span class=\"keyword\">扩大</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "DISPLAY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击范围<@ba.kw>扩大</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            },
+            {
+              "resKey": "plosis_equip_1_1_p1",
+              "target": "TALENT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": [
+                  {
+                    "displayRangeId": true,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "prefabKey": "10",
+                    "name": null,
+                    "description": null,
+                    "rangeId": "y-3",
+                    "blackboard": []
+                  }
+                ]
+              },
+              "overrideTraitDataBundle": {
+                "candidates": null
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 60
+            },
+            {
+              "key": "atk",
+              "value": 30
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_181_flower": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_flower",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "DISPLAY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [],
+                    "overrideDescripton": "同时恢复<@ba.kw>四</>个友方单位的生命",
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            },
+            {
+              "resKey": "flower_equip_1_1_p1",
+              "target": "TALENT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": [
+                  {
+                    "displayRangeId": false,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "prefabKey": "10",
+                    "name": null,
+                    "description": null,
+                    "rangeId": null,
+                    "blackboard": [
+                      {
+                        "key": "attack@max_target",
+                        "value": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "overrideTraitDataBundle": {
+                "candidates": null
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 55
+            },
+            {
+              "key": "atk",
+              "value": 25
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_430_fartth": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_fartth",
+    "moduleEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "fartth_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击越远的敌人造成的伤害越高（最高提升<@ba.kw>{damage_scale:0%}</>）",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "max_dist",
+                        "value": 4.5
+                      },
+                      {
+                        "key": "min_dist",
+                        "value": 1
+                      },
+                      {
+                        "key": "damage_scale",
+                        "value": 0.15
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 70
+            },
+            {
+              "key": "attack_speed",
+              "value": 5
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_158_milu": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_milu",
+    "moduleEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "milu_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击的敌人未被击倒时自身额外获得<@ba.kw>{sp}</>点技力",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "sp",
+                        "value": 1
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 80
+            },
+            {
+              "key": "atk",
+              "value": 60
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_218_cuttle": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_cuttle",
+    "moduleEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "cuttle_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击越远的敌人造成的伤害越高（最高提升<@ba.kw>{damage_scale:0%}</>）",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "max_dist",
+                        "value": 4.5
+                      },
+                      {
+                        "key": "min_dist",
+                        "value": 1
+                      },
+                      {
+                        "key": "damage_scale",
+                        "value": 0.15
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 70
+            },
+            {
+              "key": "atk",
+              "value": 65
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_302_glaze": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_glaze",
+    "moduleEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "glaze_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击越远的敌人造成的伤害越高（最高提升<@ba.kw>{damage_scale:0%}</>）",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "max_dist",
+                        "value": 4.5
+                      },
+                      {
+                        "key": "min_dist",
+                        "value": 1
+                      },
+                      {
+                        "key": "damage_scale",
+                        "value": 0.15
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 65
+            },
+            {
+              "key": "atk",
+              "value": 55
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_250_phatom": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_phatom",
+    "moduleEffect": "撤退时返还<span class=\"keyword\">大量</span>该次部署费用",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "phatom_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "撤退时返还<@ba.kw>大量</>该次部署费用",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "withdraw_cost_recover_ratio",
+                        "value": 0.8
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 100
+            },
+            {
+              "key": "atk",
+              "value": 50
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_214_kafka": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_kafka",
+    "moduleEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "kafka_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "周围四格没有友方干员时攻击力<@ba.kw>+{atk:0%}</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "atk",
+                        "value": 0.1
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 80
+            },
+            {
+              "key": "atk",
+              "value": 45
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_144_red": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_red",
+    "moduleEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "red_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "周围四格没有友方干员时攻击力<@ba.kw>+{atk:0%}</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "atk",
+                        "value": 0.1
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 50
+            },
+            {
+              "key": "attack_speed",
+              "value": 4
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_243_waaifu": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_waaifu",
+    "moduleEffect": "撤退时返还<span class=\"keyword\">大量</span>该次部署费用",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "waaifu_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "撤退时返还<@ba.kw>大量</>该次部署费用",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "withdraw_cost_recover_ratio",
+                        "value": 0.8
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 70
+            },
+            {
+              "key": "atk",
+              "value": 45
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_237_gravel": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_gravel",
+    "moduleEffect": "撤退时返还<span class=\"keyword\">大量</span>该次部署费用",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "gravel_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "撤退时返还<@ba.kw>大量</>该次部署费用",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "withdraw_cost_recover_ratio",
+                        "value": 0.8
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 100
+            },
+            {
+              "key": "def",
+              "value": 40
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_472_pasngr": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_pasngr",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "attack@max_target",
+                        "value": 4
+                      },
+                      {
+                        "key": "attack@sluggish",
+                        "value": 0.8
+                      },
+                      {
+                        "key": "attack@chain.atk_scale",
+                        "value": 0.9
+                      },
+                      {
+                        "key": "skill@sluggish",
+                        "value": 0.8
+                      },
+                      {
+                        "key": "skill@chain.atk_scale",
+                        "value": 0.9
+                      },
+                      {
+                        "key": "value",
+                        "value": 0.1
+                      }
+                    ],
+                    "overrideDescripton": "攻击造成<@ba.kw>法术伤害</>，且会在<@ba.kw>{attack@max_target}</>个敌人间跳跃，每次跳跃伤害降低<@ba.kw>{value:0%}</>并造成一定时间<$ba.sluggish>停顿</>",
+                    "prefabKey": "-1",
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 65
+            },
+            {
+              "key": "attack_speed",
+              "value": 5
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_306_leizi": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_leizi",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "attack@max_target",
+                        "value": 4
+                      },
+                      {
+                        "key": "attack@sluggish",
+                        "value": 0.8
+                      },
+                      {
+                        "key": "attack@chain.atk_scale",
+                        "value": 0.9
+                      },
+                      {
+                        "key": "value",
+                        "value": 0.1
+                      }
+                    ],
+                    "overrideDescripton": "攻击造成<@ba.kw>法术伤害</>，且会在<@ba.kw>{attack@max_target}</>个敌人间跳跃，每次跳跃伤害降低<@ba.kw>{value:0%}</>并造成一定时间<$ba.sluggish>停顿</>",
+                    "prefabKey": "-1",
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 80
+            },
+            {
+              "key": "atk",
+              "value": 55
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_4004_pudd": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_pudd",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "attack@max_target",
+                        "value": 4
+                      },
+                      {
+                        "key": "attack@sluggish",
+                        "value": 0.5
+                      },
+                      {
+                        "key": "attack@chain.atk_scale",
+                        "value": 1
+                      }
+                    ],
+                    "overrideDescripton": "攻击造成<@ba.kw>法术伤害</>，且会在<@ba.kw>{attack@max_target}</>个敌人间跳跃，每次跳跃伤害<@ba.kw>不再降低</>并造成短暂的<$ba.sluggish>停顿</>",
+                    "prefabKey": "-1",
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 70
+            },
+            {
+              "key": "attack_speed",
+              "value": 4
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_010_chen": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_chen",
+    "moduleEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "chen_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "技能造成的伤害提升<@ba.vup>{value:0%}</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "damage_scale",
+                        "value": 1.1
+                      },
+                      {
+                        "key": "value",
+                        "value": 0.1
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 50
+            },
+            {
+              "key": "attack_speed",
+              "value": 5
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_459_tachak": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_tachak",
+    "moduleEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "tachak_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "技能造成的伤害提升<@ba.vup>{value:0%}</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "damage_scale",
+                        "value": 1.1
+                      },
+                      {
+                        "key": "value",
+                        "value": 0.1
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 40
+            },
+            {
+              "key": "def",
+              "value": 40
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_252_bibeak": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_bibeak",
+    "moduleEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "bibeak_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "技能造成的伤害提升<@ba.vup>{value:0%}</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "damage_scale",
+                        "value": 1.1
+                      },
+                      {
+                        "key": "value",
+                        "value": 0.1
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 45
+            },
+            {
+              "key": "attack_speed",
+              "value": 4
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_301_cutter": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_cutter",
+    "moduleEffect": "攻击时无视敌人<span class=\"value-up\">70</span>点的防御力",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "cutter_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击时无视敌人<@ba.vup>{def_penetrate_fixed}</>点的防御力",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "def_penetrate_fixed",
+                        "value": 70
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 100
+            },
+            {
+              "key": "atk",
+              "value": 40
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_222_bpipe": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_bpipe",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "cost",
+                        "value": 2
+                      }
+                    ],
+                    "overrideDescripton": "击杀敌人后获得<@ba.vup>{cost:0}</>点部署费用，撤退时返还<@ba.kw>该次</>部署费用",
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            },
+            {
+              "resKey": "bpipe_equip_1_1_p1",
+              "target": "TALENT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": [
+                  {
+                    "displayRangeId": false,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "prefabKey": "10",
+                    "name": null,
+                    "description": null,
+                    "rangeId": null,
+                    "blackboard": [
+                      {
+                        "key": "withdraw_cost_recover_ratio",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              "overrideTraitDataBundle": {
+                "candidates": null
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 150
+            },
+            {
+              "key": "atk",
+              "value": 50
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_220_grani": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_grani",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "cost",
+                        "value": 2
+                      }
+                    ],
+                    "overrideDescripton": "击杀敌人后获得<@ba.vup>{cost:0}</>点部署费用，撤退时返还<@ba.kw>该次</>部署费用",
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            },
+            {
+              "resKey": "grani_equip_1_1_p1",
+              "target": "TALENT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": [
+                  {
+                    "displayRangeId": false,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "prefabKey": "10",
+                    "name": null,
+                    "description": null,
+                    "rangeId": null,
+                    "blackboard": [
+                      {
+                        "key": "withdraw_cost_recover_ratio",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              "overrideTraitDataBundle": {
+                "candidates": null
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 150
+            },
+            {
+              "key": "def",
+              "value": 45
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_496_wildmn": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_wildmn",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "cost",
+                        "value": 2
+                      }
+                    ],
+                    "overrideDescripton": "击杀敌人后获得<@ba.vup>{cost:0}</>点部署费用，撤退时返还<@ba.kw>该次</>部署费用",
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            },
+            {
+              "resKey": "wildmn_equip_1_1_p1",
+              "target": "TALENT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": [
+                  {
+                    "displayRangeId": false,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "prefabKey": "10",
+                    "name": null,
+                    "description": null,
+                    "rangeId": null,
+                    "blackboard": [
+                      {
+                        "key": "withdraw_cost_recover_ratio",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              "overrideTraitDataBundle": {
+                "candidates": null
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 40
+            },
+            {
+              "key": "attack_speed",
+              "value": 3
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_261_sddrag": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_sddrag",
+    "moduleEffect": "攻击生命值低于<span class=\"value-up\">40%</span>的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "DISPLAY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击生命值低于<@ba.vup>{hp_ratio:0%}</>的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "hp_ratio",
+                        "value": 0.4
+                      },
+                      {
+                        "key": "atk_scale",
+                        "value": 1.15
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            },
+            {
+              "resKey": "sddrag_equip_1_1_p1",
+              "target": "TALENT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": [
+                  {
+                    "displayRangeId": false,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "prefabKey": "10",
+                    "name": null,
+                    "description": null,
+                    "rangeId": null,
+                    "blackboard": [
+                      {
+                        "key": "hp_ratio",
+                        "value": 0.4
+                      },
+                      {
+                        "key": "atk_scale",
+                        "value": 1.15
+                      }
+                    ]
+                  }
+                ]
+              },
+              "overrideTraitDataBundle": {
+                "candidates": null
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 130
+            },
+            {
+              "key": "atk",
+              "value": 40
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_290_vigna": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_vigna",
+    "moduleEffect": "攻击生命值低于<span class=\"value-up\">40%</span>的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "DISPLAY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击生命值低于<@ba.vup>{hp_ratio:0%}</>的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "hp_ratio",
+                        "value": 0.4
+                      },
+                      {
+                        "key": "atk_scale",
+                        "value": 1.15
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            },
+            {
+              "resKey": "vigna_equip_1_1_p1",
+              "target": "TALENT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": [
+                  {
+                    "displayRangeId": false,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "prefabKey": "10",
+                    "name": null,
+                    "description": null,
+                    "rangeId": null,
+                    "blackboard": [
+                      {
+                        "key": "hp_ratio",
+                        "value": 0.4
+                      },
+                      {
+                        "key": "atk_scale",
+                        "value": 1.15
+                      }
+                    ]
+                  }
+                ]
+              },
+              "overrideTraitDataBundle": {
+                "candidates": null
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 80
+            },
+            {
+              "key": "atk",
+              "value": 40
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_1014_nearl2": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_nearl2",
+    "moduleEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>\n攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "nearl2_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击被阻挡的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "atk_scale",
+                        "value": 1.15
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            },
+            {
+              "resKey": "token_nearl2_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": true,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击被阻挡的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "atk_scale",
+                        "value": 1.15
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 230
+            },
+            {
+              "key": "atk",
+              "value": 70
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_263_skadi": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_skadi",
+    "moduleEffect": "被击倒时不撤退且回复生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "skadi_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "被击倒时不撤退且回复生命但生命上限<@ba.vdown>-{value:0%}</>，攻击速度<@ba.vup>+{attack_speed}</>（单次部署只触发1次）",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "attack_speed",
+                        "value": 30
+                      },
+                      {
+                        "key": "max_hp",
+                        "value": 0.4
+                      },
+                      {
+                        "key": "hp_ratio",
+                        "value": 1
+                      },
+                      {
+                        "key": "value",
+                        "value": 0.6
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 300
+            },
+            {
+              "key": "atk",
+              "value": 55
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_131_flameb": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_flameb",
+    "moduleEffect": "被击倒时不撤退且回复生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "flameb_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "被击倒时不撤退且回复生命但生命上限<@ba.vdown>-{value:0%}</>，攻击速度<@ba.vup>+{attack_speed}</>（单次部署只触发1次）",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "attack_speed",
+                        "value": 30
+                      },
+                      {
+                        "key": "max_hp",
+                        "value": 0.4
+                      },
+                      {
+                        "key": "hp_ratio",
+                        "value": 1
+                      },
+                      {
+                        "key": "value",
+                        "value": 0.6
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 300
+            },
+            {
+              "key": "attack_speed",
+              "value": 4
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_106_franka": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_franka",
+    "moduleEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "franka_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击被阻挡的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "atk_scale",
+                        "value": 1.15
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 150
+            },
+            {
+              "key": "atk",
+              "value": 60
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_159_peacok": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_peacok",
+    "moduleEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "peacok_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "攻击被阻挡的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "atk_scale",
+                        "value": 1.15
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 50
+            },
+            {
+              "key": "attack_speed",
+              "value": 3
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_289_gyuki": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_gyuki",
+    "moduleEffect": "被击倒时不撤退且回复生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "gyuki_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "被击倒时不撤退且回复生命但生命上限<@ba.vdown>-{value:0%}</>，攻击速度<@ba.vup>+{attack_speed}</>（单次部署只触发1次）",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "attack_speed",
+                        "value": 30
+                      },
+                      {
+                        "key": "max_hp",
+                        "value": 0.4
+                      },
+                      {
+                        "key": "hp_ratio",
+                        "value": 1
+                      },
+                      {
+                        "key": "value",
+                        "value": 0.6
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 270
+            },
+            {
+              "key": "atk",
+              "value": 35
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_455_nothin": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_nothin",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 50
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "interval",
+                        "value": 3
+                      },
+                      {
+                        "key": "cost",
+                        "value": -2
+                      }
+                    ],
+                    "overrideDescripton": "再部署时间<@ba.kw>减少</>，撤退时不返还<@ba.kw>部署费用</>，在场时每3秒消耗<@ba.kw>2</>点部署费用（不足时自动撤退）",
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 150
+            },
+            {
+              "key": "atk",
+              "value": 45
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_272_strong": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_strong",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 40
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "interval",
+                        "value": 3
+                      },
+                      {
+                        "key": "cost",
+                        "value": -2
+                      }
+                    ],
+                    "overrideDescripton": "再部署时间<@ba.kw>减少</>，撤退时不返还<@ba.kw>部署费用</>，在场时每3秒消耗<@ba.kw>2</>点部署费用（不足时自动撤退）",
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "atk",
+              "value": 35
+            },
+            {
+              "key": "def",
+              "value": 35
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_322_lmlee": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_lmlee",
+    "moduleEffect": "",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": null,
+              "target": "TRAIT_DATA_ONLY",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": null,
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "interval",
+                        "value": 3
+                      },
+                      {
+                        "key": "cost",
+                        "value": -2
+                      }
+                    ],
+                    "overrideDescripton": "再部署时间<@ba.kw>减少</>，撤退时不返还<@ba.kw>部署费用</>，在场时每3秒消耗<@ba.kw>2</>点部署费用（不足时自动撤退）",
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 200
+            },
+            {
+              "key": "atk",
+              "value": 55
+            }
+          ],
+          "tokenAttributeBlackboard": {}
+        }
+      ]
+    }
+  },
+  "char_2023_ling": {
+    "hasTranslation": false,
+    "moduleId": "uniequip_002_ling",
+    "moduleEffect": "召唤物持有上限<span class=\"keyword\">+3</span>，召唤物部署费用<span class=\"keyword\">减少</span>",
+    "moduleObject": {
+      "phases": [
+        {
+          "equipLevel": 1,
+          "parts": [
+            {
+              "resKey": "ling_equip_1_1_p1",
+              "target": "TRAIT",
+              "isToken": false,
+              "addOrOverrideTalentDataBundle": {
+                "candidates": null
+              },
+              "overrideTraitDataBundle": {
+                "candidates": [
+                  {
+                    "additionalDescription": "召唤物持有上限<@ba.kw>+{cnt}</>，召唤物部署费用<@ba.kw>减少</>",
+                    "unlockCondition": {
+                      "phase": 2,
+                      "level": 60
+                    },
+                    "requiredPotentialRank": 0,
+                    "blackboard": [
+                      {
+                        "key": "cnt",
+                        "value": 3
+                      }
+                    ],
+                    "overrideDescripton": null,
+                    "prefabKey": null,
+                    "rangeId": null
+                  }
+                ]
+              }
+            }
+          ],
+          "attributeBlackboard": [
+            {
+              "key": "max_hp",
+              "value": 100
+            },
+            {
+              "key": "atk",
+              "value": 30
+            }
+          ],
+          "tokenAttributeBlackboard": {
+            "token_10020_ling_soul1": [
+              {
+                "key": "cost",
+                "value": -3
+              },
+              {
+                "key": "max_deck_stack_cnt",
+                "value": 3
+              }
+            ],
+            "token_10020_ling_soul2": [
+              {
+                "key": "cost",
+                "value": -3
+              },
+              {
+                "key": "max_deck_stack_cnt",
+                "value": 3
+              }
+            ],
+            "token_10020_ling_soul3": [
+              {
+                "key": "cost",
+                "value": -5
+              },
+              {
+                "key": "max_deck_stack_cnt",
+                "value": 3
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

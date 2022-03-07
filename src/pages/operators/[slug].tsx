@@ -17,7 +17,7 @@ import Layout from "../../Layout";
 import { replaceSelfClosingHtmlTags } from "../../utils/globals";
 import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
-import { CharacterObject } from "../../utils/types";
+import { CharacterObject, ModuleObject } from "../../utils/types";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
 import { operatorImage } from "../../utils/images";
 import { Media } from "../../Media";
@@ -25,7 +25,10 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { fetchContentfulGraphQl } from "../../utils/fetch";
 import operatorsJson from "../../../data/operators.json";
 import summonsJson from "../../../data/summons.json";
+import modulesJson from "../../../data/modules.json";
 import { markdownToHtmlString } from "../../utils/markdown";
+import ModuleInfo from "../../components/ModuleInfo";
+import Module from "../../components/Module";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -33,6 +36,7 @@ interface HTMLToReactContext {
   talents: TalentObject[];
   operator: CharacterObject;
   summon?: CharacterObject;
+  module: ModuleObject | null;
 }
 
 const htmlToReact = (
@@ -71,6 +75,21 @@ const htmlToReact = (
             );
           }
           return <CharacterStats characterObject={context.summon} />;
+        } else if (domNode.name === "moduleinfo") {
+          if (!context.module) {
+            console.log(context);
+            throw new Error(
+              "Can't render <ModuleInfo /> because module is missing from context. Check your console for context contents"
+            );
+          }
+
+          return (
+            <ModuleInfo
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              module={context.module!}
+              operatorName={context.operator.charId}
+            />
+          );
         } else if (domNode.name === "masteryrecommendation") {
           const props = attributesToProps(domNode.attribs);
           return (
@@ -155,6 +174,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           introduction
           strengths
           weaknesses
+          moduleAnalysis
           talent1Analysis
           talent2Analysis
           skill1Recommended
@@ -201,6 +221,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           introduction: string;
           strengths: string;
           weaknesses: string;
+          moduleAnalysis: string;
           talent1Analysis: string;
           talent2Analysis: string;
           skill1Recommended: boolean;
@@ -234,6 +255,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     operatorName as keyof typeof operatorsJson
   ] as unknown as CharacterObject;
   const summons = summonsJson[operatorName as keyof typeof summonsJson] ?? [];
+  let modules: ModuleObject | null =
+    (modulesJson[
+      operatorObject.charId as keyof typeof modulesJson
+    ] as unknown as ModuleObject) ?? null;
+  if (!modules.hasTranslation) {
+    modules = null;
+  }
 
   const markdownListItemRegex = /^\s*-\s(.+)$/;
   const props: Props = {
@@ -259,6 +287,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           return match![1];
         }),
+      moduleAnalysis: await markdownToHtmlString(
+        operatorAnalysis.moduleAnalysis
+      ),
       talent1Analysis: await markdownToHtmlString(
         operatorAnalysis.talent1Analysis
       ),
@@ -281,6 +312,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     operatorObject,
     summons: summons as unknown as CharacterObject[],
+    module: modules,
     allOperators: Object.fromEntries(
       Object.entries(operatorsJson).map(([opName, op]) => [
         opName,
@@ -316,6 +348,7 @@ interface Props {
     introduction: string;
     strengths: string[];
     weaknesses: string[];
+    moduleAnalysis: string;
     talent1Analysis: string;
     talent2Analysis: string;
     skill1Recommended?: boolean;
@@ -337,6 +370,7 @@ interface Props {
   };
   operatorObject: CharacterObject;
   summons: CharacterObject[];
+  module: ModuleObject | null;
   allOperators: {
     [operatorName: string]: Pick<
       CharacterObject,
@@ -346,7 +380,7 @@ interface Props {
 }
 
 const OperatorAnalysis: React.VFC<Props> = (props) => {
-  const { guide, operatorObject, summons, allOperators } = props;
+  const { guide, operatorObject, summons, allOperators, module } = props;
   const {
     operator,
     customByline,
@@ -354,6 +388,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     introduction,
     strengths,
     weaknesses,
+    moduleAnalysis,
     talent1Analysis,
     talent2Analysis,
     skill1Recommended,
@@ -375,9 +410,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     skills: operatorObject.skillData,
     recommendedSkills: skillRecommended,
     operator: operatorObject,
+    module: module,
     summon: summons.length > 0 ? summons[0] : undefined,
   };
   const theme = useTheme();
+  const moduleAnalysisHtml =
+    module != null ? htmlToReact(moduleAnalysis, context) : null;
 
   const talentAnalyses = [talent1Analysis, talent2Analysis]
     .filter((html) => !!html)
@@ -460,7 +498,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       >
         <TabButtons className="tabs" isSwiper>
           {[
-            ...["Introduction", "Talents", "Skills"],
+            ...["Introduction"],
+            ...(module != null ? ["Module"] : []),
+            ...["Talents", "Skills"],
             ...(synergies.length > 0 ? ["Synergies"] : []),
           ].map((label) => (
             <button key={label}>{label}</button>
@@ -481,6 +521,19 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 ),
                 className: "introduction",
               },
+            ],
+            ...(module != null
+              ? [
+                  {
+                    component: (
+                      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                      <Module analysis={moduleAnalysisHtml} />
+                    ),
+                    className: "module",
+                  },
+                ]
+              : []),
+            ...[
               {
                 component: (
                   <CardWithTabs

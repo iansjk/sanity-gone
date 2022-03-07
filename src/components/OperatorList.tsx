@@ -123,7 +123,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                     src={`/images/portraits/${portraitFilename}`}
                     alt=""
                     layout="fill"
-                    objectPosition="bottom"
+                    objectPosition="right bottom"
                   />
                 </Box>
               </Box>

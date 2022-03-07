@@ -1,97 +1,82 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
-import { graphql } from "gatsby";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { rgba } from "polished";
+import Image from "next/image";
 
 import Layout from "../Layout";
-import { slugify } from "../utils/globals";
-import { sgPageBanner } from "../utils/images";
+import aboutPageBanner from "../images/page-banners/about.jpg";
 
-const members: { name: string; role: string }[] = [
+import type { NextPage } from "next";
+
+const members: { name: string; role: string; imageFilename: string }[] = [
   {
     name: "nikoleye",
     role: "Project Lead, Writer",
+    imageFilename: "nikoleye.png",
   },
   {
     name: "samidare",
     role: "Developer",
+    imageFilename: "samidare.png",
   },
   {
     name: "Stinggyray",
-    role: "Developer",
+    role: "Developer, Editor",
+    imageFilename: "stinggyray.png",
   },
   {
     name: "namtar",
     role: "Founder, Designer",
+    imageFilename: "namtar.jpg",
   },
   {
     name: "kawa",
     role: "Mascot",
+    imageFilename: "kawa.png",
   },
   {
     name: "Thanik",
     role: "Writer, Editor",
+    imageFilename: "thanik.jpg",
   },
   {
     name: "iana",
     role: "Writer, Editor",
+    imageFilename: "iana.png",
   },
   {
     name: "Kirahuang",
     role: "Host, Advisor",
+    imageFilename: "kirahuang.png",
   },
   {
     name: "Noël",
     role: "Founder, Advisor",
+    imageFilename: "noel.png",
   },
   {
     name: "pepegaturtle",
     role: ":pepegaturtle:",
+    imageFilename: "pepegaturtle.png",
   },
 ];
 
-interface Props {
-  data: {
-    allFile: {
-      nodes: {
-        name: string;
-        childImageSharp: {
-          gatsbyImageData: IGatsbyImageData;
-        };
-      }[];
-    };
-  };
-}
-
-const About: React.VFC<Props> = ({ data }) => {
-  const { nodes: imageNodes } = data.allFile;
-
+const About: NextPage = () => {
   return (
-    <Layout
-      pageTitle="About"
-      bannerImageUrl={sgPageBanner("about")}
-      previousLocation="Home"
-      previousLocationLink="/"
-    >
+    <Layout pageTitle="About" bannerImage={aboutPageBanner}>
       <main css={styles}>
         <h2>Sanity;Gone Team</h2>
         <ul className="team-members">
-          {members.map(({ name, role }) => {
-            const fileNode = imageNodes.find(
-              (node) => node.name === slugify(name)
-            );
-            if (fileNode == null) {
-              throw new Error(
-                `Couldn't find avatar for ${name}, expected ${slugify(name)}`
-              );
-            }
+          {members.map(({ name, role, imageFilename }) => {
             return (
               <li className="member-card" key={name}>
-                <GatsbyImage
+                <Image
                   className="avatar"
-                  image={fileNode.childImageSharp.gatsbyImageData}
+                  src={`/images/member-avatars/${imageFilename}`}
                   alt=""
+                  width={112}
+                  height={112}
+                  objectFit="cover"
                 />
                 <span className="member-name">{name}</span>
                 <span className="role">{role}</span>
@@ -165,8 +150,6 @@ const styles = (theme: Theme) => css`
       border-radius: ${theme.spacing(1)};
 
       .avatar {
-        width: 112px;
-        height: 112px;
         border-radius: 50%;
       }
 
@@ -190,24 +173,6 @@ const styles = (theme: Theme) => css`
 
     p {
       margin: ${theme.spacing(2, 0, 0)};
-    }
-  }
-`;
-
-export const query = graphql`
-  query {
-    allFile(
-      filter: {
-        sourceInstanceName: { eq: "images" }
-        relativeDirectory: { eq: "member-avatars" }
-      }
-    ) {
-      nodes {
-        name
-        childImageSharp {
-          gatsbyImageData(width: 112, height: 112)
-        }
-      }
     }
   }
 `;

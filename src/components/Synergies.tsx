@@ -4,6 +4,8 @@ import { Theme } from "@mui/material";
 import CardWithTabs from "./CardWithTabs";
 import Synergy, { SynergyProps, SynergyQuality } from "./Synergy";
 import { operatorImage } from "../utils/images";
+import Image from "next/image";
+import cx from "clsx";
 
 export interface SynergiesProps {
   synergies: SynergyProps[];
@@ -28,15 +30,19 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
             className={`operator-button synergy-operator-button${
               syn.isGroup ? " synergy-group" : ""
             }`}
-            style={{
-              backgroundImage: `url("${
-                syn.isGroup ? syn.iconUrl! : operatorImage(syn.name)
-              }")`,
-              backgroundBlendMode: syn.shouldInvertIconOnHighlight
-                ? "difference"
-                : "normal",
-            }}
-          />
+          >
+            <Image
+              className={cx(
+                "operator-image",
+                syn.shouldInvertIconOnHighlight && "invert-on-highlight"
+              )}
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              src={syn.isGroup ? syn.iconUrl! : operatorImage(syn.name)}
+              width={48}
+              height={48}
+              alt=""
+            />
+          </button>
         );
         if (
           syn.quality != null &&
@@ -46,6 +52,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
           return [
             <span
               key={qualityLabel}
+              // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
               className={`synergy-quality quality-${syn.quality}`}
               title={SynergyQuality[syn.quality]}
             >
@@ -56,9 +63,31 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
         }
         return button;
       })}
-      panels={sortedSynergies.map((synOp) => (
-        <Synergy key={synOp.name} {...synOp} />
-      ))}
+      panels={sortedSynergies.map((synOp) => {
+        const {
+          name,
+          analysis,
+          isGroup,
+          iconUrl,
+          rarity,
+          profession,
+          subProfessionId,
+          quality,
+        } = synOp;
+        return (
+          <Synergy
+            key={synOp.name}
+            name={name}
+            isGroup={isGroup}
+            analysis={analysis}
+            iconUrl={iconUrl}
+            rarity={rarity}
+            profession={profession}
+            subProfessionId={subProfessionId}
+            quality={quality}
+          />
+        );
+      })}
     />
   );
 };
@@ -103,6 +132,14 @@ const styles = (theme: Theme) => css`
           position: absolute;
           right: -4px;
           bottom: -2px;
+        }
+
+        .operator-image {
+          border-radius: ${theme.spacing(1)};
+
+          &.invert-on-highlight {
+            mix-blend-mode: difference;
+          }
         }
       }
 

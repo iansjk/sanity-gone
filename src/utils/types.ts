@@ -1,3 +1,6 @@
+import { SkillObject } from "../components/SkillInfo";
+import { TalentObject } from "../components/TalentInfo";
+
 export interface AttributeKeyFrame {
   level: number;
   data: {
@@ -40,13 +43,14 @@ export interface CharacterObject {
   cnName: string;
   profession: string;
   subProfessionId: string;
-  position: "MELEE" | "RANGED";
-  description: string;
+  position: string;
+  description: string | null;
   phases: CharacterPhaseObject[];
   rarity: number; // 0-indexed, so a 1* op has value 0
-  favorKeyFrames: FavorKeyFrame[];
+  favorKeyFrames: FavorKeyFrame[] | null;
   potentialRanks: PotentialRanks[];
-
+  talents: TalentObject[];
+  skillData: SkillObject[];
   [otherProperties: string]: unknown;
 }
 
@@ -88,6 +92,7 @@ export interface PotentialRanks {
   } | null;
   type: number;
   description: string;
+  equivalentCost: unknown; // unused
 }
 
 export interface PotentialStatChange {

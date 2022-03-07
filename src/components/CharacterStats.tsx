@@ -41,6 +41,7 @@ import RibbonButton from "./RibbonButton";
 import RibbonButtonGroup from "./RibbonButtonGroup";
 import SliderWithInput from "./SliderWithInput";
 import TraitInfo from "./TraitInfo";
+import Image from "next/image";
 
 const SUMMON_ICON_SIZE = 60;
 
@@ -365,7 +366,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
       <dl className={isSummon ? "summon-stats" : "operator-stats"}>
         {isSummon && (
           <div className="summon-icon">
-            <img
+            <Image
               src={summonImage(id)}
               alt={name}
               width={SUMMON_ICON_SIZE}
@@ -588,6 +589,7 @@ const styles = (theme: Theme) => css`
     .summon-icon {
       grid-row-start: span 2;
       border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+      justify-content: center;
 
       ${theme.breakpoints.down("mobile")} {
         grid-row-start: unset;

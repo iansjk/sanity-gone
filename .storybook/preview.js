@@ -1,7 +1,18 @@
-import { css } from "@emotion/react";
-import Theme from "../src/gatsby-theme-material-ui-top-layout/theme";
-import TopLayout from "../src/gatsby-theme-material-ui-top-layout/components/top-layout";
+import { ThemeProvider as MuiThemeProvider, GlobalStyles } from "@mui/material";
+import { css, ThemeProvider as EmotionThemeProvider } from "@emotion/react";
+import emotionNormalize from "emotion-normalize";
+import * as NextImage from "next/image";
+
+import { MediaContextProvider, mediaStyle } from "../src/Media";
+import theme from "../src/theme";
 import Layout from "../src/Layout";
+
+// deoptimize next/image in Storybook: https://storybook.js.org/blog/get-started-with-storybook-and-next-js/
+const OriginalNextImage = NextImage.default;
+Object.defineProperty(NextImage, "default", {
+  configurable: true,
+  value: (props) => <OriginalNextImage {...props} unoptimized />,
+});
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -16,11 +27,18 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <TopLayout theme={Theme}>
-      <Layout css={styles}>
-        <Story />
-      </Layout>
-    </TopLayout>
+    <MediaContextProvider>
+      <MuiThemeProvider theme={theme}>
+        <EmotionThemeProvider theme={theme}>
+          <GlobalStyles styles={mediaStyle} />
+          <GlobalStyles styles={emotionNormalize} />
+          <GlobalStyles styles={styles} />
+          <Layout>
+            <Story />
+          </Layout>
+        </EmotionThemeProvider>
+      </MuiThemeProvider>
+    </MediaContextProvider>
   ),
 ];
 
@@ -28,19 +46,11 @@ const styles = (theme) => css`
   header,
   footer,
   .navbar {
-    display: none;
+    display: none !important;
   }
 
   .header-main-wrapper {
-    margin: 0;
-  }
-
-  .page-content {
-    padding: ${theme.spacing(3)};
-  }
-
-  body {
-    font-family: ${theme.typography.body1.family};
-    background-color: #1b1b22;
+    margin: unset !important;
+    padding: ${theme.spacing(3)} !important;
   }
 `;

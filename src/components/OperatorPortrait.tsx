@@ -1,5 +1,5 @@
-import { css } from "@emotion/react";
-import { useTheme, Theme } from "@mui/material";
+import { css, Theme, useTheme } from "@mui/material";
+import Image from "next/image";
 
 import { operatorImage } from "../utils/images";
 import TiltedStarIcon from "./icons/TiltedStarIcon";
@@ -41,13 +41,13 @@ const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
           </span>
         </span>
       )}
-      <img
-        className="operator-portrait"
+      <Image
+        className={`operator-portrait ${variant}`}
         src={iconOverride ?? operatorImage(name)}
         alt=""
         width={imageSize[variant]}
         height={imageSize[variant]}
-        style={{ margin: portraitMargin }}
+        objectFit="cover"
       />
       {rarity && (
         <span className={`rarity-wrapper ${variant}`}>
@@ -73,6 +73,9 @@ export default OperatorPortrait;
 
 const styles = (theme: Theme) => css`
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: ${theme.spacing(0.5)};
   border: ${theme.spacing(0.25)} solid ${theme.palette.white.main};
   background: ${theme.palette.midtoneExtra.main};
@@ -84,6 +87,14 @@ const styles = (theme: Theme) => css`
   .operator-portrait {
     border-radius: ${theme.spacing(0.25)};
     object-fit: scale-down;
+
+    &.normal {
+      margin-bottom: ${theme.spacing(0.5)};
+    }
+
+    &.small {
+      margin-bottom: ${theme.spacing(0.25)};
+    }
   }
 
   .limited-wrapper {

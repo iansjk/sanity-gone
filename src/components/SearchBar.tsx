@@ -1,38 +1,26 @@
 import { useMemo, useState } from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
 import { InputBase, Theme } from "@mui/material";
 import FlexSearch from "flexsearch";
 import {
   operatorClassIcon,
   operatorImage,
-  operatorSubclassIcon,
+  operatorBranchIcon,
 } from "../utils/images";
-import gatsbySlugify from "@sindresorhus/slugify";
 import { css } from "@emotion/react";
 import { slugify, subclassSlugify } from "../utils/globals";
 import SearchIcon from "./icons/SearchIcon";
 import { transparentize } from "polished";
 import levenshtein from "js-levenshtein";
-
-interface SearchQuery {
-  localSearchGlobal: {
-    index: string;
-    store: Record<string, SearchResult>;
-  };
-  allContentfulOperatorAnalysis: {
-    nodes: {
-      operator: {
-        name: string;
-      };
-    }[];
-  };
-}
+import Image from "next/image";
+import search from "../../data/search.json";
+import Link from "next/link";
+import HashCompatibleNextLink from "./HashCompatibleNextLink";
 
 // Interface representing a search result.
 // This could be either a class, subclass, or operator (denoted by "type").
 // This involves a certain amount of weird hacking, because each type of search
 // result has different keys available to it.
-interface SearchResult {
+export interface SearchResult {
   type: string;
   name: string;
   class?: string;
@@ -45,6 +33,7 @@ interface SearchResult {
 // the mobile menu while the search is active (CSS doesn't let me do it).
 interface SearchBarProps {
   placeholder: string;
+  onLinkClicked?: () => void;
   whenInputChange?: (input: string) => void;
 }
 
@@ -69,58 +58,42 @@ const prefenshteinCompare = (query: string, a: string, b: string) => {
 };
 
 const SearchBar: React.VFC<SearchBarProps> = (props) => {
-  const { placeholder, ...rest } = props;
+  const { placeholder, onLinkClicked, whenInputChange } = props;
+  const index = FlexSearch.create({
+    tokenize: "full",
+  });
+  index.import(search.index);
 
-  // need to read the list of guides, to disable the links to operators without
-  // guides yet
-  const search: SearchQuery = useStaticQuery(graphql`
-    query SearchQuery {
-      localSearchGlobal {
-        index
-        store
-      }
-      allContentfulOperatorAnalysis {
-        nodes {
-          operator {
-            name
-          }
-        }
-      }
-    }
-  `);
-
-  const store = search.localSearchGlobal.store;
-  const index = FlexSearch.create();
-  index.import(search.localSearchGlobal.index);
-
-  const operatorsWithGuides = new Set(
-    search.allContentfulOperatorAnalysis.nodes.map((node) => node.operator.name)
-  );
+  const store: Record<string, SearchResult> = search.store;
+  const operatorsWithGuides = search.operatorsWithGuides;
 
   const [query, setQuery] = useState("");
-  const [isFocused, setFocus] = useState(false);
+  const [isFocused, setFocused] = useState(false);
 
   // Gets the results based on the current query state
   // This uses memoization, so the same query will not be repeated twice
   const results = useMemo((): SearchResult[] => {
     if (!query || !index || !store) return [];
 
-    // @ts-expect-error trust me bro its a string array
-    const rawResults: string[] = index.search(query);
-
-    return rawResults.map((name: string): SearchResult => store[name]);
+    const rawResults = index.search(query);
+    // @ts-expect-error: hacky way to get the results (this is actually a Promise[])
+    return rawResults.map((index): SearchResult => store[index.toString()]);
   }, [index, query, store]);
+
+  const handleLinkClick = () => {
+    setFocused(false);
+    onLinkClicked && onLinkClicked();
+  };
 
   return (
     <div
       className={`search ${isFocused ? "focused" : "not-focused"}`}
       css={styles}
-      {...rest}
-      onFocus={() => setFocus(true)}
+      onFocus={() => setFocused(true)}
       onBlur={(e: React.FocusEvent<HTMLDivElement>) => {
         if (!e.currentTarget.contains(e.relatedTarget)) {
           // XXX this is a hack for Safari to make operator links clickable
-          setTimeout(() => setFocus(false), 0);
+          setTimeout(() => setFocused(false), 0);
         }
       }}
     >
@@ -130,11 +103,9 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
           className="search-input"
           placeholder={placeholder}
           onChange={(e) => {
-            setFocus(true);
+            setFocused(true);
             setQuery(e.target.value);
-            if (props.whenInputChange) {
-              props.whenInputChange(e.target.value);
-            }
+            whenInputChange && whenInputChange(e.target.value);
           }}
         />
       </div>
@@ -150,20 +121,20 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                   .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
                   .slice(0, 5) // limit of 5 operator results
                   .map((res) => {
-                    const hasGuide = operatorsWithGuides.has(res.name);
-                    return (
-                      <Link
-                        className={
-                          hasGuide ? "operator-card" : "operator-card disabled"
-                        }
-                        key={res.name}
-                        to={
-                          hasGuide
-                            ? `/operators/${gatsbySlugify(res.name)}`
-                            : "#"
-                        }
-                      >
-                        <img alt={res.name} src={operatorImage(res.name)} />
+                    const slug =
+                      operatorsWithGuides[
+                        res.name as keyof typeof operatorsWithGuides
+                      ];
+                    const url = slug != null ? `/operators/${slug}` : null;
+                    const hasGuide = url != null;
+                    const cardContent = (
+                      <>
+                        <Image
+                          alt={res.name}
+                          src={operatorImage(res.name)}
+                          width={40}
+                          height={40}
+                        />
                         <div className="operator-info">
                           {res.name}
                           <div className="rarity-and-class">
@@ -178,60 +149,82 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                             </span>
                           </div>
                         </div>
-                        {!hasGuide && <div className="gray-overlay" />}
+                      </>
+                    );
+
+                    return hasGuide ? (
+                      <Link key={res.name} href={url}>
+                        <a className="operator-card" onClick={handleLinkClick}>
+                          {cardContent}
+                        </a>
                       </Link>
+                    ) : (
+                      <div key={res.name} className="operator-card disabled">
+                        {cardContent}
+                        <div className="gray-overlay" />
+                      </div>
                     );
                   })}
               </div>
             )}
             {results.filter(
-              (res) => res.type === "subclass" || res.type === "class"
+              (res) => res.type === "branch" || res.type === "class"
             ).length > 0 && (
               <div className="classes-results">
                 <div className="category-label">Classes</div>
                 {results
                   .filter(
-                    (res) => res.type === "subclass" || res.type === "class"
+                    (res) => res.type === "branch" || res.type === "class"
                   )
                   .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
                   .slice(0, 3) // limit of 3 subclass or class results
                   .map((res) => {
-                    return res.type === "subclass" ? (
-                      <Link
-                        className="classes-card"
+                    return res.type === "branch" ? (
+                      <HashCompatibleNextLink
                         key={res.name}
-                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        to={`/operators#${slugify(
+                        href={`/operators#${slugify(
+                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                           res.class!
                         )}-${subclassSlugify(res.name)}`}
                       >
-                        <img
-                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                          src={operatorSubclassIcon(res.subProfession!)}
-                          alt={res.subProfession}
-                        />
-                        <div className="classes-info">
-                          {res.name}
-                          <span className="class-name">{res.class} Branch</span>
-                        </div>
-                      </Link>
+                        <a className="classes-card" onClick={handleLinkClick}>
+                          <Image
+                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                            src={operatorBranchIcon(res.subProfession!)}
+                            alt={res.subProfession}
+                            height={40}
+                            width={40}
+                          />
+                          <div className="classes-info">
+                            {res.name}
+                            <span className="class-name">
+                              {res.class} Branch
+                            </span>
+                          </div>
+                        </a>
+                      </HashCompatibleNextLink>
                     ) : (
-                      <Link
-                        className="classes-card"
+                      <HashCompatibleNextLink
                         key={res.name}
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        to={`/operators#${slugify(res.class!)}`}
+                        href={`/operators#${slugify(res.class!)}`}
                       >
-                        <img
-                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                          src={operatorClassIcon(res.class!.toLowerCase())}
-                          alt={res.class}
-                        />
-                        <div className="classes-info">
-                          {res.name}
-                          <span className="class-name">Class</span>
-                        </div>
-                      </Link>
+                        <a className="classes-card" onClick={handleLinkClick}>
+                          <Image
+                            src={operatorClassIcon(
+                              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                              res.class!.toLowerCase()
+                            )}
+                            alt={res.class}
+                            width={40}
+                            height={40}
+                          />
+                          <div className="classes-info">
+                            {res.name}
+                            <span className="class-name">Class</span>
+                          </div>
+                        </a>
+                      </HashCompatibleNextLink>
                     );
                   })}
               </div>
@@ -329,7 +322,7 @@ const styles = (theme: Theme) => css`
       display: flex;
       flex-direction: column;
 
-      a.operator-card {
+      .operator-card {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -380,7 +373,7 @@ const styles = (theme: Theme) => css`
       display: flex;
       flex-direction: column;
 
-      a.classes-card {
+      .classes-card {
         display: flex;
         flex-direction: row;
         align-items: center;

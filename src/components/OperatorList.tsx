@@ -1,62 +1,35 @@
 import React from "react";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
-import { css, Theme, Tooltip } from "@mui/material";
-import slugify from "@sindresorhus/slugify";
+import { Box, css, Theme, Tooltip } from "@mui/material";
 import cx from "clsx";
 import { rgba } from "polished";
 
-import { OperatorListOperator } from "../pages/operators";
 import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
-import { operatorSubclassIcon } from "../utils/images";
 import StarIcon from "./icons/StarIcon";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import Image from "next/image";
+import Link from "next/link";
+import { operatorBranchIcon } from "../utils/images";
 
-const getPortraitFilename = (operatorId: string) => `${operatorId}_1`;
+const getPortraitFilename = (operatorId: string) => `${operatorId}_1.png`;
 
-export interface PortraitNode {
+export interface OperatorListOperator {
+  charId: string;
   name: string;
-  childImageSharp: {
-    gatsbyImageData: IGatsbyImageData;
-  };
+  isCnOnly: boolean;
+  profession: string;
+  subProfessionId: string;
+  rarity: number; // 0-indexed
 }
 
 interface Props {
   operators: OperatorListOperator[];
   operatorsToShow: OperatorListOperator[];
-  operatorsWithGuides: string[];
+  operatorsWithGuides: { [operatorName: string]: string }; // operator name -> slug
   onSubclassFilter: (profession: string, subProfessionId: string) => void;
 }
 
 const OperatorList: React.VFC<Props> = React.memo((props) => {
   const { operators, operatorsToShow, operatorsWithGuides, onSubclassFilter } =
     props;
-
-  const data = useStaticQuery<{
-    portraits: { nodes: PortraitNode[] };
-  }>(graphql`
-    query {
-      portraits: allFile(
-        filter: {
-          sourceInstanceName: { eq: "images" }
-          relativeDirectory: { eq: "portraits" }
-        }
-      ) {
-        nodes {
-          name
-          childImageSharp {
-            gatsbyImageData(
-              height: 360
-              width: 180
-              transformOptions: { fit: CONTAIN, cropFocus: SOUTH }
-              backgroundColor: "transparent"
-              placeholder: BLURRED
-            )
-          }
-        }
-      }
-    }
-  `);
-  const { nodes: portraitNodes } = data.portraits;
 
   return (
     <>
@@ -88,17 +61,33 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
         {operators.map((op) => {
           const operatorClass = professionToClass(op.profession);
           const subclass = subProfessionIdToSubclass(op.subProfessionId);
-          const hasGuide = operatorsWithGuides.includes(op.name);
+          const url = operatorsWithGuides[op.name];
+          const hasGuide = url != null;
           const [charName, alterName] = op.name.split(" the ");
           const portraitFilename = getPortraitFilename(op.charId);
-          const portraitNode = portraitNodes.find(
-            ({ name: filename }) => filename === portraitFilename
+
+          const operatorInfo = (
+            <>
+              <span className="operator-name">
+                {alterName ? (
+                  <>
+                    <span className="base-name">{charName}</span>
+                    <span className="alter-name">{alterName}</span>
+                  </>
+                ) : (
+                  op.name
+                )}
+              </span>
+              <span className="rarity" title={`Rarity: ${op.rarity + 1} stars`}>
+                <span className="rarity-number">{op.rarity + 1}</span>{" "}
+                <StarIcon className="rarity-star" />
+              </span>
+              <span key="opClass" className="operator-class">
+                {operatorClass}
+              </span>
+            </>
           );
-          if (!portraitNode) {
-            throw new Error(
-              `Couldn't find portrait for ${op.name}, expecting ${portraitFilename}`
-            );
-          }
+
           return (
             <li
               key={op.name}
@@ -115,55 +104,51 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   : {}
               }
             >
-              <GatsbyImage
-                className="operator-portrait-container"
-                imgClassName="operator-portrait"
-                image={portraitNode.childImageSharp.gatsbyImageData}
-                alt=""
-              />
+              <Box
+                gridArea="x"
+                height="100%"
+                overflow="hidden"
+                sx={{
+                  backgroundColor: (theme) => theme.palette.midtone.main,
+                }}
+              >
+                <Box
+                  position="relative"
+                  width="100%"
+                  height={0}
+                  top="-20px"
+                  paddingBottom="200%"
+                >
+                  <Image
+                    src={`/images/portraits/${portraitFilename}`}
+                    alt=""
+                    layout="fill"
+                    objectPosition="right bottom"
+                  />
+                </Box>
+              </Box>
               <div className="operator-card-content">
                 {hasGuide && (
-                  <Link
-                    className="dummy-clickable-area"
-                    to={`/operators/${slugify(op.name)}`}
-                    tabIndex={-1}
-                    aria-hidden="true"
-                  />
+                  <Link href={`/operators/${url}`}>
+                    <a
+                      className="dummy-clickable-area"
+                      tabIndex={-1}
+                      aria-hidden="true"
+                    />
+                  </Link>
                 )}
-                {React.createElement(
-                  hasGuide ? Link : "div", // @ts-expect-error this works. I don't want to know why, but it does
-                  {
-                    className: "operator-info",
-                    ...(hasGuide
-                      ? {
-                          to: `/operators/${slugify(op.name)}`,
-                          role: "presentation",
-                          tabIndex: -1,
-                        }
-                      : {}),
-                  },
-                  <>
-                    <span className="operator-name">
-                      {alterName ? (
-                        <>
-                          <span className="base-name">{charName}</span>
-                          <span className="alter-name">{alterName}</span>
-                        </>
-                      ) : (
-                        op.name
-                      )}
-                    </span>
-                    <span
-                      className="rarity"
-                      title={`Rarity: ${op.rarity + 1} stars`}
+                {hasGuide ? (
+                  <Link href={`/operators/${url}`}>
+                    <a
+                      className="operator-info"
+                      role="presentation"
+                      tabIndex={-1}
                     >
-                      <span className="rarity-number">{op.rarity + 1}</span>{" "}
-                      <StarIcon className="rarity-star" />
-                    </span>
-                    <span key="opClass" className="operator-class">
-                      {operatorClass}
-                    </span>
-                  </>
+                      {operatorInfo}
+                    </a>
+                  </Link>
+                ) : (
+                  <div className="operator-info">{operatorInfo}</div>
                 )}
                 <Tooltip title={subclass}>
                   <button
@@ -172,20 +157,21 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                       onSubclassFilter(op.profession, op.subProfessionId)
                     }
                   >
-                    <img
+                    <Image
+                      width={32}
+                      height={32}
                       className="operator-subclass-icon"
-                      src={operatorSubclassIcon(op.subProfessionId)}
+                      src={operatorBranchIcon(op.subProfessionId)}
                       alt={""}
                     />
                   </button>
                 </Tooltip>
                 {/* TODO "NEW" should go here */}
                 {hasGuide ? (
-                  <Link
-                    className="go-to-guide-link"
-                    to={`/operators/${slugify(op.name)}`}
-                  >
-                    <span className="go-to-guide-text">Read Guide</span>
+                  <Link href={`/operators/${url}`}>
+                    <a className="go-to-guide-link">
+                      <span className="go-to-guide-text">Read Guide</span>
+                    </a>
                   </Link>
                 ) : (
                   <span className="visually-hidden">Guide Unavailable</span>
@@ -425,8 +411,6 @@ const styles = (theme: Theme) => css`
           .rarity-star {
             width: 13px;
             height: 13px;
-            position: relative;
-            top: -1px;
           }
         }
 
@@ -456,9 +440,6 @@ const styles = (theme: Theme) => css`
         }
 
         .operator-subclass-icon {
-          width: ${theme.spacing(4)};
-          height: ${theme.spacing(4)};
-          line-height: 1;
           filter: drop-shadow(
             0 ${theme.spacing(0.25)} ${theme.spacing(1)} rgba(0, 0, 0, 0.5)
           );
@@ -489,20 +470,6 @@ const styles = (theme: Theme) => css`
           display: inline-block;
           margin-top: ${theme.spacing(0.75)};
         }
-      }
-    }
-
-    .operator-portrait-container {
-      grid-area: x;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      border-radius: ${theme.spacing(0.5)};
-
-      img.operator-portrait {
-        width: 100%;
-        background-color: ${theme.palette.midtone.main};
-        border-radius: ${theme.spacing(0.5)};
       }
     }
   }

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sanitygone.help/sitemap/sitemap-index.xml

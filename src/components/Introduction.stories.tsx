@@ -1,6 +1,7 @@
 import { Meta, Story } from "@storybook/react";
 import Introduction, { IntroductionProps } from "./Introduction";
 import CharacterStats, { CharacterStatsProps } from "./CharacterStats";
+import { CharacterObject } from "../utils/types";
 
 export default {
   title: "Introduction",
@@ -3100,7 +3101,7 @@ const characterObject = {
   subProfessionId: "unyield",
   isCnOnly: false,
   fileIndex: 179,
-};
+} as unknown as CharacterObject;
 export const Default = Template.bind({});
 Default.args = {
   isLimited: false,

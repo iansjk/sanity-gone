@@ -1,7 +1,11 @@
 node_modules/
-.cache/
-public
 .env
 .history
 .idea/
 storybook-static/
+.next
+*.tsbuildinfo
+out/
+
+public/robots.txt
+public/sitemap*.xml

@@ -15,9 +15,9 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier",
     "plugin:storybook/recommended",
+    "plugin:prettier/recommended",
+    "next/core-web-vitals",
   ],
   plugins: ["@typescript-eslint", "react", "react-hooks", "prettier"],
   settings: {
@@ -43,5 +43,6 @@ module.exports = {
     ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": "warn",
   },
 };

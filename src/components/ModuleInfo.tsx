@@ -3,6 +3,7 @@ import { Theme } from "@mui/material";
 
 import { InterpolatedValue } from "../utils/description-parser";
 import { moduleImage } from "../utils/images";
+import Image from "next/image";
 
 interface ModuleObject {
   phases: {
@@ -32,10 +33,11 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
 
   return (
     <div css={styles}>
-      <img
+      <Image
         className="module-image"
         src={moduleImage(moduleId)}
         alt={`Operator module for ${operatorName}`}
+        layout="fill"
       />
       <dl className="module-attributes">
         <div className="attack">
@@ -61,11 +63,6 @@ export default ModuleInfo;
 const styles = (theme: Theme) => css`
   display: grid;
   grid-template-columns: 216px 1fr;
-
-  .module-image {
-    width: 100%;
-    height: 100%;
-  }
 
   .module-attributes {
     margin: ${theme.spacing(0, 0, 0, 0.25)};

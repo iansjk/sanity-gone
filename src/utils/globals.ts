@@ -4,7 +4,7 @@ import {
   CharacterStatValues,
   PotentialStatChange,
 } from "./types";
-import branches from "../data/branches.json";
+import branches from "../../data/branches.json";
 
 export function slugify(toSlug: string): string {
   return defaultSlugify(toSlug);
@@ -339,6 +339,11 @@ export const getMaxTrustStatIncrease = (
   def: number;
   magicResistance: number;
 } => {
+  if (characterObject.favorKeyFrames == null) {
+    throw new Error(
+      `Can't get max trust stat increase, favorKeyFrames is null; charId: ${characterObject.charId}`
+    );
+  }
   return characterObject.favorKeyFrames[
     characterObject.favorKeyFrames.length - 1
   ].data;

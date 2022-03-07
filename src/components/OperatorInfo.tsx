@@ -10,10 +10,11 @@ import {
   subProfessionIdToSubclass,
   toTitleCase,
 } from "../utils/globals";
-import { operatorClassIcon, operatorSubclassIcon } from "../utils/images";
+import { operatorClassIcon, operatorBranchIcon } from "../utils/images";
 import { CharacterObject } from "../utils/types";
 import OperatorPortrait from "./OperatorPortrait";
-import { Link } from "gatsby";
+import Link from "next/link";
+import Image from "next/image";
 
 export interface OperatorInfoProps {
   operatorObject: CharacterObject;
@@ -46,7 +47,8 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   const operatorClass = professionToClass(profession);
   const subclass = subProfessionIdToSubclass(subProfessionId);
   const rarity = rawRarity + 1; // 0-indexed;
-  const position = description
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const position = description!
     .toLowerCase()
     .includes("can be deployed on ranged grids")
     ? "Melee or Ranged"
@@ -54,7 +56,8 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   const attackType = getAttackType(
     professionToClass(profession),
     subProfessionId,
-    description
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    description!
   );
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
@@ -74,28 +77,31 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
             )}
           </div>
           <Link
-            className="class-and-subclass"
-            to={`/operators#${slugify(operatorClass)}-${subclassSlugify(
+            href={`/operators#${slugify(operatorClass)}-${subclassSlugify(
               subclass
             )}`}
           >
-            <span className="class-icon-container">
+            <a className="class-and-subclass">
               <Tooltip title={operatorClass}>
-                <img
-                  className="class-icon"
-                  src={operatorClassIcon(operatorClass.toLowerCase())}
-                  alt=""
-                />
+                <span role="img" className="class-icon-container">
+                  <Image
+                    src={operatorClassIcon(operatorClass.toLowerCase())}
+                    alt=""
+                    width={24}
+                    height={24}
+                  />
+                </span>
               </Tooltip>
-            </span>
-            <span className="subclass-icon-container">
-              <img
-                className="subclass-icon"
-                src={operatorSubclassIcon(subProfessionId)}
-                alt=""
-              />
-              {subclass}
-            </span>
+              <span className="subclass-icon-container">
+                <Image
+                  src={operatorBranchIcon(subProfessionId)}
+                  alt=""
+                  width={24}
+                  height={24}
+                />
+                {subclass}
+              </span>
+            </a>
           </Link>
         </div>
         <Media lessThan="mobile">
@@ -206,13 +212,6 @@ const styles = (theme: Theme) => css`
           font-size: ${theme.typography.body1.fontSize}px;
         }
 
-        .class-icon,
-        .subclass-icon {
-          width: ${theme.spacing(3)};
-          height: ${theme.spacing(3)};
-          line-height: 1;
-        }
-
         .class-icon-container {
           padding: ${theme.spacing(1)};
           display: flex;
@@ -223,16 +222,14 @@ const styles = (theme: Theme) => css`
         }
 
         .subclass-icon-container {
-          padding: ${theme.spacing(1, 1.5)};
-          display: flex;
+          display: grid;
+          grid-auto-flow: column;
+          column-gap: ${theme.spacing(1)};
           align-items: center;
+          padding: ${theme.spacing(1, 1.5)};
           background-color: ${theme.palette.midtoneBrighter.main};
           border: 1px solid ${theme.palette.midtoneBrighter.main};
           border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
-
-          .subclass-icon {
-            margin-right: ${theme.spacing(1)};
-          }
         }
       }
     }

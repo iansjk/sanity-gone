@@ -23,6 +23,7 @@ Skills.args = {
       </p>,
       <SkillInfo
         key="2"
+        isRecommended={false}
         skillObject={{
           skillId: "skcom_def_up[3]",
           iconId: null,
@@ -66,6 +67,7 @@ Skills.args = {
       </p>,
       <SkillInfo
         key="5"
+        isRecommended={true}
         skillObject={{
           skillId: "skchr_mudrok_2",
           iconId: null,
@@ -169,6 +171,7 @@ Skills.args = {
       </p>,
       <SkillInfo
         key="8"
+        isRecommended={true}
         skillObject={{
           skillId: "skchr_mudrok_3",
           iconId: null,

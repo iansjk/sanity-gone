@@ -16,6 +16,7 @@ import CharacterRange from "./CharacterRange";
 import { RangeObject } from "../utils/types";
 import SliderWithInput from "./SliderWithInput";
 import StarIcon from "./icons/StarIcon";
+import Image from "next/image";
 
 enum SkillType {
   "Passive" = 0,
@@ -58,7 +59,7 @@ export interface SkillObject {
   skillId: string;
   iconId: string | null;
   levels: SkillLevelObject[];
-  hidden: unknown; // unused
+  [otherProperties: string]: unknown;
 }
 
 export interface SkillInfoProps {
@@ -102,7 +103,7 @@ const SkillInfo: React.VFC<
             <div className="spacer" />
             <SliderWithInput
               label="Rank"
-              identifier="skill-rank"
+              identifier={`skill-rank-${skillId}`}
               inputProps={{
                 value: display(skillLevel),
                 onKeyPress: (e) => {
@@ -135,11 +136,14 @@ const SkillInfo: React.VFC<
             />
           </div>
           <div className="skill-name-and-type">
-            <img
-              className="skill-icon"
-              src={skillIcon(iconId, skillId)}
-              alt=""
-            />
+            <div className="skill-icon">
+              <Image
+                src={skillIcon(iconId, skillId)}
+                alt=""
+                width={50}
+                height={50}
+              />
+            </div>
             <h3 className="skill-name">{name}</h3>
             <span className="skill-and-sp-type">
               {SkillType[levels[skillLevel - 1].skillType] !== "Passive" && (

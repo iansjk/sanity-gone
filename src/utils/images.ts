@@ -12,14 +12,11 @@ export const summonImage = (id: string): string => `/images/summons/${id}.png`;
 export const operatorClassIcon = (operatorClass: string): string =>
   `/images/classes/${operatorClass}.png`;
 
-export const operatorSubclassIcon = (subProfessionId: string): string =>
-  `/images/subclasses/${subProfessionId}.png`;
+export const operatorBranchIcon = (subProfessionId: string): string =>
+  `/images/branches/${subProfessionId}.png`;
 
 export const skillIcon = (iconId: string | null, skillId: string): string =>
   `/images/skills/${iconId ?? skillId}.png`;
 
 export const moduleImage = (moduleId: string): string =>
   `/images/equip/${moduleId}.png`;
-
-export const sgPageBanner = (pageName: string): string =>
-  `/images/page-banners/${pageName}.jpg`;

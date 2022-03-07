@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { useEffect, useState } from "react";
+import Head from "next/head";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
-import { Helmet } from "react-helmet";
 import { BsDiscord as DiscordLogo } from "react-icons/bs";
 import "wicg-inert";
 
@@ -13,6 +12,17 @@ import MobileMenu from "./components/MobileMenu";
 import SearchBar from "./components/SearchBar";
 import WeirdDeathSphere from "./components/WeirdDeathSphere";
 import { Media } from "./Media";
+import config from "./config";
+import Link from "next/link";
+import Image from "next/image";
+import HashCompatibleNextLink from "./components/HashCompatibleNextLink";
+import { useRouter } from "next/router";
+
+interface BannerImageProps {
+  width: number;
+  height: number;
+  url: string;
+}
 
 interface LayoutProps {
   pageTitle: string;
@@ -20,20 +30,10 @@ interface LayoutProps {
   image?: string;
   customPageHeading?: React.ReactNode;
   blendPoint?: number;
-  bannerImageUrl?: string;
+  bannerImage?: any;
+  bannerImageProps?: BannerImageProps;
   previousLocation?: string;
   previousLocationLink?: string;
-}
-
-interface SiteMetadataQuery {
-  site: {
-    siteMetadata: {
-      siteUrl: string;
-      siteName: string;
-      image: string;
-      description: string;
-    };
-  };
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
@@ -42,32 +42,21 @@ const Layout: React.FC<LayoutProps> = (props) => {
     description,
     image,
     customPageHeading,
-    bannerImageUrl,
+    bannerImage,
+    bannerImageProps,
     blendPoint,
     children,
     previousLocation,
     previousLocationLink,
     ...rest
   } = props;
-  const data: SiteMetadataQuery = useStaticQuery(graphql`
-    query SiteMetadataQuery {
-      site {
-        siteMetadata {
-          siteUrl
-          description
-          siteName
-          image
-        }
-      }
-    }
-  `);
   const {
-    siteUrl,
-    description: defaultDescription,
     siteName,
+    description: defaultDescription,
     image: defaultImage,
-  } = data.site.siteMetadata;
-
+    siteUrl,
+  } = config;
+  const router = useRouter();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const title = pageTitle
@@ -80,20 +69,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
 
   return (
     <>
-      <Helmet title={title}>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
-          rel="stylesheet"
-        />
-        <html lang="en" {...rest} />
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <Head>
+        <title>{title}</title>
         <meta property="og:title" content={pageTitle ?? "Arknights Hub"} />
         <meta
           property="og:description"
@@ -106,11 +83,32 @@ const Layout: React.FC<LayoutProps> = (props) => {
           content={`${siteUrl}${image ?? defaultImage}`}
         />
         <meta name="description" content={description ?? defaultDescription} />
-      </Helmet>
-      {/* @ts-expect-error Emotion doesn't like that I'm using MUI's Theme type, but this still works fine */}
-      <Global styles={styles({ bannerImageUrl, blendPoint })} />
+      </Head>
+
+      <Global styles={styles({ blendPoint })} />
       <div className="site-wrapper">
-        {bannerImageUrl && <div className="banner-image-container" />}
+        {(bannerImage != null || bannerImageProps != null) && (
+          <div className="banner-image-container">
+            <div className="banner-image-wrapper">
+              <Image
+                alt=""
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                src={bannerImage ?? bannerImageProps!.url}
+                quality={100}
+                priority
+                objectFit="cover"
+                placeholder={bannerImage != null ? "blur" : "empty"}
+                {...(bannerImage == null
+                  ? {
+                      width: bannerImageProps?.width,
+                      height: bannerImageProps?.height,
+                    }
+                  : {})}
+              />
+              <div className="banner-image-gradient-overlay" />
+            </div>
+          </div>
+        )}
         <div className="top-fold">
           <div className="navbar">
             <div className="navbar-background">
@@ -122,7 +120,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
             <div className="navbar-container">
               <div className="navbar-content">
                 <div className="navbar-left">
-                  <SearchBar placeholder="Search operators and guides" />
+                  {<SearchBar placeholder="Search operators and guides" />}
                 </div>
                 <div className="navbar-center">
                   <div className="center-container">
@@ -132,8 +130,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <div className="navbar-right">
                   <div className="header-links">
                     <div className="link-spacer" />
-                    <Link to="/operators">Operators</Link>
-                    <Link to="/about">About</Link>
+                    <HashCompatibleNextLink href="/operators">
+                      <a>Operators</a>
+                    </HashCompatibleNextLink>
+                    <Link href="/about">
+                      <a>About</a>
+                    </Link>
                   </div>
                   <button className="mobile-menu-button" aria-label="Open menu">
                     <MobileMenuIcon
@@ -157,11 +159,10 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <div className="heading-spacer" />
                 {previousLocation && previousLocationLink && (
                   <Media greaterThanOrEqual="mobile" className="breadcrumb">
-                    <Link
-                      to={previousLocationLink}
-                      aria-label={`Back to ${previousLocation}`}
-                    >
-                      {previousLocation}
+                    <Link href={previousLocationLink}>
+                      <a aria-label={`Back to ${previousLocation}`}>
+                        {previousLocation}
+                      </a>
                     </Link>
                     /
                   </Media>
@@ -189,7 +190,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   <a href="mailto:admin@sanitygone.help">Contact Email</a>
                 </li>
                 <li>
-                  <Link to="/disclaimer">Disclaimer</Link>
+                  <Link href="/disclaimer">
+                    <a>Disclaimer</a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -225,13 +228,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
 export default Layout;
 
 const styles =
-  ({
-    bannerImageUrl,
-    blendPoint = 576,
-  }: {
-    bannerImageUrl?: string;
-    blendPoint?: number;
-  }) =>
+  ({ blendPoint = 576 }: { blendPoint?: number }) =>
   (theme: Theme) =>
     css`
       html {
@@ -250,8 +247,9 @@ const styles =
       .site-wrapper {
         height: 100vh;
         display: grid;
-        grid-template-rows: 1fr max-content;
         grid-template-areas: "top-fold" "footer";
+        grid-template-rows: 1fr max-content;
+        grid-template-columns: 100%;
 
         .top-fold {
           grid-area: top-fold;
@@ -259,33 +257,54 @@ const styles =
 
         .banner-image-container {
           grid-area: top-fold;
-          ${bannerImageUrl &&
-          css`
-            background-image: linear-gradient(
+          display: flex;
+          justify-content: center;
+          background: linear-gradient(
+              to bottom,
+              transparent ${0.3576 * blendPoint}px,
+              ${rgba(theme.palette.dark.main, 0.75)} ${0.7083 * blendPoint}px,
+              ${theme.palette.dark.main} ${blendPoint}px
+            ),
+            linear-gradient(
+              to bottom,
+              ${theme.palette.black.main},
+              ${theme.palette.black.main} ${blendPoint}px,
+              ${theme.palette.dark.main} ${blendPoint}px
+            );
+
+          .banner-image-wrapper {
+            display: grid;
+            grid-template-areas: "banner";
+            width: min(100vw, 1920px);
+            height: 576px;
+
+            & > * {
+              grid-area: banner;
+            }
+
+            .banner-image-gradient-overlay {
+              background-image: linear-gradient(
                 to bottom,
                 transparent ${0.3576 * blendPoint}px,
                 ${rgba(theme.palette.dark.main, 0.75)} ${0.7083 * blendPoint}px,
                 ${theme.palette.dark.main} ${blendPoint}px
-              ),
-              url("${bannerImageUrl}"),
-              linear-gradient(
-                to bottom,
-                ${theme.palette.black.main},
-                ${theme.palette.black.main} ${blendPoint}px,
-                ${theme.palette.dark.main} ${blendPoint}px
               );
-            background-repeat: no-repeat;
-            background-position-x: center;
-          `}
+              z-index: 1;
+            }
+          }
         }
       }
 
       .header-main-wrapper {
         max-width: ${theme.breakpoints.values["maxWidth"]}px;
         margin: auto;
+        position: relative;
+        z-index: 1;
       }
 
       .navbar {
+        position: relative;
+        z-index: 2;
         display: grid;
         grid-template-areas: "navbar";
         align-items: center;

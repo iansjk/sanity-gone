@@ -1,11 +1,6 @@
 module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
-  parserOptions: {
-    tsConfigRootDir: __dirname,
-    project: ["./tsconfig.json"],
-  },
-  ignorePatterns: [".eslintrc.js"],
   env: {
     browser: true,
     es2021: true,
@@ -13,8 +8,6 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:storybook/recommended",
     "plugin:prettier/recommended",
     "next/core-web-vitals",
@@ -25,24 +18,45 @@ module.exports = {
       version: "detect",
     },
   },
-  rules: {
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off",
-    "@typescript-eslint/restrict-template-expressions": [
-      "error",
-      {
-        allowNumber: true,
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      extends: [
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+      ],
+      parserOptions: {
+        project: "./tsconfig.json",
       },
-    ],
-    "@typescript-eslint/no-unused-vars": [
+      rules: {
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "@typescript-eslint/restrict-template-expressions": [
+          "error",
+          {
+            allowNumber: true,
+          },
+        ],
+
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            varsIgnorePattern: "^_",
+          },
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+      },
+    },
+  ],
+  rules: {
+    "prettier/prettier": "warn",
+    "no-unused-vars": [
       "warn",
       {
         varsIgnorePattern: "^_",
       },
     ],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "prettier/prettier": "warn",
   },
 };

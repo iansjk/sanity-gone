@@ -425,6 +425,7 @@ void (async () => {
     .forEach((op) => {
       searchArray.push({
         type: "operator",
+        charId: op.charId,
         name: op.name,
         class: professionToClass(op.profession),
         subclass: subProfessionIdToSubclass(op.subProfessionId),

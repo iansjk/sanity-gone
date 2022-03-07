@@ -74,6 +74,7 @@ export interface DenormalizedCharacter extends SharedProperties {
 export interface SearchResult {
   type: string;
   name: string;
+  charId?: string;
   class?: string;
   subclass?: string;
   rarity?: string;

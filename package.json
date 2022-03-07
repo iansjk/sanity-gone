@@ -10,7 +10,7 @@
     "postbuild": "next-sitemap && node aceship.cjs",
     "preview": "next start",
     "lint": "next lint",
-    "update-game-data": "git submodule update --init --recursive --remote && ts-node-script ./scripts/copy-gamedata.ts",
+    "update-game-data": "git submodule update --init --recursive --remote && ts-node-script ./scripts/copy-gamedata.ts && node scripts/copy-images.cjs",
     "storybook": "NODE_ENV=test start-storybook -p 6006",
     "build-storybook": "NODE_ENV=test build-storybook"
   },
@@ -76,7 +76,10 @@
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-storybook": "^0.5.5",
+    "fast-glob": "^3.2.11",
+    "image-size": "^1.0.1",
     "next-sitemap": "^2.5.4",
+    "png-diff": "^0.3.3",
     "prettier": "^2.3.2",
     "ts-node": "^10.5.0",
     "typescript": "^4.6.0"

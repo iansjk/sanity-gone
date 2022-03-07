@@ -2,8 +2,8 @@ import { useMemo, useState } from "react";
 import { InputBase, Theme } from "@mui/material";
 import FlexSearch from "flexsearch";
 import {
+  operatorAvatar,
   operatorClassIcon,
-  operatorImage,
   operatorBranchIcon,
 } from "../utils/images";
 import { css } from "@emotion/react";
@@ -23,6 +23,7 @@ import HashCompatibleNextLink from "./HashCompatibleNextLink";
 export interface SearchResult {
   type: string;
   name: string;
+  charId?: string;
   class?: string;
   subclass?: string;
   rarity?: string;
@@ -131,7 +132,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                       <>
                         <Image
                           alt={res.name}
-                          src={operatorImage(res.name)}
+                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                          src={operatorAvatar(res.charId!)}
                           width={40}
                           height={40}
                         />

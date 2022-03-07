@@ -14,6 +14,7 @@ const MudrockProps = {
   name: "Mudrock",
   rarity: 6,
   isLimited: false,
+  charId: "char_311_mudrok",
 };
 export const MudrockNormal = Template.bind({});
 MudrockNormal.args = MudrockProps;

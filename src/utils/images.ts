@@ -8,7 +8,7 @@ export const operatorAvatar = (charId: string, elite?: number): string => {
   return `${basePath}.png`;
 };
 
-export const summonImage = (id: string): string => `/images/summons/${id}.png`;
+export const summonImage = (id: string): string => `/images/avatars/${id}.png`;
 
 export const operatorClassIcon = (operatorClass: string): string =>
   `/images/classes/${operatorClass}.png`;

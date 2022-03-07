@@ -14,7 +14,7 @@ export const operatorClassIcon = (operatorClass: string): string =>
   `/images/classes/${operatorClass}.png`;
 
 export const operatorBranchIcon = (subProfessionId: string): string =>
-  `/images/branches/${subProfessionId}.png`;
+  `/images/branches/sub_${subProfessionId}_icon.png`;
 
 export const skillIcon = (iconId: string | null, skillId: string): string =>
   `/images/skills/skill_icon_${iconId ?? skillId}.png`;

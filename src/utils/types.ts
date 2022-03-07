@@ -121,16 +121,20 @@ export interface ModulePhaseObject {
     equipLevel: number;
     parts: {
       addOrOverrideTalentDataBundle: {
-        candidates?: {
-          blackboard: InterpolatedValue[];
-        }[];
+        candidates:
+          | {
+              blackboard: InterpolatedValue[];
+            }[]
+          | null;
       };
       overrideTraitDataBundle: {
-        candidates?: {
-          blackboard: InterpolatedValue[];
-          additionalDescription: string | null;
-          overrideDescription: string | null;
-        }[];
+        candidates:
+          | {
+              blackboard: InterpolatedValue[];
+              additionalDescription: string | null;
+              overrideDescription: string | null;
+            }[]
+          | null;
       };
       [otherProperties: string]: unknown;
     }[];

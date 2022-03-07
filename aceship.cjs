@@ -1,9 +1,6 @@
 // Generates aceship.json, a mapping of charIds -> relative page paths
-import path from "path";
-import fs from "fs";
-import { fileURLToPath } from "url";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const path = require("path");
+const fs = require("fs");
 
 const prerenderManifestPath = path.join(
   __dirname,
@@ -11,11 +8,9 @@ const prerenderManifestPath = path.join(
   "prerender-manifest.json"
 );
 const outFilePath = path.join(__dirname, "public", "aceship.json");
+const prerenderManifest = require(prerenderManifestPath);
 
 void (async () => {
-  const prerenderManifest = (
-    await import(prerenderManifestPath, { assert: { type: "json" } })
-  ).default;
   const mappings = await Promise.all(
     Object.keys(prerenderManifest.routes)
       .filter((route) => route.startsWith("/operators/"))
@@ -29,9 +24,7 @@ void (async () => {
           "operators",
           `${slug}.json`
         );
-        const pageJson = (
-          await import(pageJsonPath, { assert: { type: "json" } })
-        ).default;
+        const pageJson = require(pageJsonPath);
         const { charId } = pageJson.pageProps;
         return [charId, route];
       })

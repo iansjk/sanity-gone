@@ -259,7 +259,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     (modulesJson[
       operatorObject.charId as keyof typeof modulesJson
     ] as unknown as ModuleObject) ?? null;
-  if (!modules.hasTranslation) {
+  if (modules != null && !modules.hasTranslation) {
     modules = null;
   }
 
@@ -381,7 +381,8 @@ interface Props {
 }
 
 const OperatorAnalysis: React.VFC<Props> = (props) => {
-  const { charId, guide, operatorObject, summons, allOperators, module } = props;
+  const { charId, guide, operatorObject, summons, allOperators, module } =
+    props;
   const {
     operator,
     customByline,

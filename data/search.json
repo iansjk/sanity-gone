@@ -3,6 +3,7 @@
   "store": {
     "0": {
       "type": "operator",
+      "charId": "char_285_medic2",
       "name": "Lancet-2",
       "class": "Medic",
       "subclass": "Single-target",
@@ -10,6 +11,7 @@
     },
     "1": {
       "type": "operator",
+      "charId": "char_286_cast3",
       "name": "Castle-3",
       "class": "Guard",
       "subclass": "Dreadnought",
@@ -17,6 +19,7 @@
     },
     "2": {
       "type": "operator",
+      "charId": "char_376_therex",
       "name": "Thermal-EX",
       "class": "Specialist",
       "subclass": "Executor",
@@ -24,6 +27,7 @@
     },
     "3": {
       "type": "operator",
+      "charId": "char_502_nblade",
       "name": "Yato",
       "class": "Vanguard",
       "subclass": "Pioneer",
@@ -31,6 +35,7 @@
     },
     "4": {
       "type": "operator",
+      "charId": "char_500_noirc",
       "name": "Noir Corne",
       "class": "Defender",
       "subclass": "Protector",
@@ -38,6 +43,7 @@
     },
     "5": {
       "type": "operator",
+      "charId": "char_503_rang",
       "name": "Rangers",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -45,6 +51,7 @@
     },
     "6": {
       "type": "operator",
+      "charId": "char_501_durin",
       "name": "Durin",
       "class": "Caster",
       "subclass": "Core",
@@ -52,6 +59,7 @@
     },
     "7": {
       "type": "operator",
+      "charId": "char_009_12fce",
       "name": "12F",
       "class": "Caster",
       "subclass": "Splash",
@@ -59,6 +67,7 @@
     },
     "8": {
       "type": "operator",
+      "charId": "char_123_fang",
       "name": "Fang",
       "class": "Vanguard",
       "subclass": "Pioneer",
@@ -66,6 +75,7 @@
     },
     "9": {
       "type": "operator",
+      "charId": "char_240_wyvern",
       "name": "Vanilla",
       "class": "Vanguard",
       "subclass": "Pioneer",
@@ -73,6 +83,7 @@
     },
     "10": {
       "type": "operator",
+      "charId": "char_192_falco",
       "name": "Plume",
       "class": "Vanguard",
       "subclass": "Charger",
@@ -80,6 +91,7 @@
     },
     "11": {
       "type": "operator",
+      "charId": "char_208_melan",
       "name": "Melantha",
       "class": "Guard",
       "subclass": "Dreadnought",
@@ -87,6 +99,7 @@
     },
     "12": {
       "type": "operator",
+      "charId": "char_281_popka",
       "name": "Popukar",
       "class": "Guard",
       "subclass": "Centurion",
@@ -94,6 +107,7 @@
     },
     "13": {
       "type": "operator",
+      "charId": "char_209_ardign",
       "name": "Cardigan",
       "class": "Defender",
       "subclass": "Protector",
@@ -101,6 +115,7 @@
     },
     "14": {
       "type": "operator",
+      "charId": "char_122_beagle",
       "name": "Beagle",
       "class": "Defender",
       "subclass": "Protector",
@@ -108,6 +123,7 @@
     },
     "15": {
       "type": "operator",
+      "charId": "char_284_spot",
       "name": "Spot",
       "class": "Defender",
       "subclass": "Guardian",
@@ -115,6 +131,7 @@
     },
     "16": {
       "type": "operator",
+      "charId": "char_124_kroos",
       "name": "Kroos",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -122,6 +139,7 @@
     },
     "17": {
       "type": "operator",
+      "charId": "char_211_adnach",
       "name": "Adnachiel",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -129,6 +147,7 @@
     },
     "18": {
       "type": "operator",
+      "charId": "char_121_lava",
       "name": "Lava",
       "class": "Caster",
       "subclass": "Splash",
@@ -136,6 +155,7 @@
     },
     "19": {
       "type": "operator",
+      "charId": "char_120_hibisc",
       "name": "Hibiscus",
       "class": "Medic",
       "subclass": "Single-target",
@@ -143,6 +163,7 @@
     },
     "20": {
       "type": "operator",
+      "charId": "char_212_ansel",
       "name": "Ansel",
       "class": "Medic",
       "subclass": "Single-target",
@@ -150,6 +171,7 @@
     },
     "21": {
       "type": "operator",
+      "charId": "char_210_stward",
       "name": "Steward",
       "class": "Caster",
       "subclass": "Core",
@@ -157,6 +179,7 @@
     },
     "22": {
       "type": "operator",
+      "charId": "char_278_orchid",
       "name": "Orchid",
       "class": "Supporter",
       "subclass": "Decel Binder",
@@ -164,6 +187,7 @@
     },
     "23": {
       "type": "operator",
+      "charId": "char_141_nights",
       "name": "Haze",
       "class": "Caster",
       "subclass": "Core",
@@ -171,6 +195,7 @@
     },
     "24": {
       "type": "operator",
+      "charId": "char_109_fmout",
       "name": "Gitano",
       "class": "Caster",
       "subclass": "Splash",
@@ -178,6 +203,7 @@
     },
     "25": {
       "type": "operator",
+      "charId": "char_253_greyy",
       "name": "Greyy",
       "class": "Caster",
       "subclass": "Splash",
@@ -185,6 +211,7 @@
     },
     "26": {
       "type": "operator",
+      "charId": "char_328_cammou",
       "name": "Click",
       "class": "Caster",
       "subclass": "Mech-accord",
@@ -192,6 +219,7 @@
     },
     "27": {
       "type": "operator",
+      "charId": "char_469_indigo",
       "name": "Indigo",
       "class": "Caster",
       "subclass": "Mystic",
@@ -199,6 +227,7 @@
     },
     "28": {
       "type": "operator",
+      "charId": "char_235_jesica",
       "name": "Jessica",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -206,6 +235,7 @@
     },
     "29": {
       "type": "operator",
+      "charId": "char_126_shotst",
       "name": "Meteor",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -213,6 +243,7 @@
     },
     "30": {
       "type": "operator",
+      "charId": "char_190_clour",
       "name": "Vermeil",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -220,6 +251,7 @@
     },
     "31": {
       "type": "operator",
+      "charId": "char_133_mm",
       "name": "May",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -227,6 +259,7 @@
     },
     "32": {
       "type": "operator",
+      "charId": "char_118_yuki",
       "name": "Shirayuki",
       "class": "Sniper",
       "subclass": "Artilleryman",
@@ -234,6 +267,7 @@
     },
     "33": {
       "type": "operator",
+      "charId": "char_440_pinecn",
       "name": "Pinecone",
       "class": "Sniper",
       "subclass": "Spreadshooter",
@@ -241,6 +275,7 @@
     },
     "34": {
       "type": "operator",
+      "charId": "char_302_glaze",
       "name": "Ambriel",
       "class": "Sniper",
       "subclass": "Deadeye",
@@ -248,6 +283,7 @@
     },
     "35": {
       "type": "operator",
+      "charId": "char_366_acdrop",
       "name": "Aciddrop",
       "class": "Sniper",
       "subclass": "Heavyshooter",
@@ -255,6 +291,7 @@
     },
     "36": {
       "type": "operator",
+      "charId": "char_198_blackd",
       "name": "Courier",
       "class": "Vanguard",
       "subclass": "Pioneer",
@@ -262,6 +299,7 @@
     },
     "37": {
       "type": "operator",
+      "charId": "char_149_scave",
       "name": "Scavenger",
       "class": "Vanguard",
       "subclass": "Pioneer",
@@ -269,6 +307,7 @@
     },
     "38": {
       "type": "operator",
+      "charId": "char_290_vigna",
       "name": "Vigna",
       "class": "Vanguard",
       "subclass": "Charger",
@@ -276,6 +315,7 @@
     },
     "39": {
       "type": "operator",
+      "charId": "char_151_myrtle",
       "name": "Myrtle",
       "class": "Vanguard",
       "subclass": "Standard Bearer",
@@ -283,6 +323,7 @@
     },
     "40": {
       "type": "operator",
+      "charId": "char_452_bstalk",
       "name": "Beanstalk",
       "class": "Vanguard",
       "subclass": "Tactician",
@@ -290,6 +331,7 @@
     },
     "41": {
       "type": "operator",
+      "charId": "char_130_doberm",
       "name": "Dobermann",
       "class": "Guard",
       "subclass": "Instructor",
@@ -297,6 +339,7 @@
     },
     "42": {
       "type": "operator",
+      "charId": "char_289_gyuki",
       "name": "Matoimaru",
       "class": "Guard",
       "subclass": "Dreadnought",
@@ -304,6 +347,7 @@
     },
     "43": {
       "type": "operator",
+      "charId": "char_159_peacok",
       "name": "Conviction",
       "class": "Guard",
       "subclass": "Dreadnought",
@@ -311,6 +355,7 @@
     },
     "44": {
       "type": "operator",
+      "charId": "char_193_frostl",
       "name": "Frostleaf",
       "class": "Guard",
       "subclass": "Lord",
@@ -318,6 +363,7 @@
     },
     "45": {
       "type": "operator",
+      "charId": "char_127_estell",
       "name": "Estelle",
       "class": "Guard",
       "subclass": "Centurion",
@@ -325,6 +371,7 @@
     },
     "46": {
       "type": "operator",
+      "charId": "char_185_frncat",
       "name": "Mousse",
       "class": "Guard",
       "subclass": "Arts Fighter",
@@ -332,6 +379,7 @@
     },
     "47": {
       "type": "operator",
+      "charId": "char_301_cutter",
       "name": "Cutter",
       "class": "Guard",
       "subclass": "Swordmaster",
@@ -339,6 +387,7 @@
     },
     "48": {
       "type": "operator",
+      "charId": "char_337_utage",
       "name": "Utage",
       "class": "Guard",
       "subclass": "Musha",
@@ -346,6 +395,7 @@
     },
     "49": {
       "type": "operator",
+      "charId": "char_271_spikes",
       "name": "Arene",
       "class": "Guard",
       "subclass": "Lord",
@@ -353,6 +403,7 @@
     },
     "50": {
       "type": "operator",
+      "charId": "char_237_gravel",
       "name": "Gravel",
       "class": "Specialist",
       "subclass": "Executor",
@@ -360,6 +411,7 @@
     },
     "51": {
       "type": "operator",
+      "charId": "char_272_strong",
       "name": "Jaye",
       "class": "Specialist",
       "subclass": "Merchant",
@@ -367,6 +419,7 @@
     },
     "52": {
       "type": "operator",
+      "charId": "char_236_rope",
       "name": "Rope",
       "class": "Specialist",
       "subclass": "Hookmaster",
@@ -374,6 +427,7 @@
     },
     "53": {
       "type": "operator",
+      "charId": "char_117_myrrh",
       "name": "Myrrh",
       "class": "Medic",
       "subclass": "Single-target",
@@ -381,6 +435,7 @@
     },
     "54": {
       "type": "operator",
+      "charId": "char_187_ccheal",
       "name": "Gavial",
       "class": "Medic",
       "subclass": "Single-target",
@@ -388,6 +443,7 @@
     },
     "55": {
       "type": "operator",
+      "charId": "char_298_susuro",
       "name": "Sussurro",
       "class": "Medic",
       "subclass": "Single-target",
@@ -395,6 +451,7 @@
     },
     "56": {
       "type": "operator",
+      "charId": "char_181_flower",
       "name": "Perfumer",
       "class": "Medic",
       "subclass": "Multi-target",
@@ -402,6 +459,7 @@
     },
     "57": {
       "type": "operator",
+      "charId": "char_385_finlpp",
       "name": "Purestream",
       "class": "Medic",
       "subclass": "Therapist",
@@ -409,6 +467,7 @@
     },
     "58": {
       "type": "operator",
+      "charId": "char_199_yak",
       "name": "Matterhorn",
       "class": "Defender",
       "subclass": "Protector",
@@ -416,6 +475,7 @@
     },
     "59": {
       "type": "operator",
+      "charId": "char_150_snakek",
       "name": "Cuora",
       "class": "Defender",
       "subclass": "Protector",
@@ -423,6 +483,7 @@
     },
     "60": {
       "type": "operator",
+      "charId": "char_381_bubble",
       "name": "Bubble",
       "class": "Defender",
       "subclass": "Protector",
@@ -430,6 +491,7 @@
     },
     "61": {
       "type": "operator",
+      "charId": "char_196_sunbr",
       "name": "Gummy",
       "class": "Defender",
       "subclass": "Guardian",
@@ -437,6 +499,7 @@
     },
     "62": {
       "type": "operator",
+      "charId": "char_260_durnar",
       "name": "Dur-nar",
       "class": "Defender",
       "subclass": "Arts Protector",
@@ -444,6 +507,7 @@
     },
     "63": {
       "type": "operator",
+      "charId": "char_110_deepcl",
       "name": "Deepcolor",
       "class": "Supporter",
       "subclass": "Summoner",
@@ -451,6 +515,7 @@
     },
     "64": {
       "type": "operator",
+      "charId": "char_183_skgoat",
       "name": "Earthspirit",
       "class": "Supporter",
       "subclass": "Decel Binder",
@@ -458,6 +523,7 @@
     },
     "65": {
       "type": "operator",
+      "charId": "char_258_podego",
       "name": "Podenco",
       "class": "Supporter",
       "subclass": "Decel Binder",
@@ -465,6 +531,7 @@
     },
     "66": {
       "type": "operator",
+      "charId": "char_355_ethan",
       "name": "Ethan",
       "class": "Specialist",
       "subclass": "Ambusher",
@@ -472,6 +539,7 @@
     },
     "67": {
       "type": "operator",
+      "charId": "char_277_sqrrel",
       "name": "Shaw",
       "class": "Specialist",
       "subclass": "Push Stroker",
@@ -479,6 +547,7 @@
     },
     "68": {
       "type": "operator",
+      "charId": "char_128_plosis",
       "name": "Ptilopsis",
       "class": "Medic",
       "subclass": "Multi-target",
@@ -486,6 +555,7 @@
     },
     "69": {
       "type": "operator",
+      "charId": "char_275_breeze",
       "name": "Breeze",
       "class": "Medic",
       "subclass": "Multi-target",
@@ -493,6 +563,7 @@
     },
     "70": {
       "type": "operator",
+      "charId": "char_115_headbr",
       "name": "Zima",
       "class": "Vanguard",
       "subclass": "Pioneer",
@@ -500,6 +571,7 @@
     },
     "71": {
       "type": "operator",
+      "charId": "char_102_texas",
       "name": "Texas",
       "class": "Vanguard",
       "subclass": "Pioneer",
@@ -507,6 +579,7 @@
     },
     "72": {
       "type": "operator",
+      "charId": "char_349_chiave",
       "name": "Chiave",
       "class": "Vanguard",
       "subclass": "Pioneer",
@@ -514,6 +587,7 @@
     },
     "73": {
       "type": "operator",
+      "charId": "char_261_sddrag",
       "name": "Reed",
       "class": "Vanguard",
       "subclass": "Charger",
@@ -521,6 +595,7 @@
     },
     "74": {
       "type": "operator",
+      "charId": "char_401_elysm",
       "name": "Elysium",
       "class": "Vanguard",
       "subclass": "Standard Bearer",
@@ -528,6 +603,7 @@
     },
     "75": {
       "type": "operator",
+      "charId": "char_308_swire",
       "name": "Swire",
       "class": "Guard",
       "subclass": "Instructor",
@@ -535,6 +611,7 @@
     },
     "76": {
       "type": "operator",
+      "charId": "char_265_sophia",
       "name": "Whislash",
       "class": "Guard",
       "subclass": "Instructor",
@@ -542,6 +619,7 @@
     },
     "77": {
       "type": "operator",
+      "charId": "char_106_franka",
       "name": "Franka",
       "class": "Guard",
       "subclass": "Dreadnought",
@@ -549,6 +627,7 @@
     },
     "78": {
       "type": "operator",
+      "charId": "char_131_flameb",
       "name": "Flamebringer",
       "class": "Guard",
       "subclass": "Dreadnought",
@@ -556,6 +635,7 @@
     },
     "79": {
       "type": "operator",
+      "charId": "char_155_tiger",
       "name": "Indra",
       "class": "Guard",
       "subclass": "Fighter",
@@ -563,6 +643,7 @@
     },
     "80": {
       "type": "operator",
+      "charId": "char_415_flint",
       "name": "Flint",
       "class": "Guard",
       "subclass": "Fighter",
@@ -570,6 +651,7 @@
     },
     "81": {
       "type": "operator",
+      "charId": "char_140_whitew",
       "name": "Lappland",
       "class": "Guard",
       "subclass": "Lord",
@@ -577,6 +659,7 @@
     },
     "82": {
       "type": "operator",
+      "charId": "char_294_ayer",
       "name": "Ayerscarpe",
       "class": "Guard",
       "subclass": "Lord",
@@ -584,6 +667,7 @@
     },
     "83": {
       "type": "operator",
+      "charId": "char_252_bibeak",
       "name": "Bibeak",
       "class": "Guard",
       "subclass": "Swordmaster",
@@ -591,6 +675,7 @@
     },
     "84": {
       "type": "operator",
+      "charId": "char_459_tachak",
       "name": "Tachanka",
       "class": "Guard",
       "subclass": "Swordmaster",
@@ -598,6 +683,7 @@
     },
     "85": {
       "type": "operator",
+      "charId": "char_143_ghost",
       "name": "Specter",
       "class": "Guard",
       "subclass": "Centurion",
@@ -605,6 +691,7 @@
     },
     "86": {
       "type": "operator",
+      "charId": "char_356_broca",
       "name": "Broca",
       "class": "Guard",
       "subclass": "Centurion",
@@ -612,6 +699,7 @@
     },
     "87": {
       "type": "operator",
+      "charId": "char_274_astesi",
       "name": "Astesia",
       "class": "Guard",
       "subclass": "Arts Fighter",
@@ -619,6 +707,7 @@
     },
     "88": {
       "type": "operator",
+      "charId": "char_333_sidero",
       "name": "Sideroca",
       "class": "Guard",
       "subclass": "Arts Fighter",
@@ -626,6 +715,7 @@
     },
     "89": {
       "type": "operator",
+      "charId": "char_475_akafyu",
       "name": "Akafuyu",
       "class": "Guard",
       "subclass": "Musha",
@@ -633,6 +723,7 @@
     },
     "90": {
       "type": "operator",
+      "charId": "char_421_crow",
       "name": "La Pluma",
       "class": "Guard",
       "subclass": "Reaper",
@@ -640,6 +731,7 @@
     },
     "91": {
       "type": "operator",
+      "charId": "char_486_takila",
       "name": "Tequila",
       "class": "Guard",
       "subclass": "Liberator",
@@ -647,6 +739,7 @@
     },
     "92": {
       "type": "operator",
+      "charId": "char_129_bluep",
       "name": "Blue Poison",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -654,6 +747,7 @@
     },
     "93": {
       "type": "operator",
+      "charId": "char_204_platnm",
       "name": "Platinum",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -661,6 +755,7 @@
     },
     "94": {
       "type": "operator",
+      "charId": "char_367_swllow",
       "name": "GreyThroat",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -668,6 +763,7 @@
     },
     "95": {
       "type": "operator",
+      "charId": "char_365_aprl",
       "name": "April",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -675,6 +771,7 @@
     },
     "96": {
       "type": "operator",
+      "charId": "char_219_meteo",
       "name": "Meteorite",
       "class": "Sniper",
       "subclass": "Artilleryman",
@@ -682,6 +779,7 @@
     },
     "97": {
       "type": "operator",
+      "charId": "char_379_sesa",
       "name": "Sesa",
       "class": "Sniper",
       "subclass": "Artilleryman",
@@ -689,6 +787,7 @@
     },
     "98": {
       "type": "operator",
+      "charId": "char_279_excu",
       "name": "Executor",
       "class": "Sniper",
       "subclass": "Spreadshooter",
@@ -696,6 +795,7 @@
     },
     "99": {
       "type": "operator",
+      "charId": "char_346_aosta",
       "name": "Aosta",
       "class": "Sniper",
       "subclass": "Spreadshooter",
@@ -703,6 +803,7 @@
     },
     "100": {
       "type": "operator",
+      "charId": "char_002_amiya",
       "name": "Amiya",
       "class": "Caster",
       "subclass": "Core",
@@ -710,6 +811,7 @@
     },
     "101": {
       "type": "operator",
+      "charId": "char_405_absin",
       "name": "Absinthe",
       "class": "Caster",
       "subclass": "Core",
@@ -717,6 +819,7 @@
     },
     "102": {
       "type": "operator",
+      "charId": "char_411_tomimi",
       "name": "Tomimi",
       "class": "Caster",
       "subclass": "Core",
@@ -724,6 +827,7 @@
     },
     "103": {
       "type": "operator",
+      "charId": "char_166_skfire",
       "name": "Skyfire",
       "class": "Caster",
       "subclass": "Splash",
@@ -731,6 +835,7 @@
     },
     "104": {
       "type": "operator",
+      "charId": "char_306_leizi",
       "name": "Leizi",
       "class": "Caster",
       "subclass": "Chain",
@@ -738,6 +843,7 @@
     },
     "105": {
       "type": "operator",
+      "charId": "char_344_beewax",
       "name": "Beeswax",
       "class": "Caster",
       "subclass": "Phalanx",
@@ -745,6 +851,7 @@
     },
     "106": {
       "type": "operator",
+      "charId": "char_373_lionhd",
       "name": "Leonhardt",
       "class": "Caster",
       "subclass": "Splash",
@@ -752,6 +859,7 @@
     },
     "107": {
       "type": "operator",
+      "charId": "char_388_mint",
       "name": "Mint",
       "class": "Caster",
       "subclass": "Phalanx",
@@ -759,6 +867,7 @@
     },
     "108": {
       "type": "operator",
+      "charId": "char_338_iris",
       "name": "Iris",
       "class": "Caster",
       "subclass": "Mystic",
@@ -766,6 +875,7 @@
     },
     "109": {
       "type": "operator",
+      "charId": "char_1011_lava2",
       "name": "Lava the Purgatory",
       "class": "Caster",
       "subclass": "Splash",
@@ -773,6 +883,7 @@
     },
     "110": {
       "type": "operator",
+      "charId": "char_242_otter",
       "name": "Mayer",
       "class": "Supporter",
       "subclass": "Summoner",
@@ -780,6 +891,7 @@
     },
     "111": {
       "type": "operator",
+      "charId": "char_336_folivo",
       "name": "Scene",
       "class": "Supporter",
       "subclass": "Summoner",
@@ -787,6 +899,7 @@
     },
     "112": {
       "type": "operator",
+      "charId": "char_108_silent",
       "name": "Silence",
       "class": "Medic",
       "subclass": "Single-target",
@@ -794,6 +907,7 @@
     },
     "113": {
       "type": "operator",
+      "charId": "char_171_bldsk",
       "name": "Warfarin",
       "class": "Medic",
       "subclass": "Single-target",
@@ -801,6 +915,7 @@
     },
     "114": {
       "type": "operator",
+      "charId": "char_345_folnic",
       "name": "Folinic",
       "class": "Medic",
       "subclass": "Single-target",
@@ -808,6 +923,7 @@
     },
     "115": {
       "type": "operator",
+      "charId": "char_348_ceylon",
       "name": "Ceylon",
       "class": "Medic",
       "subclass": "Therapist",
@@ -815,6 +931,7 @@
     },
     "116": {
       "type": "operator",
+      "charId": "char_436_whispr",
       "name": "Whisperain",
       "class": "Medic",
       "subclass": "Therapist",
@@ -822,6 +939,7 @@
     },
     "117": {
       "type": "operator",
+      "charId": "char_402_tuye",
       "name": "Tuye",
       "class": "Medic",
       "subclass": "Single-target",
@@ -829,6 +947,7 @@
     },
     "118": {
       "type": "operator",
+      "charId": "char_148_nearl",
       "name": "Nearl",
       "class": "Defender",
       "subclass": "Guardian",
@@ -836,6 +955,7 @@
     },
     "119": {
       "type": "operator",
+      "charId": "char_226_hmau",
       "name": "Hung",
       "class": "Defender",
       "subclass": "Guardian",
@@ -843,6 +963,7 @@
     },
     "120": {
       "type": "operator",
+      "charId": "char_144_red",
       "name": "Projekt Red",
       "class": "Specialist",
       "subclass": "Executor",
@@ -850,6 +971,7 @@
     },
     "121": {
       "type": "operator",
+      "charId": "char_243_waaifu",
       "name": "Waai Fu",
       "class": "Specialist",
       "subclass": "Executor",
@@ -857,6 +979,7 @@
     },
     "122": {
       "type": "operator",
+      "charId": "char_214_kafka",
       "name": "Kafka",
       "class": "Specialist",
       "subclass": "Executor",
@@ -864,6 +987,7 @@
     },
     "123": {
       "type": "operator",
+      "charId": "char_455_nothin",
       "name": "Mr. Nothing",
       "class": "Specialist",
       "subclass": "Merchant",
@@ -871,6 +995,7 @@
     },
     "124": {
       "type": "operator",
+      "charId": "char_107_liskam",
       "name": "Liskarm",
       "class": "Defender",
       "subclass": "Protector",
@@ -878,6 +1003,7 @@
     },
     "125": {
       "type": "operator",
+      "charId": "char_201_moeshd",
       "name": "Croissant",
       "class": "Defender",
       "subclass": "Protector",
@@ -885,6 +1011,7 @@
     },
     "126": {
       "type": "operator",
+      "charId": "char_325_bison",
       "name": "Bison",
       "class": "Defender",
       "subclass": "Protector",
@@ -892,6 +1019,7 @@
     },
     "127": {
       "type": "operator",
+      "charId": "char_163_hpsts",
       "name": "Vulcan",
       "class": "Defender",
       "subclass": "Juggernaut",
@@ -899,6 +1027,7 @@
     },
     "128": {
       "type": "operator",
+      "charId": "char_378_asbest",
       "name": "Asbestos",
       "class": "Defender",
       "subclass": "Arts Protector",
@@ -906,6 +1035,7 @@
     },
     "129": {
       "type": "operator",
+      "charId": "char_457_blitz",
       "name": "Blitz",
       "class": "Defender",
       "subclass": "Protector",
@@ -913,6 +1043,7 @@
     },
     "130": {
       "type": "operator",
+      "charId": "char_304_zebra",
       "name": "Heavyrain",
       "class": "Defender",
       "subclass": "Protector",
@@ -920,6 +1051,7 @@
     },
     "131": {
       "type": "operator",
+      "charId": "char_145_prove",
       "name": "Provence",
       "class": "Sniper",
       "subclass": "Heavyshooter",
@@ -927,6 +1059,7 @@
     },
     "132": {
       "type": "operator",
+      "charId": "char_158_milu",
       "name": "Firewatch",
       "class": "Sniper",
       "subclass": "Deadeye",
@@ -934,6 +1067,7 @@
     },
     "133": {
       "type": "operator",
+      "charId": "char_218_cuttle",
       "name": "Andreana",
       "class": "Sniper",
       "subclass": "Deadeye",
@@ -941,6 +1075,7 @@
     },
     "134": {
       "type": "operator",
+      "charId": "char_363_toddi",
       "name": "Toddifons",
       "class": "Sniper",
       "subclass": "Besieger",
@@ -948,6 +1083,7 @@
     },
     "135": {
       "type": "operator",
+      "charId": "char_173_slchan",
       "name": "Cliffheart",
       "class": "Specialist",
       "subclass": "Hookmaster",
@@ -955,6 +1091,7 @@
     },
     "136": {
       "type": "operator",
+      "charId": "char_383_snsant",
       "name": "Snowsant",
       "class": "Specialist",
       "subclass": "Hookmaster",
@@ -962,6 +1099,7 @@
     },
     "137": {
       "type": "operator",
+      "charId": "char_174_slbell",
       "name": "Pramanix",
       "class": "Supporter",
       "subclass": "Hexer",
@@ -969,6 +1107,7 @@
     },
     "138": {
       "type": "operator",
+      "charId": "char_254_vodfox",
       "name": "Shamare",
       "class": "Supporter",
       "subclass": "Hexer",
@@ -976,6 +1115,7 @@
     },
     "139": {
       "type": "operator",
+      "charId": "char_195_glassb",
       "name": "Istina",
       "class": "Supporter",
       "subclass": "Decel Binder",
@@ -983,6 +1123,7 @@
     },
     "140": {
       "type": "operator",
+      "charId": "char_326_glacus",
       "name": "Glaucus",
       "class": "Supporter",
       "subclass": "Decel Binder",
@@ -990,6 +1131,7 @@
     },
     "141": {
       "type": "operator",
+      "charId": "char_101_sora",
       "name": "Sora",
       "class": "Supporter",
       "subclass": "Bard",
@@ -997,6 +1139,7 @@
     },
     "142": {
       "type": "operator",
+      "charId": "char_343_tknogi",
       "name": "Tsukinogi",
       "class": "Supporter",
       "subclass": "Abjurer",
@@ -1004,6 +1147,7 @@
     },
     "143": {
       "type": "operator",
+      "charId": "char_215_mantic",
       "name": "Manticore",
       "class": "Specialist",
       "subclass": "Ambusher",
@@ -1011,6 +1155,7 @@
     },
     "144": {
       "type": "operator",
+      "charId": "char_478_kirara",
       "name": "Kirara",
       "class": "Specialist",
       "subclass": "Ambusher",
@@ -1018,6 +1163,7 @@
     },
     "145": {
       "type": "operator",
+      "charId": "char_241_panda",
       "name": "FEater",
       "class": "Specialist",
       "subclass": "Push Stroker",
@@ -1025,6 +1171,7 @@
     },
     "146": {
       "type": "operator",
+      "charId": "char_451_robin",
       "name": "Robin",
       "class": "Specialist",
       "subclass": "Trapmaster",
@@ -1032,6 +1179,7 @@
     },
     "147": {
       "type": "operator",
+      "charId": "char_458_rfrost",
       "name": "Frost",
       "class": "Specialist",
       "subclass": "Trapmaster",
@@ -1039,6 +1187,7 @@
     },
     "148": {
       "type": "operator",
+      "charId": "char_369_bena",
       "name": "Bena",
       "class": "Specialist",
       "subclass": "Dollkeeper",
@@ -1046,6 +1195,7 @@
     },
     "149": {
       "type": "operator",
+      "charId": "char_103_angel",
       "name": "Exusiai",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -1053,6 +1203,7 @@
     },
     "150": {
       "type": "operator",
+      "charId": "char_332_archet",
       "name": "Archetto",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -1060,6 +1211,7 @@
     },
     "151": {
       "type": "operator",
+      "charId": "char_456_ash",
       "name": "Ash",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -1067,6 +1219,7 @@
     },
     "152": {
       "type": "operator",
+      "charId": "char_340_shwaz",
       "name": "Schwarz",
       "class": "Sniper",
       "subclass": "Heavyshooter",
@@ -1074,6 +1227,7 @@
     },
     "153": {
       "type": "operator",
+      "charId": "char_113_cqbw",
       "name": "W",
       "class": "Sniper",
       "subclass": "Artilleryman",
@@ -1081,6 +1235,7 @@
     },
     "154": {
       "type": "operator",
+      "charId": "char_197_poca",
       "name": "Rosa",
       "class": "Sniper",
       "subclass": "Besieger",
@@ -1088,6 +1243,7 @@
     },
     "155": {
       "type": "operator",
+      "charId": "char_391_rosmon",
       "name": "Rosmontis",
       "class": "Sniper",
       "subclass": "Flinger",
@@ -1095,6 +1251,7 @@
     },
     "156": {
       "type": "operator",
+      "charId": "char_1013_chen2",
       "name": "Ch'en the Holungday",
       "class": "Sniper",
       "subclass": "Spreadshooter",
@@ -1102,6 +1259,7 @@
     },
     "157": {
       "type": "operator",
+      "charId": "char_112_siege",
       "name": "Siege",
       "class": "Vanguard",
       "subclass": "Pioneer",
@@ -1109,6 +1267,7 @@
     },
     "158": {
       "type": "operator",
+      "charId": "char_222_bpipe",
       "name": "Bagpipe",
       "class": "Vanguard",
       "subclass": "Charger",
@@ -1116,6 +1275,7 @@
     },
     "159": {
       "type": "operator",
+      "charId": "char_362_saga",
       "name": "Saga",
       "class": "Vanguard",
       "subclass": "Pioneer",
@@ -1123,6 +1283,7 @@
     },
     "160": {
       "type": "operator",
+      "charId": "char_134_ifrit",
       "name": "Ifrit",
       "class": "Caster",
       "subclass": "Blast",
@@ -1130,6 +1291,7 @@
     },
     "161": {
       "type": "operator",
+      "charId": "char_213_mostma",
       "name": "Mostima",
       "class": "Caster",
       "subclass": "Splash",
@@ -1137,6 +1299,7 @@
     },
     "162": {
       "type": "operator",
+      "charId": "char_180_amgoat",
       "name": "Eyjafjalla",
       "class": "Caster",
       "subclass": "Core",
@@ -1144,6 +1307,7 @@
     },
     "163": {
       "type": "operator",
+      "charId": "char_2013_cerber",
       "name": "Ceobe",
       "class": "Caster",
       "subclass": "Core",
@@ -1151,6 +1315,7 @@
     },
     "164": {
       "type": "operator",
+      "charId": "char_2015_dusk",
       "name": "Dusk",
       "class": "Caster",
       "subclass": "Splash",
@@ -1158,6 +1323,7 @@
     },
     "165": {
       "type": "operator",
+      "charId": "char_472_pasngr",
       "name": "Passenger",
       "class": "Caster",
       "subclass": "Chain",
@@ -1165,6 +1331,7 @@
     },
     "166": {
       "type": "operator",
+      "charId": "char_426_billro",
       "name": "Carnelian",
       "class": "Caster",
       "subclass": "Phalanx",
@@ -1172,6 +1339,7 @@
     },
     "167": {
       "type": "operator",
+      "charId": "char_291_aglina",
       "name": "Angelina",
       "class": "Supporter",
       "subclass": "Decel Binder",
@@ -1179,6 +1347,7 @@
     },
     "168": {
       "type": "operator",
+      "charId": "char_358_lisa",
       "name": "Suzuran",
       "class": "Supporter",
       "subclass": "Decel Binder",
@@ -1186,6 +1355,7 @@
     },
     "169": {
       "type": "operator",
+      "charId": "char_248_mgllan",
       "name": "Magallan",
       "class": "Supporter",
       "subclass": "Summoner",
@@ -1193,6 +1363,7 @@
     },
     "170": {
       "type": "operator",
+      "charId": "char_1012_skadi2",
       "name": "Skadi the Corrupting Heart",
       "class": "Supporter",
       "subclass": "Bard",
@@ -1200,6 +1371,7 @@
     },
     "171": {
       "type": "operator",
+      "charId": "char_250_phatom",
       "name": "Phantom",
       "class": "Specialist",
       "subclass": "Executor",
@@ -1207,6 +1379,7 @@
     },
     "172": {
       "type": "operator",
+      "charId": "char_400_weedy",
       "name": "Weedy",
       "class": "Specialist",
       "subclass": "Push Stroker",
@@ -1214,6 +1387,7 @@
     },
     "173": {
       "type": "operator",
+      "charId": "char_225_haak",
       "name": "Aak",
       "class": "Specialist",
       "subclass": "Geek",
@@ -1221,6 +1395,7 @@
     },
     "174": {
       "type": "operator",
+      "charId": "char_474_glady",
       "name": "Gladiia",
       "class": "Specialist",
       "subclass": "Hookmaster",
@@ -1228,6 +1403,7 @@
     },
     "175": {
       "type": "operator",
+      "charId": "char_437_mizuki",
       "name": "Mizuki",
       "class": "Specialist",
       "subclass": "Ambusher",
@@ -1235,6 +1411,7 @@
     },
     "176": {
       "type": "operator",
+      "charId": "char_147_shining",
       "name": "Shining",
       "class": "Medic",
       "subclass": "Single-target",
@@ -1242,6 +1419,7 @@
     },
     "177": {
       "type": "operator",
+      "charId": "char_179_cgbird",
       "name": "Nightingale",
       "class": "Medic",
       "subclass": "Multi-target",
@@ -1249,6 +1427,7 @@
     },
     "178": {
       "type": "operator",
+      "charId": "char_003_kalts",
       "name": "Kal'tsit",
       "class": "Medic",
       "subclass": "Single-target",
@@ -1256,6 +1435,7 @@
     },
     "179": {
       "type": "operator",
+      "charId": "char_136_hsguma",
       "name": "Hoshiguma",
       "class": "Defender",
       "subclass": "Protector",
@@ -1263,6 +1443,7 @@
     },
     "180": {
       "type": "operator",
+      "charId": "char_202_demkni",
       "name": "Saria",
       "class": "Defender",
       "subclass": "Guardian",
@@ -1270,6 +1451,7 @@
     },
     "181": {
       "type": "operator",
+      "charId": "char_423_blemsh",
       "name": "Blemishine",
       "class": "Defender",
       "subclass": "Guardian",
@@ -1277,6 +1459,7 @@
     },
     "182": {
       "type": "operator",
+      "charId": "char_2014_nian",
       "name": "Nian",
       "class": "Defender",
       "subclass": "Protector",
@@ -1284,6 +1467,7 @@
     },
     "183": {
       "type": "operator",
+      "charId": "char_311_mudrok",
       "name": "Mudrock",
       "class": "Defender",
       "subclass": "Juggernaut",
@@ -1291,6 +1475,7 @@
     },
     "184": {
       "type": "operator",
+      "charId": "char_416_zumama",
       "name": "Eunectes",
       "class": "Defender",
       "subclass": "Duelist",
@@ -1298,6 +1483,7 @@
     },
     "185": {
       "type": "operator",
+      "charId": "char_264_f12yin",
       "name": "Mountain",
       "class": "Guard",
       "subclass": "Fighter",
@@ -1305,6 +1491,7 @@
     },
     "186": {
       "type": "operator",
+      "charId": "char_172_svrash",
       "name": "SilverAsh",
       "class": "Guard",
       "subclass": "Lord",
@@ -1312,6 +1499,7 @@
     },
     "187": {
       "type": "operator",
+      "charId": "char_293_thorns",
       "name": "Thorns",
       "class": "Guard",
       "subclass": "Lord",
@@ -1319,6 +1507,7 @@
     },
     "188": {
       "type": "operator",
+      "charId": "char_010_chen",
       "name": "Ch'en",
       "class": "Guard",
       "subclass": "Swordmaster",
@@ -1326,6 +1515,7 @@
     },
     "189": {
       "type": "operator",
+      "charId": "char_017_huang",
       "name": "Blaze",
       "class": "Guard",
       "subclass": "Centurion",
@@ -1333,6 +1523,7 @@
     },
     "190": {
       "type": "operator",
+      "charId": "char_350_surtr",
       "name": "Surtr",
       "class": "Guard",
       "subclass": "Arts Fighter",
@@ -1340,6 +1531,7 @@
     },
     "191": {
       "type": "operator",
+      "charId": "char_188_helage",
       "name": "Hellagur",
       "class": "Guard",
       "subclass": "Musha",
@@ -1347,6 +1539,7 @@
     },
     "192": {
       "type": "operator",
+      "charId": "char_485_pallas",
       "name": "Pallas",
       "class": "Guard",
       "subclass": "Instructor",
@@ -1354,6 +1547,7 @@
     },
     "193": {
       "type": "operator",
+      "charId": "char_230_savage",
       "name": "Savage",
       "class": "Guard",
       "subclass": "Centurion",
@@ -1361,6 +1555,7 @@
     },
     "194": {
       "type": "operator",
+      "charId": "char_282_catap",
       "name": "Catapult",
       "class": "Sniper",
       "subclass": "Artilleryman",
@@ -1368,6 +1563,7 @@
     },
     "195": {
       "type": "operator",
+      "charId": "char_283_midn",
       "name": "Midnight",
       "class": "Guard",
       "subclass": "Lord",
@@ -1375,6 +1571,7 @@
     },
     "196": {
       "type": "operator",
+      "charId": "char_137_brownb",
       "name": "Beehunter",
       "class": "Guard",
       "subclass": "Fighter",
@@ -1382,6 +1579,7 @@
     },
     "197": {
       "type": "operator",
+      "charId": "char_347_jaksel",
       "name": "Jackie",
       "class": "Guard",
       "subclass": "Fighter",
@@ -1389,6 +1587,7 @@
     },
     "198": {
       "type": "operator",
+      "charId": "char_164_nightm",
       "name": "Nightmare",
       "class": "Caster",
       "subclass": "Core",
@@ -1396,6 +1595,7 @@
     },
     "199": {
       "type": "operator",
+      "charId": "char_220_grani",
       "name": "Grani",
       "class": "Vanguard",
       "subclass": "Charger",
@@ -1403,6 +1603,7 @@
     },
     "200": {
       "type": "operator",
+      "charId": "char_263_skadi",
       "name": "Skadi",
       "class": "Guard",
       "subclass": "Dreadnought",
@@ -1410,6 +1611,7 @@
     },
     "201": {
       "type": "operator",
+      "charId": "char_4000_jnight",
       "name": "\"Justice Knight\"",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -1417,6 +1619,7 @@
     },
     "202": {
       "type": "operator",
+      "charId": "char_4004_pudd",
       "name": "Pudding",
       "class": "Caster",
       "subclass": "Chain",
@@ -1424,6 +1627,7 @@
     },
     "203": {
       "type": "operator",
+      "charId": "char_484_robrta",
       "name": "Roberta",
       "class": "Supporter",
       "subclass": "Artificer",
@@ -1431,6 +1635,7 @@
     },
     "204": {
       "type": "operator",
+      "charId": "char_496_wildmn",
       "name": "Wild Mane",
       "class": "Vanguard",
       "subclass": "Charger",
@@ -1438,6 +1643,7 @@
     },
     "205": {
       "type": "operator",
+      "charId": "char_476_blkngt",
       "name": "Blacknight",
       "class": "Vanguard",
       "subclass": "Tactician",
@@ -1445,6 +1651,7 @@
     },
     "206": {
       "type": "operator",
+      "charId": "char_1021_kroos2",
       "name": "Kroos the Keen Glint",
       "class": "Sniper",
       "subclass": "Marksman",
@@ -1452,6 +1659,7 @@
     },
     "207": {
       "type": "operator",
+      "charId": "char_489_serum",
       "name": "Corroserum",
       "class": "Caster",
       "subclass": "Blast",
@@ -1459,6 +1667,7 @@
     },
     "208": {
       "type": "operator",
+      "charId": "char_4013_kjera",
       "name": "Kjera",
       "class": "Caster",
       "subclass": "Mech-accord",
@@ -1466,6 +1675,7 @@
     },
     "209": {
       "type": "operator",
+      "charId": "char_473_mberry",
       "name": "Mulberry",
       "class": "Medic",
       "subclass": "Wandering",
@@ -1473,6 +1683,7 @@
     },
     "210": {
       "type": "operator",
+      "charId": "char_449_glider",
       "name": "Honeyberry",
       "class": "Medic",
       "subclass": "Wandering",
@@ -1480,6 +1691,7 @@
     },
     "211": {
       "type": "operator",
+      "charId": "char_4025_aprot2",
       "name": "Shalem",
       "class": "Defender",
       "subclass": "Arts Protector",
@@ -1487,6 +1699,7 @@
     },
     "212": {
       "type": "operator",
+      "charId": "char_431_ashlok",
       "name": "Ashlock",
       "class": "Defender",
       "subclass": "Fortress",
@@ -1494,6 +1707,7 @@
     },
     "213": {
       "type": "operator",
+      "charId": "char_422_aurora",
       "name": "Aurora",
       "class": "Defender",
       "subclass": "Duelist",
@@ -1501,6 +1715,7 @@
     },
     "214": {
       "type": "operator",
+      "charId": "char_4019_ncdeer",
       "name": "Nine-Colored Deer",
       "class": "Supporter",
       "subclass": "Abjurer",
@@ -1508,6 +1723,7 @@
     },
     "215": {
       "type": "operator",
+      "charId": "char_492_quercu",
       "name": "Quercus",
       "class": "Supporter",
       "subclass": "Abjurer",
@@ -1515,6 +1731,7 @@
     },
     "216": {
       "type": "operator",
+      "charId": "char_430_fartth",
       "name": "Fartooth",
       "class": "Sniper",
       "subclass": "Deadeye",
@@ -1522,6 +1739,7 @@
     },
     "217": {
       "type": "operator",
+      "charId": "char_479_sleach",
       "name": "Saileach",
       "class": "Vanguard",
       "subclass": "Standard Bearer",
@@ -1529,6 +1747,7 @@
     },
     "218": {
       "type": "operator",
+      "charId": "char_420_flamtl",
       "name": "Flametail",
       "class": "Vanguard",
       "subclass": "Pioneer",
@@ -1536,6 +1755,7 @@
     },
     "219": {
       "type": "operator",
+      "charId": "char_377_gdglow",
       "name": "Goldenglow",
       "class": "Caster",
       "subclass": "Mech-accord",
@@ -1543,6 +1763,7 @@
     },
     "220": {
       "type": "operator",
+      "charId": "char_206_gnosis",
       "name": "Gnosis",
       "class": "Supporter",
       "subclass": "Hexer",
@@ -1550,6 +1771,7 @@
     },
     "221": {
       "type": "operator",
+      "charId": "char_2023_ling",
       "name": "Ling",
       "class": "Supporter",
       "subclass": "Summoner",
@@ -1557,6 +1779,7 @@
     },
     "222": {
       "type": "operator",
+      "charId": "char_322_lmlee",
       "name": "Lee",
       "class": "Specialist",
       "subclass": "Merchant",
@@ -1564,6 +1787,7 @@
     },
     "223": {
       "type": "operator",
+      "charId": "char_1014_nearl2",
       "name": "Nearl the Radiant Knight",
       "class": "Guard",
       "subclass": "Dreadnought",

@@ -20,4 +20,4 @@ export const skillIcon = (iconId: string | null, skillId: string): string =>
   `/images/skills/skill_icon_${iconId ?? skillId}.png`;
 
 export const moduleImage = (moduleId: string): string =>
-  `/images/equip/${moduleId}.png`;
+  `/images/modules/${moduleId}.png`;

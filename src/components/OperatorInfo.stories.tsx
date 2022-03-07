@@ -12,6 +12,7 @@ export const Mudrock = Template.bind({});
 Mudrock.args = {
   isLimited: false,
   operatorObject: {
+    charId: "char_311_mudrok",
     name: "Mudrock",
     cnName: "泥岩",
     rarity: 5,

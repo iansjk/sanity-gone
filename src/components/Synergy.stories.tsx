@@ -10,6 +10,7 @@ const Template: Story<SynergyProps> = (args) => <Synergy {...args} />;
 
 export const Angelina = Template.bind({});
 Angelina.args = {
+  charId: "char_291_aglina",
   name: "Angelina",
   rarity: 5,
   quality: SynergyQuality["Good Synergy"],

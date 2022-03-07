@@ -37,6 +37,7 @@ const getAttackType = (
 const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   const { operatorObject, isLimited } = props;
   const {
+    charId,
     name,
     profession,
     rarity: rawRarity,
@@ -107,13 +108,17 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
         <Media lessThan="mobile">
           <OperatorPortrait
             variant="small"
-            name={name}
+            charId={charId}
             isLimited={isLimited}
             rarity={rarity}
           />
         </Media>
         <Media greaterThanOrEqual="mobile">
-          <OperatorPortrait name={name} isLimited={isLimited} rarity={rarity} />
+          <OperatorPortrait
+            charId={charId}
+            isLimited={isLimited}
+            rarity={rarity}
+          />
         </Media>
       </div>
       <dl className="attack-type-and-position">

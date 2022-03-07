@@ -19,7 +19,7 @@ import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
-import { operatorImage } from "../../utils/images";
+import { operatorAvatar } from "../../utils/images";
 import { Media } from "../../Media";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { fetchContentfulGraphQl } from "../../utils/fetch";
@@ -285,6 +285,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       Object.entries(operatorsJson).map(([opName, op]) => [
         opName,
         {
+          charId: op.charId,
           rarity: op.rarity,
           profession: op.profession,
           subProfessionId: op.subProfessionId,
@@ -296,7 +297,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 interface Props {
-  charId: string; // for aceship.json in postbuild task
+  charId: string;
   guide: {
     operator: {
       accentColorInHex: string;
@@ -346,7 +347,7 @@ interface Props {
 }
 
 const OperatorAnalysis: React.VFC<Props> = (props) => {
-  const { guide, operatorObject, summons, allOperators } = props;
+  const { charId, guide, operatorObject, summons, allOperators } = props;
   const {
     operator,
     customByline,
@@ -441,7 +442,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         width: guide.operator.bannerImage.width,
         height: guide.operator.bannerImage.height,
       }}
-      image={operatorImage(operatorName)}
+      image={operatorAvatar(charId)}
       description={customByline ?? description}
       previousLocation="Operators"
       previousLocationLink="/operators"

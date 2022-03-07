@@ -3,7 +3,7 @@ import { Theme } from "@mui/material";
 
 import CardWithTabs from "./CardWithTabs";
 import Synergy, { SynergyProps, SynergyQuality } from "./Synergy";
-import { operatorImage } from "../utils/images";
+import { operatorAvatar } from "../utils/images";
 import Image from "next/image";
 import cx from "clsx";
 
@@ -37,7 +37,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
                 syn.shouldInvertIconOnHighlight && "invert-on-highlight"
               )}
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              src={syn.isGroup ? syn.iconUrl! : operatorImage(syn.name)}
+              src={syn.isGroup ? syn.iconUrl! : operatorAvatar(syn.charId!)}
               width={48}
               height={48}
               alt=""
@@ -65,6 +65,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
       })}
       panels={sortedSynergies.map((synOp) => {
         const {
+          charId,
           name,
           analysis,
           isGroup,
@@ -77,6 +78,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
         return (
           <Synergy
             key={synOp.name}
+            charId={charId}
             name={name}
             isGroup={isGroup}
             analysis={analysis}

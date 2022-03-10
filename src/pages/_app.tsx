@@ -31,12 +31,17 @@ export default function MyApp(props: MyAppProps) {
   const router = useRouter();
 
   useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
+    let handleRouteChange: ((url: URL) => void) | null = null;
+    if (isProductionEnvironment) {
+      handleRouteChange = (url: URL) => {
+        pageview(url);
+      };
+      router.events.on("routeChangeComplete", handleRouteChange);
+    }
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
+      if (handleRouteChange != null) {
+        router.events.off("routeChangeComplete", handleRouteChange);
+      }
     };
   }, [router.events]);
 

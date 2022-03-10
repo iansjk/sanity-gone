@@ -11,6 +11,8 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
 import { GA_TRACKING_ID, pageview } from "../utils/gtag";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -23,6 +25,21 @@ interface MyAppProps extends AppProps {
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+
+  // pass route change events to Google Analytics
+  // from https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_app.js
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <MediaContextProvider>
       <CacheProvider value={emotionCache}>

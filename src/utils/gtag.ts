@@ -2,8 +2,8 @@
 export const GOOGLE_ANALYTICS_TRACKING_ID =
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   process.env.GOOGLE_ANALYTICS_TRACKING_ID!;
-const isProduction = process.env.NODE_ENV === "production";
-if (isProduction && GOOGLE_ANALYTICS_TRACKING_ID == null) {
+const isProductionEnvironment = process.env.NODE_ENV === "production";
+if (isProductionEnvironment && GOOGLE_ANALYTICS_TRACKING_ID == null) {
   throw new Error(
     "GOOGLE_ANALYTICS_TRACKING_ID is not set in a production environment"
   );

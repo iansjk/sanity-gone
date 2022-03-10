@@ -1,17 +1,17 @@
 // taken mostly verbatim from https://stackoverflow.com/a/65081431/821285
-export const GOOGLE_ANALYTICS_TRACKING_ID =
+export const NEXT_PUBLIC_GOOGLE_ANALYTICS_ID =
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  process.env.GOOGLE_ANALYTICS_TRACKING_ID!;
+  process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!;
 const isProductionEnvironment = process.env.NODE_ENV === "production";
-if (isProductionEnvironment && GOOGLE_ANALYTICS_TRACKING_ID == null) {
+if (isProductionEnvironment && NEXT_PUBLIC_GOOGLE_ANALYTICS_ID == null) {
   throw new Error(
-    "GOOGLE_ANALYTICS_TRACKING_ID is not set in a production environment"
+    "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID is not set in a production environment"
   );
 }
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: URL): void => {
-  window.gtag("config", GOOGLE_ANALYTICS_TRACKING_ID, {
+  window.gtag("config", NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, {
     page_path: url,
   });
 };

@@ -18,6 +18,7 @@ const instance = axios.create({
     "Content-Type": "application/json; charset=utf-8",
   },
   timeout: 1000,
+  validateStatus: () => true, // we'll check it ourselves & log better error info
 });
 
 export async function fetchContentfulGraphQl<T = any>(
@@ -25,22 +26,33 @@ export async function fetchContentfulGraphQl<T = any>(
   variables: unknown = {}
 ): Promise<T> {
   let response = null;
-  try {
-    const url = `/${CONTENTFUL_SPACE_ID}${
-      process.env.CONTENTFUL_ENVIRONMENT != null
-        ? `/environments/${process.env.CONTENTFUL_ENVIRONMENT}`
-        : ""
-    }`;
-    response = await instance.post<{ data: T }>(url, {
-      query,
-      variables,
-    });
-    if (response.status !== 200) {
-      throw new Error(response.statusText);
+  const url = `/${CONTENTFUL_SPACE_ID}${
+    process.env.CONTENTFUL_ENVIRONMENT != null
+      ? `/environments/${process.env.CONTENTFUL_ENVIRONMENT}`
+      : ""
+  }`;
+  response = await instance.post<{ data: T }>(url, {
+    query,
+    variables,
+  });
+  if (!(response.status >= 200 && response.status < 300)) {
+    if ((response.data as any).errors != null) {
+      console.error(response.data);
+      throw new Error(
+        (response.data as any).errors
+          .map(
+            (error: {
+              message: string;
+              locations: Array<{ line: number; column: number }>;
+            }) =>
+              `${error.message} (query ${error.locations
+                .map(({ line, column }) => `line ${line}, column ${column}`)
+                .join("; ")})`
+          )
+          .join("\n")
+      );
     }
-    return response.data.data;
-  } catch (e) {
-    console.error((e as any).toJSON());
-    throw e;
+    throw new Error(response.statusText);
   }
+  return response.data.data;
 }

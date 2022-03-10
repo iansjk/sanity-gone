@@ -10,7 +10,7 @@ import { MediaContextProvider, mediaStyle } from "../Media";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
-import { GA_TRACKING_ID, pageview } from "../utils/gtag";
+import { GOOGLE_ANALYTICS_TRACKING_ID, pageview } from "../utils/gtag";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
@@ -65,7 +65,7 @@ export default function MyApp(props: MyAppProps) {
               <>
                 <Script
                   strategy="afterInteractive"
-                  src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+                  src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_TRACKING_ID}`}
                 />
                 <Script
                   id="gtag-init"
@@ -75,7 +75,7 @@ export default function MyApp(props: MyAppProps) {
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', '${GA_TRACKING_ID}', {
+                  gtag('config', '${GOOGLE_ANALYTICS_TRACKING_ID}', {
                     page_path: window.location.pathname,
                   });
                 `,

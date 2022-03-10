@@ -1,8 +1,9 @@
 // taken mostly verbatim from https://stackoverflow.com/a/65081431/821285
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-export const GA_TRACKING_ID = process.env.GOOGLE_ANALYTICS_TRACKING_ID!;
+export const GOOGLE_ANALYTICS_TRACKING_ID =
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  process.env.GOOGLE_ANALYTICS_TRACKING_ID!;
 const isProduction = process.env.NODE_ENV === "production";
-if (isProduction && GA_TRACKING_ID == null) {
+if (isProduction && GOOGLE_ANALYTICS_TRACKING_ID == null) {
   throw new Error(
     "GOOGLE_ANALYTICS_TRACKING_ID is not set in a production environment"
   );
@@ -10,7 +11,7 @@ if (isProduction && GA_TRACKING_ID == null) {
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: URL): void => {
-  window.gtag("config", GA_TRACKING_ID, {
+  window.gtag("config", GOOGLE_ANALYTICS_TRACKING_ID, {
     page_path: url,
   });
 };

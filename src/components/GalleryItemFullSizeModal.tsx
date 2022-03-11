@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
+import Image from "next/image";
 import { transparentize } from "polished";
 import { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
@@ -21,7 +22,7 @@ interface Props {
 
 const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
   const {
-    url,
+    url: rawUrl,
     caption,
     open,
     onClose,
@@ -30,6 +31,7 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
     onNext,
     onPrevious,
   } = props;
+  const url = rawUrl.startsWith("//") ? `https:${rawUrl}` : rawUrl;
   const filename = url.split("/").slice(-1)[0];
   const overlayRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -148,7 +150,9 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
                 </button>
               )}
             </div>
-            <img src={url} alt="" />
+            <div className="fullsize-image-wrapper">
+              <Image src={url} alt="" layout="fill" />
+            </div>
             <div className="next-button-area">
               {canNext && (
                 <button
@@ -290,7 +294,8 @@ const styles = (theme: Theme) => css`
       border-radius: ${theme.spacing(0, 0, 1, 1)};
     }
 
-    img {
+    .fullsize-image-wrapper {
+      position: relative;
       grid-area: image;
       align-self: center;
       padding: ${theme.spacing(4)};

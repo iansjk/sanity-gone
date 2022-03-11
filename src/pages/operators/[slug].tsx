@@ -83,12 +83,13 @@ const htmlToReact = (
             />
           );
         } else if ((domNode.firstChild as Element)?.name === "img") {
-          const contents = (domNode.children as Element[])
+          const images = (domNode.children as Element[])
             .filter((element) => element.name === "img")
-            .map((imgElement, i) => (
-              <img key={i} {...attributesToProps(imgElement.attribs)} />
-            ));
-          return <Gallery contents={contents} />;
+            .map((imgElement) => ({
+              src: imgElement.attribs.src,
+              alt: imgElement.attribs.alt,
+            }));
+          return <Gallery images={images} />;
         }
       }
       return domNode;

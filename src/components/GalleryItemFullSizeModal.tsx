@@ -230,11 +230,11 @@ const styles = (theme: Theme) => css`
 
     display: grid;
     grid-template-rows: max-content 1fr max-content;
-    grid-template-columns: 200px 1fr max-content 1fr 200px;
+    grid-template-columns: 200px 1fr 200px;
     grid-template-areas:
-      "topbar topbar topbar topbar topbar"
-      "previous spacerL image spacerR next"
-      "bottombar bottombar bottombar bottombar bottombar";
+      "topbar topbar topbar"
+      "previous image next"
+      "bottombar bottombar bottombar";
 
     .topbar {
       grid-area: topbar;
@@ -297,7 +297,6 @@ const styles = (theme: Theme) => css`
     .fullsize-image-wrapper {
       position: relative;
       grid-area: image;
-      align-self: center;
       padding: ${theme.spacing(4)};
     }
   }

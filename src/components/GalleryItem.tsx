@@ -37,6 +37,10 @@ const styles = (theme: Theme) => css`
   background: unset;
   border: 0;
 
+  &:not(:focus-visible) {
+    outline: none;
+  }
+
   img {
     border-radius: ${theme.spacing(0.5)};
   }

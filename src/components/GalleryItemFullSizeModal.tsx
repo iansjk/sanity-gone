@@ -129,61 +129,34 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
           >
             <CloseIcon aria-hidden="true" />
           </button>
-          <div className="modal-content">
-            <h2
-              id="gallery-modal-title"
-              className="caption"
-              aria-label={`Image, full size: ${caption}`}
+          {canPrevious && (
+            <button
+              className="previous-image-button"
+              aria-label="Previous image"
+              onClick={(e) => {
+                e.stopPropagation();
+                onPrevious();
+              }}
             >
-              {caption}
-            </h2>
-            <div className="previous-button-area">
-              {canPrevious && (
-                <button
-                  aria-label="Previous image"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onPrevious();
-                  }}
-                >
-                  <PreviousArrow aria-hidden="true" />
-                </button>
-              )}
-            </div>
-            <div className="fullsize-image-wrapper">
-              <Image src={url} alt="" layout="fill" />
-            </div>
-            <div className="next-button-area">
-              {canNext && (
-                <button
-                  aria-label="Next image"
-                  disabled={!canNext}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onNext();
-                  }}
-                >
-                  <NextArrow aria-hidden="true" />
-                </button>
-              )}
-            </div>
-            <div className="topbar">
-              <span className="filename" title={`Filename: ${filename}`}>
-                {filename}
-              </span>
-              <span aria-hidden="true" className="separator">
-                |
-              </span>
-              <a
-                className="full-resolution"
-                href={url}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                Full Resolution
-              </a>
-            </div>
+              <PreviousArrow aria-hidden="true" />
+            </button>
+          )}
+          <div className="fullsize-image-wrapper">
+            <Image src={url} alt="" layout="fill" objectFit="scale-down" />
           </div>
+          {canNext && (
+            <button
+              className="next-image-button"
+              aria-label="Next image"
+              disabled={!canNext}
+              onClick={(e) => {
+                e.stopPropagation();
+                onNext();
+              }}
+            >
+              <NextArrow aria-hidden="true" />
+            </button>
+          )}
         </div>,
         document.body
       );
@@ -197,107 +170,71 @@ const styles = (theme: Theme) => css`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: ${transparentize(0.34, "#000")};
+  background-color: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(${theme.spacing(1)});
   z-index: 100;
 
-  .close-modal-button {
+  .fullsize-image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .close-modal-button,
+  .previous-image-button,
+  .next-image-button {
     position: absolute;
-    right: 0;
-    top: 0;
-    padding: ${theme.spacing(4)};
-    margin: 0;
-    border: 0;
-    background-color: unset;
-    line-height: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: ${theme.spacing(1)};
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
     cursor: pointer;
 
     &:hover {
+      background-color: ${transparentize(
+        0.25,
+        theme.palette.midtoneDarker.main
+      )};
+
       svg path {
+        fill: ${theme.palette.white.main};
         stroke: ${theme.palette.white.main};
       }
     }
   }
 
-  .modal-content {
-    position: absolute;
-    left: 50vw;
-    top: 50vh;
-    transform: translateX(-50%) translateY(-50%);
-    width: 80%;
-    max-height: 80%;
-    background: ${theme.palette.midtone.main};
+  .close-modal-button {
+    top: ${theme.spacing(3)};
+    left: ${theme.spacing(3)};
 
-    display: grid;
-    grid-template-rows: max-content 1fr max-content;
-    grid-template-columns: 200px 1fr 200px;
-    grid-template-areas:
-      "topbar topbar topbar"
-      "previous image next"
-      "bottombar bottombar bottombar";
-
-    .topbar {
-      grid-area: topbar;
-      font-size: ${theme.typography.body1.fontSize}px;
-      text-align: center;
-      padding: ${theme.spacing(1)} 0;
-      border-radius: ${theme.spacing(1, 1, 0, 0)};
-      background-color: ${theme.palette.dark.main};
-
-      .filename {
-        color: ${theme.palette.gray.main};
-      }
-
-      .separator {
-        display: inline-block;
-        margin: 0 ${theme.spacing(2)};
-        color: ${theme.palette.midtoneBrighter.main};
-      }
+    svg {
+      width: 12px;
+      height: 12px;
     }
+  }
 
-    .previous-button-area {
-      grid-area: previous;
+  .previous-image-button {
+    left: ${theme.spacing(3)};
+    top: calc(50% - 20px);
+
+    svg {
+      width: 16px;
+      height: 16px;
     }
+  }
 
-    .next-button-area {
-      grid-area: next;
-    }
+  .next-image-button {
+    right: ${theme.spacing(3)};
+    top: calc(50% - 20px);
 
-    .previous-button-area,
-    .next-button-area {
-      align-self: center;
-
-      button {
-        background: none;
-        border: none;
-        padding: ${theme.spacing(8)};
-
-        &:hover:not(:disabled) {
-          cursor: pointer;
-
-          svg path {
-            fill: ${theme.palette.white.main};
-          }
-        }
-      }
-    }
-
-    .caption {
-      grid-area: bottombar;
-      background-color: ${theme.palette.dark.main};
-      margin: 0;
-      padding: ${theme.spacing(1)};
-      font-size: ${theme.typography.body1.fontSize}px;
-      line-height: ${theme.typography.body1.lineHeight};
-      font-weight: normal;
-      text-align: center;
-      border-radius: ${theme.spacing(0, 0, 1, 1)};
-    }
-
-    .fullsize-image-wrapper {
-      position: relative;
-      grid-area: image;
-      padding: ${theme.spacing(4)};
+    svg {
+      width: 16px;
+      height: 16px;
     }
   }
 `;

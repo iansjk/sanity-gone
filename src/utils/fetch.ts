@@ -44,10 +44,14 @@ export async function fetchContentfulGraphQl<T = any>(
             (error: {
               message: string;
               locations: Array<{ line: number; column: number }>;
-            }) =>
-              `${error.message} (query ${error.locations
-                .map(({ line, column }) => `line ${line}, column ${column}`)
-                .join("; ")})`
+            }) => {
+              if (error.locations != null) {
+                `${error.message} (query ${error.locations
+                  .map(({ line, column }) => `line ${line}, column ${column}`)
+                  .join("; ")})`;
+              }
+              return error.message;
+            }
           )
           .join("\n")
       );

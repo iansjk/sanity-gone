@@ -97,18 +97,20 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
             <PreviousArrow aria-hidden="true" />
           </button>
         )}
-        <Image
-          key={url}
-          src={url}
-          width={width}
-          height={height}
-          alt=""
-          quality={100}
-          priority
-          placeholder="blur"
-          // theme.palette.gray as a 1px blur placeholder
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNsb5/9HwAF8AKqEhqAsAAAAABJRU5ErkJggg=="
-        />
+        <div>
+          <Image
+            key={url}
+            src={url}
+            width={width}
+            height={height}
+            alt=""
+            quality={100}
+            priority
+            placeholder="blur"
+            // theme.palette.gray as a 1px blur placeholder
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNsb5/9HwAF8AKqEhqAsAAAAABJRU5ErkJggg=="
+          />
+        </div>
         {canNext && (
           <button
             className="next-image-button"

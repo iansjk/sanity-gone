@@ -5,10 +5,14 @@ import GalleryItem from "./GalleryItem";
 import GalleryItemFullSizeModal from "./GalleryItemFullSizeModal";
 
 export interface GalleryProps {
-  images: Array<{
-    src: string;
-    alt: string;
-  }>;
+  images: ImageData[];
+}
+
+export interface ImageData {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
 }
 
 const Gallery: React.FC<GalleryProps> = (props) => {
@@ -18,11 +22,10 @@ const Gallery: React.FC<GalleryProps> = (props) => {
   const galleryDivRef = useRef<HTMLDivElement>(null);
 
   const numImages = images.length;
-  const children = images.map(({ src, alt }, i) => (
+  const children = images.map((imageProps, i) => (
     <GalleryItem
       key={i}
-      url={src}
-      alt={alt}
+      {...imageProps}
       onClick={() => {
         setOpen(true);
         setActiveItemIndex(i);
@@ -49,8 +52,7 @@ const Gallery: React.FC<GalleryProps> = (props) => {
         {children}
       </div>
       <GalleryItemFullSizeModal
-        url={children[activeItemIndex].props.url}
-        caption={children[activeItemIndex].props.alt}
+        image={children[activeItemIndex].props}
         open={open}
         onClose={handleClose}
         onPrevious={() => setActiveItemIndex((index) => index - 1)}

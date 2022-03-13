@@ -1,14 +1,14 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 import Image from "next/image";
-interface Props {
-  url: string;
-  alt: string;
+import { ImageData } from "./Gallery";
+
+interface Props extends ImageData {
   onClick: () => void;
 }
 
 const GalleryItem: React.VFC<Props> = (props) => {
-  const { url: rawUrl, alt, onClick } = props;
+  const { src: rawUrl, alt, onClick } = props;
   const url = rawUrl.startsWith("//") ? `https:${rawUrl}` : rawUrl;
 
   return (

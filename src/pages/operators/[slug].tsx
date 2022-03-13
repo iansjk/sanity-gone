@@ -15,7 +15,7 @@ import TabPanels from "../../components/TabPanels";
 import TalentInfo, { TalentObject } from "../../components/TalentInfo";
 import Layout from "../../Layout";
 import { replaceSelfClosingHtmlTags } from "../../utils/globals";
-import Gallery from "../../components/Gallery";
+import Gallery, { ImageData } from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject } from "../../utils/types";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
@@ -27,12 +27,20 @@ import operatorsJson from "../../../data/operators.json";
 import summonsJson from "../../../data/summons.json";
 import { markdownToHtmlString } from "../../utils/markdown";
 
+// example of what we want to match:
+// <img src="//images.ctfassets.net/9auzhr5vyq9m/CS2g3pPFy0Ukze4oxncQg/de3ed222840d528143d2f9f1a1c76ee4/74593166_p1_1.png" alt="Cirno as an AK operator (very tall)">
+const contentfulCdnAssetUrlRegex =
+  /\/\/images\.ctfassets\.net\/[^/]+\/(?<id>[^/]+)/;
+
 interface HTMLToReactContext {
   skills: SkillObject[];
   recommendedSkills: boolean[];
   talents: TalentObject[];
   operator: CharacterObject;
   summon?: CharacterObject;
+  imageDimensions: {
+    [contentfulAssetId: string]: { width: number; height: number };
+  };
 }
 
 const htmlToReact = (
@@ -85,10 +93,21 @@ const htmlToReact = (
         } else if ((domNode.firstChild as Element)?.name === "img") {
           const images = (domNode.children as Element[])
             .filter((element) => element.name === "img")
-            .map((imgElement) => ({
-              src: imgElement.attribs.src,
-              alt: imgElement.attribs.alt,
-            }));
+            .map((imgElement) => {
+              const src = imgElement.attribs.src;
+              const match = contentfulCdnAssetUrlRegex.exec(src);
+              if (!match?.groups?.id) {
+                throw new Error(`Unexpected img src: ${src}`);
+              } else if (context.imageDimensions[match.groups.id] == null) {
+                throw new Error(
+                  `Can't find Contentful asset data for id ${match.groups.id}`
+                );
+              }
+              return {
+                ...imgElement.attribs,
+                ...context.imageDimensions[match.groups.id],
+              } as ImageData;
+            });
           return <Gallery images={images} />;
         }
       }
@@ -293,7 +312,69 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         },
       ])
     ),
+    imageDimensions: {},
   };
+
+  const contentfulCdnAssetUrlGlobalRegex = new RegExp(
+    contentfulCdnAssetUrlRegex,
+    "g"
+  );
+  const contentfulAssetIds: string[] = [];
+  Object.values(props.guide).forEach((value) => {
+    if (typeof value === "string") {
+      [...value.matchAll(contentfulCdnAssetUrlGlobalRegex)].forEach((match) => {
+        if (match?.groups?.id) {
+          contentfulAssetIds.push(match.groups.id);
+        }
+      });
+    }
+  });
+
+  if (contentfulAssetIds.length > 0) {
+    const assetsData = await fetchContentfulGraphQl<{
+      assetCollection: {
+        items: [
+          {
+            sys: {
+              id: string;
+            };
+            width: number;
+            height: number;
+          }
+        ];
+      };
+    }>(
+      `
+      query {
+        assetCollection (
+          where: {
+            sys: {
+              id_in: ${JSON.stringify(contentfulAssetIds)}
+            }
+          }
+        ) {
+          items {
+            sys {
+              id
+            }
+            width
+            height
+          }
+        }
+      }
+    `
+    );
+
+    props.imageDimensions = Object.fromEntries(
+      assetsData.assetCollection.items.map((asset) => [
+        asset.sys.id,
+        {
+          width: asset.width,
+          height: asset.height,
+        },
+      ])
+    );
+  }
   return { props };
 };
 
@@ -345,10 +426,20 @@ interface Props {
       "rarity" | "profession" | "subProfessionId"
     >;
   };
+  imageDimensions: {
+    [contentfulAssetId: string]: { width: number; height: number };
+  };
 }
 
 const OperatorAnalysis: React.VFC<Props> = (props) => {
-  const { charId, guide, operatorObject, summons, allOperators } = props;
+  const {
+    charId,
+    guide,
+    operatorObject,
+    summons,
+    allOperators,
+    imageDimensions,
+  } = props;
   const {
     operator,
     customByline,
@@ -378,6 +469,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     recommendedSkills: skillRecommended,
     operator: operatorObject,
     summon: summons.length > 0 ? summons[0] : undefined,
+    imageDimensions,
   };
   const theme = useTheme();
 

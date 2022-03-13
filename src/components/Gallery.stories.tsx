@@ -11,14 +11,20 @@ Default.args = {
     {
       src: "https://media.discordapp.net/attachments/735954618076495914/951961145370091541/image3.png",
       alt: "1 layer",
+      width: 300,
+      height: 300,
     },
     {
       src: "https://media.discordapp.net/attachments/735954618076495914/951961145584013312/image1.png",
       alt: "2 layers",
+      width: 300,
+      height: 300,
     },
     {
       src: "https://media.discordapp.net/attachments/735954618076495914/951961144594161674/image4.png",
       alt: "3 layers",
+      width: 300,
+      height: 300,
     },
   ],
 };

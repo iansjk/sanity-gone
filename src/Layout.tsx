@@ -16,7 +16,6 @@ import config from "./config";
 import Link from "next/link";
 import Image from "next/image";
 import HashCompatibleNextLink from "./components/HashCompatibleNextLink";
-import { useRouter } from "next/router";
 
 interface BannerImageProps {
   width: number;
@@ -48,7 +47,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
     children,
     previousLocation,
     previousLocationLink,
-    ...rest
   } = props;
   const {
     siteName,
@@ -56,7 +54,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
     image: defaultImage,
     siteUrl,
   } = config;
-  const router = useRouter();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const title = pageTitle

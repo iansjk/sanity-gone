@@ -3,7 +3,7 @@ import { styled, Theme } from "@mui/material";
 import { ModalUnstyled } from "@mui/base";
 import Image from "next/image";
 import { transparentize } from "polished";
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ImageData } from "./Gallery";
 
 import CloseIcon from "./icons/CloseIcon";
@@ -35,8 +35,64 @@ interface Props {
 const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
   const { image, open, onClose, canNext, canPrevious, onNext, onPrevious } =
     props;
-  const { src: rawUrl, alt, width, height } = image;
+  const { src: rawUrl, alt, width: imageWidth, height: imageHeight } = image;
   const url = rawUrl.startsWith("//") ? `https:${rawUrl}` : rawUrl;
+  const [imageWrapper, setImageWrapper] = useState<HTMLDivElement | null>(null);
+  const [modalTitle, setModalTitle] = useState<HTMLHeadingElement | null>(null);
+
+  const resizeImageCallback = useCallback(() => {
+    if (imageWrapper && modalTitle) {
+      const maxWidth = Math.max(
+        document.documentElement.clientWidth ?? 0,
+        window.innerWidth ?? 0
+      );
+      const maxHeight =
+        Math.max(
+          document.documentElement.clientHeight ?? 0,
+          window.innerHeight ?? 0
+        ) - modalTitle.clientHeight;
+
+      // four cases:
+      // 1. image fits within available space -> set container dims to image width/height
+      // 2. image is wider *and* taller than available space -> set container dims to larger dimension & calculate the other
+      // 3. image is wider than available space -> set container height to max height & calculate width
+      // 4. image is taller than available space -> set container width to max width & calculate height
+      if (imageWidth < maxWidth && imageHeight < maxHeight) {
+        imageWrapper.style.width = `${imageWidth}px`;
+        imageWrapper.style.height = `${imageHeight}px`;
+      } else {
+        const aspectRatio = imageWidth / imageHeight;
+        if (aspectRatio > 1) {
+          if (maxWidth / aspectRatio > maxHeight) {
+            imageWrapper.style.width = `${maxHeight * aspectRatio}px`;
+            imageWrapper.style.height = `${maxHeight}px`;
+          } else {
+            imageWrapper.style.width = `${maxWidth}px`;
+            imageWrapper.style.height = `${maxWidth / aspectRatio}px`;
+          }
+        } else {
+          if (maxHeight * aspectRatio > maxWidth) {
+            imageWrapper.style.width = `${maxWidth}px`;
+            imageWrapper.style.height = `${maxWidth / aspectRatio}px`;
+          } else {
+            imageWrapper.style.width = `${maxHeight * aspectRatio}px`;
+            imageWrapper.style.height = `${maxHeight}px`;
+          }
+        }
+      }
+    }
+  }, [imageHeight, imageWidth, imageWrapper, modalTitle]);
+
+  useEffect(() => {
+    resizeImageCallback();
+  }, [imageWidth, imageHeight, imageWrapper, modalTitle, resizeImageCallback]);
+
+  useEffect(() => {
+    window.addEventListener("resize", resizeImageCallback);
+    return () => {
+      window.removeEventListener("resize", resizeImageCallback);
+    };
+  }, [resizeImageCallback]);
 
   useEffect(() => {
     if (open) {
@@ -77,7 +133,6 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
       BackdropComponent={Backdrop}
     >
       <div className="gallery-modal-content">
-        <h2 id="gallery-modal-title">{alt}</h2>
         <button
           className="close-modal-button"
           aria-label="Close"
@@ -97,12 +152,11 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
             <PreviousArrow aria-hidden="true" />
           </button>
         )}
-        <div>
+        <div id="fullsize-image-wrapper" ref={(el) => setImageWrapper(el)}>
           <Image
             key={url}
             src={url}
-            width={width}
-            height={height}
+            layout="fill"
             alt=""
             quality={100}
             priority
@@ -111,6 +165,9 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNsb5/9HwAF8AKqEhqAsAAAAABJRU5ErkJggg=="
           />
         </div>
+        <h2 id="gallery-modal-title" ref={(el) => setModalTitle(el)}>
+          {alt}
+        </h2>
         {canNext && (
           <button
             className="next-image-button"
@@ -144,76 +201,84 @@ const styles = (theme: Theme) => css`
   .gallery-modal-content {
     display: grid;
     grid-template-areas: "image" "caption";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr max-content;
     justify-items: center;
 
     & > * {
       grid-area: image;
     }
+  }
 
-    & > #gallery-modal-title {
-      grid-area: caption;
-      margin: ${theme.spacing(2, 0)};
-      font-size: ${theme.typography.body1.fontSize}px;
-      font-weight: ${theme.typography.body1.fontWeight};
-      line-height: ${theme.typography.body1.lineHeight};
-    }
+  #gallery-modal-title {
+    grid-area: caption;
+    text-align: center;
+    margin: 0;
+    padding: ${theme.spacing(2, 0)};
+    font-size: ${theme.typography.body1.fontSize}px;
+    font-weight: ${theme.typography.body1.fontWeight};
+    line-height: ${theme.typography.body1.lineHeight};
+  }
 
-    .close-modal-button,
-    .previous-image-button,
-    .next-image-button {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      border-radius: ${theme.spacing(1)};
-      background-color: rgba(0, 0, 0, 0.75);
-      z-index: 1;
-      cursor: pointer;
+  #fullsize-image-wrapper {
+    position: relative;
+  }
 
-      &:hover {
-        background-color: ${transparentize(
-          0.25,
-          theme.palette.midtoneDarker.main
-        )};
+  .close-modal-button,
+  .previous-image-button,
+  .next-image-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: ${theme.spacing(1)};
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+    cursor: pointer;
 
-        svg path {
-          fill: ${theme.palette.white.main};
-          stroke: ${theme.palette.white.main};
-        }
+    &:hover {
+      background-color: ${transparentize(
+        0.25,
+        theme.palette.midtoneDarker.main
+      )};
+
+      svg path {
+        fill: ${theme.palette.white.main};
+        stroke: ${theme.palette.white.main};
       }
     }
+  }
 
-    .close-modal-button {
-      top: ${theme.spacing(3)};
-      left: ${theme.spacing(3)};
+  .close-modal-button {
+    top: ${theme.spacing(3)};
+    left: ${theme.spacing(3)};
 
-      svg {
-        width: 12px;
-        height: 12px;
-      }
+    svg {
+      width: 12px;
+      height: 12px;
     }
+  }
 
-    .previous-image-button {
-      left: ${theme.spacing(3)};
-      top: calc(50% - 20px);
+  .previous-image-button {
+    left: ${theme.spacing(3)};
+    top: calc(50% - 20px);
 
-      svg {
-        width: 16px;
-        height: 16px;
-      }
+    svg {
+      width: 16px;
+      height: 16px;
     }
+  }
 
-    .next-image-button {
-      right: ${theme.spacing(3)};
-      top: calc(50% - 20px);
+  .next-image-button {
+    right: ${theme.spacing(3)};
+    top: calc(50% - 20px);
 
-      svg {
-        width: 16px;
-        height: 16px;
-      }
+    svg {
+      width: 16px;
+      height: 16px;
     }
   }
 `;

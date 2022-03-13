@@ -52,11 +52,10 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
           window.innerHeight ?? 0
         ) - modalTitle.clientHeight;
 
-      // four cases:
-      // 1. image fits within available space -> set container dims to image width/height
-      // 2. image is wider *and* taller than available space -> set container dims to larger dimension & calculate the other
-      // 3. image is wider than available space -> set container height to max height & calculate width
-      // 4. image is taller than available space -> set container width to max width & calculate height
+      // the code below emulates how object-fit: contain; works
+      // by setting the exact dimensions of the wrapper <div>
+      // to maximize the image's size while not overflowing the viewport
+      // and also maintaining the image's aspect ratio
       if (imageWidth < maxWidth && imageHeight < maxHeight) {
         imageWrapper.style.width = `${imageWidth}px`;
         imageWrapper.style.height = `${imageHeight}px`;

@@ -20,6 +20,14 @@ const instance = axios.create({
   timeout: 1000,
   validateStatus: () => true, // we'll check it ourselves & log better error info
 });
+instance.interceptors.request.use((config) => {
+  if (config.method && config.url) {
+    console.log(
+      `${config.method.toUpperCase()} ${config.baseURL ?? ""}${config.url}`
+    );
+  }
+  return config;
+});
 
 export async function fetchContentfulGraphQl<T = any>(
   query: string,

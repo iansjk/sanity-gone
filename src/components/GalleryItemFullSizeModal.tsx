@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { Theme } from "@mui/material";
+import { styled, Theme } from "@mui/material";
 import { ModalUnstyled } from "@mui/base";
 import Image from "next/image";
 import { transparentize } from "polished";
@@ -9,6 +9,18 @@ import { ImageData } from "./Gallery";
 import CloseIcon from "./icons/CloseIcon";
 import NextArrow from "./icons/NextArrow";
 import PreviousArrow from "./icons/PreviousArrow";
+
+const Backdrop = styled("div")`
+  z-index: -1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-tap-highlight-color: transparent;
+`;
 
 interface Props {
   image: ImageData;
@@ -61,6 +73,8 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
       aria-labelledby="gallery-modal-title"
       onClose={onClose}
       css={styles}
+      onBackdropClick={onClose}
+      BackdropComponent={Backdrop}
     >
       <div className="gallery-modal-content">
         <h2 id="gallery-modal-title">{alt}</h2>
@@ -124,8 +138,6 @@ const styles = (theme: Theme) => css`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
 
   .gallery-modal-content {
     display: grid;

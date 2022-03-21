@@ -406,7 +406,7 @@
       ],
       "cnName": "医疗探机",
       "isCnOnly": false,
-      "fileIndex": 193,
+      "fileIndex": 196,
       "operatorName": "Silence"
     }
   ],
@@ -822,7 +822,7 @@
       "skillData": [],
       "cnName": "触手",
       "isCnOnly": false,
-      "fileIndex": 194,
+      "fileIndex": 197,
       "operatorName": "Deepcolor"
     }
   ],
@@ -1411,7 +1411,7 @@
       "skillData": [],
       "cnName": "Mon3tr",
       "isCnOnly": false,
-      "fileIndex": 195,
+      "fileIndex": 198,
       "operatorName": "Kal'tsit"
     }
   ],
@@ -1837,7 +1837,7 @@
       "skillData": [],
       "cnName": "幻影",
       "isCnOnly": false,
-      "fileIndex": 196,
+      "fileIndex": 199,
       "operatorName": "Nightingale"
     }
   ],
@@ -3328,7 +3328,7 @@
       ],
       "cnName": "机械水獭",
       "isCnOnly": false,
-      "fileIndex": 197,
+      "fileIndex": 200,
       "operatorName": "Mayer"
     }
   ],
@@ -4525,7 +4525,7 @@
       ],
       "cnName": "龙腾.F",
       "isCnOnly": false,
-      "fileIndex": 198,
+      "fileIndex": 201,
       "operatorName": "Magallan"
     },
     {
@@ -5624,7 +5624,7 @@
       ],
       "cnName": "龙腾.L",
       "isCnOnly": false,
-      "fileIndex": 199,
+      "fileIndex": 202,
       "operatorName": "Magallan"
     },
     {
@@ -6819,7 +6819,7 @@
       ],
       "cnName": "龙腾.A",
       "isCnOnly": false,
-      "fileIndex": 200,
+      "fileIndex": 203,
       "operatorName": "Magallan"
     }
   ],
@@ -7550,7 +7550,7 @@
       ],
       "cnName": "诅咒娃娃",
       "isCnOnly": false,
-      "fileIndex": 201,
+      "fileIndex": 204,
       "operatorName": "Shamare"
     }
   ],
@@ -9460,7 +9460,7 @@
       ],
       "cnName": "镜中虚影",
       "isCnOnly": false,
-      "fileIndex": 202,
+      "fileIndex": 205,
       "operatorName": "Phantom"
     }
   ],
@@ -10153,7 +10153,7 @@
       ],
       "cnName": "此面向敌",
       "isCnOnly": false,
-      "fileIndex": 203,
+      "fileIndex": 206,
       "operatorName": "W"
     }
   ],
@@ -11456,7 +11456,7 @@
       ],
       "cnName": "工程蓄水炮",
       "isCnOnly": false,
-      "fileIndex": 204,
+      "fileIndex": 207,
       "operatorName": "Weedy"
     }
   ],
@@ -13238,7 +13238,7 @@
       ],
       "cnName": "移动摄影器",
       "isCnOnly": false,
-      "fileIndex": 205,
+      "fileIndex": 208,
       "operatorName": "Scene"
     }
   ],
@@ -14357,7 +14357,7 @@
       ],
       "cnName": "沙之碑",
       "isCnOnly": false,
-      "fileIndex": 206,
+      "fileIndex": 209,
       "operatorName": "Beeswax"
     }
   ],
@@ -15265,7 +15265,7 @@
       ],
       "cnName": "迷迭香的战术装备",
       "isCnOnly": false,
-      "fileIndex": 207,
+      "fileIndex": 210,
       "operatorName": "Rosmontis"
     }
   ],
@@ -16257,7 +16257,7 @@
       ],
       "cnName": "\"夹子\"",
       "isCnOnly": false,
-      "fileIndex": 208,
+      "fileIndex": 211,
       "operatorName": "Robin"
     }
   ],
@@ -16643,7 +16643,7 @@
       "skillData": [],
       "cnName": "磐蟹护卫队",
       "isCnOnly": false,
-      "fileIndex": 209,
+      "fileIndex": 212,
       "operatorName": "Beanstalk"
     }
   ],
@@ -17216,7 +17216,7 @@
       "skillData": [],
       "cnName": "\"小自在\"",
       "isCnOnly": false,
-      "fileIndex": 210,
+      "fileIndex": 213,
       "operatorName": "Dusk"
     }
   ],
@@ -18208,7 +18208,7 @@
       ],
       "cnName": "迎宾踏垫",
       "isCnOnly": false,
-      "fileIndex": 211,
+      "fileIndex": 214,
       "operatorName": "Frost"
     }
   ],
@@ -19931,14 +19931,14 @@
       ],
       "cnName": "斯卡蒂的海嗣",
       "isCnOnly": false,
-      "fileIndex": 212,
+      "fileIndex": 215,
       "operatorName": "Skadi the Corrupting Heart"
     }
   ],
   "Roberta": [
     {
-      "name": "Making-up Machine",
-      "description": "部署后为前方一名友方近战单位提供防护支援（持续数秒）",
+      "name": "Full Auto Modeler",
+      "description": "After deployment, provides defensive support for the melee allied unit ahead (lasts for several seconds)",
       "canUseGeneralPotentialItem": true,
       "potentialItemId": "",
       "nationId": null,
@@ -19946,7 +19946,7 @@
       "teamId": null,
       "displayNumber": null,
       "tokenKey": null,
-      "appellation": "Making-up Machine",
+      "appellation": " ",
       "position": "ALL",
       "tagList": null,
       "itemUsage": null,
@@ -19967,7 +19967,7 @@
             },
             "requiredPotentialRank": 0,
             "blackboard": [],
-            "overrideDescripton": "部署后为一名友方近战单位提供防护支援（持续15秒）",
+            "overrideDescripton": "After deployment, provides defensive support for the melee allied unit ahead (lasts for 15 seconds)",
             "prefabKey": null,
             "rangeId": null
           },
@@ -19978,7 +19978,7 @@
             },
             "requiredPotentialRank": 0,
             "blackboard": [],
-            "overrideDescripton": "部署后为一名友方近战单位提供防护支援（持续25秒）",
+            "overrideDescripton": "After deployment, provides defensive support for the melee allied unit ahead (lasts for 25 seconds)",
             "prefabKey": null,
             "rangeId": null
           },
@@ -19989,7 +19989,7 @@
             },
             "requiredPotentialRank": 0,
             "blackboard": [],
-            "overrideDescripton": "部署后为一名友方近战单位提供防护支援（持续25秒）",
+            "overrideDescripton": "After deployment, provides defensive support for the melee allied unit ahead (lasts for 25 seconds)",
             "prefabKey": null,
             "rangeId": null
           }
@@ -20023,8 +20023,7 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false
+                "sleepImmune": false
               }
             },
             {
@@ -20049,8 +20048,7 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false
+                "sleepImmune": false
               }
             }
           ],
@@ -20097,8 +20095,7 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false
+                "sleepImmune": false
               }
             },
             {
@@ -20123,8 +20120,7 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false
+                "sleepImmune": false
               }
             }
           ],
@@ -20171,8 +20167,7 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false
+                "sleepImmune": false
               }
             },
             {
@@ -20197,8 +20192,7 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false
+                "sleepImmune": false
               }
             }
           ],
@@ -20390,9 +20384,9 @@
           "hidden": false,
           "levels": [
             {
-              "name": "全自动造型仪",
+              "name": "Full Auto Modeler",
               "rangeId": null,
-              "description": "部署后持续数秒，期间为前方一名友方近战单位提供防御力提升与<$ba.shield>护盾</>（不叠加）",
+              "description": "Lasts for several seconds after deployment, granting increased DEF and <$ba.shield>Shield</> (Does not stack) to the melee allied unit ahead",
               "skillType": 0,
               "spData": {
                 "spType": 8,
@@ -20415,9 +20409,9 @@
           "hidden": false,
           "levels": [
             {
-              "name": "全自动造型仪",
+              "name": "Full Auto Modeler",
               "rangeId": null,
-              "description": "部署后持续数秒，期间为前方一名友方近战单位提供防御力提升与<$ba.shield>护盾</>（不叠加）",
+              "description": "Lasts for several seconds after deployment, granting increased DEF and <$ba.shield>Shield</> (Does not stack) to the melee allied unit ahead",
               "skillType": 0,
               "spData": {
                 "spType": 8,
@@ -20436,8 +20430,8 @@
         }
       ],
       "cnName": "全自动造型仪",
-      "isCnOnly": true,
-      "fileIndex": 244,
+      "isCnOnly": false,
+      "fileIndex": 216,
       "operatorName": "Roberta"
     }
   ],
@@ -20914,6 +20908,7 @@
               "rangeId": "x-5",
               "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -20966,6 +20961,7 @@
               "rangeId": "x-5",
               "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21018,6 +21014,7 @@
               "rangeId": "x-5",
               "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21070,6 +21067,7 @@
               "rangeId": "x-5",
               "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21122,6 +21120,7 @@
               "rangeId": "x-5",
               "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21174,6 +21173,7 @@
               "rangeId": "x-5",
               "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21226,6 +21226,7 @@
               "rangeId": "x-5",
               "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21278,6 +21279,7 @@
               "rangeId": "x-5",
               "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21330,6 +21332,7 @@
               "rangeId": "x-5",
               "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21382,6 +21385,7 @@
               "rangeId": "x-5",
               "description": "部署时对周围四格敌人造成<@ba.vup>{atk_scale:0%}</>耀骑士临光攻击力的真实伤害并<$ba.stun>晕眩</><@ba.vup>{stun}</>秒，上一名部署干员势力为【卡西米尔】时额外造成一次伤害",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21434,7 +21438,7 @@
       ],
       "cnName": "“耀阳”",
       "isCnOnly": true,
-      "fileIndex": 245,
+      "fileIndex": 248,
       "operatorName": "Nearl the Radiant Knight"
     }
   ],
@@ -21923,6 +21927,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21941,6 +21946,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21959,6 +21965,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21977,6 +21984,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21995,6 +22003,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22013,6 +22022,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22031,6 +22041,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22049,6 +22060,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22067,6 +22079,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22085,6 +22098,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22110,6 +22124,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22128,6 +22143,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22146,6 +22162,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22164,6 +22181,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22182,6 +22200,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22200,6 +22219,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22218,6 +22238,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22236,6 +22257,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22254,6 +22276,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22272,6 +22295,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22297,6 +22321,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22315,6 +22340,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22333,6 +22359,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22351,6 +22378,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22369,6 +22397,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22387,6 +22416,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22405,6 +22435,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22423,6 +22454,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22441,6 +22473,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22459,6 +22492,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22477,7 +22511,7 @@
       ],
       "cnName": "“清平”",
       "isCnOnly": true,
-      "fileIndex": 246,
+      "fileIndex": 249,
       "operatorName": "Ling"
     },
     {
@@ -23077,6 +23111,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23104,6 +23139,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23131,6 +23167,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23158,6 +23195,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23185,6 +23223,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23212,6 +23251,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23239,6 +23279,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23266,6 +23307,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23293,6 +23335,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23320,6 +23363,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23354,6 +23398,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23381,6 +23426,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23408,6 +23454,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23435,6 +23482,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23462,6 +23510,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23489,6 +23538,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23516,6 +23566,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23543,6 +23594,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23570,6 +23622,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23597,6 +23650,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23631,6 +23685,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23658,6 +23713,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23685,6 +23741,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23712,6 +23769,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23739,6 +23797,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23766,6 +23825,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23793,6 +23853,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23820,6 +23881,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23847,6 +23909,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23874,6 +23937,7 @@
               "rangeId": null,
               "description": "技能结束时回收生命值低于一半的召唤物",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23901,7 +23965,7 @@
       ],
       "cnName": "“逍遥”",
       "isCnOnly": true,
-      "fileIndex": 247,
+      "fileIndex": 250,
       "operatorName": "Ling"
     },
     {
@@ -24405,6 +24469,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24448,6 +24513,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24491,6 +24557,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24534,6 +24601,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24577,6 +24645,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24620,6 +24689,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24663,6 +24733,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24706,6 +24777,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24749,6 +24821,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24792,6 +24865,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24842,6 +24916,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24885,6 +24960,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24928,6 +25004,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24971,6 +25048,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25014,6 +25092,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25057,6 +25136,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25100,6 +25180,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25143,6 +25224,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25186,6 +25268,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25229,6 +25312,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25279,6 +25363,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25322,6 +25407,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25365,6 +25451,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25408,6 +25495,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25451,6 +25539,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25494,6 +25583,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25537,6 +25627,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25580,6 +25671,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25623,6 +25715,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25666,6 +25759,7 @@
               "rangeId": null,
               "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25709,7 +25803,7 @@
       ],
       "cnName": "“弦惊”",
       "isCnOnly": true,
-      "fileIndex": 248,
+      "fileIndex": 251,
       "operatorName": "Ling"
     }
   ],
@@ -26159,6 +26253,7 @@
               "rangeId": null,
               "description": "可以攻击并优先攻击沉睡的目标",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -26184,6 +26279,7 @@
               "rangeId": null,
               "description": "可以攻击并优先攻击沉睡的目标",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -26202,8 +26298,633 @@
       ],
       "cnName": "眠兽",
       "isCnOnly": true,
-      "fileIndex": 249,
+      "fileIndex": 252,
       "operatorName": "Blacknight"
+    }
+  ],
+  "Kazemaru": [
+    {
+      "name": "Kaminingyo",
+      "description": null,
+      "canUseGeneralPotentialItem": true,
+      "potentialItemId": "",
+      "nationId": null,
+      "groupId": null,
+      "teamId": null,
+      "displayNumber": null,
+      "tokenKey": null,
+      "appellation": "Kaminingyo",
+      "position": "MELEE",
+      "tagList": null,
+      "itemUsage": null,
+      "itemDesc": null,
+      "itemObtainApproach": null,
+      "isNotObtainable": false,
+      "isSpChar": false,
+      "maxPotentialLevel": 0,
+      "rarity": 4,
+      "profession": "TOKEN",
+      "subProfessionId": "notchar1",
+      "trait": null,
+      "phases": [
+        {
+          "characterPrefabKey": "token_10022_kazema_shadow",
+          "rangeId": "x-4",
+          "maxLevel": 50,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1109,
+                "atk": 351,
+                "def": 131,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.2,
+                "respawnTime": 20,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false
+              }
+            },
+            {
+              "level": 50,
+              "data": {
+                "maxHp": 1479,
+                "atk": 481,
+                "def": 202,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.2,
+                "respawnTime": 20,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "x-4",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 1,
+                "col": -1
+              },
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": -1
+              },
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": -1,
+                "col": -1
+              },
+              {
+                "row": -1,
+                "col": 0
+              },
+              {
+                "row": -1,
+                "col": 1
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10022_kazema_shadow",
+          "rangeId": "x-4",
+          "maxLevel": 70,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1479,
+                "atk": 481,
+                "def": 202,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.2,
+                "respawnTime": 20,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false
+              }
+            },
+            {
+              "level": 70,
+              "data": {
+                "maxHp": 1873,
+                "atk": 633,
+                "def": 263,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.2,
+                "respawnTime": 20,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "x-4",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 1,
+                "col": -1
+              },
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": -1
+              },
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": -1,
+                "col": -1
+              },
+              {
+                "row": -1,
+                "col": 0
+              },
+              {
+                "row": -1,
+                "col": 1
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10022_kazema_shadow",
+          "rangeId": "x-4",
+          "maxLevel": 80,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1873,
+                "atk": 633,
+                "def": 263,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.2,
+                "respawnTime": 20,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false
+              }
+            },
+            {
+              "level": 80,
+              "data": {
+                "maxHp": 2372,
+                "atk": 772,
+                "def": 318,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.2,
+                "respawnTime": 20,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "x-4",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 1,
+                "col": -1
+              },
+              {
+                "row": 1,
+                "col": 0
+              },
+              {
+                "row": 1,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": -1
+              },
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": -1,
+                "col": -1
+              },
+              {
+                "row": -1,
+                "col": 0
+              },
+              {
+                "row": -1,
+                "col": 1
+              }
+            ]
+          }
+        }
+      ],
+      "skills": [
+        {
+          "skillId": null,
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          }
+        },
+        {
+          "skillId": null,
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          }
+        }
+      ],
+      "talents": [
+        {
+          "candidates": [
+            {
+              "unlockCondition": {
+                "phase": 0,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "damage_scale",
+                  "value": 1.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 0,
+                "level": 1
+              },
+              "requiredPotentialRank": 4,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "damage_scale",
+                  "value": 1.55
+                }
+              ],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 1,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "damage_scale",
+                  "value": 2.25
+                }
+              ],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 1,
+                "level": 1
+              },
+              "requiredPotentialRank": 4,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "damage_scale",
+                  "value": 2.3
+                }
+              ],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "damage_scale",
+                  "value": 2.7
+                }
+              ],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 4,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "damage_scale",
+                  "value": 2.75
+                }
+              ],
+              "range": null
+            }
+          ]
+        }
+      ],
+      "potentialRanks": [],
+      "favorKeyFrames": [
+        {
+          "level": 0,
+          "data": {
+            "maxHp": 0,
+            "atk": 0,
+            "def": 0,
+            "magicResistance": 0,
+            "cost": 0,
+            "blockCnt": 0,
+            "moveSpeed": 0,
+            "attackSpeed": 0,
+            "baseAttackTime": 0,
+            "respawnTime": 0,
+            "hpRecoveryPerSec": 0,
+            "spRecoveryPerSec": 0,
+            "maxDeployCount": 0,
+            "maxDeckStackCnt": 0,
+            "tauntLevel": 0,
+            "massLevel": 0,
+            "baseForceLevel": 0,
+            "stunImmune": false,
+            "silenceImmune": false,
+            "sleepImmune": false,
+            "frozenImmune": false
+          }
+        },
+        {
+          "level": 50,
+          "data": {
+            "maxHp": 0,
+            "atk": 0,
+            "def": 0,
+            "magicResistance": 0,
+            "cost": 0,
+            "blockCnt": 0,
+            "moveSpeed": 0,
+            "attackSpeed": 0,
+            "baseAttackTime": 0,
+            "respawnTime": 0,
+            "hpRecoveryPerSec": 0,
+            "spRecoveryPerSec": 0,
+            "maxDeployCount": 0,
+            "maxDeckStackCnt": 0,
+            "tauntLevel": 0,
+            "massLevel": 0,
+            "baseForceLevel": 0,
+            "stunImmune": false,
+            "silenceImmune": false,
+            "sleepImmune": false,
+            "frozenImmune": false
+          }
+        }
+      ],
+      "allSkillLvlup": [
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        }
+      ],
+      "charId": "token_10022_kazema_shadow",
+      "skillData": [],
+      "cnName": "纸偶",
+      "isCnOnly": true,
+      "fileIndex": 253,
+      "operatorName": "Kazemaru"
     }
   ]
 }

@@ -2171,9 +2171,15 @@
     }
   },
   "operatorsWithGuides": {
+    "Aosta": "aosta",
+    "Bubble": "bubble",
+    "Platinum": "platinum",
+    "Whislash": "whislash",
+    "Blemishine": "blemishine",
     "Rosa": "rosa",
     "Roberta": "roberta",
     "Mulberry": "mulberry",
+    "Saileach": "saileach",
     "Flint": "flint",
     "Scene": "scene",
     "Magallan": "magallan",
@@ -2202,7 +2208,6 @@
     "Cutter": "cutter",
     "Pallas": "pallas",
     "Ch'en": "chen",
-    "Blemishine": "blemishine",
     "Skadi the Corrupting Heart": "skadi-the-corrupting-heart",
     "Akafuyu": "akafuyu"
   }

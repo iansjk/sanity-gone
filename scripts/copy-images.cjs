@@ -59,7 +59,7 @@ void (async () => {
       );
 
       let newFileCount = 0;
-      let updatedFileCount = 0;
+      // let updatedFileCount = 0;
       await Promise.all(
         files.map(async (sourcePath) => {
           const filename = path.basename(sourcePath);
@@ -69,44 +69,45 @@ void (async () => {
           if (!existsSync(outPath)) {
             newFileCount++;
             needToCopy = true;
-          } else {
-            const { width: sourceWidth, height: sourceHeight } =
-              sizeOf(sourcePath);
-            const { width: destinationWidth, height: destinationHeight } =
-              sizeOf(outPath);
-            if (
-              sourceWidth !== destinationWidth ||
-              sourceHeight !== destinationHeight
-            ) {
-              updatedFileCount++;
-              needToCopy = true;
-            } else {
-              const diffMetric = await new Promise((resolve, reject) => {
-                PNGDiff.outputDiffStream(
-                  sourcePath,
-                  outPath,
-                  (err, _outputStream, diffMetric) => {
-                    if (err) {
-                      reject(err);
-                    }
-
-                    // for testing purposes: uncomment to write diff to diffs/[filename]
-                    // const { createWriteStream } = require("fs");
-                    // const diffStream = createWriteStream(
-                    //   path.join(__dirname, "diffs", filename)
-                    // );
-                    // _outputStream.pipe(diffStream);
-
-                    resolve(diffMetric);
-                  }
-                );
-              });
-              if (diffMetric === 1) {
-                updatedFileCount++;
-                needToCopy = true;
-              }
-            }
           }
+          // else {
+          //   const { width: sourceWidth, height: sourceHeight } =
+          //     sizeOf(sourcePath);
+          //   const { width: destinationWidth, height: destinationHeight } =
+          //     sizeOf(outPath);
+          //   if (
+          //     sourceWidth !== destinationWidth ||
+          //     sourceHeight !== destinationHeight
+          //   ) {
+          //     updatedFileCount++;
+          //     needToCopy = true;
+          //   } else {
+          //     const diffMetric = await new Promise((resolve, reject) => {
+          //       PNGDiff.outputDiffStream(
+          //         sourcePath,
+          //         outPath,
+          //         (err, _outputStream, diffMetric) => {
+          //           if (err) {
+          //             reject(err);
+          //           }
+
+          //           // for testing purposes: uncomment to write diff to diffs/[filename]
+          //           // const { createWriteStream } = require("fs");
+          //           // const diffStream = createWriteStream(
+          //           //   path.join(__dirname, "diffs", filename)
+          //           // );
+          //           // _outputStream.pipe(diffStream);
+
+          //           resolve(diffMetric);
+          //         }
+          //       );
+          //     });
+          //     if (diffMetric === 1) {
+          //       updatedFileCount++;
+          //       needToCopy = true;
+          //     }
+          //   }
+          // }
 
           if (needToCopy) {
             return fs.copyFile(sourcePath, outPath);
@@ -114,9 +115,11 @@ void (async () => {
         })
       );
 
-      if (newFileCount > 0 || updatedFileCount > 0) {
+      if (newFileCount > 0) {
+        // if (newFileCount > 0 || updatedFileCount > 0) {
         console.log(
-          `Copied ${newFileCount} new files and ${updatedFileCount} updated files to ${destinationDir}`
+          // `Copied ${newFileCount} new files and ${updatedFileCount} updated files to ${destinationDir}`
+          `Copied ${newFileCount} new files to ${destinationDir}`
         );
       } else {
         console.log(`No new or updated files for ${destinationDir}`);

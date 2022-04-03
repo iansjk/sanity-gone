@@ -4,16 +4,6 @@
     "trait": "Prioritize <span class=\"keyword\">Long range splash attack</span> (splash radius of <span class=\"keyword\">1.0</span> tiles) when not blocking",
     "class": "Defender"
   },
-  "wandermedic": {
-    "branchName": "Wandering",
-    "trait": "Restores the HP of allies<br>Recovers <span class=\"\">Elemental damage</span> equal to <span class=\"keyword\">50%</span> of Attack Power<br>(Can heal <span class=\"\">Elemental damage</span> of unhurt units)",
-    "class": "Medic"
-  },
-  "craftsman": {
-    "branchName": "Artificer",
-    "trait": "Can block 2 enemies<br>Can use <span class=\"keyword\">Support Devices</span> in battle",
-    "class": "Supporter"
-  },
   "pioneer": {
     "branchName": "Pioneer",
     "trait": "Blocks 2 enemies",
@@ -194,6 +184,11 @@
     "trait": "Has a large healing range, but the healing amount on farther targets is reduced to <span class=\"keyword\">80%</span>",
     "class": "Medic"
   },
+  "wandermedic": {
+    "branchName": "Wandering",
+    "trait": "Restores the HP of allies<br>Recovers <span class=\"\">Elemental damage</span> equal to <span class=\"keyword\">50%</span> of Attack Power<br>(Can heal <span class=\"\">Elemental damage</span> of unhurt units)",
+    "class": "Medic"
+  },
   "slower": {
     "branchName": "Decel Binder",
     "trait": "Deals <span class=\"keyword\">Arts damage</span> and <span class=\"skill-tooltip\">Slows</span> the target by <span class=\"keyword\">80%</span> for <span class=\"keyword\">0.8</span> seconds",
@@ -217,6 +212,11 @@
   "summoner": {
     "branchName": "Summoner",
     "trait": "Deals <span class=\"keyword\">Arts damage</span><br>Can use <span class=\"keyword\">Summons</span> in battles",
+    "class": "Supporter"
+  },
+  "craftsman": {
+    "branchName": "Artificer",
+    "trait": "Blocks 2 enemies; Can use &lt;Support Devices&gt; in battles",
     "class": "Supporter"
   },
   "executor": {

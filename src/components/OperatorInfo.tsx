@@ -268,6 +268,7 @@ const styles = (theme: Theme) => css`
 
         ${theme.breakpoints.down("mobile")} {
           margin: ${theme.spacing(0.5, 0, 0)};
+          font-size: ${theme.typography.body2.fontSize}px;
         }
       }
     }

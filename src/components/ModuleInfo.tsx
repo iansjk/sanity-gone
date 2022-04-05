@@ -112,6 +112,7 @@ const styles = (theme: Theme) => css`
       position: relative;
       overflow: hidden;
       border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+      background: transparent;
 
       span > img {
         padding: ${theme.spacing(0.5)} !important;

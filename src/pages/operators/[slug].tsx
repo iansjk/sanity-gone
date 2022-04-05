@@ -627,6 +627,10 @@ const globalOverrideStyles =
         color: ${accentColor};
       }
 
+      :root {
+        --accent-color: ${accentColor};
+      }
+
       .heading-block {
         background: linear-gradient(
             90deg,

@@ -261,6 +261,11 @@ const Operators: React.VFC<Props> = (props) => {
     []
   );
 
+  const handleResetFilter = () => {
+    setSelectedProfession(null);
+    setSelectedSubProfessionId(null);
+  };
+
   const selectedClass =
     selectedProfession != null ? professionToClass(selectedProfession) : null;
   const selectedSubclass =
@@ -423,6 +428,7 @@ const Operators: React.VFC<Props> = (props) => {
             </ClassSubclassMenuItem>
           ))}
       </Menu>
+      <button className="reset-filters-button" onClick={handleResetFilter}>Reset</button>
       <CustomCheckbox
         className="guide-available-checkbox"
         label="Guide available"
@@ -693,7 +699,7 @@ const styles = (theme: Theme) => css`
       ${theme.breakpoints.up("mobile")} {
         display: grid;
         grid-auto-flow: column;
-        grid-template-columns: repeat(3, auto) 1fr;
+        grid-template-columns: repeat(4, auto) 1fr;
 
         .guide-available-checkbox {
           grid-column: -1;
@@ -716,6 +722,22 @@ const styles = (theme: Theme) => css`
         column-gap: ${theme.spacing(1)};
         transition-property: background-color, box-shadow, border-color;
         font-weight: ${theme.typography.navigationLinkBold.fontWeight};
+      }
+
+      .reset-filters-button{
+        background-color: ${rgba(theme.palette.white.main, 0.08)};
+        color: ${rgba(theme.palette.white.main, 0.8)};
+        border: none;
+        border-radius: ${theme.spacing(0.25)};
+        line-height: ${theme.typography.body1.lineHeight};
+        cursor: pointer;
+        transition: all 50ms ease-out, margin-bottom 0ms;
+        font-weight: 500;
+
+        &:hover {
+          color: ${lighten(0.27, theme.palette.white.main)};
+          background-color: ${rgba(theme.palette.white.main, 0.4)};
+        }
       }
     }
 

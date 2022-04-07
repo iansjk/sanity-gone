@@ -428,7 +428,7 @@ const Operators: React.VFC<Props> = (props) => {
             </ClassSubclassMenuItem>
           ))}
       </Menu>
-      <button className="reset-filters-button" onClick={handleResetFilter}>Reset</button>
+      {(selectedProfession !== null || selectedSubProfessionId !== null) && <button className="reset-filters-button" onClick={handleResetFilter}>Reset</button>}
       <CustomCheckbox
         className="guide-available-checkbox"
         label="Guide available"

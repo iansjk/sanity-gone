@@ -105,7 +105,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
                     }
                   : {})}
               />
-              <div className="banner-image-gradient-overlay" />
             </div>
           </div>
         )}
@@ -277,12 +276,13 @@ const styles =
             grid-template-areas: "banner";
             width: min(100vw, 1920px);
             height: 576px;
+            position: relative;
 
-            & > * {
-              grid-area: banner;
-            }
-
-            .banner-image-gradient-overlay {
+            &:before{
+              content: '';
+              position: absolute;
+              height: 100%;
+              width: 100%;
               background-image: linear-gradient(
                 to bottom,
                 transparent ${0.3576 * blendPoint}px,
@@ -290,6 +290,10 @@ const styles =
                 ${theme.palette.dark.main} ${blendPoint}px
               );
               z-index: 1;
+            }
+
+            & > * {
+              grid-area: banner;
             }
           }
         }

@@ -320,13 +320,22 @@ const styles =
           width: 100%;
           display: flex;
           justify-content: center;
-          backdrop-filter: blur(8px);
-          background: linear-gradient(
-              180deg,
-              rgba(0, 0, 0, 0) 70.31%,
-              rgba(0, 0, 0, 0.4) 100%
-            )
-            ${transparentize(0.8, theme.palette.black.main)};
+          z-index: 1;
+
+          &:before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(8px);
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0) 70.31%,
+                rgba(0, 0, 0, 0.4) 100%
+              )
+              ${transparentize(0.8, theme.palette.black.main)};
+          }
+
 
           .background-spacer {
             flex: 1 1 0;

@@ -823,7 +823,18 @@ const styles = (accentColor: string) => (theme: Theme) =>
       margin-left: -1px;
       height: 100%;
       border-left: 1px solid ${theme.palette.gray.main};
-      backdrop-filter: blur(8px);
+      position: relative;
+
+      &:before{
+        content: '';
+        backdrop-filter: blur(8px);
+        position: absolute;
+        width: 100%;
+        height: 350px;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
 
       ${theme.breakpoints.down("mobile")} {
         grid-row: 2;

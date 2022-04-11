@@ -585,7 +585,31 @@ const globalOverrideStyles =
       header {
         height: ${theme.spacing(30.5)};
 
+        ${theme.breakpoints.down("mobile")} {
+          position: relative;
+        }
+
+        &::before {
+          ${theme.breakpoints.down("mobile")} {
+            content: "";
+            position: absolute;
+            bottom: -16px;
+            left: 0;
+            width: 100%;
+            height: 260px;
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0) 63.34%,
+              rgba(0, 0, 0, 0.5) 100%
+            );
+          }
+        }
+
         .heading-and-breadcrumb {
+          ${theme.breakpoints.down("mobile")} {
+            z-index: 1;
+          }
+
           h1 {
             font-size: ${theme.typography.operatorPageHeading.fontSize}px;
             font-weight: ${theme.typography.operatorPageHeading.fontWeight};
@@ -802,7 +826,18 @@ const styles = (accentColor: string) => (theme: Theme) =>
       margin-left: -1px;
       height: 100%;
       border-left: 1px solid ${theme.palette.gray.main};
-      backdrop-filter: blur(8px);
+      position: relative;
+
+      &::before {
+        content: "";
+        backdrop-filter: blur(8px);
+        position: absolute;
+        width: 100%;
+        height: 350px;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
 
       ${theme.breakpoints.down("mobile")} {
         grid-row: 2;

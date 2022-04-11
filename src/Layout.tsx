@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
@@ -105,7 +105,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
                     }
                   : {})}
               />
-              <div className="banner-image-gradient-overlay" />
             </div>
           </div>
         )}
@@ -277,12 +276,13 @@ const styles =
             grid-template-areas: "banner";
             width: min(100vw, 1920px);
             height: 576px;
+            position: relative;
 
-            & > * {
-              grid-area: banner;
-            }
-
-            .banner-image-gradient-overlay {
+            &::before {
+              content: "";
+              position: absolute;
+              height: 100%;
+              width: 100%;
               background-image: linear-gradient(
                 to bottom,
                 transparent ${0.3576 * blendPoint}px,
@@ -290,6 +290,10 @@ const styles =
                 ${theme.palette.dark.main} ${blendPoint}px
               );
               z-index: 1;
+            }
+
+            & > * {
+              grid-area: banner;
             }
           }
         }
@@ -320,13 +324,21 @@ const styles =
           width: 100%;
           display: flex;
           justify-content: center;
-          backdrop-filter: blur(8px);
-          background: linear-gradient(
-              180deg,
-              rgba(0, 0, 0, 0) 70.31%,
-              rgba(0, 0, 0, 0.4) 100%
-            )
-            ${transparentize(0.8, theme.palette.black.main)};
+          z-index: 1;
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(8px);
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0) 70.31%,
+                rgba(0, 0, 0, 0.4) 100%
+              )
+              ${transparentize(0.8, theme.palette.black.main)};
+          }
 
           .background-spacer {
             flex: 1 1 0;

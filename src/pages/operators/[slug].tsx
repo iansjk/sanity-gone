@@ -589,20 +589,23 @@ const globalOverrideStyles =
           position: relative;
         }
 
-        &:before{
+        &::before {
           ${theme.breakpoints.down("mobile")} {
+            content: "";
             position: absolute;
             bottom: -16px;
             left: 0;
             width: 100%;
             height: 260px;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63.34%, rgba(0, 0, 0, 0.5) 100%);
-            content: '';
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0) 63.34%,
+              rgba(0, 0, 0, 0.5) 100%
+            );
           }
         }
 
         .heading-and-breadcrumb {
-
           ${theme.breakpoints.down("mobile")} {
             z-index: 1;
           }
@@ -825,8 +828,8 @@ const styles = (accentColor: string) => (theme: Theme) =>
       border-left: 1px solid ${theme.palette.gray.main};
       position: relative;
 
-      &:before{
-        content: '';
+      &::before {
+        content: "";
         backdrop-filter: blur(8px);
         position: absolute;
         width: 100%;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
@@ -278,8 +278,8 @@ const styles =
             height: 576px;
             position: relative;
 
-            &:before{
-              content: '';
+            &::before {
+              content: "";
               position: absolute;
               height: 100%;
               width: 100%;
@@ -326,8 +326,8 @@ const styles =
           justify-content: center;
           z-index: 1;
 
-          &:before{
-            content: '';
+          &::before {
+            content: "";
             position: absolute;
             width: 100%;
             height: 100%;
@@ -339,7 +339,6 @@ const styles =
               )
               ${transparentize(0.8, theme.palette.black.main)};
           }
-
 
           .background-spacer {
             flex: 1 1 0;

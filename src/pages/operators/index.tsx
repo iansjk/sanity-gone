@@ -428,7 +428,11 @@ const Operators: React.VFC<Props> = (props) => {
             </ClassSubclassMenuItem>
           ))}
       </Menu>
-      {(selectedProfession != null || selectedSubProfessionId != null) && <button className="reset-filters-button" onClick={handleResetFilter}>Reset</button>}
+      {(selectedProfession != null || selectedSubProfessionId != null) && (
+        <button className="reset-filters-button" onClick={handleResetFilter}>
+          Reset
+        </button>
+      )}
       <CustomCheckbox
         className="guide-available-checkbox"
         label="Guide available"
@@ -608,15 +612,19 @@ const globalOverrideStyles = (theme: Theme) => css`
       position: relative;
     }
 
-    &:before{
+    &::before {
       ${theme.breakpoints.down("mobile")} {
+        content: "";
         position: absolute;
         bottom: -16px;
         left: 0;
         width: 100%;
         height: 260px;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63.34%, rgba(0, 0, 0, 0.5) 100%);
-        content: '';
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 63.34%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
       }
     }
 
@@ -745,7 +753,7 @@ const styles = (theme: Theme) => css`
         font-weight: ${theme.typography.navigationLinkBold.fontWeight};
       }
 
-      .reset-filters-button{
+      .reset-filters-button {
         background-color: ${rgba(theme.palette.white.main, 0.08)};
         color: ${rgba(theme.palette.white.main, 0.8)};
         border: none;

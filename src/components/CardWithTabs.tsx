@@ -105,6 +105,7 @@ const styles = (theme: Theme) => css`
         flex-direction: row;
         justify-content: center;
         padding: ${theme.spacing(2, 0)};
+        background: none;
       }
 
       button {

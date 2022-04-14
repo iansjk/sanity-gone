@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useRef,
+} from "react";
 import {
   Button,
   css,
@@ -21,6 +27,7 @@ import {
   subclassToSubProfessionId,
   professionToClass,
   subProfessionIdToSubclass,
+  subclassSlugify,
   toTitleCase,
 } from "../../utils/globals";
 import CustomCheckbox from "../../components/CustomCheckbox";
@@ -192,6 +199,7 @@ const Operators: React.VFC<Props> = (props) => {
     string | null
   >(null);
   const theme = useTheme();
+  const isInitialRender = useRef(true);
 
   const hashChangeCallback = useCallback(() => {
     const hash = window.location.hash;
@@ -213,10 +221,33 @@ const Operators: React.VFC<Props> = (props) => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("hashchange", hashChangeCallback);
-    hashChangeCallback(); // run once on mount
-    return () => window.removeEventListener("hashchange", hashChangeCallback);
-  }, [hashChangeCallback]);
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
+    } else {
+      if (selectedProfession || selectedSubProfessionId) {
+        const searchParams = new URLSearchParams(window.location.search);
+        if (selectedProfession) {
+          searchParams.set(
+            "class",
+            professionToClass(selectedProfession).toLowerCase()
+          );
+        }
+        if (selectedSubProfessionId) {
+          searchParams.set(
+            "branch",
+            subclassSlugify(subProfessionIdToSubclass(selectedSubProfessionId))
+          );
+        }
+        window.history.replaceState(
+          {},
+          "",
+          `${window.location.pathname}?${searchParams.toString()}`
+        );
+      } else {
+        window.history.replaceState({}, "", window.location.pathname);
+      }
+    }
+  }, [selectedProfession, selectedSubProfessionId]);
 
   const handleGuideAvailableChange = (
     e: React.ChangeEvent<HTMLInputElement>

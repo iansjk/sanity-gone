@@ -186,7 +186,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Operators: React.VFC<Props> = (props) => {
   const { allOperators, classes, branches, operatorsWithGuides } = props;
-
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
   const [showClassDescriptions, setShowClassDescriptions] = useState(true);
   const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
@@ -201,51 +200,52 @@ const Operators: React.VFC<Props> = (props) => {
   const theme = useTheme();
   const isInitialRender = useRef(true);
 
-  const hashChangeCallback = useCallback(() => {
-    const hash = window.location.hash;
-    if (hash.length > 0) {
-      console.log(hash);
-      const classMatch = /^#([^-]*?)(?:-(.*?))?$/.exec(hash);
-      const opClass = classMatch ? classMatch[1] : "";
-      const opSubclass = classMatch
-        ? classMatch[2]
-          ? classMatch[2]
-              .split("_")
-              .map((word) => toTitleCase(word))
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const initialClass = searchParams.get("class");
+    if (initialClass) {
+      setSelectedProfession(classToProfession(toTitleCase(initialClass)));
+      const initialBranch = searchParams.get("branch");
+      if (initialBranch) {
+        setSelectedSubProfessionId(
+          subclassToSubProfessionId(
+            initialBranch
+              .split("-")
+              .map((part) => toTitleCase(part))
               .join(" ")
-          : ""
-        : ""; // yes i nested 2 ternary statements, cry about it
-      setSelectedProfession(classToProfession(toTitleCase(opClass)));
-      setSelectedSubProfessionId(subclassToSubProfessionId(opSubclass));
+          )
+        );
+      }
     }
   }, []);
 
   useEffect(() => {
     if (isInitialRender.current) {
       isInitialRender.current = false;
-    } else {
-      if (selectedProfession || selectedSubProfessionId) {
-        const searchParams = new URLSearchParams(window.location.search);
-        if (selectedProfession) {
-          searchParams.set(
-            "class",
-            professionToClass(selectedProfession).toLowerCase()
-          );
-        }
-        if (selectedSubProfessionId) {
-          searchParams.set(
-            "branch",
-            subclassSlugify(subProfessionIdToSubclass(selectedSubProfessionId))
-          );
-        }
-        window.history.replaceState(
-          {},
-          "",
-          `${window.location.pathname}?${searchParams.toString()}`
+      return;
+    }
+
+    if (selectedProfession || selectedSubProfessionId) {
+      const searchParams = new URLSearchParams(window.location.search);
+      if (selectedProfession) {
+        searchParams.set(
+          "class",
+          professionToClass(selectedProfession).toLowerCase()
         );
-      } else {
-        window.history.replaceState({}, "", window.location.pathname);
       }
+      if (selectedSubProfessionId) {
+        searchParams.set(
+          "branch",
+          subclassSlugify(subProfessionIdToSubclass(selectedSubProfessionId))
+        );
+      }
+      window.history.replaceState(
+        {},
+        "",
+        `${window.location.pathname}?${searchParams.toString()}`
+      );
+    } else {
+      window.history.replaceState({}, "", window.location.pathname);
     }
   }, [selectedProfession, selectedSubProfessionId]);
 

@@ -211,7 +211,7 @@ const Operators: React.VFC<Props> = (props) => {
           subclassToSubProfessionId(
             initialBranch
               .split("_")
-              .map((part) => toTitleCase(part))
+              .map((word) => toTitleCase(word))
               .join(" ")
           )
         );

@@ -31,6 +31,7 @@ import {
 import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import {
+  doStatsChange,
   getMaxTrustStatIncrease,
   getPotStatIncreases,
   getStatsAtLevel,
@@ -126,6 +127,9 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
     pots: potentialBonus,
   });
 
+  // detect if the summon stats don't change with leveling
+  const doSummonStatsChange = isSummon && doStatsChange(characterObject);
+
   return (
     <section css={styles}>
       {!isSummon && (
@@ -134,10 +138,16 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           showSubclassIcon={true}
         />
       )}
+
       <h3 className="visually-hidden">
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>
-      <div className="stats-controls">
+      <div
+        className={
+          "stats-controls" +
+          (isSummon && !doSummonStatsChange ? " no-stat-changes" : "")
+        }
+      >
         <div className="trust-and-elite-buttons">
           <RibbonButtonGroup className="elite-buttons">
             <RibbonButton
@@ -363,7 +373,13 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           }}
         />
       </div>
-      <dl className={isSummon ? "summon-stats" : "operator-stats"}>
+      <dl
+        className={
+          isSummon
+            ? "summon-stats" + (!doSummonStatsChange ? " no-stat-changes" : "")
+            : "operator-stats"
+        }
+      >
         {isSummon && (
           <div className="summon-icon">
             <Image
@@ -449,6 +465,10 @@ export default CharacterStats;
 
 const styles = (theme: Theme) => css`
   .stats-controls {
+    &.no-stat-changes {
+      display: none;
+    }
+
     display: flex;
     flex-direction: row;
     height: ${theme.spacing(8)};
@@ -584,17 +604,32 @@ const styles = (theme: Theme) => css`
           grid-row: 6;
         }
       }
+      &.no-stat-changes {
+        margin-top: ${theme.spacing(3)};
+
+        ${theme.breakpoints.down("mobile")} {
+          margin-top: ${theme.spacing(2)};
+        }
+        .summon-icon {
+          border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+          ${theme.breakpoints.down("mobile")} {
+            border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+          }
+        }
+        .range {
+          border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
+        }
+      }
     }
 
     .summon-icon {
       grid-row-start: span 2;
-      border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+
       justify-content: center;
 
       ${theme.breakpoints.down("mobile")} {
         grid-row-start: unset;
         grid-column: span 2;
-        border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
       }
 
       img {

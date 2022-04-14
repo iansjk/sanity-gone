@@ -232,12 +232,16 @@ const Operators: React.VFC<Props> = (props) => {
           "class",
           professionToClass(selectedProfession).toLowerCase()
         );
+      } else {
+        searchParams.delete("class");
       }
       if (selectedSubProfessionId) {
         searchParams.set(
           "branch",
           subclassSlugify(subProfessionIdToSubclass(selectedSubProfessionId))
         );
+      } else {
+        searchParams.delete("branch");
       }
       window.history.replaceState(
         {},

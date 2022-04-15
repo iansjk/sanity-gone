@@ -1,9 +1,4 @@
 {
-  "fortress": {
-    "branchName": "Fortress",
-    "trait": "Prioritize <span class=\"keyword\">Long range splash attack</span> (splash radius of <span class=\"keyword\">1.0</span> tiles) when not blocking",
-    "class": "Defender"
-  },
   "pioneer": {
     "branchName": "Pioneer",
     "trait": "Blocks 2 enemies",
@@ -97,6 +92,11 @@
   "duelist": {
     "branchName": "Duelist",
     "trait": "Only restores SP when blocking enemies",
+    "class": "Defender"
+  },
+  "fortress": {
+    "branchName": "Fortress",
+    "trait": "Prioritize <span class=\"keyword\">Long range splash attack</span> (splash radius of <span class=\"keyword\">1.0</span> tiles) when not blocking",
     "class": "Defender"
   },
   "fastshot": {

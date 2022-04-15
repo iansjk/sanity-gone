@@ -406,7 +406,7 @@
       ],
       "cnName": "医疗探机",
       "isCnOnly": false,
-      "fileIndex": 196,
+      "fileIndex": 198,
       "operatorName": "Silence"
     }
   ],
@@ -822,7 +822,7 @@
       "skillData": [],
       "cnName": "触手",
       "isCnOnly": false,
-      "fileIndex": 197,
+      "fileIndex": 199,
       "operatorName": "Deepcolor"
     }
   ],
@@ -1411,7 +1411,7 @@
       "skillData": [],
       "cnName": "Mon3tr",
       "isCnOnly": false,
-      "fileIndex": 198,
+      "fileIndex": 200,
       "operatorName": "Kal'tsit"
     }
   ],
@@ -1837,7 +1837,7 @@
       "skillData": [],
       "cnName": "幻影",
       "isCnOnly": false,
-      "fileIndex": 199,
+      "fileIndex": 201,
       "operatorName": "Nightingale"
     }
   ],
@@ -3328,7 +3328,7 @@
       ],
       "cnName": "机械水獭",
       "isCnOnly": false,
-      "fileIndex": 200,
+      "fileIndex": 202,
       "operatorName": "Mayer"
     }
   ],
@@ -4525,7 +4525,7 @@
       ],
       "cnName": "龙腾.F",
       "isCnOnly": false,
-      "fileIndex": 201,
+      "fileIndex": 203,
       "operatorName": "Magallan"
     },
     {
@@ -5624,7 +5624,7 @@
       ],
       "cnName": "龙腾.L",
       "isCnOnly": false,
-      "fileIndex": 202,
+      "fileIndex": 204,
       "operatorName": "Magallan"
     },
     {
@@ -6819,7 +6819,7 @@
       ],
       "cnName": "龙腾.A",
       "isCnOnly": false,
-      "fileIndex": 203,
+      "fileIndex": 205,
       "operatorName": "Magallan"
     }
   ],
@@ -7550,7 +7550,7 @@
       ],
       "cnName": "诅咒娃娃",
       "isCnOnly": false,
-      "fileIndex": 204,
+      "fileIndex": 206,
       "operatorName": "Shamare"
     }
   ],
@@ -9460,7 +9460,7 @@
       ],
       "cnName": "镜中虚影",
       "isCnOnly": false,
-      "fileIndex": 205,
+      "fileIndex": 207,
       "operatorName": "Phantom"
     }
   ],
@@ -10153,7 +10153,7 @@
       ],
       "cnName": "此面向敌",
       "isCnOnly": false,
-      "fileIndex": 206,
+      "fileIndex": 208,
       "operatorName": "W"
     }
   ],
@@ -11456,7 +11456,7 @@
       ],
       "cnName": "工程蓄水炮",
       "isCnOnly": false,
-      "fileIndex": 207,
+      "fileIndex": 209,
       "operatorName": "Weedy"
     }
   ],
@@ -13238,7 +13238,7 @@
       ],
       "cnName": "移动摄影器",
       "isCnOnly": false,
-      "fileIndex": 208,
+      "fileIndex": 210,
       "operatorName": "Scene"
     }
   ],
@@ -14357,7 +14357,7 @@
       ],
       "cnName": "沙之碑",
       "isCnOnly": false,
-      "fileIndex": 209,
+      "fileIndex": 211,
       "operatorName": "Beeswax"
     }
   ],
@@ -15265,7 +15265,7 @@
       ],
       "cnName": "迷迭香的战术装备",
       "isCnOnly": false,
-      "fileIndex": 210,
+      "fileIndex": 212,
       "operatorName": "Rosmontis"
     }
   ],
@@ -16257,7 +16257,7 @@
       ],
       "cnName": "\"夹子\"",
       "isCnOnly": false,
-      "fileIndex": 211,
+      "fileIndex": 213,
       "operatorName": "Robin"
     }
   ],
@@ -16643,7 +16643,7 @@
       "skillData": [],
       "cnName": "磐蟹护卫队",
       "isCnOnly": false,
-      "fileIndex": 212,
+      "fileIndex": 214,
       "operatorName": "Beanstalk"
     }
   ],
@@ -17216,7 +17216,7 @@
       "skillData": [],
       "cnName": "\"小自在\"",
       "isCnOnly": false,
-      "fileIndex": 213,
+      "fileIndex": 215,
       "operatorName": "Dusk"
     }
   ],
@@ -18208,7 +18208,7 @@
       ],
       "cnName": "迎宾踏垫",
       "isCnOnly": false,
-      "fileIndex": 214,
+      "fileIndex": 216,
       "operatorName": "Frost"
     }
   ],
@@ -19931,7 +19931,7 @@
       ],
       "cnName": "斯卡蒂的海嗣",
       "isCnOnly": false,
-      "fileIndex": 215,
+      "fileIndex": 217,
       "operatorName": "Skadi the Corrupting Heart"
     }
   ],
@@ -20431,7 +20431,7 @@
       ],
       "cnName": "全自动造型仪",
       "isCnOnly": false,
-      "fileIndex": 216,
+      "fileIndex": 218,
       "operatorName": "Roberta"
     }
   ],
@@ -20488,7 +20488,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -20514,7 +20515,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -20558,7 +20560,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -20584,7 +20587,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -20628,7 +20632,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -20654,7 +20659,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -20822,7 +20828,8 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false
+            "frozenImmune": false,
+            "levitateImmune": false
           }
         },
         {
@@ -20848,7 +20855,8 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false
+            "frozenImmune": false,
+            "levitateImmune": false
           }
         }
       ],
@@ -21438,7 +21446,7 @@
       ],
       "cnName": "“耀阳”",
       "isCnOnly": true,
-      "fileIndex": 248,
+      "fileIndex": 252,
       "operatorName": "Nearl the Radiant Knight"
     }
   ],
@@ -21495,7 +21503,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -21521,7 +21530,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -21569,7 +21579,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -21595,7 +21606,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -21643,7 +21655,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -21669,7 +21682,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -22511,7 +22525,7 @@
       ],
       "cnName": "“清平”",
       "isCnOnly": true,
-      "fileIndex": 249,
+      "fileIndex": 253,
       "operatorName": "Ling"
     },
     {
@@ -22566,7 +22580,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -22592,7 +22607,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -22672,7 +22688,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -22698,7 +22715,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -22778,7 +22796,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -22804,7 +22823,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -23965,7 +23985,7 @@
       ],
       "cnName": "“逍遥”",
       "isCnOnly": true,
-      "fileIndex": 250,
+      "fileIndex": 254,
       "operatorName": "Ling"
     },
     {
@@ -24020,7 +24040,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -24046,7 +24067,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -24094,7 +24116,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -24120,7 +24143,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -24168,7 +24192,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -24194,7 +24219,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -25803,7 +25829,7 @@
       ],
       "cnName": "“弦惊”",
       "isCnOnly": true,
-      "fileIndex": 251,
+      "fileIndex": 255,
       "operatorName": "Ling"
     }
   ],
@@ -25860,7 +25886,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -25886,7 +25913,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -25946,7 +25974,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -25972,7 +26001,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -26032,7 +26062,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -26058,7 +26089,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -26210,7 +26242,8 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false
+            "frozenImmune": false,
+            "levitateImmune": false
           }
         },
         {
@@ -26236,7 +26269,8 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false
+            "frozenImmune": false,
+            "levitateImmune": false
           }
         }
       ],
@@ -26251,7 +26285,7 @@
             {
               "name": "食梦",
               "rangeId": null,
-              "description": "可以攻击并优先攻击沉睡的目标",
+              "description": "可以攻击并优先攻击<$ba.sleep>沉睡</>的目标",
               "skillType": 0,
               "durationType": 0,
               "spData": {
@@ -26277,7 +26311,7 @@
             {
               "name": "食梦",
               "rangeId": null,
-              "description": "可以攻击并优先攻击沉睡的目标",
+              "description": "可以攻击并优先攻击<$ba.sleep>沉睡</>的目标",
               "skillType": 0,
               "durationType": 0,
               "spData": {
@@ -26298,7 +26332,7 @@
       ],
       "cnName": "眠兽",
       "isCnOnly": true,
-      "fileIndex": 252,
+      "fileIndex": 256,
       "operatorName": "Blacknight"
     }
   ],
@@ -26355,7 +26389,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -26381,7 +26416,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -26457,7 +26493,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -26483,7 +26520,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -26559,7 +26597,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             },
             {
@@ -26585,7 +26624,8 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false
+                "frozenImmune": false,
+                "levitateImmune": false
               }
             }
           ],
@@ -26845,7 +26885,8 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false
+            "frozenImmune": false,
+            "levitateImmune": false
           }
         },
         {
@@ -26871,7 +26912,8 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false
+            "frozenImmune": false,
+            "levitateImmune": false
           }
         }
       ],
@@ -26923,7 +26965,7 @@
       "skillData": [],
       "cnName": "纸偶",
       "isCnOnly": true,
-      "fileIndex": 253,
+      "fileIndex": 257,
       "operatorName": "Kazemaru"
     }
   ]

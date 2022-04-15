@@ -111,6 +111,9 @@ const styles = (theme: Theme) => css`
         background-position: center;
         opacity: 0.34;
         background-color: ${theme.palette.midtoneDarker.main};
+        /* workaround for a Chrome bug where mix-blend-mode: difference breaks backdrop-filter on panels;
+           see https://stackoverflow.com/questions/66204563/backdrop-filter-not-working-when-mix-blend-mode-of-another-element-on-the-page-i */
+        backdrop-filter: opacity(1);
 
         &:hover {
           opacity: 0.67;

@@ -178,7 +178,7 @@ const SkillInfo: React.VFC<
               <dt>
                 <SkillDurationIcon /> Duration
               </dt>
-              <dd>{levels[skillLevel - 1].duration} sec</dd>
+              <dd>{levels[skillLevel - 1].duration !== -1 ? `${levels[skillLevel - 1].duration} sec` : 'Infinite'}</dd>
             </div>
           </dl>
           <p

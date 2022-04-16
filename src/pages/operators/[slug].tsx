@@ -259,7 +259,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     (modulesJson[
       operatorObject.charId as keyof typeof modulesJson
     ] as unknown as ModuleObject) ?? null;
-  if (modules != null && !modules.hasTranslation) {
+  if (
+    (modules != null && !modules.hasTranslation) ||
+    !operatorAnalysis.moduleAnalysis
+  ) {
     modules = null;
   }
 

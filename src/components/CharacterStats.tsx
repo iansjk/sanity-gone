@@ -142,237 +142,239 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
       <h3 className="visually-hidden">
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>
-      <div
-        className={
-          "stats-controls" +
-          (isSummon && !doSummonStatsChange ? " no-stat-changes" : "")
-        }
-      >
-        <div className="trust-and-elite-buttons">
-          <RibbonButtonGroup className="elite-buttons">
-            <RibbonButton
-              className={
-                "elite-zero-button " +
-                (eliteLevel === 0 ? "active" : "inactive")
-              }
-              onClick={() => {
-                setEliteLevel(0);
-              }}
-              aria-label="Elite 0"
-            >
-              <EliteZeroIcon className="elite-zero" />
-            </RibbonButton>
-            {maxElite >= 1 && (
+      {(!isSummon || doSummonStatsChange) && (
+        <div
+          className={
+            "stats-controls" +
+            (isSummon && !doSummonStatsChange ? " no-stat-changes" : "")
+          }
+        >
+          <div className="trust-and-elite-buttons">
+            <RibbonButtonGroup className="elite-buttons">
               <RibbonButton
-                className={eliteLevel === 1 ? "active" : "inactive"}
+                className={
+                  "elite-zero-button " +
+                  (eliteLevel === 0 ? "active" : "inactive")
+                }
                 onClick={() => {
-                  setEliteLevel(1);
+                  setEliteLevel(0);
                 }}
-                aria-label="Elite 1"
+                aria-label="Elite 0"
               >
-                <EliteOneIcon />
+                <EliteZeroIcon className="elite-zero" />
               </RibbonButton>
-            )}
-            {maxElite >= 2 && (
-              <RibbonButton
-                className={eliteLevel === 2 ? "active" : "inactive"}
-                onClick={() => {
-                  setEliteLevel(2);
-                }}
-                aria-label="Elite 2"
-              >
-                <EliteTwoIcon />
-              </RibbonButton>
-            )}
-          </RibbonButtonGroup>
-          <div className="mobile-spacer" />
-          {!isSummon && (
-            <div className="checkbox-container">
-              <div className="checkbox">
-                <StatsChangeTooltip
-                  title={
-                    <ul>
-                      {trustIncreases.maxHp > 0 && (
-                        <li>
-                          HP&nbsp;
-                          <span className="stat-value">
+              {maxElite >= 1 && (
+                <RibbonButton
+                  className={eliteLevel === 1 ? "active" : "inactive"}
+                  onClick={() => {
+                    setEliteLevel(1);
+                  }}
+                  aria-label="Elite 1"
+                >
+                  <EliteOneIcon />
+                </RibbonButton>
+              )}
+              {maxElite >= 2 && (
+                <RibbonButton
+                  className={eliteLevel === 2 ? "active" : "inactive"}
+                  onClick={() => {
+                    setEliteLevel(2);
+                  }}
+                  aria-label="Elite 2"
+                >
+                  <EliteTwoIcon />
+                </RibbonButton>
+              )}
+            </RibbonButtonGroup>
+            <div className="mobile-spacer" />
+            {!isSummon && (
+              <div className="checkbox-container">
+                <div className="checkbox">
+                  <StatsChangeTooltip
+                    title={
+                      <ul>
+                        {trustIncreases.maxHp > 0 && (
+                          <li>
+                            HP&nbsp;
+                            <span className="stat-value">
                             +{trustIncreases.maxHp}
                           </span>
-                        </li>
-                      )}
-                      {trustIncreases.atk > 0 && (
-                        <li>
-                          ATK&nbsp;
-                          <span className="stat-value">
+                          </li>
+                        )}
+                        {trustIncreases.atk > 0 && (
+                          <li>
+                            ATK&nbsp;
+                            <span className="stat-value">
                             +{trustIncreases.atk}
                           </span>
-                        </li>
-                      )}
-                      {trustIncreases.def > 0 && (
-                        <li>
-                          DEF&nbsp;
-                          <span className="stat-value">
+                          </li>
+                        )}
+                        {trustIncreases.def > 0 && (
+                          <li>
+                            DEF&nbsp;
+                            <span className="stat-value">
                             +{trustIncreases.def}
                           </span>
-                        </li>
-                      )}
-                      {trustIncreases.magicResistance > 0 && (
-                        <li>
-                          RES&nbsp;
-                          <span className="stat-value">
+                          </li>
+                        )}
+                        {trustIncreases.magicResistance > 0 && (
+                          <li>
+                            RES&nbsp;
+                            <span className="stat-value">
                             +{trustIncreases.magicResistance}
                           </span>
-                        </li>
-                      )}
-                    </ul>
-                  }
-                >
-                  <div>
-                    <CustomCheckbox
-                      label="Trust"
-                      checked={trustBonus}
-                      onChange={(e) => {
-                        setTrustBonus(e.target.checked);
-                      }}
-                    />
-                  </div>
-                </StatsChangeTooltip>
-              </div>
-              <div className="checkbox">
-                <StatsChangeTooltip
-                  title={
-                    <ul>
-                      {getPotStatIncreases(characterObject).map((pot, i) => {
-                        return (
-                          <li key={`potential-${i}-stat-change`}>
-                            {i === 0 && <PotentialTwoIcon />}
-                            {i === 1 && <PotentialThreeIcon />}
-                            {i === 2 && <PotentialFourIcon />}
-                            {i === 3 && <PotentialFiveIcon />}
-                            {i === 4 && <PotentialSixIcon />}
-                            {pot.health > 0 && (
-                              <span>
+                          </li>
+                        )}
+                      </ul>
+                    }
+                  >
+                    <div>
+                      <CustomCheckbox
+                        label="Trust"
+                        checked={trustBonus}
+                        onChange={(e) => {
+                          setTrustBonus(e.target.checked);
+                        }}
+                      />
+                    </div>
+                  </StatsChangeTooltip>
+                </div>
+                <div className="checkbox">
+                  <StatsChangeTooltip
+                    title={
+                      <ul>
+                        {getPotStatIncreases(characterObject).map((pot, i) => {
+                          return (
+                            <li key={`potential-${i}-stat-change`}>
+                              {i === 0 && <PotentialTwoIcon />}
+                              {i === 1 && <PotentialThreeIcon />}
+                              {i === 2 && <PotentialFourIcon />}
+                              {i === 3 && <PotentialFiveIcon />}
+                              {i === 4 && <PotentialSixIcon />}
+                              {pot.health > 0 && (
+                                <span>
                                 HP&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   +{pot.health}
                                 </span>
                               </span>
-                            )}
-                            {pot.attackPower > 0 && (
-                              <span>
+                              )}
+                              {pot.attackPower > 0 && (
+                                <span>
                                 ATK&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   +{pot.attackPower}
                                 </span>
                               </span>
-                            )}
-                            {pot.defense > 0 && (
-                              <span>
+                              )}
+                              {pot.defense > 0 && (
+                                <span>
                                 DEF&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   +{pot.defense}
                                 </span>
                               </span>
-                            )}
-                            {pot.artsResistance > 0 && (
-                              <span>
+                              )}
+                              {pot.artsResistance > 0 && (
+                                <span>
                                 RES&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   +{pot.artsResistance}%
                                 </span>
                               </span>
-                            )}
-                            {pot.dpCost < 0 && (
-                              <span>
+                              )}
+                              {pot.dpCost < 0 && (
+                                <span>
                                 DP Cost&nbsp;
-                                <span className="stat-value">{pot.dpCost}</span>
+                                  <span className="stat-value">{pot.dpCost}</span>
                               </span>
-                            )}
-                            {pot.attackSpeed > 0 && (
-                              <span>
+                              )}
+                              {pot.attackSpeed > 0 && (
+                                <span>
                                 ASPD&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   +{pot.attackSpeed}
                                 </span>
                               </span>
-                            )}
-                            {pot.redeployTimeInSeconds < 0 && (
-                              <span>
+                              )}
+                              {pot.redeployTimeInSeconds < 0 && (
+                                <span>
                                 Redeploy Time&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   {pot.redeployTimeInSeconds}
                                 </span>
                               </span>
-                            )}
-                            {pot.description && (
-                              <span className="potential-description">
+                              )}
+                              {pot.description && (
+                                <span className="potential-description">
                                 {pot.description}
                               </span>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  }
-                >
-                  <div>
-                    <CustomCheckbox
-                      label={isMobile ? "Pot." : "Potential"}
-                      checked={potentialBonus}
-                      onChange={(e) => {
-                        setPotentialBonus(e.target.checked);
-                      }}
-                    />
-                  </div>
-                </StatsChangeTooltip>
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    }
+                  >
+                    <div>
+                      <CustomCheckbox
+                        label={isMobile ? "Pot." : "Potential"}
+                        checked={potentialBonus}
+                        onChange={(e) => {
+                          setPotentialBonus(e.target.checked);
+                        }}
+                      />
+                    </div>
+                  </StatsChangeTooltip>
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-        <div className="spacer" />
-        <SliderWithInput
-          label="Level"
-          identifier={isSummon ? "summon-level" : "operator-level"}
-          inputProps={{
-            value: opLevel,
-            onChange: (e) => {
-              if (e.target.value === "") {
-                setOpLevel(1);
-              } else if (Number(e.target.value) > phases[eliteLevel].maxLevel) {
-                setOpLevel(
-                  Math.min(
-                    Number(`${e.target.value}`.slice(0, 2)),
-                    phases[eliteLevel].maxLevel
-                  )
-                );
-              } else {
-                setOpLevel(
-                  Math.min(Number(e.target.value), phases[eliteLevel].maxLevel)
-                );
-              }
-            },
-            onKeyPress: (e) => {
-              if (!/^\d$/.test(e.key)) {
-                e.preventDefault();
-              }
-            },
-            inputProps: {
-              maxLength: 2,
-              onFocus: (e) => e.target.select(),
-              type: "number",
+            )}
+          </div>
+          <div className="spacer" />
+          <SliderWithInput
+            label="Level"
+            identifier={isSummon ? "summon-level" : "operator-level"}
+            inputProps={{
+              value: opLevel,
+              onChange: (e) => {
+                if (e.target.value === "") {
+                  setOpLevel(1);
+                } else if (Number(e.target.value) > phases[eliteLevel].maxLevel) {
+                  setOpLevel(
+                    Math.min(
+                      Number(`${e.target.value}`.slice(0, 2)),
+                      phases[eliteLevel].maxLevel
+                    )
+                  );
+                } else {
+                  setOpLevel(
+                    Math.min(Number(e.target.value), phases[eliteLevel].maxLevel)
+                  );
+                }
+              },
+              onKeyPress: (e) => {
+                if (!/^\d$/.test(e.key)) {
+                  e.preventDefault();
+                }
+              },
+              inputProps: {
+                maxLength: 2,
+                onFocus: (e) => e.target.select(),
+                type: "number",
+                min: 1,
+                max: phases[eliteLevel].maxLevel,
+              },
+            }}
+            sliderProps={{
+              value: opLevel,
+              // @ts-expect-error MUI typing tells me to do this
+              onChange: (e: Event) => setOpLevel(Number(e.target.value)),
               min: 1,
               max: phases[eliteLevel].maxLevel,
-            },
-          }}
-          sliderProps={{
-            value: opLevel,
-            // @ts-expect-error MUI typing tells me to do this
-            onChange: (e: Event) => setOpLevel(Number(e.target.value)),
-            min: 1,
-            max: phases[eliteLevel].maxLevel,
-          }}
-        />
-      </div>
+            }}
+          />
+        </div>
+      )}
       <dl
         className={
           isSummon
@@ -465,10 +467,6 @@ export default CharacterStats;
 
 const styles = (theme: Theme) => css`
   .stats-controls {
-    &.no-stat-changes {
-      display: none;
-    }
-
     display: flex;
     flex-direction: row;
     height: ${theme.spacing(8)};

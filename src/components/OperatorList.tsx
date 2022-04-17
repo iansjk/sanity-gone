@@ -90,6 +90,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
               <span className="operator-class">
                 <span className="visually-hidden">Class:</span> {operatorClass}
               </span>
+              <span className="visually-hidden">Subclass: {subclass}</span>
             </>
           );
 
@@ -155,7 +156,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                 ) : (
                   <div className="operator-info">{operatorInfo}</div>
                 )}
-                <Tooltip title={subclass}>
+                <Tooltip title={`Filter list by ${subclass}`}>
                   <button
                     className="operator-subclass"
                     onClick={() =>

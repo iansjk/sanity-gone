@@ -93,6 +93,19 @@ export const highestCharacterStats = (
   };
 };
 
+export const doStatsChange = (characterObject: CharacterObject): boolean => {
+  const { phases } = characterObject;
+  const activePhase = phases[phases.length - 1];
+
+  const startingKeyFrame = activePhase.attributesKeyFrames[0];
+  const finalKeyFrame =
+    activePhase.attributesKeyFrames[activePhase.attributesKeyFrames.length - 1];
+
+  return (
+    JSON.stringify(startingKeyFrame.data) !== JSON.stringify(finalKeyFrame.data)
+  );
+};
+
 export const getStatsAtLevel = (
   characterObject: CharacterObject,
   values: {

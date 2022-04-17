@@ -31,6 +31,7 @@ import {
 import CharacterRange from "./CharacterRange";
 import { CharacterObject } from "../utils/types";
 import {
+  doStatsChange,
   getMaxTrustStatIncrease,
   getPotStatIncreases,
   getStatsAtLevel,
@@ -126,6 +127,9 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
     pots: potentialBonus,
   });
 
+  // detect if the summon stats don't change with leveling
+  const doSummonStatsChange = isSummon && doStatsChange(characterObject);
+
   return (
     <section css={styles}>
       {!isSummon && (
@@ -134,236 +138,250 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           showSubclassIcon={true}
         />
       )}
+
       <h3 className="visually-hidden">
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>
-      <div className="stats-controls">
-        <div className="trust-and-elite-buttons">
-          <RibbonButtonGroup className="elite-buttons">
-            <RibbonButton
-              className={
-                "elite-zero-button " +
-                (eliteLevel === 0 ? "active" : "inactive")
-              }
-              onClick={() => {
-                setEliteLevel(0);
-              }}
-              aria-label="Elite 0"
-            >
-              <EliteZeroIcon className="elite-zero" />
-            </RibbonButton>
-            {maxElite >= 1 && (
+      {(!isSummon || doSummonStatsChange) && (
+        <div
+          className={
+            "stats-controls" +
+            (isSummon && !doSummonStatsChange ? " no-stat-changes" : "")
+          }
+        >
+          <div className="trust-and-elite-buttons">
+            <RibbonButtonGroup className="elite-buttons">
               <RibbonButton
-                className={eliteLevel === 1 ? "active" : "inactive"}
+                className={
+                  "elite-zero-button " +
+                  (eliteLevel === 0 ? "active" : "inactive")
+                }
                 onClick={() => {
-                  setEliteLevel(1);
+                  setEliteLevel(0);
                 }}
-                aria-label="Elite 1"
+                aria-label="Elite 0"
               >
-                <EliteOneIcon />
+                <EliteZeroIcon className="elite-zero" />
               </RibbonButton>
-            )}
-            {maxElite >= 2 && (
-              <RibbonButton
-                className={eliteLevel === 2 ? "active" : "inactive"}
-                onClick={() => {
-                  setEliteLevel(2);
-                }}
-                aria-label="Elite 2"
-              >
-                <EliteTwoIcon />
-              </RibbonButton>
-            )}
-          </RibbonButtonGroup>
-          <div className="mobile-spacer" />
-          {!isSummon && (
-            <div className="checkbox-container">
-              <div className="checkbox">
-                <StatsChangeTooltip
-                  title={
-                    <ul>
-                      {trustIncreases.maxHp > 0 && (
-                        <li>
-                          HP&nbsp;
-                          <span className="stat-value">
+              {maxElite >= 1 && (
+                <RibbonButton
+                  className={eliteLevel === 1 ? "active" : "inactive"}
+                  onClick={() => {
+                    setEliteLevel(1);
+                  }}
+                  aria-label="Elite 1"
+                >
+                  <EliteOneIcon />
+                </RibbonButton>
+              )}
+              {maxElite >= 2 && (
+                <RibbonButton
+                  className={eliteLevel === 2 ? "active" : "inactive"}
+                  onClick={() => {
+                    setEliteLevel(2);
+                  }}
+                  aria-label="Elite 2"
+                >
+                  <EliteTwoIcon />
+                </RibbonButton>
+              )}
+            </RibbonButtonGroup>
+            <div className="mobile-spacer" />
+            {!isSummon && (
+              <div className="checkbox-container">
+                <div className="checkbox">
+                  <StatsChangeTooltip
+                    title={
+                      <ul>
+                        {trustIncreases.maxHp > 0 && (
+                          <li>
+                            HP&nbsp;
+                            <span className="stat-value">
                             +{trustIncreases.maxHp}
                           </span>
-                        </li>
-                      )}
-                      {trustIncreases.atk > 0 && (
-                        <li>
-                          ATK&nbsp;
-                          <span className="stat-value">
+                          </li>
+                        )}
+                        {trustIncreases.atk > 0 && (
+                          <li>
+                            ATK&nbsp;
+                            <span className="stat-value">
                             +{trustIncreases.atk}
                           </span>
-                        </li>
-                      )}
-                      {trustIncreases.def > 0 && (
-                        <li>
-                          DEF&nbsp;
-                          <span className="stat-value">
+                          </li>
+                        )}
+                        {trustIncreases.def > 0 && (
+                          <li>
+                            DEF&nbsp;
+                            <span className="stat-value">
                             +{trustIncreases.def}
                           </span>
-                        </li>
-                      )}
-                      {trustIncreases.magicResistance > 0 && (
-                        <li>
-                          RES&nbsp;
-                          <span className="stat-value">
+                          </li>
+                        )}
+                        {trustIncreases.magicResistance > 0 && (
+                          <li>
+                            RES&nbsp;
+                            <span className="stat-value">
                             +{trustIncreases.magicResistance}
                           </span>
-                        </li>
-                      )}
-                    </ul>
-                  }
-                >
-                  <div>
-                    <CustomCheckbox
-                      label="Trust"
-                      checked={trustBonus}
-                      onChange={(e) => {
-                        setTrustBonus(e.target.checked);
-                      }}
-                    />
-                  </div>
-                </StatsChangeTooltip>
-              </div>
-              <div className="checkbox">
-                <StatsChangeTooltip
-                  title={
-                    <ul>
-                      {getPotStatIncreases(characterObject).map((pot, i) => {
-                        return (
-                          <li key={`potential-${i}-stat-change`}>
-                            {i === 0 && <PotentialTwoIcon />}
-                            {i === 1 && <PotentialThreeIcon />}
-                            {i === 2 && <PotentialFourIcon />}
-                            {i === 3 && <PotentialFiveIcon />}
-                            {i === 4 && <PotentialSixIcon />}
-                            {pot.health > 0 && (
-                              <span>
+                          </li>
+                        )}
+                      </ul>
+                    }
+                  >
+                    <div>
+                      <CustomCheckbox
+                        label="Trust"
+                        checked={trustBonus}
+                        onChange={(e) => {
+                          setTrustBonus(e.target.checked);
+                        }}
+                      />
+                    </div>
+                  </StatsChangeTooltip>
+                </div>
+                <div className="checkbox">
+                  <StatsChangeTooltip
+                    title={
+                      <ul>
+                        {getPotStatIncreases(characterObject).map((pot, i) => {
+                          return (
+                            <li key={`potential-${i}-stat-change`}>
+                              {i === 0 && <PotentialTwoIcon />}
+                              {i === 1 && <PotentialThreeIcon />}
+                              {i === 2 && <PotentialFourIcon />}
+                              {i === 3 && <PotentialFiveIcon />}
+                              {i === 4 && <PotentialSixIcon />}
+                              {pot.health > 0 && (
+                                <span>
                                 HP&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   +{pot.health}
                                 </span>
                               </span>
-                            )}
-                            {pot.attackPower > 0 && (
-                              <span>
+                              )}
+                              {pot.attackPower > 0 && (
+                                <span>
                                 ATK&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   +{pot.attackPower}
                                 </span>
                               </span>
-                            )}
-                            {pot.defense > 0 && (
-                              <span>
+                              )}
+                              {pot.defense > 0 && (
+                                <span>
                                 DEF&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   +{pot.defense}
                                 </span>
                               </span>
-                            )}
-                            {pot.artsResistance > 0 && (
-                              <span>
+                              )}
+                              {pot.artsResistance > 0 && (
+                                <span>
                                 RES&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   +{pot.artsResistance}%
                                 </span>
                               </span>
-                            )}
-                            {pot.dpCost < 0 && (
-                              <span>
+                              )}
+                              {pot.dpCost < 0 && (
+                                <span>
                                 DP Cost&nbsp;
-                                <span className="stat-value">{pot.dpCost}</span>
+                                  <span className="stat-value">{pot.dpCost}</span>
                               </span>
-                            )}
-                            {pot.attackSpeed > 0 && (
-                              <span>
+                              )}
+                              {pot.attackSpeed > 0 && (
+                                <span>
                                 ASPD&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   +{pot.attackSpeed}
                                 </span>
                               </span>
-                            )}
-                            {pot.redeployTimeInSeconds < 0 && (
-                              <span>
+                              )}
+                              {pot.redeployTimeInSeconds < 0 && (
+                                <span>
                                 Redeploy Time&nbsp;
-                                <span className="stat-value">
+                                  <span className="stat-value">
                                   {pot.redeployTimeInSeconds}
                                 </span>
                               </span>
-                            )}
-                            {pot.description && (
-                              <span className="potential-description">
+                              )}
+                              {pot.description && (
+                                <span className="potential-description">
                                 {pot.description}
                               </span>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  }
-                >
-                  <div>
-                    <CustomCheckbox
-                      label={isMobile ? "Pot." : "Potential"}
-                      checked={potentialBonus}
-                      onChange={(e) => {
-                        setPotentialBonus(e.target.checked);
-                      }}
-                    />
-                  </div>
-                </StatsChangeTooltip>
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    }
+                  >
+                    <div>
+                      <CustomCheckbox
+                        label={isMobile ? "Pot." : "Potential"}
+                        checked={potentialBonus}
+                        onChange={(e) => {
+                          setPotentialBonus(e.target.checked);
+                        }}
+                      />
+                    </div>
+                  </StatsChangeTooltip>
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-        <div className="spacer" />
-        <SliderWithInput
-          label="Level"
-          identifier={isSummon ? "summon-level" : "operator-level"}
-          inputProps={{
-            value: opLevel,
-            onChange: (e) => {
-              if (e.target.value === "") {
-                setOpLevel(1);
-              } else if (Number(e.target.value) > phases[eliteLevel].maxLevel) {
-                setOpLevel(
-                  Math.min(
-                    Number(`${e.target.value}`.slice(0, 2)),
-                    phases[eliteLevel].maxLevel
-                  )
-                );
-              } else {
-                setOpLevel(
-                  Math.min(Number(e.target.value), phases[eliteLevel].maxLevel)
-                );
-              }
-            },
-            onKeyPress: (e) => {
-              if (!/^\d$/.test(e.key)) {
-                e.preventDefault();
-              }
-            },
-            inputProps: {
-              maxLength: 2,
-              onFocus: (e) => e.target.select(),
-              type: "number",
+            )}
+          </div>
+          <div className="spacer" />
+          <SliderWithInput
+            label="Level"
+            identifier={isSummon ? "summon-level" : "operator-level"}
+            inputProps={{
+              value: opLevel,
+              onChange: (e) => {
+                if (e.target.value === "") {
+                  setOpLevel(1);
+                } else if (Number(e.target.value) > phases[eliteLevel].maxLevel) {
+                  setOpLevel(
+                    Math.min(
+                      Number(`${e.target.value}`.slice(0, 2)),
+                      phases[eliteLevel].maxLevel
+                    )
+                  );
+                } else {
+                  setOpLevel(
+                    Math.min(Number(e.target.value), phases[eliteLevel].maxLevel)
+                  );
+                }
+              },
+              onKeyPress: (e) => {
+                if (!/^\d$/.test(e.key)) {
+                  e.preventDefault();
+                }
+              },
+              inputProps: {
+                maxLength: 2,
+                onFocus: (e) => e.target.select(),
+                type: "number",
+                min: 1,
+                max: phases[eliteLevel].maxLevel,
+              },
+            }}
+            sliderProps={{
+              value: opLevel,
+              // @ts-expect-error MUI typing tells me to do this
+              onChange: (e: Event) => setOpLevel(Number(e.target.value)),
               min: 1,
               max: phases[eliteLevel].maxLevel,
-            },
-          }}
-          sliderProps={{
-            value: opLevel,
-            // @ts-expect-error MUI typing tells me to do this
-            onChange: (e: Event) => setOpLevel(Number(e.target.value)),
-            min: 1,
-            max: phases[eliteLevel].maxLevel,
-          }}
-        />
-      </div>
-      <dl className={isSummon ? "summon-stats" : "operator-stats"}>
+            }}
+          />
+        </div>
+      )}
+      <dl
+        className={
+          isSummon
+            ? "summon-stats" + (!doSummonStatsChange ? " no-stat-changes" : "")
+            : "operator-stats"
+        }
+      >
         {isSummon && (
           <div className="summon-icon">
             <Image
@@ -584,17 +602,32 @@ const styles = (theme: Theme) => css`
           grid-row: 6;
         }
       }
+      &.no-stat-changes {
+        margin-top: ${theme.spacing(3)};
+
+        ${theme.breakpoints.down("mobile")} {
+          margin-top: ${theme.spacing(2)};
+        }
+        .summon-icon {
+          border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+          ${theme.breakpoints.down("mobile")} {
+            border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+          }
+        }
+        .range {
+          border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
+        }
+      }
     }
 
     .summon-icon {
       grid-row-start: span 2;
-      border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+
       justify-content: center;
 
       ${theme.breakpoints.down("mobile")} {
         grid-row-start: unset;
         grid-column: span 2;
-        border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
       }
 
       img {

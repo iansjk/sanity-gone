@@ -87,7 +87,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   aria-label="stars"
                 />
               </span>
-              <span key="opClass" className="operator-class">
+              <span className="operator-class">
                 <span className="visually-hidden">Class:</span> {operatorClass}
               </span>
             </>

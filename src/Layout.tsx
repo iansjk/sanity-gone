@@ -386,7 +386,7 @@ const styles =
 
             .skip-link-container {
               position: absolute;
-              top: ${theme.spacing(9)};
+              top: ${theme.spacing(8.6)};
               padding: ${theme.spacing(0.4)};
               overflow: hidden;
 

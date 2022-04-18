@@ -387,7 +387,8 @@ const styles =
             .skip-link-container {
               position: absolute;
               top: ${theme.spacing(9)};
-              padding: ${theme.spacing(0.1, 0.1)};
+              padding: ${theme.spacing(0.4)};
+              overflow: hidden;
 
               .skip-link {
                 display: block;
@@ -399,7 +400,7 @@ const styles =
                 font-weight: ${theme.typography.navigationLinkBold.fontWeight};
                 line-height: ${theme.typography.navigationLink.lineHeight};
                 transform: translateY(-${theme.spacing(15)});
-                transition: transform 0.5s ease-in-out;
+                transition: transform 0.3s ease-in-out;
 
                 &:focus {
                   transform: translateY(0);

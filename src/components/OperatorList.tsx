@@ -156,8 +156,9 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                 ) : (
                   <div className="operator-info">{operatorInfo}</div>
                 )}
-                <Tooltip title={`Filter list by ${subclass}`}>
+                <Tooltip title={subclass}>
                   <button
+                    aria-label={`Filter list by ${subclass}`}
                     className="operator-subclass"
                     onClick={() =>
                       onSubclassFilter(op.profession, op.subProfessionId)

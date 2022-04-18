@@ -79,17 +79,20 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   op.name
                 )}
               </h3>
+              <div className="rarity">
+                <span className="visually-hidden">Rarity:&nbsp;</span>
                 <span className="rarity-number">{op.rarity + 1}</span>{" "}
                 <StarIcon
                   aria-hidden="true"
                   className="rarity-star"
                   aria-label="stars"
                 />
-              </span>
-              <span className="operator-class">
-                <span className="visually-hidden">Class:</span> {operatorClass}
-              </span>
-              <span className="visually-hidden">Subclass: {subclass}</span>
+              </div>
+              <div className="operator-class">
+                <span className="visually-hidden">Class:&nbsp;</span>
+                {operatorClass}
+              </div>
+              <div className="visually-hidden">Subclass: {subclass}</div>
             </>
           );
 

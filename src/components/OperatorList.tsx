@@ -68,18 +68,17 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
 
           const operatorInfo = (
             <>
-              <span className="operator-name">
+              <h3 className="operator-name">
                 {alterName ? (
                   <>
                     <span className="base-name">{charName}</span>
+                    <span className="visually-hidden">&nbsp;the&nbsp;</span>
                     <span className="alter-name">{alterName}</span>
                   </>
                 ) : (
                   op.name
                 )}
-              </span>
-              <span className="rarity">
-                <span className="visually-hidden">Rarity:</span>
+              </h3>
                 <span className="rarity-number">{op.rarity + 1}</span>{" "}
                 <StarIcon
                   aria-hidden="true"
@@ -386,6 +385,7 @@ const styles = (theme: Theme) => css`
         .operator-name {
           grid-column: span 2;
           display: flex;
+          margin: 0;
           flex-direction: column;
           font-size: ${theme.typography.skillTalentHeading.fontSize}px;
           line-height: ${theme.typography.skillTalentHeading.lineHeight};

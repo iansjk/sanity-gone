@@ -180,7 +180,10 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   <Link href={`/operators/${url}`}>
                     <a className="go-to-guide-link">
                       <span className="go-to-guide-text">
-                        Read <span className="visually-hidden">{op.name}</span>{" "}
+                        Read{" "}
+                        <span className="visually-hidden">
+                          &nbsp;{op.name}&nbsp;
+                        </span>
                         Guide
                       </span>
                     </a>

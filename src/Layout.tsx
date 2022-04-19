@@ -118,6 +118,11 @@ const Layout: React.FC<LayoutProps> = (props) => {
             </div>
             <div className="navbar-container">
               <div className="navbar-content">
+                <div className="skip-link-container">
+                  <a className="skip-link" href="#page-content">
+                    Skip to Content
+                  </a>
+                </div>
                 <div className="navbar-left">
                   {<SearchBar placeholder="Search operators and guides" />}
                 </div>
@@ -169,7 +174,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 {customPageHeading || <h1>{pageTitle}</h1>}
               </div>
             </header>
-            <div className="page-content">{children}</div>
+            <div className="page-content" id="page-content">
+              {children}
+            </div>
           </div>
         </div>
         <footer>
@@ -375,6 +382,30 @@ const styles =
 
             ${theme.breakpoints.down("mobile")} {
               padding: unset;
+            }
+
+            .skip-link-container {
+              position: absolute;
+              top: ${theme.spacing(8.6)};
+              padding: ${theme.spacing(0.4)};
+              overflow: hidden;
+
+              .skip-link {
+                display: block;
+                padding: ${theme.spacing(1, 1.5)};
+                color: ${theme.palette.white.main};
+                background-color: ${rgba(theme.palette.midtone.main, 0.66)};
+                border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+                font-size: ${theme.typography.navigationLink.fontSize}px;
+                font-weight: ${theme.typography.navigationLinkBold.fontWeight};
+                line-height: ${theme.typography.navigationLink.lineHeight};
+                transform: translateY(-${theme.spacing(15)});
+                transition: transform 0.3s ease-in-out;
+
+                &:focus {
+                  transform: translateY(0);
+                }
+              }
             }
 
             .navbar-left {

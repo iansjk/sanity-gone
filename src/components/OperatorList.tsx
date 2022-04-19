@@ -68,23 +68,31 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
 
           const operatorInfo = (
             <>
-              <span className="operator-name">
+              <h3 className="operator-name">
                 {alterName ? (
                   <>
                     <span className="base-name">{charName}</span>
+                    <span className="visually-hidden">&nbsp;the&nbsp;</span>
                     <span className="alter-name">{alterName}</span>
                   </>
                 ) : (
                   op.name
                 )}
-              </span>
-              <span className="rarity" title={`Rarity: ${op.rarity + 1} stars`}>
+              </h3>
+              <div className="rarity">
+                <span className="visually-hidden">Rarity:&nbsp;</span>
                 <span className="rarity-number">{op.rarity + 1}</span>{" "}
-                <StarIcon className="rarity-star" />
-              </span>
-              <span key="opClass" className="operator-class">
+                <StarIcon
+                  aria-hidden="true"
+                  className="rarity-star"
+                  aria-label="stars"
+                />
+              </div>
+              <div className="operator-class">
+                <span className="visually-hidden">Class:&nbsp;</span>
                 {operatorClass}
-              </span>
+              </div>
+              <div className="visually-hidden">Subclass: {subclass}</div>
             </>
           );
 
@@ -152,6 +160,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                 )}
                 <Tooltip title={subclass}>
                   <button
+                    aria-label={`Filter list by ${subclass}`}
                     className="operator-subclass"
                     onClick={() =>
                       onSubclassFilter(op.profession, op.subProfessionId)
@@ -170,7 +179,13 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                 {hasGuide ? (
                   <Link href={`/operators/${url}`}>
                     <a className="go-to-guide-link">
-                      <span className="go-to-guide-text">Read Guide</span>
+                      <span className="go-to-guide-text">
+                        Read{" "}
+                        <span className="visually-hidden">
+                          &nbsp;{op.name}&nbsp;
+                        </span>
+                        Guide
+                      </span>
                     </a>
                   </Link>
                 ) : (
@@ -379,6 +394,7 @@ const styles = (theme: Theme) => css`
         .operator-name {
           grid-column: span 2;
           display: flex;
+          margin: 0;
           flex-direction: column;
           font-size: ${theme.typography.skillTalentHeading.fontSize}px;
           line-height: ${theme.typography.skillTalentHeading.lineHeight};

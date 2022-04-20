@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import { styled, Theme } from "@mui/material";
 import { ModalUnstyled } from "@mui/base";
 import Image from "next/image";
-import { transparentize } from "polished";
+import { rgba, transparentize } from "polished";
 import { useCallback, useEffect, useState } from "react";
 import { ImageData } from "./Gallery";
 
@@ -10,17 +10,17 @@ import CloseIcon from "./icons/CloseIcon";
 import NextArrow from "./icons/NextArrow";
 import PreviousArrow from "./icons/PreviousArrow";
 
-const Backdrop = styled("div")`
-  z-index: -1;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-tap-highlight-color: transparent;
-`;
+const Backdrop = styled("div")(({ theme }) => ({
+  zIndex: -1,
+  position: "fixed",
+  right: 0,
+  bottom: 0,
+  top: 0,
+  left: 0,
+  backgroundColor: rgba(theme.palette.black.main, 0.75),
+  backdropFilter: "blur(8px)",
+  "-webkit-tap-highlight-color": "transparent",
+}));
 
 interface Props {
   image: ImageData;
@@ -234,31 +234,27 @@ const styles = (theme: Theme) => css`
     justify-content: center;
     border: none;
     border-radius: ${theme.spacing(1)};
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: ${rgba(theme.palette.black.main, 0.75)};
     z-index: 1;
     cursor: pointer;
+    backdrop-filter: blur(8px);
 
     &:hover {
       background-color: ${transparentize(
         0.25,
         theme.palette.midtoneDarker.main
       )};
+    }
 
-      svg path {
-        fill: ${theme.palette.white.main};
-        stroke: ${theme.palette.white.main};
-      }
+    svg path {
+      fill: ${theme.palette.white.main};
+      stroke: ${theme.palette.white.main};
     }
   }
 
   .close-modal-button {
     top: ${theme.spacing(3)};
     left: ${theme.spacing(3)};
-
-    svg {
-      width: 12px;
-      height: 12px;
-    }
   }
 
   .previous-image-button {

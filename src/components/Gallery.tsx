@@ -1,26 +1,31 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import GalleryItem from "./GalleryItem";
 import GalleryItemFullSizeModal from "./GalleryItemFullSizeModal";
 
 export interface GalleryProps {
-  contents: JSX.Element[];
+  images: ImageData[];
+}
+
+export interface ImageData {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
 }
 
 const Gallery: React.FC<GalleryProps> = (props) => {
-  const { contents } = props;
+  const { images } = props;
   const [open, setOpen] = useState(false);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const galleryDivRef = useRef<HTMLDivElement>(null);
 
-  const numImages = contents.length;
-  const children = contents.map((imgElement, i) => (
+  const numImages = images.length;
+  const children = images.map((imageProps, i) => (
     <GalleryItem
       key={i}
-      url={imgElement.props.src}
-      alt={imgElement.props.alt}
+      {...imageProps}
       onClick={() => {
         setOpen(true);
         setActiveItemIndex(i);
@@ -28,16 +33,28 @@ const Gallery: React.FC<GalleryProps> = (props) => {
     />
   ));
 
+  const handleClose = () => {
+    setOpen(false);
+    // wait until the next JS task to restore focus
+    // so that the modal's closure has taken effect
+    setTimeout(() => {
+      (
+        galleryDivRef.current?.children[activeItemIndex] as
+          | HTMLElement
+          | undefined
+      )?.focus();
+    }, 0);
+  };
+
   return (
     <>
-      <div className="gallery" css={styles}>
+      <div className="gallery" css={styles} ref={galleryDivRef}>
         {children}
       </div>
       <GalleryItemFullSizeModal
-        url={children[activeItemIndex].props.url}
-        caption={children[activeItemIndex].props.alt}
+        image={children[activeItemIndex].props}
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={handleClose}
         onPrevious={() => setActiveItemIndex((index) => index - 1)}
         onNext={() => setActiveItemIndex((index) => index + 1)}
         canPrevious={activeItemIndex > 0}

@@ -1,16 +1,29 @@
 import { css } from "@emotion/react";
-import { Theme } from "@mui/material";
-import { transparentize } from "polished";
-import { useEffect, useRef } from "react";
-import ReactDOM from "react-dom";
+import { styled, Theme } from "@mui/material";
+import { ModalUnstyled } from "@mui/base";
+import Image from "next/image";
+import { rgba, transparentize } from "polished";
+import { useCallback, useEffect, useState } from "react";
+import { ImageData } from "./Gallery";
 
 import CloseIcon from "./icons/CloseIcon";
 import NextArrow from "./icons/NextArrow";
 import PreviousArrow from "./icons/PreviousArrow";
 
+const Backdrop = styled("div")(({ theme }) => ({
+  zIndex: -1,
+  position: "fixed",
+  right: 0,
+  bottom: 0,
+  top: 0,
+  left: 0,
+  backgroundColor: rgba(theme.palette.black.main, 0.75),
+  backdropFilter: "blur(8px)",
+  "-webkit-tap-highlight-color": "transparent",
+}));
+
 interface Props {
-  url: string;
-  caption: string;
+  image: ImageData;
   open: boolean;
   onClose: () => void;
   onPrevious: () => void;
@@ -20,20 +33,65 @@ interface Props {
 }
 
 const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
-  const {
-    url,
-    caption,
-    open,
-    onClose,
-    canNext,
-    canPrevious,
-    onNext,
-    onPrevious,
-  } = props;
-  const filename = url.split("/").slice(-1)[0];
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const previousFocusRef = useRef<HTMLElement>(null);
+  const { image, open, onClose, canNext, canPrevious, onNext, onPrevious } =
+    props;
+  const { src: rawUrl, alt, width: imageWidth, height: imageHeight } = image;
+  const url = rawUrl.startsWith("//") ? `https:${rawUrl}` : rawUrl;
+  const [imageWrapper, setImageWrapper] = useState<HTMLDivElement | null>(null);
+  const [modalTitle, setModalTitle] = useState<HTMLHeadingElement | null>(null);
+
+  const resizeImageCallback = useCallback(() => {
+    if (imageWrapper && modalTitle) {
+      const maxWidth = Math.max(
+        document.documentElement.clientWidth ?? 0,
+        window.innerWidth ?? 0
+      );
+      const maxHeight =
+        Math.max(
+          document.documentElement.clientHeight ?? 0,
+          window.innerHeight ?? 0
+        ) - modalTitle.clientHeight;
+
+      // the code below emulates how object-fit: contain; works
+      // by setting the exact dimensions of the wrapper <div>
+      // to maximize the image's size while not overflowing the viewport
+      // and also maintaining the image's aspect ratio
+      if (imageWidth < maxWidth && imageHeight < maxHeight) {
+        imageWrapper.style.width = `${imageWidth}px`;
+        imageWrapper.style.height = `${imageHeight}px`;
+      } else {
+        const aspectRatio = imageWidth / imageHeight;
+        if (aspectRatio > 1) {
+          if (maxWidth / aspectRatio > maxHeight) {
+            imageWrapper.style.width = `${maxHeight * aspectRatio}px`;
+            imageWrapper.style.height = `${maxHeight}px`;
+          } else {
+            imageWrapper.style.width = `${maxWidth}px`;
+            imageWrapper.style.height = `${maxWidth / aspectRatio}px`;
+          }
+        } else {
+          if (maxHeight * aspectRatio > maxWidth) {
+            imageWrapper.style.width = `${maxWidth}px`;
+            imageWrapper.style.height = `${maxWidth / aspectRatio}px`;
+          } else {
+            imageWrapper.style.width = `${maxHeight * aspectRatio}px`;
+            imageWrapper.style.height = `${maxHeight}px`;
+          }
+        }
+      }
+    }
+  }, [imageHeight, imageWidth, imageWrapper, modalTitle]);
+
+  useEffect(() => {
+    resizeImageCallback();
+  }, [imageWidth, imageHeight, imageWrapper, modalTitle, resizeImageCallback]);
+
+  useEffect(() => {
+    window.addEventListener("resize", resizeImageCallback);
+    return () => {
+      window.removeEventListener("resize", resizeImageCallback);
+    };
+  }, [resizeImageCallback]);
 
   useEffect(() => {
     if (open) {
@@ -55,245 +113,167 @@ const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
             }
             e.stopPropagation();
             break;
-          case "Esc":
-          case "Escape":
-            e.preventDefault();
-            onClose();
-            e.stopPropagation();
-            break;
         }
       };
       document.addEventListener("keydown", listener);
-      for (let i = 0; i < document.body.children.length; i++) {
-        const child = document.body.children.item(i);
-        if (child !== overlayRef.current) {
-          child?.setAttribute("inert", "true");
-        }
-      }
-      if (!previousFocusRef.current) {
-        // @ts-expect-error it is now safe to set ref.current, see https://reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables
-        previousFocusRef.current = document.activeElement;
-      }
-      if (!overlayRef.current?.contains(document.activeElement)) {
-        setTimeout(() => {
-          closeButtonRef.current?.focus();
-        }, 0);
-      }
       return () => {
         document.removeEventListener("keydown", listener);
-        for (let i = 0; i < document.body.children.length; i++) {
-          const child = document.body.children.item(i);
-          child?.removeAttribute("inert");
-        }
-        setTimeout(() => {
-          if (
-            previousFocusRef.current &&
-            previousFocusRef instanceof HTMLElement
-          ) {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-            previousFocusRef.current.focus();
-            // @ts-expect-error it is now safe to set ref.current, see https://reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables
-            previousFocusRef.current = null;
-          }
-        }, 0);
       };
     }
   }, [canNext, canPrevious, onClose, onNext, onPrevious, open]);
 
-  const handleOverlayClick: React.MouseEventHandler = (e) => {
-    if (e.target === overlayRef.current) {
-      onClose();
-    }
-  };
-
-  return !open
-    ? null
-    : ReactDOM.createPortal(
-        <div
-          className="gallery-modal-overlay"
-          css={styles}
-          hidden={!open}
-          ref={overlayRef}
-          onClick={handleOverlayClick}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="gallery-modal-title"
+  return (
+    <ModalUnstyled
+      open={open}
+      aria-labelledby="gallery-modal-title"
+      onClose={onClose}
+      css={styles}
+      onBackdropClick={onClose}
+      BackdropComponent={Backdrop}
+    >
+      <div className="gallery-modal-content">
+        <button
+          className="close-modal-button"
+          aria-label="Close"
+          onClick={onClose}
         >
+          <CloseIcon aria-hidden="true" />
+        </button>
+        {canPrevious && (
           <button
-            className="close-modal-button"
-            aria-label="Close"
-            onClick={onClose}
-            ref={closeButtonRef}
+            className="previous-image-button"
+            aria-label="Previous image"
+            onClick={(e) => {
+              e.stopPropagation();
+              onPrevious();
+            }}
           >
-            <CloseIcon aria-hidden="true" />
+            <PreviousArrow aria-hidden="true" />
           </button>
-          <div className="modal-content">
-            <h2
-              id="gallery-modal-title"
-              className="caption"
-              aria-label={`Image, full size: ${caption}`}
-            >
-              {caption}
-            </h2>
-            <div className="previous-button-area">
-              {canPrevious && (
-                <button
-                  aria-label="Previous image"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onPrevious();
-                  }}
-                >
-                  <PreviousArrow aria-hidden="true" />
-                </button>
-              )}
-            </div>
-            <img src={url} alt="" />
-            <div className="next-button-area">
-              {canNext && (
-                <button
-                  aria-label="Next image"
-                  disabled={!canNext}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onNext();
-                  }}
-                >
-                  <NextArrow aria-hidden="true" />
-                </button>
-              )}
-            </div>
-            <div className="topbar">
-              <span className="filename" title={`Filename: ${filename}`}>
-                {filename}
-              </span>
-              <span aria-hidden="true" className="separator">
-                |
-              </span>
-              <a
-                className="full-resolution"
-                href={url}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                Full Resolution
-              </a>
-            </div>
-          </div>
-        </div>,
-        document.body
-      );
+        )}
+        <div id="fullsize-image-wrapper" ref={(el) => setImageWrapper(el)}>
+          <Image
+            key={url}
+            src={url}
+            layout="fill"
+            alt=""
+            quality={100}
+            priority
+            placeholder="blur"
+            // theme.palette.gray as a 1px blur placeholder
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNsb5/9HwAF8AKqEhqAsAAAAABJRU5ErkJggg=="
+          />
+        </div>
+        <h2 id="gallery-modal-title" ref={(el) => setModalTitle(el)}>
+          {alt}
+        </h2>
+        {canNext && (
+          <button
+            className="next-image-button"
+            aria-label="Next image"
+            disabled={!canNext}
+            onClick={(e) => {
+              e.stopPropagation();
+              onNext();
+            }}
+          >
+            <NextArrow aria-hidden="true" />
+          </button>
+        )}
+      </div>
+    </ModalUnstyled>
+  );
 };
 export default GalleryItemFullSizeModal;
 
 const styles = (theme: Theme) => css`
   position: fixed;
-  overflow-y: auto;
-  top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
-  background-color: ${transparentize(0.34, "#000")};
-  backdrop-filter: blur(${theme.spacing(1)});
-  z-index: 100;
+  top: 0;
+  bottom: 0;
+  z-index: 1300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .close-modal-button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: ${theme.spacing(4)};
-    margin: 0;
-    border: 0;
-    background-color: unset;
-    line-height: 1;
-    cursor: pointer;
+  .gallery-modal-content {
+    display: grid;
+    grid-template-areas: "image" "caption";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr max-content;
+    justify-items: center;
 
-    &:hover {
-      svg path {
-        stroke: ${theme.palette.white.main};
-      }
+    & > * {
+      grid-area: image;
     }
   }
 
-  .modal-content {
+  #gallery-modal-title {
+    grid-area: caption;
+    text-align: center;
+    margin: 0;
+    padding: ${theme.spacing(2, 0)};
+    font-size: ${theme.typography.body1.fontSize}px;
+    font-weight: ${theme.typography.body1.fontWeight};
+    line-height: ${theme.typography.body1.lineHeight};
+  }
+
+  #fullsize-image-wrapper {
+    position: relative;
+  }
+
+  .close-modal-button,
+  .previous-image-button,
+  .next-image-button {
     position: absolute;
-    left: 50vw;
-    top: 50vh;
-    transform: translateX(-50%) translateY(-50%);
-    width: 80%;
-    max-height: 80%;
-    background: ${theme.palette.midtone.main};
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: ${theme.spacing(1)};
+    background-color: ${rgba(theme.palette.black.main, 0.75)};
+    z-index: 1;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
 
-    display: grid;
-    grid-template-rows: max-content 1fr max-content;
-    grid-template-columns: 200px 1fr max-content 1fr 200px;
-    grid-template-areas:
-      "topbar topbar topbar topbar topbar"
-      "previous spacerL image spacerR next"
-      "bottombar bottombar bottombar bottombar bottombar";
-
-    .topbar {
-      grid-area: topbar;
-      font-size: ${theme.typography.body1.fontSize}px;
-      text-align: center;
-      padding: ${theme.spacing(1)} 0;
-      border-radius: ${theme.spacing(1, 1, 0, 0)};
-      background-color: ${theme.palette.dark.main};
-
-      .filename {
-        color: ${theme.palette.gray.main};
-      }
-
-      .separator {
-        display: inline-block;
-        margin: 0 ${theme.spacing(2)};
-        color: ${theme.palette.midtoneBrighter.main};
-      }
+    &:hover {
+      background-color: ${transparentize(
+        0.25,
+        theme.palette.midtoneDarker.main
+      )};
     }
 
-    .previous-button-area {
-      grid-area: previous;
+    svg path {
+      fill: ${theme.palette.white.main};
+      stroke: ${theme.palette.white.main};
     }
+  }
 
-    .next-button-area {
-      grid-area: next;
+  .close-modal-button {
+    top: ${theme.spacing(3)};
+    left: ${theme.spacing(3)};
+  }
+
+  .previous-image-button {
+    left: ${theme.spacing(3)};
+    top: calc(50% - 20px);
+
+    svg {
+      width: 16px;
+      height: 16px;
     }
+  }
 
-    .previous-button-area,
-    .next-button-area {
-      align-self: center;
+  .next-image-button {
+    right: ${theme.spacing(3)};
+    top: calc(50% - 20px);
 
-      button {
-        background: none;
-        border: none;
-        padding: ${theme.spacing(8)};
-
-        &:hover:not(:disabled) {
-          cursor: pointer;
-
-          svg path {
-            fill: ${theme.palette.white.main};
-          }
-        }
-      }
-    }
-
-    .caption {
-      grid-area: bottombar;
-      background-color: ${theme.palette.dark.main};
-      margin: 0;
-      padding: ${theme.spacing(1)};
-      font-size: ${theme.typography.body1.fontSize}px;
-      line-height: ${theme.typography.body1.lineHeight};
-      font-weight: normal;
-      text-align: center;
-      border-radius: ${theme.spacing(0, 0, 1, 1)};
-    }
-
-    img {
-      grid-area: image;
-      align-self: center;
-      padding: ${theme.spacing(4)};
+    svg {
+      width: 16px;
+      height: 16px;
     }
   }
 `;

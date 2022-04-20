@@ -1,13 +1,15 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
-interface Props {
-  url: string;
-  alt: string;
+import Image from "next/image";
+import { ImageData } from "./Gallery";
+
+interface Props extends ImageData {
   onClick: () => void;
 }
 
 const GalleryItem: React.VFC<Props> = (props) => {
-  const { url, alt, onClick } = props;
+  const { src: rawUrl, alt, onClick } = props;
+  const url = rawUrl.startsWith("//") ? `https:${rawUrl}` : rawUrl;
 
   return (
     <button
@@ -16,7 +18,7 @@ const GalleryItem: React.VFC<Props> = (props) => {
       aria-label={`Image: ${alt}. Click to expand`}
       onClick={onClick}
     >
-      <img src={url} alt={alt} />
+      <Image src={url} alt={alt} width={164} height={164} objectFit="cover" />
       <span className="image-caption" aria-hidden="true">
         {alt}
       </span>
@@ -35,11 +37,12 @@ const styles = (theme: Theme) => css`
   background: unset;
   border: 0;
 
+  &:not(:focus-visible) {
+    outline: none;
+  }
+
   img {
     border-radius: ${theme.spacing(0.5)};
-    width: 164px;
-    height: 164px;
-    object-fit: cover;
   }
 
   .image-caption {

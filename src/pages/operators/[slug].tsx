@@ -26,6 +26,7 @@ import { fetchContentfulGraphQl } from "../../utils/fetch";
 import operatorsJson from "../../../data/operators.json";
 import summonsJson from "../../../data/summons.json";
 import { markdownToHtmlString } from "../../utils/markdown";
+import Progression from "../../components/Progression";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -461,7 +462,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       >
         <TabButtons className="tabs" isSwiper>
           {[
-            ...["Introduction", "Talents", "Skills"],
+            ...["Introduction", "Progression", "Talents", "Skills"],
             ...(synergies.length > 0 ? ["Synergies"] : []),
           ].map((label) => (
             <button key={label}>{label}</button>
@@ -481,6 +482,17 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   />
                 ),
                 className: "introduction",
+              },
+              {
+                component: (
+                  <Progression
+                    panelContent={
+                      "Farm-to-table cred literally four dollar toast messenger bag swag. Tattooed fashion axe next level XOXO iPhone cred. XOXO chambray swag leggings forage gluten-free jean shorts small batch drinking vinegar iPhone tote bag direct trade air plant knausgaard readymade. Slow-carb crucifix palo santo biodiesel knausgaard, man braid live-edge put a bird on it fashion axe narwhal chicharrones. Meh thundercats health goth hot chicken bicycle rights prism bitters roof party tousled keytar. Street art actually shoreditch, listicle twee marfa jianbing ramps hashtag letterpress pour-over bespoke asymmetrical direct trade. Raclette truffaut brooklyn, kogi ugh air plant butcher."
+                    }
+                    progressItems={[]}
+                  />
+                ),
+                className: "progression",
               },
               {
                 component: (

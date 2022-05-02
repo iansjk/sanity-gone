@@ -73,7 +73,7 @@ const styles = (theme: Theme) => css`
 
     .quality-0 {
       .progression-quality {
-        color: ${rgba(theme.palette.red.main)};
+        color: ${theme.palette.red.main};
       }
 
       .segment-node {
@@ -87,7 +87,7 @@ const styles = (theme: Theme) => css`
 
     .quality-1 {
       .progression-quality {
-        color: ${rgba(theme.palette.blue.main)};
+        color: ${theme.palette.blue.main};
       }
 
       .segment-node {
@@ -101,7 +101,7 @@ const styles = (theme: Theme) => css`
 
     .quality-2 {
       .progression-quality {
-        color: ${rgba(theme.palette.white.main)};
+        color: ${rgba(theme.palette.white.main, 0.66)};
       }
 
       .segment-node {
@@ -115,7 +115,7 @@ const styles = (theme: Theme) => css`
 
     .quality-3 {
       .progression-quality {
-        color: ${rgba(theme.palette.lime.main)};
+        color: ${theme.palette.lime.main};
       }
 
       .segment-node {

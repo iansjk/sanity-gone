@@ -29,6 +29,7 @@ import modulesJson from "../../../data/modules.json";
 import { markdownToHtmlString } from "../../utils/markdown";
 import ModuleInfo from "../../components/ModuleInfo";
 import Module from "../../components/Module";
+import ModuleRecommendation from "../../components/ModuleRecommendation";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -95,6 +96,17 @@ const htmlToReact = (
           return (
             //@ts-expect-error props will contain level and priority
             <MasteryRecommendation
+              {...props}
+              //@ts-expect-error children[0].data should exist on a text node
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              analysis={domNode.children[0].data}
+            />
+          );
+        } else if (domNode.name === "modulerecommendation") {
+          const props = attributesToProps(domNode.attribs);
+          return (
+            //@ts-expect-error props will contain priority
+            <ModuleRecommendation
               {...props}
               //@ts-expect-error children[0].data should exist on a text node
               // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

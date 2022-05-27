@@ -51,11 +51,16 @@ module.exports = {
     },
   ],
   rules: {
-    "prettier/prettier": "warn",
     "no-unused-vars": [
       "warn",
       {
         varsIgnorePattern: "^_",
+      },
+    ],
+    "prettier/prettier": [
+      "warn",
+      {
+        endOfLine: "auto",
       },
     ],
   },

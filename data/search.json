@@ -2243,12 +2243,14 @@
     }
   },
   "operatorsWithGuides": {
+    "Fartooth": "fartooth",
+    "Kafka": "kafka",
     "Archetto": "archetto",
     "Mountain": "mountain",
-    "Robin": "robin",
-    "Kafka": "kafka",
     "Eunectes": "eunectes",
     "Pinecone": "pinecone",
+    "Ch'en": "chen",
+    "Robin": "robin",
     "Nearl the Radiant Knight": "nearl-the-radiant-knight",
     "Pallas": "pallas",
     "Cutter": "cutter",
@@ -2259,7 +2261,6 @@
     "Dusk": "dusk",
     "Bibeak": "bibeak",
     "La Pluma": "la-pluma",
-    "Fartooth": "fartooth",
     "Whislash": "whislash",
     "Scene": "scene",
     "Magallan": "magallan",
@@ -2288,7 +2289,6 @@
     "Ayerscarpe": "ayerscarpe",
     "Specter": "specter",
     "Folinic": "folinic",
-    "Ch'en": "chen",
     "Skadi the Corrupting Heart": "skadi-the-corrupting-heart",
     "Akafuyu": "akafuyu"
   }

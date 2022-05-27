@@ -1,5 +1,6 @@
 import { SkillObject } from "../components/SkillInfo";
 import { TalentObject } from "../components/TalentInfo";
+import { InterpolatedValue } from "./description-parser";
 
 export interface AttributeKeyFrame {
   level: number;
@@ -104,4 +105,40 @@ export interface PotentialStatChange {
   attackSpeed: number;
   redeployTimeInSeconds: number;
   description: string | null;
+}
+
+// modules
+// this is CBT
+export interface ModuleObject {
+  moduleId: string;
+  moduleEffect: string;
+  moduleObject: ModulePhaseObject;
+  hasTranslation: boolean;
+}
+
+export interface ModulePhaseObject {
+  phases: {
+    equipLevel: number;
+    parts: {
+      addOrOverrideTalentDataBundle: {
+        candidates:
+          | {
+              blackboard: InterpolatedValue[];
+            }[]
+          | null;
+      };
+      overrideTraitDataBundle: {
+        candidates:
+          | {
+              blackboard: InterpolatedValue[];
+              additionalDescription: string | null;
+              overrideDescription: string | null;
+            }[]
+          | null;
+      };
+      [otherProperties: string]: unknown;
+    }[];
+    attributeBlackboard: InterpolatedValue[];
+    tokenAttributeBlackboard: unknown;
+  }[];
 }

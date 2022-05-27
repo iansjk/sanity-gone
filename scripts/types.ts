@@ -80,3 +80,33 @@ export interface SearchResult {
   rarity?: string;
   subProfession?: string;
 }
+
+export interface Module {
+  moduleId: string;
+  moduleEffect: string;
+  moduleObject: ModuleObject;
+  hasTranslation: boolean;
+}
+
+export interface ModuleObject {
+  phases: {
+    equipLevel: number;
+    parts: {
+      addOrOverrideTalentDataBundle: {
+        candidates?: {
+          blackboard: InterpolatedValue[];
+        }[];
+      };
+      overrideTraitDataBundle: {
+        candidates?: {
+          blackboard: InterpolatedValue[];
+          additionalDescription: string | null;
+          overrideDescription: string | null;
+        }[];
+      };
+      [otherProperties: string]: unknown;
+    }[];
+    attributeBlackboard: InterpolatedValue[];
+    tokenAttributeBlackboard: unknown;
+  }[];
+}

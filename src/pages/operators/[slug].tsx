@@ -267,16 +267,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     operatorName as keyof typeof operatorsJson
   ] as unknown as CharacterObject;
   const summons = summonsJson[operatorName as keyof typeof summonsJson] ?? [];
-  let modules: ModuleObject | null =
-    (modulesJson[
-      operatorObject.charId as keyof typeof modulesJson
-    ] as unknown as ModuleObject) ?? null;
-  if (
-    (modules != null && !modules.hasTranslation) ||
-    !operatorAnalysis.moduleAnalysis
-  ) {
-    modules = null;
-  }
+  // let modules: ModuleObject | null =
+  //   (modulesJson[
+  //     operatorObject.charId as keyof typeof modulesJson
+  //   ] as unknown as ModuleObject) ?? null;
+  // if (
+  //   (modules != null && !modules.hasTranslation) ||
+  //   !operatorAnalysis.moduleAnalysis
+  // ) {
+  //   modules = null;
+  // }
+  const modules = null;
 
   const markdownListItemRegex = /^\s*-\s(.+)$/;
   const props: Props = {
@@ -431,8 +432,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     summon: summons.length > 0 ? summons[0] : undefined,
   };
   const theme = useTheme();
-  const moduleAnalysisHtml =
-    module != null ? htmlToReact(moduleAnalysis, context) : null;
+  // const moduleAnalysisHtml =
+  //   module != null ? htmlToReact(moduleAnalysis, context) : null;
+  const moduleAnalysisHtml = null;
 
   const talentAnalyses = [talent1Analysis, talent2Analysis]
     .filter((html) => !!html)

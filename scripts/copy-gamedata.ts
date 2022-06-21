@@ -126,6 +126,7 @@ const TRAIT_OVERRIDES: Record<string, string> = {
 // Format: Module ID -> Module Effect Translation
 const MODULE_TRANSLATIONS: Record<string, string> = {
   // uniequip_002_skadi: "Becomes lore-accurate",
+  uniequip_002_zumama: "When not blocking enemies, +.2 SP/s",
 };
 
 const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
@@ -395,10 +396,8 @@ void (async () => {
           if (!description) {
             continue;
           }
-          moduleEffect += descriptionToHtml(
-            description,
-            curCandidates[j].blackboard
-          ) + "\n";
+          moduleEffect +=
+            descriptionToHtml(description, curCandidates[j].blackboard) + "\n";
         }
       }
     }

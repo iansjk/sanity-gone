@@ -393,6 +393,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     skill2Analysis,
     skill3Analysis,
     synergies: synergiesRaw,
+    progressionDescription,
+    progressionItems,
   } = guide;
   const { publishedAt } = sys;
   const skillRecommended = [
@@ -514,16 +516,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               {
                 component: (
                   <Progression
-                    panelContent={
-                      "Farm-to-table cred literally four dollar toast messenger bag swag. Tattooed fashion axe next level XOXO iPhone cred. XOXO chambray swag leggings forage gluten-free jean shorts small batch drinking vinegar iPhone tote bag direct trade air plant knausgaard readymade. Slow-carb crucifix palo santo biodiesel knausgaard, man braid live-edge put a bird on it fashion axe narwhal chicharrones. Meh thundercats health goth hot chicken bicycle rights prism bitters roof party tousled keytar. Street art actually shoreditch, listicle twee marfa jianbing ramps hashtag letterpress pour-over bespoke asymmetrical direct trade. Raclette truffaut brooklyn, kogi ugh air plant butcher."
-                    }
-                    progressItems={[
-                      {
-                        quality: 1,
-                        stage: 1,
-                        description: "Lorem Ipsum",
-                      },
-                    ]}
+                    panelContent={progressionDescription}
+                    progressItems={progressionItems}
                   />
                 ),
                 className: "progression",

@@ -176,6 +176,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
               synergyDescription
             }
           }
+          progressionDescription
+          progressionItems {
+            items {
+              quality
+              stage
+              description
+            }
+          }
         }
       }
     }  
@@ -224,6 +232,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
               }
             ];
           } | null;
+          progressionDescription: string;
+          progressionItems: {
+            items: [
+              {
+                quality: number;
+                stage: number;
+                description: string;
+              }
+            ];
+          };
         }
       ];
     };
@@ -279,6 +297,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         operatorAnalysis.skill3Analysis
       ),
       synergies: operatorAnalysis.synergiesCollection?.items ?? [],
+      progressionDescription: await markdownToHtmlString(
+        operatorAnalysis.progressionDescription
+      ),
+      progressionItems: operatorAnalysis.progressionItems?.items ?? [],
     },
     operatorObject,
     summons: summons as unknown as CharacterObject[],
@@ -335,6 +357,12 @@ interface Props {
       };
       shouldInvertIconOnHighlight?: boolean;
       synergyDescription: string;
+    }[];
+    progressionDescription: string;
+    progressionItems: {
+      quality: number;
+      stage: number;
+      description: string;
     }[];
   };
   operatorObject: CharacterObject;
@@ -489,7 +517,13 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                     panelContent={
                       "Farm-to-table cred literally four dollar toast messenger bag swag. Tattooed fashion axe next level XOXO iPhone cred. XOXO chambray swag leggings forage gluten-free jean shorts small batch drinking vinegar iPhone tote bag direct trade air plant knausgaard readymade. Slow-carb crucifix palo santo biodiesel knausgaard, man braid live-edge put a bird on it fashion axe narwhal chicharrones. Meh thundercats health goth hot chicken bicycle rights prism bitters roof party tousled keytar. Street art actually shoreditch, listicle twee marfa jianbing ramps hashtag letterpress pour-over bespoke asymmetrical direct trade. Raclette truffaut brooklyn, kogi ugh air plant butcher."
                     }
-                    progressItems={[]}
+                    progressItems={[
+                      {
+                        quality: 1,
+                        stage: 1,
+                        description: "Lorem Ipsum",
+                      },
+                    ]}
                   />
                 ),
                 className: "progression",

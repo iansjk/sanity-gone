@@ -5,16 +5,16 @@ import { rgba } from "polished";
 import Card from "./Card";
 
 enum Quality {
-  Bad = -1,
-  Okay,
-  Good,
-  Great,
+  "Bad" = -1,
+  "Okay",
+  "Good",
+  "Great",
 }
 
 enum Stage {
-  Early,
-  Mid,
-  Late,
+  "Early",
+  "Mid",
+  "Late",
 }
 
 interface ProgressionItem {
@@ -42,8 +42,8 @@ const Progression: React.VFC<ProgressionProps> = (props) => {
               <div className="segment-line"></div>
             </div>
             <div className="progression-title">
-              <span className="progression-quality">{quality}</span>
-              <h3>{stage}</h3>
+              <span className="progression-quality">{Quality[quality]}</span>
+              <h3>{Stage[stage]}</h3>
             </div>
             <div className="progression-description">
               <p>{description}</p>
@@ -70,62 +70,6 @@ const styles = (theme: Theme) => css`
     grid-template-columns: 16px 1fr;
     grid-template-rows: auto 1fr;
     column-gap: 25px;
-
-    .quality-0 {
-      .progression-quality {
-        color: ${theme.palette.red.main};
-      }
-
-      .segment-node {
-        box-shadow: inset 0px 0px 0px 2.5px ${theme.palette.red.main};
-      }
-
-      segment-line {
-        background-color: ${theme.palette.red.main};
-      }
-    }
-
-    .quality-1 {
-      .progression-quality {
-        color: ${theme.palette.blue.main};
-      }
-
-      .segment-node {
-        box-shadow: inset 0px 0px 0px 2.5px ${theme.palette.blue.main};
-      }
-
-      segment-line {
-        background-color: ${theme.palette.blue.main};
-      }
-    }
-
-    .quality-2 {
-      .progression-quality {
-        color: ${rgba(theme.palette.white.main, 0.66)};
-      }
-
-      .segment-node {
-        box-shadow: inset 0px 0px 0px 2.5px ${theme.palette.white.main};
-      }
-
-      segment-line {
-        background-color: ${theme.palette.white.main};
-      }
-    }
-
-    .quality-3 {
-      .progression-quality {
-        color: ${theme.palette.lime.main};
-      }
-
-      .segment-node {
-        box-shadow: inset 0px 0px 0px 2.5px ${theme.palette.lime.main};
-      }
-
-      segment-line {
-        background-color: ${theme.palette.lime.main};
-      }
-    }
 
     .progression-title {
       display: flex;
@@ -173,6 +117,62 @@ const styles = (theme: Theme) => css`
         opacity: 0.33;
         height: 100%;
         margin-right: 1px;
+      }
+    }
+
+    &.quality-0 {
+      .progression-quality {
+        color: ${theme.palette.red.main};
+      }
+
+      .segment-node {
+        box-shadow: inset 0px 0px 0px 2.5px ${theme.palette.red.main};
+      }
+
+      .segment-line {
+        background-color: ${theme.palette.red.main};
+      }
+    }
+
+    &.quality-1 {
+      .progression-quality {
+        color: ${theme.palette.blue.main};
+      }
+
+      .segment-node {
+        box-shadow: inset 0px 0px 0px 2.5px ${theme.palette.blue.main};
+      }
+
+      .segment-line {
+        background-color: ${theme.palette.blue.main};
+      }
+    }
+
+    &.quality-2 {
+      .progression-quality {
+        color: ${rgba(theme.palette.white.main, 0.66)};
+      }
+
+      .segment-node {
+        box-shadow: inset 0px 0px 0px 2.5px ${theme.palette.white.main};
+      }
+
+      .segment-line {
+        background-color: ${theme.palette.white.main};
+      }
+    }
+
+    &.quality-3 {
+      .progression-quality {
+        color: ${theme.palette.lime.main};
+      }
+
+      .segment-node {
+        box-shadow: inset 0px 0px 0px 2.5px ${theme.palette.lime.main};
+      }
+
+      .segment-line {
+        background-color: ${theme.palette.lime.main};
       }
     }
   }

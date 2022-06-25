@@ -1,5 +1,6 @@
 {
   "incantationmedic": {
+    "branchName": "Incantation",
     "trait": "攻击造成法术伤害，攻击敌人时为攻击范围内一名友方干员治疗相当于50%伤害的生命值",
     "class": "Medic"
   },

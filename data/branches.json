@@ -1,4 +1,9 @@
 {
+  "incantationmedic": {
+    "branchName": "Incantation",
+    "trait": "Attacks deal <span class=\"keyword\">Arts damage</span>. When attacking an enemy, heal a friendly operator within attack range for <span class=\"keyword\">50%</span> of the damage dealt.",
+    "class": "Medic"
+  },
   "pioneer": {
     "branchName": "Pioneer",
     "trait": "Blocks 2 enemies",

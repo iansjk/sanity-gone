@@ -22499,7 +22499,7 @@
       ],
       "cnName": "“清平”",
       "isCnOnly": true,
-      "fileIndex": 258,
+      "fileIndex": 261,
       "operatorName": "Ling"
     },
     {
@@ -23959,7 +23959,7 @@
       ],
       "cnName": "“逍遥”",
       "isCnOnly": true,
-      "fileIndex": 259,
+      "fileIndex": 262,
       "operatorName": "Ling"
     },
     {
@@ -25803,7 +25803,7 @@
       ],
       "cnName": "“弦惊”",
       "isCnOnly": true,
-      "fileIndex": 260,
+      "fileIndex": 263,
       "operatorName": "Ling"
     }
   ],
@@ -26306,7 +26306,7 @@
       ],
       "cnName": "眠兽",
       "isCnOnly": true,
-      "fileIndex": 261,
+      "fileIndex": 264,
       "operatorName": "Blacknight"
     }
   ],
@@ -26939,7 +26939,7 @@
       "skillData": [],
       "cnName": "纸偶",
       "isCnOnly": true,
-      "fileIndex": 262,
+      "fileIndex": 265,
       "operatorName": "Kazemaru"
     }
   ],
@@ -28172,8 +28172,723 @@
       ],
       "cnName": "可靠电池",
       "isCnOnly": true,
-      "fileIndex": 263,
+      "fileIndex": 266,
       "operatorName": "Windflit"
+    }
+  ],
+  "Ebenholz": [
+    {
+      "name": "Old Day Remnants",
+      "description": null,
+      "canUseGeneralPotentialItem": true,
+      "potentialItemId": "",
+      "nationId": null,
+      "groupId": null,
+      "teamId": null,
+      "displayNumber": null,
+      "tokenKey": null,
+      "appellation": "Old Day Remnants",
+      "position": "ALL",
+      "tagList": null,
+      "itemUsage": null,
+      "itemDesc": null,
+      "itemObtainApproach": null,
+      "isNotObtainable": false,
+      "isSpChar": false,
+      "maxPotentialLevel": 0,
+      "rarity": 5,
+      "profession": "TOKEN",
+      "subProfessionId": "notchar1",
+      "trait": null,
+      "phases": [
+        {
+          "characterPrefabKey": "token_10024_ebnhlz_rcube",
+          "rangeId": "0-1",
+          "maxLevel": 50,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 0,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 50,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 0,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "0-1",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10024_ebnhlz_rcube",
+          "rangeId": "0-1",
+          "maxLevel": 80,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 0,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 80,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 0,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "0-1",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10024_ebnhlz_rcube",
+          "rangeId": "0-1",
+          "maxLevel": 90,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 0,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 90,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 0,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 0,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "0-1",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              }
+            ]
+          }
+        }
+      ],
+      "skills": [
+        {
+          "skillId": null,
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          }
+        },
+        {
+          "skillId": "sktok_ebnhlz_token",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          }
+        },
+        {
+          "skillId": null,
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 2,
+            "level": 1
+          }
+        }
+      ],
+      "talents": [
+        {
+          "candidates": [
+            {
+              "unlockCondition": {
+                "phase": 0,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "duration",
+                  "value": 30
+                }
+              ],
+              "range": null
+            }
+          ]
+        }
+      ],
+      "potentialRanks": [],
+      "favorKeyFrames": null,
+      "allSkillLvlup": [
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        }
+      ],
+      "charId": "token_10024_ebnhlz_rcube",
+      "skillData": [
+        {
+          "skillId": "sktok_ebnhlz_token",
+          "iconId": "sktok_ebnhlz_rcube",
+          "hidden": false,
+          "levels": [
+            {
+              "name": "闪回",
+              "rangeId": null,
+              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 0,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_ebnhlz_token",
+              "duration": 0,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.4
+                },
+                {
+                  "key": "force",
+                  "value": 1
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "闪回",
+              "rangeId": null,
+              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 0,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_ebnhlz_token",
+              "duration": 0,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.5
+                },
+                {
+                  "key": "force",
+                  "value": 1
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "闪回",
+              "rangeId": null,
+              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 0,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_ebnhlz_token",
+              "duration": 0,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.6
+                },
+                {
+                  "key": "force",
+                  "value": 1
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "闪回",
+              "rangeId": null,
+              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 0,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_ebnhlz_token",
+              "duration": 0,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.7
+                },
+                {
+                  "key": "force",
+                  "value": 1
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "闪回",
+              "rangeId": null,
+              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 0,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_ebnhlz_token",
+              "duration": 0,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.8
+                },
+                {
+                  "key": "force",
+                  "value": 1
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "闪回",
+              "rangeId": null,
+              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 0,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_ebnhlz_token",
+              "duration": 0,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.9
+                },
+                {
+                  "key": "force",
+                  "value": 1
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "闪回",
+              "rangeId": null,
+              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 0,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_ebnhlz_token",
+              "duration": 0,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2
+                },
+                {
+                  "key": "force",
+                  "value": 1
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "闪回",
+              "rangeId": null,
+              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 0,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_ebnhlz_token",
+              "duration": 0,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2.15
+                },
+                {
+                  "key": "force",
+                  "value": 1
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "闪回",
+              "rangeId": null,
+              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 0,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_ebnhlz_token",
+              "duration": 0,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2.3
+                },
+                {
+                  "key": "force",
+                  "value": 1
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "闪回",
+              "rangeId": null,
+              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 0,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_ebnhlz_token",
+              "duration": 0,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2.45
+                },
+                {
+                  "key": "force",
+                  "value": 1
+                }
+              ],
+              "range": null
+            }
+          ]
+        }
+      ],
+      "cnName": "旧日残影",
+      "isCnOnly": true,
+      "fileIndex": 267,
+      "operatorName": "Ebenholz"
     }
   ]
 }

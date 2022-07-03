@@ -51,7 +51,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -76,7 +77,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -151,7 +153,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -176,7 +179,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -251,7 +255,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -276,7 +281,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -406,7 +412,7 @@
       ],
       "cnName": "医疗探机",
       "isCnOnly": false,
-      "fileIndex": 205,
+      "fileIndex": 208,
       "operatorName": "Silence"
     }
   ],
@@ -462,7 +468,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -487,7 +494,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -530,7 +538,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -555,7 +564,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -598,7 +608,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -623,7 +634,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -822,7 +834,7 @@
       "skillData": [],
       "cnName": "触手",
       "isCnOnly": false,
-      "fileIndex": 206,
+      "fileIndex": 209,
       "operatorName": "Deepcolor"
     }
   ],
@@ -878,7 +890,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -903,7 +916,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -950,7 +964,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -975,7 +990,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1022,7 +1038,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1047,7 +1064,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1334,7 +1352,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -1359,7 +1378,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -1411,7 +1431,7 @@
       "skillData": [],
       "cnName": "Mon3tr",
       "isCnOnly": false,
-      "fileIndex": 207,
+      "fileIndex": 210,
       "operatorName": "Kal'tsit"
     }
   ],
@@ -1467,7 +1487,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1492,7 +1513,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1535,7 +1557,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1560,7 +1583,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1603,7 +1627,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1628,7 +1653,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1837,7 +1863,7 @@
       "skillData": [],
       "cnName": "幻影",
       "isCnOnly": false,
-      "fileIndex": 208,
+      "fileIndex": 211,
       "operatorName": "Nightingale"
     }
   ],
@@ -1893,7 +1919,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1918,7 +1945,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1961,7 +1989,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1986,7 +2015,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -2029,7 +2059,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -2054,7 +2085,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -3328,7 +3360,7 @@
       ],
       "cnName": "机械水獭",
       "isCnOnly": false,
-      "fileIndex": 209,
+      "fileIndex": 212,
       "operatorName": "Mayer"
     }
   ],
@@ -3384,7 +3416,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -3409,7 +3442,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -3484,7 +3518,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -3509,7 +3544,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -3584,7 +3620,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -3609,7 +3646,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -4525,7 +4563,7 @@
       ],
       "cnName": "龙腾.F",
       "isCnOnly": false,
-      "fileIndex": 210,
+      "fileIndex": 213,
       "operatorName": "Magallan"
     },
     {
@@ -4579,7 +4617,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -4604,7 +4643,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -4647,7 +4687,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -4672,7 +4713,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -4715,7 +4757,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -4740,7 +4783,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -5624,7 +5668,7 @@
       ],
       "cnName": "龙腾.L",
       "isCnOnly": false,
-      "fileIndex": 211,
+      "fileIndex": 214,
       "operatorName": "Magallan"
     },
     {
@@ -5678,7 +5722,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -5703,7 +5748,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -5778,7 +5824,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -5803,7 +5850,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -5878,7 +5926,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -5903,7 +5952,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -6819,7 +6869,7 @@
       ],
       "cnName": "龙腾.A",
       "isCnOnly": false,
-      "fileIndex": 212,
+      "fileIndex": 215,
       "operatorName": "Magallan"
     }
   ],
@@ -6875,7 +6925,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -6900,7 +6951,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -6975,7 +7027,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -7000,7 +7053,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -7075,7 +7129,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -7100,7 +7155,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -7550,7 +7606,7 @@
       ],
       "cnName": "诅咒娃娃",
       "isCnOnly": false,
-      "fileIndex": 213,
+      "fileIndex": 216,
       "operatorName": "Shamare"
     }
   ],
@@ -7606,7 +7662,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -7631,7 +7688,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -7678,7 +7736,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -7703,7 +7762,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -7750,7 +7810,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -7775,7 +7836,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -7981,7 +8043,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -8006,7 +8069,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -9460,7 +9524,7 @@
       ],
       "cnName": "镜中虚影",
       "isCnOnly": false,
-      "fileIndex": 214,
+      "fileIndex": 217,
       "operatorName": "Phantom"
     }
   ],
@@ -9516,7 +9580,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -9541,7 +9606,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -9584,7 +9650,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -9609,7 +9676,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -9652,7 +9720,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -9677,7 +9746,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -10153,7 +10223,7 @@
       ],
       "cnName": "此面向敌",
       "isCnOnly": false,
-      "fileIndex": 215,
+      "fileIndex": 218,
       "operatorName": "W"
     }
   ],
@@ -10209,7 +10279,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -10234,7 +10305,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -10289,7 +10361,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -10314,7 +10387,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -10369,7 +10443,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -10394,7 +10469,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -10651,7 +10727,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -10676,7 +10753,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -11456,7 +11534,7 @@
       ],
       "cnName": "工程蓄水炮",
       "isCnOnly": false,
-      "fileIndex": 216,
+      "fileIndex": 219,
       "operatorName": "Weedy"
     }
   ],
@@ -11512,7 +11590,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -11537,7 +11616,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -11584,7 +11664,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -11609,7 +11690,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -11656,7 +11738,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -11681,7 +11764,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -11993,7 +12077,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -12018,7 +12103,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -13238,7 +13324,7 @@
       ],
       "cnName": "移动摄影器",
       "isCnOnly": false,
-      "fileIndex": 217,
+      "fileIndex": 220,
       "operatorName": "Scene"
     }
   ],
@@ -13294,7 +13380,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -13319,7 +13406,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -13362,7 +13450,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -13387,7 +13476,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -13430,7 +13520,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -13455,7 +13546,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -13592,7 +13684,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -13617,7 +13710,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -14357,7 +14451,7 @@
       ],
       "cnName": "沙之碑",
       "isCnOnly": false,
-      "fileIndex": 218,
+      "fileIndex": 221,
       "operatorName": "Beeswax"
     }
   ],
@@ -14413,7 +14507,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -14438,7 +14533,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -14481,7 +14577,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -14506,7 +14603,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -14549,7 +14647,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -14574,7 +14673,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -14750,7 +14850,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -14775,7 +14876,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -15265,7 +15367,7 @@
       ],
       "cnName": "迷迭香的战术装备",
       "isCnOnly": false,
-      "fileIndex": 219,
+      "fileIndex": 222,
       "operatorName": "Rosmontis"
     }
   ],
@@ -15321,7 +15423,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -15346,7 +15449,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -15389,7 +15493,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -15414,7 +15519,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -15457,7 +15563,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -15482,7 +15589,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16257,7 +16365,7 @@
       ],
       "cnName": "\"夹子\"",
       "isCnOnly": false,
-      "fileIndex": 220,
+      "fileIndex": 223,
       "operatorName": "Robin"
     }
   ],
@@ -16313,7 +16421,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16338,7 +16447,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16381,7 +16491,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16406,7 +16517,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16449,7 +16561,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16474,7 +16587,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16609,7 +16723,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -16634,7 +16749,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -16643,7 +16759,7 @@
       "skillData": [],
       "cnName": "磐蟹护卫队",
       "isCnOnly": false,
-      "fileIndex": 221,
+      "fileIndex": 224,
       "operatorName": "Beanstalk"
     }
   ],
@@ -16699,7 +16815,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16724,7 +16841,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16783,7 +16901,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16808,7 +16927,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16867,7 +16987,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16892,7 +17013,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -17164,7 +17286,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -17216,7 +17339,7 @@
       "skillData": [],
       "cnName": "\"小自在\"",
       "isCnOnly": false,
-      "fileIndex": 222,
+      "fileIndex": 225,
       "operatorName": "Dusk"
     }
   ],
@@ -17272,7 +17395,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -17297,7 +17421,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -17340,7 +17465,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -17365,7 +17491,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -17408,7 +17535,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -17433,7 +17561,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -18208,7 +18337,7 @@
       ],
       "cnName": "迎宾踏垫",
       "isCnOnly": false,
-      "fileIndex": 223,
+      "fileIndex": 226,
       "operatorName": "Frost"
     }
   ],
@@ -18283,7 +18412,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -18308,7 +18438,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -18383,7 +18514,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -18408,7 +18540,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -18483,7 +18616,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -18508,7 +18642,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -18942,7 +19077,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -18967,7 +19103,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -19931,7 +20068,7 @@
       ],
       "cnName": "斯卡蒂的海嗣",
       "isCnOnly": false,
-      "fileIndex": 224,
+      "fileIndex": 227,
       "operatorName": "Skadi the Corrupting Heart"
     }
   ],
@@ -20023,7 +20160,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20048,7 +20186,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20095,7 +20234,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20120,7 +20260,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20167,7 +20308,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20192,7 +20334,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20431,7 +20574,7 @@
       ],
       "cnName": "全自动造型仪",
       "isCnOnly": false,
-      "fileIndex": 225,
+      "fileIndex": 228,
       "operatorName": "Roberta"
     }
   ],
@@ -20487,7 +20630,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20512,7 +20656,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20555,7 +20700,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20580,7 +20726,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20623,7 +20770,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20648,7 +20796,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20815,7 +20964,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -20840,7 +20990,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -21420,7 +21571,7 @@
       ],
       "cnName": "“耀阳”",
       "isCnOnly": false,
-      "fileIndex": 226,
+      "fileIndex": 229,
       "operatorName": "Nearl the Radiant Knight"
     }
   ],

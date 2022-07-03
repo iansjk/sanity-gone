@@ -13,6 +13,8 @@ import branches from "../data/branches.json";
 const dataDir = path.join(__dirname, "../data");
 
 void (async () => {
+  console.log("Building search index...");
+
   const searchArray: SearchResult[] = [];
   const searchStore: Record<string, SearchResult> = {};
 

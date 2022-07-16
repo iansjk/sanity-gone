@@ -1,6 +1,5 @@
 import { Story, Meta } from "@storybook/react";
 import ModuleInfo, { ModuleInfoProps } from "./ModuleInfo";
-import { ModulePhaseObject } from "../utils/types";
 
 export default {
   title: "ModuleInfo",
@@ -14,56 +13,124 @@ Magallan.args = {
   operatorName: "Magallan",
   module: {
     moduleId: "uniequip_002_mgllan",
-    moduleEffect: "Last summon on the field does not take up deployment limit",
-    hasTranslation: true,
-    moduleObject: {
-      phases: [
-        {
-          equipLevel: 1,
-          parts: [
-            {
-              resKey: "mgllan_equip_1_1_p1",
-              target: "TRAIT",
-              addOrOverrideTalentDataBundle: {
-                candidates: null,
+    moduleIcon: "sum-x",
+    phases: [
+      {
+        candidates: [
+          {
+            attributeBlackboard: [
+              {
+                key: "max_hp",
+                value: 100,
               },
-              overrideTraitDataBundle: {
-                candidates: [
-                  {
-                    additionalDescription:
-                      "首个召唤物部署时<@ba.kw>不消耗</>部署位（场上最后一个召唤物撤退或被击倒时不返还部署位）",
-                    unlockCondition: {
-                      phase: 2,
-                      level: 60,
-                    },
-                    requiredPotentialRank: 0,
-                    blackboard: [
-                      {
-                        key: "cnt",
-                        value: 1.0,
-                      },
-                    ],
-                    overrideDescripton: null,
-                    prefabKey: null,
-                    rangeId: null,
-                  },
-                ],
+              {
+                key: "atk",
+                value: 30,
               },
-            },
-          ],
-          attributeBlackboard: [
-            {
-              key: "max_hp",
-              value: 100.0,
-            },
-            {
-              key: "atk",
-              value: 30.0,
-            },
-          ],
-          tokenAttributeBlackboard: {},
-        },
-      ],
-    } as unknown as ModulePhaseObject,
+            ],
+            displayRange: false,
+            range: null,
+            requiredPotentialRank: 0,
+            talentEffect: null,
+            talentIndex: -1,
+            traitEffect:
+              'The first summoned unit <span class="keyword">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)',
+            traitEffectType: "update",
+          },
+        ],
+      },
+      {
+        candidates: [
+          {
+            attributeBlackboard: [
+              {
+                key: "max_hp",
+                value: 130,
+              },
+              {
+                key: "atk",
+                value: 40,
+              },
+            ],
+            displayRange: false,
+            range: null,
+            requiredPotentialRank: 0,
+            talentEffect:
+              'Drones gain <span class="skill-tooltip">Invisibility</span> for 23 seconds after deployment (cannot be targeted by enemy ranged attacks)',
+            talentIndex: 1,
+            traitEffect:
+              'The first summoned unit <span class="keyword">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)',
+            traitEffectType: "update",
+          },
+          {
+            attributeBlackboard: [
+              {
+                key: "max_hp",
+                value: 130,
+              },
+              {
+                key: "atk",
+                value: 40,
+              },
+            ],
+            displayRange: false,
+            range: null,
+            requiredPotentialRank: 4,
+            talentEffect:
+              'Drones gain <span class="skill-tooltip">Invisibility</span> for 25<span class="potential">（+2）</span> seconds after deployment (cannot be targeted by enemy ranged attacks)',
+            talentIndex: 1,
+            traitEffect:
+              'The first summoned unit <span class="keyword">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)',
+            traitEffectType: "update",
+          },
+        ],
+      },
+      {
+        candidates: [
+          {
+            attributeBlackboard: [
+              {
+                key: "max_hp",
+                value: 150,
+              },
+              {
+                key: "atk",
+                value: 50,
+              },
+            ],
+            displayRange: false,
+            range: null,
+            requiredPotentialRank: 0,
+            talentEffect:
+              'Drones gain <span class="skill-tooltip">Invisibility</span> for 26 seconds after deployment (cannot be targeted by enemy ranged attacks)',
+            talentIndex: 1,
+            traitEffect:
+              'The first summoned unit <span class="keyword">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)',
+            traitEffectType: "update",
+          },
+          {
+            attributeBlackboard: [
+              {
+                key: "max_hp",
+                value: 150,
+              },
+              {
+                key: "atk",
+                value: 50,
+              },
+            ],
+            displayRange: false,
+            range: null,
+            requiredPotentialRank: 4,
+            talentEffect:
+              'Drones gain <span class="skill-tooltip">Invisibility</span> for 28<span class="potential">（+2）</span> seconds after deployment (cannot be targeted by enemy ranged attacks)',
+            talentIndex: 1,
+            traitEffect:
+              'The first summoned unit <span class="keyword">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)',
+            traitEffectType: "update",
+          },
+        ],
+      },
+    ],
   },
 };

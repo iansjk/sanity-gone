@@ -27,6 +27,10 @@ const directoriesToCheck = [
     from: "./img/skills",
     to: "./skills",
   },
+  {
+    from: "./img/equip/type",
+    to: "./module-types"
+  }
 ];
 void (async () => {
   if (!existsSync(ACESHIP_REPO_DIRECTORY)) {

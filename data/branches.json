@@ -1,7 +1,7 @@
 {
   "incantationmedic": {
     "branchName": "Incantation",
-    "trait": "攻击造成法术伤害，攻击敌人时为攻击范围内一名友方干员治疗相当于50%伤害的生命值",
+    "trait": "Attacks deal <span class=\"keyword\">Arts damage</span>. When attacking an enemy, heal a friendly operator within attack range for <span class=\"keyword\">50%</span> of the damage dealt.",
     "class": "Medic"
   },
   "pioneer": {

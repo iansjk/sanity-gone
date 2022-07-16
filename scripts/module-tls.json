@@ -53,5 +53,41 @@
         }
       ]
     }
+  ],
+  "uniequip_002_dusk": [
+    {
+      "requiredPotentialRank": 0,
+      "translations": [
+        {
+          "trait": "Range <span class=\"keyword\">expands</span>",
+          "talent": null
+        },
+        {
+          "trait": "Range <span class=\"keyword\">expands</span>",
+          "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 20 times"
+        },
+        {
+          "trait": "Range <span class=\"keyword\">expands</span>",
+          "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 21 times"
+        }
+      ]
+    },
+    {
+      "requiredPotentialRank": 4,
+      "translations": [
+        {
+          "trait": "Range <span class=\"keyword\">expands</span>",
+          "talent": null
+        },
+        {
+          "trait": "Range <span class=\"keyword\">expands</span>",
+          "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 23 <span class=\"potential\">(+3)</span> times"
+        },
+        {
+          "trait": "Range <span class=\"keyword\">expands</span>",
+          "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 24 <span class=\"potential\">(+3)</span> times"
+        }
+      ]
+    }
   ]
 }

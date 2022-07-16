@@ -3,7 +3,6 @@ import { Theme, useMediaQuery, useTheme } from "@mui/material";
 
 import { moduleImage } from "../utils/images";
 import Image from "next/image";
-import { ModuleObject } from "../utils/types";
 import {
   AttackPowerIcon,
   AttackSpeedIcon,
@@ -11,16 +10,18 @@ import {
   HealthIcon,
 } from "./icons/operatorStats";
 import React from "react";
+import { DenormalizedModule } from "../utils/types";
 
 export interface ModuleInfoProps {
   operatorName: string;
-  module: ModuleObject;
+  module: DenormalizedModule;
 }
 
 const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
   const { operatorName, module } = props;
-  const { moduleId, moduleObject, moduleEffect } = module;
-  const activePhase = moduleObject.phases[moduleObject.phases.length - 1];
+  const { moduleId, phases } = module;
+
+  const activePhase = phases[phases.length - 1].candidates[0];
   const attackBonus = activePhase.attributeBlackboard.find(
     (kv) => kv.key === "atk"
   )?.value;
@@ -89,7 +90,15 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
 
         <div className="effect">
           <dt>Effect</dt>
-          <dd dangerouslySetInnerHTML={{ __html: moduleEffect }} />
+          <dd
+            dangerouslySetInnerHTML={{
+              __html: (
+                activePhase.traitEffect +
+                "<br>" +
+                activePhase.talentEffect
+              ).trim(),
+            }}
+          />
         </div>
       </dl>
     </div>
@@ -99,7 +108,7 @@ export default ModuleInfo;
 
 const styles = (theme: Theme) => css`
   .module-attributes {
-    margin: ${theme.spacing(0, 0, 0, 0.25)};
+    margin: ${theme.spacing(4, 0, 0, 0)};
     display: grid;
     grid-auto-flow: column;
     position: relative;

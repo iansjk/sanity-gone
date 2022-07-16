@@ -83,6 +83,7 @@ export interface SearchResult {
 
 export interface Module {
   moduleId: string;
+  moduleIcon: string;
   phases: {
     candidates: ModulePhase[];
   }[];

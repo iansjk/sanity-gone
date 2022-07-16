@@ -2,6 +2,7 @@
   "char_248_mgllan": [
     {
       "moduleId": "uniequip_002_mgllan",
+      "moduleIcon": "sum-x",
       "phases": [
         {
           "candidates": [
@@ -42,9 +43,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "无人机在部署后的23秒内处于隐匿状态（不会成为敌方远程单位的攻击目标），若麦哲伦在其周围四格则享受相同效果",
+              "talentEffect": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 23 seconds after deployment (cannot be targeted by enemy ranged attacks)",
               "talentIndex": 1,
-              "traitEffect": "首个召唤物部署时<span class=\"keyword\">不消耗</span>部署位（场上最后一个召唤物撤退或被击倒时不返还部署位）",
+              "traitEffect": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
               "traitEffectType": "update"
             },
             {
@@ -61,10 +62,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "无人机在部署后的25<span class=\"potential\">（+2）</span>秒内处于隐匿状态（不会成为敌方远程单位的攻击目标），若麦哲伦在其周围四格则享受相同效果",
+              "talentEffect": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 25<span class=\"potential\">（+2）</span> seconds after deployment (cannot be targeted by enemy ranged attacks)",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+              "traitEffectType": "update"
             }
           ]
         },
@@ -84,9 +85,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "无人机在部署后的26秒内处于隐匿状态（不会成为敌方远程单位的攻击目标），若麦哲伦在其周围四格则享受相同效果",
+              "talentEffect": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 26 seconds after deployment (cannot be targeted by enemy ranged attacks)",
               "talentIndex": 1,
-              "traitEffect": "首个召唤物部署时<span class=\"keyword\">不消耗</span>部署位（场上最后一个召唤物撤退或被击倒时不返还部署位）",
+              "traitEffect": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
               "traitEffectType": "update"
             },
             {
@@ -103,10 +104,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "无人机在部署后的28<span class=\"potential\">（+2）</span>秒内处于隐匿状态（不会成为敌方远程单位的攻击目标），若麦哲伦在其周围四格则享受相同效果",
+              "talentEffect": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 28<span class=\"potential\">（+2）</span> seconds after deployment (cannot be targeted by enemy ranged attacks)",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+              "traitEffectType": "update"
             }
           ]
         }
@@ -114,6 +115,7 @@
     },
     {
       "moduleId": "uniequip_003_mgllan",
+      "moduleIcon": "sum-y",
       "phases": [
         {
           "candidates": [
@@ -190,6 +192,7 @@
   "char_2023_ling": [
     {
       "moduleId": "uniequip_002_ling",
+      "moduleIcon": "sum-y",
       "phases": [
         {
           "candidates": [
@@ -209,7 +212,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "召唤物持有上限<span class=\"keyword\">+3</span>，召唤物部署费用<span class=\"keyword\">减少</span>",
+              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
               "traitEffectType": "update"
             }
           ]
@@ -230,9 +233,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "可以使用5个召唤物（最多同时部署4个），功能随技能选择而改变",
+              "talentEffect": "Can use up to 5 summons (max 4 deployed at once). Summons' effect changes based upon Skill.",
               "talentIndex": 0,
-              "traitEffect": "召唤物持有上限<span class=\"keyword\">+3</span>，召唤物部署费用<span class=\"keyword\">减少</span>",
+              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
               "traitEffectType": "update"
             }
           ]
@@ -253,9 +256,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "可以使用5个属性更强的召唤物（最多同时部署4个），功能随技能选择而改变",
+              "talentEffect": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill.",
               "talentIndex": 0,
-              "traitEffect": "召唤物持有上限<span class=\"keyword\">+3</span>，召唤物部署费用<span class=\"keyword\">减少</span>",
+              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
               "traitEffectType": "update"
             }
           ]
@@ -266,6 +269,7 @@
   "char_336_folivo": [
     {
       "moduleId": "uniequip_002_folivo",
+      "moduleIcon": "sum-x",
       "phases": [
         {
           "candidates": [
@@ -342,6 +346,7 @@
   "char_242_otter": [
     {
       "moduleId": "uniequip_002_otter",
+      "moduleIcon": "sum-x",
       "phases": [
         {
           "candidates": [
@@ -418,6 +423,7 @@
   "char_110_deepcl": [
     {
       "moduleId": "uniequip_002_deepcl",
+      "moduleIcon": "sum-y",
       "phases": [
         {
           "candidates": [
@@ -494,6 +500,7 @@
   "char_485_pallas": [
     {
       "moduleId": "uniequip_002_pallas",
+      "moduleIcon": "ins-x",
       "phases": [
         {
           "candidates": [
@@ -568,6 +575,7 @@
     },
     {
       "moduleId": "uniequip_003_pallas",
+      "moduleIcon": "ins-y",
       "phases": [
         {
           "candidates": [
@@ -630,7 +638,7 @@
               "talentEffect": "每攻击一名敌人时为自身与身前一格的我方干员恢复55<span class=\"potential\">（+5）</span>点生命值并使所有【米诺斯】干员额外恢复25点生命值",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -672,7 +680,7 @@
               "talentEffect": "每攻击一名敌人时为自身与身前一格的我方干员恢复65<span class=\"potential\">（+5）</span>点生命值并使所有【米诺斯】干员额外恢复40点生命值",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -682,6 +690,7 @@
   "char_265_sophia": [
     {
       "moduleId": "uniequip_002_sophia",
+      "moduleIcon": "ins-x",
       "phases": [
         {
           "candidates": [
@@ -758,6 +767,7 @@
   "char_308_swire": [
     {
       "moduleId": "uniequip_002_swire",
+      "moduleIcon": "ins-x",
       "phases": [
         {
           "candidates": [
@@ -834,6 +844,7 @@
   "char_130_doberm": [
     {
       "moduleId": "uniequip_002_doberm",
+      "moduleIcon": "ins-y",
       "phases": [
         {
           "candidates": [
@@ -918,6 +929,7 @@
   "char_179_cgbird": [
     {
       "moduleId": "uniequip_002_cgbird",
+      "moduleIcon": "rin-x",
       "phases": [
         {
           "candidates": [
@@ -1094,7 +1106,7 @@
               "talentEffect": "攻击范围内的友方单位法术抗性+17<span class=\"potential\">（+2）</span>且受到的治疗效果提升3%",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -1193,7 +1205,7 @@
               "talentEffect": "攻击范围内的友方单位法术抗性+17<span class=\"potential\">（+2）</span>且受到的治疗效果提升5%",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -1203,6 +1215,7 @@
   "char_275_breeze": [
     {
       "moduleId": "uniequip_002_breeze",
+      "moduleIcon": "rin-x",
       "phases": [
         {
           "candidates": [
@@ -1450,6 +1463,7 @@
   "char_128_plosis": [
     {
       "moduleId": "uniequip_002_plosis",
+      "moduleIcon": "rin-x",
       "phases": [
         {
           "candidates": [
@@ -1697,6 +1711,7 @@
   "char_181_flower": [
     {
       "moduleId": "uniequip_002_flower",
+      "moduleIcon": "rin-y",
       "phases": [
         {
           "candidates": [
@@ -1759,7 +1774,7 @@
               "talentEffect": "在战场时全体友方单位每秒恢复相当于调香师攻击力6.5%<span class=\"potential\">（+0.5%）</span>的生命",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "override"
             }
           ]
         },
@@ -1801,7 +1816,7 @@
               "talentEffect": "在战场时全体友方单位每秒恢复相当于调香师攻击力7%<span class=\"potential\">（+0.5%）</span>的生命",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "override"
             }
           ]
         }
@@ -1811,6 +1826,7 @@
   "char_430_fartth": [
     {
       "moduleId": "uniequip_002_fartth",
+      "moduleIcon": "dea-x",
       "phases": [
         {
           "candidates": [
@@ -1873,7 +1889,7 @@
               "talentEffect": "最近8秒内未受伤害时，攻击力+23%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -1915,7 +1931,7 @@
               "talentEffect": "最近6秒内未受伤害时，攻击力+25%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -1925,6 +1941,7 @@
   "char_158_milu": [
     {
       "moduleId": "uniequip_002_milu",
+      "moduleIcon": "dea-y",
       "phases": [
         {
           "candidates": [
@@ -1987,7 +2004,7 @@
               "talentEffect": "攻击使用远程武器或不攻击的敌人时，攻击力提升至150%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -2029,7 +2046,7 @@
               "talentEffect": "攻击使用远程武器或不攻击的敌人时，攻击力提升至155%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -2039,6 +2056,7 @@
   "char_218_cuttle": [
     {
       "moduleId": "uniequip_002_cuttle",
+      "moduleIcon": "dea-x",
       "phases": [
         {
           "candidates": [
@@ -2101,7 +2119,7 @@
               "talentEffect": "编入队伍时，所有【深海猎人】干员攻击速度+19<span class=\"potential\">（+2）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -2143,7 +2161,7 @@
               "talentEffect": "编入队伍时，所有【深海猎人】干员攻击速度+22<span class=\"potential\">（+2）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -2153,6 +2171,7 @@
   "char_302_glaze": [
     {
       "moduleId": "uniequip_002_glaze",
+      "moduleIcon": "dea-x",
       "phases": [
         {
           "candidates": [
@@ -2215,7 +2234,7 @@
               "talentEffect": "攻击原本攻击范围以外的目标时，有36%<span class=\"potential\">（+3%）</span>的几率使其晕眩2.5秒",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -2257,7 +2276,7 @@
               "talentEffect": "攻击原本攻击范围以外的目标时，有36%<span class=\"potential\">（+3%）</span>的几率使其晕眩3秒",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -2267,6 +2286,7 @@
   "char_250_phatom": [
     {
       "moduleId": "uniequip_002_phatom",
+      "moduleIcon": "exe-x",
       "phases": [
         {
           "candidates": [
@@ -2343,6 +2363,7 @@
   "char_214_kafka": [
     {
       "moduleId": "uniequip_002_kafka",
+      "moduleIcon": "exe-y",
       "phases": [
         {
           "candidates": [
@@ -2405,7 +2426,7 @@
               "talentEffect": "被动技能触发期间攻击力+25%<span class=\"potential\">（+3%）</span>，阻挡数降至0且获得<span class=\"skill-tooltip\">迷彩</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -2447,7 +2468,7 @@
               "talentEffect": "被动技能触发期间攻击力+28%<span class=\"potential\">（+3%）</span>，阻挡数降至0且获得<span class=\"skill-tooltip\">迷彩</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -2457,6 +2478,7 @@
   "char_144_red": [
     {
       "moduleId": "uniequip_002_red",
+      "moduleIcon": "exe-y",
       "phases": [
         {
           "candidates": [
@@ -2519,7 +2541,7 @@
               "talentEffect": "每次攻击至少造成40%<span class=\"potential\">（+3%）</span>攻击力的伤害",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -2561,7 +2583,7 @@
               "talentEffect": "每次攻击至少造成43%<span class=\"potential\">（+3%）</span>攻击力的伤害",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -2571,6 +2593,7 @@
   "char_243_waaifu": [
     {
       "moduleId": "uniequip_002_waaifu",
+      "moduleIcon": "exe-x",
       "phases": [
         {
           "candidates": [
@@ -2647,6 +2670,7 @@
   "char_237_gravel": [
     {
       "moduleId": "uniequip_002_gravel",
+      "moduleIcon": "exe-x",
       "phases": [
         {
           "candidates": [
@@ -2723,6 +2747,7 @@
   "char_472_pasngr": [
     {
       "moduleId": "uniequip_002_pasngr",
+      "moduleIcon": "cha-x",
       "phases": [
         {
           "candidates": [
@@ -2835,6 +2860,7 @@
     },
     {
       "moduleId": "uniequip_003_pasngr",
+      "moduleIcon": "cha-y",
       "phases": [
         {
           "candidates": [
@@ -2949,6 +2975,7 @@
   "char_306_leizi": [
     {
       "moduleId": "uniequip_002_leizi",
+      "moduleIcon": "cha-x",
       "phases": [
         {
           "candidates": [
@@ -3063,6 +3090,7 @@
   "char_4004_pudd": [
     {
       "moduleId": "uniequip_002_pudd",
+      "moduleIcon": "cha-y",
       "phases": [
         {
           "candidates": [
@@ -3139,6 +3167,7 @@
   "char_010_chen": [
     {
       "moduleId": "uniequip_002_chen",
+      "moduleIcon": "swo-x",
       "phases": [
         {
           "candidates": [
@@ -3215,6 +3244,7 @@
   "char_459_tachak": [
     {
       "moduleId": "uniequip_002_tachak",
+      "moduleIcon": "swo-x",
       "phases": [
         {
           "candidates": [
@@ -3277,7 +3307,7 @@
               "talentEffect": "攻击距离+2，防御力+25%<span class=\"potential\">（+5%）</span>，再部署时间+20秒",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -3319,7 +3349,7 @@
               "talentEffect": "攻击距离+2，防御力+28%<span class=\"potential\">（+5%）</span>，再部署时间+20秒",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -3329,6 +3359,7 @@
   "char_252_bibeak": [
     {
       "moduleId": "uniequip_002_bibeak",
+      "moduleIcon": "swo-x",
       "phases": [
         {
           "candidates": [
@@ -3391,7 +3422,7 @@
               "talentEffect": "每击杀一名敌人后获得+6攻击速度且攻击力+1%（最多叠加7次<span class=\"potential\">（+1）</span>）",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -3433,7 +3464,7 @@
               "talentEffect": "每击杀一名敌人后获得+6攻击速度且攻击力+2%（最多叠加7次<span class=\"potential\">（+1）</span>）",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -3443,6 +3474,7 @@
   "char_301_cutter": [
     {
       "moduleId": "uniequip_002_cutter",
+      "moduleIcon": "swo-y",
       "phases": [
         {
           "candidates": [
@@ -3505,7 +3537,7 @@
               "talentEffect": "造成伤害时有33%<span class=\"potential\">（+3%）</span>的几率额外回复1点技力",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -3547,7 +3579,7 @@
               "talentEffect": "造成伤害时有36%<span class=\"potential\">（+3%）</span>的几率额外回复1点技力",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -3557,6 +3589,7 @@
   "char_222_bpipe": [
     {
       "moduleId": "uniequip_002_bpipe",
+      "moduleIcon": "chg-x",
       "phases": [
         {
           "candidates": [
@@ -3671,6 +3704,7 @@
   "char_220_grani": [
     {
       "moduleId": "uniequip_002_grani",
+      "moduleIcon": "chg-x",
       "phases": [
         {
           "candidates": [
@@ -3785,6 +3819,7 @@
   "char_496_wildmn": [
     {
       "moduleId": "uniequip_002_wildmn",
+      "moduleIcon": "chg-x",
       "phases": [
         {
           "candidates": [
@@ -3861,6 +3896,7 @@
   "char_261_sddrag": [
     {
       "moduleId": "uniequip_002_sddrag",
+      "moduleIcon": "chg-y",
       "phases": [
         {
           "candidates": [
@@ -3937,6 +3973,7 @@
   "char_290_vigna": [
     {
       "moduleId": "uniequip_002_vigna",
+      "moduleIcon": "chg-y",
       "phases": [
         {
           "candidates": [
@@ -3999,7 +4036,7 @@
               "talentEffect": "攻击时，15%几率当次攻击的攻击力+110%<span class=\"potential\">（+10%）</span>。技能中这个几率提高到35%",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -4041,7 +4078,7 @@
               "talentEffect": "攻击时，20%几率当次攻击的攻击力+110%<span class=\"potential\">（+10%）</span>。技能中这个几率提高到40%",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -4051,6 +4088,7 @@
   "char_1014_nearl2": [
     {
       "moduleId": "uniequip_002_nearl2",
+      "moduleIcon": "dre-x",
       "phases": [
         {
           "candidates": [
@@ -4113,7 +4151,7 @@
               "talentEffect": "攻击无视敌人28%<span class=\"potential\">（+3%）</span>的防御力",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -4155,7 +4193,7 @@
               "talentEffect": "攻击无视敌人31%<span class=\"potential\">（+3%）</span>的防御力",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -4165,6 +4203,7 @@
   "char_263_skadi": [
     {
       "moduleId": "uniequip_002_skadi",
+      "moduleIcon": "dre-y",
       "phases": [
         {
           "candidates": [
@@ -4227,7 +4266,7 @@
               "talentEffect": "编入队伍时，所有【深海猎人】干员的攻击力+20%<span class=\"potential\">（+2%）</span>，生命值+10%",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -4269,7 +4308,7 @@
               "talentEffect": "编入队伍时，所有【深海猎人】干员的攻击力+24%<span class=\"potential\">（+2%）</span>，生命值+20%",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -4277,6 +4316,7 @@
     },
     {
       "moduleId": "uniequip_003_skadi",
+      "moduleIcon": "dre-x",
       "phases": [
         {
           "candidates": [
@@ -4353,6 +4393,7 @@
   "char_131_flameb": [
     {
       "moduleId": "uniequip_002_flameb",
+      "moduleIcon": "dre-y",
       "phases": [
         {
           "candidates": [
@@ -4415,7 +4456,7 @@
               "talentEffect": "周围四格每有一名敌人被击倒时自身的生命上限提高70<span class=\"potential\">（+10）</span>，最多可以叠加30次",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -4457,7 +4498,7 @@
               "talentEffect": "周围四格每有一名敌人被击倒时自身的生命上限提高80<span class=\"potential\">（+10）</span>，最多可以叠加30次",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -4467,6 +4508,7 @@
   "char_106_franka": [
     {
       "moduleId": "uniequip_002_franka",
+      "moduleIcon": "dre-x",
       "phases": [
         {
           "candidates": [
@@ -4543,6 +4585,7 @@
   "char_159_peacok": [
     {
       "moduleId": "uniequip_002_peacok",
+      "moduleIcon": "dre-x",
       "phases": [
         {
           "candidates": [
@@ -4619,6 +4662,7 @@
   "char_289_gyuki": [
     {
       "moduleId": "uniequip_002_gyuki",
+      "moduleIcon": "dre-y",
       "phases": [
         {
           "candidates": [
@@ -4681,7 +4725,7 @@
               "talentEffect": "防御力-20%，但最大生命值+33%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -4723,7 +4767,7 @@
               "talentEffect": "防御力-20%，但最大生命值+38%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -4733,6 +4777,7 @@
   "char_455_nothin": [
     {
       "moduleId": "uniequip_002_nothin",
+      "moduleIcon": "mer-x",
       "phases": [
         {
           "candidates": [
@@ -4847,6 +4892,7 @@
   "char_272_strong": [
     {
       "moduleId": "uniequip_002_strong",
+      "moduleIcon": "mer-x",
       "phases": [
         {
           "candidates": [
@@ -4961,6 +5007,7 @@
   "char_322_lmlee": [
     {
       "moduleId": "uniequip_002_lmlee",
+      "moduleIcon": "mer-x",
       "phases": [
         {
           "candidates": [
@@ -5037,6 +5084,7 @@
   "char_113_cqbw": [
     {
       "moduleId": "uniequip_002_cqbw",
+      "moduleIcon": "art-x",
       "phases": [
         {
           "candidates": [
@@ -5099,7 +5147,7 @@
               "talentEffect": "攻击范围内的敌人在被<span class=\"skill-tooltip\">晕眩</span>时受到的物理伤害+24%<span class=\"potential\">（+3%）</span>，击倒敌人时获得1点技力",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -5141,7 +5189,7 @@
               "talentEffect": "攻击范围内的敌人在被<span class=\"skill-tooltip\">晕眩</span>时受到的物理伤害+27%<span class=\"potential\">（+3%）</span>，击倒敌人时获得1点技力",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -5151,6 +5199,7 @@
   "char_300_phenxi": [
     {
       "moduleId": "uniequip_002_phenxi",
+      "moduleIcon": "art-y",
       "phases": [
         {
           "candidates": [
@@ -5213,7 +5262,7 @@
               "talentEffect": "技能持续期间外，攻击速度+30<span class=\"potential\">（+3）</span>，技能期间攻击速度+5",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -5255,7 +5304,7 @@
               "talentEffect": "技能持续期间外，攻击速度+33<span class=\"potential\">（+3）</span>，技能期间攻击速度+10",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -5265,6 +5314,7 @@
   "char_219_meteo": [
     {
       "moduleId": "uniequip_002_meteo",
+      "moduleIcon": "art-y",
       "phases": [
         {
           "candidates": [
@@ -5341,6 +5391,7 @@
   "char_379_sesa": [
     {
       "moduleId": "uniequip_002_sesa",
+      "moduleIcon": "art-x",
       "phases": [
         {
           "candidates": [
@@ -5403,7 +5454,7 @@
               "talentEffect": "在场时所有被阻挡的敌方单位受到的物理伤害提高20%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -5445,7 +5496,7 @@
               "talentEffect": "在场时所有被阻挡的敌方单位受到的物理伤害提高24%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -5455,6 +5506,7 @@
   "char_118_yuki": [
     {
       "moduleId": "uniequip_002_yuki",
+      "moduleIcon": "art-y",
       "phases": [
         {
           "candidates": [
@@ -5539,6 +5591,7 @@
   "char_2015_dusk": [
     {
       "moduleId": "uniequip_002_dusk",
+      "moduleIcon": "spc-x",
       "phases": [
         {
           "candidates": [
@@ -5603,7 +5656,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
+              "traitEffect": "Range <span class=\"keyword\">expands</span>",
               "traitEffectType": "update"
             }
           ]
@@ -5669,9 +5722,9 @@
                 ]
               },
               "requiredPotentialRank": 0,
-              "talentEffect": "夕与\"小自在\"击杀一名敌人时，夕获得2%攻击力，最多可叠加20层",
+              "talentEffect": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 20 times",
               "talentIndex": 0,
-              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
+              "traitEffect": "Range <span class=\"keyword\">expands</span>",
               "traitEffectType": "update"
             },
             {
@@ -5688,10 +5741,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "夕与\"小自在\"击杀一名敌人时，夕获得2%攻击力，最多可叠加23<span class=\"potential\">（+3）</span>层",
+              "talentEffect": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 23 <span class=\"potential\">(+3)</span> times",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Range <span class=\"keyword\">expands</span>",
+              "traitEffectType": "update"
             }
           ]
         },
@@ -5756,9 +5809,9 @@
                 ]
               },
               "requiredPotentialRank": 0,
-              "talentEffect": "夕与\"小自在\"击杀一名敌人时，夕获得2%攻击力，最多可叠加21层",
+              "talentEffect": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 21 times",
               "talentIndex": 0,
-              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
+              "traitEffect": "Range <span class=\"keyword\">expands</span>",
               "traitEffectType": "update"
             },
             {
@@ -5775,10 +5828,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "夕与\"小自在\"击杀一名敌人时，夕获得2%攻击力，最多可叠加24<span class=\"potential\">（+3）</span>层",
+              "talentEffect": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 24 <span class=\"potential\">(+3)</span> times",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Range <span class=\"keyword\">expands</span>",
+              "traitEffectType": "update"
             }
           ]
         }
@@ -5788,6 +5841,7 @@
   "char_213_mostma": [
     {
       "moduleId": "uniequip_002_mostma",
+      "moduleIcon": "spc-y",
       "phases": [
         {
           "candidates": [
@@ -5862,7 +5916,7 @@
               "talentEffect": "攻击范围内的敌人移动速度-28%<span class=\"potential\">（+3%）</span>，攻击范围外的敌人移动速度-10%（不受技能影响）",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -5912,7 +5966,7 @@
               "talentEffect": "攻击范围内的敌人移动速度-33%<span class=\"potential\">（+3%）</span>，攻击范围外的敌人移动速度-18%（不受技能影响）",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -5922,6 +5976,7 @@
   "char_1011_lava2": [
     {
       "moduleId": "uniequip_002_lava2",
+      "moduleIcon": "spc-x",
       "phases": [
         {
           "candidates": [
@@ -6074,7 +6129,7 @@
               "talentEffect": "首次部署后立即获得38<span class=\"potential\">（+5）</span>点技力，每次部署时使在场术师干员技力+5<span class=\"potential\">（+1）</span>，在场时其余友方术师干员初始技力+5<span class=\"potential\">（+1）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -6161,7 +6216,7 @@
               "talentEffect": "首次部署后立即获得40<span class=\"potential\">（+5）</span>点技力，每次部署时使在场术师干员技力+5<span class=\"potential\">（+1）</span>，在场时其余友方术师干员初始技力+5<span class=\"potential\">（+1）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -6171,6 +6226,7 @@
   "char_166_skfire": [
     {
       "moduleId": "uniequip_002_skfire",
+      "moduleIcon": "spc-y",
       "phases": [
         {
           "candidates": [
@@ -6245,7 +6301,7 @@
               "talentEffect": "在场时，所有被阻挡的敌人受到法术伤害时伤害提升23%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -6295,7 +6351,7 @@
               "talentEffect": "在场时，所有被阻挡的敌人受到法术伤害时伤害提升26%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -6305,6 +6361,7 @@
   "char_373_lionhd": [
     {
       "moduleId": "uniequip_002_lionhd",
+      "moduleIcon": "spc-x",
       "phases": [
         {
           "candidates": [
@@ -6457,7 +6514,7 @@
               "talentEffect": "攻击范围内每有一个敌人，自身攻击力+5%（最多可叠加7层<span class=\"potential\">（+1）</span>）",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -6544,7 +6601,7 @@
               "talentEffect": "攻击范围内每有一个敌人，自身攻击力+5%（最多可叠加8层<span class=\"potential\">（+1）</span>）",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -6554,6 +6611,7 @@
   "char_109_fmout": [
     {
       "moduleId": "uniequip_002_fmout",
+      "moduleIcon": "spc-x",
       "phases": [
         {
           "candidates": [
@@ -6706,7 +6764,7 @@
               "talentEffect": "部署后随机永久获得下列一项增益：攻击力+19%<span class=\"potential\">（+2%）</span>；攻击速度+19<span class=\"potential\">（+2）</span>；生命上限+27%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -6793,7 +6851,7 @@
               "talentEffect": "部署后随机永久获得下列一项增益：攻击力+20%<span class=\"potential\">（+2%）</span>；攻击速度+20<span class=\"potential\">（+2）</span>；生命上限+30%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -6803,6 +6861,7 @@
   "char_253_greyy": [
     {
       "moduleId": "uniequip_002_greyy",
+      "moduleIcon": "spc-y",
       "phases": [
         {
           "candidates": [
@@ -6891,6 +6950,7 @@
   "char_340_shwaz": [
     {
       "moduleId": "uniequip_002_shwaz",
+      "moduleIcon": "arc-x",
       "phases": [
         {
           "candidates": [
@@ -6965,7 +7025,7 @@
               "talentEffect": "携带黑和另外至少一名【狙击】干员时，所有【狙击】干员的攻击力+13%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -7015,7 +7075,7 @@
               "talentEffect": "携带黑和另外至少一名【狙击】干员时，所有【狙击】干员的攻击力+15%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -7025,6 +7085,7 @@
   "char_145_prove": [
     {
       "moduleId": "uniequip_002_prove",
+      "moduleIcon": "arc-x",
       "phases": [
         {
           "candidates": [
@@ -7099,7 +7160,7 @@
               "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至195%<span class=\"potential\">（+10%）</span>。当敌人在正前方两格时，该几率提升到55%",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -7149,7 +7210,7 @@
               "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至200%<span class=\"potential\">（+10%）</span>。当敌人在正前方两格时，该几率提升到60%",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -7159,6 +7220,7 @@
   "char_366_acdrop": [
     {
       "moduleId": "uniequip_002_acdrop",
+      "moduleIcon": "arc-x",
       "phases": [
         {
           "candidates": [
@@ -7247,6 +7309,7 @@
   "char_358_lisa": [
     {
       "moduleId": "uniequip_002_lisa",
+      "moduleIcon": "dec-x",
       "phases": [
         {
           "candidates": [
@@ -7323,6 +7386,7 @@
   "char_291_aglina": [
     {
       "moduleId": "uniequip_002_aglina",
+      "moduleIcon": "dec-y",
       "phases": [
         {
           "candidates": [
@@ -7437,6 +7501,7 @@
   "char_326_glacus": [
     {
       "moduleId": "uniequip_002_glacus",
+      "moduleIcon": "dec-x",
       "phases": [
         {
           "candidates": [
@@ -7499,7 +7564,7 @@
               "talentEffect": "优先攻击【无人机】单位，且攻击【无人机】时攻击力提升至170%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -7541,7 +7606,7 @@
               "talentEffect": "优先攻击【无人机】单位，且攻击【无人机】时攻击力提升至180%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -7551,6 +7616,7 @@
   "char_195_glassb": [
     {
       "moduleId": "uniequip_002_glassb",
+      "moduleIcon": "dec-y",
       "phases": [
         {
           "candidates": [
@@ -7665,6 +7731,7 @@
   "char_258_podego": [
     {
       "moduleId": "uniequip_002_podego",
+      "moduleIcon": "dec-x",
       "phases": [
         {
           "candidates": [
@@ -7727,7 +7794,7 @@
               "talentEffect": "在场时，所有【辅助】干员攻击力+11%<span class=\"potential\">（+2%）</span>，攻击速度+3",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -7769,7 +7836,7 @@
               "talentEffect": "在场时，所有【辅助】干员攻击力+11%<span class=\"potential\">（+2%）</span>，攻击速度+5",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -7779,6 +7846,7 @@
   "char_183_skgoat": [
     {
       "moduleId": "uniequip_002_skgoat",
+      "moduleIcon": "dec-y",
       "phases": [
         {
           "candidates": [
@@ -7893,6 +7961,7 @@
   "char_1023_ghost2": [
     {
       "moduleId": "uniequip_002_ghost2",
+      "moduleIcon": "pum-x",
       "phases": [
         {
           "candidates": [
@@ -7977,6 +8046,7 @@
   "char_369_bena": [
     {
       "moduleId": "uniequip_002_bena",
+      "moduleIcon": "pum-y",
       "phases": [
         {
           "candidates": [
@@ -8091,6 +8161,7 @@
   "char_4016_kazema": [
     {
       "moduleId": "uniequip_002_kazema",
+      "moduleIcon": "pum-x",
       "phases": [
         {
           "candidates": [
@@ -8205,6 +8276,7 @@
   "char_4042_lumen": [
     {
       "moduleId": "uniequip_002_lumen",
+      "moduleIcon": "wah-x",
       "phases": [
         {
           "candidates": [
@@ -8281,6 +8353,7 @@
   "char_348_ceylon": [
     {
       "moduleId": "uniequip_002_ceylon",
+      "moduleIcon": "wah-x",
       "phases": [
         {
           "candidates": [
@@ -8343,7 +8416,7 @@
               "talentEffect": "攻击力+9%<span class=\"potential\">（+1%）</span>，当场地中存在水地形时改为攻击力+36%<span class=\"potential\">（+6%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -8385,7 +8458,7 @@
               "talentEffect": "攻击力+12%<span class=\"potential\">（+1%）</span>，当场地中存在水地形时改为攻击力+48%<span class=\"potential\">（+6%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -8395,6 +8468,7 @@
   "char_436_whispr": [
     {
       "moduleId": "uniequip_002_whispr",
+      "moduleIcon": "wah-x",
       "phases": [
         {
           "candidates": [
@@ -8457,7 +8531,7 @@
               "talentEffect": "攻击范围内拥有<span class=\"skill-tooltip\">抵抗</span>的友方单位每秒恢复相当于絮雨攻击力9%<span class=\"potential\">（+1%）</span>的生命（不受特性影响）",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -8499,7 +8573,7 @@
               "talentEffect": "攻击范围内拥有<span class=\"skill-tooltip\">抵抗</span>的友方单位每秒恢复相当于絮雨攻击力10%<span class=\"potential\">（+1%）</span>的生命（不受特性影响）",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -8509,6 +8583,7 @@
   "char_385_finlpp": [
     {
       "moduleId": "uniequip_002_finlpp",
+      "moduleIcon": "wah-y",
       "phases": [
         {
           "candidates": [
@@ -8585,6 +8660,7 @@
   "char_416_zumama": [
     {
       "moduleId": "uniequip_002_zumama",
+      "moduleIcon": "hes-x",
       "phases": [
         {
           "candidates": [
@@ -8602,9 +8678,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "asdfgh",
+              "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "asdfgh",
+              "traitEffect": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
               "traitEffectType": "override"
             }
           ]
@@ -8625,9 +8701,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "asdfgh",
+              "talentEffect": "阻挡敌人时技力回复速度+0.4/秒",
               "talentIndex": 1,
-              "traitEffect": "asdfgh",
+              "traitEffect": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
               "traitEffectType": "override"
             }
           ]
@@ -8648,9 +8724,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "asdfgh",
+              "talentEffect": "阻挡敌人时技力回复速度+0.55/秒",
               "talentIndex": 1,
-              "traitEffect": "asdfgh",
+              "traitEffect": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
               "traitEffectType": "override"
             }
           ]
@@ -8661,6 +8737,7 @@
   "char_422_aurora": [
     {
       "moduleId": "uniequip_002_aurora",
+      "moduleIcon": "hes-x",
       "phases": [
         {
           "candidates": [
@@ -8723,7 +8800,7 @@
               "talentEffect": "未开启技能且技力小于或等于最大值一半时，停止攻击并每秒恢复4%<span class=\"potential\">（+0.5%）</span>最大生命值",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8765,7 +8842,7 @@
               "talentEffect": "未开启技能且技力小于或等于最大值一半时，停止攻击并每秒恢复4.5%<span class=\"potential\">（+0.5%）</span>最大生命值",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "override"
             }
           ]
         }
@@ -8775,6 +8852,7 @@
   "char_4009_irene": [
     {
       "moduleId": "uniequip_002_irene",
+      "moduleIcon": "swo-y",
       "phases": [
         {
           "candidates": [
@@ -8837,7 +8915,7 @@
               "talentEffect": "攻击速度+21<span class=\"potential\">（+3）</span>，攻击力+3%，场上有【海怪】敌人时效果翻倍",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -8879,7 +8957,7 @@
               "talentEffect": "攻击速度+21<span class=\"potential\">（+3）</span>，攻击力+5%，场上有【海怪】敌人时效果翻倍",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -8889,6 +8967,7 @@
   "char_202_demkni": [
     {
       "moduleId": "uniequip_002_demkni",
+      "moduleIcon": "gua-x",
       "phases": [
         {
           "candidates": [
@@ -8965,6 +9044,7 @@
   "char_148_nearl": [
     {
       "moduleId": "uniequip_002_nearl",
+      "moduleIcon": "gua-x",
       "phases": [
         {
           "candidates": [
@@ -9027,7 +9107,7 @@
               "talentEffect": "在场时，全地图的友方单位医疗效果提高15%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -9069,7 +9149,7 @@
               "talentEffect": "在场时，全地图的友方单位医疗效果提高17%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -9079,6 +9159,7 @@
   "char_196_sunbr": [
     {
       "moduleId": "uniequip_002_sunbr",
+      "moduleIcon": "gua-x",
       "phases": [
         {
           "candidates": [
@@ -9141,7 +9222,7 @@
               "talentEffect": "攻击时，23%<span class=\"potential\">（+3%）</span>几率当次攻击的攻击力提升至200%，并<span class=\"skill-tooltip\">晕眩</span>敌人1.5秒",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -9183,7 +9264,7 @@
               "talentEffect": "攻击时，26%<span class=\"potential\">（+3%）</span>几率当次攻击的攻击力提升至200%，并<span class=\"skill-tooltip\">晕眩</span>敌人1.5秒",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -9193,6 +9274,7 @@
   "char_423_blemsh": [
     {
       "moduleId": "uniequip_002_blemsh",
+      "moduleIcon": "gua-y",
       "phases": [
         {
           "candidates": [
@@ -9281,6 +9363,7 @@
   "char_226_hmau": [
     {
       "moduleId": "uniequip_002_hmau",
+      "moduleIcon": "gua-y",
       "phases": [
         {
           "candidates": [
@@ -9343,7 +9426,7 @@
               "talentEffect": "防御力+12%<span class=\"potential\">（+2%）</span>，自身身后一格内如果是高台单位，自己对其的治疗效果提高85%<span class=\"potential\">（+10%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -9385,7 +9468,7 @@
               "talentEffect": "防御力+15%<span class=\"potential\">（+2%）</span>，自身身后一格内如果是高台单位，自己对其的治疗效果提高85%<span class=\"potential\">（+10%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -9395,6 +9478,7 @@
   "char_338_iris": [
     {
       "moduleId": "uniequip_002_iris",
+      "moduleIcon": "msc-x",
       "phases": [
         {
           "candidates": [
@@ -9509,6 +9593,7 @@
   "char_469_indigo": [
     {
       "moduleId": "uniequip_002_indigo",
+      "moduleIcon": "msc-x",
       "phases": [
         {
           "candidates": [
@@ -9623,6 +9708,7 @@
   "char_4046_ebnhlz": [
     {
       "moduleId": "uniequip_002_ebnhlz",
+      "moduleIcon": "msc-x",
       "phases": [
         {
           "candidates": [
@@ -9699,6 +9785,7 @@
   "char_235_jesica": [
     {
       "moduleId": "uniequip_002_jesica",
+      "moduleIcon": "mar-y",
       "phases": [
         {
           "candidates": [
@@ -9775,6 +9862,7 @@
   "char_126_shotst": [
     {
       "moduleId": "uniequip_002_shotst",
+      "moduleIcon": "mar-x",
       "phases": [
         {
           "candidates": [
@@ -9837,7 +9925,7 @@
               "talentEffect": "攻击空中目标时，攻击力提升至145%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -9879,7 +9967,7 @@
               "talentEffect": "攻击空中目标时，攻击力提升至155%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -9889,6 +9977,7 @@
   "char_190_clour": [
     {
       "moduleId": "uniequip_002_clour",
+      "moduleIcon": "mar-x",
       "phases": [
         {
           "candidates": [
@@ -9965,6 +10054,7 @@
   "char_133_mm": [
     {
       "moduleId": "uniequip_002_mm",
+      "moduleIcon": "mar-x",
       "phases": [
         {
           "candidates": [
@@ -10027,7 +10117,7 @@
               "talentEffect": "攻击力+11%<span class=\"potential\">（+1%）</span>，攻击速度+8<span class=\"potential\">（+1）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -10069,7 +10159,7 @@
               "talentEffect": "攻击力+13%<span class=\"potential\">（+1%）</span>，攻击速度+8<span class=\"potential\">（+1）</span>",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -10079,6 +10169,7 @@
   "char_129_bluep": [
     {
       "moduleId": "uniequip_002_bluep",
+      "moduleIcon": "mar-y",
       "phases": [
         {
           "candidates": [
@@ -10141,7 +10232,7 @@
               "talentEffect": "攻击使目标中毒，在3秒内每秒受到95点法术伤害<span class=\"potential\">（+10）</span>点法术伤害",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -10183,7 +10274,7 @@
               "talentEffect": "攻击使目标中毒，在3秒内每秒受到105点法术伤害<span class=\"potential\">（+10）</span>点法术伤害",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -10193,6 +10284,7 @@
   "char_204_platnm": [
     {
       "moduleId": "uniequip_002_platnm",
+      "moduleIcon": "mar-x",
       "phases": [
         {
           "candidates": [
@@ -10255,7 +10347,7 @@
               "talentEffect": "距离上次攻击的间隔越长，下次攻击的攻击力就越高（最长2.5秒，攻击力200%<span class=\"potential\">（+10%）</span>）",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -10297,7 +10389,7 @@
               "talentEffect": "距离上次攻击的间隔越长，下次攻击的攻击力就越高（最长2.5秒，攻击力210%<span class=\"potential\">（+10%）</span>）",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -10307,6 +10399,7 @@
   "char_367_swllow": [
     {
       "moduleId": "uniequip_002_swllow",
+      "moduleIcon": "mar-y",
       "phases": [
         {
           "candidates": [
@@ -10383,6 +10476,7 @@
   "char_365_aprl": [
     {
       "moduleId": "uniequip_002_aprl",
+      "moduleIcon": "mar-y",
       "phases": [
         {
           "candidates": [
@@ -10459,6 +10553,7 @@
   "char_1021_kroos2": [
     {
       "moduleId": "uniequip_002_kroos2",
+      "moduleIcon": "mar-x",
       "phases": [
         {
           "candidates": [
@@ -10521,7 +10616,7 @@
               "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至170%<span class=\"potential\">（+10%）</span>，并使敌人<span class=\"skill-tooltip\">晕眩</span>0.2秒",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -10563,7 +10658,7 @@
               "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至175%<span class=\"potential\">（+10%）</span>，并使敌人<span class=\"skill-tooltip\">晕眩</span>0.2秒",
               "talentIndex": 0,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -10573,6 +10668,7 @@
   "char_103_angel": [
     {
       "moduleId": "uniequip_002_angel",
+      "moduleIcon": "mar-x",
       "phases": [
         {
           "candidates": [
@@ -10635,7 +10731,7 @@
               "talentEffect": "攻击力+8%<span class=\"potential\">（+2%）</span>，生命上限+13%<span class=\"potential\">（+3%）</span>。置入战场后这个效果会同样赋予给两名随机友方单位",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -10677,7 +10773,7 @@
               "talentEffect": "攻击力+10%<span class=\"potential\">（+2%）</span>，生命上限+17%<span class=\"potential\">（+3%）</span>。置入战场后这个效果会同样赋予给两名随机友方单位",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -10687,6 +10783,7 @@
   "char_332_archet": [
     {
       "moduleId": "uniequip_002_archet",
+      "moduleIcon": "mar-y",
       "phases": [
         {
           "candidates": [
@@ -10761,7 +10858,7 @@
               "talentEffect": "部署后立即获得5点技力与一层<span class=\"skill-tooltip\">护盾</span>，护盾破裂后获得9点<span class=\"potential\">（+2）</span>技力",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -10811,7 +10908,7 @@
               "talentEffect": "部署后立即获得9点技力与一层<span class=\"skill-tooltip\">护盾</span>，护盾破裂后获得9点<span class=\"potential\">（+2）</span>技力",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -10821,6 +10918,7 @@
   "char_456_ash": [
     {
       "moduleId": "uniequip_002_ash",
+      "moduleIcon": "mar-y",
       "phases": [
         {
           "candidates": [
@@ -10883,7 +10981,7 @@
               "talentEffect": "首次部署时部署费用-4，部署后立即获得20<span class=\"potential\">（+3）</span>技力",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         },
@@ -10925,7 +11023,7 @@
               "talentEffect": "首次部署时部署费用-5，部署后立即获得20<span class=\"potential\">（+3）</span>技力",
               "talentIndex": 1,
               "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffectType": "update"
             }
           ]
         }
@@ -10935,6 +11033,7 @@
   "char_135_halo": [
     {
       "moduleId": "uniequip_002_halo",
+      "moduleIcon": "cha-y",
       "phases": [
         {
           "candidates": [

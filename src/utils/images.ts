@@ -21,3 +21,6 @@ export const skillIcon = (iconId: string | null, skillId: string): string =>
 
 export const moduleImage = (moduleId: string): string =>
   `/images/modules/${moduleId}.png`;
+
+export const moduleTypeImage = (moduleType: string): string =>
+  `/images/module-types/${moduleType}.png`;

@@ -2297,6 +2297,7 @@
     }
   },
   "operatorsWithGuides": {
+    "Dusk": "dusk",
     "Kjera": "kjera",
     "Aurora": "aurora",
     "Gnosis": "gnosis",
@@ -2317,7 +2318,6 @@
     "Suzuran": "suzuran",
     "Projekt Red": "projekt-red",
     "Wild Mane": "wild-mane",
-    "Dusk": "dusk",
     "Bibeak": "bibeak",
     "La Pluma": "la-pluma",
     "Whislash": "whislash",

@@ -50,8 +50,14 @@ void (() => {
       }
     }
 
+    const moduleIcon =
+      cnUniequipTable.equipDict[
+        moduleId as keyof typeof cnUniequipTable.equipDict
+      ].typeIcon.toLowerCase();
+
     const denormalizedModuleObject: Module = {
       moduleId,
+      moduleIcon,
       phases: [],
     };
 
@@ -188,17 +194,32 @@ void (() => {
           }
         }
       }
+
+      // fix any missing effect types
+      Object.values(candidates).forEach((candidate) => {
+        if (
+          candidate.requiredPotentialRank !== 0 &&
+          !candidate.traitEffectType
+        ) {
+          candidate.traitEffectType = candidates[0].traitEffectType;
+        }
+      });
+
       if (moduleId in MODULE_TRANSLATIONS) {
         // replace TLs
         for (let j = 0; j < MODULE_TRANSLATIONS[moduleId].length; j++) {
-          candidates[
-            MODULE_TRANSLATIONS[moduleId][j].requiredPotentialRank
-          ].traitEffect =
-            MODULE_TRANSLATIONS[moduleId][j].translations[i].trait;
-          candidates[
-            MODULE_TRANSLATIONS[moduleId][j].requiredPotentialRank
-          ].talentEffect =
-            MODULE_TRANSLATIONS[moduleId][j].translations[i].talent;
+          if (
+            candidates[MODULE_TRANSLATIONS[moduleId][j].requiredPotentialRank]
+          ) {
+            candidates[
+              MODULE_TRANSLATIONS[moduleId][j].requiredPotentialRank
+            ].traitEffect =
+              MODULE_TRANSLATIONS[moduleId][j].translations[i].trait;
+            candidates[
+              MODULE_TRANSLATIONS[moduleId][j].requiredPotentialRank
+            ].talentEffect =
+              MODULE_TRANSLATIONS[moduleId][j].translations[i].talent;
+          }
         }
       }
       denormalizedModuleObject.phases.push({

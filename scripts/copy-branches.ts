@@ -55,6 +55,8 @@ const TRAIT_OVERRIDES: Record<string, string> = {
     "Prioritize <@ba.kw>Long range splash attack</> (splash radius of <@ba.kw>1.0</> tiles) when not blocking",
   funnel:
     "Controls a <@ba.kw>Drone</> that deals <@ba.kw>Arts damage</>; When the Drone continuously attacks the same enemy, its damage will increase (from 10% up to 110% of the operator's ATK, linearly)",
+  incantationmedic:
+    "Attacks deal <@ba.kw>Arts damage</>. When attacking an enemy, heal a friendly operator within attack range for <@ba.kw>50%</> of the damage dealt.",
 };
 
 // the provided parameter is a SUBPROFESSION ID, not a BRANCH NAME.

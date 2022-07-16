@@ -4,7 +4,7 @@ import enCharacterTable from "./ArknightsGameData/en_US/gamedata/excel/character
 import cnCharacterTable from "./ArknightsGameData/zh_CN/gamedata/excel/character_table.json";
 import enSkillTable from "./ArknightsGameData/en_US/gamedata/excel/skill_table.json";
 import cnSkillTable from "./ArknightsGameData/zh_CN/gamedata/excel/skill_table.json";
-import rangeTable from "./ArknightsGameData/en_US/gamedata/excel/range_table.json";
+import rangeTable from "./ArknightsGameData/zh_CN/gamedata/excel/range_table.json";
 import jetSkillTranslations from "./jet-tls/skills.json";
 import jetTalentTranslations from "./jet-tls/talents.json";
 import {

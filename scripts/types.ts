@@ -83,30 +83,52 @@ export interface SearchResult {
 
 export interface Module {
   moduleId: string;
-  moduleEffect: string;
-  moduleObject: ModuleObject;
-  hasTranslation: boolean;
+  phases: {
+    candidates: ModulePhase[];
+  }[];
+}
+
+export interface ModulePhase {
+  traitEffect: string | null;
+  traitEffectType: string; // "update" or "override"
+  talentEffect: string | null;
+  talentIndex: number;
+  displayRange: boolean;
+  range: Range | null;
+  attributeBlackboard: InterpolatedValue[];
+  requiredPotentialRank: number; // 0-indexed
 }
 
 export interface ModuleObject {
   phases: {
     equipLevel: number;
     parts: {
+      target: string;
       addOrOverrideTalentDataBundle: {
-        candidates?: {
-          blackboard: InterpolatedValue[];
-        }[];
+        candidates:
+          | {
+              displayRangeId: boolean;
+              upgradeDescription: string | null;
+              talentIndex: number;
+              requiredPotentialRank: number;
+              rangeId: string | null;
+              blackboard: InterpolatedValue[];
+            }[]
+          | null;
       };
       overrideTraitDataBundle: {
-        candidates?: {
-          blackboard: InterpolatedValue[];
-          additionalDescription: string | null;
-          overrideDescription: string | null;
-        }[];
+        candidates:
+          | {
+              additionalDescription: string | null;
+              requiredPotentialRank: number;
+              blackboard: InterpolatedValue[];
+              overrideDescripton: string | null; // not a typo
+            }[]
+          | null;
       };
       [otherProperties: string]: unknown;
     }[];
     attributeBlackboard: InterpolatedValue[];
-    tokenAttributeBlackboard: unknown;
+    tokenAttributeBlackboard: InterpolatedValue[];
   }[];
 }

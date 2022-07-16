@@ -1,65 +1,226 @@
-import { Module, ModuleObject } from "./types";
+import { Module, ModuleObject, ModulePhase } from "./types";
 import cnBattleEquipTable from "./ArknightsGameData/zh_CN/gamedata/excel/battle_equip_table.json";
 import cnUniequipTable from "./ArknightsGameData/zh_CN/gamedata/excel/uniequip_table.json";
 import enBattleEquipTable from "./ArknightsGameData/en_US/gamedata/excel/battle_equip_table.json";
+import moduleTranslations from "./module-tls.json";
+import rangeTable from "./ArknightsGameData/zh_CN/gamedata/excel/range_table.json";
 import { descriptionToHtml } from "../src/utils/description-parser";
 import fs from "fs";
 import path from "path";
 
 const dataDir = path.join(__dirname, "../data");
 
+interface ModuleTranslationData {
+  requiredPotentialRank: number;
+  translations: {
+    trait: null | string;
+    talent: null | string;
+  }[];
+}
+
 // Translations for modules that are not yet in EN.
-// Format: Module ID -> Module Effect Translation
-const MODULE_TRANSLATIONS: Record<string, string> = {
-  // uniequip_002_skadi: "Becomes lore-accurate",
-  uniequip_002_zumama: "When not blocking enemies, +.2 SP/s",
-};
+const MODULE_TRANSLATIONS: Record<string, ModuleTranslationData[]> =
+  moduleTranslations;
 
 void (() => {
   console.log("Updating modules...");
-  const denormalizedModules: Record<string, Module> = {};
+  const denormalizedModules: Record<string, Module[]> = {};
   Object.entries(cnBattleEquipTable).forEach(([moduleId, moduleObject]) => {
     const operatorName: string =
       cnUniequipTable.equipDict[
         moduleId as keyof typeof cnUniequipTable.equipDict
       ].charId;
-    const modObject: ModuleObject =
-      moduleId in enBattleEquipTable
-        ? (enBattleEquipTable[
-            moduleId as keyof typeof enBattleEquipTable
-          ] as unknown as ModuleObject)
-        : (moduleObject as unknown as ModuleObject);
 
-    let moduleEffect = "";
+    // my sanity is rapidly deteriorating
+    const morbius: ModuleObject = moduleObject as unknown as ModuleObject;
 
-    for (let i = 0; i < modObject.phases[0].parts.length; i++) {
-      if (modObject.phases[0].parts[i].overrideTraitDataBundle.candidates) {
-        const curCandidates =
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          modObject.phases[0].parts[i].overrideTraitDataBundle.candidates!;
-        for (let j = 0; j < curCandidates.length; j++) {
-          const description =
-            MODULE_TRANSLATIONS[moduleId] ??
-            curCandidates[j].overrideDescription ??
-            curCandidates[j].additionalDescription;
-          if (!description) {
-            continue;
-          }
-          moduleEffect +=
-            descriptionToHtml(description, curCandidates[j].blackboard) + "\n";
+    // Put in any relevant EN data
+    if (moduleId in enBattleEquipTable) {
+      for (let i = 0; i < morbius.phases.length; i++) {
+        if (
+          enBattleEquipTable[moduleId as keyof typeof enBattleEquipTable].phases
+            .length > i
+        ) {
+          // @ts-expect-error all good
+          morbius.phases[i] =
+            enBattleEquipTable[
+              moduleId as keyof typeof enBattleEquipTable
+            ].phases[i];
         }
       }
     }
-    moduleEffect = moduleEffect.trim();
 
-    const hasTranslation: boolean =
-      !!MODULE_TRANSLATIONS[moduleId] || moduleId in enBattleEquipTable;
-    denormalizedModules[operatorName] = {
-      hasTranslation,
+    const denormalizedModuleObject: Module = {
       moduleId,
-      moduleEffect,
-      moduleObject: modObject,
+      phases: [],
     };
+
+    for (let i = 0; i < morbius.phases.length; i++) {
+      const currentPhase = morbius.phases[i];
+      const candidates: Record<string, ModulePhase> = {};
+
+      for (let j = 0; j < 6; j++) {
+        // check which requiredPotentialRanks exist
+        let potentialExists = false;
+        for (let k = 0; k < currentPhase.parts.length; k++) {
+          if (
+            currentPhase.parts[k].overrideTraitDataBundle.candidates !== null
+          ) {
+            for (
+              let l = 0;
+              l < // @ts-expect-error we already know non null
+              currentPhase.parts[k].overrideTraitDataBundle.candidates.length;
+              l++
+            ) {
+              if (
+                // @ts-expect-error we already know non null
+                currentPhase.parts[k].overrideTraitDataBundle.candidates[l]
+                  .requiredPotentialRank === j
+              ) {
+                potentialExists = true;
+              }
+            }
+          }
+          if (
+            currentPhase.parts[k].addOrOverrideTalentDataBundle.candidates !==
+            null
+          ) {
+            for (
+              let l = 0;
+              l < // @ts-expect-error we already know non null
+              currentPhase.parts[k].addOrOverrideTalentDataBundle.candidates
+                .length;
+              l++
+            ) {
+              if (
+                // @ts-expect-error we already know non null
+                currentPhase.parts[k].addOrOverrideTalentDataBundle.candidates[
+                  l
+                ].requiredPotentialRank === j
+              ) {
+                potentialExists = true;
+              }
+            }
+          }
+        }
+
+        if (potentialExists) {
+          candidates[j] = {
+            attributeBlackboard: currentPhase.attributeBlackboard,
+            displayRange: false,
+            range: null,
+            requiredPotentialRank: j,
+            talentEffect: null,
+            talentIndex: -1,
+            traitEffect: null,
+            traitEffectType: "",
+          };
+        }
+      }
+
+      for (let j = 0; j < currentPhase.parts.length; j++) {
+        const curPart = currentPhase.parts[j];
+        const target = curPart.target;
+
+        if (target === "TRAIT" || target === "DISPLAY") {
+          if (curPart.overrideTraitDataBundle.candidates === null) {
+            console.error(
+              `overrideTraitDataBundle is null on ${moduleId}. This should NOT happen`
+            );
+            continue;
+          }
+
+          const traitCandidates = curPart.overrideTraitDataBundle.candidates;
+
+          for (let k = 0; k < traitCandidates.length; k++) {
+            const curTraitCandidate = traitCandidates[k];
+
+            if (curTraitCandidate.additionalDescription) {
+              candidates[curTraitCandidate.requiredPotentialRank].traitEffect =
+                descriptionToHtml(
+                  curTraitCandidate.additionalDescription,
+                  curTraitCandidate.blackboard
+                );
+              candidates[
+                curTraitCandidate.requiredPotentialRank
+              ].traitEffectType = "update";
+            } else if (curTraitCandidate.overrideDescripton) {
+              candidates[curTraitCandidate.requiredPotentialRank].traitEffect =
+                descriptionToHtml(
+                  curTraitCandidate.overrideDescripton,
+                  curTraitCandidate.blackboard
+                );
+              candidates[
+                curTraitCandidate.requiredPotentialRank
+              ].traitEffectType = "override";
+            }
+          }
+        } else if (target === "TALENT" || target === "TALENT_DATA_ONLY") {
+          if (curPart.addOrOverrideTalentDataBundle.candidates === null) {
+            console.error(
+              `addOrOverrideTalentDataBundle is null on ${moduleId}. This should NOT happen`
+            );
+            continue;
+          }
+
+          const talentCandidates =
+            curPart.addOrOverrideTalentDataBundle.candidates;
+
+          for (let k = 0; k < talentCandidates.length; k++) {
+            const curTalentCandidate = talentCandidates[k];
+
+            if (curTalentCandidate.displayRangeId) {
+              candidates[curTalentCandidate.requiredPotentialRank].range =
+                rangeTable[
+                  curTalentCandidate.rangeId as keyof typeof rangeTable
+                ];
+            }
+            if (curTalentCandidate.upgradeDescription) {
+              candidates[
+                curTalentCandidate.requiredPotentialRank
+              ].talentEffect = descriptionToHtml(
+                curTalentCandidate.upgradeDescription,
+                curTalentCandidate.blackboard
+              );
+              candidates[curTalentCandidate.requiredPotentialRank].talentIndex =
+                curTalentCandidate.talentIndex;
+            }
+          }
+        }
+      }
+      if (moduleId in MODULE_TRANSLATIONS) {
+        // replace TLs
+        for (let j = 0; j < MODULE_TRANSLATIONS[moduleId].length; j++) {
+          candidates[
+            MODULE_TRANSLATIONS[moduleId][j].requiredPotentialRank
+          ].traitEffect =
+            MODULE_TRANSLATIONS[moduleId][j].translations[i].trait;
+          candidates[
+            MODULE_TRANSLATIONS[moduleId][j].requiredPotentialRank
+          ].talentEffect =
+            MODULE_TRANSLATIONS[moduleId][j].translations[i].talent;
+        }
+      }
+      denormalizedModuleObject.phases.push({
+        candidates: Object.values(candidates),
+      });
+
+      if (
+        (candidates[0].talentEffect &&
+          /[\u4e00-\u9FFF]/g.test(candidates[0].talentEffect)) ||
+        (candidates[0].traitEffect &&
+          /[\u4e00-\u9FFF]/g.test(candidates[0].traitEffect))
+      ) {
+        console.log(
+          `No module translation found for ${moduleId} phase ${i + 1}`
+        );
+      }
+    }
+
+    if (!(operatorName in denormalizedModules)) {
+      denormalizedModules[operatorName] = [];
+    }
+    denormalizedModules[operatorName].push(denormalizedModuleObject);
   });
   fs.writeFileSync(
     path.join(dataDir, "modules.json"),

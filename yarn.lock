@@ -9687,19 +9687,6 @@ pkg-dir@^5.0.0:
   dependencies:
     find-up "^5.0.0"
 
-png-diff@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/png-diff/-/png-diff-0.3.3.tgz#e913e89186c924bdfa61cb818cab806a7192fd16"
-  integrity sha1-6RPokYbJJL36YcuBjKuAanGS/RY=
-  dependencies:
-    pngjs "^2.2.0"
-    streamifier "^0.1.1"
-
-pngjs@^2.2.0:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-2.3.1.tgz#11d1e12b9cb64d63e30c143a330f4c1f567da85f"
-  integrity sha1-EdHhK5y2TWPjDBQ6Mw9MH1Z9qF8=
-
 pnp-webpack-plugin@1.6.4:
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/pnp-webpack-plugin/-/pnp-webpack-plugin-1.6.4.tgz#c9711ac4dc48a685dabafc86f8b6dd9f8df84149"
@@ -11254,11 +11241,6 @@ stream-shift@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/stream-shift/-/stream-shift-1.0.1.tgz#d7088281559ab2778424279b0877da3c392d5a3d"
   integrity sha512-AiisoFqQ0vbGcZgQPY1cdP2I76glaVA/RauYR4G4thNFgkTqr90yXTo4LYX60Jl+sIlPNHHdGSwo01AvbKUSVQ==
-
-streamifier@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/streamifier/-/streamifier-0.1.1.tgz#97e98d8fa4d105d62a2691d1dc07e820db8dfc4f"
-  integrity sha1-l+mNj6TRBdYqJpHR3AfoINuN/E8=
 
 string-width@^1.0.1:
   version "1.0.2"

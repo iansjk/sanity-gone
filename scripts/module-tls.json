@@ -1,93 +1,122 @@
 {
-  "uniequip_002_mgllan": [
-    {
-      "requiredPotentialRank": 0,
-      "translations": [
-        {
-          "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
-          "talent": null
-        },
-        {
-          "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
-          "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 23 seconds after deployment (cannot be targeted by enemy ranged attacks)"
-        },
-        {
-          "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
-          "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 26 seconds after deployment (cannot be targeted by enemy ranged attacks)"
-        }
-      ]
-    },
-    {
-      "requiredPotentialRank": 4,
-      "translations": [
-        {
-          "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
-          "talent": null
-        },
-        {
-          "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
-          "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 25<span class=\"potential\">（+2）</span> seconds after deployment (cannot be targeted by enemy ranged attacks)"
-        },
-        {
-          "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
-          "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 28<span class=\"potential\">（+2）</span> seconds after deployment (cannot be targeted by enemy ranged attacks)"
-        }
-      ]
-    }
-  ],
-  "uniequip_002_ling": [
-    {
-      "requiredPotentialRank": 0,
-      "translations": [
-        {
-          "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
-          "talent": null
-        },
-        {
-          "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
-          "talent": "Can use up to 5 summons (max 4 deployed at once). Summons' effect changes based upon Skill."
-        },
-        {
-          "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
-          "talent": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill."
-        }
-      ]
-    }
-  ],
-  "uniequip_002_dusk": [
-    {
-      "requiredPotentialRank": 0,
-      "translations": [
-        {
-          "trait": "Range <span class=\"keyword\">expands</span>",
-          "talent": null
-        },
-        {
-          "trait": "Range <span class=\"keyword\">expands</span>",
-          "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 20 times"
-        },
-        {
-          "trait": "Range <span class=\"keyword\">expands</span>",
-          "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 21 times"
-        }
-      ]
-    },
-    {
-      "requiredPotentialRank": 4,
-      "translations": [
-        {
-          "trait": "Range <span class=\"keyword\">expands</span>",
-          "talent": null
-        },
-        {
-          "trait": "Range <span class=\"keyword\">expands</span>",
-          "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 23 <span class=\"potential\">(+3)</span> times"
-        },
-        {
-          "trait": "Range <span class=\"keyword\">expands</span>",
-          "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 24 <span class=\"potential\">(+3)</span> times"
-        }
-      ]
-    }
-  ]
+  "uniequip_002_mgllan": {
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+            "talent": null
+          },
+          {
+            "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+            "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 23 seconds after deployment (cannot be targeted by enemy ranged attacks)"
+          },
+          {
+            "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+            "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 26 seconds after deployment (cannot be targeted by enemy ranged attacks)"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+            "talent": null
+          },
+          {
+            "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+            "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 25<span class=\"potential\">（+2）</span> seconds after deployment (cannot be targeted by enemy ranged attacks)"
+          },
+          {
+            "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+            "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 28<span class=\"potential\">（+2）</span> seconds after deployment (cannot be targeted by enemy ranged attacks)"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_003_mgllan": {
+    "moduleName": "Dragon Drones for Teaching Purposes Only",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -1 DP, Skill 2: -3 DP, Skill 3: -3 DP)",
+            "talent": null
+          },
+          {
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+            "talent": "Can use up to 5 summons (max 4 deployed at once). Summons' effect changes based upon Skill."
+          },
+          {
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+            "talent": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill. (Skill 1: +100 HP, +50 DEF, Skill 2: +40 ATK, +3 ASPD, Skill 3: +50 ATK, +3 ASPD)"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_ling": {
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+            "talent": null
+          },
+          {
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+            "talent": "Can use up to 5 summons (max 4 deployed at once). Summons' effect changes based upon Skill."
+          },
+          {
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+            "talent": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill."
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_dusk": {
+    "moduleName": "Untitled Long Scroll",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": null
+          },
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 20 times"
+          },
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 21 times"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": null
+          },
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 23 <span class=\"potential\">(+3)</span> times"
+          },
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 24 <span class=\"potential\">(+3)</span> times"
+          }
+        ]
+      }
+    ]
+  }
 }

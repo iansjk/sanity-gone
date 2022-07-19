@@ -19,7 +19,7 @@ import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject, DenormalizedModule } from "../../utils/types";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
-import { moduleTypeImage, operatorAvatar } from "../../utils/images";
+import { operatorAvatar } from "../../utils/images";
 import { Media } from "../../Media";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { fetchContentfulGraphQl } from "../../utils/fetch";
@@ -30,7 +30,6 @@ import { markdownToHtmlString } from "../../utils/markdown";
 import ModuleInfo from "../../components/ModuleInfo";
 import Modules from "../../components/Modules";
 import ModuleRecommendation from "../../components/ModuleRecommendation";
-import Image from "next/image";
 
 interface HTMLToReactContext {
   skills: SkillObject[];
@@ -520,7 +519,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         <TabButtons className="tabs" isSwiper>
           {[
             ...["Introduction"],
-            ...(module != null ? ["Modules"] : []),
+            ...(modules ? ["Modules"] : []),
             ...["Talents", "Skills"],
             ...(synergies.length > 0 ? ["Synergies"] : []),
           ].map((label) => (
@@ -543,7 +542,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 className: "introduction",
               },
             ],
-            ...(modules != null
+            ...(modules
               ? [
                   {
                     component: (
@@ -749,7 +748,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       background-color: ${transparentize(0.34, theme.palette.dark.main)};
       backdrop-filter: blur(8px);
 
-      button:not(.synergy-operator-button) {
+      button:not(.synergy-operator-button):not(.module-button) {
         box-sizing: border-box;
         padding: ${theme.spacing(2)};
         width: max-content;
@@ -780,7 +779,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         }
       }
 
-      button:not(.synergy-operator-button).active {
+      button:not(.synergy-operator-button):not(.module-button).active {
         color: ${accentColor};
 
         &::after {
@@ -949,7 +948,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         }
       }
 
-      .analysis-section:not(.synergies) {
+      .analysis-section:not(.synergies):not(.modules) {
         .tab-buttons {
           button.active {
             background-color: ${accentColor};

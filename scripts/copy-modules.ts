@@ -2,6 +2,7 @@ import { Module, ModuleObject, ModulePhase } from "./types";
 import cnBattleEquipTable from "./ArknightsGameData/zh_CN/gamedata/excel/battle_equip_table.json";
 import cnUniequipTable from "./ArknightsGameData/zh_CN/gamedata/excel/uniequip_table.json";
 import enBattleEquipTable from "./ArknightsGameData/en_US/gamedata/excel/battle_equip_table.json";
+import enUniequipTable from "./ArknightsGameData/en_US/gamedata/excel/uniequip_table.json";
 import moduleTranslations from "./module-tls.json";
 import rangeTable from "./ArknightsGameData/zh_CN/gamedata/excel/range_table.json";
 import { descriptionToHtml } from "../src/utils/description-parser";
@@ -10,6 +11,10 @@ import path from "path";
 
 const dataDir = path.join(__dirname, "../data");
 
+interface ModuleTranslation {
+  moduleName?: string;
+  phases: ModuleTranslationData[];
+}
 interface ModuleTranslationData {
   requiredPotentialRank: number;
   translations: {
@@ -19,7 +24,7 @@ interface ModuleTranslationData {
 }
 
 // Translations for modules that are not yet in EN.
-const MODULE_TRANSLATIONS: Record<string, ModuleTranslationData[]> =
+const MODULE_TRANSLATIONS: Record<string, ModuleTranslation> =
   moduleTranslations;
 
 void (() => {
@@ -55,9 +60,25 @@ void (() => {
         moduleId as keyof typeof cnUniequipTable.equipDict
       ].typeIcon.toLowerCase();
 
+    // very long winded way of obtaining the module's name
+    // if EN doesn't exist, check TL, if TL doesn't exist, use CN
+    const moduleName =
+      moduleId in enUniequipTable.equipDict
+        ? enUniequipTable.equipDict[
+            moduleId as keyof typeof enUniequipTable.equipDict
+          ].uniEquipName
+        : moduleId in MODULE_TRANSLATIONS &&
+          MODULE_TRANSLATIONS[moduleId].moduleName
+        ? // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          MODULE_TRANSLATIONS[moduleId].moduleName!
+        : cnUniequipTable.equipDict[
+            moduleId as keyof typeof cnUniequipTable.equipDict
+          ].uniEquipName;
+
     const denormalizedModuleObject: Module = {
       moduleId,
       moduleIcon,
+      moduleName,
       phases: [],
     };
 
@@ -180,6 +201,9 @@ void (() => {
                 rangeTable[
                   curTalentCandidate.rangeId as keyof typeof rangeTable
                 ];
+              candidates[
+                curTalentCandidate.requiredPotentialRank
+              ].displayRange = true;
             }
             if (curTalentCandidate.upgradeDescription) {
               candidates[
@@ -207,18 +231,20 @@ void (() => {
 
       if (moduleId in MODULE_TRANSLATIONS) {
         // replace TLs
-        for (let j = 0; j < MODULE_TRANSLATIONS[moduleId].length; j++) {
+        for (let j = 0; j < MODULE_TRANSLATIONS[moduleId].phases.length; j++) {
           if (
-            candidates[MODULE_TRANSLATIONS[moduleId][j].requiredPotentialRank]
+            candidates[
+              MODULE_TRANSLATIONS[moduleId].phases[j].requiredPotentialRank
+            ]
           ) {
             candidates[
-              MODULE_TRANSLATIONS[moduleId][j].requiredPotentialRank
+              MODULE_TRANSLATIONS[moduleId].phases[j].requiredPotentialRank
             ].traitEffect =
-              MODULE_TRANSLATIONS[moduleId][j].translations[i].trait;
+              MODULE_TRANSLATIONS[moduleId].phases[j].translations[i].trait;
             candidates[
-              MODULE_TRANSLATIONS[moduleId][j].requiredPotentialRank
+              MODULE_TRANSLATIONS[moduleId].phases[j].requiredPotentialRank
             ].talentEffect =
-              MODULE_TRANSLATIONS[moduleId][j].translations[i].talent;
+              MODULE_TRANSLATIONS[moduleId].phases[j].translations[i].talent;
           }
         }
       }

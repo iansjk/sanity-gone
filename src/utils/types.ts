@@ -112,6 +112,7 @@ export interface PotentialStatChange {
 export interface DenormalizedModule {
   moduleId: string;
   moduleIcon: string;
+  moduleName: string;
   phases: {
     candidates: ModulePhase[];
   }[];
@@ -123,7 +124,7 @@ export interface ModulePhase {
   talentEffect: string | null;
   talentIndex: number;
   displayRange: boolean;
-  range: Range | null;
+  range: RangeObject | null;
   attributeBlackboard: InterpolatedValue[];
   requiredPotentialRank: number; // 0-indexed
 }

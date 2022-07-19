@@ -2,15 +2,20 @@ import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 
 export interface ModuleRecommendationProps {
+  stage: "no" | "1" | "2" | "3";
   priority: string;
   analysis: string;
 }
 
 const ModuleRecommendation: React.FC<ModuleRecommendationProps> = (props) => {
-  const { priority, analysis } = props;
+  const { stage, priority, analysis } = props;
   return (
     <section css={styles}>
       <dl className="module-recommendation">
+        <div className="recommended-stage">
+          <dt>Recommended Stage</dt>
+          <dd>{stage === "no" ? "None" : `Stage ${stage}`}</dd>
+        </div>
         <div className="priority">
           <dt>Priority</dt>
           <dd>{priority}</dd>
@@ -25,9 +30,31 @@ export default ModuleRecommendation;
 const styles = (theme: Theme) => css`
   .module-recommendation {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: ${theme.spacing(0.25)};
+
+    ${theme.breakpoints.down("mobile")} {
+      grid-template-columns: unset;
+    }
+
+    .recommended-rank {
+      border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
+
+      ${theme.breakpoints.down("mobile")} {
+        border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
+      }
+    }
 
     .priority {
-      border-radius: ${theme.spacing(0.5)};
+      border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
+
+      ${theme.breakpoints.down("mobile")} {
+        border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+      }
+    }
+
+    .recommended-stage,
+    .priority {
       flex-direction: row;
       align-items: center;
 

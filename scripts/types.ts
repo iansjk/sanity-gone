@@ -1,4 +1,5 @@
 import { InterpolatedValue } from "../src/utils/description-parser";
+import { RangeObject } from "../src/utils/types";
 
 interface SharedProperties {
   name: string;
@@ -84,6 +85,7 @@ export interface SearchResult {
 export interface Module {
   moduleId: string;
   moduleIcon: string;
+  moduleName: string;
   phases: {
     candidates: ModulePhase[];
   }[];
@@ -95,7 +97,7 @@ export interface ModulePhase {
   talentEffect: string | null;
   talentIndex: number;
   displayRange: boolean;
-  range: Range | null;
+  range: RangeObject | null;
   attributeBlackboard: InterpolatedValue[];
   requiredPotentialRank: number; // 0-indexed
 }

@@ -14,6 +14,7 @@ Magallan.args = {
   module: {
     moduleId: "uniequip_002_mgllan",
     moduleIcon: "sum-x",
+    moduleName: "Drone Control Module.P",
     phases: [
       {
         candidates: [

@@ -248,6 +248,9 @@ const styles = (theme: Theme) => css`
         flex: none;
       }
 
+      overflow: hidden;
+      min-width: 0;
+
       .module-labels-text {
         display: flex;
         flex-direction: column;

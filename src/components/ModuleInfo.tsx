@@ -96,7 +96,9 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
             <Image src={moduleTypeImage(moduleIcon)} width={40} height={40} />
           </div>
           <div className="module-labels-text">
-            <h3 className="module-name">{moduleName}</h3>
+            <div className="module-name-container">
+              <h3 className="module-name">{moduleName}</h3>
+            </div>
             <p className="module-type">{moduleIcon.toUpperCase()}</p>
           </div>
         </div>
@@ -243,7 +245,7 @@ const styles = (theme: Theme) => css`
         margin-right: ${theme.spacing(2)};
         border-radius: ${theme.spacing(1)};
         background-color: ${theme.palette.dark.main};
-        flex: 0 0 1;
+        flex: none;
       }
 
       .module-labels-text {
@@ -254,15 +256,27 @@ const styles = (theme: Theme) => css`
         font-weight: ${theme.typography.body1Bold.fontWeight};
         line-height: 23px;
         height: ${theme.spacing(6)};
+        overflow: hidden;
 
-        .module-name {
+        .module-name-container {
           margin: ${theme.spacing(0, 0, 0.5, 0)};
-          padding: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          .module-name {
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
         }
+
         .module-type {
           margin: 0;
           padding: 0;
           color: ${theme.palette.gray.main};
+          overflow: hidden;
         }
       }
     }

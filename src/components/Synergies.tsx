@@ -19,7 +19,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
 
   return (
     <CardWithTabs
-      header="Synergies"
+      header="Synergy"
       isSwiper
       css={styles}
       buttons={sortedSynergies.flatMap((syn, i) => {

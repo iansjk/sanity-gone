@@ -521,7 +521,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
             ...["Introduction"],
             ...(modules ? ["Modules"] : []),
             ...["Talents", "Skills"],
-            ...(synergies.length > 0 ? ["Synergies"] : []),
+            ...(synergies.length > 0 ? ["Synergy"] : []),
           ].map((label) => (
             <button key={label}>{label}</button>
           ))}

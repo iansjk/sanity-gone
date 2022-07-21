@@ -248,7 +248,6 @@ const styles = (theme: Theme) => css`
         flex: none;
       }
 
-      overflow: hidden;
       min-width: 0;
 
       .module-labels-text {
@@ -263,8 +262,6 @@ const styles = (theme: Theme) => css`
 
         .module-name-container {
           margin: ${theme.spacing(0, 0, 0.5, 0)};
-          overflow: hidden;
-          text-overflow: ellipsis;
 
           .module-name {
             white-space: nowrap;
@@ -306,10 +303,6 @@ const styles = (theme: Theme) => css`
       svg path {
         fill: ${theme.palette.yellow.main};
       }
-    }
-
-    dd {
-      margin-top: ${theme.spacing(0.75)};
     }
   }
 

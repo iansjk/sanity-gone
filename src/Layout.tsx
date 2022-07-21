@@ -705,7 +705,7 @@ const styles =
           justify-content: space-between;
 
           ${theme.breakpoints.down("mobile")} {
-            padding: ${theme.spacing(1)};
+            padding: ${theme.spacing(1.5, 2)};
             flex-direction: row;
             align-items: center;
           }

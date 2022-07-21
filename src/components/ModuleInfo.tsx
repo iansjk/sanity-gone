@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { css } from "@emotion/react";
-import { Theme, useMediaQuery, useTheme } from "@mui/material";
+import { Button, Menu, Theme, useMediaQuery, useTheme } from "@mui/material";
 
 import { moduleImage, moduleTypeImage } from "../utils/images";
 import Image from "next/image";
@@ -14,6 +14,7 @@ import { DenormalizedModule } from "../utils/types";
 import RibbonButton from "./RibbonButton";
 import RibbonButtonGroup from "./RibbonButtonGroup";
 import CharacterRange from "./CharacterRange";
+import PotentialsDropdown from "./PotentialsDropdown";
 
 export interface ModuleInfoProps {
   operatorName: string;
@@ -25,8 +26,30 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
   const { moduleId, moduleName, moduleIcon, phases } = module;
 
   const maxStage = phases.length;
-  const [stage, setStage] = useState(maxStage);
+  const [stage, setStageNumber] = useState(maxStage);
   const [potential, setPotential] = useState(0);
+
+  const potentialsInUse: number[][] = [];
+  // load the potentials in use
+
+  for (let i = 0; i < phases.length; i++) {
+    const curPotentialList: number[] = [];
+    for (let curPot = 0; curPot <= 5; curPot++) {
+      if (
+        phases[i].candidates.find((obj) => obj.requiredPotentialRank === curPot)
+      ) {
+        curPotentialList.push(curPot);
+      }
+    }
+    potentialsInUse.push(curPotentialList);
+  }
+
+  const setStage = (stage: number) => {
+    if (!potentialsInUse[stage - 1].includes(potential)) {
+      setPotential(potentialsInUse[stage - 1][0]);
+    }
+    setStageNumber(stage);
+  };
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const activeCandidate = phases[stage - 1].candidates.find(
@@ -80,6 +103,11 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
             </RibbonButton>
           )}
         </RibbonButtonGroup>
+        <PotentialsDropdown
+          handlePotentialChange={(pot) => setPotential(pot)}
+          potentialsToShow={potentialsInUse[stage - 1]}
+          currentPotential={potential}
+        />
       </div>
       <dl className="module-attributes">
         <div className="module-image-container">
@@ -191,6 +219,7 @@ const styles = (theme: Theme) => css`
   .module-controls {
     display: flex;
     flex-direction: row;
+    align-items: center;
     height: ${theme.spacing(8)};
     background: ${theme.palette.midtone.main};
     margin-top: ${theme.spacing(3)};
@@ -198,13 +227,17 @@ const styles = (theme: Theme) => css`
       ${theme.palette.midtoneBrighterer.main};
     border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
 
-    button {
-      width: ${theme.spacing(7.5)};
-      font-size: ${theme.typography.generalHeading.fontSize}px;
-      line-height: ${theme.typography.generalHeading.lineHeight};
-      &.active {
-        // this is to counterbalance the text shifting
-        padding-top: 3px;
+    .stage-buttons {
+      margin-right: ${theme.spacing(3)};
+      button {
+        width: ${theme.spacing(7.5)};
+        height: ${theme.spacing(8)};
+        font-size: ${theme.typography.generalHeading.fontSize}px;
+        line-height: ${theme.typography.generalHeading.lineHeight};
+        &.active {
+          // this is to counterbalance the text shifting
+          padding-top: 3px;
+        }
       }
     }
 
@@ -313,7 +346,8 @@ const styles = (theme: Theme) => css`
     grid-auto-flow: column;
     gap: ${theme.spacing(0.25)};
 
-    span.keyword {
+    span.keyword,
+    span.potential {
       color: ${theme.palette.blue.main};
     }
 

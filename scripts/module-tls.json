@@ -27,11 +27,11 @@
           },
           {
             "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
-            "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 25<span class=\"potential\">（+2）</span> seconds after deployment (cannot be targeted by enemy ranged attacks)"
+            "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 25 <span class=\"potential\">(+2)</span> seconds after deployment (cannot be targeted by enemy ranged attacks)"
           },
           {
             "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
-            "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 28<span class=\"potential\">（+2）</span> seconds after deployment (cannot be targeted by enemy ranged attacks)"
+            "talent": "Drones gain <span class=\"skill-tooltip\">Invisibility</span> for 28 <span class=\"potential\">(+2)</span> seconds after deployment (cannot be targeted by enemy ranged attacks)"
           }
         ]
       }

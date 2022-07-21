@@ -21,6 +21,7 @@ import { RangeObject } from "../utils/types";
 import CharacterRange from "./CharacterRange";
 import RibbonButton from "./RibbonButton";
 import RibbonButtonGroup from "./RibbonButtonGroup";
+import PotentialsDropdown from "./PotentialsDropdown";
 
 /** TalentPhaseObject refers to a given talent at a specific potential level */
 interface TalentPhaseObject {
@@ -128,26 +129,13 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
                 </RibbonButton>
               ))}
             </RibbonButtonGroup>
-            <div className="divider" />
-            <RibbonButtonGroup className="potential-buttons">
-              {potentialsMap[eliteLevel].map((pot) => (
-                <RibbonButton
-                  key={`Potential ${pot}`}
-                  className={potential === pot ? "active" : "inactive"}
-                  onClick={() => {
-                    updateActivePhase(eliteLevel, pot);
-                  }}
-                  aria-label={`Potential ${pot + 1}`}
-                >
-                  {pot === 0 && <PotentialOneIcon />}
-                  {pot === 1 && <PotentialTwoIcon />}
-                  {pot === 2 && <PotentialThreeIcon />}
-                  {pot === 3 && <PotentialFourIcon />}
-                  {pot === 4 && <PotentialFiveIcon />}
-                  {pot === 5 && <PotentialSixIcon />}
-                </RibbonButton>
-              ))}
-            </RibbonButtonGroup>
+            <PotentialsDropdown
+              currentPotential={potential}
+              potentialsToShow={potentialsMap[eliteLevel]}
+              handlePotentialChange={(pot) =>
+                updateActivePhase(eliteLevel, pot)
+              }
+            />
           </div>
           <h3 className="talent-name">{activePhase.name}</h3>
           <p
@@ -206,6 +194,7 @@ const styles = (theme: Theme) => css`
     height: ${theme.spacing(8)};
     display: flex;
     flex-direction: row;
+    align-items: center;
     grid-column: span 2;
     margin-bottom: ${theme.spacing(-0.25)};
     border-bottom: 1px solid ${theme.palette.midtoneBrighterer.main};
@@ -221,7 +210,11 @@ const styles = (theme: Theme) => css`
     }
 
     .elite-buttons {
+      margin-right: ${theme.spacing(3)};
+
       button {
+        height: ${theme.spacing(8)};
+
         ${theme.breakpoints.down("mobile")} {
           border-radius: 0;
           &:first-of-type {
@@ -249,34 +242,6 @@ const styles = (theme: Theme) => css`
             fill: transparent;
             stroke: ${theme.palette.white.main};
           }
-        }
-      }
-    }
-
-    .divider {
-      margin: ${theme.spacing(2, 3)};
-      border-right: 1px solid ${theme.palette.midtoneBrighter.main};
-
-      ${theme.breakpoints.down("mobile")} {
-        flex: 1 1 0;
-        margin: 0;
-        border: none;
-      }
-    }
-
-    .potential-buttons {
-      button {
-        border-radius: 0;
-
-        ${theme.breakpoints.down("mobile")} {
-          :last-of-type {
-            border-top-right-radius: ${theme.spacing(0.5)};
-          }
-        }
-
-        svg {
-          width: 28px;
-          height: 26.66px;
         }
       }
     }

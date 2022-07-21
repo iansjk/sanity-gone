@@ -227,16 +227,35 @@ const styles = (theme: Theme) => css`
       ${theme.palette.midtoneBrighterer.main};
     border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
 
+    ${theme.breakpoints.down("mobile")} {
+      padding-right: ${theme.spacing(2)};
+    }
+
     .stage-buttons {
       margin-right: ${theme.spacing(3)};
+
       button {
         width: ${theme.spacing(7.5)};
         height: ${theme.spacing(8)};
         font-size: ${theme.typography.generalHeading.fontSize}px;
         line-height: ${theme.typography.generalHeading.lineHeight};
+        border-radius: ${theme.spacing(0)};
         &.active {
           // this is to counterbalance the text shifting
           padding-top: 3px;
+        }
+
+        &:first-of-type {
+          border-top-left-radius: ${theme.spacing(0.5)};
+        }
+      }
+
+      ${theme.breakpoints.down("mobile")} {
+        margin-right: 0;
+        flex-grow: 1;
+
+        button {
+          width: 53px;
         }
       }
     }

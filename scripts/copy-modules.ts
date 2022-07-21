@@ -219,13 +219,19 @@ void (() => {
         }
       }
 
-      // fix any missing effect types
+      // fix any missing effects or effect types
       Object.values(candidates).forEach((candidate) => {
-        if (
-          candidate.requiredPotentialRank !== 0 &&
-          !candidate.traitEffectType
-        ) {
-          candidate.traitEffectType = candidates[0].traitEffectType;
+        if (candidate.requiredPotentialRank !== 0) {
+          if (!candidate.traitEffect) {
+            candidate.traitEffect = candidates[0].traitEffect;
+          }
+          if (!candidate.talentEffect) {
+            candidate.talentEffect = candidates[0].talentEffect;
+            candidate.talentIndex = candidates[0].talentIndex;
+          }
+          if (!candidate.traitEffectType) {
+            candidate.traitEffectType = candidates[0].traitEffectType;
+          }
         }
       });
 
@@ -248,6 +254,7 @@ void (() => {
           }
         }
       }
+
       denormalizedModuleObject.phases.push({
         candidates: Object.values(candidates),
       });

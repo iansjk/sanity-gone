@@ -201,16 +201,23 @@ const styles = (theme: Theme) => css`
     background: ${theme.palette.midtone.main};
     border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
 
-    button {
-      ${theme.breakpoints.down("mobile")} {
-        // change this line to 1.5 when we shrink buttons
-        padding: ${theme.spacing(0, 2)};
-        border-radius: 0;
-      }
+    ${theme.breakpoints.down("mobile")} {
+      padding-right: ${theme.spacing(2)};
     }
 
     .elite-buttons {
       margin-right: ${theme.spacing(3)};
+
+      ${theme.breakpoints.down("mobile")} {
+        margin-right: 0;
+        flex-grow: 1;
+
+        button {
+          // change this line to 1.5 when we shrink buttons
+          padding: ${theme.spacing(0, 1.5)};
+          border-radius: 0;
+        }
+      }
 
       button {
         height: ${theme.spacing(8)};

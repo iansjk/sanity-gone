@@ -645,7 +645,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "每攻击一名敌人时为自身与身前一格的我方干员恢复55<span class=\"potential\">（+5）</span>点生命值并使所有【米诺斯】干员额外恢复25点生命值",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "可以额外部署在远程位",
               "traitEffectType": "update"
             }
           ]
@@ -687,7 +687,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "每攻击一名敌人时为自身与身前一格的我方干员恢复65<span class=\"potential\">（+5）</span>点生命值并使所有【米诺斯】干员额外恢复40点生命值",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "可以额外部署在远程位",
               "traitEffectType": "update"
             }
           ]
@@ -1117,7 +1117,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内的友方单位法术抗性+17<span class=\"potential\">（+2）</span>且受到的治疗效果提升3%",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
               "traitEffectType": "update"
             }
           ]
@@ -1216,7 +1216,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内的友方单位法术抗性+17<span class=\"potential\">（+2）</span>且受到的治疗效果提升5%",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
               "traitEffectType": "update"
             }
           ]
@@ -1788,7 +1788,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在战场时全体友方单位每秒恢复相当于调香师攻击力6.5%<span class=\"potential\">（+0.5%）</span>的生命",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "同时恢复<span class=\"keyword\">四</span>个友方单位的生命",
               "traitEffectType": "override"
             }
           ]
@@ -1830,7 +1830,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在战场时全体友方单位每秒恢复相当于调香师攻击力7%<span class=\"potential\">（+0.5%）</span>的生命",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "同时恢复<span class=\"keyword\">四</span>个友方单位的生命",
               "traitEffectType": "override"
             }
           ]
@@ -1904,7 +1904,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "最近8秒内未受伤害时，攻击力+23%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
               "traitEffectType": "update"
             }
           ]
@@ -1946,7 +1946,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "最近6秒内未受伤害时，攻击力+25%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
               "traitEffectType": "update"
             }
           ]
@@ -2020,7 +2020,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击使用远程武器或不攻击的敌人时，攻击力提升至150%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
               "traitEffectType": "update"
             }
           ]
@@ -2062,7 +2062,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击使用远程武器或不攻击的敌人时，攻击力提升至155%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
               "traitEffectType": "update"
             }
           ]
@@ -2136,7 +2136,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "编入队伍时，所有【深海猎人】干员攻击速度+19<span class=\"potential\">（+2）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
               "traitEffectType": "update"
             }
           ]
@@ -2178,7 +2178,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "编入队伍时，所有【深海猎人】干员攻击速度+22<span class=\"potential\">（+2）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
               "traitEffectType": "update"
             }
           ]
@@ -2252,7 +2252,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击原本攻击范围以外的目标时，有36%<span class=\"potential\">（+3%）</span>的几率使其晕眩2.5秒",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
               "traitEffectType": "update"
             }
           ]
@@ -2294,7 +2294,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击原本攻击范围以外的目标时，有36%<span class=\"potential\">（+3%）</span>的几率使其晕眩3秒",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
               "traitEffectType": "update"
             }
           ]
@@ -2446,7 +2446,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "被动技能触发期间攻击力+25%<span class=\"potential\">（+3%）</span>，阻挡数降至0且获得<span class=\"skill-tooltip\">迷彩</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -2488,7 +2488,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "被动技能触发期间攻击力+28%<span class=\"potential\">（+3%）</span>，阻挡数降至0且获得<span class=\"skill-tooltip\">迷彩</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -2562,7 +2562,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "每次攻击至少造成40%<span class=\"potential\">（+3%）</span>攻击力的伤害",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -2604,7 +2604,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "每次攻击至少造成43%<span class=\"potential\">（+3%）</span>攻击力的伤害",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -3336,7 +3336,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击距离+2，防御力+25%<span class=\"potential\">（+5%）</span>，再部署时间+20秒",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -3378,7 +3378,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击距离+2，防御力+28%<span class=\"potential\">（+5%）</span>，再部署时间+20秒",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -3452,7 +3452,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "每击杀一名敌人后获得+6攻击速度且攻击力+1%（最多叠加7次<span class=\"potential\">（+1）</span>）",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -3494,7 +3494,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "每击杀一名敌人后获得+6攻击速度且攻击力+2%（最多叠加7次<span class=\"potential\">（+1）</span>）",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -3568,7 +3568,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "造成伤害时有33%<span class=\"potential\">（+3%）</span>的几率额外回复1点技力",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击时无视敌人<span class=\"value-up\">70</span>点的防御力",
               "traitEffectType": "update"
             }
           ]
@@ -3610,7 +3610,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "造成伤害时有36%<span class=\"potential\">（+3%）</span>的几率额外回复1点技力",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击时无视敌人<span class=\"value-up\">70</span>点的防御力",
               "traitEffectType": "update"
             }
           ]
@@ -4072,7 +4072,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击时，15%几率当次攻击的攻击力+110%<span class=\"potential\">（+10%）</span>。技能中这个几率提高到35%",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击生命值低于<span class=\"value-up\">40%</span>的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -4114,7 +4114,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击时，20%几率当次攻击的攻击力+110%<span class=\"potential\">（+10%）</span>。技能中这个几率提高到40%",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击生命值低于<span class=\"value-up\">40%</span>的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -4188,7 +4188,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击无视敌人28%<span class=\"potential\">（+3%）</span>的防御力",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -4230,7 +4230,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击无视敌人31%<span class=\"potential\">（+3%）</span>的防御力",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -4304,7 +4304,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "编入队伍时，所有【深海猎人】干员的攻击力+20%<span class=\"potential\">（+2%）</span>，生命值+10%",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "被击倒时不撤退且回复所有生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
               "traitEffectType": "update"
             }
           ]
@@ -4346,7 +4346,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "编入队伍时，所有【深海猎人】干员的攻击力+24%<span class=\"potential\">（+2%）</span>，生命值+20%",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "被击倒时不撤退且回复所有生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
               "traitEffectType": "update"
             }
           ]
@@ -4496,7 +4496,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "周围四格每有一名敌人被击倒时自身的生命上限提高70<span class=\"potential\">（+10）</span>，最多可以叠加30次",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "被击倒时不撤退且回复所有生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
               "traitEffectType": "update"
             }
           ]
@@ -4538,7 +4538,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "周围四格每有一名敌人被击倒时自身的生命上限提高80<span class=\"potential\">（+10）</span>，最多可以叠加30次",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "被击倒时不撤退且回复所有生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
               "traitEffectType": "update"
             }
           ]
@@ -4768,7 +4768,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "防御力-20%，但最大生命值+33%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "被击倒时不撤退且回复所有生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
               "traitEffectType": "update"
             }
           ]
@@ -4810,7 +4810,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "防御力-20%，但最大生命值+38%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "被击倒时不撤退且回复所有生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
               "traitEffectType": "update"
             }
           ]
@@ -5194,7 +5194,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内的敌人在被<span class=\"skill-tooltip\">晕眩</span>时受到的物理伤害+24%<span class=\"potential\">（+3%）</span>，击倒敌人时获得1点技力",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -5236,7 +5236,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内的敌人在被<span class=\"skill-tooltip\">晕眩</span>时受到的物理伤害+27%<span class=\"potential\">（+3%）</span>，击倒敌人时获得1点技力",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -5310,7 +5310,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "技能持续期间外，攻击速度+30<span class=\"potential\">（+3）</span>，技能期间攻击速度+5",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "攻击时无视敌人<span class=\"value-up\">100</span>点的防御力",
               "traitEffectType": "update"
             }
           ]
@@ -5352,7 +5352,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "技能持续期间外，攻击速度+33<span class=\"potential\">（+3）</span>，技能期间攻击速度+10",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "攻击时无视敌人<span class=\"value-up\">100</span>点的防御力",
               "traitEffectType": "update"
             }
           ]
@@ -5504,7 +5504,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在场时所有被阻挡的敌方单位受到的物理伤害提高20%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -5546,7 +5546,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在场时所有被阻挡的敌方单位受到的物理伤害提高24%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -5969,7 +5969,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内的敌人移动速度-28%<span class=\"potential\">（+3%）</span>，攻击范围外的敌人移动速度-10%（不受技能影响）",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "部署费用<span class=\"keyword\">减少</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6019,7 +6019,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内的敌人移动速度-33%<span class=\"potential\">（+3%）</span>，攻击范围外的敌人移动速度-18%（不受技能影响）",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "部署费用<span class=\"keyword\">减少</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6183,7 +6183,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "首次部署后立即获得38<span class=\"potential\">（+5）</span>点技力，每次部署时使在场术师干员技力+5<span class=\"potential\">（+1）</span>，在场时其余友方术师干员初始技力+5<span class=\"potential\">（+1）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6270,7 +6270,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "首次部署后立即获得40<span class=\"potential\">（+5）</span>点技力，每次部署时使在场术师干员技力+5<span class=\"potential\">（+1）</span>，在场时其余友方术师干员初始技力+5<span class=\"potential\">（+1）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6356,7 +6356,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在场时，所有被阻挡的敌人受到法术伤害时伤害提升23%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "部署费用<span class=\"keyword\">减少</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6406,7 +6406,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在场时，所有被阻挡的敌人受到法术伤害时伤害提升26%<span class=\"potential\">（+3%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "部署费用<span class=\"keyword\">减少</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6570,7 +6570,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内每有一个敌人，自身攻击力+5%（最多可叠加7层<span class=\"potential\">（+1）</span>）",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6657,7 +6657,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内每有一个敌人，自身攻击力+5%（最多可叠加8层<span class=\"potential\">（+1）</span>）",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6821,7 +6821,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "部署后随机永久获得下列一项增益：攻击力+19%<span class=\"potential\">（+2%）</span>；攻击速度+19<span class=\"potential\">（+2）</span>；生命上限+27%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6908,7 +6908,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "部署后随机永久获得下列一项增益：攻击力+20%<span class=\"potential\">（+2%）</span>；攻击速度+20<span class=\"potential\">（+2）</span>；生命上限+30%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
               "traitEffectType": "update"
             }
           ]
@@ -7084,7 +7084,7 @@
               "requiredPotentialRank": 5,
               "talentEffect": "携带黑和另外至少一名【狙击】干员时，所有【狙击】干员的攻击力+13%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>",
               "traitEffectType": "update"
             }
           ]
@@ -7134,7 +7134,7 @@
               "requiredPotentialRank": 5,
               "talentEffect": "携带黑和另外至少一名【狙击】干员时，所有【狙击】干员的攻击力+15%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>",
               "traitEffectType": "update"
             }
           ]
@@ -7220,7 +7220,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至195%<span class=\"potential\">（+10%）</span>。当敌人在正前方两格时，该几率提升到55%",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>",
               "traitEffectType": "update"
             }
           ]
@@ -7270,7 +7270,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至200%<span class=\"potential\">（+10%）</span>。当敌人在正前方两格时，该几率提升到60%",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>",
               "traitEffectType": "update"
             }
           ]
@@ -7628,7 +7628,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "优先攻击【无人机】单位，且攻击【无人机】时攻击力提升至170%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
               "traitEffectType": "update"
             }
           ]
@@ -7670,7 +7670,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "优先攻击【无人机】单位，且攻击【无人机】时攻击力提升至180%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
               "traitEffectType": "update"
             }
           ]
@@ -7860,7 +7860,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在场时，所有【辅助】干员攻击力+11%<span class=\"potential\">（+2%）</span>，攻击速度+3",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
               "traitEffectType": "update"
             }
           ]
@@ -7902,7 +7902,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在场时，所有【辅助】干员攻击力+11%<span class=\"potential\">（+2%）</span>，攻击速度+5",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
               "traitEffectType": "update"
             }
           ]
@@ -8488,7 +8488,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击力+9%<span class=\"potential\">（+1%）</span>，当场地中存在水地形时改为攻击力+36%<span class=\"potential\">（+6%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "自身获得<span class=\"skill-tooltip\">抵抗</span>且更不容易受到敌人的攻击",
               "traitEffectType": "update"
             }
           ]
@@ -8530,7 +8530,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击力+12%<span class=\"potential\">（+1%）</span>，当场地中存在水地形时改为攻击力+48%<span class=\"potential\">（+6%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "自身获得<span class=\"skill-tooltip\">抵抗</span>且更不容易受到敌人的攻击",
               "traitEffectType": "update"
             }
           ]
@@ -8604,7 +8604,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内拥有<span class=\"skill-tooltip\">抵抗</span>的友方单位每秒恢复相当于絮雨攻击力9%<span class=\"potential\">（+1%）</span>的生命（不受特性影响）",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "自身获得<span class=\"skill-tooltip\">抵抗</span>且更不容易受到敌人的攻击",
               "traitEffectType": "update"
             }
           ]
@@ -8646,7 +8646,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内拥有<span class=\"skill-tooltip\">抵抗</span>的友方单位每秒恢复相当于絮雨攻击力10%<span class=\"potential\">（+1%）</span>的生命（不受特性影响）",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "自身获得<span class=\"skill-tooltip\">抵抗</span>且更不容易受到敌人的攻击",
               "traitEffectType": "update"
             }
           ]
@@ -8876,7 +8876,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "未开启技能且技力小于或等于最大值一半时，停止攻击并每秒恢复4%<span class=\"potential\">（+0.5%）</span>最大生命值",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
               "traitEffectType": "override"
             }
           ]
@@ -8918,7 +8918,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "未开启技能且技力小于或等于最大值一半时，停止攻击并每秒恢复4.5%<span class=\"potential\">（+0.5%）</span>最大生命值",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
               "traitEffectType": "override"
             }
           ]
@@ -8992,7 +8992,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击速度+21<span class=\"potential\">（+3）</span>，攻击力+3%，场上有【海怪】敌人时效果翻倍",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "攻击时无视敌人<span class=\"value-up\">70</span>点的防御力",
               "traitEffectType": "update"
             }
           ]
@@ -9034,7 +9034,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击速度+21<span class=\"potential\">（+3）</span>，攻击力+5%，场上有【海怪】敌人时效果翻倍",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "攻击时无视敌人<span class=\"value-up\">70</span>点的防御力",
               "traitEffectType": "update"
             }
           ]
@@ -9186,7 +9186,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在场时，全地图的友方单位医疗效果提高15%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -9228,7 +9228,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在场时，全地图的友方单位医疗效果提高17%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -9302,7 +9302,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击时，23%<span class=\"potential\">（+3%）</span>几率当次攻击的攻击力提升至200%，并<span class=\"skill-tooltip\">晕眩</span>敌人1.5秒",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -9344,7 +9344,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击时，26%<span class=\"potential\">（+3%）</span>几率当次攻击的攻击力提升至200%，并<span class=\"skill-tooltip\">晕眩</span>敌人1.5秒",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -9508,7 +9508,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "防御力+12%<span class=\"potential\">（+2%）</span>，自身身后一格内如果是高台单位，自己对其的治疗效果提高85%<span class=\"potential\">（+10%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "受到的伤害减少<span class=\"keyword\">15%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -9550,7 +9550,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "防御力+15%<span class=\"potential\">（+2%）</span>，自身身后一格内如果是高台单位，自己对其的治疗效果提高85%<span class=\"potential\">（+10%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "受到的伤害减少<span class=\"keyword\">15%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10012,7 +10012,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击空中目标时，攻击力提升至145%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10054,7 +10054,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击空中目标时，攻击力提升至155%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10206,7 +10206,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击力+11%<span class=\"potential\">（+1%）</span>，攻击速度+8<span class=\"potential\">（+1）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10248,7 +10248,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击力+13%<span class=\"potential\">（+1%）</span>，攻击速度+8<span class=\"potential\">（+1）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10322,7 +10322,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击使目标中毒，在3秒内每秒受到95点法术伤害<span class=\"potential\">（+10）</span>点法术伤害",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10364,7 +10364,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击使目标中毒，在3秒内每秒受到105点法术伤害<span class=\"potential\">（+10）</span>点法术伤害",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10438,7 +10438,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "距离上次攻击的间隔越长，下次攻击的攻击力就越高（最长2.5秒，攻击力200%<span class=\"potential\">（+10%）</span>）",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10480,7 +10480,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "距离上次攻击的间隔越长，下次攻击的攻击力就越高（最长2.5秒，攻击力210%<span class=\"potential\">（+10%）</span>）",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10710,7 +10710,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至170%<span class=\"potential\">（+10%）</span>，并使敌人<span class=\"skill-tooltip\">晕眩</span>0.2秒",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10752,7 +10752,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至175%<span class=\"potential\">（+10%）</span>，并使敌人<span class=\"skill-tooltip\">晕眩</span>0.2秒",
               "talentIndex": 0,
-              "traitEffect": null,
+              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10826,7 +10826,7 @@
               "requiredPotentialRank": 5,
               "talentEffect": "攻击力+8%<span class=\"potential\">（+2%）</span>，生命上限+13%<span class=\"potential\">（+3%）</span>。置入战场后这个效果会同样赋予给两名随机友方单位",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10868,7 +10868,7 @@
               "requiredPotentialRank": 5,
               "talentEffect": "攻击力+10%<span class=\"potential\">（+2%）</span>，生命上限+17%<span class=\"potential\">（+3%）</span>。置入战场后这个效果会同样赋予给两名随机友方单位",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10954,7 +10954,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "部署后立即获得5点技力与一层<span class=\"skill-tooltip\">护盾</span>，护盾破裂后获得9点<span class=\"potential\">（+2）</span>技力",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
               "traitEffectType": "update"
             }
           ]
@@ -11004,7 +11004,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "部署后立即获得9点技力与一层<span class=\"skill-tooltip\">护盾</span>，护盾破裂后获得9点<span class=\"potential\">（+2）</span>技力",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
               "traitEffectType": "update"
             }
           ]
@@ -11078,7 +11078,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "首次部署时部署费用-4，部署后立即获得20<span class=\"potential\">（+3）</span>技力",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
               "traitEffectType": "update"
             }
           ]
@@ -11120,7 +11120,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "首次部署时部署费用-5，部署后立即获得20<span class=\"potential\">（+3）</span>技力",
               "talentIndex": 1,
-              "traitEffect": null,
+              "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
               "traitEffectType": "update"
             }
           ]

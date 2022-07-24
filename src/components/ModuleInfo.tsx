@@ -64,6 +64,15 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
     (kv) => kv.key === "attack_speed"
   )?.value;
 
+  // HG, why did you make people have 3 module bonuses :sadge:
+  const numberOfBonuses =
+    (attackBonus ? 1 : 0) +
+    (healthBonus ? 1 : 0) +
+    (defenseBonus ? 1 : 0) +
+    (attackSpeedBonus ? 1 : 0);
+
+  const hasThreeBonuses = numberOfBonuses === 3;
+
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
@@ -109,7 +118,11 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
           currentPotential={potential}
         />
       </div>
-      <dl className="module-attributes">
+      <dl
+        className={
+          "module-attributes" + (hasThreeBonuses ? " three-bonuses" : "")
+        }
+      >
         <div className="module-image-container">
           <Image
             className="module-image"
@@ -273,6 +286,14 @@ const styles = (theme: Theme) => css`
     grid-template-columns: 304px 1fr 1fr;
     grid-template-rows: repeat(2, 88px);
     gap: ${theme.spacing(0.25)};
+
+    &.three-bonuses {
+      grid-template-columns: 304px repeat(3, 1fr);
+
+      .module-labels {
+        grid-column-start: span 3;
+      }
+    }
 
     .module-image-container {
       grid-row-start: span 2;
@@ -439,17 +460,16 @@ const styles = (theme: Theme) => css`
         border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
       }
 
-      .effect {
-        grid-column-start: span 2;
-        grid-row-start: 3;
-        border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
-        flex-direction: column;
-        align-items: flex-start;
-        padding: ${theme.spacing(2)};
-        dd {
-          font-weight: ${theme.typography.body2.fontWeight};
-          font-size: ${theme.typography.body2.fontSize}px;
-          line-height: ${theme.typography.body2.lineHeight};
+      &.three-bonuses {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 178px repeat(4, max-content);
+        grid-auto-flow: column;
+
+        .attack,
+        .defense,
+        .attack-speed,
+        .health {
+          grid-column-start: span 2;
         }
       }
     }

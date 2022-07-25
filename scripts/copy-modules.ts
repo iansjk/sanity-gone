@@ -219,7 +219,7 @@ void (() => {
         }
       }
 
-      // fix any missing effects or effect types
+      // fix any missing effects, ranges, or effect types
       Object.values(candidates).forEach((candidate) => {
         if (candidate.requiredPotentialRank !== 0) {
           if (!candidate.traitEffect) {
@@ -231,6 +231,10 @@ void (() => {
           }
           if (!candidate.traitEffectType) {
             candidate.traitEffectType = candidates[0].traitEffectType;
+          }
+          if (!candidate.displayRange && candidates[0].displayRange) {
+            candidate.displayRange = true;
+            candidate.range = candidates[0].range;
           }
         }
       });

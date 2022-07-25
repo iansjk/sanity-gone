@@ -2297,6 +2297,7 @@
     }
   },
   "operatorsWithGuides": {
+    "Archetto": "archetto",
     "Dusk": "dusk",
     "Magallan": "magallan",
     "Kjera": "kjera",
@@ -2306,7 +2307,6 @@
     "Firewatch": "firewatch",
     "Fartooth": "fartooth",
     "Kafka": "kafka",
-    "Archetto": "archetto",
     "Mountain": "mountain",
     "Eunectes": "eunectes",
     "Pinecone": "pinecone",

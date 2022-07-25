@@ -302,7 +302,7 @@ const styles = (theme: Theme) => css`
       background: ${theme.palette.midtoneDarker.main};
 
       span > img {
-        padding: ${theme.spacing(2, 2, 0)} !important;
+        padding: ${theme.spacing(2)} !important;
       }
     }
 

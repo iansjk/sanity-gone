@@ -1112,8 +1112,65 @@
                   "value": 5
                 }
               ],
-              "displayRange": false,
-              "range": null,
+              "displayRange": true,
+              "range": {
+                "id": "y-3",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 1,
+                    "col": -1
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 1
+                  },
+                  {
+                    "row": 1,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": -1,
+                    "col": -1
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -1,
+                    "col": 1
+                  },
+                  {
+                    "row": -1,
+                    "col": 2
+                  }
+                ]
+              },
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内的友方单位法术抗性+17<span class=\"potential\">（+2）</span>且受到的治疗效果提升3%",
               "talentIndex": 0,
@@ -1211,8 +1268,65 @@
                   "value": 5
                 }
               ],
-              "displayRange": false,
-              "range": null,
+              "displayRange": true,
+              "range": {
+                "id": "y-3",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 1,
+                    "col": -1
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 1
+                  },
+                  {
+                    "row": 1,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": -1,
+                    "col": -1
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -1,
+                    "col": 1
+                  },
+                  {
+                    "row": -1,
+                    "col": 2
+                  }
+                ]
+              },
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内的友方单位法术抗性+17<span class=\"potential\">（+2）</span>且受到的治疗效果提升5%",
               "talentIndex": 0,
@@ -5791,8 +5905,53 @@
                   "value": 68
                 }
               ],
-              "displayRange": false,
-              "range": null,
+              "displayRange": true,
+              "range": {
+                "id": "3-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 1
+                  },
+                  {
+                    "row": 1,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -1,
+                    "col": 1
+                  },
+                  {
+                    "row": -1,
+                    "col": 2
+                  }
+                ]
+              },
               "requiredPotentialRank": 4,
               "talentEffect": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 23 <span class=\"potential\">(+3)</span> times",
               "talentIndex": 0,
@@ -5878,8 +6037,53 @@
                   "value": 80
                 }
               ],
-              "displayRange": false,
-              "range": null,
+              "displayRange": true,
+              "range": {
+                "id": "3-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 1
+                  },
+                  {
+                    "row": 1,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -1,
+                    "col": 1
+                  },
+                  {
+                    "row": -1,
+                    "col": 2
+                  }
+                ]
+              },
               "requiredPotentialRank": 4,
               "talentEffect": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 24 <span class=\"potential\">(+3)</span> times",
               "talentIndex": 0,
@@ -6178,8 +6382,53 @@
                   "value": 55
                 }
               ],
-              "displayRange": false,
-              "range": null,
+              "displayRange": true,
+              "range": {
+                "id": "3-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 1
+                  },
+                  {
+                    "row": 1,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -1,
+                    "col": 1
+                  },
+                  {
+                    "row": -1,
+                    "col": 2
+                  }
+                ]
+              },
               "requiredPotentialRank": 4,
               "talentEffect": "首次部署后立即获得38<span class=\"potential\">（+5）</span>点技力，每次部署时使在场术师干员技力+5<span class=\"potential\">（+1）</span>，在场时其余友方术师干员初始技力+5<span class=\"potential\">（+1）</span>",
               "talentIndex": 0,
@@ -6265,8 +6514,53 @@
                   "value": 62
                 }
               ],
-              "displayRange": false,
-              "range": null,
+              "displayRange": true,
+              "range": {
+                "id": "3-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 1
+                  },
+                  {
+                    "row": 1,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -1,
+                    "col": 1
+                  },
+                  {
+                    "row": -1,
+                    "col": 2
+                  }
+                ]
+              },
               "requiredPotentialRank": 4,
               "talentEffect": "首次部署后立即获得40<span class=\"potential\">（+5）</span>点技力，每次部署时使在场术师干员技力+5<span class=\"potential\">（+1）</span>，在场时其余友方术师干员初始技力+5<span class=\"potential\">（+1）</span>",
               "talentIndex": 0,
@@ -6565,8 +6859,53 @@
                   "value": 60
                 }
               ],
-              "displayRange": false,
-              "range": null,
+              "displayRange": true,
+              "range": {
+                "id": "3-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 1
+                  },
+                  {
+                    "row": 1,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -1,
+                    "col": 1
+                  },
+                  {
+                    "row": -1,
+                    "col": 2
+                  }
+                ]
+              },
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内每有一个敌人，自身攻击力+5%（最多可叠加7层<span class=\"potential\">（+1）</span>）",
               "talentIndex": 0,
@@ -6652,8 +6991,53 @@
                   "value": 70
                 }
               ],
-              "displayRange": false,
-              "range": null,
+              "displayRange": true,
+              "range": {
+                "id": "3-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 1
+                  },
+                  {
+                    "row": 1,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -1,
+                    "col": 1
+                  },
+                  {
+                    "row": -1,
+                    "col": 2
+                  }
+                ]
+              },
               "requiredPotentialRank": 4,
               "talentEffect": "攻击范围内每有一个敌人，自身攻击力+5%（最多可叠加8层<span class=\"potential\">（+1）</span>）",
               "talentIndex": 0,
@@ -6816,8 +7200,53 @@
                   "value": 50
                 }
               ],
-              "displayRange": false,
-              "range": null,
+              "displayRange": true,
+              "range": {
+                "id": "3-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 1
+                  },
+                  {
+                    "row": 1,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -1,
+                    "col": 1
+                  },
+                  {
+                    "row": -1,
+                    "col": 2
+                  }
+                ]
+              },
               "requiredPotentialRank": 4,
               "talentEffect": "部署后随机永久获得下列一项增益：攻击力+19%<span class=\"potential\">（+2%）</span>；攻击速度+19<span class=\"potential\">（+2）</span>；生命上限+27%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,
@@ -6903,8 +7332,53 @@
                   "value": 57
                 }
               ],
-              "displayRange": false,
-              "range": null,
+              "displayRange": true,
+              "range": {
+                "id": "3-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 1
+                  },
+                  {
+                    "row": 1,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -1,
+                    "col": 1
+                  },
+                  {
+                    "row": -1,
+                    "col": 2
+                  }
+                ]
+              },
               "requiredPotentialRank": 4,
               "talentEffect": "部署后随机永久获得下列一项增益：攻击力+20%<span class=\"potential\">（+2%）</span>；攻击速度+20<span class=\"potential\">（+2）</span>；生命上限+30%<span class=\"potential\">（+2%）</span>",
               "talentIndex": 0,

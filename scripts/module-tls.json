@@ -1,4 +1,26 @@
 {
+  "template": {
+    "moduleName": "",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "",
+            "talent": null
+          },
+          {
+            "trait": "",
+            "talent": ""
+          },
+          {
+            "trait": "",
+            "talent": ""
+          }
+        ]
+      }
+    ]
+  },
   "uniequip_002_mgllan": {
     "phases": [
       {
@@ -114,6 +136,206 @@
           {
             "trait": "Range <span class=\"keyword\">expands</span>",
             "talent": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 24 <span class=\"potential\">(+3)</span> times"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_lava2": {
+    "moduleName": "Sarkaz's Knife",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": null
+          },
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": "Immediately obtains 33 SP after the first deployment. When deployed, all other deployed Caster allies gain SP +4, and other Caster allies obtain initial SP +4"
+          },
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": "Immediately obtains 35 SP after the first deployment. When deployed, all other deployed Caster allies gain SP +4, and other Caster allies obtain initial SP +4"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": null
+          },
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": "Immediately obtains 38 <span class=\"potential\">(+5)</span> SP after the first deployment. When deployed, all other deployed Caster allies gain SP +5 <span class=\"potential\">(+1)</span>, and other Caster allies obtain initial SP +5 <span class=\"potential\">(+1)</span>"
+          },
+          {
+            "trait": "Range <span class=\"keyword\">expands</span>",
+            "talent": "Immediately obtains 40 <span class=\"potential\">(+5)</span> SP after the first deployment. When deployed, all other deployed Caster allies gain SP +5 <span class=\"potential\">(+1)</span>, and other Caster allies obtain initial SP +5 <span class=\"potential\">(+1)</span>"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_nearl2": {
+    "moduleName": "Blazing Sun Blade",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When attacking blocked enemies, increase ATK to <span class=\"value-up\">115%</span>",
+            "talent": null
+          },
+          {
+            "trait": "When attacking blocked enemies, increase ATK to <span class=\"value-up\">115%</span>",
+            "talent": "Attacks ignore 25% DEF"
+          },
+          {
+            "trait": "When attacking blocked enemies, increase ATK to <span class=\"value-up\">115%</span>",
+            "talent": "Attacks ignore 28% DEF"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "When attacking blocked enemies, increase ATK to <span class=\"value-up\">115%</span>",
+            "talent": null
+          },
+          {
+            "trait": "When attacking blocked enemies, increase ATK to <span class=\"value-up\">115%</span>",
+            "talent": "Attacks ignore 28% <span class=\"potential\">(+3%)</span> DEF"
+          },
+          {
+            "trait": "When attacking blocked enemies, increase ATK to <span class=\"value-up\">115%</span>",
+            "talent": "Attacks ignore 31% <span class=\"potential\">(+3%)</span> DEF"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_indigo": {
+    "moduleName": "Staff Maintain Suit",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Attacks deal Arts damage; When unable to find a target, attacks can be stored up and fired all at once (Up to 4 charges)",
+            "talent": null
+          },
+          {
+            "trait": "Attacks deal Arts damage; When unable to find a target, attacks can be stored up and fired all at once (Up to 4 charges)",
+            "talent": "When attacking, 23% chance to <span class=\"skill-tooltip\">Bind</span> the target for 4 seconds. Will not target Bound enemies"
+          },
+          {
+            "trait": "Attacks deal Arts damage; When unable to find a target, attacks can be stored up and fired all at once (Up to 4 charges)",
+            "talent": "When attacking, 25% chance to <span class=\"skill-tooltip\">Bind</span> the target for 4 seconds. Will not target Bound enemies"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Attacks deal Arts damage; When unable to find a target, attacks can be stored up and fired all at once (Up to 4 charges)",
+            "talent": null
+          },
+          {
+            "trait": "Attacks deal Arts damage; When unable to find a target, attacks can be stored up and fired all at once (Up to 4 charges)",
+            "talent": "When attacking, 25% <span class=\"potential\">(+2%)</span> chance to <span class=\"skill-tooltip\">Bind</span> the target for 4 seconds. Will not target Bound enemies"
+          },
+          {
+            "trait": "Attacks deal Arts damage; When unable to find a target, attacks can be stored up and fired all at once (Up to 4 charges)",
+            "talent": "When attacking, 27% <span class=\"potential\">(+2%)</span> chance to <span class=\"skill-tooltip\">Bind</span> the target for 4 seconds. Will not target Bound enemies"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_pallas": {
+    "moduleName": null,
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+            "talent": null
+          },
+          {
+            "trait": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+            "talent": "When deployed, all 'Minoan' Operators gain <span class=\"skill-tooltip\">Vigor</span> effect of +27% ATK when HP is above 50%"
+          },
+          {
+            "trait": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+            "talent": "When deployed, all 'Minoan' Operators gain <span class=\"skill-tooltip\">Vigor</span> effect of +30% ATK when HP is above 50%"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_003_pallas": {
+    "moduleName": "Light of Heria",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Can also be deployed on Ranged tiles",
+            "talent": null
+          },
+          {
+            "trait": "Can also be deployed on Ranged tiles",
+            "talent": "Every hit against an enemy restores 50 HP to Pallas and the allied Operator in the tile ahead, and restores an additional 25 HP to all 'Minoan' Operators"
+          },
+          {
+            "trait": "Can also be deployed on Ranged tiles",
+            "talent": "Every hit against an enemy restores 60 HP to Pallas and the allied Operator in the tile ahead, and restores an additional 40 HP to all 'Minoan' Operators"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Can also be deployed on Ranged tiles",
+            "talent": null
+          },
+          {
+            "trait": "Can also be deployed on Ranged tiles",
+            "talent": "Every hit against an enemy restores 55 <span class=\"potential\">(+5)</span> HP to Pallas and the allied Operator in the tile ahead, and restores an additional 25 HP to all 'Minoan' Operators"
+          },
+          {
+            "trait": "Can also be deployed on Ranged tiles",
+            "talent": "Every hit against an enemy restores 65 <span class=\"potential\">(+5)</span> HP to Pallas and the allied Operator in the tile ahead, and restores an additional 40 HP to all 'Minoan' Operators"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_sophia": {
+    "moduleName": null,
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+            "talent": null
+          },
+          {
+            "trait": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+            "talent": "When deployed, gives every allied unit with 3 or more block 1 layer of <span class=\"skill-tooltip\">Physical Shield</span>"
+          },
+          {
+            "trait": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+            "talent": "When deployed, gives every allied unit with 3 or more block 1 layer of <span class=\"skill-tooltip\">Physical Shield</span>. 'Kazimierz' operators get an additional layer of Physical Shield"
           }
         ]
       }

@@ -12,7 +12,7 @@ import path from "path";
 const dataDir = path.join(__dirname, "../data");
 
 interface ModuleTranslation {
-  moduleName?: string;
+  moduleName?: string | null;
   phases: ModuleTranslationData[];
 }
 interface ModuleTranslationData {
@@ -149,7 +149,11 @@ void (() => {
         const curPart = currentPhase.parts[j];
         const target = curPart.target;
 
-        if (target === "TRAIT" || target === "DISPLAY") {
+        if (
+          target === "TRAIT" ||
+          target === "TRAIT_DATA_ONLY" ||
+          target === "DISPLAY"
+        ) {
           if (curPart.overrideTraitDataBundle.candidates === null) {
             console.error(
               `overrideTraitDataBundle is null on ${moduleId}. This should NOT happen`

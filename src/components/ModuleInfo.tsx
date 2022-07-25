@@ -204,11 +204,19 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
         </div>
         <div className="talent-effect">
           <dt>
-            {activeCandidate.talentEffect && (
-              <span className="updated">UPDATED</span>
-            )}
-            Talent{" "}
-            {activeCandidate.talentEffect && activeCandidate.talentIndex + 1}
+            {activeCandidate.talentEffect &&
+              (activeCandidate.talentIndex === -1 ? (
+                <span className="added">ADDED</span>
+              ) : (
+                <span className="updated">UPDATED</span>
+              ))}
+            {
+              activeCandidate.talentEffect
+                ? activeCandidate.talentIndex === -1
+                  ? "New Talent" // there is a new talent
+                  : `Talent ${activeCandidate.talentIndex + 1}` // this is the talent modified
+                : "Talent" /* no talent modifications */
+            }
           </dt>
           <dd
             dangerouslySetInnerHTML={{

@@ -527,8 +527,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -548,10 +548,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时，所有【米诺斯】干员生命值高于50%时获得+27%攻击力的<span class=\"skill-tooltip\">精力充沛</span>",
+              "talentEffect": "When deployed, all 'Minoan' Operators gain <span class=\"skill-tooltip\">Vigor</span> effect of +27% ATK when HP is above 50%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -571,10 +571,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时，所有【米诺斯】干员生命值高于50%时获得+30%攻击力的<span class=\"skill-tooltip\">精力充沛</span>",
+              "talentEffect": "When deployed, all 'Minoan' Operators gain <span class=\"skill-tooltip\">Vigor</span> effect of +30% ATK when HP is above 50%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -583,7 +583,7 @@
     {
       "moduleId": "uniequip_003_pallas",
       "moduleIcon": "ins-y",
-      "moduleName": "“赫里亚之辉”",
+      "moduleName": "Light of Heria",
       "phases": [
         {
           "candidates": [
@@ -603,7 +603,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "可以额外部署在远程位",
+              "traitEffect": "Can also be deployed on Ranged tiles",
               "traitEffectType": "update"
             }
           ]
@@ -624,9 +624,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "每攻击一名敌人时为自身与身前一格的我方干员恢复50点生命值并使所有【米诺斯】干员额外恢复25点生命值",
+              "talentEffect": "Every hit against an enemy restores 50 HP to Pallas and the allied Operator in the tile ahead, and restores an additional 25 HP to all 'Minoan' Operators",
               "talentIndex": 1,
-              "traitEffect": "可以额外部署在远程位",
+              "traitEffect": "Can also be deployed on Ranged tiles",
               "traitEffectType": "update"
             },
             {
@@ -643,9 +643,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "每攻击一名敌人时为自身与身前一格的我方干员恢复55<span class=\"potential\">（+5）</span>点生命值并使所有【米诺斯】干员额外恢复25点生命值",
+              "talentEffect": "Every hit against an enemy restores 55 <span class=\"potential\">(+5)</span> HP to Pallas and the allied Operator in the tile ahead, and restores an additional 25 HP to all 'Minoan' Operators",
               "talentIndex": 1,
-              "traitEffect": "可以额外部署在远程位",
+              "traitEffect": "Can also be deployed on Ranged tiles",
               "traitEffectType": "update"
             }
           ]
@@ -666,9 +666,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "每攻击一名敌人时为自身与身前一格的我方干员恢复60点生命值并使所有【米诺斯】干员额外恢复40点生命值",
+              "talentEffect": "Every hit against an enemy restores 60 HP to Pallas and the allied Operator in the tile ahead, and restores an additional 40 HP to all 'Minoan' Operators",
               "talentIndex": 1,
-              "traitEffect": "可以额外部署在远程位",
+              "traitEffect": "Can also be deployed on Ranged tiles",
               "traitEffectType": "update"
             },
             {
@@ -685,9 +685,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "每攻击一名敌人时为自身与身前一格的我方干员恢复65<span class=\"potential\">（+5）</span>点生命值并使所有【米诺斯】干员额外恢复40点生命值",
+              "talentEffect": "Every hit against an enemy restores 65 <span class=\"potential\">(+5)</span> HP to Pallas and the allied Operator in the tile ahead, and restores an additional 40 HP to all 'Minoan' Operators",
               "talentIndex": 1,
-              "traitEffect": "可以额外部署在远程位",
+              "traitEffect": "Can also be deployed on Ranged tiles",
               "traitEffectType": "update"
             }
           ]
@@ -719,8 +719,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -740,10 +740,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "部署后，使场上阻挡数大于等于3的友方近战单位获得1层<span class=\"skill-tooltip\">物理护盾</span>",
+              "talentEffect": "When deployed, gives every allied unit with 3 or more block 1 layer of <span class=\"skill-tooltip\">Physical Shield</span>",
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -763,10 +763,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "部署后，使场上阻挡数大于等于3的友方近战单位获得1层<span class=\"skill-tooltip\">物理护盾</span>，【卡西米尔】阵营干员额外再获得1层",
+              "talentEffect": "When deployed, gives every allied unit with 3 or more block 1 layer of <span class=\"skill-tooltip\">Physical Shield</span>. 'Kazimierz' operators get an additional layer of Physical Shield",
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -797,8 +797,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -820,8 +820,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "周围8格内有近战友方单位时，自身每4秒回复1点技力",
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "可以攻击到<span class=\"keyword\">较远敌人</span>，攻击自身未阻挡的敌人时攻击力提升至<span class=\"keyword\">130%</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -843,8 +843,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "周围8格内有近战友方单位时，自身每3秒回复1点技力",
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "可以攻击到<span class=\"keyword\">较远敌人</span>，攻击自身未阻挡的敌人时攻击力提升至<span class=\"keyword\">130%</span>",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -2906,8 +2906,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -2929,8 +2929,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "当周围4格没有敌人时，攻击力+8%，技力自然回复速度+0.15/秒",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -2948,8 +2948,8 @@
               "requiredPotentialRank": 2,
               "talentEffect": "当周围4格没有敌人时，攻击力+10%<span class=\"potential\">（+2%）</span>，技力自然回复速度+0.15/秒",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -2971,8 +2971,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "当周围4格没有敌人时，攻击力+8%，技力自然回复速度+0.25/秒",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -2990,8 +2990,8 @@
               "requiredPotentialRank": 2,
               "talentEffect": "当周围4格没有敌人时，攻击力+10%<span class=\"potential\">（+2%）</span>，技力自然回复速度+0.25/秒",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -3020,8 +3020,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -3043,8 +3043,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "攻击命中生命值在80%以上的敌人时，4秒内异客对其造成的伤害提升25%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -3062,8 +3062,8 @@
               "requiredPotentialRank": 5,
               "talentEffect": "攻击命中生命值在80%以上的敌人时，4秒内异客对其造成的伤害提升30%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -3085,8 +3085,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "攻击命中生命值在70%以上的敌人时，4秒内异客对其造成的伤害提升28%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -3104,8 +3104,8 @@
               "requiredPotentialRank": 5,
               "talentEffect": "攻击命中生命值在70%以上的敌人时，4秒内异客对其造成的伤害提升33%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -3136,8 +3136,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -3159,8 +3159,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "攻击未被阻挡的敌人时攻击力提升至123%并获得1点技力",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -3178,8 +3178,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击未被阻挡的敌人时攻击力提升至126%<span class=\"potential\">（+3%）</span>并获得1点技力",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -3201,8 +3201,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "攻击未被阻挡的敌人时攻击力提升至126%并获得1点技力",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -3220,8 +3220,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击未被阻挡的敌人时攻击力提升至129%<span class=\"potential\">（+3%）</span>并获得1点技力",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -3252,8 +3252,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -3275,8 +3275,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "攻击力+13%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -3298,8 +3298,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "攻击力+16%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -3756,8 +3756,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Generates <span class=\"value-up\"></span> DP after this unit defeats an enemy; Refunds the <span class=\"keyword\">current</span> DP Cost when retreated",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -3779,8 +3779,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "编入队伍时所有【先锋】干员的初始技力+6，自身部署时额外获得2点技力",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -3798,8 +3798,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "编入队伍时所有【先锋】干员的初始技力+8<span class=\"potential\">（+2）</span>，自身部署时额外获得2点技力",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -3821,8 +3821,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "编入队伍时所有【先锋】干员的初始技力+6，自身部署时额外获得4点技力",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -3840,8 +3840,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "编入队伍时所有【先锋】干员的初始技力+8<span class=\"potential\">（+2）</span>，自身部署时额外获得4点技力",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -3872,8 +3872,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Generates <span class=\"value-up\"></span> DP after this unit defeats an enemy; Refunds the <span class=\"keyword\">current</span> DP Cost when retreated",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -3895,8 +3895,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "在场时，所有【先锋】职业干员获得25%的物理闪避",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -3914,8 +3914,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在场时，所有【先锋】职业干员获得30%<span class=\"potential\">（+5%）</span>的物理闪避",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -3937,8 +3937,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "在场时，所有【先锋】职业干员获得30%的物理闪避",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -3956,8 +3956,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "在场时，所有【先锋】职业干员获得35%<span class=\"potential\">（+5%）</span>的物理闪避",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -3988,8 +3988,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Generates <span class=\"value-up\"></span> DP after this unit defeats an enemy; Refunds the <span class=\"keyword\">current</span> DP Cost when retreated",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -4011,8 +4011,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "自身再部署时间减少10秒；部署后，所有未部署的【近卫】干员的部署费用-1（每个干员每次被部署前，最多可被减少5费）",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -4034,8 +4034,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "自身再部署时间减少15秒；部署后，所有未部署的【近卫】干员的部署费用-1（每个干员每次被部署前，最多可被减少5费）",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -4240,7 +4240,7 @@
     {
       "moduleId": "uniequip_002_nearl2",
       "moduleIcon": "dre-x",
-      "moduleName": "耀阳锋刃",
+      "moduleName": "Blazing Sun Blade",
       "phases": [
         {
           "candidates": [
@@ -4260,7 +4260,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+              "traitEffect": "When attacking blocked enemies, increase ATK to <span class=\"value-up\">115%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -4281,9 +4281,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击无视敌人25%的防御力",
+              "talentEffect": "Attacks ignore 25% DEF",
               "talentIndex": 1,
-              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+              "traitEffect": "When attacking blocked enemies, increase ATK to <span class=\"value-up\">115%</span>",
               "traitEffectType": "update"
             },
             {
@@ -4300,9 +4300,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "攻击无视敌人28%<span class=\"potential\">（+3%）</span>的防御力",
+              "talentEffect": "Attacks ignore 28% <span class=\"potential\">(+3%)</span> DEF",
               "talentIndex": 1,
-              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+              "traitEffect": "When attacking blocked enemies, increase ATK to <span class=\"value-up\">115%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -4323,9 +4323,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击无视敌人28%的防御力",
+              "talentEffect": "Attacks ignore 28% DEF",
               "talentIndex": 1,
-              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+              "traitEffect": "When attacking blocked enemies, increase ATK to <span class=\"value-up\">115%</span>",
               "traitEffectType": "update"
             },
             {
@@ -4342,9 +4342,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "攻击无视敌人31%<span class=\"potential\">（+3%）</span>的防御力",
+              "talentEffect": "Attacks ignore 31% <span class=\"potential\">(+3%)</span> DEF",
               "talentIndex": 1,
-              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+              "traitEffect": "When attacking blocked enemies, increase ATK to <span class=\"value-up\">115%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -4956,8 +4956,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -4979,8 +4979,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "如果4秒内没有主动攻击过，下一次攻击的攻击力提升至165%并<span class=\"skill-tooltip\">晕眩</span>目标5秒",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -4998,8 +4998,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "如果4秒内没有主动攻击过，下一次攻击的攻击力提升至170%<span class=\"potential\">（+5%）</span>并<span class=\"skill-tooltip\">晕眩</span>目标5秒",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -5021,8 +5021,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "如果3秒内没有主动攻击过，下一次攻击的攻击力提升至175%并<span class=\"skill-tooltip\">晕眩</span>目标5秒",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -5040,8 +5040,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "如果3秒内没有主动攻击过，下一次攻击的攻击力提升至180%<span class=\"potential\">（+5%）</span>并<span class=\"skill-tooltip\">晕眩</span>目标5秒",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -5072,8 +5072,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -5095,8 +5095,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "攻击【感染生物】时，攻击力提升至150%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -5114,8 +5114,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击【感染生物】时，攻击力提升至155%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -5137,8 +5137,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "攻击【感染生物】时，攻击力提升至155%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -5156,8 +5156,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "攻击【感染生物】时，攻击力提升至160%<span class=\"potential\">（+5%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -5188,8 +5188,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -5211,8 +5211,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "特性消耗费用时，若费用足够则额外消耗5费用，抵消自身受到的下一次<span class=\"skill-tooltip\">晕眩</span>/<span class=\"skill-tooltip\">冻结</span>，并使攻击来源晕眩4秒",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -5234,8 +5234,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "特性消耗费用时，若费用足够则额外消耗4费用，抵消自身受到的下一次<span class=\"skill-tooltip\">晕眩</span>/<span class=\"skill-tooltip\">冻结</span>，并使攻击来源晕眩4秒",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -6235,7 +6235,7 @@
     {
       "moduleId": "uniequip_002_lava2",
       "moduleIcon": "spc-x",
-      "moduleName": "萨卡兹的刀",
+      "moduleName": "Sarkaz's Knife",
       "phases": [
         {
           "candidates": [
@@ -6300,7 +6300,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
+              "traitEffect": "Range <span class=\"keyword\">expands</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6366,9 +6366,9 @@
                 ]
               },
               "requiredPotentialRank": 0,
-              "talentEffect": "首次部署后立即获得33点技力，每次部署时使在场术师干员技力+4，在场时其余友方术师干员初始技力+4",
+              "talentEffect": "Immediately obtains 33 SP after the first deployment. When deployed, all other deployed Caster allies gain SP +4, and other Caster allies obtain initial SP +4",
               "talentIndex": 0,
-              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
+              "traitEffect": "Range <span class=\"keyword\">expands</span>",
               "traitEffectType": "update"
             },
             {
@@ -6430,9 +6430,9 @@
                 ]
               },
               "requiredPotentialRank": 4,
-              "talentEffect": "首次部署后立即获得38<span class=\"potential\">（+5）</span>点技力，每次部署时使在场术师干员技力+5<span class=\"potential\">（+1）</span>，在场时其余友方术师干员初始技力+5<span class=\"potential\">（+1）</span>",
+              "talentEffect": "Immediately obtains 38 <span class=\"potential\">(+5)</span> SP after the first deployment. When deployed, all other deployed Caster allies gain SP +5 <span class=\"potential\">(+1)</span>, and other Caster allies obtain initial SP +5 <span class=\"potential\">(+1)</span>",
               "talentIndex": 0,
-              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
+              "traitEffect": "Range <span class=\"keyword\">expands</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6498,9 +6498,9 @@
                 ]
               },
               "requiredPotentialRank": 0,
-              "talentEffect": "首次部署后立即获得35点技力，每次部署时使在场术师干员技力+4，在场时其余友方术师干员初始技力+4",
+              "talentEffect": "Immediately obtains 35 SP after the first deployment. When deployed, all other deployed Caster allies gain SP +4, and other Caster allies obtain initial SP +4",
               "talentIndex": 0,
-              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
+              "traitEffect": "Range <span class=\"keyword\">expands</span>",
               "traitEffectType": "update"
             },
             {
@@ -6562,9 +6562,9 @@
                 ]
               },
               "requiredPotentialRank": 4,
-              "talentEffect": "首次部署后立即获得40<span class=\"potential\">（+5）</span>点技力，每次部署时使在场术师干员技力+5<span class=\"potential\">（+1）</span>，在场时其余友方术师干员初始技力+5<span class=\"potential\">（+1）</span>",
+              "talentEffect": "Immediately obtains 40 <span class=\"potential\">(+5)</span> SP after the first deployment. When deployed, all other deployed Caster allies gain SP +5 <span class=\"potential\">(+1)</span>, and other Caster allies obtain initial SP +5 <span class=\"potential\">(+1)</span>",
               "talentIndex": 0,
-              "traitEffect": "攻击范围<span class=\"keyword\">扩大</span>",
+              "traitEffect": "Range <span class=\"keyword\">expands</span>",
               "traitEffectType": "update"
             }
           ]
@@ -7944,8 +7944,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -7967,8 +7967,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "技能未开启时，全场友方单位每秒回复30点生命",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -7986,8 +7986,8 @@
               "requiredPotentialRank": 2,
               "talentEffect": "技能未开启时，全场友方单位每秒回复35<span class=\"potential\">（+5）</span>点生命",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8009,8 +8009,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "技能未开启时，全场友方单位每秒回复35点生命",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -8028,8 +8028,8 @@
               "requiredPotentialRank": 2,
               "talentEffect": "技能未开启时，全场友方单位每秒回复40<span class=\"potential\">（+5）</span>点生命",
               "talentIndex": 1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -8176,8 +8176,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8199,8 +8199,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "防御力-35%，但攻击速度+21，技能期间攻速加成额外提升5",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -8218,8 +8218,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "防御力-35%，但攻击速度+24<span class=\"potential\">（+3）</span>，技能期间攻速加成额外提升5",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8241,8 +8241,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "防御力-35%，但攻击速度+21，技能期间攻速加成额外提升10",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -8260,8 +8260,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "防御力-35%，但攻击速度+24<span class=\"potential\">（+3）</span>，技能期间攻速加成额外提升10",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -8408,8 +8408,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8431,8 +8431,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "延长特性<span class=\"skill-tooltip\">停顿</span>的持续时间",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -8450,8 +8450,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "更加延长特性<span class=\"skill-tooltip\">停顿</span>的持续时间",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8473,8 +8473,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "进一步延长特性<span class=\"skill-tooltip\">停顿</span>的持续时间",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -8492,8 +8492,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "更进一步延长特性<span class=\"skill-tooltip\">停顿</span>的持续时间",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -8524,8 +8524,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但攻击力<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8551,8 +8551,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "&lt;替身&gt;使周围敌人移动速度-50%且每秒造成相当于60%攻击力的法术伤害，替换时自身额外获得8点技力",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但攻击力<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8578,8 +8578,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "&lt;替身&gt;使周围敌人移动速度-60%且每秒造成相当于80%攻击力的法术伤害，替换时自身额外获得15点技力",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但攻击力<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -8610,8 +8610,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8633,8 +8633,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "&lt;替身&gt;攻击造成法术伤害且受到的物理与法术伤害减少43%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -8652,8 +8652,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "&lt;替身&gt;攻击造成法术伤害且受到的物理与法术伤害减少46%<span class=\"potential\">（+3）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8675,8 +8675,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "&lt;替身&gt;攻击造成法术伤害且受到的物理与法术伤害减少45%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -8694,8 +8694,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "&lt;替身&gt;攻击造成法术伤害且受到的物理与法术伤害减少48%<span class=\"potential\">（+3）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -8726,8 +8726,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但攻击力<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8749,8 +8749,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "&lt;替身&gt;出现时对其周围8格内所有敌方单位造成相当于其攻击力280%的法术伤害",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但攻击力<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -8768,8 +8768,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "&lt;替身&gt;出现时对其周围8格内所有敌方单位造成相当于其攻击力285%<span class=\"potential\">（+5）</span>的法术伤害",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但攻击力<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -8791,8 +8791,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "&lt;替身&gt;出现时对其周围8格内所有敌方单位造成相当于其攻击力285%的法术伤害",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但攻击力<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -8810,8 +8810,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "&lt;替身&gt;出现时对其周围8格内所有敌方单位造成相当于其攻击力290%<span class=\"potential\">（+5）</span>的法术伤害",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但攻击力<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -9152,8 +9152,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "拥有较大治疗范围，治疗较远目标时治疗量<span class=\"keyword\">不再降低</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -9175,8 +9175,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "技能的治疗效果提高10%",
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "拥有较大治疗范围，治疗较远目标时治疗量<span class=\"keyword\">不再降低</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -9198,8 +9198,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "技能的治疗效果提高20%",
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "拥有较大治疗范围，治疗较远目标时治疗量<span class=\"keyword\">不再降低</span>",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -10056,8 +10056,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -10079,8 +10079,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "储存的攻击能量造成的伤害提升至135%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -10098,8 +10098,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "储存的攻击能量造成的伤害提升至139%<span class=\"potential\">（+4%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -10121,8 +10121,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "储存的攻击能量造成的伤害提升至138%",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -10140,8 +10140,8 @@
               "requiredPotentialRank": 4,
               "talentEffect": "储存的攻击能量造成的伤害提升至142%<span class=\"potential\">（+4%）</span>",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -10152,7 +10152,7 @@
     {
       "moduleId": "uniequip_002_indigo",
       "moduleIcon": "msc-x",
-      "moduleName": "法杖保养套装",
+      "moduleName": "Staff Maintain Suit",
       "phases": [
         {
           "candidates": [
@@ -10172,8 +10172,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Attacks deal Arts damage; When unable to find a target, attacks can be stored up and fired all at once (Up to 4 charges)",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -10193,10 +10193,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击时有23%的几率使目标<span class=\"skill-tooltip\">束缚</span>4秒，不以束缚状态的敌人为攻击目标",
+              "talentEffect": "When attacking, 23% chance to <span class=\"skill-tooltip\">Bind</span> the target for 4 seconds. Will not target Bound enemies",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Attacks deal Arts damage; When unable to find a target, attacks can be stored up and fired all at once (Up to 4 charges)",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -10212,10 +10212,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "攻击时有25%<span class=\"potential\">（+2%）</span>的几率使目标<span class=\"skill-tooltip\">束缚</span>4秒，不以束缚状态的敌人为攻击目标",
+              "talentEffect": "When attacking, 25% <span class=\"potential\">(+2%)</span> chance to <span class=\"skill-tooltip\">Bind</span> the target for 4 seconds. Will not target Bound enemies",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Attacks deal Arts damage; When unable to find a target, attacks can be stored up and fired all at once (Up to 4 charges)",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -10235,10 +10235,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击时有25%的几率使目标<span class=\"skill-tooltip\">束缚</span>4秒，不以束缚状态的敌人为攻击目标",
+              "talentEffect": "When attacking, 25% chance to <span class=\"skill-tooltip\">Bind</span> the target for 4 seconds. Will not target Bound enemies",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Attacks deal Arts damage; When unable to find a target, attacks can be stored up and fired all at once (Up to 4 charges)",
+              "traitEffectType": "override"
             },
             {
               "attributeBlackboard": [
@@ -10254,10 +10254,10 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "攻击时有27%<span class=\"potential\">（+2%）</span>的几率使目标<span class=\"skill-tooltip\">束缚</span>4秒，不以束缚状态的敌人为攻击目标",
+              "talentEffect": "When attacking, 27% <span class=\"potential\">(+2%)</span> chance to <span class=\"skill-tooltip\">Bind</span> the target for 4 seconds. Will not target Bound enemies",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "Attacks deal Arts damage; When unable to find a target, attacks can be stored up and fired all at once (Up to 4 charges)",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -10288,8 +10288,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -10311,8 +10311,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "储存的攻击能量造成的伤害提升至140%，可额外储存1份只用于攻击精英或领袖敌人的攻击能量",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -10334,8 +10334,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "储存的攻击能量造成的伤害提升至143%，可额外储存1份只用于攻击精英或领袖敌人的攻击能量",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffectType": "override"
             }
           ]
         }
@@ -11626,8 +11626,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -11649,8 +11649,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "每在场上停留10秒，攻击速度+4，最多可以叠加6次",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         },
@@ -11672,8 +11672,8 @@
               "requiredPotentialRank": 0,
               "talentEffect": "每在场上停留10秒，攻击速度+4，最多可以叠加7次",
               "talentIndex": 0,
-              "traitEffect": null,
-              "traitEffectType": ""
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffectType": "override"
             }
           ]
         }

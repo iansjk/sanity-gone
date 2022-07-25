@@ -3,7 +3,7 @@ import { Theme } from "@mui/material";
 
 export interface ModuleRecommendationProps {
   stage: "no" | "1" | "2" | "3";
-  priority: string;
+  priority?: string;
   analysis: string;
 }
 
@@ -18,7 +18,7 @@ const ModuleRecommendation: React.FC<ModuleRecommendationProps> = (props) => {
         </div>
         <div className="priority">
           <dt>Priority</dt>
-          <dd>{priority}</dd>
+          <dd>{priority ?? "--"}</dd>
         </div>
       </dl>
       <p dangerouslySetInnerHTML={{ __html: analysis }} />

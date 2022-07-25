@@ -658,6 +658,10 @@ const globalOverrideStyles =
             transparent
           ),
           ${transparentize(0.67, theme.palette.midtoneBrighter.main)};
+
+        h2 {
+          color: ${lighten(0.27, accentColor)} !important;
+        }
       }
 
       header {
@@ -818,7 +822,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
 
         &.active {
           background-color: ${transparentize(0.9, accentColor)};
-          color: ${accentColor};
+          color: ${lighten(0.27, accentColor)};
           border-right: 3px solid ${accentColor};
           font-weight: ${theme.typography.navigationLinkBold.fontWeight};
         }

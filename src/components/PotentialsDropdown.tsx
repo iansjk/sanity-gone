@@ -103,6 +103,7 @@ const PotentialsDropdown: React.VFC<PotentialsDropdownProps> = (props) => {
         MenuListProps={{
           "aria-labelledby": "potentials-menu-button",
         }}
+        onClose={() => setIsPotentialsMenuOpen(false)}
       >
         {potList.map((pot, i) => (
           <PotentialMenuItem key={i} onClick={() => handlePotentialsClick(pot)}>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { css } from "@emotion/react";
-import { Button, Menu, Theme, useMediaQuery, useTheme } from "@mui/material";
+import { Theme, useMediaQuery, useTheme } from "@mui/material";
 
 import { moduleImage, moduleTypeImage } from "../utils/images";
 import Image from "next/image";
@@ -29,9 +29,10 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
   const [stage, setStageNumber] = useState(maxStage);
   const [potential, setPotential] = useState(0);
 
+  // this is a 2D array of the potentials in use at each stage of the module
   const potentialsInUse: number[][] = [];
-  // load the potentials in use
 
+  // load the potentials in use
   for (let i = 0; i < phases.length; i++) {
     const curPotentialList: number[] = [];
     for (let curPot = 0; curPot <= 5; curPot++) {
@@ -45,6 +46,8 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
   }
 
   const setStage = (stage: number) => {
+    // undefined error will occur if we try to switch to a stage which a
+    // potential doesn't affect
     if (!potentialsInUse[stage - 1].includes(potential)) {
       setPotential(potentialsInUse[stage - 1][0]);
     }
@@ -205,9 +208,10 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
         <div className="talent-effect">
           <dt>
             {activeCandidate.talentEffect &&
-              (activeCandidate.talentIndex === -1 ? (
+              (activeCandidate.talentIndex === -1 ? ( // new talent added
                 <span className="added">ADDED</span>
               ) : (
+                // current talent updated
                 <span className="updated">UPDATED</span>
               ))}
             {

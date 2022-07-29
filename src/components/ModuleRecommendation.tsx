@@ -37,7 +37,7 @@ const styles = (theme: Theme) => css`
       grid-template-columns: unset;
     }
 
-    .recommended-rank {
+    .recommended-stage {
       border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
 
       ${theme.breakpoints.down("mobile")} {

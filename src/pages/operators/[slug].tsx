@@ -821,9 +821,13 @@ const styles = (accentColor: string) => (theme: Theme) =>
         }
 
         &.active {
-          background-color: ${transparentize(0.9, accentColor)};
+          background: linear-gradient(
+            90deg,
+            ${transparentize(0.9, accentColor)},
+            ${transparentize(0.8, accentColor)}
+          );
           color: ${lighten(0.27, accentColor)};
-          border-right: 3px solid ${accentColor};
+          border-right: 3px solid ${lighten(0.27, accentColor)};
           font-weight: ${theme.typography.navigationLinkBold.fontWeight};
         }
 
@@ -869,8 +873,8 @@ const styles = (accentColor: string) => (theme: Theme) =>
       .section-label {
         display: block;
         margin-bottom: ${theme.spacing(1)};
-        font-size: ${theme.typography.body2.fontSize}px;
-        line-height: ${theme.typography.body2.lineHeight};
+        font-size: ${theme.typography.body3.fontSize}px;
+        line-height: ${theme.typography.body3.lineHeight};
         color: ${theme.palette.gray.main};
       }
 

@@ -58,6 +58,11 @@ const styles = (theme: Theme) => css`
       flex-direction: row;
       align-items: center;
 
+      dt {
+        font-size: ${theme.typography.body1.fontSize}px;
+        line-height: ${theme.typography.body1.lineHeight};
+      }
+
       dd {
         margin: 0;
         font-size: ${theme.typography.body1.fontSize}px;

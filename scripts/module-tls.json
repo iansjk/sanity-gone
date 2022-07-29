@@ -553,7 +553,7 @@
           },
           {
             "trait": "ASPD <span class=\"keyword\">+8</span> when there is a ground enemy within range",
-            "talent": "When deployed, this unit gains 9 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 9 <span class=\"potential\">+2</span> Skill Points after the Shield breaks"
+            "talent": "When deployed, this unit gains 9 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 9 <span class=\"potential\">(+2)</span> Skill Points after the Shield breaks"
           }
         ]
       }

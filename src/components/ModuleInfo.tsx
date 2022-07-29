@@ -137,17 +137,13 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
 
         <div className="module-labels">
           <div className="module-icon">
-            <Image src={moduleTypeImage(moduleIcon)} width={40} height={40} />
+            <Image src={moduleTypeImage(moduleIcon)} width={42} height={42} />
           </div>
-          <div className="module-labels-text">
-            <div className="module-name-container">
-              <h3 className="module-name">{moduleName}</h3>
-            </div>
-            <p className="module-type">{moduleIcon.toUpperCase()}</p>
-          </div>
+          <h3 className="module-name">{moduleName}</h3>
+          <p className="module-type">{moduleIcon.toUpperCase()}</p>
         </div>
         {attackBonus && (
-          <div className="attack">
+          <div className="attack stat-change">
             <dt>
               <AttackPowerIcon aria-hidden="true" />{" "}
               {isMobile ? "ATK" : "Attack Power"}
@@ -157,7 +153,7 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
         )}
 
         {healthBonus && (
-          <div className="health">
+          <div className="health stat-change">
             <dt>
               <HealthIcon aria-hidden="true" /> {isMobile ? "HP" : "Health"}
             </dt>
@@ -166,7 +162,7 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
         )}
 
         {defenseBonus && (
-          <div className="defense">
+          <div className="defense stat-change">
             <dt>
               <DefenseIcon aria-hidden="true" /> {isMobile ? "DEF" : "Defense"}
             </dt>
@@ -175,7 +171,7 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
         )}
 
         {attackSpeedBonus && (
-          <div className="attack-speed">
+          <div className="attack-speed stat-change">
             <dt>
               <AttackSpeedIcon aria-hidden="true" />{" "}
               {isMobile ? "ASPD" : "Attack Speed"}
@@ -262,12 +258,16 @@ const styles = (theme: Theme) => css`
       button {
         width: ${theme.spacing(7.5)};
         height: ${theme.spacing(8)};
-        font-size: ${theme.typography.generalHeading.fontSize}px;
-        line-height: ${theme.typography.generalHeading.lineHeight};
+        font-size: ${theme.typography.generalHeadingBold.fontSize}px;
+        font-weight: ${theme.typography.generalHeadingBold.fontWeight};
+        line-height: ${theme.typography.generalHeadingBold.lineHeight};
+        color: ${theme.palette.midtoneBrighterer.main};
+
         border-radius: ${theme.spacing(0)};
         &.active {
           // this is to counterbalance the text shifting
           padding-top: 3px;
+          color: ${theme.palette.white.main};
         }
 
         &:first-of-type {
@@ -296,7 +296,7 @@ const styles = (theme: Theme) => css`
     grid-auto-flow: row;
     position: relative;
     grid-template-columns: 304px 1fr 1fr;
-    grid-template-rows: repeat(2, 88px);
+    grid-template-rows: 88px 88px;
     gap: ${theme.spacing(0.25)};
 
     &.three-bonuses {
@@ -319,50 +319,55 @@ const styles = (theme: Theme) => css`
     }
 
     .module-labels {
-      display: flex;
-      flex-direction: row;
-      grid-column-start: span 2;
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      grid-template-rows: repeat(2, max-content);
+      column-gap: ${theme.spacing(2)};
+      row-gap: ${theme.spacing(0.5)};
       align-items: center;
+      padding: ${theme.spacing(2)};
+
+      grid-column-start: span 2;
 
       .module-icon {
-        height: ${theme.spacing(5)};
+        height: 42px;
+        width: 42px;
         padding: ${theme.spacing(0.75)};
-        margin-right: ${theme.spacing(2)};
         border-radius: ${theme.spacing(1)};
         background-color: ${theme.palette.dark.main};
-        flex: none;
+        grid-row-start: span 2;
       }
 
       min-width: 0;
 
-      .module-labels-text {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
+      .module-name {
+        white-space: nowrap;
+        padding: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+        //margin: ${theme.spacing(0, 0, 0.5, 0)};
 
-        font-weight: ${theme.typography.body1Bold.fontWeight};
-        line-height: 23px;
-        height: ${theme.spacing(6)};
+        font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+        line-height: ${theme.typography.skillTalentHeading.lineHeight};
+        font-weight: ${theme.typography.skillTalentHeading.fontWeight};
+      }
+
+      .module-type {
+        margin: 0;
+        padding: 0;
+        color: ${theme.palette.gray.main};
         overflow: hidden;
 
-        .module-name-container {
-          margin: ${theme.spacing(0, 0, 0.5, 0)};
+        font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+        line-height: ${theme.typography.skillTalentHeading.lineHeight};
+        font-weight: ${theme.typography.skillTalentHeading.fontWeight};
+      }
+    }
 
-          .module-name {
-            white-space: nowrap;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-          }
-        }
-
-        .module-type {
-          margin: 0;
-          padding: 0;
-          color: ${theme.palette.gray.main};
-          overflow: hidden;
-        }
+    .stat-change {
+      dd {
+        //margin-top: 0;
       }
     }
 
@@ -410,17 +415,20 @@ const styles = (theme: Theme) => css`
 
       dt {
         margin-bottom: ${theme.spacing(1)};
-        font-size: ${theme.typography.body3.fontSize}px;
-        line-height: ${theme.typography.body3.lineHeight};
+        font-size: ${theme.typography.label2.fontSize}px;
+        line-height: ${theme.typography.label2.lineHeight};
         color: ${theme.palette.gray.main};
 
+        span.added,
+        span.updated {
+          margin-right: ${theme.spacing(1)};
+          font-weight: ${theme.typography.label2.fontWeight};
+        }
         span.added {
           color: ${theme.palette.lime.main};
-          margin-right: ${theme.spacing(1)};
         }
         span.updated {
           color: ${theme.palette.yellow.main};
-          margin-right: ${theme.spacing(1)};
         }
       }
       dd {

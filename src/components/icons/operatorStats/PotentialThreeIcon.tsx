@@ -14,10 +14,12 @@ const PotentialThreeIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (
         <path
           d="M73.5274 42.0493L225.284 152.307L208.864 110.258L57.1074 0L73.5274 42.0493Z"
           fill="#484858"
+          className="no-potential"
         />
         <path
           d="M157.351 235.772L99.385 57.3711L87.9531 101.041L145.919 279.442L157.351 235.772Z"
           fill="#484858"
+          className="no-potential"
         />
         <path
           d="M45.0653 169.36L196.822 59.1016L151.757 61.7239L0 171.982L45.0653 169.36Z"

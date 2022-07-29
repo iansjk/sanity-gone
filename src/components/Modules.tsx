@@ -27,8 +27,8 @@ const Modules: React.VFC<ModuleProps> = (props) => {
           <div className="module-icon">
             <Image
               className="module-icon-image"
-              width={40}
-              height={40}
+              width={42}
+              height={42}
               src={moduleTypeImage(modules[i].moduleIcon)}
             />
           </div>
@@ -55,6 +55,10 @@ const styles = (theme: Theme) => css`
     backdrop-filter: opacity(1);
     border: ${theme.spacing(0.25)} solid ${theme.palette.midtoneBrighterer.main} !important;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     &:hover {
       opacity: 0.67;
     }
@@ -74,7 +78,7 @@ const styles = (theme: Theme) => css`
   }
   .module-icon {
     display: flex;
-    margin: ${theme.spacing(0)};
+    margin: 0 auto;
 
     .module-icon-image {
       border-radius: ${theme.spacing(1)};

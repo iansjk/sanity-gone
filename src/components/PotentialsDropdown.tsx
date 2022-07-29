@@ -130,5 +130,9 @@ const styles = (theme: Theme) => css`
     width: 18.9px;
     height: 18px;
     margin-right: ${theme.spacing(1)};
+
+    path.no-potential {
+      fill: ${theme.palette.gray.main};
+    }
   }
 `;

@@ -712,8 +712,8 @@ const styles =
         }
 
         dt {
-          font-size: ${theme.typography.body2.fontSize}px;
-          line-height: ${theme.typography.body2.lineHeight};
+          font-size: ${theme.typography.body3.fontSize}px;
+          line-height: ${theme.typography.body3.lineHeight};
           color: ${theme.palette.gray.main};
           display: flex;
           align-items: center;

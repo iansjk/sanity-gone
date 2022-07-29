@@ -228,7 +228,7 @@ const baseTheme = createTheme({
     },
     body3: {
       fontSize: 14,
-      lineHeight: 1.5,
+      lineHeight: "18px", // ha ha hah ah aah hash ah ah ah
     },
     smallPortraitRarity: {
       fontSize: 18,

@@ -33,7 +33,10 @@ const PotentialMenuItem = styled(MenuItem)(({ theme }) => ({
   },
   svg: {
     height: "18px",
-    width: "18px",
+    width: "18.9px",
+    "path.no-potential": {
+      fill: theme.palette.gray.main,
+    },
   },
 }));
 

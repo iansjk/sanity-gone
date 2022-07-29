@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 
 export interface ModuleRecommendationProps {
-  stage: "no" | "1" | "2" | "3";
+  stage: string; // apparently 1+ exists so just arbitrary string
   priority?: string;
   analysis: string;
 }

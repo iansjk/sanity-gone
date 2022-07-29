@@ -148,8 +148,6 @@ const styles = (theme: Theme) => css`
         }
       }
 
-      /* Synergy quality is legacy
-      
       .synergy-quality {
         font-size: ${theme.typography.body2.fontSize}px;
         line-height: ${theme.typography.body2.lineHeight};
@@ -201,7 +199,6 @@ const styles = (theme: Theme) => css`
       .synergy-quality.quality--1 {
         color: ${theme.palette.red.main};
       }
-       */
     }
 
     .swiper-container {

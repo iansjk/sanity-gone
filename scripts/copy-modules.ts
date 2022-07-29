@@ -36,6 +36,10 @@ void (() => {
   // |   WARNING: Ahead lies madness.   |
   // ------------------------------------
 
+  // To preserve my own sanity in case of debugging, I have put up a lot of
+  // documentation to explain what everything is doing, to anyone who is reading
+  // this and to myself in the future.
+
   // Due to the drastically more complicated nature of modules, this copy script
   // approach completely diverges from every other copy script, in that it
   // directly transforms the data from the original (ModuleObject) into a more
@@ -46,6 +50,11 @@ void (() => {
 
   // The resultant modules.json is a Record<string, Module[]> mapping a
   // character name ("char_xxx_name") to that operator's modules (in order).
+
+  // Additional notes not covered elsewhere:
+  // tokenAttributeBlackboard[] can safely be ignored, because it is already
+  // included in the effects of the skill itself.
+
   console.log("Updating modules...");
   const denormalizedModules: Record<string, Module[]> = {};
   Object.entries(cnBattleEquipTable).forEach(([moduleId, moduleObject]) => {

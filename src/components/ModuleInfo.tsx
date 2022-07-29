@@ -269,7 +269,7 @@ const styles = (theme: Theme) => css`
 
         border-radius: ${theme.spacing(0)};
         &.active {
-          // this is to counterbalance the text shifting
+          // this is to counterbalance the text shifting when a border is shown
           padding-top: 3px;
           color: ${theme.palette.white.main};
         }
@@ -369,12 +369,6 @@ const styles = (theme: Theme) => css`
       }
     }
 
-    .stat-change {
-      dd {
-        //margin-top: 0;
-      }
-    }
-
     .attack {
       svg path {
         fill: ${theme.palette.red.main};
@@ -468,6 +462,15 @@ const styles = (theme: Theme) => css`
       &.no-talent {
         .trait-effect {
           border-bottom-right-radius: 0;
+          min-height: ${theme.spacing(
+            8
+          )}; // to prevent the trait being shorter than range
+          grid-row: span 2;
+
+          ${theme.breakpoints.down("mobile")} {
+            min-height: unset;
+            grid-row: unset;
+          }
         }
       }
 
@@ -480,6 +483,31 @@ const styles = (theme: Theme) => css`
         background: ${theme.palette.midtoneDarker.main};
         padding: ${theme.spacing(2)};
         border-bottom-right-radius: ${theme.spacing(0.5)};
+      }
+
+      ${theme.breakpoints.down("mobile")} {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-auto-flow: column;
+
+        .module-range {
+          grid-column-start: 1;
+          grid-row-start: 3;
+          border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+        }
+
+        .trait-effect {
+          grid-row-start: 1;
+          grid-column-start: 1;
+        }
+
+        &.no-talent {
+          grid-template-rows: repeat(2, auto);
+
+          .module-range {
+            grid-row-start: 2;
+          }
+        }
       }
     }
   }

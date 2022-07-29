@@ -182,7 +182,9 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
       </dl>
       <div
         className={
-          "module-effects" + (activeCandidate.displayRange ? " has-range" : "")
+          "module-effects" +
+          (activeCandidate.displayRange ? " has-range" : "") +
+          (activeCandidate.talentEffect ? "" : " no-talent")
         }
       >
         <div className="trait-effect">
@@ -201,29 +203,31 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
             }}
           />
         </div>
-        <div className="talent-effect">
-          <dt>
-            {activeCandidate.talentEffect &&
-              (activeCandidate.talentIndex === -1 ? ( // new talent added
-                <span className="added">ADDED</span>
-              ) : (
-                // current talent updated
-                <span className="updated">UPDATED</span>
-              ))}
-            {
-              activeCandidate.talentEffect
-                ? activeCandidate.talentIndex === -1
-                  ? "New Talent" // there is a new talent
-                  : `Talent ${activeCandidate.talentIndex + 1}` // this is the talent modified
-                : "Talent" /* no talent modifications */
-            }
-          </dt>
-          <dd
-            dangerouslySetInnerHTML={{
-              __html: activeCandidate.talentEffect ?? "No effect",
-            }}
-          />
-        </div>
+        {activeCandidate.talentEffect && (
+          <div className="talent-effect">
+            <dt>
+              {activeCandidate.talentEffect &&
+                (activeCandidate.talentIndex === -1 ? ( // new talent added
+                  <span className="added">ADDED</span>
+                ) : (
+                  // current talent updated
+                  <span className="updated">UPDATED</span>
+                ))}
+              {
+                activeCandidate.talentEffect
+                  ? activeCandidate.talentIndex === -1
+                    ? "New Talent" // there is a new talent
+                    : `Talent ${activeCandidate.talentIndex + 1}` // this is the talent modified
+                  : "Talent" /* no talent modifications */
+              }
+            </dt>
+            <dd
+              dangerouslySetInnerHTML={{
+                __html: activeCandidate.talentEffect ?? "No effect",
+              }}
+            />
+          </div>
+        )}
         {activeCandidate.displayRange && (
           <div className="module-range">
             {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
@@ -448,11 +452,23 @@ const styles = (theme: Theme) => css`
       border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
     }
 
+    &.no-talent {
+      .trait-effect {
+        border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
+      }
+    }
+
     &.has-range {
       grid-template-columns: 1fr 228px;
 
       .talent-effect {
         border-bottom-right-radius: 0;
+      }
+
+      &.no-talent {
+        .trait-effect {
+          border-bottom-right-radius: 0;
+        }
       }
 
       .module-range {

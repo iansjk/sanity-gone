@@ -824,5 +824,66 @@
         ]
       }
     ]
+  },
+  "uniequip_002_lmlee": {
+    "moduleName": "No Question Good or Bad",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\"> DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">2 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)",
+            "talent": null
+          },
+          {
+            "trait": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\"> DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">2 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)",
+            "talent": "When DP is consumed by Trait effect, if there is sufficient DP, consume 5 DP instead to block the next <span class=\"skill-tooltip\">Stun</span>/<span class=\"skill-tooltip\">Freeze</span> inflicted on Lee and Stun the attacker for 4 seconds"
+          },
+          {
+            "trait": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\"> DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">2 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)",
+            "talent": "When DP is consumed by Trait effect, if there is sufficient DP, consume 4 DP instead to block the next <span class=\"skill-tooltip\">Stun</span>/<span class=\"skill-tooltip\">Freeze</span> inflicted on Lee and Stun the attacker for 4 seconds"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_kroos2": {
+    "moduleName": "Truth or Dare",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": null
+          },
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": "When attacking, 20% chance to deal 160% damage and <span class=\"skill-tooltip\">Stun</span> the target for 0.2 seconds"
+          },
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": "When attacking, 20% chance to deal 165% damage and <span class=\"skill-tooltip\">Stun</span> the target for 0.2 seconds"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": null
+          },
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": "When attacking, 20% chance to deal 170% <span class=\"potential\">(+10%)</span> damage and <span class=\"skill-tooltip\">Stun</span> the target for 0.2 seconds"
+          },
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": "When attacking, 20% chance to deal 175% <span class=\"potential\">(+10%)</span> damage and <span class=\"skill-tooltip\">Stun</span> the target for 0.2 seconds"
+          }
+        ]
+      }
+    ]
   }
 }

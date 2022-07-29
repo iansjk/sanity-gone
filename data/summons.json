@@ -412,7 +412,7 @@
       ],
       "cnName": "医疗探机",
       "isCnOnly": false,
-      "fileIndex": 210,
+      "fileIndex": 216,
       "operatorName": "Silence"
     }
   ],
@@ -834,7 +834,7 @@
       "skillData": [],
       "cnName": "触手",
       "isCnOnly": false,
-      "fileIndex": 211,
+      "fileIndex": 217,
       "operatorName": "Deepcolor"
     }
   ],
@@ -1431,7 +1431,7 @@
       "skillData": [],
       "cnName": "Mon3tr",
       "isCnOnly": false,
-      "fileIndex": 212,
+      "fileIndex": 218,
       "operatorName": "Kal'tsit"
     }
   ],
@@ -1863,7 +1863,7 @@
       "skillData": [],
       "cnName": "幻影",
       "isCnOnly": false,
-      "fileIndex": 213,
+      "fileIndex": 219,
       "operatorName": "Nightingale"
     }
   ],
@@ -3360,7 +3360,7 @@
       ],
       "cnName": "机械水獭",
       "isCnOnly": false,
-      "fileIndex": 214,
+      "fileIndex": 220,
       "operatorName": "Mayer"
     }
   ],
@@ -4563,7 +4563,7 @@
       ],
       "cnName": "龙腾.F",
       "isCnOnly": false,
-      "fileIndex": 215,
+      "fileIndex": 221,
       "operatorName": "Magallan"
     },
     {
@@ -5668,7 +5668,7 @@
       ],
       "cnName": "龙腾.L",
       "isCnOnly": false,
-      "fileIndex": 216,
+      "fileIndex": 222,
       "operatorName": "Magallan"
     },
     {
@@ -6869,7 +6869,7 @@
       ],
       "cnName": "龙腾.A",
       "isCnOnly": false,
-      "fileIndex": 217,
+      "fileIndex": 223,
       "operatorName": "Magallan"
     }
   ],
@@ -7606,7 +7606,7 @@
       ],
       "cnName": "诅咒娃娃",
       "isCnOnly": false,
-      "fileIndex": 218,
+      "fileIndex": 224,
       "operatorName": "Shamare"
     }
   ],
@@ -9524,7 +9524,7 @@
       ],
       "cnName": "镜中虚影",
       "isCnOnly": false,
-      "fileIndex": 219,
+      "fileIndex": 225,
       "operatorName": "Phantom"
     }
   ],
@@ -10223,7 +10223,7 @@
       ],
       "cnName": "此面向敌",
       "isCnOnly": false,
-      "fileIndex": 220,
+      "fileIndex": 226,
       "operatorName": "W"
     }
   ],
@@ -11534,7 +11534,7 @@
       ],
       "cnName": "工程蓄水炮",
       "isCnOnly": false,
-      "fileIndex": 221,
+      "fileIndex": 227,
       "operatorName": "Weedy"
     }
   ],
@@ -13324,7 +13324,7 @@
       ],
       "cnName": "移动摄影器",
       "isCnOnly": false,
-      "fileIndex": 222,
+      "fileIndex": 228,
       "operatorName": "Scene"
     }
   ],
@@ -14451,7 +14451,7 @@
       ],
       "cnName": "沙之碑",
       "isCnOnly": false,
-      "fileIndex": 223,
+      "fileIndex": 229,
       "operatorName": "Beeswax"
     }
   ],
@@ -15367,7 +15367,7 @@
       ],
       "cnName": "迷迭香的战术装备",
       "isCnOnly": false,
-      "fileIndex": 224,
+      "fileIndex": 230,
       "operatorName": "Rosmontis"
     }
   ],
@@ -16365,7 +16365,7 @@
       ],
       "cnName": "\"夹子\"",
       "isCnOnly": false,
-      "fileIndex": 225,
+      "fileIndex": 231,
       "operatorName": "Robin"
     }
   ],
@@ -16759,7 +16759,7 @@
       "skillData": [],
       "cnName": "磐蟹护卫队",
       "isCnOnly": false,
-      "fileIndex": 226,
+      "fileIndex": 232,
       "operatorName": "Beanstalk"
     }
   ],
@@ -17339,7 +17339,7 @@
       "skillData": [],
       "cnName": "\"小自在\"",
       "isCnOnly": false,
-      "fileIndex": 227,
+      "fileIndex": 233,
       "operatorName": "Dusk"
     }
   ],
@@ -18337,7 +18337,7 @@
       ],
       "cnName": "迎宾踏垫",
       "isCnOnly": false,
-      "fileIndex": 228,
+      "fileIndex": 234,
       "operatorName": "Frost"
     }
   ],
@@ -20068,7 +20068,7 @@
       ],
       "cnName": "斯卡蒂的海嗣",
       "isCnOnly": false,
-      "fileIndex": 229,
+      "fileIndex": 235,
       "operatorName": "Skadi the Corrupting Heart"
     }
   ],
@@ -20574,7 +20574,7 @@
       ],
       "cnName": "全自动造型仪",
       "isCnOnly": false,
-      "fileIndex": 230,
+      "fileIndex": 236,
       "operatorName": "Roberta"
     }
   ],
@@ -21571,14 +21571,14 @@
       ],
       "cnName": "“耀阳”",
       "isCnOnly": false,
-      "fileIndex": 231,
+      "fileIndex": 237,
       "operatorName": "Nearl the Radiant Knight"
     }
   ],
   "Ling": [
     {
-      "name": "Tranquility",
-      "description": "能够阻挡一个敌人",
+      "name": "'Tranquility'",
+      "description": "Blocks 1 enemy",
       "canUseGeneralPotentialItem": true,
       "potentialItemId": "",
       "nationId": null,
@@ -21586,7 +21586,7 @@
       "teamId": null,
       "displayNumber": null,
       "tokenKey": null,
-      "appellation": "Tranquility",
+      "appellation": " ",
       "position": "MELEE",
       "tagList": null,
       "itemUsage": null,
@@ -21628,8 +21628,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -21655,8 +21654,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -21704,8 +21702,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -21731,8 +21728,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -21780,8 +21776,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -21807,8 +21802,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -21947,7 +21941,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+3",
+              "description": "+3 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -21969,7 +21963,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+4",
+              "description": "+4 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -21991,7 +21985,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+5",
+              "description": "+5 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -22062,11 +22056,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22081,11 +22074,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22100,11 +22092,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22119,11 +22110,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22138,11 +22128,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22157,11 +22146,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22176,11 +22164,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22195,11 +22182,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22214,11 +22200,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22233,11 +22218,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22259,11 +22243,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22278,11 +22261,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22297,11 +22279,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22316,11 +22297,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22335,11 +22315,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22354,11 +22333,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22373,11 +22351,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22392,11 +22369,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22411,11 +22387,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22430,11 +22405,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22456,11 +22430,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22475,11 +22448,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22494,11 +22466,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22513,11 +22484,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22532,11 +22502,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22551,11 +22520,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22570,11 +22538,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22589,11 +22556,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22608,11 +22574,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22627,11 +22592,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22649,13 +22613,13 @@
         }
       ],
       "cnName": "“清平”",
-      "isCnOnly": true,
-      "fileIndex": 264,
+      "isCnOnly": false,
+      "fileIndex": 238,
       "operatorName": "Ling"
     },
     {
-      "name": "Peripateticism",
-      "description": "攻击造成法术伤害",
+      "name": "'Peripateticism'",
+      "description": "Deals Arts damage",
       "canUseGeneralPotentialItem": true,
       "potentialItemId": "",
       "nationId": null,
@@ -22663,7 +22627,7 @@
       "teamId": null,
       "displayNumber": null,
       "tokenKey": null,
-      "appellation": "Peripateticism",
+      "appellation": " ",
       "position": "RANGED",
       "tagList": null,
       "itemUsage": null,
@@ -22705,8 +22669,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -22732,8 +22695,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -22813,8 +22775,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -22840,8 +22801,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -22921,8 +22881,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -22948,8 +22907,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -23120,7 +23078,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+3",
+              "description": "+3 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -23142,7 +23100,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+4",
+              "description": "+4 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -23164,7 +23122,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+5",
+              "description": "+5 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -23252,11 +23210,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23280,11 +23237,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23308,11 +23264,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23336,11 +23291,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23364,11 +23318,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23392,11 +23345,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23420,11 +23372,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23448,11 +23399,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23476,11 +23426,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23504,11 +23453,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23539,11 +23487,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23567,11 +23514,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23595,11 +23541,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23623,11 +23568,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23651,11 +23595,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23679,11 +23622,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23707,11 +23649,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23735,11 +23676,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23763,11 +23703,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23791,11 +23730,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23826,11 +23764,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23854,11 +23791,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23882,11 +23818,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23910,11 +23845,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23938,11 +23872,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23966,11 +23899,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23994,11 +23926,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24022,11 +23953,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24050,11 +23980,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24078,11 +24007,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24109,13 +24037,13 @@
         }
       ],
       "cnName": "“逍遥”",
-      "isCnOnly": true,
-      "fileIndex": 265,
+      "isCnOnly": false,
+      "fileIndex": 239,
       "operatorName": "Ling"
     },
     {
-      "name": "Thunderer",
-      "description": "攻击所有阻挡的敌人",
+      "name": "'Thunderer'",
+      "description": "Attacks all blocked enemies",
       "canUseGeneralPotentialItem": true,
       "potentialItemId": "",
       "nationId": null,
@@ -24123,7 +24051,7 @@
       "teamId": null,
       "displayNumber": null,
       "tokenKey": null,
-      "appellation": "Thunderer",
+      "appellation": " ",
       "position": "MELEE",
       "tagList": null,
       "itemUsage": null,
@@ -24165,8 +24093,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -24192,8 +24119,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -24241,8 +24167,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -24268,8 +24193,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -24317,8 +24241,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -24344,8 +24267,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -24484,7 +24406,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+3",
+              "description": "+3 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -24506,7 +24428,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+4",
+              "description": "+4 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -24528,7 +24450,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+5",
+              "description": "+5 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -24616,11 +24538,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24660,11 +24581,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24704,11 +24624,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24748,11 +24667,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24792,11 +24710,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24836,11 +24753,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24880,11 +24796,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24924,11 +24839,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24968,11 +24882,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25012,11 +24925,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25063,11 +24975,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25107,11 +25018,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25151,11 +25061,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25195,11 +25104,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25239,11 +25147,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25283,11 +25190,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25327,11 +25233,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25371,11 +25276,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25415,11 +25319,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25459,11 +25362,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25510,11 +25412,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25554,11 +25455,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25598,11 +25498,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25642,11 +25541,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25686,11 +25584,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25730,11 +25627,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25774,11 +25670,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25818,11 +25713,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25862,11 +25756,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25906,11 +25799,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25953,14 +25845,14 @@
         }
       ],
       "cnName": "“弦惊”",
-      "isCnOnly": true,
-      "fileIndex": 266,
+      "isCnOnly": false,
+      "fileIndex": 240,
       "operatorName": "Ling"
     }
   ],
   "Blacknight": [
     {
-      "name": "Hypnos",
+      "name": "Slumberfoot",
       "description": null,
       "canUseGeneralPotentialItem": true,
       "potentialItemId": "",
@@ -25969,7 +25861,7 @@
       "teamId": null,
       "displayNumber": null,
       "tokenKey": null,
-      "appellation": "Hypnos",
+      "appellation": " ",
       "position": "MELEE",
       "tagList": null,
       "itemUsage": null,
@@ -26011,8 +25903,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -26038,8 +25929,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -26099,8 +25989,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -26126,8 +26015,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -26187,8 +26075,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -26214,8 +26101,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -26367,8 +26253,7 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false,
-            "levitateImmune": false
+            "frozenImmune": false
           }
         },
         {
@@ -26394,8 +26279,7 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false,
-            "levitateImmune": false
+            "frozenImmune": false
           }
         }
       ],
@@ -26408,11 +26292,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "食梦",
+              "name": "Dream Eater",
               "rangeId": null,
-              "description": "可以攻击并优先攻击<$ba.sleep>沉睡</>的目标",
+              "description": "Can attack and will prioritize Sleeping enemies",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -26434,11 +26317,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "食梦",
+              "name": "Dream Eater",
               "rangeId": null,
-              "description": "可以攻击并优先攻击<$ba.sleep>沉睡</>的目标",
+              "description": "Can attack and will prioritize Sleeping enemies",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -26456,8 +26338,8 @@
         }
       ],
       "cnName": "眠兽",
-      "isCnOnly": true,
-      "fileIndex": 267,
+      "isCnOnly": false,
+      "fileIndex": 241,
       "operatorName": "Blacknight"
     }
   ],

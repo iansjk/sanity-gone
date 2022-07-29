@@ -195,7 +195,7 @@
     {
       "moduleId": "uniequip_002_ling",
       "moduleIcon": "sum-y",
-      "moduleName": "Fond Dream With Poetry",
+      "moduleName": "Fond Dream with Poetry",
       "phases": [
         {
           "candidates": [
@@ -4240,7 +4240,7 @@
     {
       "moduleId": "uniequip_002_nearl2",
       "moduleIcon": "dre-x",
-      "moduleName": "Blazing Sun Blade",
+      "moduleName": "Blade of Blazing Sun",
       "phases": [
         {
           "candidates": [
@@ -4356,7 +4356,7 @@
     {
       "moduleId": "uniequip_002_skadi",
       "moduleIcon": "dre-y",
-      "moduleName": "潮湿的剑袋",
+      "moduleName": "Moist Sword Bag",
       "phases": [
         {
           "candidates": [
@@ -4376,7 +4376,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "被击倒时不撤退且回复所有生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
+              "traitEffect": "When defeated, does not retreat and recovers HP instead. However, Max HP <span class=\"value-down\">60%</span> and ASPD <span class=\"value-up\">+30</span> (Can only activate once every deployment)",
               "traitEffectType": "update"
             }
           ]
@@ -4548,7 +4548,7 @@
     {
       "moduleId": "uniequip_002_flameb",
       "moduleIcon": "dre-y",
-      "moduleName": "锈损的断刀",
+      "moduleName": "Rusty Broken Blade",
       "phases": [
         {
           "candidates": [
@@ -4568,7 +4568,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "被击倒时不撤退且回复所有生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
+              "traitEffect": "When defeated, does not retreat and recovers HP instead. However, Max HP <span class=\"value-down\">60%</span> and ASPD <span class=\"value-up\">+30</span> (Can only activate once every deployment)",
               "traitEffectType": "update"
             }
           ]
@@ -4664,7 +4664,7 @@
     {
       "moduleId": "uniequip_002_franka",
       "moduleIcon": "dre-x",
-      "moduleName": "尖端铝热单元",
+      "moduleName": "Cutting-edge Thermite Unit",
       "phases": [
         {
           "candidates": [
@@ -4684,7 +4684,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+              "traitEffect": "Increases ATK to <span class=\"value-up\">115%</span> when attacking blocked enemies",
               "traitEffectType": "update"
             }
           ]
@@ -4742,7 +4742,7 @@
     {
       "moduleId": "uniequip_002_peacok",
       "moduleIcon": "dre-x",
-      "moduleName": "断罪之拳",
+      "moduleName": "The Fist of Conviction",
       "phases": [
         {
           "candidates": [
@@ -4762,7 +4762,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"value-up\">115%</span>",
+              "traitEffect": "Increases ATK to <span class=\"value-up\">115%</span> when attacking blocked enemies",
               "traitEffectType": "update"
             }
           ]
@@ -4820,7 +4820,7 @@
     {
       "moduleId": "uniequip_002_gyuki",
       "moduleIcon": "dre-y",
-      "moduleName": "断竹插花作品",
+      "moduleName": "Bamboo Ikebana",
       "phases": [
         {
           "candidates": [
@@ -4840,7 +4840,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "被击倒时不撤退且回复所有生命但生命上限<span class=\"value-down\">60%</span>，攻击速度<span class=\"value-up\">+30</span>（单次部署只触发1次）",
+              "traitEffect": "When defeated, does not retreat and recovers HP instead. However, Max HP <span class=\"value-down\">60%</span> and ASPD <span class=\"value-up\">+30</span> (Can only activate once every deployment)",
               "traitEffectType": "update"
             }
           ]
@@ -4936,7 +4936,7 @@
     {
       "moduleId": "uniequip_002_nothin",
       "moduleIcon": "mer-x",
-      "moduleName": "“檐下听雨”",
+      "moduleName": "'Shelter from the Rain'",
       "phases": [
         {
           "candidates": [
@@ -4956,7 +4956,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffect": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\">DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">2 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)",
               "traitEffectType": "override"
             }
           ]
@@ -5052,7 +5052,7 @@
     {
       "moduleId": "uniequip_002_strong",
       "moduleIcon": "mer-x",
-      "moduleName": "精钢刀具套组",
+      "moduleName": "Steel Tool Set",
       "phases": [
         {
           "candidates": [
@@ -5072,7 +5072,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffect": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\">DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">2 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)",
               "traitEffectType": "override"
             }
           ]
@@ -5168,7 +5168,7 @@
     {
       "moduleId": "uniequip_002_lmlee",
       "moduleIcon": "mer-x",
-      "moduleName": "“无问吉凶”",
+      "moduleName": "'Wandering'",
       "phases": [
         {
           "candidates": [
@@ -5188,7 +5188,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffect": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\"> DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">2 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)",
               "traitEffectType": "override"
             }
           ]
@@ -5209,9 +5209,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "特性消耗费用时，若费用足够则额外消耗5费用，抵消自身受到的下一次<span class=\"skill-tooltip\">晕眩</span>/<span class=\"skill-tooltip\">冻结</span>，并使攻击来源晕眩4秒",
+              "talentEffect": "When DP is consumed by Trait effect, if there is sufficient DP, consume 5 DP instead to block the next <span class=\"skill-tooltip\">Stun</span>/<span class=\"skill-tooltip\">Freeze</span> inflicted on Lee and Stun the attacker for 4 seconds",
               "talentIndex": 1,
-              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffect": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\"> DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">2 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)",
               "traitEffectType": "override"
             }
           ]
@@ -5232,9 +5232,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "特性消耗费用时，若费用足够则额外消耗4费用，抵消自身受到的下一次<span class=\"skill-tooltip\">晕眩</span>/<span class=\"skill-tooltip\">冻结</span>，并使攻击来源晕眩4秒",
+              "talentEffect": "When DP is consumed by Trait effect, if there is sufficient DP, consume 4 DP instead to block the next <span class=\"skill-tooltip\">Stun</span>/<span class=\"skill-tooltip\">Freeze</span> inflicted on Lee and Stun the attacker for 4 seconds",
               "talentIndex": 1,
-              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>，撤退时不返还<span class=\"keyword\">部署费用</span>，在场时每3秒消耗<span class=\"keyword\">2</span>点部署费用（不足时自动撤退）",
+              "traitEffect": "Has <span class=\"keyword\">reduced</span> Redeployment Time, but <span class=\"keyword\"> DP Cost</span> is not refunded upon retreating; While deployed, <span class=\"keyword\">2 DP</span> are consumed every 3 seconds (automatically retreats without sufficient DP)",
               "traitEffectType": "override"
             }
           ]
@@ -11122,7 +11122,7 @@
     {
       "moduleId": "uniequip_002_kroos2",
       "moduleIcon": "mar-x",
-      "moduleName": "真心的话和想冒的险",
+      "moduleName": "Truth or Dare",
       "phases": [
         {
           "candidates": [
@@ -11142,7 +11142,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -11163,9 +11163,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至160%，并使敌人<span class=\"skill-tooltip\">晕眩</span>0.2秒",
+              "talentEffect": "When attacking, 20% chance to deal 160% damage and <span class=\"skill-tooltip\">Stun</span> the target for 0.2 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             },
             {
@@ -11182,9 +11182,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至170%<span class=\"potential\">（+10%）</span>，并使敌人<span class=\"skill-tooltip\">晕眩</span>0.2秒",
+              "talentEffect": "When attacking, 20% chance to deal 170% <span class=\"potential\">(+10%)</span> damage and <span class=\"skill-tooltip\">Stun</span> the target for 0.2 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -11205,9 +11205,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至165%，并使敌人<span class=\"skill-tooltip\">晕眩</span>0.2秒",
+              "talentEffect": "When attacking, 20% chance to deal 165% damage and <span class=\"skill-tooltip\">Stun</span> the target for 0.2 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             },
             {
@@ -11224,9 +11224,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至175%<span class=\"potential\">（+10%）</span>，并使敌人<span class=\"skill-tooltip\">晕眩</span>0.2秒",
+              "talentEffect": "When attacking, 20% chance to deal 175% <span class=\"potential\">(+10%)</span> damage and <span class=\"skill-tooltip\">Stun</span> the target for 0.2 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]

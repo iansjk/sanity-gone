@@ -780,5 +780,49 @@
         ]
       }
     ]
+  },
+  "uniequip_002_zumama": {
+    "moduleName": "Zumama's Toolbox",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When not blocking enemies, gain +0.2 SP/s. (Can now gain SP from external sources when not blocking)",
+            "talent": null
+          },
+          {
+            "trait": "When not blocking enemies, gain +0.2 SP/s. (Can now gain SP from external sources when not blocking)",
+            "talent": "Increases this unit's SP recovery by 0.4/s when blocking enemies"
+          },
+          {
+            "trait": "When not blocking enemies, gain +0.2 SP/s. (Can now gain SP from external sources when not blocking)",
+            "talent": "Increases this unit's SP recovery by 0.55/s when blocking enemies"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_wildmn": {
+    "moduleName": null,
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Generates <span class=\"value-up\"></span> DP after this unit defeats an enemy; Refunds the <span class=\"keyword\">current</span> DP Cost when retreated",
+            "talent": null
+          },
+          {
+            "trait": "Generates <span class=\"value-up\"></span> DP after this unit defeats an enemy; Refunds the <span class=\"keyword\">current</span> DP Cost when retreated",
+            "talent": "Self redeployment time -10 seconds. After deployment, all undeployed Guard Operators get DP Cost -1 (each Operator can have a maximum of -5 DP Cost before each deployment)"
+          },
+          {
+            "trait": "Generates <span class=\"value-up\"></span> DP after this unit defeats an enemy; Refunds the <span class=\"keyword\">current</span> DP Cost when retreated",
+            "talent": "Self redeployment time -15 seconds. After deployment, all undeployed Guard Operators get DP Cost -1 (each Operator can have a maximum of -5 DP Cost before each deployment)"
+          }
+        ]
+      }
+    ]
   }
 }

@@ -4009,9 +4009,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "自身再部署时间减少10秒；部署后，所有未部署的【近卫】干员的部署费用-1（每个干员每次被部署前，最多可被减少5费）",
+              "talentEffect": "Self redeployment time -10 seconds. After deployment, all undeployed Guard Operators get DP Cost -1 (each Operator can have a maximum of -5 DP Cost before each deployment)",
               "talentIndex": 0,
-              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffect": "Generates <span class=\"value-up\"></span> DP after this unit defeats an enemy; Refunds the <span class=\"keyword\">current</span> DP Cost when retreated",
               "traitEffectType": "override"
             }
           ]
@@ -4032,9 +4032,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "自身再部署时间减少15秒；部署后，所有未部署的【近卫】干员的部署费用-1（每个干员每次被部署前，最多可被减少5费）",
+              "talentEffect": "Self redeployment time -15 seconds. After deployment, all undeployed Guard Operators get DP Cost -1 (each Operator can have a maximum of -5 DP Cost before each deployment)",
               "talentIndex": 0,
-              "traitEffect": "击杀敌人后获得<span class=\"value-up\"></span>点部署费用，撤退时返还<span class=\"keyword\">该次</span>部署费用",
+              "traitEffect": "Generates <span class=\"value-up\"></span> DP after this unit defeats an enemy; Refunds the <span class=\"keyword\">current</span> DP Cost when retreated",
               "traitEffectType": "override"
             }
           ]
@@ -9210,7 +9210,7 @@
     {
       "moduleId": "uniequip_002_zumama",
       "moduleIcon": "hes-x",
-      "moduleName": "祖玛玛的工具箱",
+      "moduleName": "Zumama's Toolbox",
       "phases": [
         {
           "candidates": [
@@ -9230,7 +9230,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
+              "traitEffect": "When not blocking enemies, gain +0.2 SP/s. (Can now gain SP from external sources when not blocking)",
               "traitEffectType": "override"
             }
           ]
@@ -9251,9 +9251,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "阻挡敌人时技力回复速度+0.4/秒",
+              "talentEffect": "Increases this unit's SP recovery by 0.4/s when blocking enemies",
               "talentIndex": 1,
-              "traitEffect": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
+              "traitEffect": "When not blocking enemies, gain +0.2 SP/s. (Can now gain SP from external sources when not blocking)",
               "traitEffectType": "override"
             }
           ]
@@ -9274,9 +9274,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "阻挡敌人时技力回复速度+0.55/秒",
+              "talentEffect": "Increases this unit's SP recovery by 0.55/s when blocking enemies",
               "talentIndex": 1,
-              "traitEffect": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
+              "traitEffect": "When not blocking enemies, gain +0.2 SP/s. (Can now gain SP from external sources when not blocking)",
               "traitEffectType": "override"
             }
           ]

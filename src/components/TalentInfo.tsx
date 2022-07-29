@@ -10,12 +10,6 @@ import {
   EliteZeroIcon,
   EliteOneIcon,
   EliteTwoIcon,
-  PotentialOneIcon,
-  PotentialTwoIcon,
-  PotentialThreeIcon,
-  PotentialFourIcon,
-  PotentialFiveIcon,
-  PotentialSixIcon,
 } from "./icons/operatorStats";
 import { RangeObject } from "../utils/types";
 import CharacterRange from "./CharacterRange";

@@ -11378,7 +11378,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
+              "traitEffect": "ASPD <span class=\"keyword\">+8</span> when there is a ground enemy within range",
               "traitEffectType": "update"
             }
           ]
@@ -11405,7 +11405,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "When deployed, this unit gains 5 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 7 Skill Points after the Shield breaks",
               "talentIndex": 1,
-              "traitEffect": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
+              "traitEffect": "ASPD <span class=\"keyword\">+8</span> when there is a ground enemy within range",
               "traitEffectType": "update"
             },
             {
@@ -11428,7 +11428,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "When deployed, this unit gains 5 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 9 <span class=\"potential\">(+2)</span> Skill Points after the Shield breaks",
               "talentIndex": 1,
-              "traitEffect": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
+              "traitEffect": "ASPD <span class=\"keyword\">+8</span> when there is a ground enemy within range",
               "traitEffectType": "update"
             }
           ]
@@ -11455,7 +11455,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "When deployed, this unit gains 9 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 7 Skill Points after the Shield breaks",
               "talentIndex": 1,
-              "traitEffect": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
+              "traitEffect": "ASPD <span class=\"keyword\">+8</span> when there is a ground enemy within range",
               "traitEffectType": "update"
             },
             {
@@ -11478,7 +11478,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "When deployed, this unit gains 9 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 9 <span class=\"potential\">+2</span> Skill Points after the Shield breaks",
               "talentIndex": 1,
-              "traitEffect": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
+              "traitEffect": "ASPD <span class=\"keyword\">+8</span> when there is a ground enemy within range",
               "traitEffectType": "update"
             }
           ]

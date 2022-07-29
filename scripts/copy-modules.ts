@@ -12,9 +12,13 @@ import path from "path";
 const dataDir = path.join(__dirname, "../data");
 
 interface ModuleTranslation {
-  moduleName?: string | null;
+  moduleName?: string | null; // if the moduleName is null, the module already
+  // exists in EN, so the moduleName will be ignored anyway
   phases: ModuleTranslationData[];
 }
+
+// This represents one "phase" of a module at a particular operator potential,
+// with translations of the trait and talent at all 3 stages of that module.
 interface ModuleTranslationData {
   requiredPotentialRank: number;
   translations: {
@@ -28,6 +32,20 @@ const MODULE_TRANSLATIONS: Record<string, ModuleTranslation> =
   moduleTranslations;
 
 void (() => {
+  // ------------------------------------
+  // |   WARNING: Ahead lies madness.   |
+  // ------------------------------------
+
+  // Due to the drastically more complicated nature of modules, this copy script
+  // approach completely diverges from every other copy script, in that it
+  // directly transforms the data from the original (ModuleObject) into a more
+  // manageable state (DenormalizedModule / Module in ./types.ts), instead of
+  // just denormalizing the data. The resultant format of the data is a
+  // drastically different, much-more-condensed JSON with all the information
+  // needed to display the module page.
+
+  // The resultant modules.json is a Record<string, Module[]> mapping a
+  // character name ("char_xxx_name") to that operator's modules (in order).
   console.log("Updating modules...");
   const denormalizedModules: Record<string, Module[]> = {};
   Object.entries(cnBattleEquipTable).forEach(([moduleId, moduleObject]) => {
@@ -39,14 +57,15 @@ void (() => {
     // my sanity is rapidly deteriorating
     const morbius: ModuleObject = moduleObject as unknown as ModuleObject;
 
-    // Put in any relevant EN data
+    // Put in any relevant EN data, by overwriting any CN data with EN data if
+    // the corresponding EN data exists.
     if (moduleId in enBattleEquipTable) {
       for (let i = 0; i < morbius.phases.length; i++) {
         if (
           enBattleEquipTable[moduleId as keyof typeof enBattleEquipTable].phases
             .length > i
         ) {
-          // @ts-expect-error all good
+          // @ts-expect-error oh boy typescript is having a great time
           morbius.phases[i] =
             enBattleEquipTable[
               moduleId as keyof typeof enBattleEquipTable
@@ -55,6 +74,7 @@ void (() => {
       }
     }
 
+    // get icon of module's type (like EXE-Y or SUM-X)
     const moduleIcon =
       cnUniequipTable.equipDict[
         moduleId as keyof typeof cnUniequipTable.equipDict
@@ -75,6 +95,7 @@ void (() => {
             moduleId as keyof typeof cnUniequipTable.equipDict
           ].uniEquipName;
 
+    // This will be our final module object that represents this module.
     const denormalizedModuleObject: Module = {
       moduleId,
       moduleIcon,
@@ -86,6 +107,12 @@ void (() => {
       const currentPhase = morbius.phases[i];
       const candidates: Record<string, ModulePhase> = {};
 
+      // We loop through 0-5 to check each possible potential rank.
+      // If that potential rank exists within the list of potential candidates
+      // for a module, we push it to an object with the potentials as keys.
+      // This is to facilitate easier editing of the current phase's data by
+      // potential in the next step. Candidates will be converted into an array
+      // later on, with earlier potentials coming first.
       for (let j = 0; j < 6; j++) {
         // check which requiredPotentialRanks exist
         let potentialExists = false;
@@ -131,6 +158,7 @@ void (() => {
           }
         }
 
+        // push a new (default values) entry to the candidates object
         if (potentialExists) {
           candidates[j] = {
             attributeBlackboard: currentPhase.attributeBlackboard,
@@ -145,16 +173,27 @@ void (() => {
         }
       }
 
+      // This is the heavy lifting. Based on the target string of this particular candidate,
+      // we determine the changes that need to be made to a certain potential in candidates{}.
       for (let j = 0; j < currentPhase.parts.length; j++) {
         const curPart = currentPhase.parts[j];
         const target = curPart.target;
 
+        // There are 2 data bundles in the candidate:
+        // addOrOverrideTalentDataBundle and overrideTraitDataBundle.
+        // Only one will ever be present, depending on what the target is set to.
+
+        // TRAIT, TRAIT_DATA_ONLY, and DISPLAY mean the trait is being modified
+        // (and we're using overrideTraitDataBundle).
+        // in some way. DISPLAY usually means the stats aren't affected (I think).
+        // We can handle them all together.
         if (
           target === "TRAIT" ||
           target === "TRAIT_DATA_ONLY" ||
           target === "DISPLAY"
         ) {
           if (curPart.overrideTraitDataBundle.candidates === null) {
+            // if we ever get here, HG has messed up big time
             console.error(
               `overrideTraitDataBundle is null on ${moduleId}. This should NOT happen`
             );
@@ -163,15 +202,26 @@ void (() => {
 
           const traitCandidates = curPart.overrideTraitDataBundle.candidates;
 
+          // sigh... we're in another candidates array
           for (let k = 0; k < traitCandidates.length; k++) {
             const curTraitCandidate = traitCandidates[k];
 
+            // additionalDescription will supplement the trait with new text in
+            // a newline, while overrideDescripton [sic] will completely overwrite
+            // the trait.
+
+            // Confoundingly, both additionalDescription and overrideDescripton
+            // can be present at the same time, but it only occurs on AoE casters.
+            // Why? I really don't know. Either way, if they are both present,
+            // we can ignore the overrideDescription because it will say
+            // "this unit deals AoE damage".
             if (curTraitCandidate.additionalDescription) {
               candidates[curTraitCandidate.requiredPotentialRank].traitEffect =
                 descriptionToHtml(
                   curTraitCandidate.additionalDescription,
                   curTraitCandidate.blackboard
                 );
+              // this is a trait UPDATE
               candidates[
                 curTraitCandidate.requiredPotentialRank
               ].traitEffectType = "update";
@@ -181,12 +231,17 @@ void (() => {
                   curTraitCandidate.overrideDescripton,
                   curTraitCandidate.blackboard
                 );
+              // the trait is being OVERRIDDEN
               candidates[
                 curTraitCandidate.requiredPotentialRank
               ].traitEffectType = "override";
             }
           }
         } else if (target === "TALENT" || target === "TALENT_DATA_ONLY") {
+          // If the target is TALENT or TALENT_DATA_ONLY, that means either
+          // a talent has been changed, or this module modifies range. (I don't know
+          // why that's considered a talent... but whatever.)
+          // If this modifies range, the target will be TALENT.
           if (curPart.addOrOverrideTalentDataBundle.candidates === null) {
             console.error(
               `addOrOverrideTalentDataBundle is null on ${moduleId}. This should NOT happen`
@@ -197,9 +252,13 @@ void (() => {
           const talentCandidates =
             curPart.addOrOverrideTalentDataBundle.candidates;
 
+          // oh boy another one
           for (let k = 0; k < talentCandidates.length; k++) {
             const curTalentCandidate = talentCandidates[k];
 
+            // If displayRangeId is true, this module modifies range,
+            // meaning rangeId exists (as a string, not a RangeObject).
+            // We denormalize it using the range table and then save it.
             if (curTalentCandidate.displayRangeId) {
               candidates[curTalentCandidate.requiredPotentialRank].range =
                 rangeTable[
@@ -209,6 +268,12 @@ void (() => {
                 curTalentCandidate.requiredPotentialRank
               ].displayRange = true;
             }
+            // upgradeDescription is always a direct override of the talent
+            // (it will completely replace the old text, not a newline).
+            // talentIndex is a 0-indexed number that represents the talent being
+            // overridden... however, it can also be -1 in the case that
+            // upgradeDescription is actually a completely new talent
+            // (or upgradeDescription is null...)
             if (curTalentCandidate.upgradeDescription) {
               candidates[
                 curTalentCandidate.requiredPotentialRank
@@ -223,7 +288,10 @@ void (() => {
         }
       }
 
-      // fix any missing effects, ranges, or effect types
+      // When the requiredPotentialRank (zero-indexed) is not 0, the module data
+      // for some reason doesn't include the effect data from earlier phases
+      // (that is obviously still in effect). This fixes any missing
+      // trait/talent effects, ranges, or effect types ("UPDATE" vs "OVERRIDE").
       Object.values(candidates).forEach((candidate) => {
         if (candidate.requiredPotentialRank !== 0) {
           if (!candidate.traitEffect) {
@@ -243,8 +311,11 @@ void (() => {
         }
       });
 
+      // Check the translations. If they exist, replace the existing effects
+      // with what's specified in the translation. The rest of the data doesn't
+      // need to be translated, so it's directly used (thus, translations have
+      // a very different format from the module data file).
       if (moduleId in MODULE_TRANSLATIONS) {
-        // replace TLs
         for (let j = 0; j < MODULE_TRANSLATIONS[moduleId].phases.length; j++) {
           if (
             candidates[
@@ -263,10 +334,13 @@ void (() => {
         }
       }
 
+      // Transform candidates back into an array
       denormalizedModuleObject.phases.push({
         candidates: Object.values(candidates),
       });
 
+      // Quick and dirty regular expression for any Chinese characters to log
+      // any missing translations.
       if (
         (candidates[0].talentEffect &&
           /[\u4e00-\u9FFF]/g.test(candidates[0].talentEffect)) ||
@@ -279,6 +353,8 @@ void (() => {
       }
     }
 
+    // Add the module to the object, and if that operator already has a module,
+    // insert directly into that array instead of a new object.
     if (!(operatorName in denormalizedModules)) {
       denormalizedModules[operatorName] = [];
     }

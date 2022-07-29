@@ -288,10 +288,6 @@ const styles = (theme: Theme) => css`
         }
       }
     }
-
-    ${theme.breakpoints.down("mobile")} {
-      border-radius: 0;
-    }
   }
 
   .module-attributes {
@@ -521,19 +517,15 @@ const styles = (theme: Theme) => css`
       .module-image-container {
         grid-column-start: span 2;
         grid-row-start: 1;
-        border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
       }
 
       &.three-bonuses {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         grid-template-rows: 178px repeat(4, max-content);
         grid-auto-flow: column;
 
-        .attack,
-        .defense,
-        .attack-speed,
-        .health {
-          grid-column-start: span 2;
+        .module-labels {
+          grid-row-start: unset;
         }
       }
     }

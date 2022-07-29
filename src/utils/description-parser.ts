@@ -59,6 +59,9 @@ export const descriptionToHtml = (
             case "@ba.kw":
               className = "keyword";
               break;
+            case "@ba.talpu":
+              className = "potential";
+              break;
             default:
               if (tagName.slice(0, 1) === "$") {
                 className = "skill-tooltip";

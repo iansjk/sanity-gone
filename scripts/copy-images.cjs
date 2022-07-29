@@ -27,8 +27,11 @@ const directoriesToCheck = [
     from: "./img/skills",
     to: "./skills",
   },
+  {
+    from: "./img/equip/type",
+    to: "./module-types"
+  }
 ];
-
 void (async () => {
   if (!existsSync(ACESHIP_REPO_DIRECTORY)) {
     throw new Error(
@@ -38,8 +41,8 @@ void (async () => {
 
   await Promise.all(
     directoriesToCheck.map(async ({ from, to }) => {
-      const sourceDir = path.join(ACESHIP_REPO_DIRECTORY, from);
-      const destinationDir = path.join(OUTPUT_IMAGE_DIRECTORY, to);
+      const sourceDir = path.join(ACESHIP_REPO_DIRECTORY, from).replace(/\\/g, "/");
+      const destinationDir = path.join(OUTPUT_IMAGE_DIRECTORY, to).replace(/\\/g, "/");
 
       if (!existsSync(sourceDir)) {
         throw new Error(

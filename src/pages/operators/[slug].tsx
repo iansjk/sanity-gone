@@ -17,7 +17,7 @@ import Layout from "../../Layout";
 import { replaceSelfClosingHtmlTags } from "../../utils/globals";
 import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
-import { CharacterObject, ModuleObject } from "../../utils/types";
+import { CharacterObject, DenormalizedModule } from "../../utils/types";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
 import { operatorAvatar } from "../../utils/images";
 import { Media } from "../../Media";
@@ -28,7 +28,7 @@ import summonsJson from "../../../data/summons.json";
 import modulesJson from "../../../data/modules.json";
 import { markdownToHtmlString } from "../../utils/markdown";
 import ModuleInfo from "../../components/ModuleInfo";
-import Module from "../../components/Module";
+import Modules from "../../components/Modules";
 import ModuleRecommendation from "../../components/ModuleRecommendation";
 
 interface HTMLToReactContext {
@@ -37,7 +37,7 @@ interface HTMLToReactContext {
   talents: TalentObject[];
   operator: CharacterObject;
   summon?: CharacterObject;
-  module: ModuleObject | null;
+  modules: DenormalizedModule[] | null;
 }
 
 const htmlToReact = (
@@ -77,7 +77,7 @@ const htmlToReact = (
           }
           return <CharacterStats characterObject={context.summon} />;
         } else if (domNode.name === "moduleinfo") {
-          if (!context.module) {
+          if (!context.modules) {
             console.log(context);
             throw new Error(
               "Can't render <ModuleInfo /> because module is missing from context. Check your console for context contents"
@@ -87,7 +87,7 @@ const htmlToReact = (
           return (
             <ModuleInfo
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              module={context.module!}
+              module={context.modules[index!]!}
               operatorName={context.operator.charId}
             />
           );
@@ -186,7 +186,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           introduction
           strengths
           weaknesses
-          moduleAnalysis
+          module1Analysis
+          module2Analysis
           talent1Analysis
           talent2Analysis
           skill1Recommended
@@ -233,7 +234,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           introduction: string;
           strengths: string;
           weaknesses: string;
-          moduleAnalysis: string;
+          module1Analysis: string;
+          module2Analysis: string;
           talent1Analysis: string;
           talent2Analysis: string;
           skill1Recommended: boolean;
@@ -267,17 +269,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     operatorName as keyof typeof operatorsJson
   ] as unknown as CharacterObject;
   const summons = summonsJson[operatorName as keyof typeof summonsJson] ?? [];
-  // let modules: ModuleObject | null =
-  //   (modulesJson[
-  //     operatorObject.charId as keyof typeof modulesJson
-  //   ] as unknown as ModuleObject) ?? null;
-  // if (
-  //   (modules != null && !modules.hasTranslation) ||
-  //   !operatorAnalysis.moduleAnalysis
-  // ) {
-  //   modules = null;
-  // }
-  const modules = null;
+  const modules: DenormalizedModule[] | null =
+    (modulesJson[
+      operatorObject.charId as keyof typeof modulesJson
+    ] as unknown as DenormalizedModule[]) ?? null;
 
   const markdownListItemRegex = /^\s*-\s(.+)$/;
   const props: Props = {
@@ -303,8 +298,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           return match![1];
         }),
-      moduleAnalysis: await markdownToHtmlString(
-        operatorAnalysis.moduleAnalysis
+      module1Analysis: await markdownToHtmlString(
+        operatorAnalysis.module1Analysis
+      ),
+      module2Analysis: await markdownToHtmlString(
+        operatorAnalysis.module2Analysis
       ),
       talent1Analysis: await markdownToHtmlString(
         operatorAnalysis.talent1Analysis
@@ -328,7 +326,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     operatorObject,
     summons: summons as unknown as CharacterObject[],
-    module: modules,
+    modules,
     allOperators: Object.fromEntries(
       Object.entries(operatorsJson).map(([opName, op]) => [
         opName,
@@ -365,7 +363,8 @@ interface Props {
     introduction: string;
     strengths: string[];
     weaknesses: string[];
-    moduleAnalysis: string;
+    module1Analysis: string;
+    module2Analysis: string;
     talent1Analysis: string;
     talent2Analysis: string;
     skill1Recommended?: boolean;
@@ -387,7 +386,7 @@ interface Props {
   };
   operatorObject: CharacterObject;
   summons: CharacterObject[];
-  module: ModuleObject | null;
+  modules: DenormalizedModule[] | null;
   allOperators: {
     [operatorName: string]: Pick<
       CharacterObject,
@@ -397,7 +396,7 @@ interface Props {
 }
 
 const OperatorAnalysis: React.VFC<Props> = (props) => {
-  const { charId, guide, operatorObject, summons, allOperators, module } =
+  const { charId, guide, operatorObject, summons, allOperators, modules } =
     props;
   const {
     operator,
@@ -406,7 +405,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     introduction,
     strengths,
     weaknesses,
-    moduleAnalysis,
+    module1Analysis,
+    module2Analysis,
     talent1Analysis,
     talent2Analysis,
     skill1Recommended,
@@ -428,13 +428,14 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     skills: operatorObject.skillData,
     recommendedSkills: skillRecommended,
     operator: operatorObject,
-    module: module,
+    modules: modules,
     summon: summons.length > 0 ? summons[0] : undefined,
   };
   const theme = useTheme();
-  // const moduleAnalysisHtml =
-  //   module != null ? htmlToReact(moduleAnalysis, context) : null;
-  const moduleAnalysisHtml = null;
+  const moduleAnalyses = [module1Analysis, module2Analysis]
+    .filter((html) => !!html)
+    .map((html, i) => htmlToReact(html, context, i));
+  // const moduleAnalysisHtml = null;
 
   const talentAnalyses = [talent1Analysis, talent2Analysis]
     .filter((html) => !!html)
@@ -518,9 +519,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         <TabButtons className="tabs" isSwiper>
           {[
             ...["Introduction"],
-            ...(module != null ? ["Module"] : []),
+            ...(modules ? ["Modules"] : []),
             ...["Talents", "Skills"],
-            ...(synergies.length > 0 ? ["Synergies"] : []),
+            ...(synergies.length > 0 ? ["Synergy"] : []),
           ].map((label) => (
             <button key={label}>{label}</button>
           ))}
@@ -541,14 +542,16 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 className: "introduction",
               },
             ],
-            ...(module != null
+            ...(modules
               ? [
                   {
                     component: (
-                      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                      <Module analysis={moduleAnalysisHtml} />
+                      <Modules
+                        modules={modules}
+                        moduleAnalyses={moduleAnalyses}
+                      />
                     ),
-                    className: "module",
+                    className: "modules",
                   },
                 ]
               : []),
@@ -655,6 +658,10 @@ const globalOverrideStyles =
             transparent
           ),
           ${transparentize(0.67, theme.palette.midtoneBrighter.main)};
+
+        h2 {
+          color: ${lighten(0.27, accentColor)} !important;
+        }
       }
 
       header {
@@ -745,7 +752,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
       background-color: ${transparentize(0.34, theme.palette.dark.main)};
       backdrop-filter: blur(8px);
 
-      button:not(.synergy-operator-button) {
+      button:not(.synergy-operator-button):not(.module-button) {
         box-sizing: border-box;
         padding: ${theme.spacing(2)};
         width: max-content;
@@ -776,7 +783,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         }
       }
 
-      button:not(.synergy-operator-button).active {
+      button:not(.synergy-operator-button):not(.module-button).active {
         color: ${accentColor};
 
         &::after {
@@ -814,9 +821,13 @@ const styles = (accentColor: string) => (theme: Theme) =>
         }
 
         &.active {
-          background-color: ${transparentize(0.9, accentColor)};
-          color: ${accentColor};
-          border-right: 3px solid ${accentColor};
+          background: linear-gradient(
+            90deg,
+            ${transparentize(0.9, accentColor)},
+            ${transparentize(0.8, accentColor)}
+          );
+          color: ${lighten(0.27, accentColor)};
+          border-right: 3px solid ${lighten(0.27, accentColor)};
           font-weight: ${theme.typography.navigationLinkBold.fontWeight};
         }
 
@@ -862,8 +873,8 @@ const styles = (accentColor: string) => (theme: Theme) =>
       .section-label {
         display: block;
         margin-bottom: ${theme.spacing(1)};
-        font-size: ${theme.typography.body2.fontSize}px;
-        line-height: ${theme.typography.body2.lineHeight};
+        font-size: ${theme.typography.body3.fontSize}px;
+        line-height: ${theme.typography.body3.lineHeight};
         color: ${theme.palette.gray.main};
       }
 
@@ -945,7 +956,7 @@ const styles = (accentColor: string) => (theme: Theme) =>
         }
       }
 
-      .analysis-section:not(.synergies) {
+      .analysis-section:not(.synergies):not(.modules) {
         .tab-buttons {
           button.active {
             background-color: ${accentColor};

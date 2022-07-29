@@ -10,7 +10,7 @@
     "postbuild": "next-sitemap && node aceship.cjs",
     "preview": "next start",
     "lint": "next lint",
-    "update-game-data": "git submodule update --init --recursive --remote && ts-node-script ./scripts/copy-gamedata.ts && node scripts/copy-images.cjs",
+    "update-game-data": "git submodule update --init --recursive --remote && ts-node-script ./scripts/copy-branches.ts && ts-node-script scripts/copy-operators.ts && ts-node-script ./scripts/copy-modules.ts && ts-node-script ./scripts/build-search-index.ts && node scripts/copy-images.cjs",
     "storybook": "NODE_ENV=test start-storybook -p 6006",
     "build-storybook": "NODE_ENV=test build-storybook"
   },

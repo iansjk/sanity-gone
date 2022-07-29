@@ -109,20 +109,39 @@ export interface PotentialStatChange {
 
 // modules
 // this is CBT
-export interface ModuleObject {
+export interface DenormalizedModule {
   moduleId: string;
-  moduleEffect: string;
-  moduleObject: ModulePhaseObject;
-  hasTranslation: boolean;
+  moduleIcon: string;
+  moduleName: string;
+  phases: {
+    candidates: ModulePhase[];
+  }[];
 }
 
-export interface ModulePhaseObject {
+export interface ModulePhase {
+  traitEffect: string | null;
+  traitEffectType: string; // "update" or "override"
+  talentEffect: string | null;
+  talentIndex: number;
+  displayRange: boolean;
+  range: RangeObject | null;
+  attributeBlackboard: InterpolatedValue[];
+  requiredPotentialRank: number; // 0-indexed
+}
+
+export interface ModuleObject {
   phases: {
     equipLevel: number;
     parts: {
+      target: string;
       addOrOverrideTalentDataBundle: {
         candidates:
           | {
+              displayRangeId: boolean;
+              upgradeDescription: string | null;
+              talentIndex: number;
+              requiredPotentialRank: number;
+              rangeId: string | null;
               blackboard: InterpolatedValue[];
             }[]
           | null;
@@ -130,15 +149,16 @@ export interface ModulePhaseObject {
       overrideTraitDataBundle: {
         candidates:
           | {
-              blackboard: InterpolatedValue[];
               additionalDescription: string | null;
-              overrideDescription: string | null;
+              requiredPotentialRank: number;
+              blackboard: InterpolatedValue[];
+              overrideDescripton: string | null; // not a typo
             }[]
           | null;
       };
       [otherProperties: string]: unknown;
     }[];
     attributeBlackboard: InterpolatedValue[];
-    tokenAttributeBlackboard: unknown;
+    tokenAttributeBlackboard: InterpolatedValue[];
   }[];
 }

@@ -211,7 +211,7 @@
   },
   "blessing": {
     "branchName": "Abjurer",
-    "trait": "Deals <span class=\"keyword\">Arts damage</span>",
+    "trait": "Deals <span class=\"keyword\">Arts damage</span>; When skill is active, attacks instead restore the HP of allies (heal amount is equal to 75% of ATK)",
     "class": "Supporter"
   },
   "summoner": {

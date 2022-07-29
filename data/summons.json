@@ -51,7 +51,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -76,7 +77,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -151,7 +153,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -176,7 +179,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -251,7 +255,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -276,7 +281,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -406,7 +412,7 @@
       ],
       "cnName": "医疗探机",
       "isCnOnly": false,
-      "fileIndex": 205,
+      "fileIndex": 216,
       "operatorName": "Silence"
     }
   ],
@@ -462,7 +468,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -487,7 +494,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -530,7 +538,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -555,7 +564,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -598,7 +608,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -623,7 +634,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -822,7 +834,7 @@
       "skillData": [],
       "cnName": "触手",
       "isCnOnly": false,
-      "fileIndex": 206,
+      "fileIndex": 217,
       "operatorName": "Deepcolor"
     }
   ],
@@ -878,7 +890,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -903,7 +916,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -950,7 +964,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -975,7 +990,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1022,7 +1038,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1047,7 +1064,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1334,7 +1352,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -1359,7 +1378,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -1411,7 +1431,7 @@
       "skillData": [],
       "cnName": "Mon3tr",
       "isCnOnly": false,
-      "fileIndex": 207,
+      "fileIndex": 218,
       "operatorName": "Kal'tsit"
     }
   ],
@@ -1467,7 +1487,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1492,7 +1513,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1535,7 +1557,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1560,7 +1583,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1603,7 +1627,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1628,7 +1653,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1837,7 +1863,7 @@
       "skillData": [],
       "cnName": "幻影",
       "isCnOnly": false,
-      "fileIndex": 208,
+      "fileIndex": 219,
       "operatorName": "Nightingale"
     }
   ],
@@ -1893,7 +1919,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1918,7 +1945,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -1961,7 +1989,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -1986,7 +2015,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -2029,7 +2059,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -2054,7 +2085,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -3328,7 +3360,7 @@
       ],
       "cnName": "机械水獭",
       "isCnOnly": false,
-      "fileIndex": 209,
+      "fileIndex": 220,
       "operatorName": "Mayer"
     }
   ],
@@ -3384,7 +3416,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -3409,7 +3442,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -3484,7 +3518,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -3509,7 +3544,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -3584,7 +3620,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -3609,7 +3646,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -4525,7 +4563,7 @@
       ],
       "cnName": "龙腾.F",
       "isCnOnly": false,
-      "fileIndex": 210,
+      "fileIndex": 221,
       "operatorName": "Magallan"
     },
     {
@@ -4579,7 +4617,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -4604,7 +4643,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -4647,7 +4687,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -4672,7 +4713,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -4715,7 +4757,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -4740,7 +4783,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -5624,7 +5668,7 @@
       ],
       "cnName": "龙腾.L",
       "isCnOnly": false,
-      "fileIndex": 211,
+      "fileIndex": 222,
       "operatorName": "Magallan"
     },
     {
@@ -5678,7 +5722,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -5703,7 +5748,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -5778,7 +5824,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -5803,7 +5850,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -5878,7 +5926,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -5903,7 +5952,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -6819,7 +6869,7 @@
       ],
       "cnName": "龙腾.A",
       "isCnOnly": false,
-      "fileIndex": 212,
+      "fileIndex": 223,
       "operatorName": "Magallan"
     }
   ],
@@ -6875,7 +6925,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -6900,7 +6951,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -6975,7 +7027,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -7000,7 +7053,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -7075,7 +7129,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -7100,7 +7155,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -7550,7 +7606,7 @@
       ],
       "cnName": "诅咒娃娃",
       "isCnOnly": false,
-      "fileIndex": 213,
+      "fileIndex": 224,
       "operatorName": "Shamare"
     }
   ],
@@ -7606,7 +7662,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -7631,7 +7688,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -7678,7 +7736,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -7703,7 +7762,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -7750,7 +7810,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -7775,7 +7836,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -7981,7 +8043,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -8006,7 +8069,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -9460,7 +9524,7 @@
       ],
       "cnName": "镜中虚影",
       "isCnOnly": false,
-      "fileIndex": 214,
+      "fileIndex": 225,
       "operatorName": "Phantom"
     }
   ],
@@ -9516,7 +9580,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -9541,7 +9606,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -9584,7 +9650,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -9609,7 +9676,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -9652,7 +9720,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -9677,7 +9746,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -10153,7 +10223,7 @@
       ],
       "cnName": "此面向敌",
       "isCnOnly": false,
-      "fileIndex": 215,
+      "fileIndex": 226,
       "operatorName": "W"
     }
   ],
@@ -10209,7 +10279,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -10234,7 +10305,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -10289,7 +10361,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -10314,7 +10387,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -10369,7 +10443,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -10394,7 +10469,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -10651,7 +10727,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -10676,7 +10753,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -11456,7 +11534,7 @@
       ],
       "cnName": "工程蓄水炮",
       "isCnOnly": false,
-      "fileIndex": 216,
+      "fileIndex": 227,
       "operatorName": "Weedy"
     }
   ],
@@ -11512,7 +11590,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -11537,7 +11616,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -11584,7 +11664,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -11609,7 +11690,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -11656,7 +11738,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -11681,7 +11764,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -11993,7 +12077,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -12018,7 +12103,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -13238,7 +13324,7 @@
       ],
       "cnName": "移动摄影器",
       "isCnOnly": false,
-      "fileIndex": 217,
+      "fileIndex": 228,
       "operatorName": "Scene"
     }
   ],
@@ -13294,7 +13380,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -13319,7 +13406,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -13362,7 +13450,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -13387,7 +13476,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -13430,7 +13520,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -13455,7 +13546,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -13592,7 +13684,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -13617,7 +13710,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -14357,7 +14451,7 @@
       ],
       "cnName": "沙之碑",
       "isCnOnly": false,
-      "fileIndex": 218,
+      "fileIndex": 229,
       "operatorName": "Beeswax"
     }
   ],
@@ -14413,7 +14507,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -14438,7 +14533,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -14481,7 +14577,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -14506,7 +14603,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -14549,7 +14647,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -14574,7 +14673,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -14750,7 +14850,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -14775,7 +14876,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -15265,7 +15367,7 @@
       ],
       "cnName": "迷迭香的战术装备",
       "isCnOnly": false,
-      "fileIndex": 219,
+      "fileIndex": 230,
       "operatorName": "Rosmontis"
     }
   ],
@@ -15321,7 +15423,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -15346,7 +15449,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -15389,7 +15493,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -15414,7 +15519,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -15457,7 +15563,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -15482,7 +15589,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16257,7 +16365,7 @@
       ],
       "cnName": "\"夹子\"",
       "isCnOnly": false,
-      "fileIndex": 220,
+      "fileIndex": 231,
       "operatorName": "Robin"
     }
   ],
@@ -16313,7 +16421,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16338,7 +16447,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16381,7 +16491,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16406,7 +16517,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16449,7 +16561,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16474,7 +16587,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16609,7 +16723,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -16634,7 +16749,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -16643,7 +16759,7 @@
       "skillData": [],
       "cnName": "磐蟹护卫队",
       "isCnOnly": false,
-      "fileIndex": 221,
+      "fileIndex": 232,
       "operatorName": "Beanstalk"
     }
   ],
@@ -16699,7 +16815,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16724,7 +16841,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16783,7 +16901,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16808,7 +16927,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -16867,7 +16987,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -16892,7 +17013,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -17164,7 +17286,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -17216,7 +17339,7 @@
       "skillData": [],
       "cnName": "\"小自在\"",
       "isCnOnly": false,
-      "fileIndex": 222,
+      "fileIndex": 233,
       "operatorName": "Dusk"
     }
   ],
@@ -17272,7 +17395,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -17297,7 +17421,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -17340,7 +17465,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -17365,7 +17491,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -17408,7 +17535,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -17433,7 +17561,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -18208,7 +18337,7 @@
       ],
       "cnName": "迎宾踏垫",
       "isCnOnly": false,
-      "fileIndex": 223,
+      "fileIndex": 234,
       "operatorName": "Frost"
     }
   ],
@@ -18283,7 +18412,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -18308,7 +18438,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -18383,7 +18514,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -18408,7 +18540,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -18483,7 +18616,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -18508,7 +18642,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -18942,7 +19077,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -18967,7 +19103,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -19931,7 +20068,7 @@
       ],
       "cnName": "斯卡蒂的海嗣",
       "isCnOnly": false,
-      "fileIndex": 224,
+      "fileIndex": 235,
       "operatorName": "Skadi the Corrupting Heart"
     }
   ],
@@ -20023,7 +20160,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20048,7 +20186,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20095,7 +20234,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20120,7 +20260,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20167,7 +20308,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20192,7 +20334,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20431,7 +20574,7 @@
       ],
       "cnName": "全自动造型仪",
       "isCnOnly": false,
-      "fileIndex": 225,
+      "fileIndex": 236,
       "operatorName": "Roberta"
     }
   ],
@@ -20487,7 +20630,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20512,7 +20656,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20555,7 +20700,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20580,7 +20726,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20623,7 +20770,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             },
             {
@@ -20648,7 +20796,8 @@
                 "baseForceLevel": 0,
                 "stunImmune": false,
                 "silenceImmune": false,
-                "sleepImmune": false
+                "sleepImmune": false,
+                "frozenImmune": false
               }
             }
           ],
@@ -20815,7 +20964,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         },
         {
@@ -20840,7 +20990,8 @@
             "baseForceLevel": 0,
             "stunImmune": false,
             "silenceImmune": false,
-            "sleepImmune": false
+            "sleepImmune": false,
+            "frozenImmune": false
           }
         }
       ],
@@ -21420,14 +21571,14 @@
       ],
       "cnName": "“耀阳”",
       "isCnOnly": false,
-      "fileIndex": 226,
+      "fileIndex": 237,
       "operatorName": "Nearl the Radiant Knight"
     }
   ],
   "Ling": [
     {
-      "name": "Tranquility",
-      "description": "能够阻挡一个敌人",
+      "name": "'Tranquility'",
+      "description": "Blocks 1 enemy",
       "canUseGeneralPotentialItem": true,
       "potentialItemId": "",
       "nationId": null,
@@ -21435,7 +21586,7 @@
       "teamId": null,
       "displayNumber": null,
       "tokenKey": null,
-      "appellation": "Tranquility",
+      "appellation": " ",
       "position": "MELEE",
       "tagList": null,
       "itemUsage": null,
@@ -21477,8 +21628,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -21504,8 +21654,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -21553,8 +21702,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -21580,8 +21728,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -21629,8 +21776,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -21656,8 +21802,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -21796,7 +21941,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+3",
+              "description": "+3 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -21818,7 +21963,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+4",
+              "description": "+4 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -21840,7 +21985,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+5",
+              "description": "+5 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -21911,11 +22056,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21930,11 +22074,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21949,11 +22092,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21968,11 +22110,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21987,11 +22128,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22006,11 +22146,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22025,11 +22164,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22044,11 +22182,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22063,11 +22200,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22082,11 +22218,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22108,11 +22243,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22127,11 +22261,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22146,11 +22279,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22165,11 +22297,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22184,11 +22315,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22203,11 +22333,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22222,11 +22351,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22241,11 +22369,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22260,11 +22387,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22279,11 +22405,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22305,11 +22430,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22324,11 +22448,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22343,11 +22466,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22362,11 +22484,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22381,11 +22502,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22400,11 +22520,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22419,11 +22538,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22438,11 +22556,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22457,11 +22574,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22476,11 +22592,10 @@
               "range": null
             },
             {
-              "name": "重进酒",
+              "name": "Sips of Wine",
               "rangeId": null,
               "description": null,
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22498,13 +22613,13 @@
         }
       ],
       "cnName": "“清平”",
-      "isCnOnly": true,
-      "fileIndex": 261,
+      "isCnOnly": false,
+      "fileIndex": 238,
       "operatorName": "Ling"
     },
     {
-      "name": "Peripateticism",
-      "description": "攻击造成法术伤害",
+      "name": "'Peripateticism'",
+      "description": "Deals Arts damage",
       "canUseGeneralPotentialItem": true,
       "potentialItemId": "",
       "nationId": null,
@@ -22512,7 +22627,7 @@
       "teamId": null,
       "displayNumber": null,
       "tokenKey": null,
-      "appellation": "Peripateticism",
+      "appellation": " ",
       "position": "RANGED",
       "tagList": null,
       "itemUsage": null,
@@ -22554,8 +22669,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -22581,8 +22695,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -22662,8 +22775,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -22689,8 +22801,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -22770,8 +22881,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -22797,8 +22907,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -22969,7 +23078,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+3",
+              "description": "+3 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -22991,7 +23100,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+4",
+              "description": "+4 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -23013,7 +23122,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+5",
+              "description": "+5 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -23101,11 +23210,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23129,11 +23237,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23157,11 +23264,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23185,11 +23291,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23213,11 +23318,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23241,11 +23345,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23269,11 +23372,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23297,11 +23399,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23325,11 +23426,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23353,11 +23453,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23388,11 +23487,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23416,11 +23514,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23444,11 +23541,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23472,11 +23568,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23500,11 +23595,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23528,11 +23622,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23556,11 +23649,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23584,11 +23676,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23612,11 +23703,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23640,11 +23730,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23675,11 +23764,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23703,11 +23791,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23731,11 +23818,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23759,11 +23845,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23787,11 +23872,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23815,11 +23899,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23843,11 +23926,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23871,11 +23953,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23899,11 +23980,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23927,11 +24007,10 @@
               "range": null
             },
             {
-              "name": "笑鸣瑟",
+              "name": "Amidst Pleasant Melodies",
               "rangeId": null,
-              "description": "技能结束时回收生命值低于一半的召唤物",
+              "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23958,13 +24037,13 @@
         }
       ],
       "cnName": "“逍遥”",
-      "isCnOnly": true,
-      "fileIndex": 262,
+      "isCnOnly": false,
+      "fileIndex": 239,
       "operatorName": "Ling"
     },
     {
-      "name": "Thunderer",
-      "description": "攻击所有阻挡的敌人",
+      "name": "'Thunderer'",
+      "description": "Attacks all blocked enemies",
       "canUseGeneralPotentialItem": true,
       "potentialItemId": "",
       "nationId": null,
@@ -23972,7 +24051,7 @@
       "teamId": null,
       "displayNumber": null,
       "tokenKey": null,
-      "appellation": "Thunderer",
+      "appellation": " ",
       "position": "MELEE",
       "tagList": null,
       "itemUsage": null,
@@ -24014,8 +24093,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -24041,8 +24119,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -24090,8 +24167,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -24117,8 +24193,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -24166,8 +24241,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -24193,8 +24267,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -24333,7 +24406,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+3",
+              "description": "+3 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -24355,7 +24428,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+4",
+              "description": "+4 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -24377,7 +24450,7 @@
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": null,
-              "description": "TOKEN数+5",
+              "description": "+5 Tokens",
               "rangeId": null,
               "blackboard": [
                 {
@@ -24465,11 +24538,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24509,11 +24581,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24553,11 +24624,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24597,11 +24667,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24641,11 +24710,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24685,11 +24753,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24729,11 +24796,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24773,11 +24839,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24817,11 +24882,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24861,11 +24925,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24912,11 +24975,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24956,11 +25018,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25000,11 +25061,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25044,11 +25104,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25088,11 +25147,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25132,11 +25190,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25176,11 +25233,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25220,11 +25276,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25264,11 +25319,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25308,11 +25362,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25359,11 +25412,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25403,11 +25455,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25447,11 +25498,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25491,11 +25541,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25535,11 +25584,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25579,11 +25627,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25623,11 +25670,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25667,11 +25713,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25711,11 +25756,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25755,11 +25799,10 @@
               "range": null
             },
             {
-              "name": "宁作吾",
+              "name": "To Remain Oneself",
               "rangeId": null,
-              "description": "基础形态：攻击造成物理伤害\\n高级形态：大幅度强化，攻击造成<@ba.vup>法术</>伤害，占据<@ba.vup>2</>个部署位，撤退或被击倒时返还<@ba.vup>2</>个部署位",
+              "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25802,14 +25845,14 @@
         }
       ],
       "cnName": "“弦惊”",
-      "isCnOnly": true,
-      "fileIndex": 263,
+      "isCnOnly": false,
+      "fileIndex": 240,
       "operatorName": "Ling"
     }
   ],
   "Blacknight": [
     {
-      "name": "Hypnos",
+      "name": "Slumberfoot",
       "description": null,
       "canUseGeneralPotentialItem": true,
       "potentialItemId": "",
@@ -25818,7 +25861,7 @@
       "teamId": null,
       "displayNumber": null,
       "tokenKey": null,
-      "appellation": "Hypnos",
+      "appellation": " ",
       "position": "MELEE",
       "tagList": null,
       "itemUsage": null,
@@ -25860,8 +25903,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -25887,8 +25929,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -25948,8 +25989,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -25975,8 +26015,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -26036,8 +26075,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -26063,8 +26101,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -26216,8 +26253,7 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false,
-            "levitateImmune": false
+            "frozenImmune": false
           }
         },
         {
@@ -26243,8 +26279,7 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false,
-            "levitateImmune": false
+            "frozenImmune": false
           }
         }
       ],
@@ -26257,11 +26292,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "食梦",
+              "name": "Dream Eater",
               "rangeId": null,
-              "description": "可以攻击并优先攻击<$ba.sleep>沉睡</>的目标",
+              "description": "Can attack and will prioritize Sleeping enemies",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -26283,11 +26317,10 @@
           "hidden": false,
           "levels": [
             {
-              "name": "食梦",
+              "name": "Dream Eater",
               "rangeId": null,
-              "description": "可以攻击并优先攻击<$ba.sleep>沉睡</>的目标",
+              "description": "Can attack and will prioritize Sleeping enemies",
               "skillType": 0,
-              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -26305,8 +26338,8 @@
         }
       ],
       "cnName": "眠兽",
-      "isCnOnly": true,
-      "fileIndex": 264,
+      "isCnOnly": false,
+      "fileIndex": 241,
       "operatorName": "Blacknight"
     }
   ],
@@ -26939,7 +26972,7 @@
       "skillData": [],
       "cnName": "纸偶",
       "isCnOnly": true,
-      "fileIndex": 265,
+      "fileIndex": 268,
       "operatorName": "Kazemaru"
     }
   ],
@@ -28172,7 +28205,7 @@
       ],
       "cnName": "可靠电池",
       "isCnOnly": true,
-      "fileIndex": 266,
+      "fileIndex": 269,
       "operatorName": "Windflit"
     }
   ],
@@ -28887,8 +28920,1964 @@
       ],
       "cnName": "旧日残影",
       "isCnOnly": true,
-      "fileIndex": 267,
+      "fileIndex": 270,
       "operatorName": "Ebenholz"
+    }
+  ],
+  "Dorothy": [
+    {
+      "name": "Resonator",
+      "description": null,
+      "canUseGeneralPotentialItem": true,
+      "potentialItemId": "",
+      "nationId": null,
+      "groupId": null,
+      "teamId": null,
+      "displayNumber": null,
+      "tokenKey": null,
+      "appellation": "Resonator",
+      "position": "MELEE",
+      "tagList": null,
+      "itemUsage": null,
+      "itemDesc": null,
+      "itemObtainApproach": null,
+      "isNotObtainable": false,
+      "isSpChar": false,
+      "maxPotentialLevel": 0,
+      "rarity": 5,
+      "profession": "TOKEN",
+      "subProfessionId": "notchar1",
+      "trait": null,
+      "phases": [
+        {
+          "characterPrefabKey": "token_10025_doroth_recttp",
+          "rangeId": "0-1",
+          "maxLevel": 50,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 6,
+                "maxDeckStackCnt": 5,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 50,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 6,
+                "maxDeckStackCnt": 5,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "0-1",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10025_doroth_recttp",
+          "rangeId": "0-1",
+          "maxLevel": 80,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 8,
+                "maxDeckStackCnt": 7,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 80,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 8,
+                "maxDeckStackCnt": 7,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "0-1",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10025_doroth_recttp",
+          "rangeId": "0-1",
+          "maxLevel": 90,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 10,
+                "maxDeckStackCnt": 9,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 90,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 10,
+                "maxDeckStackCnt": 9,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "0-1",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              }
+            ]
+          }
+        }
+      ],
+      "skills": [
+        {
+          "skillId": "sktok_doroth_1",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          }
+        },
+        {
+          "skillId": "sktok_doroth_2",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          }
+        },
+        {
+          "skillId": "sktok_doroth_3",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 2,
+            "level": 1
+          }
+        }
+      ],
+      "talents": [],
+      "potentialRanks": [],
+      "favorKeyFrames": null,
+      "allSkillLvlup": [
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        }
+      ],
+      "charId": "token_10025_doroth_recttp",
+      "skillData": [
+        {
+          "skillId": "sktok_doroth_1",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "危险目标清除",
+              "rangeId": null,
+              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "危险目标清除",
+              "rangeId": null,
+              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.1
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "危险目标清除",
+              "rangeId": null,
+              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.2
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "危险目标清除",
+              "rangeId": null,
+              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.3
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "危险目标清除",
+              "rangeId": null,
+              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.5
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "危险目标清除",
+              "rangeId": null,
+              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.6
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "危险目标清除",
+              "rangeId": null,
+              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.7
+                },
+                {
+                  "key": "def",
+                  "value": -0.3
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "危险目标清除",
+              "rangeId": null,
+              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.9
+                },
+                {
+                  "key": "def",
+                  "value": -0.32
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "危险目标清除",
+              "rangeId": null,
+              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 4.2
+                },
+                {
+                  "key": "def",
+                  "value": -0.33
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "危险目标清除",
+              "rangeId": null,
+              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 4.5
+                },
+                {
+                  "key": "def",
+                  "value": -0.35
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "skillId": "sktok_doroth_2",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "流沙区域生成",
+              "rangeId": null,
+              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "流沙区域生成",
+              "rangeId": null,
+              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.1
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "流沙区域生成",
+              "rangeId": null,
+              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.2
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "流沙区域生成",
+              "rangeId": null,
+              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.3
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "流沙区域生成",
+              "rangeId": null,
+              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.4
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "流沙区域生成",
+              "rangeId": null,
+              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.5
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "流沙区域生成",
+              "rangeId": null,
+              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.6
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2.5
+                },
+                {
+                  "key": "duration_2",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "流沙区域生成",
+              "rangeId": null,
+              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.7
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 3
+                },
+                {
+                  "key": "duration_2",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "流沙区域生成",
+              "rangeId": null,
+              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.8
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 3
+                },
+                {
+                  "key": "duration_2",
+                  "value": 5.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "流沙区域生成",
+              "rangeId": null,
+              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 3.5
+                },
+                {
+                  "key": "duration_2",
+                  "value": 6
+                }
+              ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "skillId": "sktok_doroth_3",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "高速共振排障",
+              "rangeId": "x-6",
+              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "高速共振排障",
+              "rangeId": "x-6",
+              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.1
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "高速共振排障",
+              "rangeId": "x-6",
+              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.3
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "高速共振排障",
+              "rangeId": "x-6",
+              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.5
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "高速共振排障",
+              "rangeId": "x-6",
+              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.6
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "高速共振排障",
+              "rangeId": "x-6",
+              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.7
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "高速共振排障",
+              "rangeId": "x-6",
+              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.8
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3.5
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "高速共振排障",
+              "rangeId": "x-6",
+              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3
+                },
+                {
+                  "key": "sluggish",
+                  "value": 4
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "高速共振排障",
+              "rangeId": "x-6",
+              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.2
+                },
+                {
+                  "key": "sluggish",
+                  "value": 4.5
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "高速共振排障",
+              "rangeId": "x-6",
+              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.5
+                },
+                {
+                  "key": "sluggish",
+                  "value": 5
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "cnName": "共振装置",
+      "isCnOnly": true,
+      "fileIndex": 271,
+      "operatorName": "Dorothy"
     }
   ]
 }

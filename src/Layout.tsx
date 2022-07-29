@@ -705,15 +705,15 @@ const styles =
           justify-content: space-between;
 
           ${theme.breakpoints.down("mobile")} {
-            padding: ${theme.spacing(1)};
+            padding: ${theme.spacing(1.5, 2)};
             flex-direction: row;
             align-items: center;
           }
         }
 
         dt {
-          font-size: ${theme.typography.body2.fontSize}px;
-          line-height: ${theme.typography.body2.lineHeight};
+          font-size: ${theme.typography.body3.fontSize}px;
+          line-height: ${theme.typography.body3.lineHeight};
           color: ${theme.palette.gray.main};
           display: flex;
           align-items: center;

@@ -137,7 +137,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -1 DP, Skill 2: -3 DP, Skill 3: -3 DP)",
+              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
               "traitEffectType": "update"
             }
           ]
@@ -160,7 +160,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "Can use up to 5 summons (max 4 deployed at once). Summons' effect changes based upon Skill.",
               "talentIndex": 0,
-              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
               "traitEffectType": "update"
             }
           ]
@@ -181,9 +181,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill. (Skill 1: +100 HP, +50 DEF, Skill 2: +40 ATK, +3 ASPD, Skill 3: +50 ATK, +3 ASPD)",
+              "talentEffect": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill.<br><br>Skill 1: +100 HP, +50 DEF<br>Skill 2: +40 ATK, +3 ASPD<br>Skill 3: +50 ATK, +3 ASPD",
               "talentIndex": 0,
-              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
               "traitEffectType": "update"
             }
           ]
@@ -195,7 +195,7 @@
     {
       "moduleId": "uniequip_002_ling",
       "moduleIcon": "sum-y",
-      "moduleName": "诗短梦长",
+      "moduleName": "Fond Dream With Poetry",
       "phases": [
         {
           "candidates": [
@@ -215,7 +215,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
               "traitEffectType": "update"
             }
           ]
@@ -238,7 +238,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "Can use up to 5 summons (max 4 deployed at once). Summons' effect changes based upon Skill.",
               "talentIndex": 0,
-              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
               "traitEffectType": "update"
             }
           ]
@@ -259,9 +259,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill.",
+              "talentEffect": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill.<br><br>Skill 1: HP +150, ATK +42<br>Skill 2: HP +100, ATK +35<br>Skill 3: HP +250, ATK +60",
               "talentIndex": 0,
-              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+              "traitEffect": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
               "traitEffectType": "update"
             }
           ]
@@ -314,9 +314,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "可以使用5个移动摄影车。摄影车周围8格内敌人的<span class=\"skill-tooltip\">隐匿</span>效果失效且移动速度-5%",
+              "talentEffect": "Can summon 5 Buggy Cams; Buggy Cams will reveal <span class=\"skill-tooltip\">Invisible</span> enemies and reduce movement speed by 5% within the surrounding 8 tiles",
               "talentIndex": 0,
-              "traitEffect": "首个召唤物部署时<span class=\"keyword\">不消耗</span>部署位（场上最后一个召唤物撤退或被击倒时不返还部署位）",
+              "traitEffect": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
               "traitEffectType": "update"
             }
           ]
@@ -337,9 +337,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "可以使用5个移动摄影车。摄影车周围8格内敌人的<span class=\"skill-tooltip\">隐匿</span>效果失效且移动速度-8%",
+              "talentEffect": "Can summon 5 Buggy Cams; Buggy Cams will reveal <span class=\"skill-tooltip\">Invisible</span> enemies reduce movement speed by 8% within the surrounding 8 tiles",
               "talentIndex": 0,
-              "traitEffect": "首个召唤物部署时<span class=\"keyword\">不消耗</span>部署位（场上最后一个召唤物撤退或被击倒时不返还部署位）",
+              "traitEffect": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
               "traitEffectType": "update"
             }
           ]
@@ -1997,9 +1997,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "最近8秒内未受伤害时，攻击力+20%",
+              "talentEffect": "When no damage is taken within the past 8 seconds, ATK +20%",
               "talentIndex": 0,
-              "traitEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
+              "traitEffect": "The further away the enemy, the higher the damage dealt (up to an increase of <span class=\"keyword\">15%</span>)",
               "traitEffectType": "update"
             },
             {
@@ -2016,9 +2016,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "最近8秒内未受伤害时，攻击力+23%<span class=\"potential\">（+3%）</span>",
+              "talentEffect": "When no damage is taken within the past 8 seconds, ATK +23% <span class=\"potential\">(+3%)</span>",
               "talentIndex": 0,
-              "traitEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
+              "traitEffect": "The further away the enemy, the higher the damage dealt (up to an increase of <span class=\"keyword\">15%</span>)",
               "traitEffectType": "update"
             }
           ]
@@ -2039,9 +2039,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "最近6秒内未受伤害时，攻击力+22%",
+              "talentEffect": "When no damage is taken within the past 8 seconds, ATK +22%",
               "talentIndex": 0,
-              "traitEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
+              "traitEffect": "The further away the enemy, the higher the damage dealt (up to an increase of <span class=\"keyword\">15%</span>)",
               "traitEffectType": "update"
             },
             {
@@ -2058,9 +2058,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "最近6秒内未受伤害时，攻击力+25%<span class=\"potential\">（+3%）</span>",
+              "talentEffect": "When no damage is taken within the past 8 seconds, ATK +25% <span class=\"keyword\">(+3%)</span>",
               "talentIndex": 0,
-              "traitEffect": "攻击越远的敌人造成的伤害越高（最高提升<span class=\"keyword\">15%</span>）",
+              "traitEffect": "The further away the enemy, the higher the damage dealt (up to an increase of <span class=\"keyword\">15%</span>)",
               "traitEffectType": "update"
             }
           ]
@@ -2113,9 +2113,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击使用远程武器或不攻击的敌人时，攻击力提升至145%",
+              "talentEffect": "ATK increases to 145% when attacking ranged enemies or enemies that do not attack",
               "talentIndex": 0,
-              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffect": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
               "traitEffectType": "update"
             },
             {
@@ -2132,9 +2132,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "攻击使用远程武器或不攻击的敌人时，攻击力提升至150%<span class=\"potential\">（+5%）</span>",
+              "talentEffect": "ATK increases to 150% <span class=\"potential\">(+5%)</span> when attacking ranged enemies or enemies that do not attack",
               "talentIndex": 0,
-              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffect": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
               "traitEffectType": "update"
             }
           ]
@@ -2155,9 +2155,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击使用远程武器或不攻击的敌人时，攻击力提升至150%",
+              "talentEffect": "ATK increases to 150% when attacking ranged enemies or enemies that do not attack",
               "talentIndex": 0,
-              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffect": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
               "traitEffectType": "update"
             },
             {
@@ -2174,9 +2174,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "攻击使用远程武器或不攻击的敌人时，攻击力提升至155%<span class=\"potential\">（+5%）</span>",
+              "talentEffect": "ATK increases to 155% <span class=\"potential\">(+5%)</span> when attacking ranged enemies or enemies that do not attack",
               "talentIndex": 0,
-              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffect": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
               "traitEffectType": "update"
             }
           ]
@@ -2539,9 +2539,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "被动技能触发期间攻击力+22%，阻挡数降至0且获得<span class=\"skill-tooltip\">迷彩</span>",
+              "talentEffect": "When skill is active, ATK +22%, reduce Block Count to 0 and gain <span class=\"skill-tooltip\">Camouflage</span>",
               "talentIndex": 0,
-              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+              "traitEffect": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             },
             {
@@ -2558,9 +2558,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "被动技能触发期间攻击力+25%<span class=\"potential\">（+3%）</span>，阻挡数降至0且获得<span class=\"skill-tooltip\">迷彩</span>",
+              "talentEffect": "When skill is active, ATK +25% <span class=\"potential\">(+3%)</span>, reduce Block Count to 0 and gain <span class=\"skill-tooltip\">Camouflage</span>",
               "talentIndex": 0,
-              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+              "traitEffect": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -2581,9 +2581,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "被动技能触发期间攻击力+25%，阻挡数降至0且获得<span class=\"skill-tooltip\">迷彩</span>",
+              "talentEffect": "When skill is active, ATK +25%, reduce Block Count to 0 and gain <span class=\"skill-tooltip\">Camouflage</span>",
               "talentIndex": 0,
-              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+              "traitEffect": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             },
             {
@@ -2600,9 +2600,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "被动技能触发期间攻击力+28%<span class=\"potential\">（+3%）</span>，阻挡数降至0且获得<span class=\"skill-tooltip\">迷彩</span>",
+              "talentEffect": "When skill is active, ATK +28% <span class=\"potential\">(+3%)</span>, reduce Block Count to 0 and gain <span class=\"skill-tooltip\">Camouflage</span>",
               "talentIndex": 0,
-              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+              "traitEffect": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -2655,9 +2655,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "每次攻击至少造成37%攻击力的伤害",
+              "talentEffect": "Deals at least 37% of ATK damage every attack",
               "talentIndex": 0,
-              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+              "traitEffect": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             },
             {
@@ -2674,9 +2674,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "每次攻击至少造成40%<span class=\"potential\">（+3%）</span>攻击力的伤害",
+              "talentEffect": "Deals at least 40% <span class=\"potential\">(+3%)</span> of ATK damage every attack",
               "talentIndex": 0,
-              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+              "traitEffect": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -2697,9 +2697,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "每次攻击至少造成40%攻击力的伤害",
+              "talentEffect": "Deals at least 40% of ATK damage every attack",
               "talentIndex": 0,
-              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+              "traitEffect": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             },
             {
@@ -2716,9 +2716,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "每次攻击至少造成43%<span class=\"potential\">（+3%）</span>攻击力的伤害",
+              "talentEffect": "Deals at least 43% <span class=\"potential\">(+3%)</span> of ATK damage every attack",
               "talentIndex": 0,
-              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+              "traitEffect": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -3351,9 +3351,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时每3秒回复全场友方角色1点攻击/受击技力",
+              "talentEffect": "Every 3 seconds when deployed, restores 1 Skill Point to all deployed allies that have an ATK Recovery or DEF Recovery skill.",
               "talentIndex": 0,
-              "traitEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
+              "traitEffect": "Deals <span class=\"value-up\">10%</span> more damage with skills",
               "traitEffectType": "update"
             }
           ]
@@ -3374,9 +3374,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时每3秒回复全场友方角色1点攻击/受击技力，自身额外回复1点技力",
+              "talentEffect": "Every 3 seconds when deployed, restores 1 Skill Point to all deployed allies that have an ATK Recovery or DEF Recovery skill, and restores 1 additional Skill Point to this unit.",
               "talentIndex": 0,
-              "traitEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
+              "traitEffect": "Deals <span class=\"value-up\">10%</span> more damage with skills",
               "traitEffectType": "update"
             }
           ]
@@ -3545,9 +3545,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "每击杀一名敌人后获得+6攻击速度且攻击力+1%（最多叠加6次）",
+              "talentEffect": "ASPD +6 and ATK +1% after defeating an enemy (stacks up to 6 times)",
               "talentIndex": 0,
-              "traitEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
+              "traitEffect": "Deals <span class=\"value-up\">10%</span> more damage with skills",
               "traitEffectType": "update"
             },
             {
@@ -3564,9 +3564,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "每击杀一名敌人后获得+6攻击速度且攻击力+1%（最多叠加7次<span class=\"potential\">（+1）</span>）",
+              "talentEffect": "ASPD +6 and ATK +1% after defeating an enemy (stacks up to 7 <span class=\"potential\">(+1)</span> times)",
               "talentIndex": 0,
-              "traitEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
+              "traitEffect": "Deals <span class=\"value-up\">10%</span> more damage with skills",
               "traitEffectType": "update"
             }
           ]
@@ -3587,9 +3587,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "每击杀一名敌人后获得+6攻击速度且攻击力+2%（最多叠加6次）",
+              "talentEffect": "ASPD +6 and ATK +2% after defeating an enemy (stacks up to 6 times)",
               "talentIndex": 0,
-              "traitEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
+              "traitEffect": "Deals <span class=\"value-up\">10%</span> more damage with skills",
               "traitEffectType": "update"
             },
             {
@@ -3606,9 +3606,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "每击杀一名敌人后获得+6攻击速度且攻击力+2%（最多叠加7次<span class=\"potential\">（+1）</span>）",
+              "talentEffect": "ASPD +6 and ATK +2% after defeating an enemy (stacks up to 7 <span class=\"potential\">(+1)</span> times)",
               "talentIndex": 0,
-              "traitEffect": "技能造成的伤害提升<span class=\"value-up\">10%</span>",
+              "traitEffect": "Deals <span class=\"value-up\">10%</span> more damage with skills",
               "traitEffectType": "update"
             }
           ]
@@ -3661,9 +3661,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "造成伤害时有30%的几率额外回复1点技力",
+              "talentEffect": "Normal attacks have a 30% chance to restore 1 additional SP",
               "talentIndex": 0,
-              "traitEffect": "攻击时无视敌人<span class=\"value-up\">70</span>点的防御力",
+              "traitEffect": "Attacks ignore <span class=\"value-up\">70</span> DEF",
               "traitEffectType": "update"
             },
             {
@@ -3680,9 +3680,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "造成伤害时有33%<span class=\"potential\">（+3%）</span>的几率额外回复1点技力",
+              "talentEffect": "Normal attacks have a 33% <span class=\"potential\">(+3%)</span> chance to restore 1 additional SP",
               "talentIndex": 0,
-              "traitEffect": "攻击时无视敌人<span class=\"value-up\">70</span>点的防御力",
+              "traitEffect": "Attacks ignore <span class=\"value-up\">70</span> DEF",
               "traitEffectType": "update"
             }
           ]
@@ -3703,9 +3703,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "造成伤害时有33%的几率额外回复1点技力",
+              "talentEffect": "Normal attacks have a 33% chance to restore 1 additional SP",
               "talentIndex": 0,
-              "traitEffect": "攻击时无视敌人<span class=\"value-up\">70</span>点的防御力",
+              "traitEffect": "Attacks ignore <span class=\"value-up\">70</span> DEF",
               "traitEffectType": "update"
             },
             {
@@ -3722,9 +3722,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "造成伤害时有36%<span class=\"potential\">（+3%）</span>的几率额外回复1点技力",
+              "talentEffect": "Normal attacks have a 36% <span class=\"potential\">(+3%)</span> chance to restore 1 additional SP",
               "talentIndex": 0,
-              "traitEffect": "攻击时无视敌人<span class=\"value-up\">70</span>点的防御力",
+              "traitEffect": "Attacks ignore <span class=\"value-up\">70</span> DEF",
               "traitEffectType": "update"
             }
           ]
@@ -7846,7 +7846,7 @@
     {
       "moduleId": "uniequip_002_lisa",
       "moduleIcon": "dec-x",
-      "moduleName": "怀中御守",
+      "moduleName": "Cherished Omamori",
       "phases": [
         {
           "candidates": [
@@ -7866,7 +7866,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
+              "traitEffect": "When an enemy is in Attack Range, SP generation is increased by +0.2/s",
               "traitEffectType": "update"
             }
           ]
@@ -7887,9 +7887,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时所有【辅助】干员的技力自然回复速度+0.4/秒（同类效果取最高），攻击力+6%",
+              "talentEffect": "When deployed, increases the SP recovery rate of all Supporters by +0.4/second (only the highest effect of this type takes place), and ATK by 6%",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
+              "traitEffect": "When an enemy is in Attack Range, SP generation is increased by +0.2/s",
               "traitEffectType": "update"
             }
           ]
@@ -7910,9 +7910,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时所有【辅助】干员的技力自然回复速度+0.4/秒（同类效果取最高），攻击力+9%",
+              "talentEffect": "When deployed, increases the SP recovery rate of all Supporters by +0.4/second (only the highest effect of this type takes place), and ATK by 9%",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
+              "traitEffect": "When an enemy is in Attack Range, SP generation is increased by +0.2/s",
               "traitEffectType": "update"
             }
           ]
@@ -8590,7 +8590,7 @@
     {
       "moduleId": "uniequip_002_bena",
       "moduleIcon": "pum-y",
-      "moduleName": "《乔弗瑞古今童话集》精装本",
+      "moduleName": "<The Jeffreys Collection of Fairy Tales, New and Old> Hardcover Edition",
       "phases": [
         {
           "candidates": [
@@ -8610,7 +8610,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffect": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block and <span class=\"keyword\">+10%</span> HP). Swaps back to the original after 20 seconds",
               "traitEffectType": "override"
             }
           ]
@@ -8631,9 +8631,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "&lt;替身&gt;攻击造成法术伤害且受到的物理与法术伤害减少43%",
+              "talentEffect": "&lt;Substitute&gt; deals Arts damage and reduces Physical and Arts damage taken by 43%",
               "talentIndex": 0,
-              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffect": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block and <span class=\"keyword\">+10%</span> HP). Swaps back to the original after 20 seconds",
               "traitEffectType": "override"
             },
             {
@@ -8650,9 +8650,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "&lt;替身&gt;攻击造成法术伤害且受到的物理与法术伤害减少46%<span class=\"potential\">（+3）</span>",
+              "talentEffect": "&lt;Substitute&gt; deals Arts damage and reduces Physical and Arts damage taken by 46% <span class=\"potential\">(+3%)</span>",
               "talentIndex": 0,
-              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffect": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block and <span class=\"keyword\">+10%</span> HP). Swaps back to the original after 20 seconds",
               "traitEffectType": "override"
             }
           ]
@@ -8673,9 +8673,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "&lt;替身&gt;攻击造成法术伤害且受到的物理与法术伤害减少45%",
+              "talentEffect": "&lt;Substitute&gt; deals Arts damage and reduces Physical and Arts damage taken by 45%",
               "talentIndex": 0,
-              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffect": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block and <span class=\"keyword\">+10%</span> HP). Swaps back to the original after 20 seconds",
               "traitEffectType": "override"
             },
             {
@@ -8692,9 +8692,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "&lt;替身&gt;攻击造成法术伤害且受到的物理与法术伤害减少48%<span class=\"potential\">（+3）</span>",
+              "talentEffect": "&lt;Substitute&gt; deals Arts damage and reduces Physical and Arts damage taken by 48% <span class=\"potential\">(+3%)</span>",
               "talentIndex": 0,
-              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffect": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block and <span class=\"keyword\">+10%</span> HP). Swaps back to the original after 20 seconds",
               "traitEffectType": "override"
             }
           ]
@@ -9830,7 +9830,7 @@
     {
       "moduleId": "uniequip_002_blemsh",
       "moduleIcon": "gua-y",
-      "moduleName": "工匠团的回响",
+      "moduleName": "Echo of Craftsman's Guild",
       "phases": [
         {
           "candidates": [
@@ -9854,7 +9854,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "受到的伤害减少<span class=\"keyword\">15%</span>",
+              "traitEffect": "Damage taken is reduced by <span class=\"keyword\">15%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -9879,9 +9879,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时所有受击回复的技能在干员攻击时也回复1点技力，其他卡西米尔干员部署时自身获得2点技力",
+              "talentEffect": "When deployed, allies that have a Defensive Recovery skill also gain 1 SP when attacking. When a 'Kazimierz' operator is deployed, gain 2 SP",
               "talentIndex": 0,
-              "traitEffect": "受到的伤害减少<span class=\"keyword\">15%</span>",
+              "traitEffect": "Damage taken is reduced by <span class=\"keyword\">15%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -9906,9 +9906,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时所有受击回复的技能在干员攻击时也回复1点技力，其他卡西米尔干员部署时自身获得3点技力",
+              "talentEffect": "When deployed, allies that have a Defensive Recovery skill also gain 1 SP when attacking. When a 'Kazimierz' operator is deployed, gain 3 SP",
               "talentIndex": 0,
-              "traitEffect": "受到的伤害减少<span class=\"keyword\">15%</span>",
+              "traitEffect": "Damage taken is reduced by <span class=\"keyword\">15%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10794,7 +10794,7 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "攻击使目标中毒，在3秒内每秒受到95点法术伤害<span class=\"potential\">（+10）</span>点法术伤害",
+              "talentEffect": "攻击使目标中毒，在3秒内每秒受到95<span class=\"potential\">（+10）</span>点法术伤害",
               "talentIndex": 0,
               "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
               "traitEffectType": "update"
@@ -10836,7 +10836,7 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "攻击使目标中毒，在3秒内每秒受到105点法术伤害<span class=\"potential\">（+10）</span>点法术伤害",
+              "talentEffect": "攻击使目标中毒，在3秒内每秒受到105<span class=\"potential\">（+10）</span>点法术伤害",
               "talentIndex": 0,
               "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
               "traitEffectType": "update"
@@ -10850,7 +10850,7 @@
     {
       "moduleId": "uniequip_002_platnm",
       "moduleIcon": "mar-x",
-      "moduleName": "独自旅行套装",
+      "moduleName": "Solo Travel Kit",
       "phases": [
         {
           "candidates": [
@@ -10870,7 +10870,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10891,9 +10891,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "距离上次攻击的间隔越长，下次攻击的攻击力就越高（最长2.5秒，攻击力190%）",
+              "talentEffect": "The longer the interval from the last attack is, the higher the ATK of the next attack will be (The longest interval is 2.5 seconds and the corresponding ATK increases to 190%)",
               "talentIndex": 0,
-              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             },
             {
@@ -10910,9 +10910,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "距离上次攻击的间隔越长，下次攻击的攻击力就越高（最长2.5秒，攻击力200%<span class=\"potential\">（+10%）</span>）",
+              "talentEffect": "The longer the interval from the last attack is, the higher the ATK of the next attack will be (The longest interval is 2.5 seconds and the corresponding ATK increases to 200% <span class=\"potential\">(+10%)</span> )",
               "talentIndex": 0,
-              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -10933,9 +10933,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "距离上次攻击的间隔越长，下次攻击的攻击力就越高（最长2.5秒，攻击力200%）",
+              "talentEffect": "The longer the interval from the last attack is, the higher the ATK of the next attack will be (The longest interval is 2.5 seconds and the corresponding ATK increases to 200%)",
               "talentIndex": 0,
-              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             },
             {
@@ -10952,9 +10952,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "距离上次攻击的间隔越长，下次攻击的攻击力就越高（最长2.5秒，攻击力210%<span class=\"potential\">（+10%）</span>）",
+              "talentEffect": "The longer the interval from the last attack is, the higher the ATK of the next attack will be (The longest interval is 2.5 seconds and the corresponding ATK increases to 210% <span class=\"potential\">(+10%)</span> )",
               "talentIndex": 0,
-              "traitEffect": "攻击空中单位时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -11354,7 +11354,7 @@
     {
       "moduleId": "uniequip_002_archet",
       "moduleIcon": "mar-y",
-      "moduleName": "“明天的种子”",
+      "moduleName": "Seeds of Tomorrow",
       "phases": [
         {
           "candidates": [
@@ -11378,7 +11378,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
+              "traitEffect": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
               "traitEffectType": "update"
             }
           ]
@@ -11403,9 +11403,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "部署后立即获得5点技力与一层<span class=\"skill-tooltip\">护盾</span>，护盾破裂后获得7点技力",
+              "talentEffect": "When deployed, this unit gains 5 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 7 Skill Points after the Shield breaks",
               "talentIndex": 1,
-              "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
+              "traitEffect": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
               "traitEffectType": "update"
             },
             {
@@ -11426,9 +11426,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "部署后立即获得5点技力与一层<span class=\"skill-tooltip\">护盾</span>，护盾破裂后获得9点<span class=\"potential\">（+2）</span>技力",
+              "talentEffect": "When deployed, this unit gains 5 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 9 <span class=\"potential\">(+2)</span> Skill Points after the Shield breaks",
               "talentIndex": 1,
-              "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
+              "traitEffect": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
               "traitEffectType": "update"
             }
           ]
@@ -11453,9 +11453,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "部署后立即获得9点技力与一层<span class=\"skill-tooltip\">护盾</span>，护盾破裂后获得7点技力",
+              "talentEffect": "When deployed, this unit gains 9 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 7 Skill Points after the Shield breaks",
               "talentIndex": 1,
-              "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
+              "traitEffect": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
               "traitEffectType": "update"
             },
             {
@@ -11476,9 +11476,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "部署后立即获得9点技力与一层<span class=\"skill-tooltip\">护盾</span>，护盾破裂后获得9点<span class=\"potential\">（+2）</span>技力",
+              "talentEffect": "When deployed, this unit gains 9 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 9 <span class=\"potential\">+2</span> Skill Points after the Shield breaks",
               "talentIndex": 1,
-              "traitEffect": "范围内存在地面敌人时攻击速度<span class=\"keyword\">+8</span>",
+              "traitEffect": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
               "traitEffectType": "update"
             }
           ]

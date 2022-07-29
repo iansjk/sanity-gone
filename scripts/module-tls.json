@@ -66,37 +66,38 @@
         "requiredPotentialRank": 0,
         "translations": [
           {
-            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -1 DP, Skill 2: -3 DP, Skill 3: -3 DP)",
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
             "talent": null
           },
           {
-            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
             "talent": "Can use up to 5 summons (max 4 deployed at once). Summons' effect changes based upon Skill."
           },
           {
-            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
-            "talent": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill. (Skill 1: +100 HP, +50 DEF, Skill 2: +40 ATK, +3 ASPD, Skill 3: +50 ATK, +3 ASPD)"
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
+            "talent": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill.<br><br>Skill 1: +100 HP, +50 DEF<br>Skill 2: +40 ATK, +3 ASPD<br>Skill 3: +50 ATK, +3 ASPD"
           }
         ]
       }
     ]
   },
   "uniequip_002_ling": {
+    "moduleName": "Fond Dream With Poetry",
     "phases": [
       {
         "requiredPotentialRank": 0,
         "translations": [
           {
-            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
             "talent": null
           },
           {
-            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
             "talent": "Can use up to 5 summons (max 4 deployed at once). Summons' effect changes based upon Skill."
           },
           {
-            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span> (Skill 1: -3 DP, Skill 2: -3 DP, Skill 3: -5 DP)",
-            "talent": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill."
+            "trait": "Maximum Summons in stock <span class=\"keyword\">+3</span>, summon DP cost <span class=\"keyword\">reduced</span><br><br>Skill 1: -3 DP<br>Skill 2: -3 DP<br>Skill 3: -5 DP",
+            "talent": "Can use up to 5 stronger summons (max 4 deployed at once). Summons' effect changes based upon Skill.<br><br>Skill 1: HP +150, ATK +42<br>Skill 2: HP +100, ATK +35<br>Skill 3: HP +250, ATK +60"
           }
         ]
       }
@@ -336,6 +337,445 @@
           {
             "trait": "Can attack enemies <span class=\"keyword\">from range</span>; When attacking enemies not blocked by self, increase ATK to <span class=\"keyword\">130%</span>",
             "talent": "When deployed, gives every allied unit with 3 or more block 1 layer of <span class=\"skill-tooltip\">Physical Shield</span>. 'Kazimierz' operators get an additional layer of Physical Shield"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_chen": {
+    "moduleName": null,
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Deals <span class=\"value-up\">10%</span> more damage with skills",
+            "talent": null
+          },
+          {
+            "trait": "Deals <span class=\"value-up\">10%</span> more damage with skills",
+            "talent": "Every 3 seconds when deployed, restores 1 Skill Point to all deployed allies that have an ATK Recovery or DEF Recovery skill."
+          },
+          {
+            "trait": "Deals <span class=\"value-up\">10%</span> more damage with skills",
+            "talent": "Every 3 seconds when deployed, restores 1 Skill Point to all deployed allies that have an ATK Recovery or DEF Recovery skill, and restores 1 additional Skill Point to this unit."
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_bibeak": {
+    "moduleName": null,
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Deals <span class=\"value-up\">10%</span> more damage with skills",
+            "talent": null
+          },
+          {
+            "trait": "Deals <span class=\"value-up\">10%</span> more damage with skills",
+            "talent": "ASPD +6 and ATK +1% after defeating an enemy (stacks up to 6 times)"
+          },
+          {
+            "trait": "Deals <span class=\"value-up\">10%</span> more damage with skills",
+            "talent": "ASPD +6 and ATK +2% after defeating an enemy (stacks up to 6 times)"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Deals <span class=\"value-up\">10%</span> more damage with skills",
+            "talent": null
+          },
+          {
+            "trait": "Deals <span class=\"value-up\">10%</span> more damage with skills",
+            "talent": "ASPD +6 and ATK +1% after defeating an enemy (stacks up to 7 <span class=\"potential\">(+1)</span> times)"
+          },
+          {
+            "trait": "Deals <span class=\"value-up\">10%</span> more damage with skills",
+            "talent": "ASPD +6 and ATK +2% after defeating an enemy (stacks up to 7 <span class=\"potential\">(+1)</span> times)"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_cutter": {
+    "moduleName": "",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Attacks ignore <span class=\"value-up\">70</span> DEF",
+            "talent": null
+          },
+          {
+            "trait": "Attacks ignore <span class=\"value-up\">70</span> DEF",
+            "talent": "Normal attacks have a 30% chance to restore 1 additional SP"
+          },
+          {
+            "trait": "Attacks ignore <span class=\"value-up\">70</span> DEF",
+            "talent": "Normal attacks have a 33% chance to restore 1 additional SP"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Attacks ignore <span class=\"value-up\">70</span> DEF",
+            "talent": null
+          },
+          {
+            "trait": "Attacks ignore <span class=\"value-up\">70</span> DEF",
+            "talent": "Normal attacks have a 33% <span class=\"potential\">(+3%)</span> chance to restore 1 additional SP"
+          },
+          {
+            "trait": "Attacks ignore <span class=\"value-up\">70</span> DEF",
+            "talent": "Normal attacks have a 36% <span class=\"potential\">(+3%)</span> chance to restore 1 additional SP"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_fartth": {
+    "moduleName": null,
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "The further away the enemy, the higher the damage dealt (up to an increase of <span class=\"keyword\">15%</span>)",
+            "talent": null
+          },
+          {
+            "trait": "The further away the enemy, the higher the damage dealt (up to an increase of <span class=\"keyword\">15%</span>)",
+            "talent": "When no damage is taken within the past 8 seconds, ATK +20%"
+          },
+          {
+            "trait": "The further away the enemy, the higher the damage dealt (up to an increase of <span class=\"keyword\">15%</span>)",
+            "talent": "When no damage is taken within the past 8 seconds, ATK +22%"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "The further away the enemy, the higher the damage dealt (up to an increase of <span class=\"keyword\">15%</span>)",
+            "talent": null
+          },
+          {
+            "trait": "The further away the enemy, the higher the damage dealt (up to an increase of <span class=\"keyword\">15%</span>)",
+            "talent": "When no damage is taken within the past 8 seconds, ATK +23% <span class=\"potential\">(+3%)</span>"
+          },
+          {
+            "trait": "The further away the enemy, the higher the damage dealt (up to an increase of <span class=\"keyword\">15%</span>)",
+            "talent": "When no damage is taken within the past 8 seconds, ATK +25% <span class=\"keyword\">(+3%)</span>"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_milu": {
+    "moduleName": null,
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": null
+          },
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": "ATK increases to 145% when attacking ranged enemies or enemies that do not attack"
+          },
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": "ATK increases to 150% when attacking ranged enemies or enemies that do not attack"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": null
+          },
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": "ATK increases to 150% <span class=\"potential\">(+5%)</span> when attacking ranged enemies or enemies that do not attack"
+          },
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": "ATK increases to 155% <span class=\"potential\">(+5%)</span> when attacking ranged enemies or enemies that do not attack"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_archet": {
+    "moduleName": "Seeds of Tomorrow",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
+            "talent": null
+          },
+          {
+            "trait": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
+            "talent": "When deployed, this unit gains 5 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 7 Skill Points after the Shield breaks"
+          },
+          {
+            "trait": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
+            "talent": "When deployed, this unit gains 9 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 7 Skill Points after the Shield breaks"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
+            "talent": null
+          },
+          {
+            "trait": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
+            "talent": "When deployed, this unit gains 5 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 9 <span class=\"potential\">(+2)</span> Skill Points after the Shield breaks"
+          },
+          {
+            "trait": "ASPD <span class=\"keyword\">+8</span>> when there is a ground enemy within range",
+            "talent": "When deployed, this unit gains 9 SP and 1 <span class=\"skill-tooltip\">Shield</span>. Restores 9 <span class=\"potential\">+2</span> Skill Points after the Shield breaks"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_platnm": {
+    "moduleName": "Solo Travel Kit",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": null
+          },
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": "The longer the interval from the last attack is, the higher the ATK of the next attack will be (The longest interval is 2.5 seconds and the corresponding ATK increases to 190%)"
+          },
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": "The longer the interval from the last attack is, the higher the ATK of the next attack will be (The longest interval is 2.5 seconds and the corresponding ATK increases to 200%)"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": null
+          },
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": "The longer the interval from the last attack is, the higher the ATK of the next attack will be (The longest interval is 2.5 seconds and the corresponding ATK increases to 200% <span class=\"potential\">(+10%)</span> )"
+          },
+          {
+            "trait": "When attacking aerial units, increase ATK to <span class=\"keyword\">110%</span>",
+            "talent": "The longer the interval from the last attack is, the higher the ATK of the next attack will be (The longest interval is 2.5 seconds and the corresponding ATK increases to 210% <span class=\"potential\">(+10%)</span> )"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_kafka": {
+    "moduleName": null,
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": null
+          },
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": "When skill is active, ATK +22%, reduce Block Count to 0 and gain <span class=\"skill-tooltip\">Camouflage</span>"
+          },
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": "When skill is active, ATK +25%, reduce Block Count to 0 and gain <span class=\"skill-tooltip\">Camouflage</span>"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": null
+          },
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": "When skill is active, ATK +25% <span class=\"potential\">(+3%)</span>, reduce Block Count to 0 and gain <span class=\"skill-tooltip\">Camouflage</span>"
+          },
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": "When skill is active, ATK +28% <span class=\"potential\">(+3%)</span>, reduce Block Count to 0 and gain <span class=\"skill-tooltip\">Camouflage</span>"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_red": {
+    "moduleName": null,
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": null
+          },
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": "Deals at least 37% of ATK damage every attack"
+          },
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": "Deals at least 40% of ATK damage every attack"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": null
+          },
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": "Deals at least 40% <span class=\"potential\">(+3%)</span> of ATK damage every attack"
+          },
+          {
+            "trait": "When there are no allied units in the four adjacent tiles, ATK <span class=\"keyword\">+10%</span>",
+            "talent": "Deals at least 43% <span class=\"potential\">(+3%)</span> of ATK damage every attack"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_bena": {
+    "moduleName": "<The Jeffreys Collection of Fairy Tales, New and Old> Hardcover Edition",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block and <span class=\"keyword\">+10%</span> HP). Swaps back to the original after 20 seconds",
+            "talent": null
+          },
+          {
+            "trait": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block and <span class=\"keyword\">+10%</span> HP). Swaps back to the original after 20 seconds",
+            "talent": "&lt;Substitute&gt; deals Arts damage and reduces Physical and Arts damage taken by 43%"
+          },
+          {
+            "trait": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block and <span class=\"keyword\">+10%</span> HP). Swaps back to the original after 20 seconds",
+            "talent": "&lt;Substitute&gt; deals Arts damage and reduces Physical and Arts damage taken by 45%"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block and <span class=\"keyword\">+10%</span> HP). Swaps back to the original after 20 seconds",
+            "talent": null
+          },
+          {
+            "trait": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block and <span class=\"keyword\">+10%</span> HP). Swaps back to the original after 20 seconds",
+            "talent": "&lt;Substitute&gt; deals Arts damage and reduces Physical and Arts damage taken by 46% <span class=\"potential\">(+3%)</span>"
+          },
+          {
+            "trait": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block and <span class=\"keyword\">+10%</span> HP). Swaps back to the original after 20 seconds",
+            "talent": "&lt;Substitute&gt; deals Arts damage and reduces Physical and Arts damage taken by 48% <span class=\"potential\">(+3%)</span>"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_lisa": {
+    "moduleName": "Cherished Omamori",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When an enemy is in Attack Range, SP generation is increased by +0.2/s",
+            "talent": null
+          },
+          {
+            "trait": "When an enemy is in Attack Range, SP generation is increased by +0.2/s",
+            "talent": "When deployed, increases the SP recovery rate of all Supporters by +0.4/second (only the highest effect of this type takes place), and ATK by 6%"
+          },
+          {
+            "trait": "When an enemy is in Attack Range, SP generation is increased by +0.2/s",
+            "talent": "When deployed, increases the SP recovery rate of all Supporters by +0.4/second (only the highest effect of this type takes place), and ATK by 9%"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_folivo": {
+    "moduleName": null,
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+            "talent": null
+          },
+          {
+            "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+            "talent": "Can summon 5 Buggy Cams; Buggy Cams will reveal <span class=\"skill-tooltip\">Invisible</span> enemies and reduce movement speed by 5% within the surrounding 8 tiles"
+          },
+          {
+            "trait": "The first summoned unit <span class=\"keyword\">does not consume</span> deployment slots (The last summoned unit on the field does not return a deployment slot when retreated or defeated)",
+            "talent": "Can summon 5 Buggy Cams; Buggy Cams will reveal <span class=\"skill-tooltip\">Invisible</span> enemies reduce movement speed by 8% within the surrounding 8 tiles"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_blemsh": {
+    "moduleName": "Echo of Craftsman's Guild",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Damage taken is reduced by <span class=\"keyword\">15%</span>",
+            "talent": null
+          },
+          {
+            "trait": "Damage taken is reduced by <span class=\"keyword\">15%</span>",
+            "talent": "When deployed, allies that have a Defensive Recovery skill also gain 1 SP when attacking. When a 'Kazimierz' operator is deployed, gain 2 SP"
+          },
+          {
+            "trait": "Damage taken is reduced by <span class=\"keyword\">15%</span>",
+            "talent": "When deployed, allies that have a Defensive Recovery skill also gain 1 SP when attacking. When a 'Kazimierz' operator is deployed, gain 3 SP"
           }
         ]
       }

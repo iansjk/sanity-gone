@@ -62,6 +62,9 @@ declare module "@mui/material/styles" {
     navigationLinkBold: React.CSSProperties;
     operatorBrowserNameHeading: React.CSSProperties;
     operatorCardAlterName: React.CSSProperties;
+    teamGroupHeading: React.CSSProperties;
+    memberNameHeading: React.CSSProperties;
+    memberRoleHeading: React.CSSProperties;
   }
 
   interface Palette extends SGPalette {}
@@ -262,6 +265,21 @@ const baseTheme = createTheme({
       fontWeight: 400,
       lineHeight: 1.25,
       textTransform: "uppercase",
+    },
+    teamGroupHeading: {
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.5,
+    },
+    memberNameHeading: {
+      fontSize: 16,
+      fontWeight: 600,
+      lineHeight: 1.5,
+    },
+    memberRoleHeading: {
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.52,
     },
   },
   breakpoints: {

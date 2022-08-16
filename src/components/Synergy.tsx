@@ -71,7 +71,7 @@ const Synergy: React.VFC<
           )}
         </div>
       </div>
-      <p dangerouslySetInnerHTML={{ __html: analysis }} />
+      <div dangerouslySetInnerHTML={{ __html: analysis }} />
     </section>
   );
 };

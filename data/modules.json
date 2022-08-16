@@ -2066,6 +2066,120 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "uniequip_003_fartth",
+      "moduleIcon": "dea-y",
+      "moduleName": "支持者来信",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 80
+                },
+                {
+                  "key": "atk",
+                  "value": 80
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "atk",
+                  "value": 100
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "最近5秒内未受伤害时，攻击力+15%，攻击速度+4",
+              "talentIndex": 0,
+              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "atk",
+                  "value": 100
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "最近5秒内未受伤害时，攻击力+18%<span class=\"potential\">（+3%）</span>，攻击速度+4",
+              "talentIndex": 0,
+              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 120
+                },
+                {
+                  "key": "atk",
+                  "value": 120
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "最近3秒内未受伤害时，攻击力+15%，攻击速度+7",
+              "talentIndex": 0,
+              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 120
+                },
+                {
+                  "key": "atk",
+                  "value": 120
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "最近3秒内未受伤害时，攻击力+18%<span class=\"potential\">（+3%）</span>，攻击速度+7",
+              "talentIndex": 0,
+              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
     }
   ],
   "char_158_milu": [
@@ -8584,6 +8698,140 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "uniequip_003_ghost2",
+      "moduleIcon": "pum-y",
+      "moduleName": "未竟之美",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 200
+                },
+                {
+                  "key": "atk",
+                  "value": 25
+                },
+                {
+                  "key": "def",
+                  "value": 40
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 230
+                },
+                {
+                  "key": "atk",
+                  "value": 33
+                },
+                {
+                  "key": "def",
+                  "value": 48
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "编入队伍时，所有【深海猎人】干员的生命值+25%，且技力回复+0.3/秒",
+              "talentIndex": 1,
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 230
+                },
+                {
+                  "key": "atk",
+                  "value": 33
+                },
+                {
+                  "key": "def",
+                  "value": 48
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "编入队伍时，所有【深海猎人】干员的生命值+28%<span class=\"potential\">（+3%）</span>，且技力自然回复速度+0.3/秒（同类效果取最高）",
+              "talentIndex": 1,
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 250
+                },
+                {
+                  "key": "atk",
+                  "value": 40
+                },
+                {
+                  "key": "def",
+                  "value": 55
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "编入队伍时，所有【深海猎人】干员的生命值+30%，且技力回复+0.5/秒",
+              "talentIndex": 1,
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 250
+                },
+                {
+                  "key": "atk",
+                  "value": 40
+                },
+                {
+                  "key": "def",
+                  "value": 55
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "编入队伍时，所有【深海猎人】干员的生命值+33%<span class=\"potential\">（+3%）</span>，且技力自然回复速度+0.5/秒（同类效果取最高）",
+              "talentIndex": 1,
+              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但生命值<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffectType": "override"
+            }
+          ]
+        }
+      ]
     }
   ],
   "char_369_bena": [
@@ -11674,6 +11922,898 @@
               "talentIndex": 0,
               "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
               "traitEffectType": "override"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_474_glady": [
+    {
+      "moduleId": "uniequip_002_glady",
+      "moduleIcon": "hok-x",
+      "moduleName": "执政官手镜",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 110
+                },
+                {
+                  "key": "atk",
+                  "value": 45
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 170
+                },
+                {
+                  "key": "atk",
+                  "value": 59
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "在场时，所有【深海猎人】干员每秒回复3%最大生命值且受到敌人的物理与法术伤害降低28%",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 210
+                },
+                {
+                  "key": "atk",
+                  "value": 70
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "在场时，所有【深海猎人】干员每秒回复3.5%最大生命值且受到敌人的物理与法术伤害降低30%",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_173_slchan": [
+    {
+      "moduleId": "uniequip_002_slchan",
+      "moduleIcon": "hok-x",
+      "moduleName": "“凌绝顶”",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 25
+                },
+                {
+                  "key": "def",
+                  "value": 22
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 33
+                },
+                {
+                  "key": "def",
+                  "value": 27
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "未阻挡敌人时，攻击力和防御力各+16%",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 33
+                },
+                {
+                  "key": "def",
+                  "value": 27
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "未阻挡敌人时，攻击力和防御力各+18%<span class=\"potential\">（+2%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 40
+                },
+                {
+                  "key": "def",
+                  "value": 31
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "未阻挡敌人时，攻击力和防御力各+20%",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 40
+                },
+                {
+                  "key": "def",
+                  "value": 31
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "未阻挡敌人时，攻击力和防御力各+22%<span class=\"potential\">（+2%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_383_snsant": [
+    {
+      "moduleId": "uniequip_002_snsant",
+      "moduleIcon": "hok-x",
+      "moduleName": "雪雉的宝贝存钱罐",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 110
+                },
+                {
+                  "key": "def",
+                  "value": 22
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 170
+                },
+                {
+                  "key": "def",
+                  "value": 27
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "在拖拽【感染生物】时，力度提升一个等级并额外使其失去特殊能力6秒",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 170
+                },
+                {
+                  "key": "def",
+                  "value": 27
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "在拖拽【感染生物】时，力度提升一个等级并额外使其失去特殊能力10<span class=\"potential\">（+4）</span>秒",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 210
+                },
+                {
+                  "key": "def",
+                  "value": 31
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "在拖拽【感染生物】时，力度提升一个等级并额外使其失去特殊能力8秒",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 210
+                },
+                {
+                  "key": "def",
+                  "value": 31
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "在拖拽【感染生物】时，力度提升一个等级并额外使其失去特殊能力12<span class=\"potential\">（+4）</span>秒",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_236_rope": [
+    {
+      "moduleId": "uniequip_002_rope",
+      "moduleIcon": "hok-x",
+      "moduleName": "铁皮首饰盒",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "atk",
+                  "value": 22
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 160
+                },
+                {
+                  "key": "atk",
+                  "value": 27
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "获得35%的物理闪避",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 160
+                },
+                {
+                  "key": "atk",
+                  "value": 27
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "获得39%<span class=\"potential\">（+4%）</span>的物理闪避",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 200
+                },
+                {
+                  "key": "atk",
+                  "value": 31
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "获得40%的物理闪避",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 200
+                },
+                {
+                  "key": "atk",
+                  "value": 31
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "获得44%<span class=\"potential\">（+4%）</span>的物理闪避",
+              "talentIndex": 0,
+              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_437_mizuki": [
+    {
+      "moduleId": "uniequip_002_mizuki",
+      "moduleIcon": "amb-x",
+      "moduleName": "使者之约",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 120
+                },
+                {
+                  "key": "atk",
+                  "value": 60
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 180
+                },
+                {
+                  "key": "atk",
+                  "value": 75
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "攻击时对攻击目标中生命值最少的2名敌人额外造成相当于攻击力55%的法术伤害",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 220
+                },
+                {
+                  "key": "atk",
+                  "value": 90
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "攻击时对攻击目标中生命值最少的2名敌人额外造成相当于攻击力60%的法术伤害",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_215_mantic": [
+    {
+      "moduleId": "uniequip_002_mantic",
+      "moduleIcon": "amb-x",
+      "moduleName": "训练用尾部防护套装",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 58
+                },
+                {
+                  "key": "def",
+                  "value": 22
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 72
+                },
+                {
+                  "key": "def",
+                  "value": 27
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "平时处于<span class=\"skill-tooltip\">隐匿</span>状态，攻击时会解除<span class=\"skill-tooltip\">隐匿</span>状态，且当次攻击的攻击力+55%。停止攻击5秒后，重新进入<span class=\"skill-tooltip\">隐匿</span>状态",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 72
+                },
+                {
+                  "key": "def",
+                  "value": 27
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "平时处于<span class=\"skill-tooltip\">隐匿</span>状态，攻击时会解除<span class=\"skill-tooltip\">隐匿</span>状态，且当次攻击的攻击力+59%<span class=\"potential\">（+4%）</span>。停止攻击5秒后，重新进入<span class=\"skill-tooltip\">隐匿</span>状态",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 85
+                },
+                {
+                  "key": "def",
+                  "value": 31
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "平时处于<span class=\"skill-tooltip\">隐匿</span>状态，攻击时会解除<span class=\"skill-tooltip\">隐匿</span>状态，且当次攻击的攻击力+60%。停止攻击5秒后，重新进入<span class=\"skill-tooltip\">隐匿</span>状态",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 85
+                },
+                {
+                  "key": "def",
+                  "value": 31
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "平时处于<span class=\"skill-tooltip\">隐匿</span>状态，攻击时会解除<span class=\"skill-tooltip\">隐匿</span>状态，且当次攻击的攻击力+64%<span class=\"potential\">（+4%）</span>。停止攻击5秒后，重新进入<span class=\"skill-tooltip\">隐匿</span>状态",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_478_kirara": [
+    {
+      "moduleId": "uniequip_002_kirara",
+      "moduleIcon": "amb-x",
+      "moduleName": "《闹闹生存挑战3 联机版》",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 180
+                },
+                {
+                  "key": "def",
+                  "value": 35
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 260
+                },
+                {
+                  "key": "def",
+                  "value": 50
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "每秒回复2.5%生命值，周围8格没有友方干员时，改为每秒回复3.5%生命值",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 260
+                },
+                {
+                  "key": "def",
+                  "value": 50
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "每秒回复2.5%生命值，周围8格没有友方干员时，改为每秒回复4%<span class=\"potential\">（+0.5%）</span>生命值",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 330
+                },
+                {
+                  "key": "def",
+                  "value": 60
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "每秒回复2.5%生命值，周围8格没有友方干员时，改为每秒回复4%生命值",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 330
+                },
+                {
+                  "key": "def",
+                  "value": 60
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "每秒回复2.5%生命值，周围8格没有友方干员时，改为每秒回复4.5%<span class=\"potential\">（+0.5%）</span>生命值",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_355_ethan": [
+    {
+      "moduleId": "uniequip_002_ethan",
+      "moduleIcon": "amb-x",
+      "moduleName": "超级喷漆套装",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 160
+                },
+                {
+                  "key": "atk",
+                  "value": 35
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 250
+                },
+                {
+                  "key": "atk",
+                  "value": 50
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "攻击时有25%的几率使目标<span class=\"skill-tooltip\">束缚</span>3.5秒",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 300
+                },
+                {
+                  "key": "atk",
+                  "value": 60
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "攻击时有28%的几率使目标<span class=\"skill-tooltip\">束缚</span>3.5秒",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_4055_bgsnow": [
+    {
+      "moduleId": "uniequip_002_bgsnow",
+      "moduleIcon": "arc-y",
+      "moduleName": "打字机色带",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 130
+                },
+                {
+                  "key": "atk",
+                  "value": 55
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "攻击正前方的敌人时攻击力提升至<span class=\"keyword\">105%</span>且无视其物理闪避",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 150
+                },
+                {
+                  "key": "atk",
+                  "value": 65
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "可使用一个持续25秒属性较强的“打字机”，“打字机”拥有和自己一样的技能，拥有独立的再部署时间",
+              "talentIndex": 0,
+              "traitEffect": "攻击正前方的敌人时攻击力提升至<span class=\"keyword\">105%</span>且无视其物理闪避",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 170
+                },
+                {
+                  "key": "atk",
+                  "value": 75
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "可使用一个持续25秒属性更强的“打字机”，“打字机”拥有和自己一样的技能，拥有独立的再部署时间",
+              "talentIndex": 0,
+              "traitEffect": "攻击正前方的敌人时攻击力提升至<span class=\"keyword\">105%</span>且无视其物理闪避",
+              "traitEffectType": "update"
             }
           ]
         }

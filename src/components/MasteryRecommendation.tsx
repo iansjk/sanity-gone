@@ -4,11 +4,10 @@ import { Theme } from "@mui/material";
 export interface MasteryRecommendationProps {
   level: "no" | "1" | "2" | "3";
   priority?: string;
-  analysis: string;
 }
 
 const MasteryRecommendation: React.FC<MasteryRecommendationProps> = (props) => {
-  const { level, priority, analysis } = props;
+  const { level, priority, children } = props;
   return (
     <section css={styles}>
       <h3>Skill Mastery</h3>
@@ -22,7 +21,7 @@ const MasteryRecommendation: React.FC<MasteryRecommendationProps> = (props) => {
           <dd>{priority ?? "--"}</dd>
         </div>
       </dl>
-      <p dangerouslySetInnerHTML={{ __html: analysis }} />
+      {children}
     </section>
   );
 };

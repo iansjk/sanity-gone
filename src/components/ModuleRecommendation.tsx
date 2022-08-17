@@ -4,11 +4,10 @@ import { Theme } from "@mui/material";
 export interface ModuleRecommendationProps {
   stage: string; // apparently 1+ exists so just arbitrary string
   priority?: string;
-  analysis: string;
 }
 
 const ModuleRecommendation: React.FC<ModuleRecommendationProps> = (props) => {
-  const { stage, priority, analysis } = props;
+  const { stage, priority, children } = props;
   return (
     <section css={styles}>
       <dl className="module-recommendation">
@@ -21,7 +20,7 @@ const ModuleRecommendation: React.FC<ModuleRecommendationProps> = (props) => {
           <dd>{priority ?? "--"}</dd>
         </div>
       </dl>
-      <p dangerouslySetInnerHTML={{ __html: analysis }} />
+      {children}
     </section>
   );
 };

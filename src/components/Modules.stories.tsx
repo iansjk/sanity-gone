@@ -232,13 +232,18 @@ Default.args = {
         damage—Invisibility can be extremely powerful in the right hands. The
         bonus stats don’t matter much as they don’t apply to her summons.
       </p>
-      <ModuleRecommendation
-        stage="1+"
-        priority="Low"
-        analysis={
-          "The module’s new trait doesn’t do much for optimized low op or solo clears with Magallan, but it is a worthwhile upgrade for those wanting to use her in a full team, especially if using S1 to stall. For the upgraded talent, having the option to grant invisibility to Magallan can open up many placement options. It’s something that benefits more careful planning and specialized offensive use, but could also serve as a safety option when Magallan ends up in danger. For low op or solo clears, it is going to be more niche than her Module Y."
-        }
-      />
+      <ModuleRecommendation stage="1+" priority="Low">
+        <p>
+          The module’s new trait doesn’t do much for optimized low op or solo
+          clears with Magallan, but it is a worthwhile upgrade for those wanting
+          to use her in a full team, especially if using S1 to stall. For the
+          upgraded talent, having the option to grant invisibility to Magallan
+          can open up many placement options. It’s something that benefits more
+          careful planning and specialized offensive use, but could also serve
+          as a safety option when Magallan ends up in danger. For low op or solo
+          clears, it is going to be more niche than her Module Y.
+        </p>
+      </ModuleRecommendation>
     </>,
     <>
       <ModuleInfo module={modules[1]} operatorName="char_248_mgllan" key={1} />
@@ -253,13 +258,20 @@ Default.args = {
         at stage 3, the former mattering more in specialized clears while the
         latter can still benefit a more general team.
       </p>
-      <ModuleRecommendation
-        stage="1+"
-        priority="Low"
-        analysis={
-          "While this module doesn’t change Magallan’s playstyle, it’s a great upgrade for those who enjoy using her in low op or solo clears. The decreased cost and additional stored summons lend themselves well towards making Magallan’s low op playstyle easier for less experienced players. The lowered DP cost helps in stages with DP constraints, while the increased number of stored summons means players don’t have to worry as much when losing a summon to enemies instead of recycling it with her skill. Stages 2 and 3 are a good investment for those who enjoy using Magallan and wish to make her more powerful, but come at a steep cost for a playstyle that doesn’t benefit many."
-        }
-      />
+      <ModuleRecommendation stage="1+" priority="Low">
+        <p>
+          While this module doesn’t change Magallan’s playstyle, it’s a great
+          upgrade for those who enjoy using her in low op or solo clears. The
+          decreased cost and additional stored summons lend themselves well
+          towards making Magallan’s low op playstyle easier for less experienced
+          players. The lowered DP cost helps in stages with DP constraints,
+          while the increased number of stored summons means players don’t have
+          to worry as much when losing a summon to enemies instead of recycling
+          it with her skill. Stages 2 and 3 are a good investment for those who
+          enjoy using Magallan and wish to make her more powerful, but come at a
+          steep cost for a playstyle that doesn’t benefit many.
+        </p>
+      </ModuleRecommendation>
     </>,
   ],
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { Theme, useTheme, css, GlobalStyles } from "@mui/material";
 import { lighten, rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
-import parse, { attributesToProps } from "html-react-parser";
+import parse, { attributesToProps, domToReact } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
 
 import Introduction from "../../components/Introduction";
@@ -93,25 +93,39 @@ const htmlToReact = (
           );
         } else if (domNode.name === "masteryrecommendation") {
           const props = attributesToProps(domNode.attribs);
+          // the first child seems to always be a text node, but then subsequent ones are <p>s.
+          // convert text nodes into <p> but feed the rest into domToReact.
+          const children = domNode.children.map((child, i) => {
+            if (child.type === "text") {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              return <p key={i}>{(child as any).data.trim()}</p>;
+            }
+            return {
+              ...(domToReact([child]) as JSX.Element), // needs an array, even if it's a single child.
+              key: i, // force a key so React doesn't complain
+            };
+          });
           return (
             //@ts-expect-error props will contain level and priority
-            <MasteryRecommendation
-              {...props}
-              //@ts-expect-error children[0].data should exist on a text node
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-              analysis={domNode.children[0].data}
-            />
+            <MasteryRecommendation {...props}>{children}</MasteryRecommendation>
           );
         } else if (domNode.name === "modulerecommendation") {
           const props = attributesToProps(domNode.attribs);
+          // the first child seems to always be a text node, but then subsequent ones are <p>s.
+          // convert text nodes into <p> but feed the rest into domToReact.
+          const children = domNode.children.map((child, i) => {
+            if (child.type === "text") {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              return <p key={i}>{(child as any).data.trim()}</p>;
+            }
+            return {
+              ...(domToReact([child]) as JSX.Element), // needs an array, even if it's a single child.
+              key: i, // force a key so React doesn't complain
+            };
+          });
           return (
             //@ts-expect-error props will contain priority
-            <ModuleRecommendation
-              {...props}
-              //@ts-expect-error children[0].data should exist on a text node
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-              analysis={domNode.children[0].data}
-            />
+            <ModuleRecommendation {...props}>{children}</ModuleRecommendation>
           );
         } else if ((domNode.firstChild as Element)?.name === "img") {
           const contents = (domNode.children as Element[])

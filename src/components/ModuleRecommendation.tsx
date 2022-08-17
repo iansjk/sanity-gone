@@ -4,6 +4,7 @@ import { Theme } from "@mui/material";
 export interface ModuleRecommendationProps {
   stage: string; // apparently 1+ exists so just arbitrary string
   priority?: string;
+  children: React.ReactNode;
 }
 
 const ModuleRecommendation: React.FC<ModuleRecommendationProps> = (props) => {

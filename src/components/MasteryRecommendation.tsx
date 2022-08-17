@@ -4,6 +4,7 @@ import { Theme } from "@mui/material";
 export interface MasteryRecommendationProps {
   level: "no" | "1" | "2" | "3";
   priority?: string;
+  children: React.ReactNode;
 }
 
 const MasteryRecommendation: React.FC<MasteryRecommendationProps> = (props) => {

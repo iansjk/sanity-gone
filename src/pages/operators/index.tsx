@@ -12,7 +12,7 @@ import {
   useTheme,
 } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
-import { lighten, rgba } from "polished";
+import { tint, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
 
 import Layout from "../../Layout";
@@ -764,7 +764,7 @@ const styles = (theme: Theme) => css`
         font-weight: 500;
 
         &:hover {
-          color: ${lighten(0.27, theme.palette.white.main)};
+          color: ${tint(0.27, theme.palette.white.main)};
           background-color: ${rgba(theme.palette.white.main, 0.4)};
         }
       }
@@ -795,7 +795,7 @@ const styles = (theme: Theme) => css`
       }
 
       &:hover {
-        color: ${lighten(0.27, theme.palette.white.main)};
+        color: ${tint(0.27, theme.palette.white.main)};
         background-color: ${rgba(theme.palette.white.main, 0.4)};
       }
 

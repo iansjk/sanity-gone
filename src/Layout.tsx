@@ -7,7 +7,7 @@ import "wicg-inert";
 
 import SanityGoneLogo from "./components/SanityGoneLogo";
 import MobileMenuIcon from "./components/icons/MobileMenuIcon";
-import { lighten, rgba, transparentize } from "polished";
+import { tint, rgba, transparentize } from "polished";
 import MobileMenu from "./components/MobileMenu";
 import SearchBar from "./components/SearchBar";
 import WeirdDeathSphere from "./components/WeirdDeathSphere";
@@ -536,11 +536,11 @@ const styles =
               padding: ${theme.spacing(0, 0.5)};
               border-radius: ${theme.spacing(0.25)};
 
-              color: ${rgba(lighten(0.27, theme.palette.blue.main), 0.66)};
+              color: ${rgba(tint(0.27, theme.palette.blue.main), 0.66)};
               background-color: ${rgba(theme.palette.blue.main, 0.08)};
 
               &:hover {
-                color: ${lighten(0.27, theme.palette.blue.main)};
+                color: ${tint(0.27, theme.palette.blue.main)};
                 background-color: ${rgba(theme.palette.blue.main, 0.4)};
               }
             }
@@ -676,11 +676,11 @@ const styles =
           padding: ${theme.spacing(0, 0.5)};
           border-radius: ${theme.spacing(0.25)};
           transition: all 50ms ease-out;
-          color: ${rgba(lighten(0.27, theme.palette.blue.main), 0.66)};
+          color: ${rgba(tint(0.27, theme.palette.blue.main), 0.66)};
           background-color: ${rgba(theme.palette.blue.main, 0.08)};
 
           &:hover {
-            color: ${lighten(0.27, theme.palette.blue.main)};
+            color: ${tint(0.27, theme.palette.blue.main)};
             background-color: ${rgba(theme.palette.blue.main, 0.4)};
           }
         }

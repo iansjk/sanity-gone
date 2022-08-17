@@ -1,6 +1,6 @@
 import React from "react";
 import { Theme, useTheme, css, GlobalStyles } from "@mui/material";
-import { lighten, rgba, transparentize } from "polished";
+import { tint, rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
 import parse, { attributesToProps, domToReact } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
@@ -683,7 +683,7 @@ const globalOverrideStyles =
           ${transparentize(0.67, theme.palette.midtoneBrighter.main)};
 
         h2 {
-          color: ${lighten(0.27, accentColor)} !important;
+          color: ${tint(0.27, accentColor)} !important;
         }
       }
 
@@ -741,11 +741,11 @@ const globalOverrideStyles =
             }
           }
           .breadcrumb > a {
-            color: ${rgba(lighten(0.27, accentColor), 0.66)};
+            color: ${rgba(tint(0.27, accentColor), 0.66)};
             background-color: ${rgba(accentColor, 0.08)};
 
             &:hover {
-              color: ${lighten(0.27, accentColor)};
+              color: ${tint(0.27, accentColor)};
               background-color: ${rgba(accentColor, 0.4)};
             }
           }
@@ -849,8 +849,8 @@ const styles = (accentColor: string) => (theme: Theme) =>
             ${transparentize(0.9, accentColor)},
             ${transparentize(0.8, accentColor)}
           );
-          color: ${lighten(0.27, accentColor)};
-          border-right: 3px solid ${lighten(0.27, accentColor)};
+          color: ${tint(0.27, accentColor)};
+          border-right: 3px solid ${tint(0.27, accentColor)};
           font-weight: ${theme.typography.navigationLinkBold.fontWeight};
         }
 
@@ -912,11 +912,11 @@ const styles = (accentColor: string) => (theme: Theme) =>
         a {
           margin-right: ${theme.spacing(1)};
 
-          color: ${rgba(lighten(0.27, accentColor), 0.66)};
+          color: ${rgba(tint(0.27, accentColor), 0.66)};
           background-color: ${rgba(accentColor, 0.08)};
 
           &:hover {
-            color: ${lighten(0.27, accentColor)};
+            color: ${tint(0.27, accentColor)};
             background-color: ${rgba(accentColor, 0.4)};
           }
         }

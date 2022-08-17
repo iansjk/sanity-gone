@@ -21,6 +21,8 @@ export interface OperatorInfoProps {
   isLimited?: boolean;
 }
 
+const stripTagsRegex = /<(\/|([@$a-z.]+))>/g;
+
 const getAttackType = (
   operatorClass: string,
   subProfessionId: string,
@@ -28,8 +30,11 @@ const getAttackType = (
 ): "Physical" | "Arts" | "Healing" | "None" => {
   if (subProfessionId === "bard") return "None";
   if (operatorClass === "Medic") return "Healing";
-  return description.toLowerCase().includes("arts damage") ||
-    description.includes("法术伤害")
+  const descriptionNoTags = description
+    .replace(stripTagsRegex, "")
+    .toLowerCase();
+  return descriptionNoTags.includes("arts damage") ||
+    descriptionNoTags.includes("法术伤害")
     ? "Arts"
     : "Physical";
 };

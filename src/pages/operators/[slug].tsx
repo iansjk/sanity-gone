@@ -95,12 +95,15 @@ const htmlToReact = (
           const props = attributesToProps(domNode.attribs);
           // the first child seems to always be a text node, but then subsequent ones are <p>s.
           // convert text nodes into <p> but feed the rest into domToReact.
-          const children = domNode.children.map((child) => {
+          const children = domNode.children.map((child, i) => {
             if (child.type === "text") {
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              return <p>{(child as any).data.trim()}</p>;
+              return <p key={i}>{(child as any).data.trim()}</p>;
             }
-            return domToReact([child]); // needs an array, even if it's a single child.
+            return {
+              ...(domToReact([child]) as JSX.Element), // needs an array, even if it's a single child.
+              key: i, // force a key so React doesn't complain
+            };
           });
           return (
             //@ts-expect-error props will contain level and priority
@@ -110,12 +113,15 @@ const htmlToReact = (
           const props = attributesToProps(domNode.attribs);
           // the first child seems to always be a text node, but then subsequent ones are <p>s.
           // convert text nodes into <p> but feed the rest into domToReact.
-          const children = domNode.children.map((child) => {
+          const children = domNode.children.map((child, i) => {
             if (child.type === "text") {
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              return <p>{(child as any).data.trim()}</p>;
+              return <p key={i}>{(child as any).data.trim()}</p>;
             }
-            return domToReact([child]); // needs an array, even if it's a single child.
+            return {
+              ...(domToReact([child]) as JSX.Element), // needs an array, even if it's a single child.
+              key: i, // force a key so React doesn't complain
+            };
           });
           return (
             //@ts-expect-error props will contain priority

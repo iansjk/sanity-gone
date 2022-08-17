@@ -6690,7 +6690,7 @@
     {
       "moduleId": "uniequip_002_skfire",
       "moduleIcon": "spc-y",
-      "moduleName": "阻燃处理方案",
+      "moduleName": "Flame-Retardant Solutions",
       "phases": [
         {
           "candidates": [
@@ -6714,7 +6714,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "部署费用<span class=\"keyword\">减少</span>",
+              "traitEffect": "DP Cost <span class=\"keyword\">-8</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6739,9 +6739,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时，所有被阻挡的敌人受到法术伤害时伤害提升20%",
+              "talentEffect": "Increases the Arts damage taken by all blocked enemies by +20% when deployed",
               "talentIndex": 0,
-              "traitEffect": "部署费用<span class=\"keyword\">减少</span>",
+              "traitEffect": "DP Cost <span class=\"keyword\">-8</span>",
               "traitEffectType": "update"
             },
             {
@@ -6762,9 +6762,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "在场时，所有被阻挡的敌人受到法术伤害时伤害提升23%<span class=\"potential\">（+3%）</span>",
+              "talentEffect": "Increases the Arts damage taken by all blocked enemies by +23% <span class=\"potential\">(+3%)</span> when deployed",
               "talentIndex": 0,
-              "traitEffect": "部署费用<span class=\"keyword\">减少</span>",
+              "traitEffect": "DP Cost <span class=\"keyword\">-8</span>",
               "traitEffectType": "update"
             }
           ]
@@ -6789,9 +6789,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时，所有被阻挡的敌人受到法术伤害时伤害提升23%",
+              "talentEffect": "Increases the Arts damage taken by all blocked enemies by +23% when deployed",
               "talentIndex": 0,
-              "traitEffect": "部署费用<span class=\"keyword\">减少</span>",
+              "traitEffect": "DP Cost <span class=\"keyword\">-8</span>",
               "traitEffectType": "update"
             },
             {
@@ -6812,9 +6812,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "在场时，所有被阻挡的敌人受到法术伤害时伤害提升26%<span class=\"potential\">（+3%）</span>",
+              "talentEffect": "Increases the Arts damage taken by all blocked enemies by +26% <span class=\"potential\">(+3%)</span> when deployed",
               "talentIndex": 0,
-              "traitEffect": "部署费用<span class=\"keyword\">减少</span>",
+              "traitEffect": "DP Cost <span class=\"keyword\">-8</span>",
               "traitEffectType": "update"
             }
           ]

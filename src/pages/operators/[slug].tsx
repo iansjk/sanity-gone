@@ -322,7 +322,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       skill3Analysis: await markdownToHtmlString(
         operatorAnalysis.skill3Analysis
       ),
-      synergies: operatorAnalysis.synergiesCollection?.items ?? [],
+      synergies: await Promise.all(
+        operatorAnalysis.synergiesCollection?.items.map(async (syn) => {
+          return {
+            ...syn,
+            synergyDescription: await markdownToHtmlString(
+              syn.synergyDescription
+            ),
+          };
+        }) ?? []
+      ),
     },
     operatorObject,
     summons: summons as unknown as CharacterObject[],

@@ -4,6 +4,11 @@
     "trait": "Attacks deal <span class=\"keyword\">Arts damage</span>. When attacking an enemy, heal a friendly operator within attack range for <span class=\"keyword\">50%</span> of the damage dealt.",
     "class": "Medic"
   },
+  "agent": {
+    "branchName": "Agent",
+    "trait": "再部署时间<span class=\"keyword\">减少</span>，可使用远程攻击",
+    "class": "Vanguard"
+  },
   "pioneer": {
     "branchName": "Pioneer",
     "trait": "Blocks 2 enemies",

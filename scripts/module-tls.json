@@ -885,5 +885,44 @@
         ]
       }
     ]
+  },
+  "uniequip_002_skfire": {
+    "moduleName": "Flame-Retardant Solutions",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "DP Cost <span class=\"keyword\">-8</span>",
+            "talent": null
+          },
+          {
+            "trait": "DP Cost <span class=\"keyword\">-8</span>",
+            "talent": "Increases the Arts damage taken by all blocked enemies by +20% when deployed"
+          },
+          {
+            "trait": "DP Cost <span class=\"keyword\">-8</span>",
+            "talent": "Increases the Arts damage taken by all blocked enemies by +23% when deployed"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "DP Cost <span class=\"keyword\">-8</span>",
+            "talent": null
+          },
+          {
+            "trait": "DP Cost <span class=\"keyword\">-8</span>",
+            "talent": "Increases the Arts damage taken by all blocked enemies by +23% <span class=\"potential\">(+3%)</span> when deployed"
+          },
+          {
+            "trait": "DP Cost <span class=\"keyword\">-8</span>",
+            "talent": "Increases the Arts damage taken by all blocked enemies by +26% <span class=\"potential\">(+3%)</span> when deployed"
+          }
+        ]
+      }
+    ]
   }
 }

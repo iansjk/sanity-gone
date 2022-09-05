@@ -1,13 +1,19 @@
 import { css } from "@emotion/react";
-import { Theme } from "@mui/material";
+import {
+  Theme,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
 import { rgba } from "polished";
+import { Media } from "../Media";
 import Image from "next/image";
-
 import Layout from "../Layout";
 import aboutPageBanner from "../images/page-banners/about.jpg";
 import aboutDiscordButton from "../images/page-banners/about_discord.png";
 
 import type { NextPage } from "next";
+
 const memberGroups: {
   title: string;
   members: { name: string; role: string; imageFilename: string }[];
@@ -140,38 +146,111 @@ const About: NextPage = () => {
       <main css={styles}>
         <section className="team-members">
           <h2>Sanity;Gone Team</h2>
-          <div className="team-groups">
-            {memberGroups.map(({ title, members }) => {
-              return (
-                <div className="team-group" key={title}>
-                  <h3>
-                    {title}
-                    <span className="divider"></span>
-                  </h3>
-                  <ul className="member-list">
-                    {members.map(({ name, role, imageFilename }) => {
-                      return (
-                        <li className="member-card" key={name}>
-                          <Image
-                            className="avatar"
-                            src={`/images/member-avatars/${imageFilename}`}
-                            alt=""
-                            width={48}
-                            height={48}
-                            objectFit="cover"
+          <Media lessThan="mobile">
+            <div className="team-groups">
+              {memberGroups.map(({ title, members }, index) => {
+                return (
+                  <Accordion
+                    className="team-group"
+                    expanded={index == 0}
+                    key={title}
+                    sx={{
+                      backgroundColor: "transparent",
+                      color: "white",
+                      boxShadow: "none",
+                      ":before": {
+                        height: 0,
+                      },
+                    }}
+                  >
+                    <AccordionSummary
+                      sx={{
+                        margin: 0,
+                      }}
+                      expandIcon={
+                        <svg
+                          width="13"
+                          height="14"
+                          viewBox="0 0 13 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.250971 3.7388C0.585598 3.4204 1.12813 3.4204 1.46276 3.7388L6.5 8.53169L11.5372 3.7388C11.8719 3.4204 12.4144 3.4204 12.749 3.7388C13.0837 4.05719 13.0837 4.57341 12.749 4.89181L7.1059 10.2612C6.77127 10.5796 6.22873 10.5796 5.8941 10.2612L0.250971 4.89181C-0.0836563 4.57341 -0.0836563 4.05719 0.250971 3.7388Z"
+                            fill="#E8E8F2"
+                            fillOpacity="0.8"
                           />
-                          <div className="member-info">
-                            <span className="member-name">{name}</span>
-                            <span className="role">{role}</span>
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
+                        </svg>
+                      }
+                      // aria-controls="panel1a-content"
+                      // id="panel1a-header"
+                    >
+                      <h3>
+                        {title}
+                        <span className="divider"></span>
+                      </h3>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <ul className="member-list">
+                        {members.map(({ name, role, imageFilename }) => {
+                          return (
+                            <li className="member-card" key={name}>
+                              <Image
+                                className="avatar"
+                                src={`/images/member-avatars/${imageFilename}`}
+                                alt=""
+                                width={48}
+                                height={48}
+                                objectFit="cover"
+                              />
+                              <div className="member-info">
+                                <span className="member-name">{name}</span>
+                                <span className="role">{role}</span>
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </AccordionDetails>
+                  </Accordion>
+                );
+              })}
+            </div>
+          </Media>
+          <Media greaterThanOrEqual="mobile">
+            <div className="team-groups">
+              {memberGroups.map(({ title, members }) => {
+                return (
+                  <div className="team-group" key={title}>
+                    <h3>
+                      {title}
+                      <span className="divider"></span>
+                    </h3>
+                    <ul className="member-list">
+                      {members.map(({ name, role, imageFilename }) => {
+                        return (
+                          <li className="member-card" key={name}>
+                            <Image
+                              className="avatar"
+                              src={`/images/member-avatars/${imageFilename}`}
+                              alt=""
+                              width={48}
+                              height={48}
+                              objectFit="cover"
+                            />
+                            <div className="member-info">
+                              <span className="member-name">{name}</span>
+                              <span className="role">{role}</span>
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
+          </Media>
         </section>
         <section className="about-footer">
           <div className="special-thanks">
@@ -255,6 +334,10 @@ const styles = (theme: Theme) => css`
     align-items: flex-start;
     padding: ${theme.spacing(3, 3, 3)};
     gap: ${theme.spacing(3, 0, 0)};
+
+    .fresnel-container {
+      width: 100%;
+    }
   }
 
   .team-groups {
@@ -266,6 +349,7 @@ const styles = (theme: Theme) => css`
     ${theme.breakpoints.down("mobile")} {
       display: flex;
       flex-direction: column;
+      gap: ${theme.spacing(3)};
     }
 
     .member-list {
@@ -294,12 +378,21 @@ const styles = (theme: Theme) => css`
         display: flex;
         align-items: center;
         gap: ${theme.spacing(4)};
+        color: ${theme.palette.white.main};
+
+        ${theme.breakpoints.down("mobile")} {
+          width: 100%;
+        }
 
         span.divider {
           display: inline-block;
           width: 100%;
           height: 1px;
           background: ${theme.palette.midtoneBrighterer.main};
+
+          ${theme.breakpoints.down("mobile")} {
+            margin-right: ${theme.spacing(4)};
+          }
         }
       }
 
@@ -324,6 +417,7 @@ const styles = (theme: Theme) => css`
           font-weight: ${theme.typography.memberNameHeading.fontWeight};
           line-height: ${theme.typography.memberNameHeading.lineHeight};
           justify-self: flex-start;
+          color: ${theme.palette.white.main};
           grid-area: name;
         }
 

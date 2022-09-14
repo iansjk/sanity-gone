@@ -17,11 +17,12 @@ interface NormalizedRange {
 }
 
 const normalizeRange = (rangeObject: RangeObject): NormalizedRange => {
+  const rangeGrids = [...rangeObject.grids, { row: 0, col: 0 }];
   // for each of rows and cols,
   // find the minimum value and the maximum value
   // then return max-min to get number of rows/cols
-  const rowIndices = rangeObject.grids.map((cell) => cell.row);
-  const colIndices = rangeObject.grids.map((cell) => cell.col);
+  const rowIndices = rangeGrids.map((cell) => cell.row);
+  const colIndices = rangeGrids.map((cell) => cell.col);
   const minRowIndex = Math.min(...rowIndices);
   const maxRowIndex = Math.max(...rowIndices);
   const minColIndex = Math.min(...colIndices);
@@ -33,7 +34,7 @@ const normalizeRange = (rangeObject: RangeObject): NormalizedRange => {
   const grid = Array<GridCell>(rows)
     .fill(GridCell.empty)
     .map(() => Array<GridCell>(cols).fill(GridCell.empty));
-  rangeObject.grids.forEach((cell) => {
+  rangeGrids.forEach((cell) => {
     const type =
       cell.row === 0 && cell.col === 0 ? GridCell.Operator : GridCell.active;
     grid[cell.row - minRowIndex][cell.col - minColIndex] = type;

@@ -244,3 +244,17 @@ RosaE2.args = {
     ],
   },
 };
+
+export const KafkaS2 = Template.bind({});
+KafkaS2.args = {
+  rangeObject: {
+    id: "3-16",
+    direction: 1,
+    grids: [
+      {
+        row: 0,
+        col: 3,
+      },
+    ],
+  },
+};

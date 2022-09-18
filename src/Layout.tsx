@@ -18,6 +18,8 @@ import Image from "next/image";
 import HashCompatibleNextLink from "./components/HashCompatibleNextLink";
 import { useRouter } from "next/router";
 
+import { siteWrapper } from "./Layout.css";
+
 interface BannerImageProps {
   width: number;
   height: number;
@@ -86,7 +88,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
       </Head>
 
       <Global styles={styles({ blendPoint })} />
-      <div className="site-wrapper">
+      <div className={siteWrapper}>
+        {/* <div className="site-wrapper"> */}
         {(bannerImage != null || bannerImageProps != null) && (
           <div className="banner-image-container">
             <div className="banner-image-wrapper">

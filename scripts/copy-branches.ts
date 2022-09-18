@@ -26,6 +26,7 @@ const CN_BRANCH_TLS: Record<string, string> = {
   craftsman: "Artificer",
   incantationmedic: "Incantation",
   agent: "Agent",
+  shotprotector: "Longstrike",
 };
 // Separate EN overrides.
 // Kept separate from the above overrides for the sake of clarity.

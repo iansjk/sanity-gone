@@ -10,6 +10,7 @@
     "class": "Vanguard"
   },
   "shotprotector": {
+    "branchName": "Longstrike",
     "trait": "能够阻挡三个敌人，可以进行远程攻击",
     "class": "Defender"
   },

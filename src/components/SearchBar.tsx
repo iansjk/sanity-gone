@@ -65,7 +65,6 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
   });
   index.import(search.index);
 
-  // @ts-ignore
   const store: Record<string, SearchResult> = search.store;
   const operatorsWithGuides = search.operatorsWithGuides;
 

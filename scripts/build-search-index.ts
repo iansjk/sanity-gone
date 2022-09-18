@@ -49,6 +49,7 @@ void (async () => {
   Object.entries(branches).forEach(([branchName, branch]) => {
     searchArray.push({
       type: "branch",
+      // @ts-ignore
       name: branch.branchName,
       class: branch.class,
       subProfession: branchName,

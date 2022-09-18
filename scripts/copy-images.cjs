@@ -3,34 +3,34 @@ const { existsSync } = require("fs");
 const path = require("path");
 const fg = require("fast-glob");
 
-const ACESHIP_REPO_DIRECTORY = path.join(__dirname, "../../AN-EN-Tags");
+const ACESHIP_REPO_DIRECTORY = path.join(__dirname, "../../Arknight-Images");
 const OUTPUT_IMAGE_DIRECTORY = path.join(__dirname, "../public/images");
 
 const directoriesToCheck = [
   {
-    from: "./img/avatars",
+    from: "./avatars",
     to: "./avatars",
   },
   {
-    from: "./img/ui/subclass",
+    from: "./ui/subclass",
     to: "./branches",
   },
   {
-    from: "./img/equip/icon",
+    from: "./equip/icon",
     to: "./modules",
   },
   {
-    from: "./img/portraits",
+    from: "./portraits",
     to: "./portraits",
   },
   {
-    from: "./img/skills",
+    from: "./skills",
     to: "./skills",
   },
   {
-    from: "./img/equip/type",
-    to: "./module-types"
-  }
+    from: "./equip/type",
+    to: "./module-types",
+  },
 ];
 void (async () => {
   if (!existsSync(ACESHIP_REPO_DIRECTORY)) {
@@ -41,8 +41,12 @@ void (async () => {
 
   await Promise.all(
     directoriesToCheck.map(async ({ from, to }) => {
-      const sourceDir = path.join(ACESHIP_REPO_DIRECTORY, from).replace(/\\/g, "/");
-      const destinationDir = path.join(OUTPUT_IMAGE_DIRECTORY, to).replace(/\\/g, "/");
+      const sourceDir = path
+        .join(ACESHIP_REPO_DIRECTORY, from)
+        .replace(/\\/g, "/");
+      const destinationDir = path
+        .join(OUTPUT_IMAGE_DIRECTORY, to)
+        .replace(/\\/g, "/");
 
       if (!existsSync(sourceDir)) {
         throw new Error(

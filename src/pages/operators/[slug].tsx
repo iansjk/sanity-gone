@@ -135,7 +135,6 @@ const htmlToReact = (
               <img
                 key={i}
                 width={350}
-                loading="lazy"
                 {...attributesToProps(imgElement.attribs)}
               />
             ));

@@ -9,7 +9,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { operatorBranchIcon } from "../utils/images";
 
-const getPortraitFilename = (operatorId: string) => `${operatorId}_1.png`;
+const getPortraitFilename = (operatorId: string) =>
+  operatorId === "char_1001_amiya2"
+    ? `${operatorId}_2.png`
+    : `${operatorId}_1.png`;
 
 export interface OperatorListOperator {
   charId: string;

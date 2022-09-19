@@ -9,6 +9,11 @@
     "trait": "再部署时间<span class=\"keyword\">减少</span>，可使用远程攻击",
     "class": "Vanguard"
   },
+  "shotprotector": {
+    "branchName": "Longstrike",
+    "trait": "能够阻挡三个敌人，可以进行远程攻击",
+    "class": "Defender"
+  },
   "pioneer": {
     "branchName": "Pioneer",
     "trait": "Blocks 2 enemies",

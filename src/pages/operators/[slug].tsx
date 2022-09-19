@@ -1,5 +1,5 @@
 import React from "react";
-import { Theme, useTheme, css, GlobalStyles } from "@mui/material";
+import { Box, Theme, useTheme, css, GlobalStyles } from "@mui/material";
 import { tint, rgba, transparentize } from "polished";
 import { DateTime } from "luxon";
 import parse, { attributesToProps, domToReact } from "html-react-parser";
@@ -15,7 +15,6 @@ import TabPanels from "../../components/TabPanels";
 import TalentInfo, { TalentObject } from "../../components/TalentInfo";
 import Layout from "../../Layout";
 import { replaceSelfClosingHtmlTags } from "../../utils/globals";
-import Gallery from "../../components/Gallery";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject, DenormalizedModule } from "../../utils/types";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
@@ -127,13 +126,23 @@ const htmlToReact = (
             //@ts-expect-error props will contain priority
             <ModuleRecommendation {...props}>{children}</ModuleRecommendation>
           );
+          // FIXME hacky way to embed images
         } else if ((domNode.firstChild as Element)?.name === "img") {
           const contents = (domNode.children as Element[])
             .filter((element) => element.name === "img")
             .map((imgElement, i) => (
-              <img key={i} {...attributesToProps(imgElement.attribs)} />
+              // eslint-disable-next-line jsx-a11y/alt-text, @next/next/no-img-element
+              <img
+                key={i}
+                width={350}
+                {...attributesToProps(imgElement.attribs)}
+              />
             ));
-          return <Gallery contents={contents} />;
+          return (
+            <Box display="flex" alignItems="center" justifyContent="center">
+              {contents}
+            </Box>
+          );
         }
       }
       return domNode;

@@ -6,6 +6,7 @@ storybook-static/
 .next
 *.tsbuildinfo
 out/
+.vs
 
 public/robots.txt
 public/sitemap*.xml

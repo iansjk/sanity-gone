@@ -8,6 +8,7 @@ enum GridCell {
   Operator = "operator",
   empty = "empty",
   active = "active",
+  new = "new",
 }
 
 interface NormalizedRange {
@@ -30,15 +31,22 @@ const normalizeRange = (rangeObject: RangeObject): NormalizedRange => {
 
   // create a 2d-array of size [rows, cols]
   const rows = maxRowIndex - minRowIndex + 1;
-  const cols = maxColIndex - minColIndex + 1;
+  const cols = maxColIndex - minColIndex + 1 + (rangeObject.extend ?? 0);
   const grid = Array<GridCell>(rows)
     .fill(GridCell.empty)
     .map(() => Array<GridCell>(cols).fill(GridCell.empty));
   rangeGrids.forEach((cell) => {
-    const type =
-      cell.row === 0 && cell.col === 0 ? GridCell.Operator : GridCell.active;
+    const type = cell.row === 0 && cell.col === 0 ? GridCell.Operator : GridCell.active;
     grid[cell.row - minRowIndex][cell.col - minColIndex] = type;
   });
+  if (rangeObject.extend) {
+    for (let c = cols - 1; c >= 0; c--) {
+      if (grid.every(r => r[c] !== GridCell.empty)) {
+        grid.forEach(row => row.splice(c + 1, 0, ...Array(rangeObject.extend).fill(GridCell.new)));
+        break;
+      }
+    }
+  }
   return {
     rows,
     cols,
@@ -62,21 +70,23 @@ const CharacterRange: React.VFC<
         <tr>
           <th></th>
           {[...Array(cols).keys()].map((i) => (
-            <th key={i} scope="col" className="visually-hidden">{`Y${
-              i + 1
-            }`}</th>
+            <th key={i} scope="col" className="visually-hidden">
+              {`Y${i + 1}`}
+            </th>
           ))}
         </tr>
       </thead>
       <tbody>
         {[...Array(rows).keys()].map((rowIndex) => (
           <tr key={rowIndex}>
-            <th scope="row" className="visually-hidden">{`X${
-              rowIndex + 1
-            }`}</th>
+            <th scope="row" className="visually-hidden">
+              {`X${rowIndex + 1}`}
+            </th>
             {[...Array(cols).keys()].map((colIndex) => (
               <td key={colIndex} className={grid[rowIndex][colIndex]}>
-                <span className="visually-hidden">{`${grid[rowIndex][colIndex]} cell`}</span>
+                <span className="visually-hidden">
+                  {`${grid[rowIndex][colIndex]} cell`}
+                </span>
               </td>
             ))}
           </tr>
@@ -107,5 +117,9 @@ const styles = (theme: Theme) => css`
 
   td.operator {
     background-color: ${theme.palette.white.main};
+  }
+
+  td.new {
+    border: 2px solid ${theme.palette.blue.main};
   }
 `;

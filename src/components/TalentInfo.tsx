@@ -40,10 +40,11 @@ export interface TalentObject {
 
 export type TalentInfoProps = React.HTMLAttributes<HTMLDivElement> & {
   talentObject: TalentObject;
+  defaultRanges?: RangeObject[];
 };
 
 export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
-  const { talentObject, className, ...rest } = props;
+  const { talentObject, className, defaultRanges, ...rest } = props;
 
   const elitesList = [
     ...new Set(
@@ -97,12 +98,13 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
     setEliteLevel(eliteLevel);
     setActivePhase(newActivePhase);
   };
+  const extendRange = activePhase?.blackboard.find(kv => kv.key === "ability_range_forward_extend")?.value;
 
   return activePhase ? (
     <ClassNames>
       {({ cx }) => (
         <section
-          className={cx(className, !activePhase.range && "no-range")}
+          className={cx(className, !activePhase.range && !extendRange && "no-range")}
           css={styles}
           {...rest}
         >
@@ -141,9 +143,12 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
               ),
             }}
           />
-          {activePhase.range && (
+          {(activePhase.range || (defaultRanges && defaultRanges[eliteLevel] && extendRange)) && (
             <div className="range">
-              <CharacterRange rangeObject={activePhase.range} />
+              <CharacterRange
+                rangeObject={activePhase.range
+                  ?? { ...defaultRanges![eliteLevel], extend: extendRange }}
+              />
             </div>
           )}
         </section>

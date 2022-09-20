@@ -24,6 +24,7 @@ export interface RangeObject {
     row: number;
     col: number;
   }[];
+  extend?: number;
 }
 
 interface CharacterPhaseObject {

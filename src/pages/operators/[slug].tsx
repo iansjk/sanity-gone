@@ -55,6 +55,7 @@ const htmlToReact = (
               skillObject={context.skills[index!]}
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               isRecommended={context.recommendedSkills[index!]}
+              defaultRange={context.operator.phases.at(-1)?.range}
             />
           );
         } else if (domNode.name === "talentinfo") {
@@ -63,6 +64,7 @@ const htmlToReact = (
               className="talents-talent-info"
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               talentObject={context.talents[index!]}
+              defaultRanges={context.operator.phases.map(phase => phase.range)}
             />
           );
         } else if (domNode.name === "operatorstats") {

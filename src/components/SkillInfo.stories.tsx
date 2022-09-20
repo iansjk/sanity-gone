@@ -8,6 +8,44 @@ export default {
 
 const Template: Story<SkillInfoProps> = (args) => <SkillInfo {...args} />;
 
+export const BibeakS1 = Template.bind({});
+BibeakS1.args = {
+  skillObject: {
+    skillId: "skchr_bibeak_1",
+    iconId: null,
+    hidden: false,
+    levels: [
+      {
+        name: "Bloodline of Desecrated Earth",
+        range: null,
+        description:
+          "The next attack deals <@ba.vup>{atk_scale:0%}</> damage, and deals <@ba.vup>{ranged@atk_scale:0%}</> Arts damage to an additional target within range.",
+        skillType: 2,
+        spData: {
+          spType: 2,
+          levelUpCost: null,
+          maxChargeTime: 1,
+          spCost: 5,
+          initSp: 0,
+          increment: 1.0,
+        },
+        prefabId: "skchr_bibeak_1",
+        duration: 0.0,
+        blackboard: [
+          {
+            key: "atk_scale",
+            value: 1.2
+          },
+          {
+            key: "ranged@atk_scale",
+            value: 1.2
+          }
+        ],
+      },
+    ],
+  },
+};
+
 export const MudrockS3 = Template.bind({});
 MudrockS3.args = {
   skillObject: {
@@ -188,4 +226,123 @@ BrocaS2.args = {
       },
     ],
   },
+};
+
+export const AnselS1 = Template.bind({});
+AnselS1.args = {
+  skillObject: {
+    skillId: "skcom_range_extend",
+    iconId: null,
+    hidden: false,
+    levels: [
+      {
+        name: "Healing Range Up",
+        range: null,
+        description:
+          "Range <@ba.vup>+{ABILITY_RANGE_FORWARD_EXTEND} tiles</>; ATK <@ba.vup>+{atk:0%}</>",
+        skillType: 1,
+        spData: {
+          spType: 1,
+          levelUpCost: null,
+          maxChargeTime: 1,
+          spCost: 45,
+          initSp: 10,
+          increment: 1
+        },
+        prefabId: "skcom_range_extend",
+        duration: 19.0,
+        blackboard: [
+          {
+            key: "atk",
+            value: 0.05
+          },
+          {
+            key: "ability_range_forward_extend",
+            value: 1
+          }
+        ],
+      },
+      {
+        name: "Healing Range Up",
+        range: null,
+        description:
+          "Range <@ba.vup>+{ABILITY_RANGE_FORWARD_EXTEND} tiles</>; ATK <@ba.vup>+{atk:0%}</>",
+        skillType: 1,
+        spData: {
+          spType: 1,
+          levelUpCost: null,
+          maxChargeTime: 1,
+          spCost: 35,
+          initSp: 10,
+          increment: 1
+        },
+        prefabId: "skcom_range_extend",
+        duration: 25.0,
+        blackboard: [
+          {
+            key: "atk",
+            value: 0.4
+          },
+          {
+            key: "ability_range_forward_extend",
+            value: 2
+          }
+        ],
+      },
+    ],
+  },
+  defaultRange: {
+    id: "3-3",
+    direction: 1,
+    grids: [
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": -1,
+        "col": 0
+      },
+      {
+        "row": -1,
+        "col": 1
+      },
+      {
+        "row": -1,
+        "col": 2
+      },
+      {
+        "row": -1,
+        "col": 3
+      }
+    ]
+  }
 };

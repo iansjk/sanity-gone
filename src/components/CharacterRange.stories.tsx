@@ -258,3 +258,348 @@ KafkaS2.args = {
     ],
   },
 };
+
+export const AmbrielS1E0 = Template.bind({});
+AmbrielS1E0.args = {
+  rangeObject: {
+    id: "3-3",
+    direction: 1,
+    grids: [
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": -1,
+        "col": 0
+      },
+      {
+        "row": -1,
+        "col": 1
+      },
+      {
+        "row": -1,
+        "col": 2
+      },
+      {
+        "row": -1,
+        "col": 3
+      }
+    ],
+    extend: 1,
+  }
+}
+
+export const AmbrielS1E1 = Template.bind({});
+AmbrielS1E1.args = {
+  rangeObject: {
+    id: "3-9",
+    direction: 1,
+    grids: [
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": -1,
+        "col": 0
+      },
+      {
+        "row": -1,
+        "col": 1
+      },
+      {
+        "row": -1,
+        "col": 2
+      },
+      {
+        "row": -1,
+        "col": 3
+      },
+      {
+        "row": -2,
+        "col": 0
+      },
+      {
+        "row": -2,
+        "col": 1
+      },
+      {
+        "row": -2,
+        "col": 2
+      }
+    ],
+    extend: 1,
+  }
+}
+
+export const SurtrS3 = Template.bind({});
+SurtrS3.args = {
+  rangeObject: {
+    id: "1-1",
+    direction: 1,
+    grids: [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      }
+    ],
+    extend: 2,
+  }
+}
+
+export const AnselE0S1 = Template.bind({});
+AnselE0S1.args = {
+  rangeObject: {
+    id: "3-1",
+    direction: 1,
+    grids: [
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": -1,
+        "col": 0
+      },
+      {
+        "row": -1,
+        "col": 1
+      },
+      {
+        "row": -1,
+        "col": 2
+      }
+    ],
+    extend: 2,
+  }
+}
+
+export const ArchettoE0S3 = Template.bind({});
+ArchettoE0S3.args = {
+  rangeObject: {
+    id: "3-1",
+    direction: 1,
+    grids: [
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": -1,
+        "col": 0
+      },
+      {
+        "row": -1,
+        "col": 1
+      },
+      {
+        "row": -1,
+        "col": 2
+      }
+    ],
+    extend: 1,
+  }
+}
+
+export const CrabRange = Template.bind({});
+CrabRange.args = {
+  rangeObject: {
+    id: "crab",
+    direction: 1,
+    grids: [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": -1,
+        "col": 0
+      },
+      {
+        "row": -2,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": -2,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": -3,
+        "col": 2
+      },
+      {
+        "row": -2,
+        "col": 2
+      },
+      {
+        "row": -1,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": -3,
+        "col": 3
+      },
+      {
+        "row": -1,
+        "col": 3
+      },
+    ]
+  }
+}

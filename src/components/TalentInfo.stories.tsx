@@ -194,6 +194,50 @@ MudrockTalent1.args = {
       },
     ],
   },
+  defaultRanges: [
+    {
+      id: "1-1",
+      direction: 1,
+      grids: [
+        {
+          row: 0,
+          col: 0,
+        },
+        {
+          row: 0,
+          col: 1,
+        },
+      ],
+    },
+    {
+      id: "1-1",
+      direction: 1,
+      grids: [
+        {
+          row: 0,
+          col: 0,
+        },
+        {
+          row: 0,
+          col: 1,
+        },
+      ],
+    },
+    {
+      id: "1-1",
+      direction: 1,
+      grids: [
+        {
+          row: 0,
+          col: 0,
+        },
+        {
+          row: 0,
+          col: 1,
+        },
+      ],
+    },
+  ]
 };
 
 export const Dobermann = Template.bind({});
@@ -434,4 +478,242 @@ Dobermann.args = {
       },
     ],
   },
+  defaultRanges: [
+    {
+      id: "2-2",
+      direction: 1,
+      grids: [
+        {
+          row: 0,
+          col: 0
+        },
+        {
+          row: 0,
+          col: 1
+        },
+        {
+          row: 0,
+          col: 2
+        }
+      ]
+    },
+    {
+      id: "2-2",
+      direction: 1,
+      grids: [
+        {
+          row: 0,
+          col: 0
+        },
+        {
+          row: 0,
+          col: 1
+        },
+        {
+          row: 0,
+          col: 2
+        }
+      ]
+    },
+    {
+      id: "2-2",
+      direction: 1,
+      grids: [
+        {
+          row: 0,
+          col: 0
+        },
+        {
+          row: 0,
+          col: 1
+        },
+        {
+          row: 0,
+          col: 2
+        }
+      ]
+    },
+  ]
+};
+
+export const Tachanka = Template.bind({});
+Tachanka.args = {
+  talentObject: {
+    candidates: [
+      {
+        unlockCondition: {
+          phase: 0,
+          level: 1,
+        },
+        requiredPotentialRank: 0,
+        prefabKey: "1",
+        name: "Heavy Firepower",
+        description:
+          "Attack Range +1 tile, Redeployment Time +20 seconds",
+        range: null,
+        blackboard: [
+          {
+            key: "def",
+            value: 0
+          },
+          {
+            key: "respawn_time",
+            value: 20
+          },
+          {
+            key: "ability_range_forward_extend",
+            value: 1
+          }
+        ],
+      },
+      {
+        unlockCondition: {
+          phase: 1,
+          level: 1,
+        },
+        requiredPotentialRank: 0,
+        prefabKey: "1",
+        name: "Heavy Firepower",
+        description:
+          "Attack Range +1 tile, DEF +5%, Redeployment Time +20 seconds",
+        range: null,
+        blackboard: [
+          {
+            key: "def",
+            value: 0.05
+          },
+          {
+            key: "respawn_time",
+            value: 20
+          },
+          {
+            key: "ability_range_forward_extend",
+            value: 1
+          }
+        ],
+      },
+      {
+        unlockCondition: {
+          phase: 1,
+          level: 1,
+        },
+        requiredPotentialRank: 4,
+        prefabKey: "1",
+        name: "Heavy Firepower",
+        description:
+          "Attack Range +1 tile, DEF +10% <@ba.talpu>(+5%)</>, Redeployment Time +20 seconds",
+        range: null,
+        blackboard: [
+          {
+            key: "def",
+            value: 0.1
+          },
+          {
+            key: "respawn_time",
+            value: 20
+          },
+          {
+            key: "ability_range_forward_extend",
+            value: 1
+          }
+        ],
+      },
+      {
+        unlockCondition: {
+          phase: 2,
+          level: 1,
+        },
+        requiredPotentialRank: 0,
+        prefabKey: "1",
+        name: "Heavy Firepower",
+        description:
+          "Attack Range +2 tiles, DEF +10%, Redeployment Time +20 seconds",
+        range: null,
+        blackboard: [
+          {
+            key: "def",
+            value: 0.1
+          },
+          {
+            key: "respawn_time",
+            value: 20
+          },
+          {
+            key: "ability_range_forward_extend",
+            value: 2
+          }
+        ],
+      },
+      {
+        unlockCondition: {
+          phase: 2,
+          level: 1,
+        },
+        requiredPotentialRank: 4,
+        prefabKey: "1",
+        name: "Heavy Firepower",
+        description:
+          "Attack Range +2 tile, DEF +15% <@ba.talpu>(+5%)</>, Redeployment Time +20 seconds",
+        range: null,
+        blackboard: [
+          {
+            key: "def",
+            value: 0.15
+          },
+          {
+            key: "respawn_time",
+            value: 20
+          },
+          {
+            key: "ability_range_forward_extend",
+            value: 2
+          }
+        ],
+      },
+    ],
+  },
+  defaultRanges: [
+    {
+      id: "1-1",
+      direction: 1,
+      grids: [
+        {
+          row: 0,
+          col: 0,
+        },
+        {
+          row: 0,
+          col: 1,
+        },
+      ],
+    },
+    {
+      id: "1-1",
+      direction: 1,
+      grids: [
+        {
+          row: 0,
+          col: 0,
+        },
+        {
+          row: 0,
+          col: 1,
+        },
+      ],
+    },
+    {
+      id: "1-1",
+      direction: 1,
+      grids: [
+        {
+          row: 0,
+          col: 0,
+        },
+        {
+          row: 0,
+          col: 1,
+        },
+      ],
+    },
+  ]
 };

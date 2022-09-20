@@ -134,8 +134,10 @@ const htmlToReact = (
               // eslint-disable-next-line jsx-a11y/alt-text, @next/next/no-img-element
               <img
                 key={i}
-                width={350}
                 {...attributesToProps(imgElement.attribs)}
+                style={{
+                  width: `min(100vw - 32px, 360px)`,
+                }}
               />
             ));
           return (

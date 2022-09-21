@@ -237,7 +237,7 @@ MudrockTalent1.args = {
         },
       ],
     },
-  ]
+  ],
 };
 
 export const Dobermann = Template.bind({});
@@ -485,17 +485,17 @@ Dobermann.args = {
       grids: [
         {
           row: 0,
-          col: 0
+          col: 0,
         },
         {
           row: 0,
-          col: 1
+          col: 1,
         },
         {
           row: 0,
-          col: 2
-        }
-      ]
+          col: 2,
+        },
+      ],
     },
     {
       id: "2-2",
@@ -503,17 +503,17 @@ Dobermann.args = {
       grids: [
         {
           row: 0,
-          col: 0
+          col: 0,
         },
         {
           row: 0,
-          col: 1
+          col: 1,
         },
         {
           row: 0,
-          col: 2
-        }
-      ]
+          col: 2,
+        },
+      ],
     },
     {
       id: "2-2",
@@ -521,19 +521,19 @@ Dobermann.args = {
       grids: [
         {
           row: 0,
-          col: 0
+          col: 0,
         },
         {
           row: 0,
-          col: 1
+          col: 1,
         },
         {
           row: 0,
-          col: 2
-        }
-      ]
+          col: 2,
+        },
+      ],
     },
-  ]
+  ],
 };
 
 export const Tachanka = Template.bind({});
@@ -548,22 +548,21 @@ Tachanka.args = {
         requiredPotentialRank: 0,
         prefabKey: "1",
         name: "Heavy Firepower",
-        description:
-          "Attack Range +1 tile, Redeployment Time +20 seconds",
+        description: "Attack Range +1 tile, Redeployment Time +20 seconds",
         range: null,
         blackboard: [
           {
             key: "def",
-            value: 0
+            value: 0,
           },
           {
             key: "respawn_time",
-            value: 20
+            value: 20,
           },
           {
             key: "ability_range_forward_extend",
-            value: 1
-          }
+            value: 1,
+          },
         ],
       },
       {
@@ -580,16 +579,16 @@ Tachanka.args = {
         blackboard: [
           {
             key: "def",
-            value: 0.05
+            value: 0.05,
           },
           {
             key: "respawn_time",
-            value: 20
+            value: 20,
           },
           {
             key: "ability_range_forward_extend",
-            value: 1
-          }
+            value: 1,
+          },
         ],
       },
       {
@@ -606,16 +605,16 @@ Tachanka.args = {
         blackboard: [
           {
             key: "def",
-            value: 0.1
+            value: 0.1,
           },
           {
             key: "respawn_time",
-            value: 20
+            value: 20,
           },
           {
             key: "ability_range_forward_extend",
-            value: 1
-          }
+            value: 1,
+          },
         ],
       },
       {
@@ -632,16 +631,16 @@ Tachanka.args = {
         blackboard: [
           {
             key: "def",
-            value: 0.1
+            value: 0.1,
           },
           {
             key: "respawn_time",
-            value: 20
+            value: 20,
           },
           {
             key: "ability_range_forward_extend",
-            value: 2
-          }
+            value: 2,
+          },
         ],
       },
       {
@@ -658,16 +657,16 @@ Tachanka.args = {
         blackboard: [
           {
             key: "def",
-            value: 0.15
+            value: 0.15,
           },
           {
             key: "respawn_time",
-            value: 20
+            value: 20,
           },
           {
             key: "ability_range_forward_extend",
-            value: 2
-          }
+            value: 2,
+          },
         ],
       },
     ],
@@ -715,5 +714,5 @@ Tachanka.args = {
         },
       ],
     },
-  ]
+  ],
 };

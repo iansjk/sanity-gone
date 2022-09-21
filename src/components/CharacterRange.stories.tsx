@@ -266,57 +266,57 @@ AmbrielS1E0.args = {
     direction: 1,
     grids: [
       {
-        "row": 1,
-        "col": 0
+        row: 1,
+        col: 0,
       },
       {
-        "row": 1,
-        "col": 1
+        row: 1,
+        col: 1,
       },
       {
-        "row": 1,
-        "col": 2
+        row: 1,
+        col: 2,
       },
       {
-        "row": 1,
-        "col": 3
+        row: 1,
+        col: 3,
       },
       {
-        "row": 0,
-        "col": 0
+        row: 0,
+        col: 0,
       },
       {
-        "row": 0,
-        "col": 1
+        row: 0,
+        col: 1,
       },
       {
-        "row": 0,
-        "col": 2
+        row: 0,
+        col: 2,
       },
       {
-        "row": 0,
-        "col": 3
+        row: 0,
+        col: 3,
       },
       {
-        "row": -1,
-        "col": 0
+        row: -1,
+        col: 0,
       },
       {
-        "row": -1,
-        "col": 1
+        row: -1,
+        col: 1,
       },
       {
-        "row": -1,
-        "col": 2
+        row: -1,
+        col: 2,
       },
       {
-        "row": -1,
-        "col": 3
-      }
+        row: -1,
+        col: 3,
+      },
     ],
   },
-    forwardExtend: 1,
-}
+  forwardExtend: 1,
+};
 
 export const AmbrielS1E1 = Template.bind({});
 AmbrielS1E1.args = {
@@ -325,85 +325,85 @@ AmbrielS1E1.args = {
     direction: 1,
     grids: [
       {
-        "row": 2,
-        "col": 0
+        row: 2,
+        col: 0,
       },
       {
-        "row": 2,
-        "col": 1
+        row: 2,
+        col: 1,
       },
       {
-        "row": 2,
-        "col": 2
+        row: 2,
+        col: 2,
       },
       {
-        "row": 1,
-        "col": 0
+        row: 1,
+        col: 0,
       },
       {
-        "row": 1,
-        "col": 1
+        row: 1,
+        col: 1,
       },
       {
-        "row": 1,
-        "col": 2
+        row: 1,
+        col: 2,
       },
       {
-        "row": 1,
-        "col": 3
+        row: 1,
+        col: 3,
       },
       {
-        "row": 0,
-        "col": 0
+        row: 0,
+        col: 0,
       },
       {
-        "row": 0,
-        "col": 1
+        row: 0,
+        col: 1,
       },
       {
-        "row": 0,
-        "col": 2
+        row: 0,
+        col: 2,
       },
       {
-        "row": 0,
-        "col": 3
+        row: 0,
+        col: 3,
       },
       {
-        "row": 0,
-        "col": 4
+        row: 0,
+        col: 4,
       },
       {
-        "row": -1,
-        "col": 0
+        row: -1,
+        col: 0,
       },
       {
-        "row": -1,
-        "col": 1
+        row: -1,
+        col: 1,
       },
       {
-        "row": -1,
-        "col": 2
+        row: -1,
+        col: 2,
       },
       {
-        "row": -1,
-        "col": 3
+        row: -1,
+        col: 3,
       },
       {
-        "row": -2,
-        "col": 0
+        row: -2,
+        col: 0,
       },
       {
-        "row": -2,
-        "col": 1
+        row: -2,
+        col: 1,
       },
       {
-        "row": -2,
-        "col": 2
-      }
+        row: -2,
+        col: 2,
+      },
     ],
   },
   forwardExtend: 1,
-}
+};
 
 export const SurtrS3 = Template.bind({});
 SurtrS3.args = {
@@ -412,17 +412,17 @@ SurtrS3.args = {
     direction: 1,
     grids: [
       {
-        "row": 0,
-        "col": 0
+        row: 0,
+        col: 0,
       },
       {
-        "row": 0,
-        "col": 1
-      }
+        row: 0,
+        col: 1,
+      },
     ],
   },
   forwardExtend: 2,
-}
+};
 
 export const AnselE0S1 = Template.bind({});
 AnselE0S1.args = {
@@ -431,49 +431,49 @@ AnselE0S1.args = {
     direction: 1,
     grids: [
       {
-        "row": 1,
-        "col": 0
+        row: 1,
+        col: 0,
       },
       {
-        "row": 1,
-        "col": 1
+        row: 1,
+        col: 1,
       },
       {
-        "row": 1,
-        "col": 2
+        row: 1,
+        col: 2,
       },
       {
-        "row": 0,
-        "col": 0
+        row: 0,
+        col: 0,
       },
       {
-        "row": 0,
-        "col": 1
+        row: 0,
+        col: 1,
       },
       {
-        "row": 0,
-        "col": 2
+        row: 0,
+        col: 2,
       },
       {
-        "row": 0,
-        "col": 3
+        row: 0,
+        col: 3,
       },
       {
-        "row": -1,
-        "col": 0
+        row: -1,
+        col: 0,
       },
       {
-        "row": -1,
-        "col": 1
+        row: -1,
+        col: 1,
       },
       {
-        "row": -1,
-        "col": 2
-      }
+        row: -1,
+        col: 2,
+      },
     ],
   },
   forwardExtend: 2,
-}
+};
 
 export const ArchettoE0S3 = Template.bind({});
 ArchettoE0S3.args = {
@@ -482,49 +482,49 @@ ArchettoE0S3.args = {
     direction: 1,
     grids: [
       {
-        "row": 1,
-        "col": 0
+        row: 1,
+        col: 0,
       },
       {
-        "row": 1,
-        "col": 1
+        row: 1,
+        col: 1,
       },
       {
-        "row": 1,
-        "col": 2
+        row: 1,
+        col: 2,
       },
       {
-        "row": 0,
-        "col": 0
+        row: 0,
+        col: 0,
       },
       {
-        "row": 0,
-        "col": 1
+        row: 0,
+        col: 1,
       },
       {
-        "row": 0,
-        "col": 2
+        row: 0,
+        col: 2,
       },
       {
-        "row": 0,
-        "col": 3
+        row: 0,
+        col: 3,
       },
       {
-        "row": -1,
-        "col": 0
+        row: -1,
+        col: 0,
       },
       {
-        "row": -1,
-        "col": 1
+        row: -1,
+        col: 1,
       },
       {
-        "row": -1,
-        "col": 2
-      }
+        row: -1,
+        col: 2,
+      },
     ],
   },
   forwardExtend: 2,
-}
+};
 
 export const CrabRange = Template.bind({});
 CrabRange.args = {
@@ -533,73 +533,73 @@ CrabRange.args = {
     direction: 1,
     grids: [
       {
-        "row": 0,
-        "col": 0
+        row: 0,
+        col: 0,
       },
       {
-        "row": 1,
-        "col": 0
+        row: 1,
+        col: 0,
       },
       {
-        "row": 2,
-        "col": 0
+        row: 2,
+        col: 0,
       },
       {
-        "row": -1,
-        "col": 0
+        row: -1,
+        col: 0,
       },
       {
-        "row": -2,
-        "col": 0
+        row: -2,
+        col: 0,
       },
       {
-        "row": 2,
-        "col": 1
+        row: 2,
+        col: 1,
       },
       {
-        "row": -2,
-        "col": 1
+        row: -2,
+        col: 1,
       },
       {
-        "row": 3,
-        "col": 2
+        row: 3,
+        col: 2,
       },
       {
-        "row": 2,
-        "col": 2
+        row: 2,
+        col: 2,
       },
       {
-        "row": 1,
-        "col": 2
+        row: 1,
+        col: 2,
       },
       {
-        "row": -3,
-        "col": 2
+        row: -3,
+        col: 2,
       },
       {
-        "row": -2,
-        "col": 2
+        row: -2,
+        col: 2,
       },
       {
-        "row": -1,
-        "col": 2
+        row: -1,
+        col: 2,
       },
       {
-        "row": 3,
-        "col": 3
+        row: 3,
+        col: 3,
       },
       {
-        "row": 1,
-        "col": 3
+        row: 1,
+        col: 3,
       },
       {
-        "row": -3,
-        "col": 3
+        row: -3,
+        col: 3,
       },
       {
-        "row": -1,
-        "col": 3
+        row: -1,
+        col: 3,
       },
-    ]
-  }
-}
+    ],
+  },
+};

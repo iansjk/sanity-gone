@@ -71,7 +71,8 @@ export interface SkillInfoProps {
 const SkillInfo: React.VFC<
   SkillInfoProps & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
-  const { skillObject, className, isRecommended, defaultRange, ...rest } = props;
+  const { skillObject, className, isRecommended, defaultRange, ...rest } =
+    props;
   const { skillId, iconId, levels } = skillObject;
   const { name, spData, skillType } = levels[levels.length - 1];
   const { spType } = spData;
@@ -86,14 +87,19 @@ const SkillInfo: React.VFC<
   };
 
   const [skillLevel, setSkillLevel] = useState(maxLevel);
-  const extendRange = levels[skillLevel - 1].blackboard.find(kv => kv.key === "ability_range_forward_extend")?.value;
+  const extendRange = levels[skillLevel - 1].blackboard.find(
+    (kv) => kv.key === "ability_range_forward_extend"
+  )?.value;
 
   return (
     <ClassNames>
       {({ cx }) => (
         <section
           css={styles}
-          className={cx(className, !levels[skillLevel - 1].range && !extendRange && "no-range")}
+          className={cx(
+            className,
+            !levels[skillLevel - 1].range && !extendRange && "no-range"
+          )}
           {...rest}
         >
           <div className="skill-header">
@@ -180,7 +186,11 @@ const SkillInfo: React.VFC<
               <dt>
                 <SkillDurationIcon /> Duration
               </dt>
-              <dd>{levels[skillLevel - 1].duration !== -1 ? `${levels[skillLevel - 1].duration} sec` : 'Infinite'}</dd>
+              <dd>
+                {levels[skillLevel - 1].duration !== -1
+                  ? `${levels[skillLevel - 1].duration} sec`
+                  : "Infinite"}
+              </dd>
             </div>
           </dl>
           <p

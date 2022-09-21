@@ -197,32 +197,32 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                           <li>
                             HP&nbsp;
                             <span className="stat-value">
-                            +{trustIncreases.maxHp}
-                          </span>
+                              +{trustIncreases.maxHp}
+                            </span>
                           </li>
                         )}
                         {trustIncreases.atk > 0 && (
                           <li>
                             ATK&nbsp;
                             <span className="stat-value">
-                            +{trustIncreases.atk}
-                          </span>
+                              +{trustIncreases.atk}
+                            </span>
                           </li>
                         )}
                         {trustIncreases.def > 0 && (
                           <li>
                             DEF&nbsp;
                             <span className="stat-value">
-                            +{trustIncreases.def}
-                          </span>
+                              +{trustIncreases.def}
+                            </span>
                           </li>
                         )}
                         {trustIncreases.magicResistance > 0 && (
                           <li>
                             RES&nbsp;
                             <span className="stat-value">
-                            +{trustIncreases.magicResistance}
-                          </span>
+                              +{trustIncreases.magicResistance}
+                            </span>
                           </li>
                         )}
                       </ul>
@@ -253,62 +253,64 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                               {i === 4 && <PotentialSixIcon />}
                               {pot.health > 0 && (
                                 <span>
-                                HP&nbsp;
+                                  HP&nbsp;
                                   <span className="stat-value">
-                                  +{pot.health}
+                                    +{pot.health}
+                                  </span>
                                 </span>
-                              </span>
                               )}
                               {pot.attackPower > 0 && (
                                 <span>
-                                ATK&nbsp;
+                                  ATK&nbsp;
                                   <span className="stat-value">
-                                  +{pot.attackPower}
+                                    +{pot.attackPower}
+                                  </span>
                                 </span>
-                              </span>
                               )}
                               {pot.defense > 0 && (
                                 <span>
-                                DEF&nbsp;
+                                  DEF&nbsp;
                                   <span className="stat-value">
-                                  +{pot.defense}
+                                    +{pot.defense}
+                                  </span>
                                 </span>
-                              </span>
                               )}
                               {pot.artsResistance > 0 && (
                                 <span>
-                                RES&nbsp;
+                                  RES&nbsp;
                                   <span className="stat-value">
-                                  +{pot.artsResistance}%
+                                    +{pot.artsResistance}%
+                                  </span>
                                 </span>
-                              </span>
                               )}
                               {pot.dpCost < 0 && (
                                 <span>
-                                DP Cost&nbsp;
-                                  <span className="stat-value">{pot.dpCost}</span>
-                              </span>
+                                  DP Cost&nbsp;
+                                  <span className="stat-value">
+                                    {pot.dpCost}
+                                  </span>
+                                </span>
                               )}
                               {pot.attackSpeed > 0 && (
                                 <span>
-                                ASPD&nbsp;
+                                  ASPD&nbsp;
                                   <span className="stat-value">
-                                  +{pot.attackSpeed}
+                                    +{pot.attackSpeed}
+                                  </span>
                                 </span>
-                              </span>
                               )}
                               {pot.redeployTimeInSeconds < 0 && (
                                 <span>
-                                Redeploy Time&nbsp;
+                                  Redeploy Time&nbsp;
                                   <span className="stat-value">
-                                  {pot.redeployTimeInSeconds}
+                                    {pot.redeployTimeInSeconds}
+                                  </span>
                                 </span>
-                              </span>
                               )}
                               {pot.description && (
                                 <span className="potential-description">
-                                {pot.description}
-                              </span>
+                                  {pot.description}
+                                </span>
                               )}
                             </li>
                           );
@@ -339,7 +341,9 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               onChange: (e) => {
                 if (e.target.value === "") {
                   setOpLevel(1);
-                } else if (Number(e.target.value) > phases[eliteLevel].maxLevel) {
+                } else if (
+                  Number(e.target.value) > phases[eliteLevel].maxLevel
+                ) {
                   setOpLevel(
                     Math.min(
                       Number(`${e.target.value}`.slice(0, 2)),
@@ -348,7 +352,10 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                   );
                 } else {
                   setOpLevel(
-                    Math.min(Number(e.target.value), phases[eliteLevel].maxLevel)
+                    Math.min(
+                      Number(e.target.value),
+                      phases[eliteLevel].maxLevel
+                    )
                   );
                 }
               },

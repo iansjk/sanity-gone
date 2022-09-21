@@ -17,7 +17,10 @@ interface NormalizedRange {
   grid: GridCell[][];
 }
 
-const normalizeRange = (rangeObject: RangeObject, forwardExtend?: number): NormalizedRange => {
+const normalizeRange = (
+  rangeObject: RangeObject,
+  forwardExtend?: number
+): NormalizedRange => {
   const rangeGrids = [...rangeObject.grids, { row: 0, col: 0 }];
   // for each of rows and cols,
   // find the minimum value and the maximum value
@@ -36,13 +39,16 @@ const normalizeRange = (rangeObject: RangeObject, forwardExtend?: number): Norma
     .fill(GridCell.Empty)
     .map(() => Array<GridCell>(cols).fill(GridCell.Empty));
   rangeGrids.forEach((cell) => {
-    const type = cell.row === 0 && cell.col === 0 ? GridCell.Operator : GridCell.Active;
+    const type =
+      cell.row === 0 && cell.col === 0 ? GridCell.Operator : GridCell.Active;
     grid[cell.row - minRowIndex][cell.col - minColIndex] = type;
   });
   if (forwardExtend) {
     for (let c = cols - 1; c >= 0; c--) {
-      if (grid.every(r => r[c] !== GridCell.Empty)) {
-        grid.forEach(row => row.splice(c + 1, 0, ...Array(forwardExtend).fill(GridCell.Added)));
+      if (grid.every((r) => r[c] !== GridCell.Empty)) {
+        grid.forEach((row) =>
+          row.splice(c + 1, 0, ...Array(forwardExtend).fill(GridCell.Added))
+        );
         break;
       }
     }

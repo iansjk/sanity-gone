@@ -34,12 +34,12 @@ BibeakS1.args = {
         blackboard: [
           {
             key: "atk_scale",
-            value: 1.2
+            value: 1.2,
           },
           {
             key: "ranged@atk_scale",
-            value: 1.2
-          }
+            value: 1.2,
+          },
         ],
       },
     ],
@@ -247,19 +247,19 @@ AnselS1.args = {
           maxChargeTime: 1,
           spCost: 45,
           initSp: 10,
-          increment: 1
+          increment: 1,
         },
         prefabId: "skcom_range_extend",
         duration: 19.0,
         blackboard: [
           {
             key: "atk",
-            value: 0.05
+            value: 0.05,
           },
           {
             key: "ability_range_forward_extend",
-            value: 1
-          }
+            value: 1,
+          },
         ],
       },
       {
@@ -274,19 +274,19 @@ AnselS1.args = {
           maxChargeTime: 1,
           spCost: 35,
           initSp: 10,
-          increment: 1
+          increment: 1,
         },
         prefabId: "skcom_range_extend",
         duration: 25.0,
         blackboard: [
           {
             key: "atk",
-            value: 0.4
+            value: 0.4,
           },
           {
             key: "ability_range_forward_extend",
-            value: 2
-          }
+            value: 2,
+          },
         ],
       },
     ],
@@ -296,53 +296,53 @@ AnselS1.args = {
     direction: 1,
     grids: [
       {
-        "row": 1,
-        "col": 0
+        row: 1,
+        col: 0,
       },
       {
-        "row": 1,
-        "col": 1
+        row: 1,
+        col: 1,
       },
       {
-        "row": 1,
-        "col": 2
+        row: 1,
+        col: 2,
       },
       {
-        "row": 1,
-        "col": 3
+        row: 1,
+        col: 3,
       },
       {
-        "row": 0,
-        "col": 0
+        row: 0,
+        col: 0,
       },
       {
-        "row": 0,
-        "col": 1
+        row: 0,
+        col: 1,
       },
       {
-        "row": 0,
-        "col": 2
+        row: 0,
+        col: 2,
       },
       {
-        "row": 0,
-        "col": 3
+        row: 0,
+        col: 3,
       },
       {
-        "row": -1,
-        "col": 0
+        row: -1,
+        col: 0,
       },
       {
-        "row": -1,
-        "col": 1
+        row: -1,
+        col: 1,
       },
       {
-        "row": -1,
-        "col": 2
+        row: -1,
+        col: 2,
       },
       {
-        "row": -1,
-        "col": 3
-      }
-    ]
-  }
+        row: -1,
+        col: 3,
+      },
+    ],
+  },
 };

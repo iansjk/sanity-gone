@@ -98,13 +98,18 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
     setEliteLevel(eliteLevel);
     setActivePhase(newActivePhase);
   };
-  const extendRange = activePhase?.blackboard.find(kv => kv.key === "ability_range_forward_extend")?.value;
+  const extendRange = activePhase?.blackboard.find(
+    (kv) => kv.key === "ability_range_forward_extend"
+  )?.value;
 
   return activePhase ? (
     <ClassNames>
       {({ cx }) => (
         <section
-          className={cx(className, !activePhase.range && !extendRange && "no-range")}
+          className={cx(
+            className,
+            !activePhase.range && !extendRange && "no-range"
+          )}
           css={styles}
           {...rest}
         >
@@ -143,10 +148,13 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
               ),
             }}
           />
-          {(activePhase.range || (defaultRanges && defaultRanges[eliteLevel] && extendRange)) && (
+          {(activePhase.range ||
+            (defaultRanges && defaultRanges[eliteLevel] && extendRange)) && (
             <div className="range">
               <CharacterRange
-                rangeObject={activePhase.range ?? { ...defaultRanges![eliteLevel] }}
+                rangeObject={
+                  activePhase.range ?? { ...defaultRanges![eliteLevel] }
+                }
                 forwardExtend={extendRange}
               />
             </div>

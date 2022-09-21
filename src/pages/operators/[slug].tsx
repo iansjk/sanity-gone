@@ -64,7 +64,9 @@ const htmlToReact = (
               className="talents-talent-info"
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               talentObject={context.talents[index!]}
-              defaultRanges={context.operator.phases.map(phase => phase.range)}
+              defaultRanges={context.operator.phases.map(
+                (phase) => phase.range
+              )}
             />
           );
         } else if (domNode.name === "operatorstats") {

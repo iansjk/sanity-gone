@@ -6,9 +6,9 @@ import { RangeObject } from "../utils/types";
 
 enum GridCell {
   Operator = "operator",
-  empty = "empty",
-  active = "active",
-  new = "new",
+  Empty = "empty",
+  Active = "active",
+  Added = "added",
 }
 
 interface NormalizedRange {
@@ -17,7 +17,7 @@ interface NormalizedRange {
   grid: GridCell[][];
 }
 
-const normalizeRange = (rangeObject: RangeObject): NormalizedRange => {
+const normalizeRange = (rangeObject: RangeObject, forwardExtend?: number): NormalizedRange => {
   const rangeGrids = [...rangeObject.grids, { row: 0, col: 0 }];
   // for each of rows and cols,
   // find the minimum value and the maximum value
@@ -31,18 +31,18 @@ const normalizeRange = (rangeObject: RangeObject): NormalizedRange => {
 
   // create a 2d-array of size [rows, cols]
   const rows = maxRowIndex - minRowIndex + 1;
-  const cols = maxColIndex - minColIndex + 1 + (rangeObject.extend ?? 0);
+  const cols = maxColIndex - minColIndex + 1 + (forwardExtend ?? 0);
   const grid = Array<GridCell>(rows)
-    .fill(GridCell.empty)
-    .map(() => Array<GridCell>(cols).fill(GridCell.empty));
+    .fill(GridCell.Empty)
+    .map(() => Array<GridCell>(cols).fill(GridCell.Empty));
   rangeGrids.forEach((cell) => {
-    const type = cell.row === 0 && cell.col === 0 ? GridCell.Operator : GridCell.active;
+    const type = cell.row === 0 && cell.col === 0 ? GridCell.Operator : GridCell.Active;
     grid[cell.row - minRowIndex][cell.col - minColIndex] = type;
   });
-  if (rangeObject.extend) {
+  if (forwardExtend) {
     for (let c = cols - 1; c >= 0; c--) {
-      if (grid.every(r => r[c] !== GridCell.empty)) {
-        grid.forEach(row => row.splice(c + 1, 0, ...Array(rangeObject.extend).fill(GridCell.new)));
+      if (grid.every(r => r[c] !== GridCell.Empty)) {
+        grid.forEach(row => row.splice(c + 1, 0, ...Array(forwardExtend).fill(GridCell.Added)));
         break;
       }
     }
@@ -56,13 +56,14 @@ const normalizeRange = (rangeObject: RangeObject): NormalizedRange => {
 
 export interface CharacterRangeProps {
   rangeObject: RangeObject;
+  forwardExtend?: number;
 }
 
 const CharacterRange: React.VFC<
   CharacterRangeProps & React.HTMLAttributes<HTMLTableElement>
 > = (props) => {
-  const { rangeObject, ...rest } = props;
-  const { rows, cols, grid } = normalizeRange(rangeObject);
+  const { rangeObject, forwardExtend, ...rest } = props;
+  const { rows, cols, grid } = normalizeRange(rangeObject, forwardExtend);
 
   return (
     <table css={styles} {...rest}>
@@ -119,7 +120,7 @@ const styles = (theme: Theme) => css`
     background-color: ${theme.palette.white.main};
   }
 
-  td.new {
+  td.added {
     border: 2px solid ${theme.palette.blue.main};
   }
 `;

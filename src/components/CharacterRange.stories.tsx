@@ -314,8 +314,8 @@ AmbrielS1E0.args = {
         "col": 3
       }
     ],
-    extend: 1,
-  }
+  },
+    forwardExtend: 1,
 }
 
 export const AmbrielS1E1 = Template.bind({});
@@ -401,8 +401,8 @@ AmbrielS1E1.args = {
         "col": 2
       }
     ],
-    extend: 1,
-  }
+  },
+  forwardExtend: 1,
 }
 
 export const SurtrS3 = Template.bind({});
@@ -420,8 +420,8 @@ SurtrS3.args = {
         "col": 1
       }
     ],
-    extend: 2,
-  }
+  },
+  forwardExtend: 2,
 }
 
 export const AnselE0S1 = Template.bind({});
@@ -471,8 +471,8 @@ AnselE0S1.args = {
         "col": 2
       }
     ],
-    extend: 2,
-  }
+  },
+  forwardExtend: 2,
 }
 
 export const ArchettoE0S3 = Template.bind({});
@@ -522,8 +522,8 @@ ArchettoE0S3.args = {
         "col": 2
       }
     ],
-    extend: 1,
-  }
+  },
+  forwardExtend: 2,
 }
 
 export const CrabRange = Template.bind({});

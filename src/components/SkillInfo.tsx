@@ -196,8 +196,8 @@ const SkillInfo: React.VFC<
             <div className="range">
               {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
               <CharacterRange
-                rangeObject={levels[skillLevel - 1].range
-                  ?? { ...defaultRange!, extend: extendRange }}
+                rangeObject={levels[skillLevel - 1].range ?? defaultRange!}
+                forwardExtend={extendRange}
               />
             </div>
           )}

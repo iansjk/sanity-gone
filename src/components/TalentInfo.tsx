@@ -146,8 +146,8 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
           {(activePhase.range || (defaultRanges && defaultRanges[eliteLevel] && extendRange)) && (
             <div className="range">
               <CharacterRange
-                rangeObject={activePhase.range
-                  ?? { ...defaultRanges![eliteLevel], extend: extendRange }}
+                rangeObject={activePhase.range ?? { ...defaultRanges![eliteLevel] }}
+                forwardExtend={extendRange}
               />
             </div>
           )}

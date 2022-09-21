@@ -16,7 +16,7 @@ BibeakS1.args = {
     hidden: false,
     levels: [
       {
-        name: "Bloodline of Desecrated Earth",
+        name: "Plumage Pins",
         range: null,
         description:
           "The next attack deals <@ba.vup>{atk_scale:0%}</> damage, and deals <@ba.vup>{ranged@atk_scale:0%}</> Arts damage to an additional target within range.",

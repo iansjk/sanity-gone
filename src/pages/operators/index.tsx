@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useRef,
+} from "react";
 import {
   Button,
   css,
@@ -21,6 +27,7 @@ import {
   subclassToSubProfessionId,
   professionToClass,
   subProfessionIdToSubclass,
+  subclassSlugify,
   toTitleCase,
 } from "../../utils/globals";
 import CustomCheckbox from "../../components/CustomCheckbox";
@@ -179,7 +186,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Operators: React.VFC<Props> = (props) => {
   const { allOperators, classes, branches, operatorsWithGuides } = props;
-
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
   const [showClassDescriptions, setShowClassDescriptions] = useState(true);
   const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
@@ -192,31 +198,60 @@ const Operators: React.VFC<Props> = (props) => {
     string | null
   >(null);
   const theme = useTheme();
+  const isInitialRender = useRef(true);
 
-  const hashChangeCallback = useCallback(() => {
-    const hash = window.location.hash;
-    if (hash.length > 0) {
-      console.log(hash);
-      const classMatch = /^#([^-]*?)(?:-(.*?))?$/.exec(hash);
-      const opClass = classMatch ? classMatch[1] : "";
-      const opSubclass = classMatch
-        ? classMatch[2]
-          ? classMatch[2]
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const initialClass = searchParams.get("class");
+    if (initialClass) {
+      setSelectedProfession(classToProfession(toTitleCase(initialClass)));
+      const initialBranch = searchParams.get("branch");
+      if (initialBranch) {
+        setSelectedSubProfessionId(
+          subclassToSubProfessionId(
+            initialBranch
               .split("_")
               .map((word) => toTitleCase(word))
               .join(" ")
-          : ""
-        : ""; // yes i nested 2 ternary statements, cry about it
-      setSelectedProfession(classToProfession(toTitleCase(opClass)));
-      setSelectedSubProfessionId(subclassToSubProfessionId(opSubclass));
+          )
+        );
+      }
     }
   }, []);
 
   useEffect(() => {
-    window.addEventListener("hashchange", hashChangeCallback);
-    hashChangeCallback(); // run once on mount
-    return () => window.removeEventListener("hashchange", hashChangeCallback);
-  }, [hashChangeCallback]);
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
+      return;
+    }
+
+    if (selectedProfession || selectedSubProfessionId) {
+      const searchParams = new URLSearchParams(window.location.search);
+      if (selectedProfession) {
+        searchParams.set(
+          "class",
+          professionToClass(selectedProfession).toLowerCase()
+        );
+      } else {
+        searchParams.delete("class");
+      }
+      if (selectedSubProfessionId) {
+        searchParams.set(
+          "branch",
+          subclassSlugify(subProfessionIdToSubclass(selectedSubProfessionId))
+        );
+      } else {
+        searchParams.delete("branch");
+      }
+      window.history.replaceState(
+        {},
+        "",
+        `${window.location.pathname}?${searchParams.toString()}`
+      );
+    } else {
+      window.history.replaceState({}, "", window.location.pathname);
+    }
+  }, [selectedProfession, selectedSubProfessionId]);
 
   const handleGuideAvailableChange = (
     e: React.ChangeEvent<HTMLInputElement>

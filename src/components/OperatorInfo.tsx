@@ -83,9 +83,9 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
             )}
           </div>
           <Link
-            href={`/operators#${slugify(operatorClass)}-${subclassSlugify(
-              subclass
-            )}`}
+            href={`/operators?class=${slugify(
+              operatorClass
+            )}&branch=${subclassSlugify(subclass)}`}
           >
             <a className="class-and-subclass">
               <Tooltip title={operatorClass}>

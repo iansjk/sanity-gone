@@ -2,6 +2,7 @@ import { Meta, Story } from "@storybook/react";
 import Introduction, { IntroductionProps } from "./Introduction";
 import CharacterStats, { CharacterStatsProps } from "./CharacterStats";
 import { CharacterObject } from "../utils/types";
+import { serialize } from "next-mdx-remote/serialize";
 
 export default {
   title: "Introduction",
@@ -3107,31 +3108,9 @@ export const Default = Template.bind({});
 Default.args = {
   isLimited: false,
   operatorObject: characterObject,
-  analysis: [
-    <p key="1">
-      Mudrock is a powerful <b>self-sustaining defender</b> packing both
-      offensive and defensive power. She has a high upfront DP cost, but makes
-      up for it with high overall stats and a kit that helps her take pressure
-      and sustain herself. Most notably, she has high Max HP and ATK stats
-      compared to the rest of the defender class, HP being especially important
-      since all of her self-heals scale off of max HP.
-    </p>,
-    <CharacterStats key="2" characterObject={characterObject} />,
-    <p key="3">
-      Her kit is adaptable to fit different situations. Whether it be a constant
-      onslaught of enemies or spaced out hard-hitters, you can bring a different
-      skill to deal with them without much need of outside help. Mudrock can be
-      effectively used both as a major damage dealer or tank, being a powerhouse
-      in a lot of difficult content to date, and when used properly can be
-      nigh-invulnerable against some of the toughest enemies.
-    </p>,
-    <p key="4">
-      Her <b>archetype trait</b> is that she
-      <em>cannot be directly healed by others</em>. This does not mean that she
-      cannot be healed at all however, as “regeneration” type heals will still
-      work just fine; same as any other operator with a similar trait.
-    </p>,
-  ],
-  strengths: ["Strength 1", "Strength 2"],
-  weaknesses: ["Weakness 1", "Weakness 2", "Weakness 3"],
+  analysis: await serialize(
+    "Mudrock is a powerful **self-sustaining defender** packing both offensive and defensive power. She has a high upfront DP cost, but makes up for it with high overall stats and a kit that helps her take pressure and sustain herself. Most notably, she has high Max HP and ATK stats compared to the rest of the defender class, HP being especially important since all of her self-heals scale off of max HP.\n\n<OperatorStats />\n\nHer kit is adaptable to fit different situations. Whether it be a constant onslaught of enemies or spaced out hard-hitters, you can bring a different skill to deal with them without much need of outside help. Mudrock can be effectively used both as a major damage dealer or tank, being a powerhouse in a lot of difficult content to date, and when used properly can be nigh-invulnerable against some of the toughest enemies.\n\nHer **archetype trait** is that she *cannot be directly healed by others*. This does not mean that she cannot be healed at all however, as “regeneration” type heals will still work just fine; same as any other operator with a similar trait."
+  ),
+  strengths: await serialize("- Strength 1\n- Strength 2"),
+  weaknesses: await serialize("- Weakness 1\n- Weakness 2\n- Weakness 3"),
 };

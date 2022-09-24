@@ -3,6 +3,7 @@ import Modules, { ModuleProps } from "./Modules";
 import { DenormalizedModule } from "../utils/types";
 import ModuleInfo from "./ModuleInfo";
 import ModuleRecommendation from "./ModuleRecommendation";
+import { serialize } from "next-mdx-remote/serialize";
 
 export default {
   title: "Modules",
@@ -221,57 +222,11 @@ const modules: DenormalizedModule[] = [
 Default.args = {
   modules: modules,
   moduleAnalyses: [
-    <>
-      <ModuleInfo module={modules[0]} operatorName="char_248_mgllan" key={0} />
-      <p>
-        This module’s stage 1 grants Magallan an additional trait that’s very
-        helpful when using her in a full team, but not that useful when used in
-        a low op squad. Magallan can however make good use of the one additional
-        deploy slot, especially when using her S1. Stage 2 upgraded talent can
-        be helpful in certain situations where Magallan is exposed to taking
-        damage—Invisibility can be extremely powerful in the right hands. The
-        bonus stats don’t matter much as they don’t apply to her summons.
-      </p>
-      <ModuleRecommendation stage="1+" priority="Low">
-        <p>
-          The module’s new trait doesn’t do much for optimized low op or solo
-          clears with Magallan, but it is a worthwhile upgrade for those wanting
-          to use her in a full team, especially if using S1 to stall. For the
-          upgraded talent, having the option to grant invisibility to Magallan
-          can open up many placement options. It’s something that benefits more
-          careful planning and specialized offensive use, but could also serve
-          as a safety option when Magallan ends up in danger. For low op or solo
-          clears, it is going to be more niche than her Module Y.
-        </p>
-      </ModuleRecommendation>
-    </>,
-    <>
-      <ModuleInfo module={modules[1]} operatorName="char_248_mgllan" key={1} />
-      <p>
-        This is a more summon-focused module in comparison to her Module X,
-        being well suited for low op and solo clears. The lowered cost and
-        higher summon stock can still benefit a general team, as Magallan can
-        make for a cheap and effective damage dealer early in a stage with her
-        S3, while the higher stock makes losing summons less punishing.
-        Additional upgrades focus on a higher power ceiling for her summons,
-        allowing for upwards of 4 deployed at Stage 2 and improving their stats
-        at stage 3, the former mattering more in specialized clears while the
-        latter can still benefit a more general team.
-      </p>
-      <ModuleRecommendation stage="1+" priority="Low">
-        <p>
-          While this module doesn’t change Magallan’s playstyle, it’s a great
-          upgrade for those who enjoy using her in low op or solo clears. The
-          decreased cost and additional stored summons lend themselves well
-          towards making Magallan’s low op playstyle easier for less experienced
-          players. The lowered DP cost helps in stages with DP constraints,
-          while the increased number of stored summons means players don’t have
-          to worry as much when losing a summon to enemies instead of recycling
-          it with her skill. Stages 2 and 3 are a good investment for those who
-          enjoy using Magallan and wish to make her more powerful, but come at a
-          steep cost for a playstyle that doesn’t benefit many.
-        </p>
-      </ModuleRecommendation>
-    </>,
+    await serialize(
+      `<ModuleInfo />\n\nThis module’s stage 1 grants Magallan an additional trait that’s very helpful when using her in a full team, but not that useful when used in a low op squad. Magallan can however make good use of the one additional deploy slot, especially when using her S1. Stage 2 upgraded talent can be helpful in certain situations where Magallan is exposed to taking damage—Invisibility can be extremely powerful in the right hands. The bonus stats don’t matter much as they don’t apply to her summons.\n\n<ModuleRecommendation stage="1+" priority="Low">\nThe module’s new trait doesn’t do much for optimized low op or solo clears with Magallan, but it is a worthwhile upgrade for those wanting to use her in a full team, especially if using S1 to stall. For the upgraded talent, having the option to grant invisibility to Magallan can open up many placement options. It’s something that benefits more careful planning and specialized offensive use, but could also serve as a safety option when Magallan ends up in danger. For low op or solo clears, it is going to be more niche than her Module Y.\n</ModuleRecommendation>`
+    ),
+    await serialize(
+      `<ModuleInfo />\n\nThis is a more summon-focused module in comparison to her Module X, being well suited for low op and solo clears. The lowered cost and higher summon stock can still benefit a general team, as Magallan can make for a cheap and effective damage dealer early in a stage with her S3, while the higher stock makes losing summons less punishing. Additional upgrades focus on a higher power ceiling for her summons, allowing for upwards of 4 deployed at Stage 2 and improving their stats at stage 3, the former mattering more in specialized clears while the latter can still benefit a more general team.\n\n<ModuleRecommendation stage="1+" priority="Low">\nWhile this module doesn’t change Magallan’s playstyle, it’s a great upgrade for those who enjoy using her in low op or solo clears. The decreased cost and additional stored summons lend themselves well towards making Magallan’s low op playstyle easier for less experienced players. The lowered DP cost helps in stages with DP constraints, while the increased number of stored summons means players don’t have to worry as much when losing a summon to enemies instead of recycling it with her skill. Stages 2 and 3 are a good investment for those who enjoy using Magallan and wish to make her more powerful, but come at a steep cost for a playstyle that doesn’t benefit many.\n</ModuleRecommendation>`
+    ),
   ],
 };

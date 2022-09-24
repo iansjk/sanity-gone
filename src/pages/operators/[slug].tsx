@@ -1,19 +1,18 @@
 import React from "react";
 import { Box, Theme, useTheme, css, GlobalStyles } from "@mui/material";
 import { tint, rgba, transparentize } from "polished";
-import parse, { attributesToProps, domToReact } from "html-react-parser";
-import { Element } from "domhandler/lib/node";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import Introduction from "../../components/Introduction";
 import CharacterStats from "../../components/CharacterStats";
-import SkillInfo, { SkillObject } from "../../components/SkillInfo";
+import SkillInfo from "../../components/SkillInfo";
 import Synergies from "../../components/Synergies";
 import Tabs from "../../components/Tabs";
 import TabButtons from "../../components/TabButtons";
 import TabPanels from "../../components/TabPanels";
-import TalentInfo, { TalentObject } from "../../components/TalentInfo";
+import TalentInfo from "../../components/TalentInfo";
 import Layout from "../../Layout";
-import { replaceSelfClosingHtmlTags } from "../../utils/globals";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject, DenormalizedModule } from "../../utils/types";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
@@ -24,132 +23,8 @@ import { fetchContentfulGraphQl } from "../../utils/fetch";
 import operatorsJson from "../../../data/operators.json";
 import summonsJson from "../../../data/summons.json";
 import modulesJson from "../../../data/modules.json";
-import { markdownToHtmlString } from "../../utils/markdown";
-import ModuleInfo from "../../components/ModuleInfo";
+
 import Modules from "../../components/Modules";
-import ModuleRecommendation from "../../components/ModuleRecommendation";
-
-interface HTMLToReactContext {
-  skills: SkillObject[];
-  recommendedSkills: boolean[];
-  talents: TalentObject[];
-  operator: CharacterObject;
-  summon?: CharacterObject;
-  modules: DenormalizedModule[] | null;
-}
-
-const htmlToReact = (
-  html: string,
-  context: HTMLToReactContext,
-  index?: number
-): string | JSX.Element | JSX.Element[] => {
-  return parse(replaceSelfClosingHtmlTags(html), {
-    replace: (domNode) => {
-      if (domNode instanceof Element) {
-        if (domNode.name === "skillinfo") {
-          return (
-            <SkillInfo
-              className="skills-skill-info"
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              skillObject={context.skills[index!]}
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              isRecommended={context.recommendedSkills[index!]}
-            />
-          );
-        } else if (domNode.name === "talentinfo") {
-          return (
-            <TalentInfo
-              className="talents-talent-info"
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              talentObject={context.talents[index!]}
-            />
-          );
-        } else if (domNode.name === "operatorstats") {
-          return <CharacterStats characterObject={context.operator} />;
-        } else if (domNode.name === "summonstats") {
-          if (!context.summon) {
-            console.log(context);
-            throw new Error(
-              "Can't render <SummonStats /> because summon is missing from context. Check your console for context contents"
-            );
-          }
-          return <CharacterStats characterObject={context.summon} />;
-        } else if (domNode.name === "moduleinfo") {
-          if (!context.modules) {
-            console.log(context);
-            throw new Error(
-              "Can't render <ModuleInfo /> because module is missing from context. Check your console for context contents"
-            );
-          }
-
-          return (
-            <ModuleInfo
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              module={context.modules[index!]!}
-              operatorName={context.operator.charId}
-            />
-          );
-        } else if (domNode.name === "masteryrecommendation") {
-          const props = attributesToProps(domNode.attribs);
-          // the first child seems to always be a text node, but then subsequent ones are <p>s.
-          // convert text nodes into <p> but feed the rest into domToReact.
-          const children = domNode.children.map((child, i) => {
-            if (child.type === "text") {
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              return <p key={i}>{(child as any).data.trim()}</p>;
-            }
-            return {
-              ...(domToReact([child]) as JSX.Element), // needs an array, even if it's a single child.
-              key: i, // force a key so React doesn't complain
-            };
-          });
-          return (
-            //@ts-expect-error props will contain level and priority
-            <MasteryRecommendation {...props}>{children}</MasteryRecommendation>
-          );
-        } else if (domNode.name === "modulerecommendation") {
-          const props = attributesToProps(domNode.attribs);
-          // the first child seems to always be a text node, but then subsequent ones are <p>s.
-          // convert text nodes into <p> but feed the rest into domToReact.
-          const children = domNode.children.map((child, i) => {
-            if (child.type === "text") {
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              return <p key={i}>{(child as any).data.trim()}</p>;
-            }
-            return {
-              ...(domToReact([child]) as JSX.Element), // needs an array, even if it's a single child.
-              key: i, // force a key so React doesn't complain
-            };
-          });
-          return (
-            //@ts-expect-error props will contain priority
-            <ModuleRecommendation {...props}>{children}</ModuleRecommendation>
-          );
-          // FIXME hacky way to embed images
-        } else if ((domNode.firstChild as Element)?.name === "img") {
-          const contents = (domNode.children as Element[])
-            .filter((element) => element.name === "img")
-            .map((imgElement, i) => (
-              // eslint-disable-next-line jsx-a11y/alt-text, @next/next/no-img-element
-              <img
-                key={i}
-                {...attributesToProps(imgElement.attribs)}
-                style={{
-                  width: `min(100vw - 32px, 360px)`,
-                }}
-              />
-            ));
-          return (
-            <Box display="flex" alignItems="center" justifyContent="center">
-              {contents}
-            </Box>
-          );
-        }
-      }
-      return domNode;
-    },
-  });
-};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const query = `
@@ -258,16 +133,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           introduction: string;
           strengths: string;
           weaknesses: string;
-          module1Analysis: string;
-          module2Analysis: string;
-          talent1Analysis: string;
-          talent2Analysis: string;
+          module1Analysis: string | null;
+          module2Analysis: string | null;
+          talent1Analysis: string | null;
+          talent2Analysis: string | null;
           skill1Recommended: boolean;
-          skill1Analysis: string;
+          skill1Analysis: string | null;
           skill2Recommended: boolean;
-          skill2Analysis: string;
+          skill2Analysis: string | null;
           skill3Recommended: boolean;
-          skill3Analysis: string;
+          skill3Analysis: string | null;
           synergiesCollection: {
             items: [
               {
@@ -297,62 +172,68 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     (modulesJson[
       operatorObject.charId as keyof typeof modulesJson
     ] as unknown as DenormalizedModule[]) ?? null;
+  const synergyOperatorNames = operatorAnalysis.synergiesCollection?.items
+    .filter((syn) => !syn.isGroup)
+    .map((syn) => syn.synergyName);
 
-  const markdownListItemRegex = /^\s*-\s(.+)$/;
   const props: Props = {
     charId: operatorObject.charId,
+    ogDescription:
+      operatorAnalysis.customByline ??
+      `${
+        operatorAnalysis.introduction
+          .replace(/<\/?[A-za-z-]*>/g, "")
+          .split(/(\.)\s*/)[0]
+      }.`,
     guide: {
       operator: operatorAnalysis.operator,
-      customByline: operatorAnalysis.customByline,
       sys: operatorAnalysis.sys,
-      introduction: await markdownToHtmlString(operatorAnalysis.introduction),
-      strengths: operatorAnalysis.strengths
-        .split("\n")
-        .filter((line) => markdownListItemRegex.exec(line))
-        .map((line) => {
-          const match = markdownListItemRegex.exec(line);
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          return match![1];
-        }),
-      weaknesses: operatorAnalysis.weaknesses
-        .split("\n")
-        .filter((line) => markdownListItemRegex.exec(line))
-        .map((line) => {
-          const match = markdownListItemRegex.exec(line);
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          return match![1];
-        }),
-      module1Analysis: await markdownToHtmlString(
-        operatorAnalysis.module1Analysis
-      ),
-      module2Analysis: await markdownToHtmlString(
-        operatorAnalysis.module2Analysis
-      ),
-      talent1Analysis: await markdownToHtmlString(
-        operatorAnalysis.talent1Analysis
-      ),
-      talent2Analysis: await markdownToHtmlString(
-        operatorAnalysis.talent2Analysis
-      ),
-      skill1Recommended: operatorAnalysis.skill1Recommended,
-      skill1Analysis: await markdownToHtmlString(
-        operatorAnalysis.skill1Analysis
-      ),
-      skill2Recommended: operatorAnalysis.skill2Recommended,
-      skill2Analysis: await markdownToHtmlString(
-        operatorAnalysis.skill2Analysis
-      ),
-      skill3Recommended: operatorAnalysis.skill3Recommended,
-      skill3Analysis: await markdownToHtmlString(
-        operatorAnalysis.skill3Analysis
-      ),
+      introduction: await serialize(operatorAnalysis.introduction),
+      strengths: await serialize(operatorAnalysis.strengths),
+      weaknesses: await serialize(operatorAnalysis.weaknesses),
+      module1Analysis:
+        operatorAnalysis.module1Analysis &&
+        operatorAnalysis.module1Analysis.trim().length > 0
+          ? await serialize(operatorAnalysis.module1Analysis)
+          : null,
+      module2Analysis:
+        operatorAnalysis.module2Analysis &&
+        operatorAnalysis.module2Analysis.trim().length > 0
+          ? await serialize(operatorAnalysis.module2Analysis)
+          : null,
+      talent1Analysis:
+        operatorAnalysis.talent1Analysis &&
+        operatorAnalysis.talent1Analysis.trim().length > 0
+          ? await serialize(operatorAnalysis.talent1Analysis)
+          : null,
+      talent2Analysis:
+        operatorAnalysis.talent2Analysis &&
+        operatorAnalysis.talent2Analysis.trim().length > 0
+          ? await serialize(operatorAnalysis.talent2Analysis)
+          : null,
+      skill1Recommended: operatorAnalysis.skill1Recommended ?? false,
+      skill1Analysis:
+        operatorAnalysis.skill1Analysis &&
+        operatorAnalysis.skill1Analysis.trim().length > 0
+          ? await serialize(operatorAnalysis.skill1Analysis)
+          : null,
+      skill2Recommended: operatorAnalysis.skill2Recommended ?? false,
+      skill2Analysis:
+        operatorAnalysis.skill2Analysis &&
+        operatorAnalysis.skill2Analysis.trim().length > 0
+          ? await serialize(operatorAnalysis.skill2Analysis)
+          : null,
+      skill3Recommended: operatorAnalysis.skill3Recommended ?? false,
+      skill3Analysis:
+        operatorAnalysis.skill3Analysis &&
+        operatorAnalysis.skill3Analysis.trim().length > 0
+          ? await serialize(operatorAnalysis.skill3Analysis)
+          : null,
       synergies: await Promise.all(
         operatorAnalysis.synergiesCollection?.items.map(async (syn) => {
           return {
             ...syn,
-            synergyDescription: await markdownToHtmlString(
-              syn.synergyDescription
-            ),
+            synergyDescription: await serialize(syn.synergyDescription),
           };
         }) ?? []
       ),
@@ -360,23 +241,31 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     operatorObject,
     summons: summons as unknown as CharacterObject[],
     modules,
-    allOperators: Object.fromEntries(
-      Object.entries(operatorsJson).map(([opName, op]) => [
-        opName,
-        {
-          charId: op.charId,
-          rarity: op.rarity,
-          profession: op.profession,
-          subProfessionId: op.subProfessionId,
-        },
-      ])
-    ),
+    allOperators: synergyOperatorNames
+      ? Object.fromEntries(
+          synergyOperatorNames.map((opName) => {
+            const op = operatorsJson[
+              opName as keyof typeof operatorsJson
+            ] as CharacterObject;
+            return [
+              opName,
+              {
+                charId: op.charId,
+                rarity: op.rarity,
+                profession: op.profession,
+                subProfessionId: op.subProfessionId,
+              },
+            ];
+          })
+        )
+      : {},
   };
   return { props };
 };
 
 interface Props {
   charId: string;
+  ogDescription: string;
   guide: {
     operator: {
       accentColorInHex: string;
@@ -389,23 +278,22 @@ interface Props {
       };
       customBgPositionX: string;
     };
-    customByline?: string;
     sys: {
       publishedAt: string; // ISO 8601 timestamp
     };
-    introduction: string;
-    strengths: string[];
-    weaknesses: string[];
-    module1Analysis: string;
-    module2Analysis: string;
-    talent1Analysis: string;
-    talent2Analysis: string;
-    skill1Recommended?: boolean;
-    skill1Analysis: string;
-    skill2Recommended?: boolean;
-    skill2Analysis: string;
-    skill3Recommended?: boolean;
-    skill3Analysis: string;
+    introduction: MDXRemoteSerializeResult;
+    strengths: MDXRemoteSerializeResult;
+    weaknesses: MDXRemoteSerializeResult;
+    module1Analysis: MDXRemoteSerializeResult | null;
+    module2Analysis: MDXRemoteSerializeResult | null;
+    talent1Analysis: MDXRemoteSerializeResult | null;
+    talent2Analysis: MDXRemoteSerializeResult | null;
+    skill1Recommended: boolean;
+    skill1Analysis: MDXRemoteSerializeResult | null;
+    skill2Recommended: boolean;
+    skill2Analysis: MDXRemoteSerializeResult | null;
+    skill3Recommended: boolean;
+    skill3Analysis: MDXRemoteSerializeResult | null;
     synergies: {
       synergyName: string;
       synergyQuality: number | null;
@@ -414,7 +302,7 @@ interface Props {
         url: string;
       };
       shouldInvertIconOnHighlight?: boolean;
-      synergyDescription: string;
+      synergyDescription: MDXRemoteSerializeResult;
     }[];
   };
   operatorObject: CharacterObject;
@@ -429,11 +317,17 @@ interface Props {
 }
 
 const OperatorAnalysis: React.VFC<Props> = (props) => {
-  const { charId, guide, operatorObject, summons, allOperators, modules } =
-    props;
+  const {
+    charId,
+    ogDescription,
+    guide,
+    operatorObject,
+    summons,
+    allOperators,
+    modules,
+  } = props;
   const {
     operator,
-    customByline,
     sys,
     introduction,
     strengths,
@@ -452,37 +346,11 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   } = guide;
   const { publishedAt } = sys;
   const skillRecommended = [
-    skill1Recommended ?? false,
-    skill2Recommended ?? false,
-    skill3Recommended ?? false,
+    skill1Recommended,
+    skill2Recommended,
+    skill3Recommended,
   ];
-  const context = {
-    talents: operatorObject.talents,
-    skills: operatorObject.skillData,
-    recommendedSkills: skillRecommended,
-    operator: operatorObject,
-    modules: modules,
-    summon: summons.length > 0 ? summons[0] : undefined,
-  };
   const theme = useTheme();
-  const moduleAnalyses = [module1Analysis, module2Analysis]
-    .filter((html) => !!html)
-    .map((html, i) => htmlToReact(html, context, i));
-  // const moduleAnalysisHtml = null;
-
-  const talentAnalyses = [talent1Analysis, talent2Analysis]
-    .filter((html) => !!html)
-    .map((html, i) => htmlToReact(html, context, i));
-
-  const skillAnalyses = [skill1Analysis, skill2Analysis, skill3Analysis]
-    .filter((html) => !!html)
-    .map((html, i) => {
-      // if this operator has per-skill summons, then pass the correct summon for this skill
-      if (summons.length > 1) {
-        context.summon = summons[i];
-      }
-      return htmlToReact(html, context, i);
-    });
 
   const synergies = synergiesRaw.map((syn) => {
     const baseProps = {
@@ -508,9 +376,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
 
   const operatorName = operator.name;
   const [baseChar, alterName] = operatorName.split(" the ");
-  const description = `${
-    introduction.replace(/<\/?[A-za-z-]*>/g, "").split(/(\.)\s*/)[0]
-  }.`;
+  const shouldShowModules =
+    modules && modules.length > 0 && (module1Analysis || module2Analysis);
 
   return (
     <Layout
@@ -533,7 +400,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         height: guide.operator.bannerImage.height,
       }}
       image={operatorAvatar(charId)}
-      description={customByline ?? description}
+      description={ogDescription}
       previousLocation="Operators"
       previousLocationLink="/operators"
     >
@@ -552,7 +419,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         <TabButtons className="tabs" isSwiper>
           {[
             ...["Introduction"],
-            ...(modules ? ["Modules"] : []),
+            ...(shouldShowModules ? ["Modules"] : []),
             ...["Talents", "Skills"],
             ...(synergies.length > 0 ? ["Synergy"] : []),
           ].map((label) => (
@@ -565,9 +432,10 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               {
                 component: (
                   <Introduction
-                    analysis={htmlToReact(introduction, context)}
+                    analysis={introduction}
                     isLimited={operator.limited}
                     operatorObject={operatorObject}
+                    summonObject={summons[0]}
                     strengths={strengths}
                     weaknesses={weaknesses}
                   />
@@ -575,13 +443,18 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 className: "introduction",
               },
             ],
-            ...(modules
+            ...(shouldShowModules
               ? [
                   {
                     component: (
                       <Modules
+                        operatorName={operatorObject.name}
                         modules={modules}
-                        moduleAnalyses={moduleAnalyses}
+                        moduleAnalyses={
+                          [module1Analysis, module2Analysis].filter((x) =>
+                            Boolean(x)
+                          ) as MDXRemoteSerializeResult[]
+                        }
                       />
                     ),
                     className: "modules",
@@ -593,7 +466,26 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 component: (
                   <CardWithTabs
                     header="Talents"
-                    panelContent={talentAnalyses}
+                    panelContent={(
+                      [talent1Analysis, talent2Analysis].filter((x) =>
+                        Boolean(x)
+                      ) as MDXRemoteSerializeResult[]
+                    ).map((mdxSource, i) => (
+                      <MDXRemote
+                        key={i}
+                        {...mdxSource}
+                        components={{
+                          TalentInfo: () => (
+                            <TalentInfo
+                              talentObject={operatorObject.talents[i]}
+                            />
+                          ),
+                          SummonStats: () => (
+                            <CharacterStats characterObject={summons[0]} />
+                          ),
+                        }}
+                      />
+                    ))}
                     buttonLabelFn={(i) => `talent ${i + 1}`}
                   />
                 ),
@@ -603,7 +495,47 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 component: (
                   <CardWithTabs
                     header="Skills"
-                    panelContent={skillAnalyses}
+                    panelContent={(
+                      [skill1Analysis, skill2Analysis, skill3Analysis].filter(
+                        (x) => Boolean(x)
+                      ) as MDXRemoteSerializeResult[]
+                    ).map((mdxSource, i) => (
+                      <MDXRemote
+                        key={i}
+                        {...mdxSource}
+                        components={{
+                          SkillInfo: () => (
+                            <SkillInfo
+                              isRecommended={skillRecommended[i]}
+                              skillObject={operatorObject.skillData[i]}
+                            />
+                          ),
+                          SummonStats: () => (
+                            <CharacterStats
+                              characterObject={
+                                summons.length > 1 ? summons[i] : summons[0]
+                              }
+                            />
+                          ),
+                          MasteryRecommendation,
+                          img: (props) => (
+                            <Box
+                              display="flex"
+                              alignItems="center"
+                              justifyContent="center"
+                            >
+                              {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+                              <img
+                                {...props}
+                                style={{
+                                  width: `min(100vw - 32px, 360px)`,
+                                }}
+                              />
+                            </Box>
+                          ),
+                        }}
+                      />
+                    ))}
                     buttonLabelFn={(i) => `skill ${i + 1}`}
                   />
                 ),

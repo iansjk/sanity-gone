@@ -1,9 +1,10 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 export interface StrengthsWeaknessesProps {
-  strengths: string[];
-  weaknesses: string[];
+  strengths: MDXRemoteSerializeResult;
+  weaknesses: MDXRemoteSerializeResult;
 }
 
 const StrengthsWeaknesses: React.VFC<StrengthsWeaknessesProps> = (props) => {
@@ -11,17 +12,9 @@ const StrengthsWeaknesses: React.VFC<StrengthsWeaknessesProps> = (props) => {
   return (
     <div className="strengths-and-weaknesses" css={styles}>
       <h3 className="strengths">Strengths</h3>
-      <ul className="strengths-list">
-        {strengths.map((strength) => (
-          <li key={strength}>{strength}</li>
-        ))}
-      </ul>
+      <MDXRemote {...strengths} />
       <h3 className="weaknesses">Weaknesses</h3>
-      <ul className="weaknesses-list">
-        {weaknesses.map((weakness) => (
-          <li key={weakness}>{weakness}</li>
-        ))}
-      </ul>
+      <MDXRemote {...weaknesses} />
     </div>
   );
 };

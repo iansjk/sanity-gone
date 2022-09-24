@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
 import OperatorPortrait from "./OperatorPortrait";
@@ -16,7 +17,7 @@ export interface SynergyProps {
   charId?: string;
   quality: SynergyQuality | null;
   isGroup: boolean;
-  analysis: string;
+  analysis: MDXRemoteSerializeResult;
   iconUrl?: string;
   rarity?: number;
   profession?: string;
@@ -71,7 +72,7 @@ const Synergy: React.VFC<
           )}
         </div>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: analysis }} />
+      <MDXRemote {...analysis} />
     </section>
   );
 };

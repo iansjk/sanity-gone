@@ -433,6 +433,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                     analysis={introduction}
                     isLimited={operator.limited}
                     operatorObject={operatorObject}
+                    summonObject={summons[0]}
                     strengths={strengths}
                     weaknesses={weaknesses}
                   />

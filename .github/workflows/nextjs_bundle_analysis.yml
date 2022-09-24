@@ -39,14 +39,8 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}
 
       - name: Build next.js app
-        # remove everything in scripts/ except for scripts/types.ts
-        # to avoid missing submodule .json issues, then build
-        run: |
-          cp ./scripts/types.ts .
-          rm -rf ./scripts
-          mkdir ./scripts
-          mv ./types.ts ./scripts
-          ./node_modules/.bin/next build
+        # change this if your site requires a custom build command
+        run: ./node_modules/.bin/next build
         env:
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}

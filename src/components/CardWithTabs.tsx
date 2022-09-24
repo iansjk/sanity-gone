@@ -1,4 +1,3 @@
-import parse from "html-react-parser";
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 
@@ -15,7 +14,7 @@ export type CardWithTabsProps = {
   isSwiper?: boolean;
 } & Either<
   {
-    panelContent: ReturnType<typeof parse>[];
+    panelContent: JSX.Element[];
   } & Either<
     {
       buttonLabels: string[];

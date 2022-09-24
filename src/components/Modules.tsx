@@ -1,24 +1,33 @@
-import parse from "html-react-parser";
-
 import { DenormalizedModule } from "../utils/types";
 import CardWithTabs from "./CardWithTabs";
 import { moduleTypeImage } from "../utils/images";
 import Image from "next/image";
 import { Theme } from "@mui/material";
 import { css } from "@emotion/react";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import ModuleInfo from "./ModuleInfo";
+import ModuleRecommendation from "./ModuleRecommendation";
 
 export type ModuleProps = {
+  operatorName: string;
   modules: DenormalizedModule[];
-  moduleAnalyses: ReturnType<typeof parse>[];
+  moduleAnalyses: MDXRemoteSerializeResult[];
 };
 
 const Modules: React.VFC<ModuleProps> = (props) => {
-  const { modules, moduleAnalyses } = props;
+  const { operatorName, modules, moduleAnalyses } = props;
+  const components = (index: number) => ({
+    ModuleInfo: () => (
+      <ModuleInfo module={modules[index]} operatorName={operatorName} />
+    ),
+    ModuleRecommendation,
+  });
+
   return (
     <CardWithTabs
       css={styles}
       header="Modules"
-      buttons={moduleAnalyses.map((panel, i) => (
+      buttons={moduleAnalyses.map((_, i) => (
         <button
           key={i}
           aria-label={`module ${i + 1}`}
@@ -30,12 +39,15 @@ const Modules: React.VFC<ModuleProps> = (props) => {
               width={42}
               height={42}
               src={moduleTypeImage(modules[i].moduleIcon)}
+              alt=""
             />
           </div>
         </button>
       ))}
       panels={moduleAnalyses.map((panel, i) => (
-        <div key={i}>{panel}</div>
+        <div key={i}>
+          <MDXRemote key={i} {...panel} components={components(i)} />
+        </div>
       ))}
     />
   );

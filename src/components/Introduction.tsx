@@ -1,24 +1,30 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
-import parse from "html-react-parser";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import Card from "./Card";
+import CharacterStats from "./CharacterStats";
 import OperatorInfo, { OperatorInfoProps } from "./OperatorInfo";
 import StrengthsWeaknesses from "./StrengthsWeaknesses";
 
 export type IntroductionProps = OperatorInfoProps & {
-  analysis: ReturnType<typeof parse>;
-  strengths: string[];
-  weaknesses: string[];
+  analysis: MDXRemoteSerializeResult;
+  strengths: MDXRemoteSerializeResult;
+  weaknesses: MDXRemoteSerializeResult;
 };
 
 const Introduction: React.VFC<IntroductionProps> = (props) => {
   const { operatorObject, isLimited, analysis, strengths, weaknesses } = props;
+
+  const components = {
+    OperatorStats: () => <CharacterStats characterObject={operatorObject} />,
+  };
+
   return (
     <Card header="Introduction" css={styles}>
       <OperatorInfo operatorObject={operatorObject} isLimited={isLimited} />
       <div className="introduction-content">
-        {analysis}
+        <MDXRemote {...analysis} components={components} />
         <StrengthsWeaknesses strengths={strengths} weaknesses={weaknesses} />
       </div>
     </Card>

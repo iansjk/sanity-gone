@@ -39,9 +39,14 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}
 
       - name: Build next.js app
-        # change this if your site requires a custom build command
-        # remove scripts/ to avoid missing .json file issues (from submodule)
-        run: rm -rf ./scripts && ./node_modules/.bin/next build
+        # remove everything in scripts/ except for scripts/types.ts
+        # to avoid missing submodule .json issues, then build
+        run: |
+          cp ./scripts/types.ts .
+          rm -rf ./scripts
+          mkdir ./scripts
+          mv ./types.ts ./scripts
+          ./node_modules/.bin/next build
 
       # Here's the first place where next-bundle-analysis' own script is used
       # This step pulls the raw bundle stats for the current bundle

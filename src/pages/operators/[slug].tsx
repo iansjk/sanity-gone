@@ -477,6 +477,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                               talentObject={operatorObject.talents[i]}
                             />
                           ),
+                          SummonStats: () => (
+                            <CharacterStats characterObject={summons[0]} />
+                          ),
                         }}
                       />
                     ))}

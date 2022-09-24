@@ -36,9 +36,10 @@ import { fetchContentfulGraphQl } from "../../utils/fetch";
 import Image from "next/image";
 import { GetStaticProps } from "next";
 import { DenormalizedCharacter } from "../../../scripts/types";
-import { markdownToHtmlString } from "../../utils/markdown";
 import operatorListBannerImage from "../../images/page-banners/operators.jpg";
 import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 
 const MENU_ICON_SIZE = 18;
 
@@ -62,11 +63,11 @@ interface Props {
   classes: {
     className: string;
     profession: string;
-    analysis: string; // html
+    analysis: MDXRemoteSerializeResult;
   }[];
   branches: {
     subProfessionId: string;
-    analysis: string; // html
+    analysis: MDXRemoteSerializeResult;
     class: {
       profession: string;
     };
@@ -158,13 +159,13 @@ export const getStaticProps: GetStaticProps = async () => {
     classes: await Promise.all(
       operatorClassCollection.items.map(async (item) => ({
         ...item,
-        analysis: await markdownToHtmlString(item.analysis),
+        analysis: await serialize(item.analysis),
       }))
     ),
     branches: await Promise.all(
       operatorSubclassCollection.items.map(async (item) => ({
         ...item,
-        analysis: await markdownToHtmlString(item.analysis),
+        analysis: await serialize(item.analysis),
       }))
     ),
     operatorsWithGuides: Object.fromEntries(
@@ -512,15 +513,13 @@ const Operators: React.VFC<Props> = (props) => {
                         Class
                       </span>
                     </div>
-                    <div
-                      className="class-description"
-                      dangerouslySetInnerHTML={{
-                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        __html: classes.find(
+                    <div className="class-description">
+                      <MDXRemote
+                        {...classes.find(
                           ({ profession }) => profession === selectedProfession
-                        )!.analysis,
-                      }}
-                    />
+                        )!.analysis}
+                      />
+                    </div>
                   </section>
                 )}
                 {selectedSubProfessionId && (
@@ -551,22 +550,21 @@ const Operators: React.VFC<Props> = (props) => {
                         showSubclassIcon={false}
                       />
                     )}
-                    <div
-                      className="subclass-description"
-                      dangerouslySetInnerHTML={{
-                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                        __html: branches
-                          .find(
-                            ({ subProfessionId }) =>
-                              subProfessionId === selectedSubProfessionId
-                          )!
-                          .analysis.replace(
-                            "BRANCHNAME",
-                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                            `<strong>${selectedSubclass!} ${selectedClass!}s</strong>`
+                    <div className="subclass-description">
+                      <MDXRemote
+                        {...branches.find(
+                          ({ subProfessionId }) =>
+                            subProfessionId === selectedSubProfessionId
+                        )!.analysis}
+                        components={{
+                          BranchNamePlural: () => (
+                            <strong>
+                              {selectedSubclass!} {selectedClass!}s
+                            </strong>
                           ),
-                      }}
-                    />
+                        }}
+                      />
+                    </div>
                   </section>
                 )}
               </div>

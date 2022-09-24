@@ -76,7 +76,7 @@
     "next-sitemap": "^2.5.4",
     "prettier": "^2.3.2",
     "ts-node": "^10.5.0",
-    "typescript": "^4.6.0"
+    "typescript": "^4.9.0-dev.20220924"
   },
   "engines": {
     "node": ">=14"

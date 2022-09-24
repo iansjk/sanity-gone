@@ -6,7 +6,7 @@
   "license": "GPL-2.0-or-later",
   "scripts": {
     "start": "NODE_OPTIONS='--inspect' next dev",
-    "build": "next build",
+    "build": "ANALYZE=true next build",
     "postbuild": "next-sitemap && node aceship.cjs",
     "preview": "next start",
     "lint": "next lint",
@@ -22,6 +22,7 @@
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.4.2",
+    "@next/bundle-analyzer": "^12.3.1",
     "@sindresorhus/slugify": "<2",
     "axios": "^0.26.0",
     "babel-loader": "^8.2.3",

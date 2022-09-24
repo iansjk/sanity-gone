@@ -7,6 +7,12 @@ const nextConfig = {
     // set minimumCacheTTL to 7 days
     minimumCacheTTL: 604800,
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({

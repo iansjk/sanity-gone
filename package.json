@@ -31,7 +31,6 @@
     "flexsearch": "<0.7.0",
     "html-react-parser": "^1.4.8",
     "js-levenshtein": "^1.1.6",
-    "luxon": "^2.3.0",
     "next": "^12.1.0",
     "polished": "^4.1.4",
     "react": "^17.0.2",

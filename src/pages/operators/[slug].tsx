@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Theme, useTheme, css, GlobalStyles } from "@mui/material";
 import { tint, rgba, transparentize } from "polished";
-import { DateTime } from "luxon";
 import parse, { attributesToProps, domToReact } from "html-react-parser";
 import { Element } from "domhandler/lib/node";
 
@@ -654,9 +653,11 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
             <div className="last-updated-section">
               <span className="section-label">Last updated</span>
               <span className="last-updated">
-                {DateTime.fromISO(publishedAt).toLocaleString(
-                  DateTime.DATE_FULL
-                )}
+                {new Intl.DateTimeFormat("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                }).format(new Date(publishedAt))}
               </span>
             </div>
           </div>

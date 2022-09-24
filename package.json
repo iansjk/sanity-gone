@@ -6,7 +6,7 @@
   "license": "GPL-2.0-or-later",
   "scripts": {
     "start": "NODE_OPTIONS='--inspect' next dev",
-    "build": "next build",
+    "build": "ANALYZE=true next build",
     "postbuild": "next-sitemap && node aceship.cjs",
     "preview": "next start",
     "lint": "next lint",
@@ -22,6 +22,7 @@
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.4.2",
+    "@next/bundle-analyzer": "^12.3.1",
     "@sindresorhus/slugify": "<2",
     "axios": "^0.26.0",
     "babel-loader": "^8.2.3",
@@ -31,7 +32,6 @@
     "flexsearch": "<0.7.0",
     "html-react-parser": "^1.4.8",
     "js-levenshtein": "^1.1.6",
-    "luxon": "^2.3.0",
     "next": "^12.1.0",
     "polished": "^4.1.4",
     "react": "^17.0.2",
@@ -86,5 +86,10 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "nextBundleAnalysis": {
+    "budget": 358400,
+    "budgetPercentIncreaseRed": 20,
+    "showDetails": true
   }
 }

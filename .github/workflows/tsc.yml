@@ -1,0 +1,22 @@
+name: TypeScript type check
+
+on: pull_request
+
+jobs:
+  tsc:
+    timeout-minutes: 3
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: yarn install
+      - name: (temporary) Remove scripts/ files except for types.ts
+        run: |
+          cp ./scripts/types.ts .
+          rm -rf ./scripts
+          mkdir scripts
+          mv ./types.ts scripts
+      - name: Typecheck
+        run: |
+          yarn tsc -v
+          yarn tsc -p ./tsconfig.json

@@ -2,7 +2,8 @@
 export const NEXT_PUBLIC_GOOGLE_ANALYTICS_ID =
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!;
-const isProductionEnvironment = process.env.NODE_ENV === "production";
+const isProductionEnvironment =
+  process.env.NODE_ENV === "production" && !process.env.CI;
 if (isProductionEnvironment && NEXT_PUBLIC_GOOGLE_ANALYTICS_ID == null) {
   throw new Error(
     "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID is not set in a production environment"

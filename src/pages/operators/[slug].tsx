@@ -376,6 +376,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
 
   const operatorName = operator.name;
   const [baseChar, alterName] = operatorName.split(" the ");
+  const shouldShowModules =
+    modules && modules.length > 0 && (module1Analysis || module2Analysis);
 
   return (
     <Layout
@@ -417,7 +419,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         <TabButtons className="tabs" isSwiper>
           {[
             ...["Introduction"],
-            ...(modules ? ["Modules"] : []),
+            ...(shouldShowModules ? ["Modules"] : []),
             ...["Talents", "Skills"],
             ...(synergies.length > 0 ? ["Synergy"] : []),
           ].map((label) => (
@@ -441,7 +443,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 className: "introduction",
               },
             ],
-            ...(modules
+            ...(shouldShowModules
               ? [
                   {
                     component: (

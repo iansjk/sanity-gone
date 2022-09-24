@@ -8,11 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
-      - name: Yarn & setup
+      - name: Install dependencies
         run: yarn install
       - name: (temporary) Remove scripts/ files except for types.ts
         run: |

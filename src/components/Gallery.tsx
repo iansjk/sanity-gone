@@ -10,7 +10,7 @@ export interface GalleryProps {
   contents: JSX.Element[];
 }
 
-const Gallery: React.FC<GalleryProps> = (props) => {
+const Gallery: React.FC<React.PropsWithChildren<GalleryProps>> = (props) => {
   const { contents } = props;
   const [open, setOpen] = useState(false);
   const [activeItemIndex, setActiveItemIndex] = useState(0);

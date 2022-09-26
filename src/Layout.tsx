@@ -36,7 +36,7 @@ interface LayoutProps {
   previousLocationLink?: string;
 }
 
-const Layout: React.FC<LayoutProps> = (props) => {
+const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = (props) => {
   const {
     pageTitle,
     description,

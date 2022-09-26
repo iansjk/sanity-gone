@@ -7,7 +7,9 @@ export interface MasteryRecommendationProps {
   children: React.ReactNode;
 }
 
-const MasteryRecommendation: React.FC<MasteryRecommendationProps> = (props) => {
+const MasteryRecommendation: React.FC<
+  React.PropsWithChildren<MasteryRecommendationProps>
+> = (props) => {
   const { level, priority, children } = props;
   return (
     <section css={styles}>

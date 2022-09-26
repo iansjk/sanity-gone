@@ -9,7 +9,9 @@ export type HorizontalScrollerProps = React.HTMLAttributes<HTMLDivElement> & {
   scrollContainerProps?: Omit<ScrollContainerProps, "ref" | "innerRef">;
 };
 
-const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
+const HorizontalScroller: React.FC<
+  React.PropsWithChildren<HorizontalScrollerProps>
+> = (props) => {
   const { children, scrollContainerProps, ...rest } = props;
   const { onScroll, ...remainingScrollContainerProps } =
     scrollContainerProps ?? {};

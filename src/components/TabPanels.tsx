@@ -7,7 +7,9 @@ export type TabPanelsProps = React.HTMLAttributes<HTMLDivElement> &
     userActed: boolean;
   }>;
 
-const TabPanels: React.FC<TabPanelsProps> = (props) => {
+const TabPanels: React.FC<React.PropsWithChildren<TabPanelsProps>> = (
+  props
+) => {
   const { children, activeTab, userActed, ...rest } = props;
   const panelsRef = useRef<HTMLDivElement>(null);
   const panelChildren = React.Children.toArray(children).filter((child) =>

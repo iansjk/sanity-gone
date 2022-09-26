@@ -14,7 +14,9 @@ export type TabButtonsProps = Omit<
     isSwiper: boolean;
   }>;
 
-const TabButtons: React.FC<TabButtonsProps> = (props) => {
+const TabButtons: React.FC<React.PropsWithChildren<TabButtonsProps>> = (
+  props
+) => {
   const { activeTab, onClick, isSwiper, children, ...rest } = props;
   const buttonChildren = React.Children.toArray(children).filter(
     (child) =>

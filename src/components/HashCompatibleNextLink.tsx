@@ -1,7 +1,9 @@
 import React from "react";
 import Link, { LinkProps as NextLinkProps } from "next/link";
 
-const HashCompatibleNextLink: React.FC<NextLinkProps> = (props) => {
+const HashCompatibleNextLink: React.FC<
+  React.PropsWithChildren<NextLinkProps>
+> = (props) => {
   const { href, children, ...rest } = props;
   const currentPathname =
     typeof window !== "undefined" ? window.location.pathname : "";

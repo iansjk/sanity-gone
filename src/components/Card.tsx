@@ -6,7 +6,7 @@ export type CardProps = React.HTMLAttributes<HTMLDivElement> & {
   header: string;
 };
 
-const Card: React.FC<CardProps> = (props) => {
+const Card: React.FC<React.PropsWithChildren<CardProps>> = (props) => {
   const { header, children, dangerouslySetInnerHTML, ...rest } = props;
   return (
     <section css={styles} {...rest}>

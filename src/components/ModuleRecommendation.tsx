@@ -7,7 +7,9 @@ export interface ModuleRecommendationProps {
   children: React.ReactNode;
 }
 
-const ModuleRecommendation: React.FC<ModuleRecommendationProps> = (props) => {
+const ModuleRecommendation: React.FC<
+  React.PropsWithChildren<ModuleRecommendationProps>
+> = (props) => {
   const { stage, priority, children } = props;
   return (
     <section css={styles}>

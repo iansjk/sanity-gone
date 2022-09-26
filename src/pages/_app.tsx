@@ -46,7 +46,7 @@ export default function MyApp(props: MyAppProps) {
   }, [router.events]);
 
   return (
-    <MediaContextProvider>
+    <MediaContextProvider disableDynamicMediaQueries>
       <CacheProvider value={emotionCache}>
         <MuiThemeProvider theme={theme}>
           <EmotionThemeProvider theme={theme}>

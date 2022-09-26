@@ -1,4 +1,4 @@
-const HealthIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const HealthIcon: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="14"

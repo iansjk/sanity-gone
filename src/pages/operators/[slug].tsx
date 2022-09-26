@@ -316,7 +316,7 @@ interface Props {
   };
 }
 
-const OperatorAnalysis: React.VFC<Props> = (props) => {
+const OperatorAnalysis: React.FC<Props> = (props) => {
   const {
     charId,
     ogDescription,

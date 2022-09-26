@@ -13,7 +13,7 @@ export interface MobileMenuProps {
   onClose: () => void;
 }
 
-const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
+const MobileMenu: React.FC<MobileMenuProps> = (props) => {
   const { open, onClose } = props;
   const menuContainerRef = useRef<HTMLDivElement>(null);
 

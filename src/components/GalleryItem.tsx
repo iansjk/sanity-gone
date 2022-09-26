@@ -6,7 +6,7 @@ interface Props {
   onClick: () => void;
 }
 
-const GalleryItem: React.VFC<Props> = (props) => {
+const GalleryItem: React.FC<Props> = (props) => {
   const { url, alt, onClick } = props;
 
   return (

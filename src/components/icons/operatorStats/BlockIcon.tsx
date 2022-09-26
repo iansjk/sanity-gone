@@ -1,4 +1,4 @@
-const BlockIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const BlockIcon: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="14"

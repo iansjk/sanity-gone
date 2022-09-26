@@ -19,7 +19,7 @@ interface Props {
   canNext: boolean;
 }
 
-const GalleryItemFullSizeModal: React.VFC<Props> = (props) => {
+const GalleryItemFullSizeModal: React.FC<Props> = (props) => {
   const {
     url,
     caption,

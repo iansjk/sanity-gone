@@ -25,7 +25,7 @@ export interface SynergyProps {
   shouldInvertIconOnHighlight?: boolean;
 }
 
-const Synergy: React.VFC<
+const Synergy: React.FC<
   SynergyProps & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
   const {

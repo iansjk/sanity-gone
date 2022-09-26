@@ -210,7 +210,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props };
 };
 
-const Operators: React.VFC<Props> = (props) => {
+const Operators: React.FC<Props> = (props) => {
   const { allOperators, classes, branches, operatorsWithGuides } = props;
 
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);

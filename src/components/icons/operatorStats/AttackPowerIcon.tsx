@@ -1,4 +1,4 @@
-const AttackPowerIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (
+const AttackPowerIcon: React.FC<React.HTMLAttributes<SVGElement>> = (
   props
 ) => {
   return (

@@ -1,4 +1,4 @@
-const SPCostIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const SPCostIcon: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="14"

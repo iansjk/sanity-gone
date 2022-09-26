@@ -1,4 +1,4 @@
-const StarIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const StarIcon: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="14"

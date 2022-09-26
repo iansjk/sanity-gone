@@ -1,4 +1,4 @@
-const DPCostIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const DPCostIcon: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="14"

@@ -39,7 +39,7 @@ const getAttackType = (
     : "Physical";
 };
 
-const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
+const OperatorInfo: React.FC<OperatorInfoProps> = (props) => {
   const { operatorObject, isLimited } = props;
   const {
     charId,

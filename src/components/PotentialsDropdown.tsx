@@ -62,7 +62,7 @@ export interface PotentialsDropdownProps {
   handlePotentialChange: (pot: number) => void;
   currentPotential: number;
 }
-const PotentialsDropdown: React.VFC<PotentialsDropdownProps> = (props) => {
+const PotentialsDropdown: React.FC<PotentialsDropdownProps> = (props) => {
   const {
     potentialsToShow,
     handlePotentialChange,

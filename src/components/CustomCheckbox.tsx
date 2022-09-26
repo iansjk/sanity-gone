@@ -6,7 +6,7 @@ export interface CustomCheckboxProps
   label: string;
 }
 
-const CustomCheckbox: React.VFC<CustomCheckboxProps> = (props) => {
+const CustomCheckbox: React.FC<CustomCheckboxProps> = (props) => {
   const { label, disabled, className, ...rest } = props;
   return (
     <label className={cx(disabled && "disabled", className)} css={styles}>

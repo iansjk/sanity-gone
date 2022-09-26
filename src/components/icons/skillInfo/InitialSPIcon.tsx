@@ -1,4 +1,4 @@
-const InitialSPIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const InitialSPIcon: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="14"

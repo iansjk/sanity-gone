@@ -1,4 +1,4 @@
-const CloseIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const CloseIcon: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="36"

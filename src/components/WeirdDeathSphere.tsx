@@ -1,4 +1,4 @@
-const WeirdDeathSphere: React.VFC<React.HTMLAttributes<SVGElement>> = (
+const WeirdDeathSphere: React.FC<React.HTMLAttributes<SVGElement>> = (
   props
 ) => {
   return (

@@ -1,4 +1,4 @@
-const NextArrow: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const NextArrow: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="72"

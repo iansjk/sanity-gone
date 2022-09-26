@@ -18,7 +18,7 @@ export interface OperatorPortraitProps {
   iconOverride?: string;
 }
 
-const OperatorPortrait: React.VFC<OperatorPortraitProps> = ({
+const OperatorPortrait: React.FC<OperatorPortraitProps> = ({
   variant = "normal",
   ...rest
 }) => {

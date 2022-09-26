@@ -1,4 +1,4 @@
-const PotentialOneIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (
+const PotentialOneIcon: React.FC<React.HTMLAttributes<SVGElement>> = (
   props
 ) => {
   return (

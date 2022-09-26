@@ -30,7 +30,7 @@ interface Props {
   onSubclassFilter: (profession: string, subProfessionId: string) => void;
 }
 
-const OperatorList: React.VFC<Props> = React.memo((props) => {
+const OperatorList: React.FC<Props> = React.memo((props) => {
   const { operators, operatorsToShow, operatorsWithGuides, onSubclassFilter } =
     props;
 

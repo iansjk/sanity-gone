@@ -1,4 +1,4 @@
-const EliteZeroIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const EliteZeroIcon: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="28"

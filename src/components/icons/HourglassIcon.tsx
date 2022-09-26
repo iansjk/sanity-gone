@@ -1,4 +1,4 @@
-const HourglassIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const HourglassIcon: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="14"

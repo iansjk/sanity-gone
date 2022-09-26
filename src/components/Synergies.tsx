@@ -11,7 +11,7 @@ export interface SynergiesProps {
   synergies: SynergyProps[];
 }
 
-const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
+const Synergies: React.FC<SynergiesProps> = ({ synergies }) => {
   // sort by descending synergy quality
   const sortedSynergies = synergies.sort(
     (a, b) => (b.quality ?? 0.5) - (a.quality ?? 0.5) // sort right above 0 ("decent") but below 1 ("good")

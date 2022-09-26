@@ -58,7 +58,7 @@ const prefenshteinCompare = (query: string, a: string, b: string) => {
   return levenshtein(lowercaseQuery, a) - levenshtein(lowercaseQuery, b);
 };
 
-const SearchBar: React.VFC<SearchBarProps> = (props) => {
+const SearchBar: React.FC<SearchBarProps> = (props) => {
   const { placeholder, onLinkClicked, whenInputChange } = props;
   const index = FlexSearch.create({
     tokenize: "full",

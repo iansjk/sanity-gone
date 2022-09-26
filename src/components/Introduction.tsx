@@ -15,7 +15,7 @@ export type IntroductionProps = OperatorInfoProps & {
   weaknesses: MDXRemoteSerializeResult;
 };
 
-const Introduction: React.VFC<IntroductionProps> = (props) => {
+const Introduction: React.FC<IntroductionProps> = (props) => {
   const {
     operatorObject,
     summonObject,

@@ -1,4 +1,4 @@
-const PotentialThreeIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (
+const PotentialThreeIcon: React.FC<React.HTMLAttributes<SVGElement>> = (
   props
 ) => {
   return (

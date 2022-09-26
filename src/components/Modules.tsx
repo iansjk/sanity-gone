@@ -14,7 +14,7 @@ export type ModuleProps = {
   moduleAnalyses: MDXRemoteSerializeResult[];
 };
 
-const Modules: React.VFC<ModuleProps> = (props) => {
+const Modules: React.FC<ModuleProps> = (props) => {
   const { operatorName, modules, moduleAnalyses } = props;
   const components = (index: number) => ({
     ModuleInfo: () => (

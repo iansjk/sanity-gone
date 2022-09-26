@@ -50,7 +50,7 @@ export interface CharacterRangeProps {
   rangeObject: RangeObject;
 }
 
-const CharacterRange: React.VFC<
+const CharacterRange: React.FC<
   CharacterRangeProps & React.HTMLAttributes<HTMLTableElement>
 > = (props) => {
   const { rangeObject, ...rest } = props;

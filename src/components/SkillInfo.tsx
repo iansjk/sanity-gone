@@ -67,7 +67,7 @@ export interface SkillInfoProps {
   isRecommended: boolean;
 }
 
-const SkillInfo: React.VFC<
+const SkillInfo: React.FC<
   SkillInfoProps & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
   const { skillObject, className, isRecommended, ...rest } = props;

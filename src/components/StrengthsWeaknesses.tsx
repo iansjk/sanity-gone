@@ -7,7 +7,7 @@ export interface StrengthsWeaknessesProps {
   weaknesses: MDXRemoteSerializeResult;
 }
 
-const StrengthsWeaknesses: React.VFC<StrengthsWeaknessesProps> = (props) => {
+const StrengthsWeaknesses: React.FC<StrengthsWeaknessesProps> = (props) => {
   const { strengths, weaknesses } = props;
   return (
     <div className="strengths-and-weaknesses" css={styles}>

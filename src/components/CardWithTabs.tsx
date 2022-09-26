@@ -29,7 +29,7 @@ export type CardWithTabsProps = {
   }
 >;
 
-const CardWithTabs: React.VFC<CardWithTabsProps> = (props) => {
+const CardWithTabs: React.FC<CardWithTabsProps> = (props) => {
   const {
     header,
     isSwiper,

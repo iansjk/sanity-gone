@@ -9,7 +9,7 @@ export interface SliderWithInputProps {
   sliderProps?: SliderUnstyledProps;
 }
 
-const SliderWithInput: React.VFC<SliderWithInputProps> = (props) => {
+const SliderWithInput: React.FC<SliderWithInputProps> = (props) => {
   const { label, inputProps, sliderProps, identifier, ...rest } = props;
 
   return (

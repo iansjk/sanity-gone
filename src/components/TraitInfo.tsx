@@ -10,7 +10,7 @@ interface TraitInfoProps {
   showSubclassIcon?: boolean;
 }
 
-const TraitInfo: React.VFC<TraitInfoProps> = ({
+const TraitInfo: React.FC<TraitInfoProps> = ({
   subProfessionId,
   showSubclassIcon,
 }) => {

@@ -1,4 +1,4 @@
-const ArtsResistanceIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (
+const ArtsResistanceIcon: React.FC<React.HTMLAttributes<SVGElement>> = (
   props
 ) => {
   return (

@@ -1,4 +1,4 @@
-const EliteTwoIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const EliteTwoIcon: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="28"

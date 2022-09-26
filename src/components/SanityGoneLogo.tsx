@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 import HashCompatibleNextLink from "./HashCompatibleNextLink";
 
-const SanityGoneLogo: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const SanityGoneLogo: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     // this links to Operators for now because the homepage doesn't exist yet
     <HashCompatibleNextLink href="/operators" passHref>

@@ -42,7 +42,7 @@ export type TalentInfoProps = React.HTMLAttributes<HTMLDivElement> & {
   talentObject: TalentObject;
 };
 
-export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
+export const TalentInfo: React.FC<TalentInfoProps> = (props) => {
   const { talentObject, className, ...rest } = props;
 
   const elitesList = [

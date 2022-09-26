@@ -1,4 +1,4 @@
-const RomanNumeralThree: React.VFC<React.HTMLAttributes<SVGElement>> = (
+const RomanNumeralThree: React.FC<React.HTMLAttributes<SVGElement>> = (
   props
 ) => {
   return (

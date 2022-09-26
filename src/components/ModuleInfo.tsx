@@ -21,7 +21,7 @@ export interface ModuleInfoProps {
   module: DenormalizedModule;
 }
 
-const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
+const ModuleInfo: React.FC<ModuleInfoProps> = (props) => {
   const { operatorName, module } = props;
   const { moduleId, moduleName, moduleIcon, phases } = module;
 

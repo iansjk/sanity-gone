@@ -1,4 +1,4 @@
-const MobileMenuIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+const MobileMenuIcon: React.FC<React.HTMLAttributes<SVGElement>> = (props) => {
   return (
     <svg
       width="17"

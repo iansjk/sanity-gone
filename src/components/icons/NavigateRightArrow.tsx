@@ -1,4 +1,4 @@
-const NavigateRightArrow: React.VFC<React.HTMLAttributes<SVGElement>> = (
+const NavigateRightArrow: React.FC<React.HTMLAttributes<SVGElement>> = (
   props
 ) => {
   return (

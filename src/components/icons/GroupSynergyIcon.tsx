@@ -1,4 +1,4 @@
-const GroupSynergyIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (
+const GroupSynergyIcon: React.FC<React.HTMLAttributes<SVGElement>> = (
   props
 ) => {
   return (

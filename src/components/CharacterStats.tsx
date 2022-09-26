@@ -77,7 +77,7 @@ export interface CharacterStatsProps {
   characterObject: CharacterObject;
 }
 
-const CharacterStats: React.VFC<CharacterStatsProps> = ({
+const CharacterStats: React.FC<CharacterStatsProps> = ({
   characterObject,
 }) => {
   const { charId: id, name, profession } = characterObject;

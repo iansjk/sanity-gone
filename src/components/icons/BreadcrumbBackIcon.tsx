@@ -1,4 +1,4 @@
-const BreadcrumbBackIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (
+const BreadcrumbBackIcon: React.FC<React.HTMLAttributes<SVGElement>> = (
   props
 ) => {
   return (

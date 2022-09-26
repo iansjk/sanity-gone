@@ -1,4 +1,4 @@
-const AttackSpeedIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (
+const AttackSpeedIcon: React.FC<React.HTMLAttributes<SVGElement>> = (
   props
 ) => {
   return (

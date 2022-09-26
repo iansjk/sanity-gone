@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { Theme } from "@mui/material";
 
 import Card from "./Card";
@@ -10,6 +10,7 @@ import RomanNumeralTwo from "./icons/RomanNumeralTwo";
 import RomanNumeralThree from "./icons/RomanNumeralThree";
 
 export type CardWithTabsProps = {
+  css?: SerializedStyles | ((theme: Theme) => SerializedStyles);
   header: string;
   isSwiper?: boolean;
 } & Either<

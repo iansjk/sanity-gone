@@ -83,7 +83,6 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
     } else {
       noResultsRef.current.style.removeProperty("display");
     }
-    console.log(numVisible);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filterSettings]);
 

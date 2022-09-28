@@ -306,24 +306,13 @@ const Operators: React.VFC<Props> = (props) => {
       ? subProfessionIdToSubclass(selectedSubProfessionId)
       : null;
 
-  const operatorsToShow = useMemo(
-    () =>
-      allOperators.filter((op) => {
-        return (
-          (!showOnlyGuideAvailable || operatorsWithGuides[op.name] != null) &&
-          (selectedProfession == null ||
-            op.profession === selectedProfession) &&
-          (selectedSubProfessionId == null ||
-            op.subProfessionId === selectedSubProfessionId)
-        );
-      }),
-    [
-      allOperators,
-      operatorsWithGuides,
+  const filterSettings = useMemo(
+    () => ({
+      showOnlyGuideAvailable,
       selectedProfession,
       selectedSubProfessionId,
-      showOnlyGuideAvailable,
-    ]
+    }),
+    [selectedProfession, selectedSubProfessionId, showOnlyGuideAvailable]
   );
 
   const sortAndFilterOptions = (
@@ -603,13 +592,10 @@ const Operators: React.VFC<Props> = (props) => {
             <h2>Operators</h2>
             <OperatorList
               operators={allOperators}
-              operatorsToShow={operatorsToShow}
+              filterSettings={filterSettings}
               operatorsWithGuides={operatorsWithGuides}
               onSubclassFilter={handleSubclassFilter}
             />
-            {operatorsToShow.length === 0 && (
-              <div className="no-results">No Results</div>
-            )}
           </section>
         </div>
       </main>

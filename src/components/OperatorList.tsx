@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { Box, css, Theme, Tooltip } from "@mui/material";
 import cx from "clsx";
 import { rgba } from "polished";
@@ -25,14 +25,200 @@ export interface OperatorListOperator {
 
 interface Props {
   operators: OperatorListOperator[];
-  operatorsToShow: OperatorListOperator[];
+  filterSettings: {
+    showOnlyGuideAvailable: boolean;
+    selectedProfession: string | null;
+    selectedSubProfessionId: string | null;
+  };
   operatorsWithGuides: { [operatorName: string]: string }; // operator name -> slug
   onSubclassFilter: (profession: string, subProfessionId: string) => void;
 }
 
 const OperatorList: React.VFC<Props> = React.memo((props) => {
-  const { operators, operatorsToShow, operatorsWithGuides, onSubclassFilter } =
+  const { operators, filterSettings, operatorsWithGuides, onSubclassFilter } =
     props;
+  const {
+    showOnlyGuideAvailable,
+    selectedProfession,
+    selectedSubProfessionId,
+  } = filterSettings;
+  const operatorListRef = useRef<HTMLUListElement>(null);
+  const noResultsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!noResultsRef.current || !operatorListRef.current) {
+      return;
+    }
+
+    let numVisible = 0;
+    operatorListRef.current
+      .querySelectorAll<HTMLLIElement>("li.operator-card")
+      .forEach((li) => {
+        let visible = true;
+        if (showOnlyGuideAvailable && li.dataset.hasguide === "false") {
+          visible = false;
+        }
+        if (
+          selectedProfession != null &&
+          li.dataset.profession !== selectedProfession
+        ) {
+          visible = false;
+        }
+        if (
+          selectedSubProfessionId != null &&
+          li.dataset.subprofessionid !== selectedSubProfessionId
+        ) {
+          visible = false;
+        }
+
+        if (visible) {
+          li.style.removeProperty("display");
+          numVisible++;
+        } else {
+          li.style.display = "none";
+        }
+      });
+    if (numVisible > 1) {
+      noResultsRef.current.style.display = "none";
+    } else {
+      noResultsRef.current.style.removeProperty("display");
+    }
+    console.log(numVisible);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filterSettings]);
+
+  const operatorListChildren = useMemo(() => {
+    return operators.map((op) => {
+      const operatorClass = professionToClass(op.profession);
+      const subclass = subProfessionIdToSubclass(op.subProfessionId);
+      const url = operatorsWithGuides[op.name];
+      const hasGuide = url != null;
+      const [charName, alterName] = op.name.split(" the ");
+      const portraitFilename = getPortraitFilename(op.charId);
+
+      const operatorInfo = (
+        <>
+          <h3 className="operator-name">
+            {alterName ? (
+              <>
+                <span className="base-name">{charName}</span>
+                <span className="visually-hidden">&nbsp;the&nbsp;</span>
+                <span className="alter-name">{alterName}</span>
+              </>
+            ) : (
+              op.name
+            )}
+          </h3>
+          <div className="rarity">
+            <span className="visually-hidden">Rarity:&nbsp;</span>
+            <span className="rarity-number">{op.rarity + 1}</span>{" "}
+            <StarIcon
+              aria-hidden="true"
+              className="rarity-star"
+              aria-label="stars"
+            />
+          </div>
+          <div className="operator-class">
+            <span className="visually-hidden">Class:&nbsp;</span>
+            {operatorClass}
+          </div>
+          <div className="visually-hidden">Subclass: {subclass}</div>
+        </>
+      );
+
+      return (
+        <li
+          key={op.name}
+          className={cx(
+            "operator-card",
+            hasGuide ? "has-guide" : "no-guide",
+            `rarity-${op.rarity + 1}-star${op.rarity > 0 ? "s" : ""}`
+          )}
+          data-hasguide={operatorsWithGuides[op.name] != null}
+          data-profession={op.profession}
+          data-subprofessionid={op.subProfessionId}
+        >
+          <Box
+            gridArea="x"
+            height="100%"
+            overflow="hidden"
+            sx={{
+              backgroundColor: (theme) => theme.palette.midtone.main,
+            }}
+          >
+            <Box
+              position="relative"
+              width="100%"
+              height={0}
+              top="-20px"
+              paddingBottom="200%"
+            >
+              <Image
+                src={`/images/portraits/${portraitFilename}`}
+                alt=""
+                layout="fill"
+                objectPosition="right bottom"
+              />
+            </Box>
+          </Box>
+          <div className="operator-card-content">
+            {hasGuide && (
+              <Link href={`/operators/${url}`}>
+                <a
+                  className="dummy-clickable-area"
+                  tabIndex={-1}
+                  aria-hidden="true"
+                />
+              </Link>
+            )}
+            {hasGuide ? (
+              <Link href={`/operators/${url}`}>
+                <a className="operator-info" role="presentation" tabIndex={-1}>
+                  {operatorInfo}
+                </a>
+              </Link>
+            ) : (
+              <div className="operator-info">{operatorInfo}</div>
+            )}
+            <Tooltip title={subclass}>
+              <button
+                aria-label={`Filter list by ${subclass}`}
+                className="operator-subclass"
+                onClick={() =>
+                  onSubclassFilter(op.profession, op.subProfessionId)
+                }
+              >
+                <Image
+                  width={32}
+                  height={32}
+                  className="operator-subclass-icon"
+                  src={operatorBranchIcon(op.subProfessionId)}
+                  alt={""}
+                />
+              </button>
+            </Tooltip>
+            {/* TODO "NEW" should go here */}
+            {hasGuide ? (
+              <Link href={`/operators/${url}`}>
+                <a className="go-to-guide-link">
+                  <span className="go-to-guide-text">
+                    Read{" "}
+                    <span className="visually-hidden">
+                      &nbsp;{op.name}&nbsp;
+                    </span>
+                    Guide
+                  </span>
+                </a>
+              </Link>
+            ) : (
+              <span className="visually-hidden">Guide Unavailable</span>
+            )}
+          </div>
+        </li>
+      );
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -60,145 +246,12 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
           </linearGradient>
         </defs>
       </svg>
-      <ul className="operator-list" css={styles}>
-        {operators.map((op) => {
-          const operatorClass = professionToClass(op.profession);
-          const subclass = subProfessionIdToSubclass(op.subProfessionId);
-          const url = operatorsWithGuides[op.name];
-          const hasGuide = url != null;
-          const [charName, alterName] = op.name.split(" the ");
-          const portraitFilename = getPortraitFilename(op.charId);
-
-          const operatorInfo = (
-            <>
-              <h3 className="operator-name">
-                {alterName ? (
-                  <>
-                    <span className="base-name">{charName}</span>
-                    <span className="visually-hidden">&nbsp;the&nbsp;</span>
-                    <span className="alter-name">{alterName}</span>
-                  </>
-                ) : (
-                  op.name
-                )}
-              </h3>
-              <div className="rarity">
-                <span className="visually-hidden">Rarity:&nbsp;</span>
-                <span className="rarity-number">{op.rarity + 1}</span>{" "}
-                <StarIcon
-                  aria-hidden="true"
-                  className="rarity-star"
-                  aria-label="stars"
-                />
-              </div>
-              <div className="operator-class">
-                <span className="visually-hidden">Class:&nbsp;</span>
-                {operatorClass}
-              </div>
-              <div className="visually-hidden">Subclass: {subclass}</div>
-            </>
-          );
-
-          return (
-            <li
-              key={op.name}
-              className={cx(
-                "operator-card",
-                hasGuide ? "has-guide" : "no-guide",
-                `rarity-${op.rarity + 1}-star${op.rarity > 0 ? "s" : ""}`
-              )}
-              style={
-                !operatorsToShow.find(
-                  (opToShow) => opToShow.charId === op.charId
-                )
-                  ? { display: "none" }
-                  : {}
-              }
-            >
-              <Box
-                gridArea="x"
-                height="100%"
-                overflow="hidden"
-                sx={{
-                  backgroundColor: (theme) => theme.palette.midtone.main,
-                }}
-              >
-                <Box
-                  position="relative"
-                  width="100%"
-                  height={0}
-                  top="-20px"
-                  paddingBottom="200%"
-                >
-                  <Image
-                    src={`/images/portraits/${portraitFilename}`}
-                    alt=""
-                    layout="fill"
-                    objectPosition="right bottom"
-                  />
-                </Box>
-              </Box>
-              <div className="operator-card-content">
-                {hasGuide && (
-                  <Link href={`/operators/${url}`}>
-                    <a
-                      className="dummy-clickable-area"
-                      tabIndex={-1}
-                      aria-hidden="true"
-                    />
-                  </Link>
-                )}
-                {hasGuide ? (
-                  <Link href={`/operators/${url}`}>
-                    <a
-                      className="operator-info"
-                      role="presentation"
-                      tabIndex={-1}
-                    >
-                      {operatorInfo}
-                    </a>
-                  </Link>
-                ) : (
-                  <div className="operator-info">{operatorInfo}</div>
-                )}
-                <Tooltip title={subclass}>
-                  <button
-                    aria-label={`Filter list by ${subclass}`}
-                    className="operator-subclass"
-                    onClick={() =>
-                      onSubclassFilter(op.profession, op.subProfessionId)
-                    }
-                  >
-                    <Image
-                      width={32}
-                      height={32}
-                      className="operator-subclass-icon"
-                      src={operatorBranchIcon(op.subProfessionId)}
-                      alt={""}
-                    />
-                  </button>
-                </Tooltip>
-                {/* TODO "NEW" should go here */}
-                {hasGuide ? (
-                  <Link href={`/operators/${url}`}>
-                    <a className="go-to-guide-link">
-                      <span className="go-to-guide-text">
-                        Read{" "}
-                        <span className="visually-hidden">
-                          &nbsp;{op.name}&nbsp;
-                        </span>
-                        Guide
-                      </span>
-                    </a>
-                  </Link>
-                ) : (
-                  <span className="visually-hidden">Guide Unavailable</span>
-                )}
-              </div>
-            </li>
-          );
-        })}
+      <ul className="operator-list" css={styles} ref={operatorListRef}>
+        {operatorListChildren}
       </ul>
+      <div className="no-results" ref={noResultsRef}>
+        No Results
+      </div>
     </>
   );
 });

@@ -78,7 +78,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
           li.style.display = "none";
         }
       });
-    if (numVisible > 1) {
+    if (numVisible > 0) {
       noResultsRef.current.style.display = "none";
     } else {
       noResultsRef.current.style.removeProperty("display");

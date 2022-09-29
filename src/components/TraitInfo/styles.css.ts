@@ -13,11 +13,6 @@ export const traitContainer = style({
   },
 });
 
-globalStyle(`${traitContainer}.subclass-hidden .trait-info`, {
-  borderRadius: spacing(0.5),
-  margin: 0,
-});
-
 export const subclassIcon = style({
   backgroundColor: vars.colors.neutrals.midtoneDarker,
   borderRadius: spacing(0.5, 0, 0, 0.5),
@@ -44,6 +39,14 @@ export const traitInfo = style({
   display: "flex",
   flexDirection: "column",
 });
+
+export const subclassHiddenTraitInfo = style([
+  traitInfo,
+  {
+    borderRadius: spacing(0.5),
+    margin: 0,
+  },
+]);
 
 export const traitLabel = style({
   color: vars.colors.neutrals.gray,

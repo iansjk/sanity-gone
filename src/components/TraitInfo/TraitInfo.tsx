@@ -16,10 +16,7 @@ const TraitInfo: React.VFC<TraitInfoProps> = ({
     .trait as unknown as string;
 
   return (
-    <div
-      className={classes.traitContainer}
-      // showSubclassIcon ? "trait-container" : "trait-container subclass-hidden"
-    >
+    <div className={classes.traitContainer}>
       {showSubclassIcon && (
         <div className={classes.subclassIcon}>
           <Image
@@ -31,7 +28,11 @@ const TraitInfo: React.VFC<TraitInfoProps> = ({
         </div>
       )}
 
-      <div className={classes.traitInfo}>
+      <div
+        className={
+          showSubclassIcon ? classes.traitInfo : classes.subclassHiddenTraitInfo
+        }
+      >
         <span className={classes.traitLabel}>
           Trait<span className="visually-hidden">:</span>
         </span>

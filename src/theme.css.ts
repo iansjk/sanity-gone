@@ -1,30 +1,32 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
 
-export const vars = createGlobalTheme(":root", {
-  colors: {
-    neutrals: {
-      white: "#e8e8f2",
-      gray: "#87879b",
-      black: "#101014",
-      blackest: "#050507",
-      darktone: "#14141b",
-      midtoneDarker: "#191920",
-      midtone: "#24242e",
-      midtoneBrighter: "#363643",
-      midtoneBrighterer: "#484858",
-      midtoneExtra: "#1f1f27",
-    },
-    accents: {
-      red: "#fb4040",
-      orange: "#f98d3f",
-      yellow: "#ffcf53",
-      lime: "#a7e855",
-      blue: "#49b3ff",
-      softBlue: "#7f7dea",
-      purple: "7F7DEA",
-      magenta: "#e85593",
-    },
+export const rawColors = {
+  neutrals: {
+    white: "#e8e8f2",
+    gray: "#87879b",
+    black: "#101014",
+    blackest: "#050507",
+    darktone: "#14141b",
+    midtoneDarker: "#191920",
+    midtone: "#24242e",
+    midtoneBrighter: "#363643",
+    midtoneBrighterer: "#484858",
+    midtoneExtra: "#1f1f27",
   },
+  accents: {
+    red: "#fb4040",
+    orange: "#f98d3f",
+    yellow: "#ffcf53",
+    lime: "#a7e855",
+    blue: "#49b3ff",
+    softBlue: "#7f7dea",
+    purple: "7F7DEA",
+    magenta: "#e85593",
+  },
+};
+
+export const vars = createGlobalTheme(":root", {
+  colors: rawColors,
   typography: {
     fontFamily: "Source Sans Pro, sans-serif",
     pageHeading: {

@@ -18,4 +18,9 @@ const nextConfig = {
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
-module.exports = withBundleAnalyzer(nextConfig);
+
+const { createVanillaExtractPlugin } = require("@vanilla-extract/next-plugin");
+const withVanillaExtract = createVanillaExtractPlugin({
+  identifiers: process.env.NODE_ENV === "production" ? "short" : "debug",
+});
+module.exports = withVanillaExtract(withBundleAnalyzer(nextConfig));

@@ -11,6 +11,7 @@ import StarIcon from "../icons/StarIcon";
 import Image from "next/image";
 import Link from "next/link";
 import { operatorBranchIcon } from "../../utils/images";
+import * as classes from "./styles.css";
 
 const getPortraitFilename = (operatorId: string) =>
   operatorId === "char_1001_amiya2"
@@ -251,7 +252,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
       <ul className="operator-list" css={styles} ref={operatorListRef}>
         {operatorListChildren}
       </ul>
-      <div className="no-results" ref={noResultsRef}>
+      <div className={classes.noResults} ref={noResultsRef}>
         No Results
       </div>
     </>

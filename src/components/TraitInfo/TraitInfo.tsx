@@ -1,9 +1,7 @@
-import React from "react";
-import branches from "../../data/branches.json";
-import { Theme } from "@mui/material";
-import { css } from "@emotion/react";
-import { operatorBranchIcon } from "../utils/images";
+import branches from "../../../data/branches.json";
+import { operatorBranchIcon } from "../../utils/images";
 import Image from "next/image";
+import * as classes from "./styles.css";
 
 interface TraitInfoProps {
   subProfessionId: string;
@@ -19,13 +17,11 @@ const TraitInfo: React.VFC<TraitInfoProps> = ({
 
   return (
     <div
-      className={
-        showSubclassIcon ? "trait-container" : "trait-container subclass-hidden"
-      }
-      css={styles}
+      className={classes.traitContainer}
+      // showSubclassIcon ? "trait-container" : "trait-container subclass-hidden"
     >
       {showSubclassIcon && (
-        <div className="subclass-icon">
+        <div className={classes.subclassIcon}>
           <Image
             src={operatorBranchIcon(subProfessionId)}
             alt=""
@@ -35,12 +31,12 @@ const TraitInfo: React.VFC<TraitInfoProps> = ({
         </div>
       )}
 
-      <div className="trait-info">
-        <span className="trait-label">
+      <div className={classes.traitInfo}>
+        <span className={classes.traitLabel}>
           Trait<span className="visually-hidden">:</span>
         </span>
         <span
-          className="trait-description"
+          className={classes.traitDescription}
           dangerouslySetInnerHTML={{ __html: description }}
         />
       </div>
@@ -48,71 +44,3 @@ const TraitInfo: React.VFC<TraitInfoProps> = ({
   );
 };
 export default TraitInfo;
-
-const styles = (theme: Theme) => css`
-  &.trait-container {
-    margin-top: ${theme.spacing(3)};
-    display: flex;
-    flex-direction: row;
-
-    ${theme.breakpoints.down("mobile")} {
-      margin-top: ${theme.spacing(1)};
-    }
-
-    .subclass-icon {
-      background-color: ${theme.palette.midtoneDarker.main};
-      border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
-      width: 80px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-
-      img {
-        display: block;
-        height: 48px;
-        width: 48px;
-        margin: auto;
-      }
-    }
-
-    .trait-info {
-      background-color: ${theme.palette.midtoneDarker.main};
-      border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
-      flex: 1 1 0;
-      margin-left: ${theme.spacing(0.25)};
-      padding: ${theme.spacing(2)};
-      display: flex;
-      flex-direction: column;
-
-      .trait-label {
-        color: ${theme.palette.gray.main};
-        font-size: ${theme.typography.body3.fontSize}px;
-        line-height: ${theme.typography.body3.lineHeight};
-        margin-bottom: ${theme.spacing(0.75)};
-      }
-
-      .trait-description {
-        color: ${theme.palette.white.main};
-        font-size: ${theme.typography.body1.fontSize}px;
-        line-height: ${theme.typography.body1.lineHeight};
-
-        ${theme.breakpoints.down("mobile")} {
-          font-size: ${theme.typography.body2.fontSize}px;
-          line-height: ${theme.typography.body2.lineHeight};
-        }
-
-        .keyword {
-          color: ${theme.palette.blue.main};
-        }
-      }
-    }
-  }
-
-  &.subclass-hidden {
-    .trait-info {
-      border-radius: ${theme.spacing(0.5)};
-      margin: 0;
-    }
-  }
-`;

@@ -40,6 +40,7 @@ import operatorListBannerImage from "../../images/page-banners/operators.jpg";
 import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import * as classes from "./styles.css";
 
 import fs from "fs";
 
@@ -218,7 +219,12 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Operators: React.VFC<Props> = (props) => {
-  const { allOperators, classes, branches, operatorsWithGuides } = props;
+  const {
+    allOperators,
+    classes: opClasses,
+    branches,
+    operatorsWithGuides,
+  } = props;
 
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
   const [showClassDescriptions, setShowClassDescriptions] = useState(true);
@@ -324,7 +330,7 @@ const Operators: React.VFC<Props> = (props) => {
 
   const sortAndFilterOptions = (
     <>
-      <span className="filter-visual-label" aria-hidden="true">
+      <span className={classes.filterVisualLabel} aria-hidden="true">
         <FilterIcon />
         Filters
       </span>
@@ -336,9 +342,7 @@ const Operators: React.VFC<Props> = (props) => {
         aria-haspopup="true"
         aria-expanded={isClassMenuOpen ? "true" : undefined}
         onClick={handleClassMenuClick}
-        className={
-          selectedProfession != null ? "has-selection" : "no-selection"
-        }
+        className={classes.sortAndFilterButton}
       >
         {selectedProfession ? (
           <>
@@ -370,7 +374,7 @@ const Operators: React.VFC<Props> = (props) => {
         >
           <ListItemText>All Classes</ListItemText>
         </ClassSubclassMenuItem>
-        {Object.values(classes).map(({ className, profession }) => (
+        {Object.values(opClasses).map(({ className, profession }) => (
           <ClassSubclassMenuItem
             key={className}
             onClick={handleClassClick(profession)}
@@ -397,7 +401,7 @@ const Operators: React.VFC<Props> = (props) => {
         aria-haspopup="true"
         aria-expanded={isSubclassMenuOpen ? "true" : undefined}
         onClick={handleSubclassMenuClick}
-        className={selectedSubProfessionId ? "has-selection" : "no-selection"}
+        className={classes.sortAndFilterButton}
       >
         {selectedSubProfessionId ? (
           <>
@@ -458,12 +462,15 @@ const Operators: React.VFC<Props> = (props) => {
           ))}
       </Menu>
       {(selectedProfession != null || selectedSubProfessionId != null) && (
-        <button className="reset-filters-button" onClick={handleResetFilter}>
+        <button
+          className={classes.resetFiltersButton}
+          onClick={handleResetFilter}
+        >
           Reset
         </button>
       )}
       <CustomCheckbox
-        className="guide-available-checkbox"
+        className={classes.guideAvailableCheckbox}
         label="Guide available"
         onChange={handleGuideAvailableChange}
         checked={showOnlyGuideAvailable}
@@ -482,8 +489,8 @@ const Operators: React.VFC<Props> = (props) => {
        */
     >
       <GlobalStyles styles={globalOverrideStyles(theme)} />
-      <main css={styles}>
-        <div className="main-container">
+      <main className={classes.main}>
+        <div className={classes.mainContainer}>
           {/* <span className="last-updated">
           Last Updated:{" "}
           <span className="date">
@@ -493,20 +500,20 @@ const Operators: React.VFC<Props> = (props) => {
           </span>
         </span> */}
           <Media lessThan="mobile">
-            <HorizontalScroller className="sort-and-filter-options">
+            <HorizontalScroller className={classes.sortAndFilterOptions}>
               {sortAndFilterOptions}
             </HorizontalScroller>
           </Media>
           <Media greaterThanOrEqual="mobile">
-            <div className="sort-and-filter-options">
+            <div className={classes.sortAndFilterOptions}>
               {sortAndFilterOptions}
             </div>
           </Media>
 
           {selectedProfession != null && (
-            <div className="toggle-button-container">
+            <div className={classes.toggleButtonContainer}>
               <button
-                className="toggle-class-descriptions-button"
+                className={classes.toggleClassDescriptionsButton}
                 aria-expanded={showClassDescriptions ? "true" : undefined}
                 aria-controls="class-subclass-card-container"
                 onClick={() => setShowClassDescriptions((curr) => !curr)}
@@ -516,12 +523,12 @@ const Operators: React.VFC<Props> = (props) => {
               </button>
             </div>
           )}
-          <div className="class-subclass-descriptions">
+          <div className={classes.classSubclassDescriptions}>
             {showClassDescriptions && (
               <div id="class-subclass-card-container">
                 {selectedProfession && selectedClass && (
-                  <section className="class-card">
-                    <div className="icon-container">
+                  <section className={classes.classDescriptionCard}>
+                    <div className={classes.classDescriptionIconContainer}>
                       <Image
                         key={selectedClass}
                         src={operatorClassIcon(slugify(selectedClass))}
@@ -530,25 +537,25 @@ const Operators: React.VFC<Props> = (props) => {
                         height={64}
                       />
                     </div>
-                    <div className="name-container">
+                    <div className={classes.nameContainer}>
                       <h2>
                         <span className="visually-hidden">
                           Selected class:{" "}
                         </span>
                         {selectedClass}
                       </h2>
-                      <span className="heading-type" aria-hidden="true">
+                      <span className={classes.headingType} aria-hidden="true">
                         Class
                       </span>
                     </div>
-                    <div className="class-description">
-                      <MDXRemote {...classes[selectedProfession].analysis} />
+                    <div className={classes.classOrSubclassDescription}>
+                      <MDXRemote {...opClasses[selectedProfession].analysis} />
                     </div>
                   </section>
                 )}
                 {selectedSubProfessionId && (
-                  <section className="subclass-card">
-                    <div className="icon-container">
+                  <section className={classes.subclassDescriptionCard}>
+                    <div className={classes.subclassDescriptionIconContainer}>
                       <Image
                         key={selectedSubProfessionId}
                         src={operatorBranchIcon(selectedSubProfessionId)}
@@ -557,24 +564,26 @@ const Operators: React.VFC<Props> = (props) => {
                         height={64}
                       />
                     </div>
-                    <div className="name-container">
+                    <div className={classes.nameContainer}>
                       <h3>
                         <span className="visually-hidden">
                           Selected branch:{" "}
                         </span>
                         {selectedSubclass}
                       </h3>
-                      <span className="heading-type" aria-hidden="true">
+                      <span className={classes.headingType} aria-hidden="true">
                         Branch
                       </span>
                     </div>
                     {selectedSubProfessionId && (
-                      <TraitInfo
-                        subProfessionId={selectedSubProfessionId}
-                        showSubclassIcon={false}
-                      />
+                      <div className={classes.traitInfoContainer}>
+                        <TraitInfo
+                          subProfessionId={selectedSubProfessionId}
+                          showSubclassIcon={false}
+                        />
+                      </div>
                     )}
-                    <div className="subclass-description">
+                    <div className={classes.classOrSubclassDescription}>
                       {branches[selectedSubProfessionId].analysis != null && (
                         <MDXRemote
                           {...branches[selectedSubProfessionId].analysis!}
@@ -594,9 +603,9 @@ const Operators: React.VFC<Props> = (props) => {
             )}
           </div>
         </div>
-        <div className="results-container">
-          <section className="results">
-            <h2>Operators</h2>
+        <div className={classes.resultsContainer}>
+          <section className={classes.results}>
+            <h2 className={classes.resultsHeading}>Operators</h2>
             <OperatorList
               operators={allOperators}
               filterSettings={filterSettings}

@@ -12,9 +12,13 @@ const StrengthsWeaknesses: React.VFC<StrengthsWeaknessesProps> = (props) => {
   return (
     <div className="strengths-and-weaknesses" css={styles}>
       <h3 className="strengths">Strengths</h3>
-      <MDXRemote {...strengths} />
+      <div className="strengths-list">
+        <MDXRemote {...strengths} />
+      </div>
       <h3 className="weaknesses">Weaknesses</h3>
-      <MDXRemote {...weaknesses} />
+      <div className="weaknesses-list">
+        <MDXRemote {...weaknesses} />
+      </div>
     </div>
   );
 };
@@ -33,11 +37,11 @@ const styles = (theme: Theme) => css`
 
   & > * {
     margin: 0;
-    padding: ${theme.spacing(2, 3)};
     background-color: ${theme.palette.midtoneDarker.main};
   }
 
   h3 {
+    padding: ${theme.spacing(2, 3)};
     font-size: ${theme.typography.generalHeading.fontSize}px;
     font-weight: 400;
     line-height: ${theme.typography.generalHeading.lineHeight};
@@ -61,9 +65,9 @@ const styles = (theme: Theme) => css`
     }
   }
 
-  ul {
+  .strengths-list,
+  .weaknesses-list {
     grid-row: 2;
-    list-style-type: none;
 
     &.strengths-list {
       border-bottom-left-radius: ${theme.spacing(0.5)};
@@ -80,6 +84,12 @@ const styles = (theme: Theme) => css`
         grid-row: 4;
         border-bottom-left-radius: ${theme.spacing(0.5)};
       }
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: ${theme.spacing(2, 3)};
     }
 
     li::before {

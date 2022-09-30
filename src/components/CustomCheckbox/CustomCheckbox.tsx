@@ -7,7 +7,7 @@ export interface CustomCheckboxProps
 }
 
 const CustomCheckbox: React.VFC<CustomCheckboxProps> = (props) => {
-  const { label, disabled, className } = props;
+  const { label, disabled, className, ...rest } = props;
   return (
     <label
       className={cx(
@@ -19,7 +19,7 @@ const CustomCheckbox: React.VFC<CustomCheckboxProps> = (props) => {
         <input
           type="checkbox"
           className={classes.checkboxInput}
-          disabled={disabled}
+          {...{ disabled, ...rest }}
         />
         <span className={classes.checkboxControl} aria-hidden="true" />
       </div>

@@ -13,6 +13,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
 };
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({

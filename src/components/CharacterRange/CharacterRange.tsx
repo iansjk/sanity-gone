@@ -58,7 +58,7 @@ const CharacterRange: React.VFC<
   const { rows, cols, grid } = normalizeRange(rangeObject);
 
   return (
-    <table className={classes.RangeTable} {...rest}>
+    <table className={classes.rangeTable} {...rest}>
       <thead>
         <tr>
           <th></th>
@@ -78,7 +78,7 @@ const CharacterRange: React.VFC<
             {[...Array(cols).keys()].map((colIndex) => (
               <td
                 key={colIndex}
-                className={`${classes.RangeRow} ${grid[rowIndex][colIndex]}`}
+                className={`${classes.rangeRow} ${grid[rowIndex][colIndex]}`}
               >
                 <span className="visually-hidden">{`${grid[rowIndex][colIndex]} cell`}</span>
               </td>

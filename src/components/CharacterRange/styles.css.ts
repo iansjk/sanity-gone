@@ -2,11 +2,11 @@ import { globalStyle, style } from "@vanilla-extract/css";
 import { spacing, breakpoints } from "../../theme-helpers";
 import { vars } from "../../theme.css";
 
-export const RangeTable = style({
+export const rangeTable = style({
   flexShrink: 0,
 });
 
-export const RangeRow = style({
+export const rangeRow = style({
   width: spacing(2),
   height: spacing(2),
   boxSizing: "border-box",
@@ -19,10 +19,10 @@ export const RangeRow = style({
   },
 });
 
-globalStyle(`${RangeRow}.active`, {
+globalStyle(`${rangeRow}.active`, {
   border: `2px solid ${vars.colors.neutrals.gray}`,
 });
 
-globalStyle(`${RangeRow}.operator`, {
+globalStyle(`${rangeRow}.operator`, {
   backgroundColor: vars.colors.neutrals.white,
 });

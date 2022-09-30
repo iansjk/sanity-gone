@@ -23,6 +23,9 @@ export const parameters = {
     },
   },
   layout: "fullscreen",
+  chromatic: {
+    viewports: [360, 1280],
+  },
 };
 
 export const decorators = [

@@ -12,6 +12,8 @@ const breakpointValues = {
 
 export const breakpoints = {
   ...breakpointValues,
-  down: (bp: keyof typeof breakpointValues) => `(max-width: ${bp})`,
-  up: (bp: keyof typeof breakpointValues) => `(min-width: ${bp})`,
+  down: (bp: keyof typeof breakpointValues) =>
+    `(max-width: ${breakpointValues[bp]})`,
+  up: (bp: keyof typeof breakpointValues) =>
+    `(min-width: ${breakpointValues[bp]})`,
 };

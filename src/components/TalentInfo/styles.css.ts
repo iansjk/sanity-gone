@@ -99,19 +99,6 @@ export const eliteButton = style({
   },
 });
 
-export const eliteButtonPath = styleVariants({
-  inactive: { fill: vars.colors.neutrals.midtoneBrighterer },
-  active: { fill: vars.colors.neutrals.white },
-});
-
-export const eliteZeroButtonPath = styleVariants({
-  inactive: {
-    fill: "transparent",
-    stroke: vars.colors.neutrals.midtoneBrighterer,
-  },
-  active: { fill: "transparent", stroke: vars.colors.neutrals.white },
-});
-
 export const range = style({
   gridColumn: 2,
   gridRow: "2 / span 2",

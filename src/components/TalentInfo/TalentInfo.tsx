@@ -119,33 +119,9 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
                 }}
                 aria-label={`Elite ${elite}`}
               >
-                {elite === 0 && (
-                  <EliteZeroIcon
-                    className={
-                      isActive
-                        ? classes.eliteZeroButtonPath.active
-                        : classes.eliteZeroButtonPath.inactive
-                    }
-                  />
-                )}
-                {elite === 1 && (
-                  <EliteOneIcon
-                    className={
-                      isActive
-                        ? classes.eliteButtonPath.active
-                        : classes.eliteButtonPath.inactive
-                    }
-                  />
-                )}
-                {elite === 2 && (
-                  <EliteTwoIcon
-                    className={
-                      isActive
-                        ? classes.eliteButtonPath.active
-                        : classes.eliteButtonPath.inactive
-                    }
-                  />
-                )}
+                {elite === 0 && <EliteZeroIcon active={isActive} />}
+                {elite === 1 && <EliteOneIcon active={isActive} />}
+                {elite === 2 && <EliteTwoIcon active={isActive} />}
               </RibbonButton>
             );
           })}

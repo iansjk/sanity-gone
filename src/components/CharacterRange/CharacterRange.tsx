@@ -1,6 +1,7 @@
 import React from "react";
-import { css } from "@emotion/react";
-import { Theme } from "@mui/material";
+// import { css } from "@emotion/react";
+// import { Theme } from "@mui/material";
+import * as classes from "./styles.css";
 
 import { RangeObject } from "../../utils/types";
 
@@ -57,7 +58,7 @@ const CharacterRange: React.VFC<
   const { rows, cols, grid } = normalizeRange(rangeObject);
 
   return (
-    <table css={styles} {...rest}>
+    <table className={classes.RangeTable} {...rest}>
       <thead>
         <tr>
           <th></th>
@@ -75,7 +76,10 @@ const CharacterRange: React.VFC<
               rowIndex + 1
             }`}</th>
             {[...Array(cols).keys()].map((colIndex) => (
-              <td key={colIndex} className={grid[rowIndex][colIndex]}>
+              <td
+                key={colIndex}
+                className={`${classes.RangeRow} ${grid[rowIndex][colIndex]}`}
+              >
                 <span className="visually-hidden">{`${grid[rowIndex][colIndex]} cell`}</span>
               </td>
             ))}
@@ -86,26 +90,3 @@ const CharacterRange: React.VFC<
   );
 };
 export default CharacterRange;
-
-const styles = (theme: Theme) => css`
-  flex-shrink: 0;
-
-  td {
-    width: ${theme.spacing(2)};
-    height: ${theme.spacing(2)};
-    box-sizing: border-box;
-
-    ${theme.breakpoints.down("mobile")} {
-      width: ${theme.spacing(1.5)};
-      height: ${theme.spacing(1.5)};
-    }
-  }
-
-  td.active {
-    border: 2px solid ${theme.palette.gray.main};
-  }
-
-  td.operator {
-    background-color: ${theme.palette.white.main};
-  }
-`;

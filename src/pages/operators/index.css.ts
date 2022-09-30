@@ -82,15 +82,6 @@ globalStyle(`${filterVisualLabel} svg`, {
   marginRight: spacing(1),
 });
 
-export const scrollerContents = style({
-  padding: spacing(0, 2),
-  flexGrow: 1,
-});
-
-globalStyle(`${scrollerContents} > * ~ *`, {
-  marginLeft: spacing(2),
-});
-
 export const sortAndFilterButton = style({
   display: "grid",
   gridAutoFlow: "column",

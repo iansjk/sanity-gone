@@ -40,7 +40,7 @@ import operatorListBannerImage from "../../images/page-banners/operators.jpg";
 import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import * as classes from "./styles.css";
+import * as classes from "./index.css";
 
 import fs from "fs";
 

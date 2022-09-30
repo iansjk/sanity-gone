@@ -3,6 +3,7 @@ import { Box, Theme, useTheme, css, GlobalStyles } from "@mui/material";
 import { tint, rgba, transparentize } from "polished";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import removeMarkdown from "remove-markdown";
 
 import Introduction from "../../components/Introduction";
 import CharacterStats from "../../components/CharacterStats";
@@ -181,7 +182,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     ogDescription:
       operatorAnalysis.customByline ??
       `${
-        operatorAnalysis.introduction
+        removeMarkdown(operatorAnalysis.introduction)
           .replace(/<\/?[A-za-z-]*>/g, "")
           .split(/(\.)\s*/)[0]
       }.`,

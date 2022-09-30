@@ -1,3 +1,4 @@
+import cx from "clsx";
 import * as classes from "./styles.css";
 
 export interface CustomCheckboxProps
@@ -9,9 +10,10 @@ const CustomCheckbox: React.VFC<CustomCheckboxProps> = (props) => {
   const { label, disabled, className } = props;
   return (
     <label
-      className={`${className ?? ""} ${
+      className={cx(
+        className,
         disabled ? classes.label.disabled : classes.label.enabled
-      }`}
+      )}
     >
       <div className={classes.checkboxContainer}>
         <input

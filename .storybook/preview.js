@@ -7,6 +7,11 @@ import { MediaContextProvider, mediaStyle } from "../src/Media";
 import theme from "../src/theme";
 import Layout from "../src/Layout";
 
+const breakpoints = {
+  mobile: 360,
+  desktop: 1280,
+};
+
 // deoptimize next/image in Storybook: https://storybook.js.org/blog/get-started-with-storybook-and-next-js/
 const OriginalNextImage = NextImage.default;
 Object.defineProperty(NextImage, "default", {
@@ -24,7 +29,7 @@ export const parameters = {
   },
   layout: "fullscreen",
   chromatic: {
-    viewports: [360, 1280],
+    viewports: Object.values(breakpoints),
   },
 };
 
@@ -55,5 +60,9 @@ const styles = (theme) => css`
   .header-main-wrapper {
     margin: unset !important;
     padding: ${theme.spacing(3)} !important;
+
+    ${theme.breakpoints.down("mobile")} {
+      padding: 0 !important;
+    }
   }
 `;

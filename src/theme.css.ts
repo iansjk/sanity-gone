@@ -1,4 +1,5 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
+import { spacing } from "./theme-helpers";
 
 export const rawColors = {
   neutrals: {
@@ -119,5 +120,11 @@ export const vars = createGlobalTheme(":root", {
       lineHeight: "1.25",
       textTransform: "uppercase",
     },
+  },
+  shadows: {
+    titleShadow: `${spacing(0.25)} ${spacing(1)} rgba(0, 0, 0, 0.6)`,
+    baseShadow: `${spacing(0.25)} ${spacing(0.25)} ${spacing(
+      1
+    )} rgba(0, 0, 0, 0.15)`,
   },
 });

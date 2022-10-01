@@ -56,7 +56,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
 
     let numVisible = 0;
     operatorListRef.current
-      .querySelectorAll<HTMLLIElement>("li.operator-card")
+      .querySelectorAll<HTMLLIElement>("." + classes.operatorCardBase)
       .forEach((li) => {
         let visible = true;
         if (showOnlyGuideAvailable && li.dataset.hasguide === "false") {
@@ -98,30 +98,33 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
       const hasGuide = url != null;
       const [charName, alterName] = op.name.split(" the ");
       const portraitFilename = getPortraitFilename(op.charId);
+      const rarityClass = `rarity${op.rarity + 1}Star${
+        op.rarity > 0 ? "s" : ""
+      }` as keyof typeof classes.rarities;
 
       const operatorInfo = (
         <>
-          <h3 className="operator-name">
+          <h3 className={classes.operatorName}>
             {alterName ? (
               <>
                 <span className="base-name">{charName}</span>
                 <span className="visually-hidden">&nbsp;the&nbsp;</span>
-                <span className="alter-name">{alterName}</span>
+                <span className={classes.alterName}>{alterName}</span>
               </>
             ) : (
               op.name
             )}
           </h3>
-          <div className="rarity">
+          <div className={classes.rarity}>
             <span className="visually-hidden">Rarity:&nbsp;</span>
-            <span className="rarity-number">{op.rarity + 1}</span>{" "}
+            <span className={classes.rarityNumber}>{op.rarity + 1}</span>{" "}
             <StarIcon
               aria-hidden="true"
-              className="rarity-star"
+              className={classes.rairtyStar}
               aria-label="stars"
             />
           </div>
-          <div className="operator-class">
+          <div className={classes.operatorClass}>
             <span className="visually-hidden">Class:&nbsp;</span>
             {operatorClass}
           </div>
@@ -133,9 +136,10 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
         <li
           key={op.name}
           className={cx(
-            "operator-card",
-            hasGuide ? "has-guide" : "no-guide",
-            `rarity-${op.rarity + 1}-star${op.rarity > 0 ? "s" : ""}`
+            hasGuide
+              ? classes.operatorCard["hasGuide"]
+              : classes.operatorCard["noGuide"],
+            classes.rarities[rarityClass]
           )}
           data-hasguide={operatorsWithGuides[op.name] != null}
           data-profession={op.profession}
@@ -164,7 +168,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
               />
             </Box>
           </Box>
-          <div className="operator-card-content">
+          <div className={classes.operatorCardContent}>
             {hasGuide && (
               <Link href={`/operators/${url}`}>
                 <a
@@ -176,17 +180,21 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
             )}
             {hasGuide ? (
               <Link href={`/operators/${url}`}>
-                <a className="operator-info" role="presentation" tabIndex={-1}>
+                <a
+                  className={classes.operatorInfo}
+                  role="presentation"
+                  tabIndex={-1}
+                >
                   {operatorInfo}
                 </a>
               </Link>
             ) : (
-              <div className="operator-info">{operatorInfo}</div>
+              <div className={classes.operatorInfo}>{operatorInfo}</div>
             )}
             <Tooltip title={subclass}>
               <button
                 aria-label={`Filter list by ${subclass}`}
-                className="operator-subclass"
+                className={classes.operatorSubclass}
                 onClick={() =>
                   onSubclassFilter(op.profession, op.subProfessionId)
                 }
@@ -194,7 +202,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                 <Image
                   width={32}
                   height={32}
-                  className="operator-subclass-icon"
+                  className={classes.operatorSubclassIcon}
                   src={operatorBranchIcon(op.subProfessionId)}
                   alt={""}
                 />
@@ -203,8 +211,8 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
             {/* TODO "NEW" should go here */}
             {hasGuide ? (
               <Link href={`/operators/${url}`}>
-                <a className="go-to-guide-link">
-                  <span className="go-to-guide-text">
+                <a className={classes.goToGuideLink}>
+                  <span className={classes.goToGuideLinkText}>
                     Read{" "}
                     <span className="visually-hidden">
                       &nbsp;{op.name}&nbsp;
@@ -249,7 +257,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
           </linearGradient>
         </defs>
       </svg>
-      <ul className="operator-list" css={styles} ref={operatorListRef}>
+      <ul className={classes.operatorList} ref={operatorListRef}>
         {operatorListChildren}
       </ul>
       <div className={classes.noResults} ref={noResultsRef}>

@@ -9,16 +9,54 @@ export default {
 } as Meta;
 
 const Template: ComponentStory<typeof OperatorList> = (args) => (
-  <OperatorList {...args} />
+  <OperatorList
+    {...args}
+    operators={allOperators}
+    operatorsWithGuides={operatorsWithGuides}
+  />
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  operators: allOperators,
-  operatorsWithGuides,
   filterSettings: {
     selectedProfession: null,
     selectedSubProfessionId: null,
+    showOnlyGuideAvailable: false,
+  },
+};
+
+export const WithGuidesOnly = Template.bind({});
+WithGuidesOnly.args = {
+  filterSettings: {
+    selectedProfession: null,
+    selectedSubProfessionId: null,
+    showOnlyGuideAvailable: true,
+  },
+};
+
+export const GuardsOnly = Template.bind({});
+GuardsOnly.args = {
+  filterSettings: {
+    selectedProfession: "WARRIOR",
+    selectedSubProfessionId: null,
+    showOnlyGuideAvailable: false,
+  },
+};
+
+export const WandermedicOnly = Template.bind({});
+WandermedicOnly.args = {
+  filterSettings: {
+    selectedProfession: null,
+    selectedSubProfessionId: "wandermedic",
+    showOnlyGuideAvailable: false,
+  },
+};
+
+export const NoResults = Template.bind({});
+NoResults.args = {
+  filterSettings: {
+    selectedProfession: "SPECIAL",
+    selectedSubProfessionId: "geek",
     showOnlyGuideAvailable: true,
   },
 };

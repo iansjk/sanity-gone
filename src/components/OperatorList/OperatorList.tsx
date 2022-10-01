@@ -3,11 +3,14 @@ import { Box, css, Theme, Tooltip } from "@mui/material";
 import cx from "clsx";
 import { rgba } from "polished";
 
-import { professionToClass, subProfessionIdToSubclass } from "../utils/globals";
-import StarIcon from "./icons/StarIcon";
+import {
+  professionToClass,
+  subProfessionIdToSubclass,
+} from "../../utils/globals";
+import StarIcon from "../icons/StarIcon";
 import Image from "next/image";
 import Link from "next/link";
-import { operatorBranchIcon } from "../utils/images";
+import { operatorBranchIcon } from "../../utils/images";
 
 const getPortraitFilename = (operatorId: string) =>
   operatorId === "char_1001_amiya2"

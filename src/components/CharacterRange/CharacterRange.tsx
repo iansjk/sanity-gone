@@ -1,6 +1,4 @@
 import React from "react";
-// import { css } from "@emotion/react";
-// import { Theme } from "@mui/material";
 import * as classes from "./styles.css";
 
 import { RangeObject } from "../../utils/types";

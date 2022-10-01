@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = (props) => {
         <h2 className={classes.heading}>{header}</h2>
       </div>
       <div
-        className={classes.cardContent}
+        className={cx(classes.cardContent, "card-content")}
         dangerouslySetInnerHTML={dangerouslySetInnerHTML}
       >
         {children}

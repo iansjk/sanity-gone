@@ -171,7 +171,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
             {hasGuide && (
               <Link href={`/operators/${url}`}>
                 <a
-                  className="dummy-clickable-area"
+                  className={classes.dummyClickableArea}
                   tabIndex={-1}
                   aria-hidden="true"
                 />

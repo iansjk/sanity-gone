@@ -181,7 +181,7 @@ export const nameContainer = style({
   },
 });
 
-globalStyle(`${nameContainer} h2, h3`, {
+export const classOrSubclassHeading = style({
   margin: spacing(0, 1.5, 0, 0),
   fontSize: vars.typography.generalHeading.fontSize,
   lineHeight: vars.typography.generalHeading.lineHeight,

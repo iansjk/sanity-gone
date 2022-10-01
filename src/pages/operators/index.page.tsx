@@ -538,7 +538,7 @@ const Operators: React.VFC<Props> = (props) => {
                       />
                     </div>
                     <div className={classes.nameContainer}>
-                      <h2>
+                      <h2 className={classes.classOrSubclassHeading}>
                         <span className="visually-hidden">
                           Selected class:{" "}
                         </span>
@@ -565,7 +565,7 @@ const Operators: React.VFC<Props> = (props) => {
                       />
                     </div>
                     <div className={classes.nameContainer}>
-                      <h3>
+                      <h3 className={classes.classOrSubclassHeading}>
                         <span className="visually-hidden">
                           Selected branch:{" "}
                         </span>

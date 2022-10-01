@@ -1,14 +1,12 @@
-import { css } from "@emotion/react";
-import { Theme } from "@mui/material";
-import type { NextPage } from "next";
-
 import Layout from "../Layout";
 import disclaimerPageBanner from "../images/page-banners/disclaimer.jpg";
+import * as classes from "./disclaimer.css";
+import type { NextPage } from "next";
 
 const Disclaimer: NextPage = () => {
   return (
     <Layout pageTitle="Disclaimer" bannerImage={disclaimerPageBanner}>
-      <main css={styles}>
+      <main className={classes.root}>
         <p>
           <b>Sanity;Gone</b> is an unofficial fan project and is not affiliated
           with or endorsed by Hypergryph/Studio Montagne/Yostar,
@@ -39,11 +37,3 @@ const Disclaimer: NextPage = () => {
   );
 };
 export default Disclaimer;
-
-const styles = (theme: Theme) => css`
-  padding: ${theme.spacing(1, 3, 0, 3)};
-
-  ${theme.breakpoints.down("mobile")} {
-    padding: ${theme.spacing(1, 2, 0, 2)};
-  }
-`;

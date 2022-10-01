@@ -106,7 +106,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
           <h3 className={classes.operatorName}>
             {alterName ? (
               <>
-                <span className="base-name">{charName}</span>
+                {charName}
                 <span className="visually-hidden">&nbsp;the&nbsp;</span>
                 <span className={classes.alterName}>{alterName}</span>
               </>

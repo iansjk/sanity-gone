@@ -17,7 +17,7 @@ export const container = style({
   },
 });
 
-globalStyle(`${container} > *`, {
+const item = style({
   margin: 0,
   backgroundColor: vars.colors.neutrals.midtoneDarker,
 });
@@ -31,6 +31,7 @@ export const titleBase = style({
 
 export const title = styleVariants({
   strengths: [
+    item,
     titleBase,
     {
       color: vars.colors.accents.lime,
@@ -43,6 +44,7 @@ export const title = styleVariants({
     },
   ],
   weaknesses: [
+    item,
     titleBase,
     {
       color: vars.colors.accents.red,
@@ -62,6 +64,7 @@ export const listBase = style({
 
 export const list = styleVariants({
   strengths: [
+    item,
     listBase,
     {
       borderBottomLeftRadius: spacing(0.5),
@@ -73,6 +76,7 @@ export const list = styleVariants({
     },
   ],
   weaknesses: [
+    item,
     listBase,
     {
       borderBottomRightRadius: spacing(0.5),

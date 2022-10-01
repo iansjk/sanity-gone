@@ -174,7 +174,7 @@ export const rarityNumber = style({
   },
 });
 
-export const rairtyStar = style({
+export const rarityStar = style({
   width: "13px",
   height: "13px",
 });
@@ -278,26 +278,26 @@ export const noResults = style({
   color: vars.colors.neutrals.midtoneBrighterer,
 });
 
-globalStyle(`${rarities["rarity1Star"]} ${rairtyStar} path`, {
+globalStyle(`${rarities["rarity1Star"]} ${rarityStar} path`, {
   fill: vars.colors.neutrals.white,
 });
 
-globalStyle(`${rarities["rarity2Stars"]} ${rairtyStar} path`, {
+globalStyle(`${rarities["rarity2Stars"]} ${rarityStar} path`, {
   fill: "url(#rarity-2-gradient)",
 });
 
-globalStyle(`${rarities["rarity3Stars"]} ${rairtyStar} path`, {
+globalStyle(`${rarities["rarity3Stars"]} ${rarityStar} path`, {
   fill: "url(#rarity-3-gradient)",
 });
 
-globalStyle(`${rarities["rarity4Stars"]} ${rairtyStar} path`, {
+globalStyle(`${rarities["rarity4Stars"]} ${rarityStar} path`, {
   fill: "url(#rarity-4-gradient)",
 });
 
-globalStyle(`${rarities["rarity5Stars"]} ${rairtyStar} path`, {
+globalStyle(`${rarities["rarity5Stars"]} ${rarityStar} path`, {
   fill: "url(#rarity-5-gradient)",
 });
 
-globalStyle(`${rarities["rarity6Stars"]} ${rairtyStar} path`, {
+globalStyle(`${rarities["rarity6Stars"]} ${rarityStar} path`, {
   fill: "url(#rarity-6-gradient)",
 });

@@ -119,7 +119,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
             <span className={classes.rarityNumber}>{op.rarity + 1}</span>{" "}
             <StarIcon
               aria-hidden="true"
-              className={classes.rairtyStar}
+              className={classes.rarityStar}
               aria-label="stars"
             />
           </div>

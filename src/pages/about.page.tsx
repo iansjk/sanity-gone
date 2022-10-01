@@ -63,7 +63,7 @@ const About: NextPage = () => {
   return (
     <Layout pageTitle="About" bannerImage={aboutPageBanner}>
       <main className={classes.root}>
-        <h2>Sanity;Gone Team</h2>
+        <h2 className={classes.pageHeading}>Sanity;Gone Team</h2>
         <ul className={classes.teamMembers}>
           {members.map(({ name, role, imageFilename }) => {
             return (

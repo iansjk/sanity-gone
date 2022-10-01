@@ -35,7 +35,7 @@ const Introduction: React.VFC<IntroductionProps> = (props) => {
   };
 
   return (
-    <Card header="Introduction" css={styles}>
+    <Card header="Introduction">
       <OperatorInfo operatorObject={operatorObject} isLimited={isLimited} />
       <div className="introduction-content">
         <MDXRemote {...analysis} components={components} />
@@ -45,13 +45,3 @@ const Introduction: React.VFC<IntroductionProps> = (props) => {
   );
 };
 export default Introduction;
-
-const styles = (theme: Theme) => css`
-  .strengths-and-weaknesses {
-    margin: ${theme.spacing(3, 0, 0)};
-
-    ${theme.breakpoints.down("mobile")} {
-      margin: ${theme.spacing(2, 0, 0)};
-    }
-  }
-`;

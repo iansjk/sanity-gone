@@ -41,6 +41,8 @@ import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
+import fs from "fs";
+
 const MENU_ICON_SIZE = 18;
 
 const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
@@ -96,6 +98,7 @@ export const getStaticProps: GetStaticProps = async () => {
       rarity,
     };
   });
+
   const query = `
     query {
       operatorClassCollection {
@@ -191,7 +194,16 @@ export const getStaticProps: GetStaticProps = async () => {
       analysis: await serialize(item.analysis),
     }))
   );
-
+  const operatorsWithGuides = Object.fromEntries(
+    operatorAnalysisCollection.items.map((item) => [
+      item.operator.name,
+      item.operator.slug,
+    ])
+  );
+  fs.writeFileSync(
+    "operators-with-guides.json",
+    JSON.stringify(operatorsWithGuides)
+  );
   const props: Props = {
     allOperators,
     classes: Object.fromEntries(
@@ -200,12 +212,7 @@ export const getStaticProps: GetStaticProps = async () => {
     branches: Object.fromEntries(
       branchesWithAnalyses.map((branch) => [branch.subProfessionId, branch])
     ),
-    operatorsWithGuides: Object.fromEntries(
-      operatorAnalysisCollection.items.map((item) => [
-        item.operator.name,
-        item.operator.slug,
-      ])
-    ),
+    operatorsWithGuides,
   };
   return { props };
 };

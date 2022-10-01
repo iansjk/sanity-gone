@@ -60,7 +60,11 @@ export const sortAndFilterOptions = style({
 });
 
 export const guideAvailableCheckbox = style({
-  gridColumn: -1,
+  "@media": {
+    [breakpoints.up("mobile")]: {
+      gridColumn: -1,
+    },
+  },
 });
 
 globalStyle(`${sortAndFilterOptions} > * ~ *`, {

@@ -10,7 +10,7 @@ const MasteryRecommendation: React.FC<MasteryRecommendationProps> = (props) => {
   const { level, priority, children } = props;
   return (
     <section>
-      <h3>Skill Mastery</h3>
+      <h3 className={classes.title}>Skill Mastery</h3>
       <dl className={classes.masteryRecommendation}>
         <div className={classes.recommendedRank}>
           <dt className={classes.descriptionTitle}>Recommended Rank</dt>

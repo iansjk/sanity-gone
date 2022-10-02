@@ -1,7 +1,8 @@
+import React from "react";
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 import { SliderUnstyled, SliderUnstyledProps } from "@mui/base";
-import React from "react";
+import * as classes from "./styles.css";
 
 type SliderWithInputProps = React.HTMLAttributes<HTMLInputElement> &
   React.InputHTMLAttributes<HTMLInputElement> & {
@@ -16,7 +17,13 @@ const SliderWithInput: React.VFC<SliderWithInputProps> = (props) => {
   return (
     <div className="slider-container" css={styles} {...rest}>
       <label htmlFor={`slider-input-${id}`}>{label}</label>
-      <input id={`slider-input-${id}`} className="slider-input" {...rest} />
+      <div className={classes.sliderInputContainer}>
+        <input
+          id={`slider-input-${id}`}
+          className={classes.sliderInput}
+          {...rest}
+        />
+      </div>
       <div className="slider-border">
         <SliderUnstyled
           aria-label={`${id} slider`}
@@ -37,23 +44,6 @@ const styles = (theme: Theme) => css`
   label {
     margin-top: auto;
     margin-bottom: auto;
-  }
-
-  .slider-input {
-    input {
-      text-align: center;
-      min-width: ${theme.spacing(3)};
-      font-size: ${theme.typography.navigationLink.fontSize}px;
-      line-height: ${theme.typography.navigationLink.lineHeight};
-    }
-
-    background: ${theme.palette.midtoneDarker.main};
-    width: ${theme.spacing(5)};
-    height: ${theme.spacing(4)};
-    margin: ${theme.spacing(2, 1)};
-    color: ${theme.palette.white.main};
-    border-radius: ${theme.spacing(0.5)};
-    padding: ${theme.spacing(0.5, 1)};
   }
 
   .slider-border {

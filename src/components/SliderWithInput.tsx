@@ -1,28 +1,25 @@
 import { css } from "@emotion/react";
-import { Input, InputProps, Theme } from "@mui/material";
+import { Theme } from "@mui/material";
 import { SliderUnstyled, SliderUnstyledProps } from "@mui/base";
+import React from "react";
 
-export interface SliderWithInputProps {
-  label: string;
-  identifier: string; // ensure there is a unique identifier
-  inputProps?: InputProps;
-  sliderProps?: SliderUnstyledProps;
-}
+type SliderWithInputProps = React.HTMLAttributes<HTMLInputElement> &
+  React.InputHTMLAttributes<HTMLInputElement> & {
+    id: string;
+    label: string;
+    sliderProps?: SliderUnstyledProps;
+  };
 
 const SliderWithInput: React.VFC<SliderWithInputProps> = (props) => {
-  const { label, inputProps, sliderProps, identifier, ...rest } = props;
+  const { label, sliderProps, id, ...rest } = props;
 
   return (
     <div className="slider-container" css={styles} {...rest}>
-      <label htmlFor={`slider-input-${identifier}`}>{label}</label>
-      <Input
-        id={`slider-input-${identifier}`}
-        className="slider-input"
-        {...inputProps}
-      />
+      <label htmlFor={`slider-input-${id}`}>{label}</label>
+      <input id={`slider-input-${id}`} className="slider-input" {...rest} />
       <div className="slider-border">
         <SliderUnstyled
-          aria-label={`${identifier} slider`}
+          aria-label={`${id} slider`}
           className="slider"
           {...sliderProps}
         />

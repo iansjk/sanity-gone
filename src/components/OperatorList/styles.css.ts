@@ -254,7 +254,7 @@ export const goToGuideLink = style({
       background: "linear-gradient(to right, #7cd8ff, #49b3ff)",
     },
     [`${rarities["rarity4Stars"]} &`]: {
-      background: "linear-gradient(to right, #7cd8ff, #49b3ff)",
+      background: "linear-gradient(to right, #d1d0ee, #9d9bf4)",
     },
     [`${rarities["rarity5Stars"]} &`]: {
       background: "linear-gradient(to right, #ffe9b0, #e5c675)",

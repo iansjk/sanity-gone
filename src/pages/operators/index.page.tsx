@@ -201,10 +201,6 @@ export const getStaticProps: GetStaticProps = async () => {
       item.operator.slug,
     ])
   );
-  fs.writeFileSync(
-    "operators-with-guides.json",
-    JSON.stringify(operatorsWithGuides)
-  );
   const props: Props = {
     allOperators,
     classes: Object.fromEntries(

@@ -1,5 +1,7 @@
 import React from "react";
 import { SliderUnstyled, SliderUnstyledProps } from "@mui/base";
+import cx from "clsx";
+
 import * as classes from "./styles.css";
 
 type SliderWithInputProps = React.HTMLAttributes<HTMLInputElement> &
@@ -10,10 +12,10 @@ type SliderWithInputProps = React.HTMLAttributes<HTMLInputElement> &
   };
 
 const SliderWithInput: React.VFC<SliderWithInputProps> = (props) => {
-  const { label, sliderProps, id, ...rest } = props;
+  const { label, sliderProps, id, className, ...rest } = props;
 
   return (
-    <div className={classes.root}>
+    <div className={cx(className, classes.root)}>
       <label htmlFor={`slider-input-${id}`} className={classes.label}>
         {label}
       </label>

@@ -82,22 +82,6 @@ export const eliteButtonGroup = style({
   },
 });
 
-export const eliteButton = style({
-  height: spacing(8),
-
-  "@media": {
-    [breakpoints.down("mobile")]: {
-      padding: spacing(0, 1.5),
-      borderRadius: 0,
-      selectors: {
-        "&:first-of-type": {
-          borderTopLeftRadius: spacing(0.5),
-        },
-      },
-    },
-  },
-});
-
 export const range = style({
   gridColumn: 2,
   gridRow: "2 / span 2",

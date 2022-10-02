@@ -8,6 +8,16 @@ export const root = style({
   display: "flex",
   flexDirection: "row",
   height: spacing(8),
+  paddingRight: spacing(2),
+  "@media": {
+    [breakpoints.down("mobile")]: {
+      position: "relative",
+      background: vars.colors.neutrals.midtone,
+      paddingLeft: spacing(2),
+      paddingRight: 0,
+      borderRadius: spacing(0.5, 0.5, 0, 0),
+    },
+  },
 });
 
 export const label = style({

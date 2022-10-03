@@ -96,6 +96,17 @@ globalStyle(`${searchBarContainer} .search-bar:focus-within`, {
 globalStyle(`${searchBarContainer} .search-bar .search-input`, {
   fontSize: vars.typography.skillTalentHeading.fontSize,
 });
+globalStyle(`${searchBarContainer} .search .search-results`, {
+  paddingTop: spacing(2),
+  borderRadius: 0,
+});
+globalStyle(`${searchBarContainer} .search-results`, {
+  width: "100%",
+  maxWidth: "unset",
+  marginRight: spacing(2),
+  border: "none",
+});
+
 //     .search {
 //       max-width: unset;
 

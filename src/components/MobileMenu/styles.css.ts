@@ -1,4 +1,4 @@
-import { style, styleVariants } from "@vanilla-extract/css";
+import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
 import { breakpoints, spacing } from "../../theme-helpers";
 import { vars } from "../../theme.css";
 
@@ -77,6 +77,56 @@ export const listLink = style({
 });
 
 // TODO: Remove once all the styles from the searchbar have been ported
+globalStyle(`${searchBarContainer} .search`, { maxWidth: "unset" });
+globalStyle(`${searchBarContainer} .search-bar`, {
+  border: "none !important",
+  background: vars.colors.neutrals.midtoneDarker,
+  maxWidth: "unset",
+  width: "auto",
+  height: spacing(5),
+  padding: spacing(0),
+  margin: spacing(0, 2),
+});
+globalStyle(`${searchBarContainer} .search-bar.menu-down`, {
+  borderRadius: spacing(0.5),
+});
+globalStyle(`${searchBarContainer} .search-bar:focus-within`, {
+  background: vars.colors.neutrals.darktone,
+});
+globalStyle(`${searchBarContainer} .search-bar .search-input`, {
+  fontSize: vars.typography.skillTalentHeading.fontSize,
+});
+//     .search {
+//       max-width: unset;
+
+//       .search-bar {
+//         border: none !important;
+//         background: ${theme.palette.midtoneDarker.main};
+//         max-width: unset;
+//         width: auto;
+//         height: ${theme.spacing(5)};
+//         padding: ${theme.spacing(0)};
+//         margin: ${theme.spacing(0, 2)};
+
+//         &.menu-down {
+//           border-radius: ${theme.spacing(0.5)};
+//         }
+
+//         &:focus-within {
+//           background: ${theme.palette.dark.main};
+//         }
+
+//         .search-input {
+//           font-size: ${theme.typography.skillTalentHeading.fontSize}px;
+//         }
+//       }
+
+//       .search-results {
+//         padding-top: ${theme.spacing(2)};
+//         border-radius: 0;
+//       }
+//     }
+
 //   .list-header,
 //   ul > li > a {
 //     margin: 0;

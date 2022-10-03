@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-import { Theme } from "@mui/material";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { CharacterObject } from "../../utils/types";
 

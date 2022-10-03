@@ -1,4 +1,3 @@
-import { styleVariants } from "@vanilla-extract/css";
 import { globalStyle, style } from "@vanilla-extract/css";
 import { breakpoints, spacing } from "../../theme-helpers";
 import { vars } from "../../theme.css";

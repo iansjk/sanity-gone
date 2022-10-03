@@ -1,5 +1,5 @@
 import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
-import { breakpoints, spacing } from "../../theme-helpers";
+import { spacing } from "../../theme-helpers";
 import { vars } from "../../theme.css";
 
 export const mobileMenuBase = style({

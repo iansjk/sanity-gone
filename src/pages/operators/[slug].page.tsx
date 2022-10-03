@@ -192,14 +192,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       introduction: await serialize(operatorAnalysis.introduction),
       strengths: await serialize(operatorAnalysis.strengths),
       weaknesses: await serialize(operatorAnalysis.weaknesses),
+      // module analyses should have more than just <ModuleInfo /> to be displayed
       module1Analysis:
         operatorAnalysis.module1Analysis &&
-        operatorAnalysis.module1Analysis.trim().length > 0
+        operatorAnalysis.module1Analysis.replace("<ModuleInfo />", "").trim()
+          .length > 0
           ? await serialize(operatorAnalysis.module1Analysis)
           : null,
       module2Analysis:
         operatorAnalysis.module2Analysis &&
-        operatorAnalysis.module2Analysis.trim().length > 0
+        operatorAnalysis.module2Analysis.replace("<ModuleInfo />", "").trim()
+          .length > 0
           ? await serialize(operatorAnalysis.module2Analysis)
           : null,
       talent1Analysis:

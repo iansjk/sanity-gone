@@ -12,7 +12,6 @@ import {
   useTheme,
 } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
-import { tint, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
 
 import Layout from "../../Layout";
@@ -41,8 +40,6 @@ import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import * as classes from "./index.css";
-
-import fs from "fs";
 
 const MENU_ICON_SIZE = 18;
 

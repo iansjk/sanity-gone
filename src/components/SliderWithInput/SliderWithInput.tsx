@@ -19,13 +19,11 @@ const SliderWithInput: React.VFC<SliderWithInputProps> = (props) => {
       <label htmlFor={`slider-input-${id}`} className={classes.label}>
         {label}
       </label>
-      <div className={classes.sliderInputContainer}>
-        <input
-          id={`slider-input-${id}`}
-          className={classes.sliderInput}
-          {...rest}
-        />
-      </div>
+      <input
+        id={`slider-input-${id}`}
+        className={classes.sliderInput}
+        {...rest}
+      />
       <div className={classes.sliderBorder}>
         <SliderUnstyled
           aria-label={`${id} slider`}

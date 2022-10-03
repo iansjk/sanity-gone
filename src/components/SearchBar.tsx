@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { InputBase, Theme } from "@mui/material";
+import { Theme } from "@mui/material";
 import FlexSearch from "flexsearch";
 import {
   operatorAvatar,
@@ -100,7 +100,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
     >
       <div className={`search-bar ${query && isFocused ? " menu-down" : ""}`}>
         <SearchIcon className="search-icon" />
-        <InputBase
+        <input
           className="search-input"
           placeholder={placeholder}
           onChange={(e) => {
@@ -280,10 +280,16 @@ const styles = (theme: Theme) => css`
     }
 
     .search-input {
+      background: none;
+      border: none;
       flex: 1 1 0;
       color: ${theme.palette.white.main};
       margin: ${theme.spacing(1, 0)};
       font-size: ${theme.typography.body2.fontSize}px;
+
+      &:focus {
+        outline: none;
+      }
 
       & > input::placeholder {
         opacity: 0.66;

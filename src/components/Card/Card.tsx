@@ -10,7 +10,7 @@ const Card: React.FC<CardProps> = (props) => {
     props;
   return (
     <section className={cx(classes.root, className)} {...rest}>
-      <div className={classes.headingBlock}>
+      <div className={cx(classes.headingBlock, "heading-block")}>
         <h2 className={classes.heading}>{header}</h2>
       </div>
       <div

@@ -15,6 +15,7 @@ import RibbonButton from "../RibbonButton";
 import RibbonButtonGroup from "../RibbonButtonGroup";
 import CharacterRange from "../CharacterRange";
 import PotentialsDropdown from "../PotentialsDropdown";
+import * as classes from "./styles.css";
 
 export interface ModuleInfoProps {
   operatorName: string;
@@ -84,7 +85,8 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
       <div className="module-controls">
         <RibbonButtonGroup className="stage-buttons">
           <RibbonButton
-            className={stage === 1 ? "active" : "inactive"}
+            className={classes.stageButton}
+            active={stage === 1}
             onClick={() => {
               setStage(1);
             }}
@@ -94,7 +96,8 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
           </RibbonButton>
           {maxStage >= 2 && (
             <RibbonButton
-              className={stage === 2 ? "active" : "inactive"}
+              className={classes.stageButton}
+              active={stage === 2}
               onClick={() => {
                 setStage(2);
               }}
@@ -105,7 +108,8 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
           )}
           {maxStage >= 3 && (
             <RibbonButton
-              className={stage === 3 ? "active" : "inactive"}
+              className={classes.stageButton}
+              active={stage === 3}
               onClick={() => {
                 setStage(3);
               }}
@@ -259,33 +263,9 @@ const styles = (theme: Theme) => css`
     .stage-buttons {
       margin-right: ${theme.spacing(3)};
 
-      button {
-        width: ${theme.spacing(7.5)};
-        height: ${theme.spacing(8)};
-        font-size: ${theme.typography.generalHeadingBold.fontSize}px;
-        font-weight: ${theme.typography.generalHeadingBold.fontWeight};
-        line-height: ${theme.typography.generalHeadingBold.lineHeight};
-        color: ${theme.palette.midtoneBrighterer.main};
-
-        border-radius: ${theme.spacing(0)};
-        &.active {
-          // this is to counterbalance the text shifting when a border is shown
-          padding-top: 3px;
-          color: ${theme.palette.white.main};
-        }
-
-        &:first-of-type {
-          border-top-left-radius: ${theme.spacing(0.5)};
-        }
-      }
-
       ${theme.breakpoints.down("mobile")} {
         margin-right: 0;
         flex-grow: 1;
-
-        button {
-          width: 53px;
-        }
       }
     }
   }

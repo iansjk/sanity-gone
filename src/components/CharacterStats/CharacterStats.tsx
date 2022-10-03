@@ -152,37 +152,34 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           <div className="trust-and-elite-buttons">
             <RibbonButtonGroup className="elite-buttons">
               <RibbonButton
-                className={
-                  "elite-zero-button " +
-                  (eliteLevel === 0 ? "active" : "inactive")
-                }
+                active={eliteLevel === 0}
                 onClick={() => {
                   setEliteLevel(0);
                 }}
                 aria-label="Elite 0"
               >
-                <EliteZeroIcon className="elite-zero" />
+                <EliteZeroIcon active={eliteLevel === 0} />
               </RibbonButton>
               {maxElite >= 1 && (
                 <RibbonButton
-                  className={eliteLevel === 1 ? "active" : "inactive"}
+                  active={eliteLevel === 1}
                   onClick={() => {
                     setEliteLevel(1);
                   }}
                   aria-label="Elite 1"
                 >
-                  <EliteOneIcon />
+                  <EliteOneIcon active={eliteLevel === 1} />
                 </RibbonButton>
               )}
               {maxElite >= 2 && (
                 <RibbonButton
-                  className={eliteLevel === 2 ? "active" : "inactive"}
+                  active={eliteLevel === 2}
                   onClick={() => {
                     setEliteLevel(2);
                   }}
                   aria-label="Elite 2"
                 >
-                  <EliteTwoIcon />
+                  <EliteTwoIcon active={eliteLevel === 2} />
                 </RibbonButton>
               )}
             </RibbonButtonGroup>
@@ -492,32 +489,6 @@ const styles = (theme: Theme) => css`
     .trust-and-elite-buttons {
       display: flex;
       height: ${theme.spacing(8)};
-
-      .elite-buttons {
-        height: ${theme.spacing(8)};
-
-        button {
-          .elite-zero path {
-            fill: transparent;
-            stroke: ${theme.palette.midtoneBrighterer.main};
-          }
-
-          path {
-            fill: ${theme.palette.midtoneBrighterer.main};
-          }
-
-          &.active {
-            path {
-              fill: ${theme.palette.white.main};
-            }
-
-            .elite-zero path {
-              fill: transparent;
-              stroke: ${theme.palette.white.main};
-            }
-          }
-        }
-      }
 
       .checkbox-container {
         margin: ${theme.spacing(2, 2, 2, 0)};

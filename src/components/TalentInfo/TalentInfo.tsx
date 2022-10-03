@@ -113,7 +113,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
             return (
               <RibbonButton
                 key={`Elite ${elite}`}
-                className={cx(classes.eliteButton, isActive && "active")}
+                active={isActive}
                 onClick={() => {
                   updateActivePhase(elite, potential);
                 }}

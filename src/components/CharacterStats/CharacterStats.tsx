@@ -332,43 +332,34 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           <div className="spacer" />
           <SliderWithInput
             label="Level"
-            identifier={isSummon ? "summon-level" : "operator-level"}
-            inputProps={{
-              value: opLevel,
-              onChange: (e) => {
-                if (e.target.value === "") {
-                  setOpLevel(1);
-                } else if (
-                  Number(e.target.value) > phases[eliteLevel].maxLevel
-                ) {
-                  setOpLevel(
-                    Math.min(
-                      Number(`${e.target.value}`.slice(0, 2)),
-                      phases[eliteLevel].maxLevel
-                    )
-                  );
-                } else {
-                  setOpLevel(
-                    Math.min(
-                      Number(e.target.value),
-                      phases[eliteLevel].maxLevel
-                    )
-                  );
-                }
-              },
-              onKeyPress: (e) => {
-                if (!/^\d$/.test(e.key)) {
-                  e.preventDefault();
-                }
-              },
-              inputProps: {
-                maxLength: 2,
-                onFocus: (e) => e.target.select(),
-                type: "number",
-                min: 1,
-                max: phases[eliteLevel].maxLevel,
-              },
+            id={isSummon ? "summon-level" : "operator-level"}
+            value={opLevel}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              if (e.target.value === "") {
+                setOpLevel(1);
+              } else if (Number(e.target.value) > phases[eliteLevel].maxLevel) {
+                setOpLevel(
+                  Math.min(
+                    Number(`${e.target.value}`.slice(0, 2)),
+                    phases[eliteLevel].maxLevel
+                  )
+                );
+              } else {
+                setOpLevel(
+                  Math.min(Number(e.target.value), phases[eliteLevel].maxLevel)
+                );
+              }
             }}
+            onKeyPress={(e) => {
+              if (!/^\d$/.test(e.key)) {
+                e.preventDefault();
+              }
+            }}
+            maxLength={2}
+            onFocus={(e) => e.target.select()}
+            type="number"
+            min={1}
+            max={phases[eliteLevel].maxLevel}
             sliderProps={{
               value: opLevel,
               // @ts-expect-error MUI typing tells me to do this

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { ClassNames, css } from "@emotion/react";
 import { Theme } from "@mui/material";
 
@@ -103,29 +103,25 @@ const SkillInfo: React.VFC<
             <div className="spacer" />
             <SliderWithInput
               label="Rank"
-              identifier={`skill-rank-${skillId}`}
-              inputProps={{
-                value: display(skillLevel),
-                onKeyPress: (e) => {
-                  if (!/^\d$/.test(e.key)) {
-                    e.preventDefault();
-                  }
-                },
-                onChange: (e) => {
-                  if (e.target.value === "") {
-                    setSkillLevel(1);
-                  } else if (!/^(M?\d|\d+)$/.test(e.target.value)) {
-                    return; //format isn't being followed, don't set the value
-                  } else if (Number(e.target.value) > maxLevel) {
-                    setSkillLevel(Number(`${e.target.value}`.slice(0, 1)));
-                  } else {
-                    setSkillLevel(Math.min(Number(e.target.value), maxLevel));
-                  }
-                },
-                inputProps: {
-                  onFocus: (e) => e.target.select(),
-                },
+              id={`skill-rank-${skillId}`}
+              value={display(skillLevel)}
+              onKeyPress={(e) => {
+                if (!/^\d$/.test(e.key)) {
+                  e.preventDefault();
+                }
               }}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                if (e.target.value === "") {
+                  setSkillLevel(1);
+                } else if (!/^(M?\d|\d+)$/.test(e.target.value)) {
+                  return; //format isn't being followed, don't set the value
+                } else if (Number(e.target.value) > maxLevel) {
+                  setSkillLevel(Number(`${e.target.value}`.slice(0, 1)));
+                } else {
+                  setSkillLevel(Math.min(Number(e.target.value), maxLevel));
+                }
+              }}
+              onFocus={(e) => e.target.select()}
               sliderProps={{
                 value: skillLevel,
                 // @ts-expect-error MUI typing tells me to do this

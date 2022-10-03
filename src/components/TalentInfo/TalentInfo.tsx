@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { css, ClassNames } from "@emotion/react";
-import { Theme } from "@mui/material";
+import cx from "clsx";
+import * as classes from "./styles.css";
 
 import {
   descriptionToHtml,
@@ -99,176 +99,55 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
   };
 
   return activePhase ? (
-    <ClassNames>
-      {({ cx }) => (
-        <section
-          className={cx(className, !activePhase.range && "no-range")}
-          css={styles}
-          {...rest}
-        >
-          <div className="talent-header">
-            <RibbonButtonGroup className="elite-buttons">
-              {elitesList.map((elite) => (
-                <RibbonButton
-                  key={`Elite ${elite}`}
-                  className={eliteLevel === elite ? "active" : "inactive"}
-                  onClick={() => {
-                    updateActivePhase(elite, potential);
-                  }}
-                  aria-label={`Elite ${elite}`}
-                >
-                  {elite === 0 && <EliteZeroIcon className="elite-zero" />}
-                  {elite === 1 && <EliteOneIcon />}
-                  {elite === 2 && <EliteTwoIcon />}
-                </RibbonButton>
-              ))}
-            </RibbonButtonGroup>
-            <PotentialsDropdown
-              currentPotential={potential}
-              potentialsToShow={potentialsMap[eliteLevel]}
-              handlePotentialChange={(pot) =>
-                updateActivePhase(eliteLevel, pot)
-              }
-            />
-          </div>
-          <h3 className="talent-name">{activePhase.name}</h3>
-          <p
-            className="talent-description"
-            dangerouslySetInnerHTML={{
-              __html: descriptionToHtml(
-                activePhase.description,
-                activePhase.blackboard
-              ),
-            }}
-          />
-          {activePhase.range && (
-            <div className="range">
-              <CharacterRange rangeObject={activePhase.range} />
-            </div>
-          )}
-        </section>
+    <section
+      className={cx(
+        className,
+        activePhase.range ? classes.root : classes.rootNoRange
       )}
-    </ClassNames>
+      {...rest}
+    >
+      <div className={classes.talentHeader}>
+        <RibbonButtonGroup className={classes.eliteButtonGroup}>
+          {elitesList.map((elite) => {
+            const isActive = eliteLevel === elite;
+            return (
+              <RibbonButton
+                key={`Elite ${elite}`}
+                className={cx(classes.eliteButton, isActive && "active")}
+                onClick={() => {
+                  updateActivePhase(elite, potential);
+                }}
+                aria-label={`Elite ${elite}`}
+              >
+                {elite === 0 && <EliteZeroIcon active={isActive} />}
+                {elite === 1 && <EliteOneIcon active={isActive} />}
+                {elite === 2 && <EliteTwoIcon active={isActive} />}
+              </RibbonButton>
+            );
+          })}
+        </RibbonButtonGroup>
+        <PotentialsDropdown
+          currentPotential={potential}
+          potentialsToShow={potentialsMap[eliteLevel]}
+          handlePotentialChange={(pot) => updateActivePhase(eliteLevel, pot)}
+        />
+      </div>
+      <h3 className={classes.talentName}>{activePhase.name}</h3>
+      <p
+        className={classes.talentDescription}
+        dangerouslySetInnerHTML={{
+          __html: descriptionToHtml(
+            activePhase.description,
+            activePhase.blackboard
+          ),
+        }}
+      />
+      {activePhase.range && (
+        <div className={classes.range}>
+          <CharacterRange rangeObject={activePhase.range} />
+        </div>
+      )}
+    </section>
   ) : null;
 };
 export default TalentInfo;
-
-const styles = (theme: Theme) => css`
-  display: grid;
-  grid-template-rows: repeat(3, max-content);
-  grid-template-columns: 672fr 244fr;
-  gap: ${theme.spacing(0.25)};
-  margin-top: ${theme.spacing(3)};
-
-  ${theme.breakpoints.down("mobile")} {
-    margin-top: ${theme.spacing(2)};
-  }
-
-  & > * {
-    background-color: ${theme.palette.midtoneDarker.main};
-  }
-
-  &.no-range {
-    grid-template-columns: 1fr;
-
-    .talent-name {
-      border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
-      grid-column-start: 1;
-      grid-column: span 2;
-    }
-
-    .talent-description {
-      border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
-      grid-column-start: 1;
-      grid-column: span 2;
-    }
-  }
-
-  .talent-header {
-    height: ${theme.spacing(8)};
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    grid-column: span 2;
-    margin-bottom: ${theme.spacing(-0.25)};
-    border-bottom: 1px solid ${theme.palette.midtoneBrighterer.main};
-    background: ${theme.palette.midtone.main};
-    border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
-
-    ${theme.breakpoints.down("mobile")} {
-      padding-right: ${theme.spacing(2)};
-    }
-
-    .elite-buttons {
-      margin-right: ${theme.spacing(3)};
-
-      ${theme.breakpoints.down("mobile")} {
-        margin-right: 0;
-        flex-grow: 1;
-
-        button {
-          // change this line to 1.5 when we shrink buttons
-          padding: ${theme.spacing(0, 1.5)};
-          border-radius: 0;
-        }
-      }
-
-      button {
-        height: ${theme.spacing(8)};
-
-        ${theme.breakpoints.down("mobile")} {
-          border-radius: 0;
-          &:first-of-type {
-            border-top-left-radius: ${theme.spacing(0.5)};
-          }
-        }
-
-        path {
-          fill: ${theme.palette.midtoneBrighterer.main};
-        }
-
-        &.active {
-          path {
-            fill: ${theme.palette.white.main};
-          }
-        }
-
-        .elite-zero path {
-          fill: transparent;
-          stroke: ${theme.palette.midtoneBrighterer.main};
-        }
-
-        &.active {
-          .elite-zero path {
-            fill: transparent;
-            stroke: ${theme.palette.white.main};
-          }
-        }
-      }
-    }
-  }
-
-  .talent-name {
-    font-size: ${theme.typography.skillTalentHeading.fontSize}px;
-    line-height: ${theme.typography.skillTalentHeading.lineHeight};
-    font-weight: ${theme.typography.skillTalentHeading.fontWeight};
-    padding: ${theme.spacing(2)};
-    margin: 0;
-    border-top-left-radius: ${theme.spacing(0.5)};
-  }
-
-  .talent-description {
-    margin: 0;
-    padding: ${theme.spacing(2)};
-    border-bottom-left-radius: ${theme.spacing(0.5)};
-  }
-
-  .range {
-    grid-column: 2;
-    grid-row: 2 / span 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
-  }
-`;

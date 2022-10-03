@@ -12,7 +12,6 @@ import {
   useTheme,
 } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
-import { tint, rgba } from "polished";
 import { MdArrowForwardIos } from "react-icons/md";
 
 import Layout from "../../Layout";
@@ -40,8 +39,7 @@ import operatorListBannerImage from "../../images/page-banners/operators.jpg";
 import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-
-import fs from "fs";
+import * as classes from "./index.css";
 
 const MENU_ICON_SIZE = 18;
 
@@ -200,10 +198,6 @@ export const getStaticProps: GetStaticProps = async () => {
       item.operator.slug,
     ])
   );
-  fs.writeFileSync(
-    "operators-with-guides.json",
-    JSON.stringify(operatorsWithGuides)
-  );
   const props: Props = {
     allOperators,
     classes: Object.fromEntries(
@@ -218,7 +212,12 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Operators: React.VFC<Props> = (props) => {
-  const { allOperators, classes, branches, operatorsWithGuides } = props;
+  const {
+    allOperators,
+    classes: opClasses,
+    branches,
+    operatorsWithGuides,
+  } = props;
 
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
   const [showClassDescriptions, setShowClassDescriptions] = useState(true);
@@ -324,7 +323,7 @@ const Operators: React.VFC<Props> = (props) => {
 
   const sortAndFilterOptions = (
     <>
-      <span className="filter-visual-label" aria-hidden="true">
+      <span className={classes.filterVisualLabel} aria-hidden="true">
         <FilterIcon />
         Filters
       </span>
@@ -336,9 +335,7 @@ const Operators: React.VFC<Props> = (props) => {
         aria-haspopup="true"
         aria-expanded={isClassMenuOpen ? "true" : undefined}
         onClick={handleClassMenuClick}
-        className={
-          selectedProfession != null ? "has-selection" : "no-selection"
-        }
+        className={classes.sortAndFilterButton}
       >
         {selectedProfession ? (
           <>
@@ -370,7 +367,7 @@ const Operators: React.VFC<Props> = (props) => {
         >
           <ListItemText>All Classes</ListItemText>
         </ClassSubclassMenuItem>
-        {Object.values(classes).map(({ className, profession }) => (
+        {Object.values(opClasses).map(({ className, profession }) => (
           <ClassSubclassMenuItem
             key={className}
             onClick={handleClassClick(profession)}
@@ -397,7 +394,7 @@ const Operators: React.VFC<Props> = (props) => {
         aria-haspopup="true"
         aria-expanded={isSubclassMenuOpen ? "true" : undefined}
         onClick={handleSubclassMenuClick}
-        className={selectedSubProfessionId ? "has-selection" : "no-selection"}
+        className={classes.sortAndFilterButton}
       >
         {selectedSubProfessionId ? (
           <>
@@ -458,12 +455,15 @@ const Operators: React.VFC<Props> = (props) => {
           ))}
       </Menu>
       {(selectedProfession != null || selectedSubProfessionId != null) && (
-        <button className="reset-filters-button" onClick={handleResetFilter}>
+        <button
+          className={classes.resetFiltersButton}
+          onClick={handleResetFilter}
+        >
           Reset
         </button>
       )}
       <CustomCheckbox
-        className="guide-available-checkbox"
+        className={classes.guideAvailableCheckbox}
         label="Guide available"
         onChange={handleGuideAvailableChange}
         checked={showOnlyGuideAvailable}
@@ -482,8 +482,8 @@ const Operators: React.VFC<Props> = (props) => {
        */
     >
       <GlobalStyles styles={globalOverrideStyles(theme)} />
-      <main css={styles}>
-        <div className="main-container">
+      <main className={classes.main}>
+        <div className={classes.mainContainer}>
           {/* <span className="last-updated">
           Last Updated:{" "}
           <span className="date">
@@ -493,20 +493,20 @@ const Operators: React.VFC<Props> = (props) => {
           </span>
         </span> */}
           <Media lessThan="mobile">
-            <HorizontalScroller className="sort-and-filter-options">
+            <HorizontalScroller className={classes.sortAndFilterOptions}>
               {sortAndFilterOptions}
             </HorizontalScroller>
           </Media>
           <Media greaterThanOrEqual="mobile">
-            <div className="sort-and-filter-options">
+            <div className={classes.sortAndFilterOptions}>
               {sortAndFilterOptions}
             </div>
           </Media>
 
           {selectedProfession != null && (
-            <div className="toggle-button-container">
+            <div className={classes.toggleButtonContainer}>
               <button
-                className="toggle-class-descriptions-button"
+                className={classes.toggleClassDescriptionsButton}
                 aria-expanded={showClassDescriptions ? "true" : undefined}
                 aria-controls="class-subclass-card-container"
                 onClick={() => setShowClassDescriptions((curr) => !curr)}
@@ -516,12 +516,12 @@ const Operators: React.VFC<Props> = (props) => {
               </button>
             </div>
           )}
-          <div className="class-subclass-descriptions">
+          <div className={classes.classSubclassDescriptions}>
             {showClassDescriptions && (
               <div id="class-subclass-card-container">
                 {selectedProfession && selectedClass && (
-                  <section className="class-card">
-                    <div className="icon-container">
+                  <section className={classes.classDescriptionCard}>
+                    <div className={classes.classDescriptionIconContainer}>
                       <Image
                         key={selectedClass}
                         src={operatorClassIcon(slugify(selectedClass))}
@@ -530,25 +530,25 @@ const Operators: React.VFC<Props> = (props) => {
                         height={64}
                       />
                     </div>
-                    <div className="name-container">
-                      <h2>
+                    <div className={classes.nameContainer}>
+                      <h2 className={classes.classOrSubclassHeading}>
                         <span className="visually-hidden">
                           Selected class:{" "}
                         </span>
                         {selectedClass}
                       </h2>
-                      <span className="heading-type" aria-hidden="true">
+                      <span className={classes.headingType} aria-hidden="true">
                         Class
                       </span>
                     </div>
-                    <div className="class-description">
-                      <MDXRemote {...classes[selectedProfession].analysis} />
+                    <div className={classes.classOrSubclassDescription}>
+                      <MDXRemote {...opClasses[selectedProfession].analysis} />
                     </div>
                   </section>
                 )}
                 {selectedSubProfessionId && (
-                  <section className="subclass-card">
-                    <div className="icon-container">
+                  <section className={classes.subclassDescriptionCard}>
+                    <div className={classes.subclassDescriptionIconContainer}>
                       <Image
                         key={selectedSubProfessionId}
                         src={operatorBranchIcon(selectedSubProfessionId)}
@@ -557,24 +557,26 @@ const Operators: React.VFC<Props> = (props) => {
                         height={64}
                       />
                     </div>
-                    <div className="name-container">
-                      <h3>
+                    <div className={classes.nameContainer}>
+                      <h3 className={classes.classOrSubclassHeading}>
                         <span className="visually-hidden">
                           Selected branch:{" "}
                         </span>
                         {selectedSubclass}
                       </h3>
-                      <span className="heading-type" aria-hidden="true">
+                      <span className={classes.headingType} aria-hidden="true">
                         Branch
                       </span>
                     </div>
                     {selectedSubProfessionId && (
-                      <TraitInfo
-                        subProfessionId={selectedSubProfessionId}
-                        showSubclassIcon={false}
-                      />
+                      <div className={classes.traitInfoContainer}>
+                        <TraitInfo
+                          subProfessionId={selectedSubProfessionId}
+                          showSubclassIcon={false}
+                        />
+                      </div>
                     )}
-                    <div className="subclass-description">
+                    <div className={classes.classOrSubclassDescription}>
                       {branches[selectedSubProfessionId].analysis != null && (
                         <MDXRemote
                           {...branches[selectedSubProfessionId].analysis!}
@@ -594,9 +596,9 @@ const Operators: React.VFC<Props> = (props) => {
             )}
           </div>
         </div>
-        <div className="results-container">
-          <section className="results">
-            <h2>Operators</h2>
+        <div className={classes.resultsContainer}>
+          <section className={classes.results}>
+            <h2 className={classes.resultsHeading}>Operators</h2>
             <OperatorList
               operators={allOperators}
               filterSettings={filterSettings}
@@ -676,337 +678,5 @@ const globalOverrideStyles = (theme: Theme) => css`
 
   footer {
     margin-top: 0;
-  }
-`;
-
-const styles = (theme: Theme) => css`
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 0;
-
-  .main-container {
-    max-width: ${theme.breakpoints.values["maxWidth"]}px;
-    margin: 0 auto;
-    width: 100%;
-
-    & > * {
-      padding: ${theme.spacing(0, 3)};
-
-      ${theme.breakpoints.down("mobile")} {
-        padding: 0;
-      }
-    }
-
-    .last-updated {
-      padding: ${theme.spacing(0, 3)};
-
-      ${theme.breakpoints.down("mobile")} {
-        padding: ${theme.spacing(0, 2)};
-      }
-
-      .date {
-        font-weight: ${theme.typography.body1Bold.fontWeight};
-      }
-    }
-
-    .mobile-sort-filter-scroller {
-      white-space: nowrap;
-    }
-
-    .sort-and-filter-options {
-      align-items: center;
-      margin: ${theme.spacing(2, 0, 3)};
-      font-size: ${theme.typography.navigationLink.fontSize}px;
-      line-height: ${theme.typography.navigationLink.lineHeight};
-
-      & > * ~ * {
-        margin-left: ${theme.spacing(2)};
-      }
-
-      ${theme.breakpoints.down("mobile")} {
-        display: flex;
-        background-color: ${rgba(theme.palette.dark.main, 0.66)};
-        padding: ${theme.spacing(2)} 0;
-        margin: ${theme.spacing(2, 0, 0)};
-
-        & > * ~ * {
-          margin: 0;
-        }
-
-        .scroller-contents {
-          padding: ${theme.spacing(0, 2)};
-          flex-grow: 1;
-
-          & > * ~ * {
-            margin-left: ${theme.spacing(2)};
-          }
-        }
-      }
-
-      ${theme.breakpoints.up("mobile")} {
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-columns: repeat(4, auto) 1fr;
-
-        .guide-available-checkbox {
-          grid-column: -1;
-        }
-      }
-
-      .filter-visual-label {
-        font-size: ${theme.typography.skillTalentHeading.fontSize}px;
-        line-height: ${theme.typography.skillTalentHeading.lineHeight};
-        font-weight: ${theme.typography.skillTalentHeading.fontWeight};
-
-        svg {
-          margin-right: ${theme.spacing(1)};
-        }
-      }
-
-      button {
-        display: grid;
-        grid-auto-flow: column;
-        column-gap: ${theme.spacing(1)};
-        transition-property: background-color, box-shadow, border-color;
-        font-weight: ${theme.typography.navigationLinkBold.fontWeight};
-      }
-
-      .reset-filters-button {
-        background-color: ${rgba(theme.palette.white.main, 0.08)};
-        color: ${rgba(theme.palette.white.main, 0.8)};
-        border: none;
-        border-radius: ${theme.spacing(0.25)};
-        line-height: ${theme.typography.body1.lineHeight};
-        cursor: pointer;
-        transition: all 50ms ease-out, margin-bottom 0ms;
-        font-weight: 500;
-
-        &:hover {
-          color: ${tint(0.27, theme.palette.white.main)};
-          background-color: ${rgba(theme.palette.white.main, 0.4)};
-        }
-      }
-    }
-
-    .toggle-button-container {
-      ${theme.breakpoints.down("mobile")} {
-        padding: ${theme.spacing(2, 2, 0)};
-        background-color: ${rgba(theme.palette.midtone.main, 0.66)};
-      }
-      display: flex; // This is literally only here to prevent margin collapsing.
-    }
-
-    .toggle-class-descriptions-button {
-      display: flex;
-      align-items: center;
-      background-color: ${rgba(theme.palette.white.main, 0.08)};
-      color: ${rgba(theme.palette.white.main, 0.8)};
-      border: none;
-      border-radius: ${theme.spacing(0.25)};
-      line-height: ${theme.typography.body1.lineHeight};
-      cursor: pointer;
-      transition: all 50ms ease-out, margin-bottom 0ms;
-      margin: ${theme.spacing(0, 2, 2, 0)};
-
-      ${theme.breakpoints.down("mobile")} {
-        margin: ${theme.spacing(0, 0, 2, 0)};
-      }
-
-      &:hover {
-        color: ${tint(0.27, theme.palette.white.main)};
-        background-color: ${rgba(theme.palette.white.main, 0.4)};
-      }
-
-      svg {
-        transition: transform 50ms ease-in-out;
-        margin-left: 10px;
-        width: 13px;
-        height: 13px;
-      }
-
-      &[aria-expanded="true"] {
-        margin-bottom: 0;
-
-        svg {
-          transform: rotate(90deg);
-        }
-      }
-    }
-
-    .class-subclass-descriptions {
-      margin: ${theme.spacing(1, 3, 0)};
-      padding: 0;
-
-      ${theme.breakpoints.down("mobile")} {
-        margin: 0;
-        background-color: ${rgba(theme.palette.midtone.main, 0.66)};
-      }
-
-      .subclass-card {
-        margin-bottom: ${theme.spacing(3)};
-
-        ${theme.breakpoints.down("mobile")} {
-          margin: 0;
-        }
-      }
-
-      .class-card {
-        grid-template-rows: max-content 1fr;
-
-        .icon-container {
-          grid-row: span 2;
-        }
-      }
-
-      .subclass-card {
-        grid-template-rows: repeat(3, max-content);
-
-        .icon-container {
-          grid-row: span 3;
-        }
-      }
-
-      .class-card,
-      .subclass-card {
-        display: grid;
-        grid-template-columns: max-content 1fr;
-        align-items: center;
-
-        .icon-container {
-          box-sizing: border-box;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          padding: ${theme.spacing(4)};
-
-          ${theme.breakpoints.down("mobile")} {
-            padding: ${theme.spacing(2, 2, 0, 2)};
-            grid-row: unset;
-          }
-
-          img {
-            margin: auto;
-            width: ${theme.spacing(8)};
-            height: ${theme.spacing(8)};
-
-            ${theme.breakpoints.down("mobile")} {
-              width: ${theme.spacing(3)};
-              height: ${theme.spacing(3)};
-            }
-          }
-        }
-
-        .name-container {
-          display: flex;
-          align-items: center;
-          padding: ${theme.spacing(3, 0, 0, 4)};
-
-          ${theme.breakpoints.down("mobile")} {
-            padding: ${theme.spacing(2, 0, 0)};
-          }
-
-          h2,
-          h3 {
-            margin: ${theme.spacing(0, 1.5, 0, 0)};
-            font-size: ${theme.typography.generalHeading.fontSize}px;
-            line-height: ${theme.typography.generalHeading.lineHeight};
-            font-weight: ${theme.typography.generalHeadingBold.fontWeight};
-            text-transform: uppercase;
-          }
-
-          .heading-type {
-            color: ${rgba(theme.palette.white.main, 0.5)};
-            font-size: ${theme.typography.generalHeading.fontSize}px;
-            line-height: ${theme.typography.generalHeading.lineHeight};
-          }
-        }
-
-        .trait-container {
-          padding: ${theme.spacing(0, 4)};
-          ${theme.breakpoints.down("mobile")} {
-            padding: ${theme.spacing(1, 2, 0)};
-            grid-column: 1 / span 2;
-          }
-        }
-
-        .class-description,
-        .subclass-description {
-          padding: ${theme.spacing(3, 4)};
-
-          ${theme.breakpoints.down("mobile")} {
-            padding: ${theme.spacing(2)};
-            grid-column: 1 / span 2;
-          }
-
-          p {
-            margin: 0;
-          }
-        }
-      }
-
-      .class-card:not(:last-child) {
-        .icon-container {
-          border-bottom: ${theme.spacing(1)} solid ${theme.palette.gray.main};
-
-          ${theme.breakpoints.down("mobile")} {
-            border-bottom: none;
-          }
-        }
-      }
-
-      .subclass-card {
-        background-color: ${theme.palette.midtoneExtra.main};
-        border-top: 1px solid ${theme.palette.midtoneBrighterer.main};
-        border-bottom-left-radius: ${theme.spacing(1)};
-        border-bottom-right-radius: ${theme.spacing(1)};
-
-        ${theme.breakpoints.down("mobile")} {
-          background-color: ${theme.palette.midtone.main};
-        }
-
-        .icon-container {
-          background-color: ${theme.palette.midtone.main};
-          border-bottom-left-radius: ${theme.spacing(1)};
-        }
-      }
-    }
-  }
-
-  .results-container {
-    background-color: ${theme.palette.dark.main};
-    border-top: 1px solid ${theme.palette.midtoneBrighter.main};
-    flex: 1 1 0;
-
-    ${theme.breakpoints.down("mobile")} {
-      border-top: none;
-    }
-  }
-
-  .results {
-    margin: ${theme.spacing(3)} auto ${theme.spacing(9.5)} auto;
-    max-width: ${theme.breakpoints.values["maxWidth"]}px;
-    ${theme.breakpoints.down("mobile")} {
-      margin: ${theme.spacing(0, 0, 4)};
-      padding: ${theme.spacing(2)};
-    }
-
-    h2 {
-      font-size: ${theme.typography.generalHeading.fontSize}px;
-      line-height: ${theme.typography.generalHeading.lineHeight};
-      font-weight: ${theme.typography.generalHeadingBold.fontWeight};
-
-      margin: ${theme.spacing(0, 3)};
-      ${theme.breakpoints.down("mobile")} {
-        margin: 0;
-      }
-    }
-
-    .no-results {
-      margin: ${theme.spacing(3, 0)};
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: ${theme.palette.midtoneBrighterer.main};
-    }
   }
 `;

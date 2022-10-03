@@ -1,4 +1,5 @@
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+const { VanillaExtractPlugin } = require("@vanilla-extract/webpack-plugin");
 
 /** @type {import('@storybook/react/types').StorybookConfig} */
 module.exports = {
@@ -32,7 +33,11 @@ module.exports = {
       ...config.experiments,
       topLevelAwait: true,
     };
-    config.plugins = [...(config.plugins ?? []), new NodePolyfillPlugin()];
+    config.plugins = [
+      ...(config.plugins ?? []),
+      new NodePolyfillPlugin(),
+      new VanillaExtractPlugin(),
+    ];
     return config;
   },
 };

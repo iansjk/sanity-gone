@@ -4,6 +4,7 @@ import ScrollContainer, {
   ScrollContainerProps,
   ScrollEvent,
 } from "react-indiana-drag-scroll";
+import * as classes from "./styles.css";
 
 export type HorizontalScrollerProps = React.HTMLAttributes<HTMLDivElement> & {
   scrollContainerProps?: Omit<ScrollContainerProps, "ref" | "innerRef">;
@@ -55,7 +56,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
   return (
     <div ref={containerRef} css={styles} {...rest}>
       <ScrollContainer
-        className="scroller-contents"
+        className={`${classes.scrollerContents} scroller-contents`}
         onScroll={handleScroll}
         innerRef={contentRef}
         {...remainingScrollContainerProps}

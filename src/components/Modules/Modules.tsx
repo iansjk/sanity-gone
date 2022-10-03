@@ -15,7 +15,18 @@ export type ModulesProps = {
 };
 
 const Modules: React.VFC<ModulesProps> = (props) => {
-  const { operatorName, modules, moduleAnalyses } = props;
+  const {
+    operatorName,
+    modules: allModules,
+    moduleAnalyses: allModuleAnalyses,
+  } = props;
+  const numModulesToShow = Math.min(
+    allModules.length,
+    allModuleAnalyses.length
+  );
+  const modules = allModules.slice(0, numModulesToShow);
+  const moduleAnalyses = allModuleAnalyses.slice(0, numModulesToShow);
+
   const components = (index: number) => ({
     ModuleInfo: () => (
       <ModuleInfo module={modules[index]} operatorName={operatorName} />

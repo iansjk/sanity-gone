@@ -21,7 +21,7 @@ export const rawColors = {
     lime: "#a7e855",
     blue: "#49b3ff",
     softBlue: "#7f7dea",
-    purple: "7F7DEA",
+    purple: "#7f7dea",
     magenta: "#e85593",
   },
 };

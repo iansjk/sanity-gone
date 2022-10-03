@@ -31,6 +31,9 @@ export const root = style({
     "&:first-of-type": {
       borderTopLeftRadius: spacing(0.5),
     },
+    "&:active": {
+      backgroundColor: rgba(rawColors.neutrals.white, 0.3),
+    },
   },
 });
 
@@ -42,6 +45,9 @@ export const active = style({
   selectors: {
     "&:hover": {
       backgroundColor: vars.colors.neutrals.midtoneBrighter,
+    },
+    "&:active": {
+      backgroundColor: rgba(rawColors.neutrals.white, 0.3),
     },
   },
 });

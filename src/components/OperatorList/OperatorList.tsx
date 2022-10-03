@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useRef } from "react";
-import { Box, Tooltip } from "@mui/material";
+import { Box } from "@mui/material";
 import cx from "clsx";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 import {
   professionToClass,
@@ -190,7 +192,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
             ) : (
               <div className={classes.operatorInfo}>{operatorInfo}</div>
             )}
-            <Tooltip title={subclass}>
+            <Tippy content={subclass}>
               <button
                 aria-label={`Filter list by ${subclass}`}
                 className={classes.operatorSubclass}
@@ -206,7 +208,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   alt={""}
                 />
               </button>
-            </Tooltip>
+            </Tippy>
             {/* TODO "NEW" should go here */}
             {hasGuide ? (
               <Link href={`/operators/${url}`}>

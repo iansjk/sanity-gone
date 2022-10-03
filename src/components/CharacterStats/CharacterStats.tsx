@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { css } from "@emotion/react";
-import {
-  useMediaQuery,
-  useTheme,
-  Theme,
-  Tooltip,
-  styled,
-  TooltipProps,
-  tooltipClasses,
-} from "@mui/material";
+import { useMediaQuery, useTheme, Theme } from "@mui/material";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 import {
   ArtsResistanceIcon,
@@ -46,32 +40,32 @@ import Image from "next/image";
 
 const SUMMON_ICON_SIZE = 60;
 
-const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
-  <Tooltip {...rest} classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.tooltip}`]: {
-    ul: {
-      margin: 0,
-      padding: 0,
-      listStyleType: "none",
-      ".stat-value": {
-        color: theme.palette.blue.main,
-      },
-      li: {
-        svg: {
-          width: "18px",
-          height: "17px",
-          marginRight: theme.spacing(1),
-        },
-        display: "flex",
-        alignItems: "center",
-      },
-    },
-  },
-  ".potential-description": {
-    color: theme.palette.gray.main,
-  },
-}));
+// const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
+//   <Tooltip {...rest} classes={{ popper: className }} />
+// ))(({ theme }) => ({
+//   [`& .${tooltipClasses.tooltip}`]: {
+//     ul: {
+//       margin: 0,
+//       padding: 0,
+//       listStyleType: "none",
+//       ".stat-value": {
+//         color: theme.palette.blue.main,
+//       },
+//       li: {
+//         svg: {
+//           width: "18px",
+//           height: "17px",
+//           marginRight: theme.spacing(1),
+//         },
+//         display: "flex",
+//         alignItems: "center",
+//       },
+//     },
+//   },
+//   ".potential-description": {
+//     color: theme.palette.gray.main,
+//   },
+// }));
 
 export interface CharacterStatsProps {
   characterObject: CharacterObject;
@@ -187,8 +181,8 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
             {!isSummon && (
               <div className="checkbox-container">
                 <div className="checkbox">
-                  <StatsChangeTooltip
-                    title={
+                  <Tippy
+                    content={
                       <ul>
                         {trustIncreases.maxHp > 0 && (
                           <li>
@@ -234,11 +228,11 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                         }}
                       />
                     </div>
-                  </StatsChangeTooltip>
+                  </Tippy>
                 </div>
                 <div className="checkbox">
-                  <StatsChangeTooltip
-                    title={
+                  <Tippy
+                    content={
                       <ul>
                         {getPotStatIncreases(characterObject).map((pot, i) => {
                           return (
@@ -324,7 +318,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                         }}
                       />
                     </div>
-                  </StatsChangeTooltip>
+                  </Tippy>
                 </div>
               </div>
             )}

@@ -1,9 +1,11 @@
-import { useMediaQuery, useTheme, Tooltip } from "@mui/material";
-import Link from "next/link";
 import Image from "next/image";
+import { useMediaQuery, useTheme } from "@mui/material";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 import { Media } from "../../Media";
 
+import { default as Link } from "../HashCompatibleNextLink";
 import {
   professionToClass,
   slugify,
@@ -90,7 +92,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
             )}`}
           >
             <a className={classes.classAndSubclass}>
-              <Tooltip title={operatorClass}>
+              <Tippy content={operatorClass}>
                 <span role="img" className={classes.classIconContainer}>
                   <Image
                     src={operatorClassIcon(operatorClass.toLowerCase())}
@@ -99,7 +101,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
                     height={24}
                   />
                 </span>
-              </Tooltip>
+              </Tippy>
               <span className={classes.subclassIconContainer}>
                 <Image
                   src={operatorBranchIcon(subProfessionId)}

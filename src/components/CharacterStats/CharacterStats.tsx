@@ -182,6 +182,8 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               <div className="checkbox-container">
                 <div className="checkbox">
                   <Tippy
+                    interactive
+                    trigger="mouseenter focusin"
                     content={
                       <ul>
                         {trustIncreases.maxHp > 0 && (
@@ -230,6 +232,8 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 </div>
                 <div className="checkbox">
                   <Tippy
+                    interactive
+                    trigger="mouseenter focusin"
                     content={
                       <ul>
                         {getPotStatIncreases(characterObject).map((pot, i) => {

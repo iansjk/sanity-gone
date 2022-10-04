@@ -192,7 +192,14 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
             ) : (
               <div className={classes.operatorInfo}>{operatorInfo}</div>
             )}
-            <Tippy content={subclass}>
+            <Tippy
+              content={subclass}
+              interactive
+              role="presentation"
+              aria={{
+                expanded: false,
+              }}
+            >
               <button
                 aria-label={`Filter list by ${subclass}`}
                 className={classes.operatorSubclass}

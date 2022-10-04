@@ -99,7 +99,9 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
                 aria={{
                   expanded: false,
                 }}
-                appendTo={document.body}
+                appendTo={
+                  typeof document !== "undefined" ? document.body : undefined
+                }
               >
                 <span className={classes.classIconContainer}>
                   <Image

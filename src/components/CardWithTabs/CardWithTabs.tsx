@@ -1,5 +1,7 @@
 import { css, Interpolation } from "@emotion/react";
 import { Theme } from "@mui/material";
+import { Fragment } from "react";
+import * as classes from "./styles.css";
 
 import Card from "../Card";
 import Tabs from "../Tabs";
@@ -8,6 +10,7 @@ import TabPanels from "../TabPanels";
 import RomanNumeralOne from "../icons/RomanNumeralOne";
 import RomanNumeralTwo from "../icons/RomanNumeralTwo";
 import RomanNumeralThree from "../icons/RomanNumeralThree";
+import { Tab } from "@headlessui/react";
 
 export type CardWithTabsProps = {
   header: string;
@@ -43,30 +46,43 @@ const CardWithTabs: React.VFC<CardWithTabsProps> = (props) => {
   } = props;
 
   return (
-    <Card header={header} css={styles} {...rest}>
-      <Tabs className="tabs-wrapper">
-        <TabButtons className="tab-buttons" isSwiper={isSwiper}>
+    <Card classes={{ content: classes.cardContent }} header={header} {...rest}>
+      <Tab.Group as={"div"} className={classes.tabWrapper}>
+        <Tab.List className={classes.tabButtons}>
           {panelContent
             ? panelContent.map((_, i) => (
-                <button
+                <Tab
+                  as={Fragment}
                   key={i}
                   aria-label={
                     buttonLabelFn ? buttonLabelFn(i) : buttonLabels?.[i]
                   }
                 >
-                  {i === 0 && <RomanNumeralOne />}
-                  {i === 1 && <RomanNumeralTwo />}
-                  {i === 2 && <RomanNumeralThree />}
-                </button>
+                  {({ selected }) => (
+                    <button
+                      className={
+                        selected
+                          ? classes.button.active
+                          : classes.button.default
+                      }
+                    >
+                      {i === 0 && <RomanNumeralOne />}
+                      {i === 1 && <RomanNumeralTwo />}
+                      {i === 2 && <RomanNumeralThree />}
+                    </button>
+                  )}
+                </Tab>
               ))
             : buttons}
-        </TabButtons>
-        <TabPanels className="tab-panels">
+        </Tab.List>
+        <Tab.Panels className={classes.tabPanels}>
           {panelContent
-            ? panelContent.map((panel, i) => <div key={i}>{panel}</div>)
+            ? panelContent.map((panel, i) => (
+                <Tab.Panel key={i}>{panel}</Tab.Panel>
+              ))
             : panels}
-        </TabPanels>
-      </Tabs>
+        </Tab.Panels>
+      </Tab.Group>
     </Card>
   );
 };

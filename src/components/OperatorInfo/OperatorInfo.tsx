@@ -92,11 +92,18 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
             )}`}
           >
             <a className={classes.classAndSubclass}>
-              <Tippy content={operatorClass}>
-                <span role="img" className={classes.classIconContainer}>
+              <Tippy
+                content={operatorClass}
+                interactive
+                role="presentation"
+                aria={{
+                  expanded: false,
+                }}
+              >
+                <span className={classes.classIconContainer}>
                   <Image
                     src={operatorClassIcon(operatorClass.toLowerCase())}
-                    alt=""
+                    alt={operatorClass}
                     width={24}
                     height={24}
                   />

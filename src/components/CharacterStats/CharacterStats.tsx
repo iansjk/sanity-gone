@@ -152,37 +152,34 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           <div className="trust-and-elite-buttons">
             <RibbonButtonGroup className="elite-buttons">
               <RibbonButton
-                className={
-                  "elite-zero-button " +
-                  (eliteLevel === 0 ? "active" : "inactive")
-                }
+                active={eliteLevel === 0}
                 onClick={() => {
                   setEliteLevel(0);
                 }}
                 aria-label="Elite 0"
               >
-                <EliteZeroIcon className="elite-zero" />
+                <EliteZeroIcon active={eliteLevel === 0} />
               </RibbonButton>
               {maxElite >= 1 && (
                 <RibbonButton
-                  className={eliteLevel === 1 ? "active" : "inactive"}
+                  active={eliteLevel === 1}
                   onClick={() => {
                     setEliteLevel(1);
                   }}
                   aria-label="Elite 1"
                 >
-                  <EliteOneIcon />
+                  <EliteOneIcon active={eliteLevel === 1} />
                 </RibbonButton>
               )}
               {maxElite >= 2 && (
                 <RibbonButton
-                  className={eliteLevel === 2 ? "active" : "inactive"}
+                  active={eliteLevel === 2}
                   onClick={() => {
                     setEliteLevel(2);
                   }}
                   aria-label="Elite 2"
                 >
-                  <EliteTwoIcon />
+                  <EliteTwoIcon active={eliteLevel === 2} />
                 </RibbonButton>
               )}
             </RibbonButtonGroup>
@@ -335,43 +332,34 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           <div className="spacer" />
           <SliderWithInput
             label="Level"
-            identifier={isSummon ? "summon-level" : "operator-level"}
-            inputProps={{
-              value: opLevel,
-              onChange: (e) => {
-                if (e.target.value === "") {
-                  setOpLevel(1);
-                } else if (
-                  Number(e.target.value) > phases[eliteLevel].maxLevel
-                ) {
-                  setOpLevel(
-                    Math.min(
-                      Number(`${e.target.value}`.slice(0, 2)),
-                      phases[eliteLevel].maxLevel
-                    )
-                  );
-                } else {
-                  setOpLevel(
-                    Math.min(
-                      Number(e.target.value),
-                      phases[eliteLevel].maxLevel
-                    )
-                  );
-                }
-              },
-              onKeyPress: (e) => {
-                if (!/^\d$/.test(e.key)) {
-                  e.preventDefault();
-                }
-              },
-              inputProps: {
-                maxLength: 2,
-                onFocus: (e) => e.target.select(),
-                type: "number",
-                min: 1,
-                max: phases[eliteLevel].maxLevel,
-              },
+            id={isSummon ? "summon-level" : "operator-level"}
+            value={opLevel}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              if (e.target.value === "") {
+                setOpLevel(1);
+              } else if (Number(e.target.value) > phases[eliteLevel].maxLevel) {
+                setOpLevel(
+                  Math.min(
+                    Number(`${e.target.value}`.slice(0, 2)),
+                    phases[eliteLevel].maxLevel
+                  )
+                );
+              } else {
+                setOpLevel(
+                  Math.min(Number(e.target.value), phases[eliteLevel].maxLevel)
+                );
+              }
             }}
+            onKeyPress={(e) => {
+              if (!/^\d$/.test(e.key)) {
+                e.preventDefault();
+              }
+            }}
+            maxLength={2}
+            onFocus={(e) => e.target.select()}
+            type="number"
+            min={1}
+            max={phases[eliteLevel].maxLevel}
             sliderProps={{
               value: opLevel,
               // @ts-expect-error MUI typing tells me to do this
@@ -492,32 +480,6 @@ const styles = (theme: Theme) => css`
     .trust-and-elite-buttons {
       display: flex;
       height: ${theme.spacing(8)};
-
-      .elite-buttons {
-        height: ${theme.spacing(8)};
-
-        button {
-          .elite-zero path {
-            fill: transparent;
-            stroke: ${theme.palette.midtoneBrighterer.main};
-          }
-
-          path {
-            fill: ${theme.palette.midtoneBrighterer.main};
-          }
-
-          &.active {
-            path {
-              fill: ${theme.palette.white.main};
-            }
-
-            .elite-zero path {
-              fill: transparent;
-              stroke: ${theme.palette.white.main};
-            }
-          }
-        }
-      }
 
       .checkbox-container {
         margin: ${theme.spacing(2, 2, 2, 0)};

@@ -21,6 +21,7 @@
     "@emotion/react": "^11.8.1",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.8.1",
+    "@headlessui/react": "^1.7.3",
     "@mui/material": "^5.4.2",
     "@next/bundle-analyzer": "^12.3.1",
     "@sindresorhus/slugify": "<2",

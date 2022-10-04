@@ -199,6 +199,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
               aria={{
                 expanded: false,
               }}
+              appendTo={() => document.body}
             >
               <button
                 aria-label={`Filter list by ${subclass}`}

@@ -99,6 +99,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
                 aria={{
                   expanded: false,
                 }}
+                appendTo={document.body}
               >
                 <span className={classes.classIconContainer}>
                   <Image

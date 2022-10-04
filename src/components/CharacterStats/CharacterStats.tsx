@@ -219,15 +219,13 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                       </ul>
                     }
                   >
-                    <div>
-                      <CustomCheckbox
-                        label="Trust"
-                        checked={trustBonus}
-                        onChange={(e) => {
-                          setTrustBonus(e.target.checked);
-                        }}
-                      />
-                    </div>
+                    <CustomCheckbox
+                      label="Trust"
+                      checked={trustBonus}
+                      onChange={(e) => {
+                        setTrustBonus(e.target.checked);
+                      }}
+                    />
                   </Tippy>
                 </div>
                 <div className="checkbox">
@@ -309,15 +307,13 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                       </ul>
                     }
                   >
-                    <div>
-                      <CustomCheckbox
-                        label={isMobile ? "Pot." : "Potential"}
-                        checked={potentialBonus}
-                        onChange={(e) => {
-                          setPotentialBonus(e.target.checked);
-                        }}
-                      />
-                    </div>
+                    <CustomCheckbox
+                      label={isMobile ? "Pot." : "Potential"}
+                      checked={potentialBonus}
+                      onChange={(e) => {
+                        setPotentialBonus(e.target.checked);
+                      }}
+                    />
                   </Tippy>
                 </div>
               </div>

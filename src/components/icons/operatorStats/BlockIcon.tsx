@@ -1,4 +1,8 @@
-const BlockIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+type Props = React.HTMLAttributes<SVGElement> & {
+  pathClassName?: string;
+};
+
+const BlockIcon: React.VFC<Props> = ({ pathClassName, ...rest }) => {
   return (
     <svg
       width="14"
@@ -6,7 +10,7 @@ const BlockIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
       viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
+      {...rest}
     >
       <g clipPath="url(#clip0)">
         <path
@@ -14,6 +18,7 @@ const BlockIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
           clipRule="evenodd"
           d="M1 11V1H5L7 0L9 1H13V11L7 14L1 11ZM5.36 2.41L7 1.59L8.64 2.41H10.204L2.41 8.905V2.41H5.36ZM11.59 10.11L7 12.41L2.88587 10.3484L11.59 3.095V10.11Z"
           fill="#D6D6E2"
+          className={pathClassName}
         />
       </g>
       <defs>

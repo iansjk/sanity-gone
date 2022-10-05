@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { css } from "@emotion/react";
 import { useMediaQuery, useTheme, Theme } from "@mui/material";
 import Image from "next/image";
+import cx from "clsx";
 
 import {
   ArtsResistanceIcon,
@@ -99,7 +100,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
   const doSummonStatsChange = isSummon && doStatsChange(characterObject);
 
   return (
-    <section css={styles}>
+    <section>
       {!isSummon && (
         <TraitInfo
           subProfessionId={characterObject.subProfessionId}
@@ -111,14 +112,9 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
         {`${isSummon ? "Summon" : "Operator"} Stats`}
       </h3>
       {(!isSummon || doSummonStatsChange) && (
-        <div
-          className={
-            "stats-controls" +
-            (isSummon && !doSummonStatsChange ? " no-stat-changes" : "")
-          }
-        >
-          <div className="trust-and-elite-buttons">
-            <RibbonButtonGroup className="elite-buttons">
+        <div className={classes.statsControls}>
+          <div className={classes.trustAndEliteButtons}>
+            <RibbonButtonGroup>
               <RibbonButton
                 active={eliteLevel === 0}
                 onClick={() => {
@@ -151,10 +147,10 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                 </RibbonButton>
               )}
             </RibbonButtonGroup>
-            <div className="mobile-spacer" />
+            <div className={classes.mobileSpacer} />
             {!isSummon && (
-              <div className="checkbox-container">
-                <div className="checkbox">
+              <div className={classes.checkboxContainer}>
+                <div className={classes.checkbox}>
                   <Tooltip
                     interactive
                     trigger="mouseenter focusin"
@@ -204,7 +200,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                     />
                   </Tooltip>
                 </div>
-                <div className="checkbox">
+                <div className={classes.checkbox}>
                   <Tooltip
                     interactive
                     trigger="mouseenter focusin"
@@ -320,7 +316,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
               </div>
             )}
           </div>
-          <div className="spacer" />
+          <div className={classes.spacer} />
           <SliderWithInput
             label="Level"
             id={isSummon ? "summon-level" : "operator-level"}
@@ -362,14 +358,13 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
         </div>
       )}
       <dl
-        className={
-          isSummon
-            ? "summon-stats" + (!doSummonStatsChange ? " no-stat-changes" : "")
-            : "operator-stats"
-        }
+        className={cx(
+          isSummon ? classes.statsList.summon : classes.statsList.operator,
+          isSummon && !doSummonStatsChange && classes.statsListNoStatChanges
+        )}
       >
         {isSummon && (
-          <div className="summon-icon">
+          <div className={classes.summonIcon}>
             <Image
               src={summonImage(id)}
               alt={name}
@@ -379,69 +374,97 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           </div>
         )}
 
-        <div className="health">
+        <div>
           <dt>
-            <HealthIcon aria-hidden="true" /> {isMobile ? "HP" : "Health"}
+            <HealthIcon
+              aria-hidden="true"
+              pathClassName={classes.healthIconPath}
+            />{" "}
+            {isMobile ? "HP" : "Health"}
           </dt>
           <dd>{health}</dd>
         </div>
 
-        <div className="attack-power">
+        <div>
           <dt>
-            <AttackPowerIcon aria-hidden="true" />{" "}
+            <AttackPowerIcon
+              aria-hidden="true"
+              pathClassName={classes.attackPowerIconPath}
+            />{" "}
             {isMobile ? "ATK" : "Attack Power"}
           </dt>
           <dd>{attackPower}</dd>
         </div>
 
-        <div className="defense">
+        <div>
           <dt>
-            <DefenseIcon aria-hidden="true" /> {isMobile ? "DEF" : "Defense"}
+            <DefenseIcon
+              aria-hidden="true"
+              pathClassName={classes.defenseIconPath}
+            />{" "}
+            {isMobile ? "DEF" : "Defense"}
           </dt>
           <dd>{defense}</dd>
         </div>
 
-        <div className="attack-speed">
+        <div>
           <dt>
-            <AttackSpeedIcon aria-hidden="true" />{" "}
+            <AttackSpeedIcon
+              aria-hidden="true"
+              pathClassName={classes.attackSpeedIconPath}
+            />{" "}
             {isMobile ? "ASPD" : "Attack Speed"}
           </dt>
           <dd>{Math.round(secondsPerAttack * 100) / 100} sec</dd>
         </div>
 
-        <div className="arts-resistance">
+        <div>
           <dt>
-            <ArtsResistanceIcon aria-hidden="true" />{" "}
+            <ArtsResistanceIcon
+              aria-hidden="true"
+              pathClassName={classes.artsResistanceIconPath}
+            />{" "}
             {isMobile ? "RES" : "Arts Resistance"}
           </dt>
           <dd>{artsResistance}%</dd>
         </div>
 
-        <div className="block">
+        <div>
           <dt>
-            <BlockIcon aria-hidden="true" /> Block
+            <BlockIcon
+              aria-hidden="true"
+              pathClassName={classes.blockIconPath}
+            />{" "}
+            Block
           </dt>
           <dd>{blockCount}</dd>
         </div>
 
-        <div className="redeploy-time">
+        <div>
           <dt>
-            <RedeployTimeIcon aria-hidden="true" />{" "}
+            <RedeployTimeIcon
+              aria-hidden="true"
+              pathClassName={classes.redeployTimeIconPath}
+            />{" "}
             {isMobile ? "Redeploy" : "Redeploy Time"}
           </dt>
           <dd>{redeployTimeInSeconds} sec</dd>
         </div>
 
-        <div className="dp-cost">
+        <div>
           <dt>
-            <DPCostIcon aria-hidden="true" /> DP Cost
+            <DPCostIcon
+              aria-hidden="true"
+              pathClassName={classes.dpCostIconPath}
+            />{" "}
+            DP Cost
           </dt>
           <dd>{dpCost}</dd>
         </div>
 
-        <div className="range">
+        <div className={classes.range}>
           <dt className={isMobile ? "visually-hidden" : ""}>Range</dt>
-          <dd>
+          <dd className={classes.rangeDetails}>
             <CharacterRange rangeObject={rangeObject} />
           </dd>
         </div>
@@ -562,6 +585,8 @@ const styles = (theme: Theme) => css`
           grid-row: 6;
         }
       }
+
+      // FIXME FIXME FIXME
       &.no-stat-changes {
         margin-top: ${theme.spacing(3)};
 
@@ -579,6 +604,7 @@ const styles = (theme: Theme) => css`
         }
       }
     }
+    // end FIXME
 
     .summon-icon {
       grid-row-start: span 2;

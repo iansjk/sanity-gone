@@ -22,6 +22,16 @@ globalStyle(`${baseTippySelector} .tippy-content`, {
   padding: 0,
 });
 
-globalStyle(`${baseTippySelector} .tippy-arrow::before`, {
-  borderTopColor: vars.colors.neutrals.blackest,
-});
+globalStyle(
+  `${baseTippySelector}[data-placement^="top"] .tippy-arrow::before`,
+  {
+    borderTopColor: vars.colors.neutrals.blackest,
+  }
+);
+
+globalStyle(
+  `${baseTippySelector}[data-placement^="bottom"] .tippy-arrow::before`,
+  {
+    borderBottomColor: vars.colors.neutrals.blackest,
+  }
+);

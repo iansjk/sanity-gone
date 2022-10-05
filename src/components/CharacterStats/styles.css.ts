@@ -186,7 +186,7 @@ export const range = style({
       },
     },
     [`${statsListNoStatChanges} &`]: {
-      borderRadius: spacing(0, 0.5, 0.5, 0),
+      borderRadius: spacing(0, 0, 0.5, 0.5),
     },
   },
 });
@@ -217,7 +217,6 @@ export const attackPower = style({
       "@media": {
         [breakpoints.down("mobile")]: {
           borderBottomLeftRadius: 0,
-          borderTopRightRadius: spacing(0.5),
         },
       },
     },

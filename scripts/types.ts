@@ -42,6 +42,11 @@ export interface SkillAtLevel {
   name: string;
   description: string | null;
   rangeId: string | null;
+  duration: number;
+  blackboard: Array<{
+    key: string;
+    value: number;
+  }>;
 }
 
 interface Range {

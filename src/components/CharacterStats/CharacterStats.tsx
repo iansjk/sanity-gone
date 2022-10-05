@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { css } from "@emotion/react";
 import { useMediaQuery, useTheme, Theme } from "@mui/material";
-import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css";
+import Image from "next/image";
 
 import {
   ArtsResistanceIcon,
@@ -36,7 +35,7 @@ import RibbonButton from "../RibbonButton";
 import RibbonButtonGroup from "../RibbonButtonGroup";
 import SliderWithInput from "../SliderWithInput";
 import TraitInfo from "../TraitInfo";
-import Image from "next/image";
+import Tooltip from "../Tooltip";
 
 const SUMMON_ICON_SIZE = 60;
 
@@ -181,7 +180,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
             {!isSummon && (
               <div className="checkbox-container">
                 <div className="checkbox">
-                  <Tippy
+                  <Tooltip
                     interactive
                     trigger="mouseenter focusin"
                     content={
@@ -228,10 +227,10 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                         setTrustBonus(e.target.checked);
                       }}
                     />
-                  </Tippy>
+                  </Tooltip>
                 </div>
                 <div className="checkbox">
-                  <Tippy
+                  <Tooltip
                     interactive
                     trigger="mouseenter focusin"
                     content={
@@ -318,7 +317,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                         setPotentialBonus(e.target.checked);
                       }}
                     />
-                  </Tippy>
+                  </Tooltip>
                 </div>
               </div>
             )}

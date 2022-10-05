@@ -1,17 +1,16 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import { Box } from "@mui/material";
+import Image from "next/image";
+import Link from "next/link";
 import cx from "clsx";
-import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css";
 
 import {
   professionToClass,
   subProfessionIdToSubclass,
 } from "../../utils/globals";
 import StarIcon from "../icons/StarIcon";
-import Image from "next/image";
-import Link from "next/link";
 import { operatorBranchIcon } from "../../utils/images";
+import Tooltip from "../Tooltip";
 import * as classes from "./styles.css";
 
 const getPortraitFilename = (operatorId: string) =>
@@ -192,7 +191,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
             ) : (
               <div className={classes.operatorInfo}>{operatorInfo}</div>
             )}
-            <Tippy
+            <Tooltip
               content={subclass}
               interactive
               role="presentation"
@@ -218,7 +217,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
                   alt={""}
                 />
               </button>
-            </Tippy>
+            </Tooltip>
             {/* TODO "NEW" should go here */}
             {hasGuide ? (
               <Link href={`/operators/${url}`}>

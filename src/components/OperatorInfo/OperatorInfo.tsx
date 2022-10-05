@@ -1,5 +1,7 @@
 import { css } from "@emotion/react";
 import { useMediaQuery, useTheme, Theme, Tooltip } from "@mui/material";
+import Link from "next/link";
+import Image from "next/image";
 
 import { Media } from "../../Media";
 
@@ -13,8 +15,8 @@ import {
 import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
 import { CharacterObject } from "../../utils/types";
 import OperatorPortrait from "../OperatorPortrait";
-import Link from "next/link";
-import Image from "next/image";
+
+import * as classes from "./styles.css";
 
 export interface OperatorInfoProps {
   operatorObject: CharacterObject;
@@ -70,13 +72,14 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
   const [charName, alterName] = name.split(" the ");
 
   return (
-    <div css={styles}>
-      <div className="operator-portrait-and-class">
-        <div className="name-and-class">
-          <div className="operator-name">
+    <div className={classes.root}>
+      <div className={classes.operatorPortraitAndClass}>
+        <div className={classes.nameAndClass}>
+          <div className={classes.operatorName}>
             {alterName ? (
               <>
-                {charName} <span className="alter-name">The {alterName}</span>
+                {charName}{" "}
+                <span className={classes.alterName}>The {alterName}</span>
               </>
             ) : (
               name
@@ -87,9 +90,9 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
               subclass
             )}`}
           >
-            <a className="class-and-subclass">
+            <a className={classes.classAndSubclass}>
               <Tooltip title={operatorClass}>
-                <span role="img" className="class-icon-container">
+                <span role="img" className={classes.classIconContainer}>
                   <Image
                     src={operatorClassIcon(operatorClass.toLowerCase())}
                     alt=""
@@ -98,7 +101,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
                   />
                 </span>
               </Tooltip>
-              <span className="subclass-icon-container">
+              <span className={classes.subclassIconContainer}>
                 <Image
                   src={operatorBranchIcon(subProfessionId)}
                   alt=""
@@ -126,10 +129,10 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
           />
         </Media>
       </div>
-      <dl className="attack-type-and-position">
-        <div className="attack-type">
+      <dl className={classes.attackTypeAndPosition}>
+        <div className={classes.attackTypeCell}>
           <dt>Regular Attack</dt>
-          <dd className={slugify(attackType)}>
+          <dd className={classes.attackType[attackType]}>
             {attackType}
             {!isMobile &&
               (attackType === "Arts" || attackType === "Physical") &&
@@ -137,9 +140,9 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
           </dd>
         </div>
 
-        <div className="position">
+        <div className={classes.positionCell}>
           <dt>Position</dt>
-          <dd>{position}</dd>
+          <dd className={classes.attackTypeOrPositionDetails}>{position}</dd>
         </div>
       </dl>
     </div>

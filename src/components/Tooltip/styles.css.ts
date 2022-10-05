@@ -6,6 +6,7 @@ export const root = style({
   backgroundColor: vars.colors.neutrals.blackest,
   padding: spacing(0.5, 1),
   borderRadius: spacing(0.25),
+  color: vars.colors.neutrals.white,
   fontSize: vars.typography.body2.fontSize,
   lineHeight: vars.typography.body2.lineHeight,
 });

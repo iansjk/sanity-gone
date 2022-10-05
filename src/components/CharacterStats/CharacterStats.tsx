@@ -385,7 +385,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
           <dd>{health}</dd>
         </div>
 
-        <div>
+        <div className={classes.attackPower}>
           <dt>
             <AttackPowerIcon
               aria-hidden="true"

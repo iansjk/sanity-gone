@@ -43,10 +43,7 @@ export interface SkillAtLevel {
   description: string | null;
   rangeId: string | null;
   duration: number;
-  blackboard: Array<{
-    key: string;
-    value: number;
-  }>;
+  blackboard: InterpolatedValue[];
 }
 
 interface Range {

@@ -10,7 +10,7 @@
     "postbuild": "next-sitemap && node aceship.cjs",
     "preview": "next start",
     "lint": "next lint",
-    "update-game-data": "git submodule update --init --recursive --remote && esnode ./scripts/copy-branches.ts && esnode scripts/copy-operators.ts && esnode ./scripts/copy-modules.ts && esnode ./scripts/build-search-index.ts && node scripts/copy-images.cjs",
+    "update-game-data": "git submodule update --init --recursive --remote && sucrase-node ./scripts/copy-branches.ts && sucrase-node scripts/copy-operators.ts && sucrase-node ./scripts/copy-modules.ts && sucrase-node ./scripts/build-search-index.ts && node scripts/copy-images.cjs",
     "storybook": "NODE_ENV=test start-storybook -p 6006",
     "build-storybook": "NODE_ENV=test build-storybook"
   },
@@ -68,7 +68,6 @@
     "@typescript-eslint/parser": "^5.12.0",
     "@vanilla-extract/next-plugin": "^2.1.1",
     "@vanilla-extract/webpack-plugin": "^2.2.0",
-    "@zaydek/esnode": "^0.1.2",
     "eslint": "^8.9.0",
     "eslint-config-next": "^12.1.0",
     "eslint-config-prettier": "^8.3.0",
@@ -82,6 +81,7 @@
     "node-polyfill-webpack-plugin": "^2.0.1",
     "prettier": "^2.3.2",
     "remove-markdown": "^0.5.0",
+    "sucrase": "^3.28.0",
     "typescript": "^4.8.0"
   },
   "engines": {

@@ -144,10 +144,12 @@ export const statsListNoStatChanges = style({
 export const summonIcon = style({
   gridRowStart: "span 2",
   justifyContent: "center",
+  borderRadius: spacing(0, 0, 0, 0.5),
   "@media": {
     [breakpoints.down("mobile")]: {
       gridRowStart: "unset",
       gridColumn: "span 2",
+      borderRadius: 0,
     },
   },
   selectors: {
@@ -186,7 +188,12 @@ export const range = style({
       },
     },
     [`${statsListNoStatChanges} &`]: {
-      borderRadius: spacing(0, 0, 0.5, 0.5),
+      borderRadius: spacing(0, 0.5, 0.5, 0),
+      "@media": {
+        [breakpoints.down("mobile")]: {
+          borderRadius: spacing(0, 0, 0.5, 0.5),
+        },
+      },
     },
   },
 });

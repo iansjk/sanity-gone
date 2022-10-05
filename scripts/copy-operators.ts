@@ -99,6 +99,7 @@ void (async () => {
           const baseSkillObject = isCnOnly
             ? cnSkillTable[skillId as keyof typeof cnSkillTable]
             : enSkillTable[skillId as keyof typeof enSkillTable];
+
           const levels = baseSkillObject.levels.map(
             (skillAtLevel: SkillAtLevel, levelIndex) => {
               const baseSkillLevelObject = {
@@ -107,6 +108,17 @@ void (async () => {
                   ? rangeTable[skillAtLevel.rangeId as keyof typeof rangeTable]
                   : null,
               };
+
+              // SPECIAL CASES
+              // - heavyrain s1 (skchr_zebra_1) interpolates "duration" but this value is missing from the blackboard;
+              //   we have to append it to the blackboard manually
+              if (skillId === "skchr_zebra_1") {
+                baseSkillLevelObject.blackboard.push({
+                  key: "duration",
+                  value: baseSkillLevelObject.duration,
+                });
+              }
+
               if (isCnOnly && character.profession !== "TOKEN") {
                 try {
                   const skillTL =
@@ -133,7 +145,9 @@ void (async () => {
         })
         .filter((skillData) => !!skillData);
 
-      const mostRecentCharData = cnCharacterTable[charId as keyof typeof cnCharacterTable] ?? enPatchChars[charId as keyof typeof enPatchChars];
+      const mostRecentCharData =
+        cnCharacterTable[charId as keyof typeof cnCharacterTable] ??
+        enPatchChars[charId as keyof typeof enPatchChars];
       const { name: cnName, subProfessionId } = mostRecentCharData;
 
       if (character.tokenKey) {

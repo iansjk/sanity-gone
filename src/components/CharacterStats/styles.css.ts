@@ -52,30 +52,17 @@ export const trustAndEliteButtons = style({
 });
 
 export const checkboxContainer = style({
-  margin: spacing(2, 2, 2, 0),
-  display: "flex",
-  flexDirection: "row",
+  display: "grid",
+  alignItems: "center",
+  justifyItems: "start",
+  gridAutoFlow: "column",
+  columnGap: spacing(3),
+  paddingLeft: spacing(3),
   "@media": {
     [breakpoints.down("mobile")]: {
-      border: "none",
-    },
-  },
-});
-
-export const checkbox = style({
-  marginLeft: spacing(3),
-  "@media": {
-    [breakpoints.down("mobile")]: {
-      marginLeft: spacing(2),
-    },
-  },
-});
-
-export const checkboxLabel = style({
-  padding: spacing(0.25, 0),
-  "@media": {
-    [breakpoints.down("mobile")]: {
-      padding: spacing(0.5, 0),
+      paddingLeft: 0,
+      paddingRight: spacing(2),
+      columnGap: spacing(2),
     },
   },
 });

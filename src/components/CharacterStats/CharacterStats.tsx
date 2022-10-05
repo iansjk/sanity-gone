@@ -150,169 +150,165 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
             <div className={classes.mobileSpacer} />
             {!isSummon && (
               <div className={classes.checkboxContainer}>
-                <div className={classes.checkbox}>
-                  <Tooltip
-                    interactive
-                    trigger="mouseenter focusin"
-                    content={
-                      <ul className={classes.statsChangeList}>
-                        {trustIncreases.maxHp > 0 && (
-                          <li className={classes.statsChangeListItem}>
-                            HP&nbsp;
-                            <span className={classes.statChangeValue}>
-                              +{trustIncreases.maxHp}
-                            </span>
+                <Tooltip
+                  interactive
+                  trigger="mouseenter focusin"
+                  content={
+                    <ul className={classes.statsChangeList}>
+                      {trustIncreases.maxHp > 0 && (
+                        <li className={classes.statsChangeListItem}>
+                          HP&nbsp;
+                          <span className={classes.statChangeValue}>
+                            +{trustIncreases.maxHp}
+                          </span>
+                        </li>
+                      )}
+                      {trustIncreases.atk > 0 && (
+                        <li className={classes.statsChangeListItem}>
+                          ATK&nbsp;
+                          <span className={classes.statChangeValue}>
+                            +{trustIncreases.atk}
+                          </span>
+                        </li>
+                      )}
+                      {trustIncreases.def > 0 && (
+                        <li className={classes.statsChangeListItem}>
+                          DEF&nbsp;
+                          <span className={classes.statChangeValue}>
+                            +{trustIncreases.def}
+                          </span>
+                        </li>
+                      )}
+                      {trustIncreases.magicResistance > 0 && (
+                        <li className={classes.statsChangeListItem}>
+                          RES&nbsp;
+                          <span className={classes.statChangeValue}>
+                            +{trustIncreases.magicResistance}
+                          </span>
+                        </li>
+                      )}
+                    </ul>
+                  }
+                >
+                  <CustomCheckbox
+                    label="Trust"
+                    checked={trustBonus}
+                    onChange={(e) => {
+                      setTrustBonus(e.target.checked);
+                    }}
+                  />
+                </Tooltip>
+                <Tooltip
+                  interactive
+                  trigger="mouseenter focusin"
+                  content={
+                    <ul className={classes.statsChangeList}>
+                      {getPotStatIncreases(characterObject).map((pot, i) => {
+                        return (
+                          <li
+                            key={`potential-${i}-stat-change`}
+                            className={classes.statsChangeListItem}
+                          >
+                            {i === 0 && (
+                              <PotentialTwoIcon
+                                className={classes.statsChangeListItemIcon}
+                              />
+                            )}
+                            {i === 1 && (
+                              <PotentialThreeIcon
+                                className={classes.statsChangeListItemIcon}
+                              />
+                            )}
+                            {i === 2 && (
+                              <PotentialFourIcon
+                                className={classes.statsChangeListItemIcon}
+                              />
+                            )}
+                            {i === 3 && (
+                              <PotentialFiveIcon
+                                className={classes.statsChangeListItemIcon}
+                              />
+                            )}
+                            {i === 4 && (
+                              <PotentialSixIcon
+                                className={classes.statsChangeListItemIcon}
+                              />
+                            )}
+                            {pot.health > 0 && (
+                              <span>
+                                HP&nbsp;
+                                <span className={classes.statChangeValue}>
+                                  +{pot.health}
+                                </span>
+                              </span>
+                            )}
+                            {pot.attackPower > 0 && (
+                              <span>
+                                ATK&nbsp;
+                                <span className={classes.statChangeValue}>
+                                  +{pot.attackPower}
+                                </span>
+                              </span>
+                            )}
+                            {pot.defense > 0 && (
+                              <span>
+                                DEF&nbsp;
+                                <span className={classes.statChangeValue}>
+                                  +{pot.defense}
+                                </span>
+                              </span>
+                            )}
+                            {pot.artsResistance > 0 && (
+                              <span>
+                                RES&nbsp;
+                                <span className={classes.statChangeValue}>
+                                  +{pot.artsResistance}%
+                                </span>
+                              </span>
+                            )}
+                            {pot.dpCost < 0 && (
+                              <span>
+                                DP Cost&nbsp;
+                                <span className={classes.statChangeValue}>
+                                  {pot.dpCost}
+                                </span>
+                              </span>
+                            )}
+                            {pot.attackSpeed > 0 && (
+                              <span>
+                                ASPD&nbsp;
+                                <span className={classes.statChangeValue}>
+                                  +{pot.attackSpeed}
+                                </span>
+                              </span>
+                            )}
+                            {pot.redeployTimeInSeconds < 0 && (
+                              <span>
+                                Redeploy Time&nbsp;
+                                <span className={classes.statChangeValue}>
+                                  {pot.redeployTimeInSeconds}
+                                </span>
+                              </span>
+                            )}
+                            {pot.description && (
+                              <span className={classes.potentialDescription}>
+                                {pot.description}
+                              </span>
+                            )}
                           </li>
-                        )}
-                        {trustIncreases.atk > 0 && (
-                          <li className={classes.statsChangeListItem}>
-                            ATK&nbsp;
-                            <span className={classes.statChangeValue}>
-                              +{trustIncreases.atk}
-                            </span>
-                          </li>
-                        )}
-                        {trustIncreases.def > 0 && (
-                          <li className={classes.statsChangeListItem}>
-                            DEF&nbsp;
-                            <span className={classes.statChangeValue}>
-                              +{trustIncreases.def}
-                            </span>
-                          </li>
-                        )}
-                        {trustIncreases.magicResistance > 0 && (
-                          <li className={classes.statsChangeListItem}>
-                            RES&nbsp;
-                            <span className={classes.statChangeValue}>
-                              +{trustIncreases.magicResistance}
-                            </span>
-                          </li>
-                        )}
-                      </ul>
-                    }
-                  >
-                    <CustomCheckbox
-                      label="Trust"
-                      checked={trustBonus}
-                      onChange={(e) => {
-                        setTrustBonus(e.target.checked);
-                      }}
-                    />
-                  </Tooltip>
-                </div>
-                <div className={classes.checkbox}>
-                  <Tooltip
-                    interactive
-                    trigger="mouseenter focusin"
-                    content={
-                      <ul className={classes.statsChangeList}>
-                        {getPotStatIncreases(characterObject).map((pot, i) => {
-                          return (
-                            <li
-                              key={`potential-${i}-stat-change`}
-                              className={classes.statsChangeListItem}
-                            >
-                              {i === 0 && (
-                                <PotentialTwoIcon
-                                  className={classes.statsChangeListItemIcon}
-                                />
-                              )}
-                              {i === 1 && (
-                                <PotentialThreeIcon
-                                  className={classes.statsChangeListItemIcon}
-                                />
-                              )}
-                              {i === 2 && (
-                                <PotentialFourIcon
-                                  className={classes.statsChangeListItemIcon}
-                                />
-                              )}
-                              {i === 3 && (
-                                <PotentialFiveIcon
-                                  className={classes.statsChangeListItemIcon}
-                                />
-                              )}
-                              {i === 4 && (
-                                <PotentialSixIcon
-                                  className={classes.statsChangeListItemIcon}
-                                />
-                              )}
-                              {pot.health > 0 && (
-                                <span>
-                                  HP&nbsp;
-                                  <span className={classes.statChangeValue}>
-                                    +{pot.health}
-                                  </span>
-                                </span>
-                              )}
-                              {pot.attackPower > 0 && (
-                                <span>
-                                  ATK&nbsp;
-                                  <span className={classes.statChangeValue}>
-                                    +{pot.attackPower}
-                                  </span>
-                                </span>
-                              )}
-                              {pot.defense > 0 && (
-                                <span>
-                                  DEF&nbsp;
-                                  <span className={classes.statChangeValue}>
-                                    +{pot.defense}
-                                  </span>
-                                </span>
-                              )}
-                              {pot.artsResistance > 0 && (
-                                <span>
-                                  RES&nbsp;
-                                  <span className={classes.statChangeValue}>
-                                    +{pot.artsResistance}%
-                                  </span>
-                                </span>
-                              )}
-                              {pot.dpCost < 0 && (
-                                <span>
-                                  DP Cost&nbsp;
-                                  <span className={classes.statChangeValue}>
-                                    {pot.dpCost}
-                                  </span>
-                                </span>
-                              )}
-                              {pot.attackSpeed > 0 && (
-                                <span>
-                                  ASPD&nbsp;
-                                  <span className={classes.statChangeValue}>
-                                    +{pot.attackSpeed}
-                                  </span>
-                                </span>
-                              )}
-                              {pot.redeployTimeInSeconds < 0 && (
-                                <span>
-                                  Redeploy Time&nbsp;
-                                  <span className={classes.statChangeValue}>
-                                    {pot.redeployTimeInSeconds}
-                                  </span>
-                                </span>
-                              )}
-                              {pot.description && (
-                                <span className={classes.potentialDescription}>
-                                  {pot.description}
-                                </span>
-                              )}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    }
-                  >
-                    <CustomCheckbox
-                      label={isMobile ? "Pot." : "Potential"}
-                      checked={potentialBonus}
-                      onChange={(e) => {
-                        setPotentialBonus(e.target.checked);
-                      }}
-                    />
-                  </Tooltip>
-                </div>
+                        );
+                      })}
+                    </ul>
+                  }
+                >
+                  <CustomCheckbox
+                    label={isMobile ? "Pot." : "Potential"}
+                    checked={potentialBonus}
+                    onChange={(e) => {
+                      setPotentialBonus(e.target.checked);
+                    }}
+                  />
+                </Tooltip>
               </div>
             )}
           </div>

@@ -1,4 +1,8 @@
-const TiltedStarIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
+type Props = React.HTMLAttributes<SVGElement> & {
+  pathClassName?: string;
+};
+
+const TiltedStarIcon: React.VFC<Props> = ({ pathClassName, ...rest }) => {
   return (
     <svg
       width="20"
@@ -6,7 +10,7 @@ const TiltedStarIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
+      {...rest}
     >
       <path
         d="M2.15692 14.8126C1.9175 15.1763 1.94088 15.653 2.21473 15.9915C2.48858 16.33 2.94996 16.4524 3.35558 16.2942L8.48351 14.2937L11.9681 18.6267C12.2418 18.967 12.7047 19.0904 13.1114 18.9314C13.5181 18.7724 13.7747 18.3679 13.7451 17.9322L13.381 12.5715L17.9779 10.9885C18.3932 10.8455 18.6666 10.4482 18.6518 10.0092C18.6369 9.57021 18.3374 9.19229 17.9133 9.07765L13.1158 7.78057L12.7478 1.93714C12.7207 1.50702 12.4211 1.14265 12.0043 1.03294C11.5875 0.923236 11.1473 1.09288 10.912 1.45392L7.73606 6.32608L2.91334 5.02219C2.48881 4.90742 2.03913 5.08345 1.80535 5.45594C1.57157 5.82842 1.60857 6.30991 1.89651 6.6423L5.10084 10.3412L2.15692 14.8126Z"
@@ -14,6 +18,7 @@ const TiltedStarIcon: React.VFC<React.HTMLAttributes<SVGElement>> = (props) => {
         stroke="#1E1E26"
         strokeWidth="2"
         strokeLinejoin="round"
+        className={pathClassName}
       />
     </svg>
   );

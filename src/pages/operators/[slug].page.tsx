@@ -477,7 +477,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   component: (
                     <CardWithTabs
                       header="Talents"
-                      panelContent={(
+                      panels={(
                         [talent1Analysis, talent2Analysis].filter((x) =>
                           Boolean(x)
                         ) as MDXRemoteSerializeResult[]
@@ -506,7 +506,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   component: (
                     <CardWithTabs
                       header="Skills"
-                      panelContent={(
+                      panels={(
                         [skill1Analysis, skill2Analysis, skill3Analysis].filter(
                           (x) => Boolean(x)
                         ) as MDXRemoteSerializeResult[]

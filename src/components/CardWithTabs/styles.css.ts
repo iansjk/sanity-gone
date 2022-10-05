@@ -2,9 +2,7 @@ import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
 import { breakpoints, spacing } from "../../theme-helpers";
 import { vars } from "../../theme.css";
 
-export const cardContent = style({
-  padding: "0 !important",
-});
+export const cardWithTabsRoot = style({});
 
 export const tabWrapper = style({
   display: "flex",
@@ -61,16 +59,10 @@ export const buttonBase = style({
   ":hover": {
     borderColor: `var(--accent-color, ${vars.colors.neutrals.midtoneBrighter})`,
   },
-  ":last-child": {
-    margin: 0,
-  },
   "@media": {
     [breakpoints.down("mobile")]: {
       marginBottom: 0,
       marginRight: spacing(2),
-      ":last-of-type": {
-        marginLeft: 0,
-      },
     },
   },
 });
@@ -87,12 +79,11 @@ export const button = styleVariants({
   ],
 });
 
-//TODO: replace these global styles with proper styles once Tabs have been completely migrated
 globalStyle(`${buttonBase} svg path`, {
   fill: vars.colors.neutrals.midtoneBrighter,
 });
 
-globalStyle(`${button.default}:hover svg path`, {
+globalStyle(`${buttonBase}:not(${button.active}):hover svg path`, {
   fill: `var(--accent-color, ${vars.colors.neutrals.midtoneBrighter})`,
 });
 

@@ -36,25 +36,23 @@ const Modules: React.VFC<ModulesProps> = (props) => {
 
   return (
     <CardWithTabs
-      css={styles}
       header="Modules"
-      buttons={moduleAnalyses.map((_, i) => (
-        <button
-          key={i}
-          aria-label={`module ${i + 1}`}
-          className="module-button"
-        >
-          <div className="module-icon">
-            <Image
-              className="module-icon-image"
-              width={42}
-              height={42}
-              src={moduleTypeImage(modules[i].moduleIcon)}
-              alt=""
-            />
-          </div>
-        </button>
-      ))}
+      buttons={moduleAnalyses.map((_, i) => ({
+        label: `module ${i + 1}`,
+        content: (
+          <button key={i} className="module-button">
+            <div className="module-icon">
+              <Image
+                className="module-icon-image"
+                width={42}
+                height={42}
+                src={moduleTypeImage(modules[i].moduleIcon)}
+                alt=""
+              />
+            </div>
+          </button>
+        ),
+      }))}
       panels={moduleAnalyses.map((panel, i) => (
         <div key={i}>
           <MDXRemote key={i} {...panel} components={components(i)} />

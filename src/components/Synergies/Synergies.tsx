@@ -6,6 +6,7 @@ import Synergy, { SynergyProps, SynergyQuality } from "../Synergy";
 import { operatorAvatar } from "../../utils/images";
 import Image from "next/image";
 import cx from "clsx";
+import { Fragment } from "react";
 
 export interface SynergiesProps {
   synergies: SynergyProps[];
@@ -20,10 +21,8 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
   return (
     <CardWithTabs
       header="Synergy"
-      isSwiper
-      css={styles}
       buttons={sortedSynergies.flatMap((syn, i) => {
-        const button = (
+        let button = (
           <button
             key={syn.name}
             aria-label={syn.name}
@@ -49,19 +48,21 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
           (i === 0 || sortedSynergies[i - 1].quality !== syn.quality)
         ) {
           const [qualityLabel] = SynergyQuality[syn.quality].split(" ");
-          return [
-            <span
-              key={qualityLabel}
-              // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-              className={`synergy-quality quality-${syn.quality}`}
-              title={SynergyQuality[syn.quality]}
-            >
-              {qualityLabel}
-            </span>,
-            button,
-          ];
+          button = (
+            <Fragment>
+              <span
+                key={qualityLabel}
+                // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+                className={`synergy-quality quality-${syn.quality}`}
+                title={SynergyQuality[syn.quality]}
+              >
+                {qualityLabel}
+              </span>
+              {button}
+            </Fragment>
+          );
         }
-        return button;
+        return { label: syn.name, content: button };
       })}
       panels={sortedSynergies.map((synOp) => {
         const {

@@ -37,34 +37,9 @@ import SliderWithInput from "../SliderWithInput";
 import TraitInfo from "../TraitInfo";
 import Tooltip from "../Tooltip";
 
-const SUMMON_ICON_SIZE = 60;
+import * as classes from "./styles.css";
 
-// const StatsChangeTooltip = styled(({ className, ...rest }: TooltipProps) => (
-//   <Tooltip {...rest} classes={{ popper: className }} />
-// ))(({ theme }) => ({
-//   [`& .${tooltipClasses.tooltip}`]: {
-//     ul: {
-//       margin: 0,
-//       padding: 0,
-//       listStyleType: "none",
-//       ".stat-value": {
-//         color: theme.palette.blue.main,
-//       },
-//       li: {
-//         svg: {
-//           width: "18px",
-//           height: "17px",
-//           marginRight: theme.spacing(1),
-//         },
-//         display: "flex",
-//         alignItems: "center",
-//       },
-//     },
-//   },
-//   ".potential-description": {
-//     color: theme.palette.gray.main,
-//   },
-// }));
+const SUMMON_ICON_SIZE = 60;
 
 export interface CharacterStatsProps {
   characterObject: CharacterObject;
@@ -184,35 +159,35 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                     interactive
                     trigger="mouseenter focusin"
                     content={
-                      <ul>
+                      <ul className={classes.statsChangeList}>
                         {trustIncreases.maxHp > 0 && (
-                          <li>
+                          <li className={classes.statsChangeListItem}>
                             HP&nbsp;
-                            <span className="stat-value">
+                            <span className={classes.statChangeValue}>
                               +{trustIncreases.maxHp}
                             </span>
                           </li>
                         )}
                         {trustIncreases.atk > 0 && (
-                          <li>
+                          <li className={classes.statsChangeListItem}>
                             ATK&nbsp;
-                            <span className="stat-value">
+                            <span className={classes.statChangeValue}>
                               +{trustIncreases.atk}
                             </span>
                           </li>
                         )}
                         {trustIncreases.def > 0 && (
-                          <li>
+                          <li className={classes.statsChangeListItem}>
                             DEF&nbsp;
-                            <span className="stat-value">
+                            <span className={classes.statChangeValue}>
                               +{trustIncreases.def}
                             </span>
                           </li>
                         )}
                         {trustIncreases.magicResistance > 0 && (
-                          <li>
+                          <li className={classes.statsChangeListItem}>
                             RES&nbsp;
-                            <span className="stat-value">
+                            <span className={classes.statChangeValue}>
                               +{trustIncreases.magicResistance}
                             </span>
                           </li>
@@ -234,19 +209,42 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                     interactive
                     trigger="mouseenter focusin"
                     content={
-                      <ul>
+                      <ul className={classes.statsChangeList}>
                         {getPotStatIncreases(characterObject).map((pot, i) => {
                           return (
-                            <li key={`potential-${i}-stat-change`}>
-                              {i === 0 && <PotentialTwoIcon />}
-                              {i === 1 && <PotentialThreeIcon />}
-                              {i === 2 && <PotentialFourIcon />}
-                              {i === 3 && <PotentialFiveIcon />}
-                              {i === 4 && <PotentialSixIcon />}
+                            <li
+                              key={`potential-${i}-stat-change`}
+                              className={classes.statsChangeListItem}
+                            >
+                              {i === 0 && (
+                                <PotentialTwoIcon
+                                  className={classes.statsChangeListItemIcon}
+                                />
+                              )}
+                              {i === 1 && (
+                                <PotentialThreeIcon
+                                  className={classes.statsChangeListItemIcon}
+                                />
+                              )}
+                              {i === 2 && (
+                                <PotentialFourIcon
+                                  className={classes.statsChangeListItemIcon}
+                                />
+                              )}
+                              {i === 3 && (
+                                <PotentialFiveIcon
+                                  className={classes.statsChangeListItemIcon}
+                                />
+                              )}
+                              {i === 4 && (
+                                <PotentialSixIcon
+                                  className={classes.statsChangeListItemIcon}
+                                />
+                              )}
                               {pot.health > 0 && (
                                 <span>
                                   HP&nbsp;
-                                  <span className="stat-value">
+                                  <span className={classes.statChangeValue}>
                                     +{pot.health}
                                   </span>
                                 </span>
@@ -254,7 +252,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                               {pot.attackPower > 0 && (
                                 <span>
                                   ATK&nbsp;
-                                  <span className="stat-value">
+                                  <span className={classes.statChangeValue}>
                                     +{pot.attackPower}
                                   </span>
                                 </span>
@@ -262,7 +260,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                               {pot.defense > 0 && (
                                 <span>
                                   DEF&nbsp;
-                                  <span className="stat-value">
+                                  <span className={classes.statChangeValue}>
                                     +{pot.defense}
                                   </span>
                                 </span>
@@ -270,7 +268,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                               {pot.artsResistance > 0 && (
                                 <span>
                                   RES&nbsp;
-                                  <span className="stat-value">
+                                  <span className={classes.statChangeValue}>
                                     +{pot.artsResistance}%
                                   </span>
                                 </span>
@@ -278,7 +276,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                               {pot.dpCost < 0 && (
                                 <span>
                                   DP Cost&nbsp;
-                                  <span className="stat-value">
+                                  <span className={classes.statChangeValue}>
                                     {pot.dpCost}
                                   </span>
                                 </span>
@@ -286,7 +284,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                               {pot.attackSpeed > 0 && (
                                 <span>
                                   ASPD&nbsp;
-                                  <span className="stat-value">
+                                  <span className={classes.statChangeValue}>
                                     +{pot.attackSpeed}
                                   </span>
                                 </span>
@@ -294,13 +292,13 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
                               {pot.redeployTimeInSeconds < 0 && (
                                 <span>
                                   Redeploy Time&nbsp;
-                                  <span className="stat-value">
+                                  <span className={classes.statChangeValue}>
                                     {pot.redeployTimeInSeconds}
                                   </span>
                                 </span>
                               )}
                               {pot.description && (
-                                <span className="potential-description">
+                                <span className={classes.potentialDescription}>
                                   {pot.description}
                                 </span>
                               )}

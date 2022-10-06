@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { CharacterObject } from "../../utils/types";
 
@@ -30,6 +31,17 @@ const Introduction: React.VFC<IntroductionProps> = (props) => {
           SummonStats: () => <CharacterStats characterObject={summonObject} />,
         }
       : {}),
+    img: (props: React.HTMLAttributes<HTMLImageElement>) => (
+      <Box display="flex" alignItems="center" justifyContent="center">
+        {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+        <img
+          {...props}
+          style={{
+            width: `min(100vw - 32px, 360px)`,
+          }}
+        />
+      </Box>
+    ),
   };
 
   return (

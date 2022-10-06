@@ -205,7 +205,7 @@ const SearchBar: React.VFC = () => {
               ))}
             </ul>
           )}
-          {results.length === 0 && (
+          {query && results.length === 0 && (
             <Combobox.Option className={classes.optionGroupLabel}>
               No results found!
             </Combobox.Option>

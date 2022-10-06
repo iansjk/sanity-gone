@@ -14,9 +14,14 @@ export const results = style({
   padding: 0,
   background: vars.colors.neutrals.midtone,
   borderRadius: spacing(0, 0, 0.5, 0.5),
-  borderWidth: "0 1px 1px 1px",
+  borderWidth: 0,
   borderStyle: "solid",
   borderColor: vars.colors.neutrals.midtoneBrighter,
+  selectors: {
+    "&:not(:empty)": {
+      borderWidth: "0 1px 1px 1px",
+    },
+  },
 });
 
 export const root = style({
@@ -37,7 +42,7 @@ export const root = style({
       border: `1px solid ${rawColors.neutrals.gray}`,
       background: rawColors.neutrals.darktone,
     },
-    [`&:has(${results}[data-headlessui-state="open"])`]: {
+    [`&:has(${results}[data-headlessui-state="open"]:not(:empty))`]: {
       borderBottomLeftRadius: 0,
       borderBottomRightRadius: 0,
     },
@@ -98,7 +103,7 @@ export const option = style({
     '&:not([aria-disabled="true"])': {
       cursor: "pointer",
     },
-    '&:not([aria-disabled="true"]):hover': {
+    '&:not([aria-disabled="true"]):hover, &[data-headlessui-state~="active"]': {
       background: vars.colors.neutrals.midtoneBrighter,
     },
   },

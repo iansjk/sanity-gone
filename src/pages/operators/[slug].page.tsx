@@ -562,48 +562,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                           )),
                         },
                       ]}
-                      // panels={(
-                      //   [skill1Analysis, skill2Analysis, skill3Analysis].filter(
-                      //     (x) => Boolean(x)
-                      //   ) as MDXRemoteSerializeResult[]
-                      // ).map((mdxSource, i) => (
-                      //   <MDXRemote
-                      //     key={i}
-                      //     {...mdxSource}
-                      //     components={{
-                      //       SkillInfo: () => (
-                      //         <SkillInfo
-                      //           isRecommended={skillRecommended[i]}
-                      //           skillObject={operatorObject.skillData[i]}
-                      //         />
-                      //       ),
-                      //       SummonStats: () => (
-                      //         <CharacterStats
-                      //           characterObject={
-                      //             summons.length > 1 ? summons[i] : summons[0]
-                      //           }
-                      //         />
-                      //       ),
-                      //       MasteryRecommendation,
-                      //       img: (props) => (
-                      //         <Box
-                      //           display="flex"
-                      //           alignItems="center"
-                      //           justifyContent="center"
-                      //         >
-                      //           {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
-                      //           <img
-                      //             {...props}
-                      //             style={{
-                      //               width: `min(100vw - 32px, 360px)`,
-                      //             }}
-                      //           />
-                      //         </Box>
-                      //       ),
-                      //     }}
-                      //   />
-                      // ))}
-                      // buttonLabelFn={(i) => `skill ${i + 1}`}
                     />
                   ),
                   className: "skills",

@@ -3,6 +3,7 @@ import FlexSearch from "flexsearch/dist/flexsearch.node";
 import { Combobox } from "@headlessui/react";
 import levenshtein from "js-levenshtein";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import {
   operatorAvatar,
@@ -12,10 +13,9 @@ import {
 import { slugify, subclassSlugify } from "../../utils/globals";
 import SearchIcon from "../icons/SearchIcon";
 import search from "../../../data/search.json";
-import Link from "next/link";
-import HashCompatibleNextLink from "../HashCompatibleNextLink";
 
 import * as classes from "./styles.css";
+
 interface ClassSearchResult {
   type: "class";
   name: string;
@@ -67,6 +67,7 @@ const SearchBar: React.VFC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
   const index = useRef<any>(null);
+  const router = useRouter();
 
   useEffect(() => {
     index.current = FlexSearch.create({
@@ -107,15 +108,28 @@ const SearchBar: React.VFC = () => {
       onClick={() => inputRef.current?.focus()}
     >
       <SearchIcon className={classes.searchIcon} />
-      <Combobox>
+      <Combobox<SearchResult>
+        onChange={(value) => {
+          if (value.type === "operator") {
+            router.push(`/operators/${slugify(value.name)}`);
+          } else if (value.type === "class") {
+            router.push(`/operators#${slugify(value.class)}`);
+          } else {
+            router.push(
+              `/operators#${slugify(value.class)}-${subclassSlugify(
+                value.name
+              )}`
+            );
+          }
+        }}
+      >
         <Combobox.Input
           ref={inputRef}
           className={classes.input}
+          aria-label="Search operators and guides"
           placeholder="Search operators and guides"
-          value={query}
           onChange={(e) => {
             setQuery(e.target.value);
-            e.preventDefault();
           }}
         />
         <Combobox.Options as="div" className={classes.results}>
@@ -140,6 +154,7 @@ const SearchBar: React.VFC = () => {
                     key={result.charId}
                     className={classes.option}
                     disabled={!hasGuide}
+                    value={result}
                   >
                     <img
                       className={classes.optionIcon.operator}
@@ -183,6 +198,7 @@ const SearchBar: React.VFC = () => {
                       : result.class
                   }
                   className={classes.option}
+                  value={result}
                 >
                   <img
                     className={classes.optionIcon[result.type]}

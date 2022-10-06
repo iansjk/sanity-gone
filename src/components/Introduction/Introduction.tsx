@@ -49,7 +49,9 @@ const Introduction: React.VFC<IntroductionProps> = (props) => {
       <OperatorInfo operatorObject={operatorObject} isLimited={isLimited} />
       <div className="introduction-content">
         <MDXRemote {...analysis} components={components} />
-        <StrengthsWeaknesses strengths={strengths} weaknesses={weaknesses} />
+        <div>
+          <StrengthsWeaknesses strengths={strengths} weaknesses={weaknesses} />
+        </div>
       </div>
     </Card>
   );

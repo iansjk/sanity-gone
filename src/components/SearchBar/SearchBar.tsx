@@ -15,6 +15,7 @@ import Image from "next/image";
 import search from "../../../data/search.json";
 import Link from "next/link";
 import HashCompatibleNextLink from "../HashCompatibleNextLink";
+import * as classes from "./styles.css";
 
 // Interface representing a search result.
 // This could be either a class, subclass, or operator (denoted by "type").
@@ -88,7 +89,7 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
 
   return (
     <div
-      className={`search ${isFocused ? "focused" : "not-focused"}`}
+      className={classes.root}
       css={styles}
       onFocus={() => setFocused(true)}
       onBlur={(e: React.FocusEvent<HTMLDivElement>) => {
@@ -98,10 +99,18 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
         }
       }}
     >
-      <div className={`search-bar ${query && isFocused ? " menu-down" : ""}`}>
-        <SearchIcon className="search-icon" />
+      <div
+        // TODO remove 'search-bar' once MobileMenu/styles.css.ts have been moved here
+        className={`search-bar 
+          ${
+            query && isFocused
+              ? classes.searchBar.focused
+              : classes.searchBar.unfocused
+          }`}
+      >
+        <SearchIcon className={classes.searchIcon} />
         <input
-          className="search-input"
+          className={classes.searchInput}
           placeholder={placeholder}
           onChange={(e) => {
             setFocused(true);
@@ -113,10 +122,10 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
       {results &&
         query &&
         (results.length > 0 ? (
-          <div className="search-results">
+          <div className={classes.searchResults}>
             {results.filter((res) => res.type === "operator").length > 0 && (
-              <div className="operator-results">
-                <div className="category-label">Operators</div>
+              <div className={classes.operatorResults}>
+                <div className={classes.categoryLabel}>Operators</div>
                 {results
                   .filter((res) => res.type === "operator")
                   .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
@@ -137,16 +146,26 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           width={40}
                           height={40}
                         />
-                        <div className="operator-info">
+                        <div className={classes.operatorInfo}>
                           {res.name}
-                          <div className="rarity-and-class">
+                          <div className={classes.rarityAndClass}>
                             <span
-                              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                              className={`rarity rarity-${res.rarity!}-stars`}
+                              className={
+                                classes.rarity[
+                                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                                  res.rarity! as unknown as
+                                    | 1
+                                    | 2
+                                    | 3
+                                    | 4
+                                    | 5
+                                    | 6
+                                ]
+                              }
                             >
                               {res.rarity}★
                             </span>
-                            <span className="class-and-subclass">
+                            <span className={classes.classAndSubclass}>
                               {res.class}&nbsp; •&nbsp; {res.subclass}
                             </span>
                           </div>
@@ -156,14 +175,19 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
 
                     return hasGuide ? (
                       <Link key={res.name} href={url}>
-                        <a className="operator-card" onClick={handleLinkClick}>
+                        <a
+                          className={classes.operatorCard.enabled}
+                          onClick={handleLinkClick}
+                        >
                           {cardContent}
                         </a>
                       </Link>
                     ) : (
-                      <div key={res.name} className="operator-card disabled">
+                      <div
+                        key={res.name}
+                        className={classes.operatorCard.disabled}
+                      >
                         {cardContent}
-                        <div className="gray-overlay" />
                       </div>
                     );
                   })}
@@ -172,8 +196,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
             {results.filter(
               (res) => res.type === "branch" || res.type === "class"
             ).length > 0 && (
-              <div className="classes-results">
-                <div className="category-label">Classes</div>
+              <div className={classes.classesResults}>
+                <div className={classes.categoryLabel}>Classes</div>
                 {results
                   .filter(
                     (res) => res.type === "branch" || res.type === "class"
@@ -189,7 +213,10 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                           res.class!
                         )}-${subclassSlugify(res.name)}`}
                       >
-                        <a className="classes-card" onClick={handleLinkClick}>
+                        <a
+                          className={classes.classesCard}
+                          onClick={handleLinkClick}
+                        >
                           <Image
                             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                             src={operatorBranchIcon(res.subProfession!)}
@@ -197,9 +224,9 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                             height={40}
                             width={40}
                           />
-                          <div className="classes-info">
+                          <div className={classes.classesInfo}>
                             {res.name}
-                            <span className="class-name">
+                            <span className={classes.className}>
                               {res.class} Branch
                             </span>
                           </div>
@@ -211,7 +238,10 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                         href={`/operators#${slugify(res.class!)}`}
                       >
-                        <a className="classes-card" onClick={handleLinkClick}>
+                        <a
+                          className={classes.classesCard}
+                          onClick={handleLinkClick}
+                        >
                           <Image
                             src={operatorClassIcon(
                               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -221,9 +251,9 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
                             width={40}
                             height={40}
                           />
-                          <div className="classes-info">
+                          <div className={classes.classesInfo}>
                             {res.name}
-                            <span className="class-name">Class</span>
+                            <span className={classes.className}>Class</span>
                           </div>
                         </a>
                       </HashCompatibleNextLink>
@@ -233,8 +263,8 @@ const SearchBar: React.VFC<SearchBarProps> = (props) => {
             )}
           </div>
         ) : (
-          <div className="search-results">
-            <div className="category-label">No results found!</div>
+          <div className={classes.searchResults}>
+            <div className={classes.categoryLabel}>No results found!</div>
           </div>
         ))}
     </div>

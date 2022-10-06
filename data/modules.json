@@ -3020,7 +3020,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
               "traitEffectType": "override"
             }
           ]
@@ -3043,7 +3043,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "When there are no enemies in the surrounding 4 tiles, ATK +8%, increase SP recovery by 0.15/second",
               "talentIndex": 1,
-              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
               "traitEffectType": "override"
             },
             {
@@ -3062,7 +3062,7 @@
               "requiredPotentialRank": 2,
               "talentEffect": "When there are no enemies in the surrounding 4 tiles, ATK +10% <span class=\"potential\">(+2%)</span>, increase SP recovery by 0.15/second",
               "talentIndex": 1,
-              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
               "traitEffectType": "override"
             }
           ]
@@ -3085,7 +3085,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "When there are no enemies in the surrounding 4 tiles, ATK +8%, increase SP recovery by 0.25/second",
               "talentIndex": 1,
-              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
               "traitEffectType": "override"
             },
             {
@@ -3104,7 +3104,7 @@
               "requiredPotentialRank": 2,
               "talentEffect": "When there are no enemies in the surrounding 4 tiles, ATK +10% <span class=\"potential\">(+2%)</span>, increase SP recovery by 0.25/second",
               "talentIndex": 1,
-              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
               "traitEffectType": "override"
             }
           ]
@@ -3134,7 +3134,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
               "traitEffectType": "override"
             }
           ]
@@ -3157,7 +3157,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "When attacking enemies with 80% or more HP, Passenger will deal 25% increased damage to them for 4 seconds",
               "talentIndex": 0,
-              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
               "traitEffectType": "override"
             },
             {
@@ -3176,7 +3176,7 @@
               "requiredPotentialRank": 5,
               "talentEffect": "When attacking enemies with 80% or more HP, Passenger will deal 30% <span class=\"potential\">(+5%)</span> increased damage to them for 4 seconds",
               "talentIndex": 0,
-              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
               "traitEffectType": "override"
             }
           ]
@@ -3199,7 +3199,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "When attacking enemies with 70% or more HP, Passenger will deal 28% increased damage to them for 4 seconds",
               "talentIndex": 0,
-              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
               "traitEffectType": "override"
             },
             {
@@ -3218,7 +3218,7 @@
               "requiredPotentialRank": 5,
               "talentEffect": "When attacking enemies with 70% or more HP, Passenger will deal 33% <span class=\"potential\">(+5%)</span> increased damage to them for 4 seconds",
               "talentIndex": 0,
-              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
               "traitEffectType": "override"
             }
           ]

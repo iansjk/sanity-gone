@@ -924,5 +924,483 @@
         ]
       }
     ]
+  },
+  "uniequip_002_mizuki": {
+    "moduleName": "Messenger's Covenant",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": null
+          },
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": "Attacks deal an additional 55% of ATK as Arts damage to two targets with the lowest HP"
+          },
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": "Attacks deal an additional 60% of ATK as Arts damage to two targets with the lowest HP"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_glady": {
+    "moduleName": "Consul's Hand Mirror",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When shifting enemies, the targets take Arts Damage proportional to distance traveled (800 damage per tile shifted)",
+            "talent": null
+          },
+          {
+            "trait": "When shifting enemies, the targets take Arts Damage proportional to distance traveled (800 damage per tile shifted)",
+            "talent": "When deployed, all [Abyssal Hunter] Operators recover 3% Max HP every second and receive 28% less Physical and Arts damage"
+          },
+          {
+            "trait": "When shifting enemies, the targets take Arts Damage proportional to distance traveled (800 damage per tile shifted)",
+            "talent": "When deployed, all [Abyssal Hunter] Operators recover 3.5% Max HP every second and receive 30% less Physical and Arts damage"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_kirara": {
+    "moduleName": "\"We Will Survive 3 Online Edition\"",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": null
+          },
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": "Restores 2.5% HP per second. If there are no allied Operators in the surrounding 8 tiles, restores 3.5% HP per second instead"
+          },
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": "Restores 2.5% HP per second. If there are no allied Operators in the surrounding 8 tiles, restores 4% HP per second instead"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": null
+          },
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": "Restores 2.5% HP per second. If there are no allied Operators in the surrounding 8 tiles, restores 4% <span class=\"potential\">(+0.5%)</span> HP per second instead"
+          },
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": "Restores 2.5% HP per second. If there are no allied Operators in the surrounding 8 tiles, restores 4.5% <span class=\"potential\">(+0.5%)</span> HP per second instead"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_mantic": {
+    "moduleName": "Tail-Protection Training Tool",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": null
+          },
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": "Stays <span class=\"skill-tooltip\">Invisible</span> normally. The first attack made gains +55% ATK and removes <span class=\"skill-tooltip\">Invisible</span>. Regains <span class=\"skill-tooltip\">Invisible</span> state after not attacking for 5 seconds"
+          },
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": "Stays <span class=\"skill-tooltip\">Invisible</span> normally. The first attack made gains +60% ATK and removes <span class=\"skill-tooltip\">Invisible</span>. Regains <span class=\"skill-tooltip\">Invisible</span> state after not attacking for 5 seconds"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": null
+          },
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": "Stays <span class=\"skill-tooltip\">Invisible</span> normally. The first attack made gains +59% <span class=\"potential\">(+4%)</span> ATK and removes <span class=\"skill-tooltip\">Invisible</span>. Regains <span class=\"skill-tooltip\">Invisible</span> state after not attacking for 5 seconds"
+          },
+          {
+            "trait": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
+            "talent": "Stays <span class=\"skill-tooltip\">Invisible</span> normally. The first attack made gains +64% <span class=\"potential\">(+4%)</span> ATK and removes <span class=\"skill-tooltip\">Invisible</span>. Regains <span class=\"skill-tooltip\">Invisible</span> state after not attacking for 5 seconds"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_bubble": {
+    "moduleName": "Bubble's Shining Sword",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "DEF <span class=\"keyword\">+20%</span> when blocking enemies",
+            "talent": null
+          },
+          {
+            "trait": "DEF <span class=\"keyword\">+20%</span> when blocking enemies",
+            "talent": "Enemies that attack Bubble have their ATK reduced by 10% for 5 seconds"
+          },
+          {
+            "trait": "DEF <span class=\"keyword\">+20%</span> when blocking enemies",
+            "talent": "Enemies that attack Bubble have their ATK reduced by 12% for 5 seconds"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_kalts": {
+    "moduleName": "Mon2tr",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When healing allies with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": null
+          },
+          {
+            "trait": "When healing allies with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": "When Mon3tr's HP falls beneath 50% (one time only) and when it is defeated (excluding retreat), all enemies in the surrounding 8 tiles are <span class=\"skill-tooltip\">Stunned</span> for 3 seconds and receive 1200 True damage"
+          },
+          {
+            "trait": "When healing allies with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": "When Mon3tr's HP falls beneath 50% (one time only) and when it is defeated (excluding retreat), all enemies in the surrounding 8 tiles are <span class=\"skill-tooltip\">Stunned</span> for 3 seconds and receive 1500 True damage"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "When healing allies with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": null
+          },
+          {
+            "trait": "When healing allies with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": "When Mon3tr's HP falls beneath 50% (one time only) and when it is defeated (excluding retreat), all enemies in the surrounding 8 tiles are <span class=\"skill-tooltip\">Stunned</span> for 3.5 <span class=\"potential\">(+0.5)</span> seconds and receive 1400 <span class=\"potential\">(+200)</span> True damage"
+          },
+          {
+            "trait": "When healing allies with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": "When Mon3tr's HP falls beneath 50% (one time only) and when it is defeated (excluding retreat), all enemies in the surrounding 8 tiles are <span class=\"skill-tooltip\">Stunned</span> for 4 <span class=\"potential\">(+0.5)</span> seconds and receive 1700 <span class=\"potential\">(+200)</span> True damage"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_folnic": {
+    "moduleName": "Mother's Cravat",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When healing melee units, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": null
+          },
+          {
+            "trait": "When healing melee units, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": "Gains <span class=\"skill-tooltip\">Status Resistance</span> and -40% damage taken from environmental effects, allies within range gain -15% damage taken from environmental effects"
+          },
+          {
+            "trait": "When healing melee units, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": "Gains <span class=\"skill-tooltip\">Status Resistance</span> and -40% damage taken from environmental effects, allies within range gain -25% damage taken from environmental effects"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "When healing melee units, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": null
+          },
+          {
+            "trait": "When healing melee units, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": "Gains <span class=\"skill-tooltip\">Status Resistance</span> and -50% <span class=\"potential\">(+10%)</span> damage taken from environmental effects, allies within range gain -15% damage taken from environmental effects"
+          },
+          {
+            "trait": "When healing melee units, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": "Gains <span class=\"skill-tooltip\">Status Resistance</span> and -50% <span class=\"potential\">(+10%)</span> damage taken from environmental effects, allies within range gain -25% damage taken from environmental effects"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_003_fartth": {
+    "moduleName": "Supporters' Letters",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": null
+          },
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": "When no damage is taken within the past 5 seconds, ATK +15%; ASPD +4"
+          },
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": "When no damage is taken within the past 3 seconds, ATK +15%; ASPD +7"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": null
+          },
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": "When no damage is taken within the past 5 seconds, ATK +18% <span class=\"potential\">(+3%)</span>; ASPD +4"
+          },
+          {
+            "trait": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
+            "talent": "When no damage is taken within the past 3 seconds, ATK +18% <span class=\"potential\">(+3%)</span>; ASPD +7"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_003_zumama": {
+    "moduleName": "\"The Little Ugly Thing\"",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When blocking, ATK +15%; DEF +15% (Can now gain SP from external sources when not blocking)",
+            "talent": null
+          },
+          {
+            "trait": "When blocking, ATK +15%; DEF +15% (Can now gain SP from external sources when not blocking)",
+            "talent": "When HP is above 50%, attacks deal 120% damage; When HP is 50% or lower, gains 25% Shelter effect"
+          },
+          {
+            "trait": "When blocking, ATK +15%; DEF +15% (Can now gain SP from external sources when not blocking)",
+            "talent": "When HP is above 50%, attacks deal 123% damage; When HP is 50% or lower, gains 28% Shelter effect"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "When blocking, ATK +15%; DEF +15% (Can now gain SP from external sources when not blocking)",
+            "talent": null
+          },
+          {
+            "trait": "When blocking, ATK +15%; DEF +15% (Can now gain SP from external sources when not blocking)",
+            "talent": "When HP is above 50%, attacks deal 122% <span class=\"potential\">(+2%)</span> damage; When HP is 50% or lower, gains 27% <span class=\"potential\">(+2%)</span> Shelter effect"
+          },
+          {
+            "trait": "When blocking, ATK +15%; DEF +15% (Can now gain SP from external sources when not blocking)",
+            "talent": "When HP is above 50%, attacks deal 125% <span class=\"potential\">(+2%)</span> damage; When HP is 50% or lower, gains 30% <span class=\"potential\">(+2%)</span> Shelter effect"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_003_dusk": {
+    "moduleName": "\"Sleepless Nights\"",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "DP Cost <span class=\"keyword\">-8</span>",
+            "talent": null
+          },
+          {
+            "trait": "DP Cost <span class=\"keyword\">-8</span>",
+            "talent": "The first attack after deployment will summon 2 'Freelings' (lasts for 25 seconds) at the target's location and the four surrounding tiles (only on deployable ground tiles). All 'Freelings' have higher stats (HP +250, ATK +15, DEF +15) and restore 1 SP for Dusk every 2.5 seconds"
+          },
+          {
+            "trait": "DP Cost <span class=\"keyword\">-8</span>",
+            "talent": "The first attack after deployment will summon 2 'Freelings' (lasts for 25 seconds) at the target's location and the four surrounding tiles (only on deployable ground tiles). All 'Freelings' have higher stats (HP +400, ATK +25, DEF +25) and restore 1 SP for Dusk every 1.5 seconds"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_zebra": {
+    "moduleName": "Popular Character Stickers",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": null
+          },
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": "Heavyrain and allies on high ground tiles within the 8 surrounding tiles gain 23% Physical Dodge"
+          },
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": "Heavyrain and allies on high ground tiles within the 8 surrounding tiles gain 25% Physical Dodge"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": null
+          },
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": "Heavyrain and allies on high ground tiles within the 8 surrounding tiles gain 26% <span class=\"potential\">(+3%)</span> Physical Dodge"
+          },
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": "Heavyrain and allies on high ground tiles within the 8 surrounding tiles gain 28% <span class=\"potential\">(+3%)</span> Physical Dodge"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_sesa": {
+    "moduleName": "\"Soul Resonance\"",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "ATK increased to 110% against blocked enemies",
+            "talent": null
+          },
+          {
+            "trait": "ATK increased to 110% against blocked enemies",
+            "talent": "When deployed, all blocked enemies take +18% Physical damage"
+          },
+          {
+            "trait": "ATK increased to 110% against blocked enemies",
+            "talent": "When deployed, all blocked enemies take +22% Physical damage"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "ATK increased to 110% against blocked enemies",
+            "talent": null
+          },
+          {
+            "trait": "ATK increased to 110% against blocked enemies",
+            "talent": "When deployed, all blocked enemies take +20% <span class=\"potential\">(+2%)</span> Physical damage"
+          },
+          {
+            "trait": "ATK increased to 110% against blocked enemies",
+            "talent": "When deployed, all blocked enemies take +24% <span class=\"potential\">(+2%)</span> Physical damage"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_pasngr": {
+    "moduleName": "Electromagnetic Regulator",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": null
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": "When there are no enemies in the surrounding 4 tiles, ATK +8%, increase SP recovery by 0.15/second"
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": "When there are no enemies in the surrounding 4 tiles, ATK +8%, increase SP recovery by 0.25/second"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 2,
+        "translations": [
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": null
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": "When there are no enemies in the surrounding 4 tiles, ATK +10% <span class=\"potential\">(+2%)</span>, increase SP recovery by 0.15/second"
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": "When there are no enemies in the surrounding 4 tiles, ATK +10% <span class=\"potential\">(+2%)</span>, increase SP recovery by 0.25/second"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_003_pasngr": {
+    "moduleName": "Gold of Crowns",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
+            "talent": null
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
+            "talent": "When attacking enemies with 80% or more HP, Passenger will deal 25% increased damage to them for 4 seconds"
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
+            "talent": "When attacking enemies with 70% or more HP, Passenger will deal 28% increased damage to them for 4 seconds"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 5,
+        "translations": [
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
+            "talent": null
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
+            "talent": "When attacking enemies with 80% or more HP, Passenger will deal 30% <span class=\"potential\">(+5%)</span> increased damage to them for 4 seconds"
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
+            "talent": "When attacking enemies with 70% or more HP, Passenger will deal 33% <span class=\"potential\">(+5%)</span> increased damage to them for 4 seconds"
+          }
+        ]
+      }
+    ]
   }
 }

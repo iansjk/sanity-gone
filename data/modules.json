@@ -2070,7 +2070,7 @@
     {
       "moduleId": "uniequip_003_fartth",
       "moduleIcon": "dea-y",
-      "moduleName": "支持者来信",
+      "moduleName": "Supporters' Letters",
       "phases": [
         {
           "candidates": [
@@ -2090,7 +2090,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffect": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
               "traitEffectType": "update"
             }
           ]
@@ -2111,9 +2111,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "最近5秒内未受伤害时，攻击力+15%，攻击速度+4",
+              "talentEffect": "When no damage is taken within the past 5 seconds, ATK +15%; ASPD +4",
               "talentIndex": 0,
-              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffect": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
               "traitEffectType": "update"
             },
             {
@@ -2130,9 +2130,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "最近5秒内未受伤害时，攻击力+18%<span class=\"potential\">（+3%）</span>，攻击速度+4",
+              "talentEffect": "When no damage is taken within the past 5 seconds, ATK +18% <span class=\"potential\">(+3%)</span>; ASPD +4",
               "talentIndex": 0,
-              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffect": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
               "traitEffectType": "update"
             }
           ]
@@ -2153,9 +2153,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "最近3秒内未受伤害时，攻击力+15%，攻击速度+7",
+              "talentEffect": "When no damage is taken within the past 3 seconds, ATK +15%; ASPD +7",
               "talentIndex": 0,
-              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffect": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
               "traitEffectType": "update"
             },
             {
@@ -2172,9 +2172,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "最近3秒内未受伤害时，攻击力+18%<span class=\"potential\">（+3%）</span>，攻击速度+7",
+              "talentEffect": "When no damage is taken within the past 3 seconds, ATK +18% <span class=\"potential\">(+3%)</span>; ASPD +7",
               "talentIndex": 0,
-              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffect": "If the attacked enemy remains alive, gain <span class=\"keyword\">1</span> additional SP",
               "traitEffectType": "update"
             }
           ]
@@ -3020,7 +3020,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
               "traitEffectType": "override"
             }
           ]
@@ -3041,9 +3041,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "当周围4格没有敌人时，攻击力+8%，技力自然回复速度+0.15/秒",
+              "talentEffect": "When there are no enemies in the surrounding 4 tiles, ATK +8%, increase SP recovery by 0.15/second",
               "talentIndex": 1,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
               "traitEffectType": "override"
             },
             {
@@ -3060,9 +3060,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 2,
-              "talentEffect": "当周围4格没有敌人时，攻击力+10%<span class=\"potential\">（+2%）</span>，技力自然回复速度+0.15/秒",
+              "talentEffect": "When there are no enemies in the surrounding 4 tiles, ATK +10% <span class=\"potential\">(+2%)</span>, increase SP recovery by 0.15/second",
               "talentIndex": 1,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
               "traitEffectType": "override"
             }
           ]
@@ -3083,9 +3083,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "当周围4格没有敌人时，攻击力+8%，技力自然回复速度+0.25/秒",
+              "talentEffect": "When there are no enemies in the surrounding 4 tiles, ATK +8%, increase SP recovery by 0.25/second",
               "talentIndex": 1,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
               "traitEffectType": "override"
             },
             {
@@ -3102,9 +3102,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 2,
-              "talentEffect": "当周围4格没有敌人时，攻击力+10%<span class=\"potential\">（+2%）</span>，技力自然回复速度+0.25/秒",
+              "talentEffect": "When there are no enemies in the surrounding 4 tiles, ATK +10% <span class=\"potential\">(+2%)</span>, increase SP recovery by 0.25/second",
               "talentIndex": 1,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害降低<span class=\"keyword\">10%</span>并造成一定时间<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
               "traitEffectType": "override"
             }
           ]
@@ -3114,7 +3114,7 @@
     {
       "moduleId": "uniequip_003_pasngr",
       "moduleIcon": "cha-y",
-      "moduleName": "王权金币",
+      "moduleName": "Gold of Crowns",
       "phases": [
         {
           "candidates": [
@@ -3134,7 +3134,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
               "traitEffectType": "override"
             }
           ]
@@ -3155,9 +3155,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击命中生命值在80%以上的敌人时，4秒内异客对其造成的伤害提升25%",
+              "talentEffect": "When attacking enemies with 80% or more HP, Passenger will deal 25% increased damage to them for 4 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
               "traitEffectType": "override"
             },
             {
@@ -3174,9 +3174,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 5,
-              "talentEffect": "攻击命中生命值在80%以上的敌人时，4秒内异客对其造成的伤害提升30%<span class=\"potential\">（+5%）</span>",
+              "talentEffect": "When attacking enemies with 80% or more HP, Passenger will deal 30% <span class=\"potential\">(+5%)</span> increased damage to them for 4 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
               "traitEffectType": "override"
             }
           ]
@@ -3197,9 +3197,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击命中生命值在70%以上的敌人时，4秒内异客对其造成的伤害提升28%",
+              "talentEffect": "When attacking enemies with 70% or more HP, Passenger will deal 28% increased damage to them for 4 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
               "traitEffectType": "override"
             },
             {
@@ -3216,9 +3216,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 5,
-              "talentEffect": "攻击命中生命值在70%以上的敌人时，4秒内异客对其造成的伤害提升33%<span class=\"potential\">（+5%）</span>",
+              "talentEffect": "When attacking enemies with 70% or more HP, Passenger will deal 33% <span class=\"potential\">(+5%)</span> increased damage to them for 4 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，且会在<span class=\"keyword\">4</span>个敌人间跳跃，每次跳跃伤害<span class=\"keyword\">不再降低</span>并造成短暂的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
               "traitEffectType": "override"
             }
           ]
@@ -5690,7 +5690,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "Increases ATK to <span class=\"keyword\">110%</span> when attacking blocked enemies",
+              "traitEffect": "ATK increased to 110% against blocked enemies",
               "traitEffectType": "update"
             }
           ]
@@ -5711,9 +5711,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时所有被阻挡的敌方单位受到的物理伤害提高18%",
+              "talentEffect": "When deployed, all blocked enemies take +18% Physical damage",
               "talentIndex": 0,
-              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "ATK increased to 110% against blocked enemies",
               "traitEffectType": "update"
             },
             {
@@ -5730,9 +5730,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "在场时所有被阻挡的敌方单位受到的物理伤害提高20%<span class=\"potential\">（+2%）</span>",
+              "talentEffect": "When deployed, all blocked enemies take +20% <span class=\"potential\">(+2%)</span> Physical damage",
               "talentIndex": 0,
-              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "ATK increased to 110% against blocked enemies",
               "traitEffectType": "update"
             }
           ]
@@ -5753,9 +5753,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时所有被阻挡的敌方单位受到的物理伤害提高22%",
+              "talentEffect": "When deployed, all blocked enemies take +22% Physical damage",
               "talentIndex": 0,
-              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "ATK increased to 110% against blocked enemies",
               "traitEffectType": "update"
             },
             {
@@ -5772,9 +5772,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "在场时所有被阻挡的敌方单位受到的物理伤害提高24%<span class=\"potential\">（+2%）</span>",
+              "talentEffect": "When deployed, all blocked enemies take +24% <span class=\"potential\">(+2%)</span> Physical damage",
               "talentIndex": 0,
-              "traitEffect": "攻击被阻挡的敌人时攻击力提升至<span class=\"keyword\">110%</span>",
+              "traitEffect": "ATK increased to 110% against blocked enemies",
               "traitEffectType": "update"
             }
           ]
@@ -6202,6 +6202,94 @@
               "talentEffect": "When Dusk or a 'Freeling' defeats an enemy, Dusk gains ATK +2%, stacking up to 24 <span class=\"potential\">(+3)</span> times",
               "talentIndex": 0,
               "traitEffect": "Range <span class=\"keyword\">expands</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "uniequip_003_dusk",
+      "moduleIcon": "spc-y",
+      "moduleName": "\"Sleepless Nights\"",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "cost",
+                  "value": -8
+                },
+                {
+                  "key": "atk",
+                  "value": 51
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "DP Cost <span class=\"keyword\">-8</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "cost",
+                  "value": -8
+                },
+                {
+                  "key": "atk",
+                  "value": 68
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 6
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "The first attack after deployment will summon 2 'Freelings' (lasts for 25 seconds) at the target's location and the four surrounding tiles (only on deployable ground tiles). All 'Freelings' have higher stats (HP +250, ATK +15, DEF +15) and restore 1 SP for Dusk every 2.5 seconds",
+              "talentIndex": 1,
+              "traitEffect": "DP Cost <span class=\"keyword\">-8</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "cost",
+                  "value": -8
+                },
+                {
+                  "key": "atk",
+                  "value": 82
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 7
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "The first attack after deployment will summon 2 'Freelings' (lasts for 25 seconds) at the target's location and the four surrounding tiles (only on deployable ground tiles). All 'Freelings' have higher stats (HP +400, ATK +25, DEF +25) and restore 1 SP for Dusk every 1.5 seconds",
+              "talentIndex": 1,
+              "traitEffect": "DP Cost <span class=\"keyword\">-8</span>",
               "traitEffectType": "update"
             }
           ]
@@ -8148,6 +8236,140 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "uniequip_003_aglina",
+      "moduleIcon": "dec-x",
+      "moduleName": "实验用反重力模块",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 60
+                },
+                {
+                  "key": "atk",
+                  "value": 10
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 4
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 80
+                },
+                {
+                  "key": "atk",
+                  "value": 15
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "全场友方单位攻速+7，自身攻击范围内的友方单位攻速额外+3",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 80
+                },
+                {
+                  "key": "atk",
+                  "value": 15
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 5,
+              "talentEffect": "全场友方单位攻速+8<span class=\"potential\">（+1）</span>，自身攻击范围内的友方单位攻速额外+3",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "atk",
+                  "value": 20
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 6
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "全场友方单位攻速+7，自身攻击范围内的友方单位攻速额外+5",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "atk",
+                  "value": 20
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 6
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 5,
+              "talentEffect": "全场友方单位攻速+8<span class=\"potential\">（+1）</span>，自身攻击范围内的友方单位攻速额外+5",
+              "talentIndex": 0,
+              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
     }
   ],
   "char_326_glacus": [
@@ -9534,7 +9756,7 @@
     {
       "moduleId": "uniequip_003_zumama",
       "moduleIcon": "hes-y",
-      "moduleName": "“小小的丑东西”",
+      "moduleName": "\"The Little Ugly Thing\"",
       "phases": [
         {
           "candidates": [
@@ -9554,7 +9776,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "不阻挡敌人时无法自我回复技力，阻挡敌人时恢复技力回复速度且攻击力+15%，防御力+15%",
+              "traitEffect": "When blocking, ATK +15%; DEF +15% (Can now gain SP from external sources when not blocking)",
               "traitEffectType": "override"
             }
           ]
@@ -9575,9 +9797,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "生命值高于一半时，攻击造成120%伤害；生命值不高于一半时，获得25%的<span class=\"skill-tooltip\">庇护</span>",
+              "talentEffect": "When HP is above 50%, attacks deal 120% damage; When HP is 50% or lower, gains 25% Shelter effect",
               "talentIndex": 0,
-              "traitEffect": "不阻挡敌人时无法自我回复技力，阻挡敌人时恢复技力回复速度且攻击力+15%，防御力+15%",
+              "traitEffect": "When blocking, ATK +15%; DEF +15% (Can now gain SP from external sources when not blocking)",
               "traitEffectType": "override"
             },
             {
@@ -9594,9 +9816,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "生命值高于一半时，攻击造成122%<span class=\"potential\">（+2%）</span>伤害；生命值不高于一半时，获得27%<span class=\"potential\">（+2%）</span>的<span class=\"skill-tooltip\">庇护</span>",
+              "talentEffect": "When HP is above 50%, attacks deal 122% <span class=\"potential\">(+2%)</span> damage; When HP is 50% or lower, gains 27% <span class=\"potential\">(+2%)</span> Shelter effect",
               "talentIndex": 0,
-              "traitEffect": "不阻挡敌人时无法自我回复技力，阻挡敌人时恢复技力回复速度且攻击力+15%，防御力+15%",
+              "traitEffect": "When blocking, ATK +15%; DEF +15% (Can now gain SP from external sources when not blocking)",
               "traitEffectType": "override"
             }
           ]
@@ -9617,9 +9839,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "生命值高于一半时，攻击造成123%伤害；生命值不高于一半时，获得28%的<span class=\"skill-tooltip\">庇护</span>",
+              "talentEffect": "When HP is above 50%, attacks deal 123% damage; When HP is 50% or lower, gains 28% Shelter effect",
               "talentIndex": 0,
-              "traitEffect": "不阻挡敌人时无法自我回复技力，阻挡敌人时恢复技力回复速度且攻击力+15%，防御力+15%",
+              "traitEffect": "When blocking, ATK +15%; DEF +15% (Can now gain SP from external sources when not blocking)",
               "traitEffectType": "override"
             },
             {
@@ -9636,9 +9858,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "生命值高于一半时，攻击造成125%<span class=\"potential\">（+2%）</span>伤害；生命值不高于一半时，获得30%<span class=\"potential\">（+2%）</span>的<span class=\"skill-tooltip\">庇护</span>",
+              "talentEffect": "When HP is above 50%, attacks deal 125% <span class=\"potential\">(+2%)</span> damage; When HP is 50% or lower, gains 30% <span class=\"potential\">(+2%)</span> Shelter effect",
               "talentIndex": 0,
-              "traitEffect": "不阻挡敌人时无法自我回复技力，阻挡敌人时恢复技力回复速度且攻击力+15%，防御力+15%",
+              "traitEffect": "When blocking, ATK +15%; DEF +15% (Can now gain SP from external sources when not blocking)",
               "traitEffectType": "override"
             }
           ]
@@ -12160,7 +12382,7 @@
     {
       "moduleId": "uniequip_002_glady",
       "moduleIcon": "hok-x",
-      "moduleName": "执政官手镜",
+      "moduleName": "Consul's Hand Mirror",
       "phases": [
         {
           "candidates": [
@@ -12180,7 +12402,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffect": "When shifting enemies, the targets take Arts Damage proportional to distance traveled (800 damage per tile shifted)",
               "traitEffectType": "update"
             }
           ]
@@ -12201,9 +12423,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时，所有【深海猎人】干员每秒回复3%最大生命值且受到敌人的物理与法术伤害降低28%",
+              "talentEffect": "When deployed, all [Abyssal Hunter] Operators recover 3% Max HP every second and receive 28% less Physical and Arts damage",
               "talentIndex": 0,
-              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffect": "When shifting enemies, the targets take Arts Damage proportional to distance traveled (800 damage per tile shifted)",
               "traitEffectType": "update"
             }
           ]
@@ -12224,9 +12446,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "在场时，所有【深海猎人】干员每秒回复3.5%最大生命值且受到敌人的物理与法术伤害降低30%",
+              "talentEffect": "When deployed, all [Abyssal Hunter] Operators recover 3.5% Max HP every second and receive 30% less Physical and Arts damage",
               "talentIndex": 0,
-              "traitEffect": "拖拽期间敌人受到正比于距离的法术伤害",
+              "traitEffect": "When shifting enemies, the targets take Arts Damage proportional to distance traveled (800 damage per tile shifted)",
               "traitEffectType": "update"
             }
           ]
@@ -12586,7 +12808,7 @@
     {
       "moduleId": "uniequip_002_mizuki",
       "moduleIcon": "amb-x",
-      "moduleName": "使者之约",
+      "moduleName": "Messenger's Covenant",
       "phases": [
         {
           "candidates": [
@@ -12606,7 +12828,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -12627,9 +12849,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击时对攻击目标中生命值最少的2名敌人额外造成相当于攻击力55%的法术伤害",
+              "talentEffect": "Attacks deal an additional 55% of ATK as Arts damage to two targets with the lowest HP",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -12650,9 +12872,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "攻击时对攻击目标中生命值最少的2名敌人额外造成相当于攻击力60%的法术伤害",
+              "talentEffect": "Attacks deal an additional 60% of ATK as Arts damage to two targets with the lowest HP",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -12664,7 +12886,7 @@
     {
       "moduleId": "uniequip_002_mantic",
       "moduleIcon": "amb-x",
-      "moduleName": "训练用尾部防护套装",
+      "moduleName": "Tail-Protection Training Tool",
       "phases": [
         {
           "candidates": [
@@ -12684,7 +12906,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -12705,9 +12927,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "平时处于<span class=\"skill-tooltip\">隐匿</span>状态，攻击时会解除<span class=\"skill-tooltip\">隐匿</span>状态，且当次攻击的攻击力+55%。停止攻击5秒后，重新进入<span class=\"skill-tooltip\">隐匿</span>状态",
+              "talentEffect": "Stays <span class=\"skill-tooltip\">Invisible</span> normally. The first attack made gains +55% ATK and removes <span class=\"skill-tooltip\">Invisible</span>. Regains <span class=\"skill-tooltip\">Invisible</span> state after not attacking for 5 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             },
             {
@@ -12724,9 +12946,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "平时处于<span class=\"skill-tooltip\">隐匿</span>状态，攻击时会解除<span class=\"skill-tooltip\">隐匿</span>状态，且当次攻击的攻击力+59%<span class=\"potential\">（+4%）</span>。停止攻击5秒后，重新进入<span class=\"skill-tooltip\">隐匿</span>状态",
+              "talentEffect": "Stays <span class=\"skill-tooltip\">Invisible</span> normally. The first attack made gains +59% <span class=\"potential\">(+4%)</span> ATK and removes <span class=\"skill-tooltip\">Invisible</span>. Regains <span class=\"skill-tooltip\">Invisible</span> state after not attacking for 5 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -12747,9 +12969,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "平时处于<span class=\"skill-tooltip\">隐匿</span>状态，攻击时会解除<span class=\"skill-tooltip\">隐匿</span>状态，且当次攻击的攻击力+60%。停止攻击5秒后，重新进入<span class=\"skill-tooltip\">隐匿</span>状态",
+              "talentEffect": "Stays <span class=\"skill-tooltip\">Invisible</span> normally. The first attack made gains +60% ATK and removes <span class=\"skill-tooltip\">Invisible</span>. Regains <span class=\"skill-tooltip\">Invisible</span> state after not attacking for 5 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             },
             {
@@ -12766,9 +12988,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "平时处于<span class=\"skill-tooltip\">隐匿</span>状态，攻击时会解除<span class=\"skill-tooltip\">隐匿</span>状态，且当次攻击的攻击力+64%<span class=\"potential\">（+4%）</span>。停止攻击5秒后，重新进入<span class=\"skill-tooltip\">隐匿</span>状态",
+              "talentEffect": "Stays <span class=\"skill-tooltip\">Invisible</span> normally. The first attack made gains +64% <span class=\"potential\">(+4%)</span> ATK and removes <span class=\"skill-tooltip\">Invisible</span>. Regains <span class=\"skill-tooltip\">Invisible</span> state after not attacking for 5 seconds",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -12780,7 +13002,7 @@
     {
       "moduleId": "uniequip_002_kirara",
       "moduleIcon": "amb-x",
-      "moduleName": "《闹闹生存挑战3 联机版》",
+      "moduleName": "\"We Will Survive 3 Online Edition\"",
       "phases": [
         {
           "candidates": [
@@ -12800,7 +13022,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -12821,9 +13043,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "每秒回复2.5%生命值，周围8格没有友方干员时，改为每秒回复3.5%生命值",
+              "talentEffect": "Restores 2.5% HP per second. If there are no allied Operators in the surrounding 8 tiles, restores 3.5% HP per second instead",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             },
             {
@@ -12840,9 +13062,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "每秒回复2.5%生命值，周围8格没有友方干员时，改为每秒回复4%<span class=\"potential\">（+0.5%）</span>生命值",
+              "talentEffect": "Restores 2.5% HP per second. If there are no allied Operators in the surrounding 8 tiles, restores 4% <span class=\"potential\">(+0.5%)</span> HP per second instead",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -12863,9 +13085,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "每秒回复2.5%生命值，周围8格没有友方干员时，改为每秒回复4%生命值",
+              "talentEffect": "Restores 2.5% HP per second. If there are no allied Operators in the surrounding 8 tiles, restores 4% HP per second instead",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             },
             {
@@ -12882,9 +13104,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "每秒回复2.5%生命值，周围8格没有友方干员时，改为每秒回复4.5%<span class=\"potential\">（+0.5%）</span>生命值",
+              "talentEffect": "Restores 2.5% HP per second. If there are no allied Operators in the surrounding 8 tiles, restores 4.5% <span class=\"potential\">(+0.5%)</span> HP per second instead",
               "talentIndex": 0,
-              "traitEffect": "攻击范围内所有敌人移动速度<span class=\"keyword\">-20%</span>",
+              "traitEffect": "Movement Speed of enemies in Attack Range is reduced by <span class=\"keyword\">20%</span>",
               "traitEffectType": "update"
             }
           ]
@@ -13220,7 +13442,7 @@
     {
       "moduleId": "uniequip_002_bubble",
       "moduleIcon": "pro-x",
-      "moduleName": "泡泡闪光必杀剑",
+      "moduleName": "Bubble's Shining Sword",
       "phases": [
         {
           "candidates": [
@@ -13240,7 +13462,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "阻挡敌人时防御力<span class=\"keyword\">+20%</span>",
+              "traitEffect": "DEF <span class=\"keyword\">+20%</span> when blocking enemies",
               "traitEffectType": "update"
             }
           ]
@@ -13261,9 +13483,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "敌人攻击泡泡后，攻击力下降10%，持续5秒",
+              "talentEffect": "Enemies that attack Bubble have their ATK reduced by 10% for 5 seconds",
               "talentIndex": 0,
-              "traitEffect": "阻挡敌人时防御力<span class=\"keyword\">+20%</span>",
+              "traitEffect": "DEF <span class=\"keyword\">+20%</span> when blocking enemies",
               "traitEffectType": "update"
             }
           ]
@@ -13284,9 +13506,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "敌人攻击泡泡后，攻击力下降12%，持续5秒",
+              "talentEffect": "Enemies that attack Bubble have their ATK reduced by 12% for 5 seconds",
               "talentIndex": 0,
-              "traitEffect": "阻挡敌人时防御力<span class=\"keyword\">+20%</span>",
+              "traitEffect": "DEF <span class=\"keyword\">+20%</span> when blocking enemies",
               "traitEffectType": "update"
             }
           ]
@@ -13550,7 +13772,7 @@
     {
       "moduleId": "uniequip_002_zebra",
       "moduleIcon": "pro-y",
-      "moduleName": "人气角色贴纸",
+      "moduleName": "Popular Character Stickers",
       "phases": [
         {
           "candidates": [
@@ -13574,7 +13796,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "能够阻挡四个敌人",
+              "traitEffect": "Blocks 4 enemies",
               "traitEffectType": "override"
             }
           ]
@@ -13599,9 +13821,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "自身和周围8格内的高台干员获得23%的物理闪避",
+              "talentEffect": "Heavyrain and allies on high ground tiles within the 8 surrounding tiles gain 23% Physical Dodge",
               "talentIndex": 0,
-              "traitEffect": "能够阻挡四个敌人",
+              "traitEffect": "Blocks 4 enemies",
               "traitEffectType": "override"
             },
             {
@@ -13622,9 +13844,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "自身和周围8格内的高台干员获得26%<span class=\"potential\">（+3%）</span>的物理闪避",
+              "talentEffect": "Heavyrain and allies on high ground tiles within the 8 surrounding tiles gain 26% <span class=\"potential\">(+3%)</span> Physical Dodge",
               "talentIndex": 0,
-              "traitEffect": "能够阻挡四个敌人",
+              "traitEffect": "Blocks 4 enemies",
               "traitEffectType": "override"
             }
           ]
@@ -13649,9 +13871,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 0,
-              "talentEffect": "自身和周围8格内的高台干员获得25%的物理闪避",
+              "talentEffect": "Heavyrain and allies on high ground tiles within the 8 surrounding tiles gain 25% Physical Dodge",
               "talentIndex": 0,
-              "traitEffect": "能够阻挡四个敌人",
+              "traitEffect": "Blocks 4 enemies",
               "traitEffectType": "override"
             },
             {
@@ -13672,9 +13894,9 @@
               "displayRange": false,
               "range": null,
               "requiredPotentialRank": 4,
-              "talentEffect": "自身和周围8格内的高台干员获得28%<span class=\"potential\">（+3%）</span>的物理闪避",
+              "talentEffect": "Heavyrain and allies on high ground tiles within the 8 surrounding tiles gain 28% <span class=\"potential\">(+3%)</span> Physical Dodge",
               "talentIndex": 0,
-              "traitEffect": "能够阻挡四个敌人",
+              "traitEffect": "Blocks 4 enemies",
               "traitEffectType": "override"
             }
           ]
@@ -14013,6 +14235,1012 @@
               "talentEffect": "攻击速度+12<span class=\"potential\">（+2）</span>，攻击力+8%，置入战场后这个效果会同样赋予给一名随机【卡西米尔】干员",
               "talentIndex": 0,
               "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_003_kalts": [
+    {
+      "moduleId": "uniequip_002_kalts",
+      "moduleIcon": "phy-x",
+      "moduleName": "Mon2tr",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 35
+                },
+                {
+                  "key": "def",
+                  "value": 15
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "When healing allies with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 50
+                },
+                {
+                  "key": "def",
+                  "value": 20
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "When Mon3tr's HP falls beneath 50% (one time only) and when it is defeated (excluding retreat), all enemies in the surrounding 8 tiles are <span class=\"skill-tooltip\">Stunned</span> for 3 seconds and receive 1200 True damage",
+              "talentIndex": 1,
+              "traitEffect": "When healing allies with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 50
+                },
+                {
+                  "key": "def",
+                  "value": 20
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "When Mon3tr's HP falls beneath 50% (one time only) and when it is defeated (excluding retreat), all enemies in the surrounding 8 tiles are <span class=\"skill-tooltip\">Stunned</span> for 3.5 <span class=\"potential\">(+0.5)</span> seconds and receive 1400 <span class=\"potential\">(+200)</span> True damage",
+              "talentIndex": 1,
+              "traitEffect": "When healing allies with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 60
+                },
+                {
+                  "key": "def",
+                  "value": 25
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "When Mon3tr's HP falls beneath 50% (one time only) and when it is defeated (excluding retreat), all enemies in the surrounding 8 tiles are <span class=\"skill-tooltip\">Stunned</span> for 3 seconds and receive 1500 True damage",
+              "talentIndex": 1,
+              "traitEffect": "When healing allies with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 60
+                },
+                {
+                  "key": "def",
+                  "value": 25
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "When Mon3tr's HP falls beneath 50% (one time only) and when it is defeated (excluding retreat), all enemies in the surrounding 8 tiles are <span class=\"skill-tooltip\">Stunned</span> for 4 <span class=\"potential\">(+0.5)</span> seconds and receive 1700 <span class=\"potential\">(+200)</span> True damage",
+              "talentIndex": 1,
+              "traitEffect": "When healing allies with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_147_shining": [
+    {
+      "moduleId": "uniequip_002_shining",
+      "moduleIcon": "phy-y",
+      "moduleName": "干枯剑鞘",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 35
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 50
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 6
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "攻击范围内的友方单位防御力+80，地面单位防御力额外+30",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 50
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 6
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 5,
+              "talentEffect": "攻击范围内的友方单位防御力+85<span class=\"potential\">（+5）</span>，地面单位防御力额外+30",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 60
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 7
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "攻击范围内的友方单位防御力+100，地面单位防御力额外+40",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 60
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 7
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 5,
+              "talentEffect": "攻击范围内的友方单位防御力+105<span class=\"potential\">（+5）</span>，地面单位防御力额外+40",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_402_tuye": [
+    {
+      "moduleId": "uniequip_002_tuye",
+      "moduleIcon": "phy-x",
+      "moduleName": "集水装置",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 40
+                },
+                {
+                  "key": "atk",
+                  "value": 30
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 65
+                },
+                {
+                  "key": "atk",
+                  "value": 40
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "4秒内未进行治疗后，下次治疗时的治疗量提升至攻击力的170%",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 65
+                },
+                {
+                  "key": "atk",
+                  "value": 40
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "4秒内未进行治疗后，下次治疗时的治疗量提升至攻击力的175%<span class=\"potential\">（+5%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 80
+                },
+                {
+                  "key": "atk",
+                  "value": 47
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "4秒内未进行治疗后，下次治疗时的治疗量提升至攻击力的180%",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 80
+                },
+                {
+                  "key": "atk",
+                  "value": 47
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "4秒内未进行治疗后，下次治疗时的治疗量提升至攻击力的185%<span class=\"potential\">（+5%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_345_folnic": [
+    {
+      "moduleId": "uniequip_002_folnic",
+      "moduleIcon": "phy-y",
+      "moduleName": "Mother's Cravat",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 70
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 4
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "When healing melee units, <span class=\"keyword\">+15%</span> healing effectiveness",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "Gains <span class=\"skill-tooltip\">Status Resistance</span> and -40% damage taken from environmental effects, allies within range gain -15% damage taken from environmental effects",
+              "talentIndex": 0,
+              "traitEffect": "When healing melee units, <span class=\"keyword\">+15%</span> healing effectiveness",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "Gains <span class=\"skill-tooltip\">Status Resistance</span> and -50% <span class=\"potential\">(+10%)</span> damage taken from environmental effects, allies within range gain -15% damage taken from environmental effects",
+              "talentIndex": 0,
+              "traitEffect": "When healing melee units, <span class=\"keyword\">+15%</span> healing effectiveness",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 120
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 6
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "Gains <span class=\"skill-tooltip\">Status Resistance</span> and -40% damage taken from environmental effects, allies within range gain -25% damage taken from environmental effects",
+              "talentIndex": 0,
+              "traitEffect": "When healing melee units, <span class=\"keyword\">+15%</span> healing effectiveness",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 120
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 6
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "Gains <span class=\"skill-tooltip\">Status Resistance</span> and -50% <span class=\"potential\">(+10%)</span> damage taken from environmental effects, allies within range gain -25% damage taken from environmental effects",
+              "talentIndex": 0,
+              "traitEffect": "When healing melee units, <span class=\"keyword\">+15%</span> healing effectiveness",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_171_bldsk": [
+    {
+      "moduleId": "uniequip_002_bldsk",
+      "moduleIcon": "phy-x",
+      "moduleName": "应急储备",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 40
+                },
+                {
+                  "key": "atk",
+                  "value": 30
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 65
+                },
+                {
+                  "key": "atk",
+                  "value": 40
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "攻击范围内有敌人倒下时，为自身和范围内随机一名友方单位回复2点技力，敌人为精英或领袖时技力额外回复1点",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 80
+                },
+                {
+                  "key": "atk",
+                  "value": 47
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "攻击范围内有敌人倒下时，为自身和范围内随机一名友方单位回复2点技力，敌人为精英或领袖时技力额外回复2点",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_108_silent": [
+    {
+      "moduleId": "uniequip_002_silent",
+      "moduleIcon": "phy-y",
+      "moduleName": "紧急防卫程序",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 70
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 4
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "在场时，所有友方【医疗】职业干员攻速+15",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "在场时，所有友方【医疗】职业干员攻速+17<span class=\"potential\">（+2）</span>",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 120
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 6
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "在场时，所有友方【医疗】职业干员攻速+17",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 120
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 6
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "在场时，所有友方【医疗】职业干员攻速+19<span class=\"potential\">（+2）</span>",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_298_susuro": [
+    {
+      "moduleId": "uniequip_002_susuro",
+      "moduleIcon": "phy-x",
+      "moduleName": "医不自治",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 50
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 3
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 80
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 4
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "编入队伍时，所有初始费用不超过10的干员受到的治疗效果提升23%",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 80
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 4
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "编入队伍时，所有初始费用不超过10的干员受到的治疗效果提升26%<span class=\"potential\">（+3%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "编入队伍时，所有初始费用不超过10的干员受到的治疗效果提升25%",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "编入队伍时，所有初始费用不超过10的干员受到的治疗效果提升28%<span class=\"potential\">（+3%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_187_ccheal": [
+    {
+      "moduleId": "uniequip_002_ccheal",
+      "moduleIcon": "phy-y",
+      "moduleName": "“请遵医嘱”",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 30
+                },
+                {
+                  "key": "atk",
+                  "value": 25
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 50
+                },
+                {
+                  "key": "atk",
+                  "value": 30
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "部署后全体友方【医疗】职业干员攻击力+10%，防御力+100，持续20秒",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 50
+                },
+                {
+                  "key": "atk",
+                  "value": 30
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "部署后全体友方【医疗】职业干员攻击力+12%<span class=\"potential\">（+2%）</span>，防御力+120<span class=\"potential\">（+20）</span>，持续22<span class=\"potential\">（+2）</span>秒",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 70
+                },
+                {
+                  "key": "atk",
+                  "value": 35
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "部署后全体友方【医疗】职业干员攻击力+10%，防御力+100，持续25秒",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 70
+                },
+                {
+                  "key": "atk",
+                  "value": 35
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "部署后全体友方【医疗】职业干员攻击力+12%<span class=\"potential\">（+2%）</span>，防御力+120<span class=\"potential\">（+20）</span>，持续27<span class=\"potential\">（+2）</span>秒",
+              "talentIndex": 0,
+              "traitEffect": "治疗地面单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_117_myrrh": [
+    {
+      "moduleId": "uniequip_002_myrrh",
+      "moduleIcon": "phy-x",
+      "moduleName": "“生命的短暂”",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 50
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 3
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 80
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 4
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "部署后立刻恢复全体友方单位的生命值，恢复量为末药攻击力的170%",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 80
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 4
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "部署后立刻恢复全体友方单位的生命值，恢复量为末药攻击力的180%<span class=\"potential\">（+10%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "部署后立刻恢复全体友方单位的生命值，恢复量为末药攻击力的180%",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "attack_speed",
+                  "value": 5
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "部署后立刻恢复全体友方单位的生命值，恢复量为末药攻击力的190%<span class=\"potential\">（+10%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
               "traitEffectType": "update"
             }
           ]

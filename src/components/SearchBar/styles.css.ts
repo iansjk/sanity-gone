@@ -3,22 +3,28 @@ import { transparentize } from "polished";
 import { spacing } from "../../theme-helpers";
 import { rawColors, vars } from "../../theme.css";
 
+export const results = style({
+  display: "flex",
+  flexDirection: "column",
+  position: "absolute",
+  top: "calc(100% + 1px)",
+  width: "100%",
+  left: -1,
+  margin: 0,
+  padding: 0,
+  background: vars.colors.neutrals.midtone,
+  borderRadius: spacing(0, 0, 0.5, 0.5),
+  borderWidth: "0 1px 1px 1px",
+  borderStyle: "solid",
+  borderColor: vars.colors.neutrals.midtoneBrighter,
+});
+
 export const root = style({
   position: "relative",
   display: "flex",
-  flexDirection: "column",
-  maxWidth: spacing(52),
-});
-
-globalStyle(`${root} img`, {
-  objectFit: "contain",
-});
-
-const baseSearchBar = style({
-  display: "flex",
   flexDirection: "row",
   alignItems: "center",
-  width: "100%",
+  maxWidth: spacing(52),
   height: spacing(4.5),
   borderRadius: spacing(0.5),
   border: `1px solid ${transparentize(0.9, rawColors.neutrals.white)}`,
@@ -31,24 +37,18 @@ const baseSearchBar = style({
       border: `1px solid ${rawColors.neutrals.gray}`,
       background: rawColors.neutrals.darktone,
     },
-  },
-});
-
-export const searchBar = styleVariants({
-  unfocused: [baseSearchBar],
-  focused: [
-    baseSearchBar,
-    {
-      borderRadius: spacing(0.5, 0.5, 0, 0),
+    [`&:has(${results}[data-headlessui-state="open"])`]: {
+      borderBottomLeftRadius: 0,
+      borderBottomRightRadius: 0,
     },
-  ],
+  },
 });
 
 export const searchIcon = style({
   margin: spacing(0, 2),
 });
 
-export const searchInput = style({
+export const input = style({
   background: "none",
   border: "none",
   flex: "1 1 0",
@@ -62,28 +62,17 @@ export const searchInput = style({
   },
 });
 
-globalStyle(`${searchInput} > input::placeholder`, {
+globalStyle(`${input} > input::placeholder`, {
   opacity: 0.66,
 });
 
-export const searchResults = style({
-  display: "flex",
-  flexDirection: "column",
-  position: "absolute",
-  top: "100%",
-  width: "100%",
-  zIndex: 3,
-  background: vars.colors.neutrals.midtone,
-  borderRadius: spacing(0, 0, 0.5, 0.5),
-  border: `1px solid ${vars.colors.neutrals.midtoneBrighter}`,
-  selectors: {
-    [`${searchBar.unfocused} ~ &`]: {
-      display: "none",
-    },
-  },
+export const optionGroup = style({
+  listStyleType: "none",
+  margin: 0,
+  padding: 0,
 });
 
-export const categoryLabel = style({
+export const optionGroupLabel = style({
   height: spacing(4.5),
   paddingLeft: spacing(2),
   display: "flex",
@@ -94,101 +83,54 @@ export const categoryLabel = style({
   color: vars.colors.neutrals.gray,
 });
 
-export const operatorResults = style({
-  display: "flex",
-  flexDirection: "column",
-});
-
-const baseOperatorCard = style({
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
+export const option = style({
   height: spacing(8),
   paddingLeft: spacing(2),
-});
-
-export const operatorCard = styleVariants({
-  enabled: [
-    baseOperatorCard,
-    {
-      selectors: {
-        "&:hover": {
-          background: vars.colors.neutrals.midtoneBrighter,
-        },
-      },
-    },
-  ],
-  disabled: [
-    baseOperatorCard,
-    {
-      cursor: "default",
+  display: "grid",
+  gridTemplateColumns: "auto 1fr",
+  gridTemplateRows: "repeat(2, min-content)",
+  alignContent: "center",
+  columnGap: spacing(2),
+  selectors: {
+    '&[aria-disabled="true"]': {
       opacity: 0.25,
     },
-  ],
-});
-
-globalStyle(`${baseOperatorCard} img`, {
-  height: spacing(5),
-  borderRadius: spacing(0.5),
-  background: vars.colors.neutrals.midtoneDarker,
-});
-
-export const operatorInfo = style({
-  display: "flex",
-  flexDirection: "column",
-  color: vars.colors.neutrals.white,
-  marginLeft: spacing(2),
-});
-
-export const rarityAndClass = style({
-  display: "flex",
-  flexDirection: "row",
-  fontSize: vars.typography.body3.fontSize,
-  lineHeight: vars.typography.body3.lineHeight,
-});
-
-export const classAndSubclass = style({
-  color: vars.colors.neutrals.gray,
-});
-
-export const classesResults = style({
-  display: "flex",
-  flexDirection: "column",
-});
-
-export const classesCard = style({
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  height: spacing(8),
-  paddingLeft: spacing(2),
-  selectors: {
-    "&:hover": {
+    '&:not([aria-disabled="true"])': {
+      cursor: "pointer",
+    },
+    '&:not([aria-disabled="true"]):hover': {
       background: vars.colors.neutrals.midtoneBrighter,
     },
   },
 });
 
-globalStyle(`${classesCard} img`, {
+const baseOptionIcon = style({
   height: spacing(5),
-  width: spacing(5),
   borderRadius: spacing(0.5),
+  objectFit: "contain",
+  gridRow: "span 2",
+  alignSelf: "center",
 });
 
-export const classesInfo = style({
-  display: "flex",
-  flexDirection: "column",
-  color: vars.colors.neutrals.white,
-  marginLeft: spacing(2),
+export const optionIcon = styleVariants({
+  operator: [
+    baseOptionIcon,
+    {
+      background: vars.colors.neutrals.midtoneDarker,
+    },
+  ],
+  class: [baseOptionIcon],
+  branch: [baseOptionIcon],
 });
 
-export const className = style({
+export const optionSubtitle = style({
   fontSize: vars.typography.body3.fontSize,
   lineHeight: vars.typography.body3.lineHeight,
   color: vars.colors.neutrals.gray,
 });
 
 export const baseRarity = style({
+  display: "inline-block",
   width: spacing(3),
 });
 

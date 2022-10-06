@@ -382,6 +382,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   const [baseChar, alterName] = operatorName.split(" the ");
   const shouldShowModules =
     modules && modules.length > 0 && (module1Analysis || module2Analysis);
+  const talents = [talent1Analysis, talent2Analysis].filter((x) =>
+    Boolean(x)
+  ) as MDXRemoteSerializeResult[];
+  const skills = [skill1Analysis, skill2Analysis, skill3Analysis].filter((x) =>
+    Boolean(x)
+  ) as MDXRemoteSerializeResult[];
 
   return (
     <Layout
@@ -477,27 +483,31 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   component: (
                     <CardWithTabs
                       header="Talents"
-                      panels={(
-                        [talent1Analysis, talent2Analysis].filter((x) =>
-                          Boolean(x)
-                        ) as MDXRemoteSerializeResult[]
-                      ).map((mdxSource, i) => (
-                        <MDXRemote
-                          key={i}
-                          {...mdxSource}
-                          components={{
-                            TalentInfo: () => (
-                              <TalentInfo
-                                talentObject={operatorObject.talents[i]}
-                              />
-                            ),
-                            SummonStats: () => (
-                              <CharacterStats characterObject={summons[0]} />
-                            ),
-                          }}
-                        />
-                      ))}
-                      buttonLabelFn={(i) => `talent ${i + 1}`}
+                      tabGroups={[
+                        {
+                          buttons: talents.map((_, i) => {
+                            return { label: `talent ${i + 1}` };
+                          }),
+                          panels: talents.map((mdxSource, i) => (
+                            <MDXRemote
+                              key={i}
+                              {...mdxSource}
+                              components={{
+                                TalentInfo: () => (
+                                  <TalentInfo
+                                    talentObject={operatorObject.talents[i]}
+                                  />
+                                ),
+                                SummonStats: () => (
+                                  <CharacterStats
+                                    characterObject={summons[0]}
+                                  />
+                                ),
+                              }}
+                            />
+                          )),
+                        },
+                      ]}
                     />
                   ),
                   className: "talents",
@@ -506,48 +516,94 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   component: (
                     <CardWithTabs
                       header="Skills"
-                      panels={(
-                        [skill1Analysis, skill2Analysis, skill3Analysis].filter(
-                          (x) => Boolean(x)
-                        ) as MDXRemoteSerializeResult[]
-                      ).map((mdxSource, i) => (
-                        <MDXRemote
-                          key={i}
-                          {...mdxSource}
-                          components={{
-                            SkillInfo: () => (
-                              <SkillInfo
-                                isRecommended={skillRecommended[i]}
-                                skillObject={operatorObject.skillData[i]}
-                              />
-                            ),
-                            SummonStats: () => (
-                              <CharacterStats
-                                characterObject={
-                                  summons.length > 1 ? summons[i] : summons[0]
-                                }
-                              />
-                            ),
-                            MasteryRecommendation,
-                            img: (props) => (
-                              <Box
-                                display="flex"
-                                alignItems="center"
-                                justifyContent="center"
-                              >
-                                {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
-                                <img
-                                  {...props}
-                                  style={{
-                                    width: `min(100vw - 32px, 360px)`,
-                                  }}
-                                />
-                              </Box>
-                            ),
-                          }}
-                        />
-                      ))}
-                      buttonLabelFn={(i) => `skill ${i + 1}`}
+                      tabGroups={[
+                        {
+                          buttons: skills.map((_, i) => {
+                            return { label: `skill ${i + 1}` };
+                          }),
+                          panels: skills.map((mdxSource, i) => (
+                            <MDXRemote
+                              key={i}
+                              {...mdxSource}
+                              components={{
+                                SkillInfo: () => (
+                                  <SkillInfo
+                                    isRecommended={skillRecommended[i]}
+                                    skillObject={operatorObject.skillData[i]}
+                                  />
+                                ),
+                                SummonStats: () => (
+                                  <CharacterStats
+                                    characterObject={
+                                      summons.length > 1
+                                        ? summons[i]
+                                        : summons[0]
+                                    }
+                                  />
+                                ),
+                                MasteryRecommendation,
+                                img: (props) => (
+                                  <Box
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                  >
+                                    {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+                                    <img
+                                      {...props}
+                                      style={{
+                                        width: `min(100vw - 32px, 360px)`,
+                                      }}
+                                    />
+                                  </Box>
+                                ),
+                              }}
+                            />
+                          )),
+                        },
+                      ]}
+                      // panels={(
+                      //   [skill1Analysis, skill2Analysis, skill3Analysis].filter(
+                      //     (x) => Boolean(x)
+                      //   ) as MDXRemoteSerializeResult[]
+                      // ).map((mdxSource, i) => (
+                      //   <MDXRemote
+                      //     key={i}
+                      //     {...mdxSource}
+                      //     components={{
+                      //       SkillInfo: () => (
+                      //         <SkillInfo
+                      //           isRecommended={skillRecommended[i]}
+                      //           skillObject={operatorObject.skillData[i]}
+                      //         />
+                      //       ),
+                      //       SummonStats: () => (
+                      //         <CharacterStats
+                      //           characterObject={
+                      //             summons.length > 1 ? summons[i] : summons[0]
+                      //           }
+                      //         />
+                      //       ),
+                      //       MasteryRecommendation,
+                      //       img: (props) => (
+                      //         <Box
+                      //           display="flex"
+                      //           alignItems="center"
+                      //           justifyContent="center"
+                      //         >
+                      //           {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+                      //           <img
+                      //             {...props}
+                      //             style={{
+                      //               width: `min(100vw - 32px, 360px)`,
+                      //             }}
+                      //           />
+                      //         </Box>
+                      //       ),
+                      //     }}
+                      //   />
+                      // ))}
+                      // buttonLabelFn={(i) => `skill ${i + 1}`}
                     />
                   ),
                   className: "skills",

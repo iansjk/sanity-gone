@@ -1,6 +1,7 @@
 import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
 import { breakpoints, spacing } from "../../theme-helpers";
 import { vars } from "../../theme.css";
+import { synergyContainer } from "../Synergies/styles.css";
 
 export const cardWithTabsRoot = style({});
 
@@ -42,7 +43,7 @@ export const tabButtons = style({
   },
 });
 
-export const buttonBase = style({
+export const button = style({
   borderRadius: spacing(1),
   width: spacing(6),
   height: spacing(6),
@@ -59,6 +60,13 @@ export const buttonBase = style({
   ":hover": {
     borderColor: `var(--accent-color, ${vars.colors.neutrals.midtoneBrighter})`,
   },
+  selectors: {
+    "&[data-headlessui-state~=selected]": {
+      borderColor: `var(--accent-color, transparent)`,
+      backgroundColor: `var(--accent-color, ${vars.colors.neutrals.midtoneBrighter})`,
+      color: vars.colors.neutrals.white,
+    },
+  },
   "@media": {
     [breakpoints.down("mobile")]: {
       marginBottom: 0,
@@ -67,27 +75,24 @@ export const buttonBase = style({
   },
 });
 
-export const button = styleVariants({
-  default: [buttonBase],
-  active: [
-    buttonBase,
-    {
-      borderColor: `var(--accent-color, transparent)`,
-      backgroundColor: `var(--accent-color, ${vars.colors.neutrals.midtoneBrighter})`,
-      color: vars.colors.neutrals.white,
-    },
-  ],
-});
-
-globalStyle(`${buttonBase} svg path`, {
+export const romanNumerals = style({
   fill: vars.colors.neutrals.midtoneBrighter,
+
+  selectors: {
+    [`${button}[data-headlessui-state~=selected] &`]: {
+      fill: vars.colors.neutrals.darktone,
+    },
+    [`${button}:not([data-headlessui-state~=selected]):hover &`]: {
+      fill: `var(--accent-color, ${vars.colors.neutrals.midtoneBrighter})`,
+    },
+  },
 });
 
-globalStyle(`${buttonBase}:not(${button.active}):hover svg path`, {
-  fill: `var(--accent-color, ${vars.colors.neutrals.midtoneBrighter})`,
-});
+// globalStyle(`${buttonBase}:not(${button.active}):hover svg path`, {
+//   fill: `var(--accent-color, ${vars.colors.neutrals.midtoneBrighter})`,
+// });
 
-globalStyle(`${buttonBase}.inactive:hover`, {
-  borderColor: vars.colors.neutrals.gray,
-  color: vars.colors.neutrals.gray,
-});
+// globalStyle(`${buttonBase}.inactive:hover`, {
+//   borderColor: vars.colors.neutrals.gray,
+//   color: vars.colors.neutrals.gray,
+// });

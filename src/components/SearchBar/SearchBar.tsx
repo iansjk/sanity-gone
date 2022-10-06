@@ -5,16 +5,16 @@ import {
   operatorAvatar,
   operatorClassIcon,
   operatorBranchIcon,
-} from "../utils/images";
+} from "../../utils/images";
 import { css } from "@emotion/react";
-import { slugify, subclassSlugify } from "../utils/globals";
-import SearchIcon from "./icons/SearchIcon";
+import { slugify, subclassSlugify } from "../../utils/globals";
+import SearchIcon from "../icons/SearchIcon";
 import { transparentize } from "polished";
 import levenshtein from "js-levenshtein";
 import Image from "next/image";
-import search from "../../data/search.json";
+import search from "../../../data/search.json";
 import Link from "next/link";
-import HashCompatibleNextLink from "./HashCompatibleNextLink";
+import HashCompatibleNextLink from "../HashCompatibleNextLink";
 
 // Interface representing a search result.
 // This could be either a class, subclass, or operator (denoted by "type").

@@ -1,8 +1,8 @@
-import { style, styleVariants } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import { spacing } from "../../theme-helpers";
 import { vars } from "../../theme.css";
 
-export const mobileMenuBase = style({
+export const root = style({
   position: "absolute",
   left: 0,
   top: 0,
@@ -11,51 +11,43 @@ export const mobileMenuBase = style({
   zIndex: 100,
 });
 
-export const mobileMenu = styleVariants({
-  close: [mobileMenuBase, { display: "none" }],
-  open: [
-    mobileMenuBase,
-    { display: "block", backgroundColor: "rgba(0, 0, 0, 0.66)" },
-  ],
+export const overlay = style({
+  position: "fixed",
+  left: 0,
+  top: 0,
+  right: 0,
+  bottom: 0,
+  backgroundColor: "rgba(0, 0, 0, 0.66)",
+});
+
+export const content = style({
+  isolation: "isolate",
 });
 
 export const topBar = style({
   height: "75px",
-  padding: spacing(0, 3, 0, 2),
-  display: "flex",
+  padding: spacing(0, 1, 0, 2),
+  display: "grid",
+  gridTemplateColumns: "auto 1fr",
   alignItems: "center",
   backgroundColor: vars.colors.neutrals.darktone,
 });
 
-export const spacer = style({
-  flex: "1 1 0",
-});
-
 export const closeButton = style({
-  position: "relative",
+  gridColumn: 3,
+  width: spacing(6),
+  height: spacing(6),
+  padding: 0,
   background: "none",
   border: "none",
-  display: "flex",
-  alignItems: "center",
 });
 
 export const closeButtonSvg = style({
   fill: vars.colors.neutrals.white,
-  height: "24px",
-  width: "24px",
-  marginRight: spacing(-1),
+  width: 24,
+  height: 24,
 });
 
-export const listHeader = style({
-  margin: 0,
-  fontSize: vars.typography.skillTalentHeading.fontSize,
-  fontWeight: vars.typography.skillTalentHeading.fontWeight,
-  lineHeight: vars.typography.skillTalentHeading.lineHeight,
-  color: vars.colors.neutrals.gray,
-  borderBottom: `1px solid ${vars.colors.neutrals.midtoneBrighterer}`,
-});
-
-// TODO: Adjust depending on searchbar refactor
 export const searchBarContainer = style({
   background: vars.colors.neutrals.midtone,
   padding: spacing(2, 0),

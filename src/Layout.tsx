@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Head from "next/head";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
@@ -141,18 +141,18 @@ const Layout: React.FC<LayoutProps> = (props) => {
                       <a>About</a>
                     </Link>
                   </div>
-                  <button className="mobile-menu-button" aria-label="Open menu">
-                    <MobileMenuIcon
-                      className="mobile-menu"
-                      role="button"
-                      aria-label="Open Menu"
-                      onClick={handleMenuToggle}
-                    />
-                    <MobileMenu
-                      open={isMobileMenuOpen}
-                      onClose={() => setMobileMenuOpen(false)}
-                    />
+                  <button
+                    className="mobile-menu-button"
+                    aria-label="Open menu"
+                    onClick={handleMenuToggle}
+                  >
+                    <MobileMenuIcon className="mobile-menu" />
                   </button>
+
+                  <MobileMenu
+                    open={isMobileMenuOpen}
+                    onClose={() => setMobileMenuOpen(false)}
+                  />
                 </div>
               </div>
             </div>
@@ -440,7 +440,7 @@ const styles =
 
               ${theme.breakpoints.down("mobile")} {
                 flex: 0;
-                margin-right: ${theme.spacing(3)};
+                margin-right: ${theme.spacing(1)};
               }
 
               .header-links {
@@ -474,11 +474,11 @@ const styles =
               }
 
               .mobile-menu-button {
-                padding: 0;
+                width: 48px;
+                height: 48px;
                 background: none;
                 border: none;
-                display: flex;
-                align-items: center;
+                padding: 0;
 
                 ${theme.breakpoints.up("mobile")} {
                   display: none;

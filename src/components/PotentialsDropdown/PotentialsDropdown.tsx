@@ -6,7 +6,7 @@ import {
   PotentialSixIcon,
   PotentialThreeIcon,
   PotentialTwoIcon,
-} from "./icons/operatorStats";
+} from "../icons/operatorStats";
 import {
   Button,
   ListItemIcon,

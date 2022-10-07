@@ -38,6 +38,9 @@ export const closeButton = style({
   width: spacing(6),
   height: spacing(6),
   padding: 0,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
   background: "none",
   border: "none",
 });

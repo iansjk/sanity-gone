@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import { Theme } from "@mui/material";
 import { css, Global } from "@emotion/react";
@@ -476,9 +476,12 @@ const styles =
               .mobile-menu-button {
                 width: 48px;
                 height: 48px;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 background: none;
                 border: none;
-                padding: 0;
 
                 ${theme.breakpoints.up("mobile")} {
                   display: none;

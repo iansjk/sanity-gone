@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { style, styleVariants } from "@vanilla-extract/css";
 import { spacing } from "../../theme-helpers";
 import { vars } from "../../theme.css";
 
@@ -7,8 +7,6 @@ export const root = style({
 });
 
 export const options = style({
-  position: "absolute",
-  zIndex: 50,
   margin: 0,
   padding: spacing(1, 0, 0, 0),
   listStyle: "none",
@@ -69,4 +67,24 @@ export const svg = style({
 
 export const noPotentialSvgPath = style({
   fill: vars.colors.neutrals.gray,
+});
+
+export const transition = styleVariants({
+  base: {
+    position: "absolute",
+    zIndex: 50,
+    transition: "opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+  },
+  enterFrom: {
+    opacity: 0,
+  },
+  enterTo: {
+    opacity: 1,
+  },
+  leaveFrom: {
+    opacity: 1,
+  },
+  leaveTo: {
+    opacity: 0,
+  },
 });

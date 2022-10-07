@@ -1,5 +1,5 @@
 import React from "react";
-import { Listbox } from "@headlessui/react";
+import { Listbox, Transition } from "@headlessui/react";
 
 import {
   PotentialFiveIcon,
@@ -83,17 +83,25 @@ const PotentialsDropdown: React.VFC<PotentialsDropdownProps> = (props) => {
       <Listbox.Button<"button"> className={classes.button}>
         {potentialLabel(currentPotential)}
       </Listbox.Button>
-      <Listbox.Options<"ul"> className={classes.options}>
-        {potList.map((pot) => (
-          <Listbox.Option<"li">
-            key={pot}
-            value={pot}
-            className={classes.option}
-          >
-            {potentialLabel(pot)}
-          </Listbox.Option>
-        ))}
-      </Listbox.Options>
+      <Transition<"div">
+        className={classes.transition.base}
+        enterFrom={classes.transition.enterFrom}
+        enterTo={classes.transition.enterTo}
+        leaveFrom={classes.transition.leaveFrom}
+        leaveTo={classes.transition.leaveTo}
+      >
+        <Listbox.Options<"ul"> className={classes.options}>
+          {potList.map((pot) => (
+            <Listbox.Option<"li">
+              key={pot}
+              value={pot}
+              className={classes.option}
+            >
+              {potentialLabel(pot)}
+            </Listbox.Option>
+          ))}
+        </Listbox.Options>
+      </Transition>
     </Listbox>
   );
 };

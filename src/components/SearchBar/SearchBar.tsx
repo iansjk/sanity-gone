@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import FlexSearch from "flexsearch/dist/flexsearch.node";
+import FlexSearch, { Index } from "flexsearch";
 import { Combobox } from "@headlessui/react";
 import levenshtein from "js-levenshtein";
-import Image from "next/image";
 import { useRouter } from "next/router";
 
 import {
@@ -66,7 +66,7 @@ const prefenshteinCompare = (query: string, a: string, b: string) => {
 const SearchBar: React.VFC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
-  const index = useRef<any>(null);
+  const index = useRef<null | Index<SearchResult>>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -76,13 +76,16 @@ const SearchBar: React.VFC = () => {
     index.current.import(search.index);
   }, []);
 
-  const results = useMemo(() => {
+  const results: SearchResult[] = useMemo(() => {
     if (index.current == null || query.length === 0) {
       return [];
     }
-    return index.current
-      .search(query)
-      .map((resultIndex) => search.store[resultIndex]);
+    return (
+      index.current
+        .search(query)
+        // @ts-expect-error this does NOT return Promise<T[]>, it returns T[] synchronously
+        .map((resultIndex) => search.store[resultIndex])
+    );
   }, [query]);
 
   let operatorResults: OperatorSearchResult[] = [];
@@ -123,7 +126,7 @@ const SearchBar: React.VFC = () => {
           }
         }}
       >
-        <Combobox.Input
+        <Combobox.Input<"input">
           ref={inputRef}
           className={classes.input}
           aria-label="Search operators and guides"
@@ -132,7 +135,7 @@ const SearchBar: React.VFC = () => {
             setQuery(e.target.value);
           }}
         />
-        <Combobox.Options as="div" className={classes.results}>
+        <Combobox.Options<"div"> as="div" className={classes.results}>
           {operatorResults.length > 0 && (
             <ul
               role="group"
@@ -148,9 +151,11 @@ const SearchBar: React.VFC = () => {
               </li>
               {operatorResults.map((result) => {
                 const hasGuide =
-                  search.operatorsWithGuides[result.name] != null;
+                  search.operatorsWithGuides[
+                    result.name as keyof typeof search.operatorsWithGuides
+                  ] != null;
                 return (
-                  <Combobox.Option
+                  <Combobox.Option<"li", SearchResult | null>
                     key={result.charId}
                     className={classes.option}
                     disabled={!hasGuide}
@@ -165,7 +170,13 @@ const SearchBar: React.VFC = () => {
                     />
                     <span>{result.name}</span>
                     <span className={classes.optionSubtitle}>
-                      <span className={classes.rarity[result.rarity]}>
+                      <span
+                        className={
+                          classes.rarity[
+                            result.rarity as unknown as keyof typeof classes.rarity
+                          ]
+                        }
+                      >
                         {result.rarity}★
                       </span>
                       <span>
@@ -191,7 +202,7 @@ const SearchBar: React.VFC = () => {
                 Classes
               </li>
               {classResults.map((result) => (
-                <Combobox.Option
+                <Combobox.Option<"li", SearchResult | null>
                   key={
                     "subProfession" in result
                       ? result.subProfession
@@ -222,7 +233,10 @@ const SearchBar: React.VFC = () => {
             </ul>
           )}
           {query && results.length === 0 && (
-            <Combobox.Option className={classes.optionGroupLabel}>
+            <Combobox.Option<"li", SearchResult | null>
+              className={classes.optionGroupLabel}
+              value={null}
+            >
               No results found!
             </Combobox.Option>
           )}

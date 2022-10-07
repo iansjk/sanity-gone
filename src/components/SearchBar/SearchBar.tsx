@@ -239,6 +239,7 @@ const SearchBar: React.VFC<Props> = ({ placeholder, onSelected }) => {
                       }
                       className={classes.option}
                       value={result}
+                      onClick={() => handleOptionSelected(result)}
                     >
                       <img
                         className={classes.optionIcon[result.type]}

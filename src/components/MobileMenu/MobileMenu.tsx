@@ -1,13 +1,12 @@
-import { useRef, useState } from "react";
-import ReactDOM from "react-dom";
+import { useEffect } from "react";
 import { MdClose as CloseIcon } from "react-icons/md";
-import * as classes from "./styles.css";
+import { ModalUnstyled } from "@mui/base";
 import Link from "next/link";
 
 import SanityGoneLogo from "../SanityGoneLogo";
 import SearchBar from "../SearchBar";
-import cx from "clsx";
 
+import * as classes from "./styles.css";
 export interface MobileMenuProps {
   open: boolean;
   onClose: () => void;
@@ -15,72 +14,60 @@ export interface MobileMenuProps {
 
 const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
   const { open, onClose } = props;
-  const menuContainerRef = useRef<HTMLDivElement>(null);
 
-  const handleClick: React.MouseEventHandler = (e) => {
-    if (e.target === menuContainerRef.current) {
-      onClose();
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
     }
-  };
+  }, [open]);
 
-  const [isSearchOpen, setSearchOpen] = useState(false);
-
-  return typeof window === "undefined"
-    ? null
-    : ReactDOM.createPortal(
-        <div
-          ref={menuContainerRef}
-          aria-modal={open}
-          className={open ? classes.mobileMenu.open : classes.mobileMenu.close}
-          onClick={handleClick}
-        >
-          <div className="mobile-menu-inner">
-            <div className={classes.topBar}>
-              <SanityGoneLogo />
-              <div className={classes.spacer} />
-              <button
-                className={classes.closeButton}
-                aria-label="Close menu"
-                onClick={onClose}
-              >
-                <CloseIcon className={classes.closeButtonSvg} />
-              </button>
-            </div>
-            <ul className={classes.list}>
-              <li>
-                <div
-                  className={cx(
-                    classes.searchBarContainer,
-                    "search-bar-container"
-                  )}
-                >
-                  <SearchBar
-                    placeholder="Search"
-                    whenInputChange={(input) => {
-                      setSearchOpen(!!input);
-                    }}
-                    onLinkClicked={onClose}
-                  />
-                </div>
-              </li>
-              {!isSearchOpen && (
-                <>
-                  <li>
-                    <Link href="/operators">
-                      <a className={cx(classes.listLink)}>Operators</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/about">
-                      <a className={classes.listLink}>About</a>
-                    </Link>
-                  </li>
-                </>
-              )}
-            </ul>
-          </div>
-        </div>,
-        window.document.body
-      );
+  return (
+    <ModalUnstyled
+      open={open}
+      onClose={onClose}
+      className={classes.root}
+      components={{
+        Backdrop: "div",
+      }}
+      componentsProps={{
+        backdrop: {
+          className: classes.overlay,
+        },
+      }}
+      // default scroll lock applies to <html>; we only want to lock <body>
+      disableScrollLock
+    >
+      <div className={classes.content}>
+        <div className={classes.topBar}>
+          <SanityGoneLogo />
+          <button
+            className={classes.closeButton}
+            aria-label="Close menu"
+            ref={(btn) => btn?.focus()}
+            onClick={onClose}
+          >
+            <CloseIcon className={classes.closeButtonSvg} />
+          </button>
+        </div>
+        <div className={classes.searchBarContainer}>
+          <SearchBar placeholder="Search" onSelected={onClose} />
+        </div>
+        <ul className={classes.list}>
+          <li>
+            <Link href="/operators">
+              <a className={classes.listLink}>Operators</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about">
+              <a className={classes.listLink}>About</a>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </ModalUnstyled>
+  );
 };
 export default MobileMenu;

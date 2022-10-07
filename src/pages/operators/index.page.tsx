@@ -13,6 +13,11 @@ import {
 } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
 import { MdArrowForwardIos } from "react-icons/md";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { GetStaticProps } from "next";
 
 import Layout from "../../Layout";
 import {
@@ -32,13 +37,10 @@ import OperatorList, {
 
 import { Media } from "../../Media";
 import { fetchContentfulGraphQl } from "../../utils/fetch";
-import Image from "next/image";
-import { GetStaticProps } from "next";
 import { DenormalizedCharacter } from "../../../scripts/types";
 import operatorListBannerImage from "../../images/page-banners/operators.jpg";
 import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
+
 import * as classes from "./index.css";
 
 const MENU_ICON_SIZE = 18;
@@ -231,6 +233,7 @@ const Operators: React.VFC<Props> = (props) => {
     string | null
   >(null);
   const theme = useTheme();
+  const router = useRouter();
 
   const hashChangeCallback = useCallback(() => {
     const hash = window.location.hash;
@@ -253,8 +256,13 @@ const Operators: React.VFC<Props> = (props) => {
 
   useEffect(() => {
     window.addEventListener("hashchange", hashChangeCallback);
+    router.events.on("hashChangeComplete", hashChangeCallback);
     hashChangeCallback(); // run once on mount
-    return () => window.removeEventListener("hashchange", hashChangeCallback);
+    return () => {
+      window.removeEventListener("hashchange", hashChangeCallback);
+      router.events.off("hashChangeComplete", hashChangeCallback);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hashChangeCallback]);
 
   const handleGuideAvailableChange = (

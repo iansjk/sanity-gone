@@ -124,7 +124,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   </a>
                 </div>
                 <div className="navbar-left">
-                  {<SearchBar placeholder="Search operators and guides" />}
+                  <SearchBar placeholder="Search operators and guides" />
                 </div>
                 <div className="navbar-center">
                   <div className="center-container">
@@ -141,18 +141,18 @@ const Layout: React.FC<LayoutProps> = (props) => {
                       <a>About</a>
                     </Link>
                   </div>
-                  <button className="mobile-menu-button" aria-label="Open menu">
-                    <MobileMenuIcon
-                      className="mobile-menu"
-                      role="button"
-                      aria-label="Open Menu"
-                      onClick={handleMenuToggle}
-                    />
-                    <MobileMenu
-                      open={isMobileMenuOpen}
-                      onClose={() => setMobileMenuOpen(false)}
-                    />
+                  <button
+                    className="mobile-menu-button"
+                    aria-label="Open menu"
+                    onClick={handleMenuToggle}
+                  >
+                    <MobileMenuIcon className="mobile-menu" />
                   </button>
+
+                  <MobileMenu
+                    open={isMobileMenuOpen}
+                    onClose={() => setMobileMenuOpen(false)}
+                  />
                 </div>
               </div>
             </div>
@@ -440,7 +440,7 @@ const styles =
 
               ${theme.breakpoints.down("mobile")} {
                 flex: 0;
-                margin-right: ${theme.spacing(3)};
+                margin-right: ${theme.spacing(1)};
               }
 
               .header-links {
@@ -474,11 +474,14 @@ const styles =
               }
 
               .mobile-menu-button {
+                width: 48px;
+                height: 48px;
                 padding: 0;
-                background: none;
-                border: none;
                 display: flex;
                 align-items: center;
+                justify-content: center;
+                background: none;
+                border: none;
 
                 ${theme.breakpoints.up("mobile")} {
                   display: none;

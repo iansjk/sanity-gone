@@ -8,6 +8,7 @@ export const root = style({
 
 export const options = style({
   position: "absolute",
+  zIndex: 50,
   margin: 0,
   padding: spacing(1, 0, 0, 0),
   listStyle: "none",

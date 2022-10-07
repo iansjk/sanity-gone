@@ -129,7 +129,7 @@ export const TalentInfo: React.VFC<TalentInfoProps> = (props) => {
         <PotentialsDropdown
           currentPotential={potential}
           potentialsToShow={potentialsMap[eliteLevel]}
-          handlePotentialChange={(pot) => updateActivePhase(eliteLevel, pot)}
+          onChange={(pot) => updateActivePhase(eliteLevel, pot)}
         />
       </div>
       <h3 className={classes.talentName}>{activePhase.name}</h3>

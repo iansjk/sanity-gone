@@ -1,6 +1,6 @@
 import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
 import { transparentize } from "polished";
-import { spacing } from "../../theme-helpers";
+import { breakpoints, spacing } from "../../theme-helpers";
 import { rawColors, vars } from "../../theme.css";
 
 export const results = style({
@@ -22,6 +22,17 @@ export const results = style({
       borderWidth: "0 1px 1px 1px",
     },
   },
+  "@media": {
+    [breakpoints.down("mobile")]: {
+      paddingTop: spacing(2),
+      border: "none",
+      borderRadius: 0,
+      marginLeft: spacing(-2),
+      width: `calc(100% + ${spacing(4)})`,
+      top: "100%",
+      left: 0,
+    },
+  },
 });
 
 export const root = style({
@@ -34,17 +45,35 @@ export const root = style({
   borderRadius: spacing(0.5),
   border: `1px solid ${transparentize(0.9, rawColors.neutrals.white)}`,
   selectors: {
-    "&:hover": {
-      border: `1px solid ${transparentize(0.8, rawColors.neutrals.white)}`,
-      background: transparentize(0.67, rawColors.neutrals.darktone),
-    },
-    "&:focus-within": {
-      border: `1px solid ${rawColors.neutrals.gray}`,
-      background: rawColors.neutrals.darktone,
-    },
     [`&:has(${results}[data-headlessui-state="open"]:not(:empty))`]: {
       borderBottomLeftRadius: 0,
       borderBottomRightRadius: 0,
+    },
+  },
+  "@media": {
+    [breakpoints.up("mobile")]: {
+      ":hover": {
+        border: `1px solid ${transparentize(0.8, rawColors.neutrals.white)}`,
+        background: transparentize(0.67, rawColors.neutrals.darktone),
+      },
+      ":focus-within": {
+        border: `1px solid ${rawColors.neutrals.gray}`,
+        background: rawColors.neutrals.darktone,
+      },
+    },
+    [breakpoints.down("mobile")]: {
+      maxWidth: "unset",
+      width: "auto",
+      height: spacing(5),
+      padding: spacing(0),
+      margin: spacing(0, 2),
+      border: "none",
+      background: vars.colors.neutrals.midtoneDarker,
+      ":focus-within": {
+        border: "none",
+        background: vars.colors.neutrals.darktone,
+        borderRadius: spacing(0.5),
+      },
     },
   },
 });
@@ -63,6 +92,11 @@ export const input = style({
   selectors: {
     "&:focus": {
       outline: "none",
+    },
+  },
+  "@media": {
+    [breakpoints.down("mobile")]: {
+      fontSize: vars.typography.skillTalentHeading.fontSize,
     },
   },
 });
@@ -137,6 +171,7 @@ export const optionSubtitle = style({
 export const baseRarity = style({
   display: "inline-block",
   width: spacing(3),
+  color: vars.colors.neutrals.white,
 });
 
 export const rarity = styleVariants({
@@ -164,6 +199,6 @@ export const rarity = styleVariants({
       color: vars.colors.accents.blue,
     },
   ],
-  2: [baseRarity, {}],
-  1: [baseRarity, {}],
+  2: [baseRarity],
+  1: [baseRarity],
 });

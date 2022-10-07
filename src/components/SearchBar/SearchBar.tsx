@@ -120,7 +120,13 @@ const SearchBar: React.VFC<Props> = ({ placeholder, onSelected }) => {
       if (!option) return;
 
       if (option.type === "operator") {
-        router.push(`/operators/${slugify(option.name)}`);
+        router.push(
+          `/operators/${
+            search.operatorsWithGuides[
+              option.name as keyof typeof search.operatorsWithGuides
+            ]
+          }`
+        );
       } else if (option.type === "class") {
         router.push(`/operators#${slugify(option.class)}`);
       } else {

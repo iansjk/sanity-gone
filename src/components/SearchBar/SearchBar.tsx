@@ -1,5 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import FlexSearch, { Index } from "flexsearch";
 import { Combobox } from "@headlessui/react";
 import levenshtein from "js-levenshtein";
@@ -109,6 +115,24 @@ const SearchBar: React.VFC<Props> = ({ placeholder, onSelected }) => {
     .sort((a, b) => prefenshteinCompare(query, a.name, b.name))
     .slice(0, 3); // limit of 3 subclass or class results
 
+  const handleOptionSelected = useCallback(
+    (option: SearchResult | null) => {
+      if (!option) return;
+
+      if (option.type === "operator") {
+        router.push(`/operators/${slugify(option.name)}`);
+      } else if (option.type === "class") {
+        router.push(`/operators#${slugify(option.class)}`);
+      } else {
+        router.push(
+          `/operators#${slugify(option.class)}-${subclassSlugify(option.name)}`
+        );
+      }
+      onSelected && onSelected();
+    },
+    [onSelected, router]
+  );
+
   return (
     <form
       role="search"
@@ -116,137 +140,132 @@ const SearchBar: React.VFC<Props> = ({ placeholder, onSelected }) => {
       onClick={() => inputRef.current?.focus()}
     >
       <SearchIcon className={classes.searchIcon} />
-      <Combobox<SearchResult>
-        onChange={(value) => {
-          if (value.type === "operator") {
-            router.push(`/operators/${slugify(value.name)}`);
-          } else if (value.type === "class") {
-            router.push(`/operators#${slugify(value.class)}`);
-          } else {
-            router.push(
-              `/operators#${slugify(value.class)}-${subclassSlugify(
-                value.name
-              )}`
-            );
-          }
-          onSelected && onSelected();
-        }}
-      >
-        <Combobox.Input<"input">
-          ref={inputRef}
-          className={classes.input}
-          aria-label="Search operators and guides"
-          placeholder={placeholder}
-          onChange={(e) => {
-            setQuery(e.target.value);
-          }}
-        />
-        <Combobox.Options<"div"> as="div" className={classes.results}>
-          {operatorResults.length > 0 && (
-            <ul
-              role="group"
-              aria-labelledby="search-results-operators"
-              className={classes.optionGroup}
-            >
-              <li
-                role="presentation"
-                id="search-results-operators"
-                className={classes.optionGroupLabel}
-              >
-                Operators
-              </li>
-              {operatorResults.map((result) => {
-                const hasGuide =
-                  search.operatorsWithGuides[
-                    result.name as keyof typeof search.operatorsWithGuides
-                  ] != null;
-                return (
-                  <Combobox.Option<"li", SearchResult | null>
-                    key={result.charId}
-                    className={classes.option}
-                    disabled={!hasGuide}
-                    value={result}
-                  >
-                    <img
-                      className={classes.optionIcon.operator}
-                      alt=""
-                      src={operatorAvatar(result.charId)}
-                      width={40}
-                      height={40}
-                    />
-                    <span>{result.name}</span>
-                    <span className={classes.optionSubtitle}>
-                      <span
-                        className={
-                          classes.rarity[
-                            result.rarity as unknown as keyof typeof classes.rarity
-                          ]
-                        }
-                      >
-                        {result.rarity}★
-                      </span>
-                      <span>
-                        {result.class}&nbsp; •&nbsp; {result.subclass}
-                      </span>
-                    </span>
-                  </Combobox.Option>
-                );
-              })}
-            </ul>
-          )}
-          {classResults.length > 0 && (
-            <ul
-              role="group"
-              aria-labelledby="search-results-classes"
-              className={classes.optionGroup}
-            >
-              <li
-                role="presentation"
-                id="search-results-classes"
-                className={classes.optionGroupLabel}
-              >
-                Classes
-              </li>
-              {classResults.map((result) => (
-                <Combobox.Option<"li", SearchResult | null>
-                  key={
-                    "subProfession" in result
-                      ? result.subProfession
-                      : result.class
-                  }
-                  className={classes.option}
-                  value={result}
+      <Combobox<SearchResult>>
+        {({ activeOption }) => (
+          <>
+            <Combobox.Input<"input">
+              ref={inputRef}
+              className={classes.input}
+              aria-label="Search operators and guides"
+              placeholder={placeholder}
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleOptionSelected(activeOption);
+                }
+              }}
+            />
+            <Combobox.Options<"div"> as="div" className={classes.results}>
+              {operatorResults.length > 0 && (
+                <ul
+                  role="group"
+                  aria-labelledby="search-results-operators"
+                  className={classes.optionGroup}
                 >
-                  <img
-                    className={classes.optionIcon[result.type]}
-                    alt=""
-                    src={
-                      result.type === "class"
-                        ? operatorClassIcon(result.class.toLowerCase())
-                        : operatorBranchIcon(result.subProfession)
-                    }
-                    width={40}
-                    height={40}
-                  />
-                  <span>{result.name}</span>
-                  <span className={classes.optionSubtitle}>
-                    {result.type === "class"
-                      ? "Class"
-                      : `${result.class} Branch`}
-                  </span>
+                  <li
+                    role="presentation"
+                    id="search-results-operators"
+                    className={classes.optionGroupLabel}
+                  >
+                    Operators
+                  </li>
+                  {operatorResults.map((result) => {
+                    const hasGuide =
+                      search.operatorsWithGuides[
+                        result.name as keyof typeof search.operatorsWithGuides
+                      ] != null;
+                    return (
+                      <Combobox.Option<"li", SearchResult | null>
+                        key={result.charId}
+                        className={classes.option}
+                        disabled={!hasGuide}
+                        value={result}
+                        onClick={() => handleOptionSelected(result)}
+                      >
+                        <img
+                          className={classes.optionIcon.operator}
+                          alt=""
+                          src={operatorAvatar(result.charId)}
+                          width={40}
+                          height={40}
+                        />
+                        <span>{result.name}</span>
+                        <span className={classes.optionSubtitle}>
+                          <span
+                            className={
+                              classes.rarity[
+                                result.rarity as unknown as keyof typeof classes.rarity
+                              ]
+                            }
+                          >
+                            {result.rarity}★
+                          </span>
+                          <span>
+                            {result.class}&nbsp; •&nbsp; {result.subclass}
+                          </span>
+                        </span>
+                      </Combobox.Option>
+                    );
+                  })}
+                </ul>
+              )}
+              {classResults.length > 0 && (
+                <ul
+                  role="group"
+                  aria-labelledby="search-results-classes"
+                  className={classes.optionGroup}
+                >
+                  <li
+                    role="presentation"
+                    id="search-results-classes"
+                    className={classes.optionGroupLabel}
+                  >
+                    Classes
+                  </li>
+                  {classResults.map((result) => (
+                    <Combobox.Option<"li", SearchResult | null>
+                      key={
+                        "subProfession" in result
+                          ? result.subProfession
+                          : result.class
+                      }
+                      className={classes.option}
+                      value={result}
+                    >
+                      <img
+                        className={classes.optionIcon[result.type]}
+                        alt=""
+                        src={
+                          result.type === "class"
+                            ? operatorClassIcon(result.class.toLowerCase())
+                            : operatorBranchIcon(result.subProfession)
+                        }
+                        width={40}
+                        height={40}
+                      />
+                      <span>{result.name}</span>
+                      <span className={classes.optionSubtitle}>
+                        {result.type === "class"
+                          ? "Class"
+                          : `${result.class} Branch`}
+                      </span>
+                    </Combobox.Option>
+                  ))}
+                </ul>
+              )}
+              {query && results.length === 0 && (
+                <Combobox.Option<"li", SearchResult | null>
+                  className={classes.optionGroupLabel}
+                  value={null}
+                >
+                  No results found!
                 </Combobox.Option>
-              ))}
-            </ul>
-          )}
-          {query && results.length === 0 && (
-            <Combobox.Option<"li", SearchResult | null>
-              className={classes.optionGroupLabel}
-              value={null}
-            >
-              No results found!
-            </Combobox.Option>
-          )}
-        </Combobox.Options>
+              )}
+            </Combobox.Options>
+          </>
+        )}
       </Combobox>
     </form>
   );

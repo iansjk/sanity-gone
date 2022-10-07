@@ -54,13 +54,7 @@ const MobileMenu: React.VFC<MobileMenuProps> = (props) => {
                     "search-bar-container"
                   )}
                 >
-                  <SearchBar
-                    placeholder="Search"
-                    whenInputChange={(input) => {
-                      setSearchOpen(!!input);
-                    }}
-                    onLinkClicked={onClose}
-                  />
+                  <SearchBar placeholder="Search" onSelected={onClose} />
                 </div>
               </li>
               {!isSearchOpen && (

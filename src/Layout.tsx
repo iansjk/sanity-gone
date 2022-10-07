@@ -124,7 +124,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   </a>
                 </div>
                 <div className="navbar-left">
-                  <SearchBar />
+                  <SearchBar placeholder="Search operators and guides" />
                 </div>
                 <div className="navbar-center">
                   <div className="center-container">

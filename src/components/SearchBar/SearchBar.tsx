@@ -63,7 +63,12 @@ const prefenshteinCompare = (query: string, a: string, b: string) => {
   return levenshtein(lowercaseQuery, a) - levenshtein(lowercaseQuery, b);
 };
 
-const SearchBar: React.VFC = () => {
+interface Props {
+  placeholder: string;
+  onSelected?: () => void;
+}
+
+const SearchBar: React.VFC<Props> = ({ placeholder, onSelected }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
   const index = useRef<null | Index<SearchResult>>(null);
@@ -124,13 +129,14 @@ const SearchBar: React.VFC = () => {
               )}`
             );
           }
+          onSelected && onSelected();
         }}
       >
         <Combobox.Input<"input">
           ref={inputRef}
           className={classes.input}
           aria-label="Search operators and guides"
-          placeholder="Search operators and guides"
+          placeholder={placeholder}
           onChange={(e) => {
             setQuery(e.target.value);
           }}

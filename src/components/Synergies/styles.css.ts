@@ -1,4 +1,3 @@
-import { borderLeft } from "@mui/system";
 import { style, styleVariants } from "@vanilla-extract/css";
 import { breakpoints, spacing } from "../../theme-helpers";
 import { vars } from "../../theme.css";

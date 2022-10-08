@@ -7,6 +7,8 @@ import RomanNumeralTwo from "../icons/RomanNumeralTwo";
 import RomanNumeralThree from "../icons/RomanNumeralThree";
 import cx from "clsx";
 import { Tab } from "@headlessui/react";
+import useMediaQuery from "../../utils/media-query";
+import { breakpoints } from "../../theme-helpers";
 
 export type TabGroup = {
   label?: JSX.Element;
@@ -27,10 +29,11 @@ export type CardWithTabsProps = {
 
 const CardWithTabs: React.VFC<CardWithTabsProps> = (props) => {
   const { header, tabGroups, buttonClassName, tabsClassName, ...rest } = props;
+  const isMobile = useMediaQuery(breakpoints.down("mobile"));
 
   return (
     <Card className={classes.cardWithTabsRoot} header={header} {...rest}>
-      <Tab.Group as={"div"} className={classes.tabWrapper} vertical>
+      <Tab.Group as={"div"} className={classes.tabWrapper} vertical={!isMobile}>
         <Tab.List className={cx(tabsClassName, classes.tabButtons)}>
           {tabGroups &&
             tabGroups.map((group, groupIndex) => {

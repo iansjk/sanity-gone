@@ -32,6 +32,8 @@ import Modules from "../../components/Modules";
 import { lastUpdatedDate } from "./index.css";
 import { hexToRgb } from "../../utils/globals";
 import ScrollContainer from "react-indiana-drag-scroll";
+import useMediaQuery from "../../utils/media-query";
+import { breakpoints } from "../../theme-helpers";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const query = `
@@ -392,6 +394,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     Boolean(x)
   ) as MDXRemoteSerializeResult[];
 
+  const isMobile = useMediaQuery(breakpoints.down("mobile"));
+
   return (
     <Layout
       pageTitle={`${operatorName} Guide`}
@@ -446,7 +450,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         <Tab.Group
           as={"main"}
           className={classes.tabContainer}
-          vertical
+          vertical={!isMobile}
           key={operator.name}
         >
           <Tab.List as={ScrollContainer} className={classes.tabButtons}>

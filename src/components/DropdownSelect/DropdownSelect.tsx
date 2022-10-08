@@ -39,6 +39,12 @@ const DropdownSelect = <T,>(props: React.PropsWithChildren<Props<T>>) => {
   );
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
     placement: "bottom-start",
+    modifiers: [
+      {
+        name: "flip",
+        enabled: false,
+      },
+    ],
   });
 
   return (

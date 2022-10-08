@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Box, Theme, useTheme, css, GlobalStyles } from "@mui/material";
-import { tint, rgba, transparentize } from "polished";
+import { tint, rgba, transparentize, parseToRgb } from "polished";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import removeMarkdown from "remove-markdown";
@@ -24,8 +24,14 @@ import { fetchContentfulGraphQl } from "../../utils/fetch";
 import operatorsJson from "../../../data/operators.json";
 import summonsJson from "../../../data/summons.json";
 import modulesJson from "../../../data/modules.json";
+import { Tab } from "@headlessui/react";
+import * as classes from "./[slug].css";
+import cx from "clsx";
 
 import Modules from "../../components/Modules";
+import { lastUpdatedDate } from "./index.css";
+import { hexToRgb } from "../../utils/globals";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const query = `
@@ -425,25 +431,40 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         style={
           {
             "--accent-color": operator.accentColorInHex,
+            "--accent-color-rgb": hexToRgb(operator.accentColorInHex),
+            "--accent-color-transparentized-09": transparentize(
+              0.9,
+              operator.accentColorInHex
+            ),
+            "--accent-color-transparentized-08": transparentize(
+              0.8,
+              operator.accentColorInHex
+            ),
+            "--accent-color-tinted-027": hexToRgb(
+              tint(0.27, operator.accentColorInHex)
+            ),
           } as React.CSSProperties
         }
       >
-        <Tabs
-          component="main"
+        <Tab.Group
+          as={"main"}
+          className={classes.tabContainer}
+          vertical
           key={operator.name}
-          css={styles(operator.accentColorInHex)}
         >
-          <TabButtons className="tabs" isSwiper>
+          <Tab.List as={ScrollContainer} className={classes.tabButtons}>
             {[
               ...["Introduction"],
               ...(shouldShowModules ? ["Modules"] : []),
               ...["Talents", "Skills"],
               ...(synergies.length > 0 ? ["Synergy"] : []),
             ].map((label) => (
-              <button key={label}>{label}</button>
+              <Tab as={Fragment} key={label}>
+                <button className={classes.button}>{label}</button>
+              </Tab>
             ))}
-          </TabButtons>
-          <TabPanels className="panels">
+          </Tab.List>
+          <Tab.Panels className={classes.panels}>
             {[
               ...[
                 {
@@ -576,16 +597,47 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   ]
                 : []),
             ].map(({ component, className }, i) => (
-              <div className={`analysis-section ${className}`} key={i}>
+              <Tab.Panel className={`analysis-section ${className}`} key={i}>
                 {component}
-              </div>
+              </Tab.Panel>
             ))}
-          </TabPanels>
-          <div className="left-sidebar">
+          </Tab.Panels>
+          <div className={classes.leftSidebar}>
             <Media greaterThanOrEqual="mobile">
-              <hr />
+              <hr className={classes.separator} />
             </Media>
-            <div className="external-links">
+            <div className={classes.leftSidebarSection}>
+              <span className={classes.sectionLabel}>External Links</span>
+              <a
+                className={classes.externalLink}
+                href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${operatorName}`}
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                Aceship
+              </a>
+              <a
+                className={classes.externalLink}
+                href={`http://prts.wiki/w/${encodeURIComponent(
+                  operatorObject.cnName
+                )}`}
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                PRTS
+              </a>
+            </div>
+            <div className={classes.leftSidebarSection}>
+              <span className={classes.sectionLabel}>Last updated</span>
+              <span className={classes.lastUpdated}>
+                {new Intl.DateTimeFormat("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                }).format(new Date(publishedAt))}
+              </span>
+            </div>
+            {/* <div className="external-links">
               <span className="section-label">External Links</span>
               <a
                 className="emphasized-link"
@@ -617,9 +669,9 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                   }).format(new Date(publishedAt))}
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
-        </Tabs>
+        </Tab.Group>
       </div>
     </Layout>
   );

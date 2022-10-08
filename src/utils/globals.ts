@@ -54,13 +54,6 @@ export const subProfessionIdToSubclass = (subProfessionId: string): string =>
 export const subclassToSubProfessionId = (subclass: string): string =>
   reverseSubProfessionLookup[subclass];
 
-const selfClosingTagRegex = /<(?<tagName>[A-Za-z]+) \/>/g;
-export const replaceSelfClosingHtmlTags = (htmlString: string): string =>
-  htmlString.replace(
-    selfClosingTagRegex,
-    (_, tagName: string) => `<${tagName}></${tagName}>`
-  );
-
 export const highestCharacterStats = (
   characterObject: CharacterObject
 ): CharacterStatValues => {

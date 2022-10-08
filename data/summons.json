@@ -369,6 +369,7 @@
               "rangeId": null,
               "description": "Self-destructs in <@ba.vup>10</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -394,6 +395,7 @@
               "rangeId": null,
               "description": "Self-destructs in <@ba.vup>10</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -412,7 +414,7 @@
       ],
       "cnName": "医疗探机",
       "isCnOnly": false,
-      "fileIndex": 216,
+      "fileIndex": 219,
       "operatorName": "Silence"
     }
   ],
@@ -834,7 +836,7 @@
       "skillData": [],
       "cnName": "触手",
       "isCnOnly": false,
-      "fileIndex": 217,
+      "fileIndex": 220,
       "operatorName": "Deepcolor"
     }
   ],
@@ -1431,7 +1433,7 @@
       "skillData": [],
       "cnName": "Mon3tr",
       "isCnOnly": false,
-      "fileIndex": 218,
+      "fileIndex": 221,
       "operatorName": "Kal'tsit"
     }
   ],
@@ -1863,7 +1865,7 @@
       "skillData": [],
       "cnName": "幻影",
       "isCnOnly": false,
-      "fileIndex": 219,
+      "fileIndex": 222,
       "operatorName": "Nightingale"
     }
   ],
@@ -2305,6 +2307,7 @@
               "rangeId": "0-1",
               "description": "All Robotters gain <@ba.vup>{prob:0%}</> <@ba.vup>Physical</> and <@ba.vup>Arts Dodge</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -2337,6 +2340,7 @@
               "rangeId": "0-1",
               "description": "All Robotters gain <@ba.vup>{prob:0%}</> <@ba.vup>Physical</> and <@ba.vup>Arts Dodge</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -2369,6 +2373,7 @@
               "rangeId": "0-1",
               "description": "All Robotters gain <@ba.vup>{prob:0%}</> <@ba.vup>Physical</> and <@ba.vup>Arts Dodge</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -2401,6 +2406,7 @@
               "rangeId": "0-1",
               "description": "All Robotters gain <@ba.vup>{prob:0%}</> <@ba.vup>Physical</> and <@ba.vup>Arts Dodge</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -2433,6 +2439,7 @@
               "rangeId": "0-1",
               "description": "All Robotters gain <@ba.vup>{prob:0%}</> <@ba.vup>Physical</> and <@ba.vup>Arts Dodge</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -2465,6 +2472,7 @@
               "rangeId": "0-1",
               "description": "All Robotters gain <@ba.vup>{prob:0%}</> <@ba.vup>Physical</> and <@ba.vup>Arts Dodge</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -2497,6 +2505,7 @@
               "rangeId": "0-1",
               "description": "All Robotters gain <@ba.vup>{prob:0%}</> <@ba.vup>Physical</> and <@ba.vup>Arts Dodge</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -2529,6 +2538,7 @@
               "rangeId": "x-5",
               "description": "All Robotters gain <@ba.vup>{prob:0%}</> <@ba.vup>Physical</> and <@ba.vup>Arts Dodge</>\nAllies on Robotters' four adjacent tiles also gain the same buff",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -2577,6 +2587,7 @@
               "rangeId": "x-5",
               "description": "All Robotters gain <@ba.vup>{prob:0%}</> <@ba.vup>Physical</> and <@ba.vup>Arts Dodge</>\nAllies on Robotters' four adjacent tiles also gain the same buff",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -2625,6 +2636,7 @@
               "rangeId": "x-5",
               "description": "All Robotters gain <@ba.vup>{prob:0%}</> <@ba.vup>Physical</> and <@ba.vup>Arts Dodge</>\nAllies on Robotters' four adjacent tiles also gain the same buff",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -2680,6 +2692,7 @@
               "rangeId": "x-4",
               "description": "Detonates all deployed Robotters, dealing <@ba.vup>{atk_scale:0%}</> of Mayer's ATK as Arts damage to nearby enemies and <$ba.stun>Stunning</> them for <@ba.vup>{stun}</> seconds\n<@ba.rem>The exploded Robotters will be recycled</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -2748,6 +2761,7 @@
               "rangeId": "x-4",
               "description": "Detonates all deployed Robotters, dealing <@ba.vup>{atk_scale:0%}</> of Mayer's ATK as Arts damage to nearby enemies and <$ba.stun>Stunning</> them for <@ba.vup>{stun}</> seconds\n<@ba.rem>The exploded Robotters will be recycled</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -2816,6 +2830,7 @@
               "rangeId": "x-4",
               "description": "Detonates all deployed Robotters, dealing <@ba.vup>{atk_scale:0%}</> of Mayer's ATK as Arts damage to nearby enemies and <$ba.stun>Stunning</> them for <@ba.vup>{stun}</> seconds\n<@ba.rem>The exploded Robotters will be recycled</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -2884,6 +2899,7 @@
               "rangeId": "x-4",
               "description": "Detonates all deployed Robotters, dealing <@ba.vup>{atk_scale:0%}</> of Mayer's ATK as Arts damage to nearby enemies and <$ba.stun>Stunning</> them for <@ba.vup>{stun}</> seconds\n<@ba.rem>The exploded Robotters will be recycled</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -2952,6 +2968,7 @@
               "rangeId": "x-4",
               "description": "Detonates all deployed Robotters, dealing <@ba.vup>{atk_scale:0%}</> of Mayer's ATK as Arts damage to nearby enemies and <$ba.stun>Stunning</> them for <@ba.vup>{stun}</> seconds\n<@ba.rem>The exploded Robotters will be recycled</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -3020,6 +3037,7 @@
               "rangeId": "x-4",
               "description": "Detonates all deployed Robotters, dealing <@ba.vup>{atk_scale:0%}</> of Mayer's ATK as Arts damage to nearby enemies and <$ba.stun>Stunning</> them for <@ba.vup>{stun}</> seconds\n<@ba.rem>The exploded Robotters will be recycled</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -3088,6 +3106,7 @@
               "rangeId": "x-4",
               "description": "Detonates all deployed Robotters, dealing <@ba.vup>{atk_scale:0%}</> of Mayer's ATK as Arts damage to nearby enemies and <$ba.stun>Stunning</> them for <@ba.vup>{stun}</> seconds\n<@ba.rem>The exploded Robotters will be recycled</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -3156,6 +3175,7 @@
               "rangeId": "x-4",
               "description": "Detonates all deployed Robotters, dealing <@ba.vup>{atk_scale:0%}</> of Mayer's ATK as Arts damage to nearby enemies and <$ba.stun>Stunning</> them for <@ba.vup>{stun}</> seconds\n<@ba.rem>The exploded Robotters will be recycled</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -3224,6 +3244,7 @@
               "rangeId": "x-4",
               "description": "Detonates all deployed Robotters, dealing <@ba.vup>{atk_scale:0%}</> of Mayer's ATK as Arts damage to nearby enemies and <$ba.stun>Stunning</> them for <@ba.vup>{stun}</> seconds\n<@ba.rem>The exploded Robotters will be recycled</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -3292,6 +3313,7 @@
               "rangeId": "x-4",
               "description": "Detonates all deployed Robotters, dealing <@ba.vup>{atk_scale:0%}</> of Mayer's ATK as Arts damage to nearby enemies and <$ba.stun>Stunning</> them for <@ba.vup>{stun}</> seconds\n<@ba.rem>The exploded Robotters will be recycled</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -3360,7 +3382,7 @@
       ],
       "cnName": "机械水獭",
       "isCnOnly": false,
-      "fileIndex": 220,
+      "fileIndex": 223,
       "operatorName": "Mayer"
     }
   ],
@@ -4009,6 +4031,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4027,6 +4050,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4045,6 +4069,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4063,6 +4088,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4081,6 +4107,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4099,6 +4126,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4117,6 +4145,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4135,6 +4164,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4153,6 +4183,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4171,6 +4202,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4196,6 +4228,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4214,6 +4247,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4232,6 +4266,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4250,6 +4285,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4268,6 +4304,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4286,6 +4323,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4304,6 +4342,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4322,6 +4361,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4340,6 +4380,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4358,6 +4399,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4383,6 +4425,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4401,6 +4444,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4419,6 +4463,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4437,6 +4482,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4455,6 +4501,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4473,6 +4520,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4491,6 +4539,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4509,6 +4558,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4527,6 +4577,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4545,6 +4596,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -4563,7 +4615,7 @@
       ],
       "cnName": "龙腾.F",
       "isCnOnly": false,
-      "fileIndex": 221,
+      "fileIndex": 224,
       "operatorName": "Magallan"
     },
     {
@@ -5114,6 +5166,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5132,6 +5185,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5150,6 +5204,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5168,6 +5223,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5186,6 +5242,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5204,6 +5261,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5222,6 +5280,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5240,6 +5299,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5258,6 +5318,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5276,6 +5337,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5301,6 +5363,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5319,6 +5382,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5337,6 +5401,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5355,6 +5420,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5373,6 +5439,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5391,6 +5458,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5409,6 +5477,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5427,6 +5496,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5445,6 +5515,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5463,6 +5534,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5488,6 +5560,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5506,6 +5579,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5524,6 +5598,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5542,6 +5617,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5560,6 +5636,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5578,6 +5655,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5596,6 +5674,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5614,6 +5693,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5632,6 +5712,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5650,6 +5731,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -5668,7 +5750,7 @@
       ],
       "cnName": "龙腾.L",
       "isCnOnly": false,
-      "fileIndex": 222,
+      "fileIndex": 225,
       "operatorName": "Magallan"
     },
     {
@@ -6315,6 +6397,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6333,6 +6416,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6351,6 +6435,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6369,6 +6454,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6387,6 +6473,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6405,6 +6492,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6423,6 +6511,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6441,6 +6530,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6459,6 +6549,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6477,6 +6568,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6502,6 +6594,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6520,6 +6613,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6538,6 +6632,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6556,6 +6651,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6574,6 +6670,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6592,6 +6689,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6610,6 +6708,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6628,6 +6727,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6646,6 +6746,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6664,6 +6765,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6689,6 +6791,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6707,6 +6810,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6725,6 +6829,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6743,6 +6848,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6761,6 +6867,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6779,6 +6886,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6797,6 +6905,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6815,6 +6924,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6833,6 +6943,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6851,6 +6962,7 @@
               "rangeId": null,
               "description": "This unit retreats after skill duration ends",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -6869,7 +6981,7 @@
       ],
       "cnName": "龙腾.A",
       "isCnOnly": false,
-      "fileIndex": 223,
+      "fileIndex": 226,
       "operatorName": "Magallan"
     }
   ],
@@ -7336,6 +7448,7 @@
               "rangeId": null,
               "description": "Reduces the ATK and DEF of enemies within range by <@ba.vup>-{-atk:0%}</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -7363,6 +7476,7 @@
               "rangeId": null,
               "description": "Reduces the ATK and DEF of enemies within range by <@ba.vup>-{-atk:0%}</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -7390,6 +7504,7 @@
               "rangeId": null,
               "description": "Reduces the ATK and DEF of enemies within range by <@ba.vup>-{-atk:0%}</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -7417,6 +7532,7 @@
               "rangeId": null,
               "description": "Reduces the ATK and DEF of enemies within range by <@ba.vup>-{-atk:0%}</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -7444,6 +7560,7 @@
               "rangeId": null,
               "description": "Reduces the ATK and DEF of enemies within range by <@ba.vup>-{-atk:0%}</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -7471,6 +7588,7 @@
               "rangeId": null,
               "description": "Reduces the ATK and DEF of enemies within range by <@ba.vup>-{-atk:0%}</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -7498,6 +7616,7 @@
               "rangeId": null,
               "description": "Reduces the ATK and DEF of enemies within range by <@ba.vup>-{-atk:0%}</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -7525,6 +7644,7 @@
               "rangeId": null,
               "description": "Reduces the ATK and DEF of enemies within range by <@ba.vup>-{-atk:0%}</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -7552,6 +7672,7 @@
               "rangeId": null,
               "description": "Reduces the ATK and DEF of enemies within range by <@ba.vup>-{-atk:0%}</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -7579,6 +7700,7 @@
               "rangeId": null,
               "description": "Reduces the ATK and DEF of enemies within range by <@ba.vup>-{-atk:0%}</>",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -7606,7 +7728,7 @@
       ],
       "cnName": "诅咒娃娃",
       "isCnOnly": false,
-      "fileIndex": 224,
+      "fileIndex": 227,
       "operatorName": "Shamare"
     }
   ],
@@ -8130,6 +8252,7 @@
               "rangeId": null,
               "description": "Upon deployment, gains <@ba.vup>{prob:0%}</> Physical Dodge and a shield that can absorb Physical damage equal to <@ba.vup>{hp_ratio:0%}</> Max HP for <@ba.vup>{duration}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8161,6 +8284,7 @@
               "rangeId": null,
               "description": "Upon deployment, gains <@ba.vup>{prob:0%}</> Physical Dodge and a shield that can absorb Physical damage equal to <@ba.vup>{hp_ratio:0%}</> Max HP for <@ba.vup>{duration}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8192,6 +8316,7 @@
               "rangeId": null,
               "description": "Upon deployment, gains <@ba.vup>{prob:0%}</> Physical Dodge and a shield that can absorb Physical damage equal to <@ba.vup>{hp_ratio:0%}</> Max HP for <@ba.vup>{duration}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8223,6 +8348,7 @@
               "rangeId": null,
               "description": "Upon deployment, gains <@ba.vup>{prob:0%}</> Physical Dodge and a shield that can absorb Physical damage equal to <@ba.vup>{hp_ratio:0%}</> Max HP for <@ba.vup>{duration}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8254,6 +8380,7 @@
               "rangeId": null,
               "description": "Upon deployment, gains <@ba.vup>{prob:0%}</> Physical Dodge and a shield that can absorb Physical damage equal to <@ba.vup>{hp_ratio:0%}</> Max HP for <@ba.vup>{duration}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8285,6 +8412,7 @@
               "rangeId": null,
               "description": "Upon deployment, gains <@ba.vup>{prob:0%}</> Physical Dodge and a shield that can absorb Physical damage equal to <@ba.vup>{hp_ratio:0%}</> Max HP for <@ba.vup>{duration}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8316,6 +8444,7 @@
               "rangeId": null,
               "description": "Upon deployment, gains <@ba.vup>{prob:0%}</> Physical Dodge and a shield that can absorb Physical damage equal to <@ba.vup>{hp_ratio:0%}</> Max HP for <@ba.vup>{duration}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8347,6 +8476,7 @@
               "rangeId": null,
               "description": "Upon deployment, gains <@ba.vup>{prob:0%}</> Physical Dodge and a shield that can absorb Physical damage equal to <@ba.vup>{hp_ratio:0%}</> Max HP for <@ba.vup>{duration}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8378,6 +8508,7 @@
               "rangeId": null,
               "description": "Upon deployment, gains <@ba.vup>{prob:0%}</> Physical Dodge and a shield that can absorb Physical damage equal to <@ba.vup>{hp_ratio:0%}</> Max HP for <@ba.vup>{duration}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8409,6 +8540,7 @@
               "rangeId": null,
               "description": "Upon deployment, gains <@ba.vup>{prob:0%}</> Physical Dodge and a shield that can absorb Physical damage equal to <@ba.vup>{hp_ratio:0%}</> Max HP for <@ba.vup>{duration}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8447,6 +8579,7 @@
               "rangeId": null,
               "description": "Upon deployment, immediately gains <@ba.vup>{times}</> charges of a stacking <@ba.vup>+{atk:0%}</> ATK buff (each attack consumes one charge)",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8474,6 +8607,7 @@
               "rangeId": null,
               "description": "Upon deployment, immediately gains <@ba.vup>{times}</> charges of a stacking <@ba.vup>+{atk:0%}</> ATK buff (each attack consumes one charge)",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8501,6 +8635,7 @@
               "rangeId": null,
               "description": "Upon deployment, immediately gains <@ba.vup>{times}</> charges of a stacking <@ba.vup>+{atk:0%}</> ATK buff (each attack consumes one charge)",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8528,6 +8663,7 @@
               "rangeId": null,
               "description": "Upon deployment, immediately gains <@ba.vup>{times}</> charges of a stacking <@ba.vup>+{atk:0%}</> ATK buff (each attack consumes one charge)",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8555,6 +8691,7 @@
               "rangeId": null,
               "description": "Upon deployment, immediately gains <@ba.vup>{times}</> charges of a stacking <@ba.vup>+{atk:0%}</> ATK buff (each attack consumes one charge)",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8582,6 +8719,7 @@
               "rangeId": null,
               "description": "Upon deployment, immediately gains <@ba.vup>{times}</> charges of a stacking <@ba.vup>+{atk:0%}</> ATK buff (each attack consumes one charge)",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8609,6 +8747,7 @@
               "rangeId": null,
               "description": "Upon deployment, immediately gains <@ba.vup>{times}</> charges of a stacking <@ba.vup>+{atk:0%}</> ATK buff (each attack consumes one charge)",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8636,6 +8775,7 @@
               "rangeId": null,
               "description": "Upon deployment, immediately gains <@ba.vup>{times}</> charges of a stacking <@ba.vup>+{atk:0%}</> ATK buff (each attack consumes one charge)",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8663,6 +8803,7 @@
               "rangeId": null,
               "description": "Upon deployment, immediately gains <@ba.vup>{times}</> charges of a stacking <@ba.vup>+{atk:0%}</> ATK buff (each attack consumes one charge)",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8690,6 +8831,7 @@
               "rangeId": null,
               "description": "Upon deployment, immediately gains <@ba.vup>{times}</> charges of a stacking <@ba.vup>+{atk:0%}</> ATK buff (each attack consumes one charge)",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8724,6 +8866,7 @@
               "rangeId": "x-4",
               "description": "Upon deployment, immediately deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies, pushes them back <@ba.vup>slightly</>, and randomly inflicts one of the following statuses to all targets hit (<$ba.sluggish>slow</>, <$ba.root>bind</>, or <$ba.stun>stun</>) for <@ba.vup>{sluggish}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8804,6 +8947,7 @@
               "rangeId": "x-4",
               "description": "Upon deployment, immediately deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies, pushes them back <@ba.vup>slightly</>, and randomly inflicts one of the following statuses to all targets hit (<$ba.sluggish>slow</>, <$ba.root>bind</>, or <$ba.stun>stun</>) for <@ba.vup>{sluggish}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8884,6 +9028,7 @@
               "rangeId": "x-4",
               "description": "Upon deployment, immediately deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies, pushes them back <@ba.vup>slightly</>, and randomly inflicts one of the following statuses to all targets hit (<$ba.sluggish>slow</>, <$ba.root>bind</>, or <$ba.stun>stun</>) for <@ba.vup>{sluggish}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -8964,6 +9109,7 @@
               "rangeId": "x-4",
               "description": "Upon deployment, immediately deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies, pushes them back <@ba.vup>slightly</>, and randomly inflicts one of the following statuses to all targets hit (<$ba.sluggish>slow</>, <$ba.root>bind</>, or <$ba.stun>stun</>) for <@ba.vup>{sluggish}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -9044,6 +9190,7 @@
               "rangeId": "x-4",
               "description": "Upon deployment, immediately deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies, pushes them back <@ba.vup>slightly</>, and randomly inflicts one of the following statuses to all targets hit (<$ba.sluggish>slow</>, <$ba.root>bind</>, or <$ba.stun>stun</>) for <@ba.vup>{sluggish}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -9124,6 +9271,7 @@
               "rangeId": "x-4",
               "description": "Upon deployment, immediately deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies, pushes them back <@ba.vup>slightly</>, and randomly inflicts one of the following statuses to all targets hit (<$ba.sluggish>slow</>, <$ba.root>bind</>, or <$ba.stun>stun</>) for <@ba.vup>{sluggish}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -9204,6 +9352,7 @@
               "rangeId": "x-4",
               "description": "Upon deployment, immediately deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies, pushes them back <@ba.vup>slightly</>, and randomly inflicts one of the following statuses to all targets hit (<$ba.sluggish>slow</>, <$ba.root>bind</>, or <$ba.stun>stun</>) for <@ba.vup>{sluggish}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -9284,6 +9433,7 @@
               "rangeId": "x-4",
               "description": "Upon deployment, immediately deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies, pushes them back <@ba.vup>slightly</>, and randomly inflicts one of the following statuses to all targets hit (<$ba.sluggish>slow</>, <$ba.root>bind</>, or <$ba.stun>stun</>) for <@ba.vup>{sluggish}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -9364,6 +9514,7 @@
               "rangeId": "x-4",
               "description": "Upon deployment, immediately deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies, pushes them back <@ba.vup>slightly</>, and randomly inflicts one of the following statuses to all targets hit (<$ba.sluggish>slow</>, <$ba.root>bind</>, or <$ba.stun>stun</>) for <@ba.vup>{sluggish}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -9444,6 +9595,7 @@
               "rangeId": "x-4",
               "description": "Upon deployment, immediately deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies, pushes them back <@ba.vup>slightly</>, and randomly inflicts one of the following statuses to all targets hit (<$ba.sluggish>slow</>, <$ba.root>bind</>, or <$ba.stun>stun</>) for <@ba.vup>{sluggish}</> seconds",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -9524,7 +9676,7 @@
       ],
       "cnName": "镜中虚影",
       "isCnOnly": false,
-      "fileIndex": 225,
+      "fileIndex": 228,
       "operatorName": "Phantom"
     }
   ],
@@ -9953,6 +10105,7 @@
               "rangeId": null,
               "description": "Explodes when an enemy passes by, dealing Physical damage to all nearby enemies and <$ba.stun>stunning</> them.",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -9980,6 +10133,7 @@
               "rangeId": null,
               "description": "Explodes when an enemy passes by, dealing Physical damage to all nearby enemies and <$ba.stun>stunning</> them.",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -10007,6 +10161,7 @@
               "rangeId": null,
               "description": "Explodes when an enemy passes by, dealing Physical damage to all nearby enemies and <$ba.stun>stunning</> them.",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -10034,6 +10189,7 @@
               "rangeId": null,
               "description": "Explodes when an enemy passes by, dealing Physical damage to all nearby enemies and <$ba.stun>stunning</> them.",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -10061,6 +10217,7 @@
               "rangeId": null,
               "description": "Explodes when an enemy passes by, dealing Physical damage to all nearby enemies and <$ba.stun>stunning</> them.",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -10088,6 +10245,7 @@
               "rangeId": null,
               "description": "Explodes when an enemy passes by, dealing Physical damage to all nearby enemies and <$ba.stun>stunning</> them.",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -10115,6 +10273,7 @@
               "rangeId": null,
               "description": "Explodes when an enemy passes by, dealing Physical damage to all nearby enemies and <$ba.stun>stunning</> them.",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -10142,6 +10301,7 @@
               "rangeId": null,
               "description": "Explodes when an enemy passes by, dealing Physical damage to all nearby enemies and <$ba.stun>stunning</> them.",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -10169,6 +10329,7 @@
               "rangeId": null,
               "description": "Explodes when an enemy passes by, dealing Physical damage to all nearby enemies and <$ba.stun>stunning</> them.",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -10196,6 +10357,7 @@
               "rangeId": null,
               "description": "Explodes when an enemy passes by, dealing Physical damage to all nearby enemies and <$ba.stun>stunning</> them.",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -10223,7 +10385,7 @@
       ],
       "cnName": "此面向敌",
       "isCnOnly": false,
-      "fileIndex": 226,
+      "fileIndex": 229,
       "operatorName": "W"
     }
   ],
@@ -10814,6 +10976,7 @@
               "rangeId": "4-1",
               "description": "Immediately fires a compressed liquid nitrogen cannon, dealing <@ba.vup>{atk_scale:0%}</> Arts damage in an area and pushing enemies away <@ba.vup>moderately</>; For <@ba.vup>{duration}</> seconds, enemies hit by this ability take <@ba.vup>True Damage</> proportional to distance traveled; <@ba.rem>If the Reserve Water Cannon is located within 4 tiles, it will also activate this ability</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -10886,6 +11049,7 @@
               "rangeId": "4-1",
               "description": "Immediately fires a compressed liquid nitrogen cannon, dealing <@ba.vup>{atk_scale:0%}</> Arts damage in an area and pushing enemies away <@ba.vup>moderately</>; For <@ba.vup>{duration}</> seconds, enemies hit by this ability take <@ba.vup>True Damage</> proportional to distance traveled; <@ba.rem>If the Reserve Water Cannon is located within 4 tiles, it will also activate this ability</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -10958,6 +11122,7 @@
               "rangeId": "4-1",
               "description": "Immediately fires a compressed liquid nitrogen cannon, dealing <@ba.vup>{atk_scale:0%}</> Arts damage in an area and pushing enemies away <@ba.vup>moderately</>; For <@ba.vup>{duration}</> seconds, enemies hit by this ability take <@ba.vup>True Damage</> proportional to distance traveled; <@ba.rem>If the Reserve Water Cannon is located within 4 tiles, it will also activate this ability</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -11030,6 +11195,7 @@
               "rangeId": "4-1",
               "description": "Immediately fires a compressed liquid nitrogen cannon, dealing <@ba.vup>{atk_scale:0%}</> Arts damage in an area and pushing enemies away <@ba.vup>moderately</>; For <@ba.vup>{duration}</> seconds, enemies hit by this ability take <@ba.vup>True Damage</> proportional to distance traveled; <@ba.rem>If the Reserve Water Cannon is located within 4 tiles, it will also activate this ability</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -11102,6 +11268,7 @@
               "rangeId": "4-1",
               "description": "Immediately fires a compressed liquid nitrogen cannon, dealing <@ba.vup>{atk_scale:0%}</> Arts damage in an area and pushing enemies away <@ba.vup>moderately</>; For <@ba.vup>{duration}</> seconds, enemies hit by this ability take <@ba.vup>True Damage</> proportional to distance traveled; <@ba.rem>If the Reserve Water Cannon is located within 4 tiles, it will also activate this ability</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -11174,6 +11341,7 @@
               "rangeId": "4-1",
               "description": "Immediately fires a compressed liquid nitrogen cannon, dealing <@ba.vup>{atk_scale:0%}</> Arts damage in an area and pushing enemies away <@ba.vup>moderately</>; For <@ba.vup>{duration}</> seconds, enemies hit by this ability take <@ba.vup>True Damage</> proportional to distance traveled; <@ba.rem>If the Reserve Water Cannon is located within 4 tiles, it will also activate this ability</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -11246,6 +11414,7 @@
               "rangeId": "4-1",
               "description": "Immediately fires a compressed liquid nitrogen cannon, dealing <@ba.vup>{atk_scale:0%}</> Arts damage in an area and pushing enemies away <@ba.vup>significantly</>; For <@ba.vup>{duration}</> seconds, enemies hit by this ability take <@ba.vup>True Damage</> proportional to distance traveled; <@ba.rem>If the Reserve Water Cannon is located within 4 tiles, it will also activate this ability</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -11318,6 +11487,7 @@
               "rangeId": "4-1",
               "description": "Immediately fires a compressed liquid nitrogen cannon, dealing <@ba.vup>{atk_scale:0%}</> Arts damage in an area and pushing enemies away <@ba.vup>significantly</>; For <@ba.vup>{duration}</> seconds, enemies hit by this ability take <@ba.vup>True Damage</> proportional to distance traveled; <@ba.rem>If the Reserve Water Cannon is located within 4 tiles, it will also activate this ability</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -11390,6 +11560,7 @@
               "rangeId": "4-1",
               "description": "Immediately fires a compressed liquid nitrogen cannon, dealing <@ba.vup>{atk_scale:0%}</> Arts damage in an area and pushing enemies away <@ba.vup>significantly</>; For <@ba.vup>{duration}</> seconds, enemies hit by this ability take <@ba.vup>True Damage</> proportional to distance traveled; <@ba.rem>If the Reserve Water Cannon is located within 4 tiles, it will also activate this ability</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -11462,6 +11633,7 @@
               "rangeId": "4-1",
               "description": "Immediately fires a compressed liquid nitrogen cannon, dealing <@ba.vup>{atk_scale:0%}</> Arts damage in an area and pushing enemies away <@ba.vup>greatly</>; For <@ba.vup>{duration}</> seconds, enemies hit by this ability take <@ba.vup>True Damage</> proportional to distance traveled; <@ba.rem>If the Reserve Water Cannon is located within 4 tiles, it will also activate this ability</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -11534,7 +11706,7 @@
       ],
       "cnName": "工程蓄水炮",
       "isCnOnly": false,
-      "fileIndex": 227,
+      "fileIndex": 230,
       "operatorName": "Weedy"
     }
   ],
@@ -12164,6 +12336,7 @@
               "rangeId": "x-2",
               "description": "<@ba.rem>All Buggy Cams are <$ba.stun>stunned</> for {stun} seconds when the skill ends</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -12280,6 +12453,7 @@
               "rangeId": "x-2",
               "description": "<@ba.rem>All Buggy Cams are <$ba.stun>stunned</> for {stun} seconds when the skill ends</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -12396,6 +12570,7 @@
               "rangeId": "x-2",
               "description": "<@ba.rem>All Buggy Cams are <$ba.stun>stunned</> for {stun} seconds when the skill ends</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -12512,6 +12687,7 @@
               "rangeId": "x-2",
               "description": "<@ba.rem>All Buggy Cams are <$ba.stun>stunned</> for {stun} seconds when the skill ends</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -12628,6 +12804,7 @@
               "rangeId": "x-2",
               "description": "<@ba.rem>All Buggy Cams are <$ba.stun>stunned</> for {stun} seconds when the skill ends</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -12744,6 +12921,7 @@
               "rangeId": "x-2",
               "description": "<@ba.rem>All Buggy Cams are <$ba.stun>stunned</> for {stun} seconds when the skill ends</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -12860,6 +13038,7 @@
               "rangeId": "x-2",
               "description": "<@ba.rem>All Buggy Cams are <$ba.stun>stunned</> for {stun} seconds when the skill ends</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -12976,6 +13155,7 @@
               "rangeId": "x-2",
               "description": "<@ba.rem>All Buggy Cams are <$ba.stun>stunned</> for {stun} seconds when the skill ends</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -13092,6 +13272,7 @@
               "rangeId": "x-2",
               "description": "<@ba.rem>All Buggy Cams are <$ba.stun>stunned</> for {stun} seconds when the skill ends</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -13208,6 +13389,7 @@
               "rangeId": "x-2",
               "description": "<@ba.rem>All Buggy Cams are <$ba.stun>stunned</> for {stun} seconds when the skill ends</>",
               "skillType": 1,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -13324,7 +13506,7 @@
       ],
       "cnName": "移动摄影器",
       "isCnOnly": false,
-      "fileIndex": 228,
+      "fileIndex": 231,
       "operatorName": "Scene"
     }
   ],
@@ -13771,6 +13953,7 @@
               "rangeId": "x-4",
               "description": "When appearing, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to nearby enemies and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -13839,6 +14022,7 @@
               "rangeId": "x-4",
               "description": "When appearing, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to nearby enemies and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -13907,6 +14091,7 @@
               "rangeId": "x-4",
               "description": "When appearing, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to nearby enemies and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -13975,6 +14160,7 @@
               "rangeId": "x-4",
               "description": "When appearing, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to nearby enemies and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -14043,6 +14229,7 @@
               "rangeId": "x-4",
               "description": "When appearing, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to nearby enemies and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -14111,6 +14298,7 @@
               "rangeId": "x-4",
               "description": "When appearing, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to nearby enemies and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -14179,6 +14367,7 @@
               "rangeId": "x-4",
               "description": "When appearing, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to nearby enemies and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -14247,6 +14436,7 @@
               "rangeId": "x-4",
               "description": "When appearing, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to nearby enemies and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -14315,6 +14505,7 @@
               "rangeId": "x-4",
               "description": "When appearing, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to nearby enemies and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -14383,6 +14574,7 @@
               "rangeId": "x-4",
               "description": "When appearing, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to nearby enemies and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -14451,7 +14643,7 @@
       ],
       "cnName": "沙之碑",
       "isCnOnly": false,
-      "fileIndex": 229,
+      "fileIndex": 232,
       "operatorName": "Beeswax"
     }
   ],
@@ -14937,6 +15129,7 @@
               "rangeId": null,
               "description": "When appearing, <$ba.stun>Stuns</> surrounding enemies for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -14980,6 +15173,7 @@
               "rangeId": null,
               "description": "When appearing, <$ba.stun>Stuns</> surrounding enemies for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -15023,6 +15217,7 @@
               "rangeId": null,
               "description": "When appearing, <$ba.stun>Stuns</> surrounding enemies for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -15066,6 +15261,7 @@
               "rangeId": null,
               "description": "When appearing, <$ba.stun>Stuns</> surrounding enemies for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -15109,6 +15305,7 @@
               "rangeId": null,
               "description": "When appearing, <$ba.stun>Stuns</> surrounding enemies for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -15152,6 +15349,7 @@
               "rangeId": null,
               "description": "When appearing, <$ba.stun>Stuns</> surrounding enemies for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -15195,6 +15393,7 @@
               "rangeId": null,
               "description": "When appearing, <$ba.stun>Stuns</> surrounding enemies for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -15238,6 +15437,7 @@
               "rangeId": null,
               "description": "When appearing, <$ba.stun>Stuns</> surrounding enemies for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -15281,6 +15481,7 @@
               "rangeId": null,
               "description": "When appearing, <$ba.stun>Stuns</> surrounding enemies for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -15324,6 +15525,7 @@
               "rangeId": null,
               "description": "When appearing, <$ba.stun>Stuns</> surrounding enemies for <@ba.vup>{stun}</> seconds",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 1,
                 "levelUpCost": null,
@@ -15367,7 +15569,7 @@
       ],
       "cnName": "迷迭香的战术装备",
       "isCnOnly": false,
-      "fileIndex": 230,
+      "fileIndex": 233,
       "operatorName": "Rosmontis"
     }
   ],
@@ -15738,6 +15940,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -15769,6 +15972,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -15800,6 +16004,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -15831,6 +16036,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -15862,6 +16068,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -15893,6 +16100,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -15924,6 +16132,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -15955,6 +16164,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -15986,6 +16196,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16017,6 +16228,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16055,6 +16267,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and pushes the target away <@ba.vup>slightly</>",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16086,6 +16299,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and pushes the target away <@ba.vup>slightly</>",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16117,6 +16331,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and pushes the target away <@ba.vup>slightly</>",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16148,6 +16363,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and pushes the target away <@ba.vup>slightly</>",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16179,6 +16395,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and pushes the target away <@ba.vup>slightly</>",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16210,6 +16427,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and pushes the target away <@ba.vup>slightly</>",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16241,6 +16459,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and pushes the target away <@ba.vup>moderately</>",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16272,6 +16491,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and pushes the target away <@ba.vup>moderately</>",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16303,6 +16523,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and pushes the target away <@ba.vup>moderately</>",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16334,6 +16555,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and pushes the target away <@ba.vup>significantly</>",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -16365,7 +16587,7 @@
       ],
       "cnName": "\"夹子\"",
       "isCnOnly": false,
-      "fileIndex": 231,
+      "fileIndex": 234,
       "operatorName": "Robin"
     }
   ],
@@ -16759,7 +16981,7 @@
       "skillData": [],
       "cnName": "磐蟹护卫队",
       "isCnOnly": false,
-      "fileIndex": 232,
+      "fileIndex": 235,
       "operatorName": "Beanstalk"
     }
   ],
@@ -17339,7 +17561,7 @@
       "skillData": [],
       "cnName": "\"小自在\"",
       "isCnOnly": false,
-      "fileIndex": 233,
+      "fileIndex": 236,
       "operatorName": "Dusk"
     }
   ],
@@ -17710,6 +17932,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.stun>Stuns</> the target for <@ba.vup>{stun}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -17741,6 +17964,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.stun>Stuns</> the target for <@ba.vup>{stun}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -17772,6 +17996,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.stun>Stuns</> the target for <@ba.vup>{stun}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -17803,6 +18028,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.stun>Stuns</> the target for <@ba.vup>{stun}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -17834,6 +18060,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.stun>Stuns</> the target for <@ba.vup>{stun}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -17865,6 +18092,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.stun>Stuns</> the target for <@ba.vup>{stun}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -17896,6 +18124,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.stun>Stuns</> the target for <@ba.vup>{stun}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -17927,6 +18156,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.stun>Stuns</> the target for <@ba.vup>{stun}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -17958,6 +18188,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.stun>Stuns</> the target for <@ba.vup>{stun}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -17989,6 +18220,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.stun>Stuns</> the target for <@ba.vup>{stun}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -18027,6 +18259,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -18058,6 +18291,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -18089,6 +18323,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -18120,6 +18355,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -18151,6 +18387,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -18182,6 +18419,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -18213,6 +18451,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -18244,6 +18483,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -18275,6 +18515,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -18306,6 +18547,7 @@
               "rangeId": null,
               "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and <$ba.root>Binds</> the target for <@ba.vup>{constraint}</> second(s)",
               "skillType": 2,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -18337,7 +18579,7 @@
       ],
       "cnName": "迎宾踏垫",
       "isCnOnly": false,
-      "fileIndex": 234,
+      "fileIndex": 237,
       "operatorName": "Frost"
     }
   ],
@@ -19164,6 +19406,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19195,6 +19438,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19226,6 +19470,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19257,6 +19502,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19288,6 +19534,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19319,6 +19566,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19350,6 +19598,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19381,6 +19630,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19412,6 +19662,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19443,6 +19694,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19481,6 +19733,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19512,6 +19765,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19543,6 +19797,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19574,6 +19829,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19605,6 +19861,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19636,6 +19893,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19667,6 +19925,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19698,6 +19957,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19729,6 +19989,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19760,6 +20021,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19798,6 +20060,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19825,6 +20088,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19852,6 +20116,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19879,6 +20144,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19906,6 +20172,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19933,6 +20200,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19960,6 +20228,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -19987,6 +20256,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -20014,6 +20284,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -20041,6 +20312,7 @@
               "rangeId": null,
               "description": "Attack Range is regarded as an extension of Skadi the Corrupting Heart's Attack Range",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -20068,7 +20340,7 @@
       ],
       "cnName": "斯卡蒂的海嗣",
       "isCnOnly": false,
-      "fileIndex": 235,
+      "fileIndex": 238,
       "operatorName": "Skadi the Corrupting Heart"
     }
   ],
@@ -20531,6 +20803,7 @@
               "rangeId": null,
               "description": "Lasts for several seconds after deployment, granting increased DEF and <$ba.shield>Shield</> (Does not stack) to the melee allied unit ahead",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -20556,6 +20829,7 @@
               "rangeId": null,
               "description": "Lasts for several seconds after deployment, granting increased DEF and <$ba.shield>Shield</> (Does not stack) to the melee allied unit ahead",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -20574,7 +20848,7 @@
       ],
       "cnName": "全自动造型仪",
       "isCnOnly": false,
-      "fileIndex": 236,
+      "fileIndex": 239,
       "operatorName": "Roberta"
     }
   ],
@@ -21051,6 +21325,7 @@
               "rangeId": "x-5",
               "description": "When deploying, deals <@ba.vup>{atk_scale:0%}</> ATK as True damage to enemies in the four adjacent tiles and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds. If the previously deployed Operator is from Kazimierz, deals an additional hit",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21103,6 +21378,7 @@
               "rangeId": "x-5",
               "description": "When deploying, deals <@ba.vup>{atk_scale:0%}</> ATK as True damage to enemies in the four adjacent tiles and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds. If the previously deployed Operator is from Kazimierz, deals an additional hit",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21155,6 +21431,7 @@
               "rangeId": "x-5",
               "description": "When deploying, deals <@ba.vup>{atk_scale:0%}</> ATK as True damage to enemies in the four adjacent tiles and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds. If the previously deployed Operator is from Kazimierz, deals an additional hit",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21207,6 +21484,7 @@
               "rangeId": "x-5",
               "description": "When deploying, deals <@ba.vup>{atk_scale:0%}</> ATK as True damage to enemies in the four adjacent tiles and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds. If the previously deployed Operator is from Kazimierz, deals an additional hit",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21259,6 +21537,7 @@
               "rangeId": "x-5",
               "description": "When deploying, deals <@ba.vup>{atk_scale:0%}</> ATK as True damage to enemies in the four adjacent tiles and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds. If the previously deployed Operator is from Kazimierz, deals an additional hit",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21311,6 +21590,7 @@
               "rangeId": "x-5",
               "description": "When deploying, deals <@ba.vup>{atk_scale:0%}</> ATK as True damage to enemies in the four adjacent tiles and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds. If the previously deployed Operator is from Kazimierz, deals an additional hit",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21363,6 +21643,7 @@
               "rangeId": "x-5",
               "description": "When deploying, deals <@ba.vup>{atk_scale:0%}</> ATK as True damage to enemies in the four adjacent tiles and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds. If the previously deployed Operator is from Kazimierz, deals an additional hit",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21415,6 +21696,7 @@
               "rangeId": "x-5",
               "description": "When deploying, deals <@ba.vup>{atk_scale:0%}</> ATK as True damage to enemies in the four adjacent tiles and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds. If the previously deployed Operator is from Kazimierz, deals an additional hit",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21467,6 +21749,7 @@
               "rangeId": "x-5",
               "description": "When deploying, deals <@ba.vup>{atk_scale:0%}</> ATK as True damage to enemies in the four adjacent tiles and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds. If the previously deployed Operator is from Kazimierz, deals an additional hit",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21519,6 +21802,7 @@
               "rangeId": "x-5",
               "description": "When deploying, deals <@ba.vup>{atk_scale:0%}</> ATK as True damage to enemies in the four adjacent tiles and <$ba.stun>Stuns</> them for <@ba.vup>{stun}</> seconds. If the previously deployed Operator is from Kazimierz, deals an additional hit",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -21571,7 +21855,7 @@
       ],
       "cnName": "“耀阳”",
       "isCnOnly": false,
-      "fileIndex": 237,
+      "fileIndex": 240,
       "operatorName": "Nearl the Radiant Knight"
     }
   ],
@@ -22060,6 +22344,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22078,6 +22363,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22096,6 +22382,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22114,6 +22401,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22132,6 +22420,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22150,6 +22439,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22168,6 +22458,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22186,6 +22477,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22204,6 +22496,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22222,6 +22515,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22247,6 +22541,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22265,6 +22560,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22283,6 +22579,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22301,6 +22598,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22319,6 +22617,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22337,6 +22636,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22355,6 +22655,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22373,6 +22674,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22391,6 +22693,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22409,6 +22712,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22434,6 +22738,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22452,6 +22757,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22470,6 +22776,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22488,6 +22795,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22506,6 +22814,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22524,6 +22833,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22542,6 +22852,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22560,6 +22871,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22578,6 +22890,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22596,6 +22909,7 @@
               "rangeId": null,
               "description": null,
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -22614,7 +22928,7 @@
       ],
       "cnName": "“清平”",
       "isCnOnly": false,
-      "fileIndex": 238,
+      "fileIndex": 241,
       "operatorName": "Ling"
     },
     {
@@ -23214,6 +23528,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23241,6 +23556,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23268,6 +23584,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23295,6 +23612,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23322,6 +23640,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23349,6 +23668,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23376,6 +23696,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23403,6 +23724,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23430,6 +23752,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23457,6 +23780,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23491,6 +23815,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23518,6 +23843,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23545,6 +23871,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23572,6 +23899,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23599,6 +23927,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23626,6 +23955,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23653,6 +23983,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23680,6 +24011,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23707,6 +24039,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23734,6 +24067,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23768,6 +24102,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23795,6 +24130,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23822,6 +24158,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23849,6 +24186,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23876,6 +24214,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23903,6 +24242,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23930,6 +24270,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23957,6 +24298,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -23984,6 +24326,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24011,6 +24354,7 @@
               "rangeId": null,
               "description": "After the skill ends, retrieve all summons with less than 50% HP",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24038,7 +24382,7 @@
       ],
       "cnName": "“逍遥”",
       "isCnOnly": false,
-      "fileIndex": 239,
+      "fileIndex": 242,
       "operatorName": "Ling"
     },
     {
@@ -24542,6 +24886,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24585,6 +24930,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24628,6 +24974,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24671,6 +25018,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24714,6 +25062,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24757,6 +25106,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24800,6 +25150,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24843,6 +25194,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24886,6 +25238,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24929,6 +25282,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -24979,6 +25333,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25022,6 +25377,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25065,6 +25421,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25108,6 +25465,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25151,6 +25509,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25194,6 +25553,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25237,6 +25597,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25280,6 +25641,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25323,6 +25685,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25366,6 +25729,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25416,6 +25780,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25459,6 +25824,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25502,6 +25868,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25545,6 +25912,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25588,6 +25956,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25631,6 +26000,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25674,6 +26044,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25717,6 +26088,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25760,6 +26132,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25803,6 +26176,7 @@
               "rangeId": null,
               "description": "Base form: Deals Physical damage\nHigher form: Significantly strengthened, deals <@ba.vup>Arts damage</> and takes up <@ba.vup>2</> deployment slots. When retreated or defeated, returns <@ba.vup>2</> deployment slots",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -25846,7 +26220,7 @@
       ],
       "cnName": "“弦惊”",
       "isCnOnly": false,
-      "fileIndex": 240,
+      "fileIndex": 243,
       "operatorName": "Ling"
     }
   ],
@@ -26296,6 +26670,7 @@
               "rangeId": null,
               "description": "Can attack and will prioritize Sleeping enemies",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -26321,6 +26696,7 @@
               "rangeId": null,
               "description": "Can attack and will prioritize Sleeping enemies",
               "skillType": 0,
+              "durationType": 0,
               "spData": {
                 "spType": 8,
                 "levelUpCost": null,
@@ -26339,7 +26715,7 @@
       ],
       "cnName": "眠兽",
       "isCnOnly": false,
-      "fileIndex": 241,
+      "fileIndex": 244,
       "operatorName": "Blacknight"
     }
   ],
@@ -26354,7 +26730,7 @@
       "teamId": null,
       "displayNumber": null,
       "tokenKey": null,
-      "appellation": "Kaminingyo",
+      "appellation": " ",
       "position": "MELEE",
       "tagList": null,
       "itemUsage": null,
@@ -26396,8 +26772,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -26423,8 +26798,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -26500,8 +26874,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -26527,8 +26900,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -26604,8 +26976,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             },
             {
@@ -26631,8 +27002,7 @@
                 "stunImmune": false,
                 "silenceImmune": false,
                 "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
+                "frozenImmune": false
               }
             }
           ],
@@ -26892,8 +27262,7 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false,
-            "levitateImmune": false
+            "frozenImmune": false
           }
         },
         {
@@ -26919,8 +27288,7 @@
             "stunImmune": false,
             "silenceImmune": false,
             "sleepImmune": false,
-            "frozenImmune": false,
-            "levitateImmune": false
+            "frozenImmune": false
           }
         }
       ],
@@ -26971,8 +27339,8 @@
       "charId": "token_10022_kazema_shadow",
       "skillData": [],
       "cnName": "纸偶",
-      "isCnOnly": true,
-      "fileIndex": 268,
+      "isCnOnly": false,
+      "fileIndex": 245,
       "operatorName": "Kazemaru"
     }
   ],
@@ -28205,7 +28573,7 @@
       ],
       "cnName": "可靠电池",
       "isCnOnly": true,
-      "fileIndex": 269,
+      "fileIndex": 277,
       "operatorName": "Windflit"
     }
   ],
@@ -28920,7 +29288,7 @@
       ],
       "cnName": "旧日残影",
       "isCnOnly": true,
-      "fileIndex": 270,
+      "fileIndex": 278,
       "operatorName": "Ebenholz"
     }
   ],
@@ -30876,8 +31244,1999 @@
       ],
       "cnName": "共振装置",
       "isCnOnly": true,
-      "fileIndex": 271,
+      "fileIndex": 279,
       "operatorName": "Dorothy"
+    }
+  ],
+  "Позёмка": [
+    {
+      "name": "Typewriters",
+      "description": null,
+      "canUseGeneralPotentialItem": true,
+      "potentialItemId": "",
+      "nationId": null,
+      "groupId": null,
+      "teamId": null,
+      "displayNumber": null,
+      "tokenKey": null,
+      "appellation": "Typewriters",
+      "position": "RANGED",
+      "tagList": null,
+      "itemUsage": null,
+      "itemDesc": null,
+      "itemObtainApproach": null,
+      "isNotObtainable": false,
+      "isSpChar": false,
+      "maxPotentialLevel": 0,
+      "rarity": 5,
+      "profession": "TOKEN",
+      "subProfessionId": "notchar1",
+      "trait": null,
+      "phases": [
+        {
+          "characterPrefabKey": "token_10026_bgsnow_subbow",
+          "rangeId": "3-2",
+          "maxLevel": 50,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 500,
+                "atk": 369,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 50,
+              "data": {
+                "maxHp": 500,
+                "atk": 506,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "3-2",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 2
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10026_bgsnow_subbow",
+          "rangeId": "3-2",
+          "maxLevel": 80,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 500,
+                "atk": 506,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 80,
+              "data": {
+                "maxHp": 500,
+                "atk": 666,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "3-2",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 2
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10026_bgsnow_subbow",
+          "rangeId": "3-2",
+          "maxLevel": 90,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 500,
+                "atk": 666,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 90,
+              "data": {
+                "maxHp": 500,
+                "atk": 866,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "3-2",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 2
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ]
+          }
+        }
+      ],
+      "skills": [
+        {
+          "skillId": "sktok_bgsnow_1",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          }
+        },
+        {
+          "skillId": "sktok_bgsnow_2",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          }
+        },
+        {
+          "skillId": "sktok_bgsnow_3",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 2,
+            "level": 1
+          }
+        }
+      ],
+      "talents": [
+        {
+          "candidates": [
+            {
+              "unlockCondition": {
+                "phase": 0,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "interval",
+                  "value": 15
+                }
+              ],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 1,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "interval",
+                  "value": 20
+                }
+              ],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "interval",
+                  "value": 25
+                }
+              ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "2",
+              "name": "弱点速记",
+              "description": "“打字机”的攻击会使命中目标的防御力下降18%，持续4秒；若“打字机”放在鸿雪周围四格则效果提升至23%",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "duration",
+                  "value": 4
+                },
+                {
+                  "key": "bgsnow_token[def_down]_1.def",
+                  "value": -0.18
+                },
+                {
+                  "key": "bgsnow_token[def_down]_2.def",
+                  "value": -0.23
+                }
+              ],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 4,
+              "prefabKey": "2",
+              "name": "弱点速记",
+              "description": "“打字机”的攻击会使命中目标的防御力下降20%<@ba.talpu>（+2%）</>，持续5<@ba.talpu>（+1）</>秒；若“打字机”放在鸿雪周围四格则效果提升至25%<@ba.talpu>（+2%）</>",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "duration",
+                  "value": 5
+                },
+                {
+                  "key": "bgsnow_token[def_down]_1.def",
+                  "value": -0.2
+                },
+                {
+                  "key": "bgsnow_token[def_down]_2.def",
+                  "value": -0.25
+                }
+              ],
+              "range": null
+            }
+          ]
+        }
+      ],
+      "potentialRanks": [],
+      "favorKeyFrames": [
+        {
+          "level": 0,
+          "data": {
+            "maxHp": 0,
+            "atk": 0,
+            "def": 0,
+            "magicResistance": 0,
+            "cost": 0,
+            "blockCnt": 0,
+            "moveSpeed": 0,
+            "attackSpeed": 0,
+            "baseAttackTime": 0,
+            "respawnTime": 0,
+            "hpRecoveryPerSec": 0,
+            "spRecoveryPerSec": 0,
+            "maxDeployCount": 0,
+            "maxDeckStackCnt": 0,
+            "tauntLevel": 0,
+            "massLevel": 0,
+            "baseForceLevel": 0,
+            "stunImmune": false,
+            "silenceImmune": false,
+            "sleepImmune": false,
+            "frozenImmune": false,
+            "levitateImmune": false
+          }
+        },
+        {
+          "level": 50,
+          "data": {
+            "maxHp": 0,
+            "atk": 0,
+            "def": 0,
+            "magicResistance": 0,
+            "cost": 0,
+            "blockCnt": 0,
+            "moveSpeed": 0,
+            "attackSpeed": 0,
+            "baseAttackTime": 0,
+            "respawnTime": 0,
+            "hpRecoveryPerSec": 0,
+            "spRecoveryPerSec": 0,
+            "maxDeployCount": 0,
+            "maxDeckStackCnt": 0,
+            "tauntLevel": 0,
+            "massLevel": 0,
+            "baseForceLevel": 0,
+            "stunImmune": false,
+            "silenceImmune": false,
+            "sleepImmune": false,
+            "frozenImmune": false,
+            "levitateImmune": false
+          }
+        }
+      ],
+      "allSkillLvlup": [
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        }
+      ],
+      "charId": "token_10026_bgsnow_subbow",
+      "skillData": [
+        {
+          "skillId": "sktok_bgsnow_1",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "抑扬格",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.2
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.3
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "抑扬格",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.25
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.35
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "抑扬格",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.3
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.4
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "抑扬格",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.35
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.45
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "抑扬格",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.4
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "抑扬格",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.45
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.55
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "抑扬格",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.5
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.6
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "抑扬格",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.53
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.85
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "抑扬格",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.56
+                },
+                {
+                  "key": "prob",
+                  "value": 0.4
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "抑扬格",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.6
+                },
+                {
+                  "key": "prob",
+                  "value": 0.4
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.25
+                }
+              ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "skillId": "sktok_bgsnow_2",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "点题",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.6
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.7
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "点题",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.65
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.7
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "点题",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.7
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.7
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "点题",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.8
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.65
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "点题",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.85
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.65
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "点题",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.9
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.65
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "点题",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.6
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "点题",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2.1
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.6
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "点题",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2.2
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.6
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "点题",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2.3
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.5
+                }
+              ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "skillId": "sktok_bgsnow_3",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "锐笔速写",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 15,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 1.55
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "锐笔速写",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 15,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 1.65
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "锐笔速写",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 15,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 1.75
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "锐笔速写",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 16,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 1.85
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "锐笔速写",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 16,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 1.95
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "锐笔速写",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 16,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 2.05
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "锐笔速写",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 17,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 2.15
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "锐笔速写",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 18,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 2.3
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "锐笔速写",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 19,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 2.4
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "锐笔速写",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 20,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 2.55
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "cnName": "“打字机”",
+      "isCnOnly": true,
+      "fileIndex": 280,
+      "operatorName": "Позёмка"
+    }
+  ],
+  "undefined": [
+    {
+      "name": "The Tide-hunt Knight",
+      "description": null,
+      "canUseGeneralPotentialItem": true,
+      "potentialItemId": "",
+      "nationId": null,
+      "groupId": null,
+      "teamId": null,
+      "displayNumber": null,
+      "tokenKey": null,
+      "appellation": "The Tide-hunt Knight",
+      "position": "MELEE",
+      "tagList": null,
+      "itemUsage": null,
+      "itemDesc": null,
+      "itemObtainApproach": null,
+      "isNotObtainable": false,
+      "isSpChar": false,
+      "maxPotentialLevel": 0,
+      "rarity": 0,
+      "profession": "TOKEN",
+      "subProfessionId": "pioneer",
+      "trait": null,
+      "phases": [
+        {
+          "characterPrefabKey": "trap_079_allydonq",
+          "rangeId": "1-1",
+          "maxLevel": 30,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 3000,
+                "atk": 400,
+                "def": 1000,
+                "magicResistance": 50,
+                "cost": 5,
+                "blockCnt": 2,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 2,
+                "respawnTime": 70,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 30,
+              "data": {
+                "maxHp": 3000,
+                "atk": 400,
+                "def": 1000,
+                "magicResistance": 50,
+                "cost": 5,
+                "blockCnt": 2,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 2,
+                "respawnTime": 70,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "1-1",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              }
+            ]
+          }
+        }
+      ],
+      "skills": [
+        {
+          "skillId": "sktok_allydonq",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [],
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          }
+        }
+      ],
+      "talents": [],
+      "potentialRanks": [],
+      "favorKeyFrames": [
+        {
+          "level": 0,
+          "data": {
+            "maxHp": 0,
+            "atk": 0,
+            "def": 0,
+            "magicResistance": 0,
+            "cost": 0,
+            "blockCnt": 0,
+            "moveSpeed": 0,
+            "attackSpeed": 0,
+            "baseAttackTime": 0,
+            "respawnTime": 0,
+            "hpRecoveryPerSec": 0,
+            "spRecoveryPerSec": 0,
+            "maxDeployCount": 0,
+            "maxDeckStackCnt": 0,
+            "tauntLevel": 0,
+            "massLevel": 0,
+            "baseForceLevel": 0,
+            "stunImmune": false,
+            "silenceImmune": false,
+            "sleepImmune": false,
+            "frozenImmune": false,
+            "levitateImmune": false
+          }
+        },
+        {
+          "level": 50,
+          "data": {
+            "maxHp": 0,
+            "atk": 0,
+            "def": 0,
+            "magicResistance": 0,
+            "cost": 0,
+            "blockCnt": 0,
+            "moveSpeed": 0,
+            "attackSpeed": 0,
+            "baseAttackTime": 0,
+            "respawnTime": 0,
+            "hpRecoveryPerSec": 0,
+            "spRecoveryPerSec": 0,
+            "maxDeployCount": 0,
+            "maxDeckStackCnt": 0,
+            "tauntLevel": 0,
+            "massLevel": 0,
+            "baseForceLevel": 0,
+            "stunImmune": false,
+            "silenceImmune": false,
+            "sleepImmune": false,
+            "frozenImmune": false,
+            "levitateImmune": false
+          }
+        }
+      ],
+      "allSkillLvlup": [],
+      "charId": "trap_079_allydonq",
+      "skillData": [
+        {
+          "skillId": "sktok_allydonq",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "冲锋",
+              "rangeId": "1-1",
+              "description": "下次攻击造成相当于攻击力<@ba.vup>200%</>的物理伤害，并大力地弹开目标",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 2,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 4,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_allydonq",
+              "duration": 0,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2
+                },
+                {
+                  "key": "force",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "1-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "cnName": "猎潮的骑士",
+      "isCnOnly": true,
+      "fileIndex": 281
     }
   ]
 }

@@ -4,6 +4,16 @@
     "trait": "Attacks deal <span class=\"keyword\">Arts damage</span>. When attacking an enemy, heal a friendly operator within attack range for <span class=\"keyword\">50%</span> of the damage dealt.",
     "class": "Medic"
   },
+  "agent": {
+    "branchName": "Agent",
+    "trait": "再部署时间<span class=\"keyword\">减少</span>，可使用远程攻击",
+    "class": "Vanguard"
+  },
+  "shotprotector": {
+    "branchName": "Longstrike",
+    "trait": "能够阻挡三个敌人，可以进行远程攻击",
+    "class": "Defender"
+  },
   "pioneer": {
     "branchName": "Pioneer",
     "trait": "Blocks 2 enemies",
@@ -151,7 +161,7 @@
   },
   "funnel": {
     "branchName": "Mech-accord",
-    "trait": "Controls a <span class=\"keyword\">Drone</span> that deals <span class=\"keyword\">Arts damage</span>; When the Drone continuously attacks the same enemy, its damage will increase (from 10% up to 110% of the operator's ATK, linearly)",
+    "trait": "Controls a <span class=\"keyword\">Drone</span> that deals <span class=\"keyword\">Arts damage</span>; When the Drone continuously attacks the same enemy, its damage will increase (from 20% up to 110% of the operator's ATK, linearly)",
     "class": "Caster"
   },
   "phalanx": {

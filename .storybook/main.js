@@ -1,3 +1,7 @@
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+const { VanillaExtractPlugin } = require("@vanilla-extract/webpack-plugin");
+
+/** @type {import('@storybook/react/types').StorybookConfig} */
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -9,7 +13,7 @@ module.exports = {
   core: {
     builder: "webpack5",
   },
-  features: { emotionAlias: false },
+  features: { emotionAlias: false, storyStoreV7: true },
   staticDirs: ["../public"],
   babel: async (options) => {
     options.overrides.push({
@@ -23,5 +27,17 @@ module.exports = {
       test: "*", // This says "for all files, use this override".
     });
     return options;
+  },
+  webpackFinal: (config) => {
+    config.experiments = {
+      ...config.experiments,
+      topLevelAwait: true,
+    };
+    config.plugins = [
+      ...(config.plugins ?? []),
+      new NodePolyfillPlugin(),
+      new VanillaExtractPlugin(),
+    ];
+    return config;
   },
 };

@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import enCharacterTable from "./ArknightsGameData/en_US/gamedata/excel/character_table.json";
+import { patchChars as enPatchChars } from "./ArknightsGameData/en_US/gamedata/excel/char_patch_table.json";
 import cnCharacterTable from "./ArknightsGameData/zh_CN/gamedata/excel/character_table.json";
 import enSkillTable from "./ArknightsGameData/en_US/gamedata/excel/skill_table.json";
 import cnSkillTable from "./ArknightsGameData/zh_CN/gamedata/excel/skill_table.json";
@@ -17,11 +18,10 @@ import { fixJetSkillDescriptionTags } from "./fix-jet-skill-descs";
 const dataDir = path.join(__dirname, "../data");
 fs.mkdirSync(dataDir, { recursive: true });
 
-const NAME_OVERRIDES: Record<string, string> = {
-  "THRM-EX": "Thermal-EX",
+const NAME_OVERRIDES: { [characterId: string]: string } = {
+  char_376_therex: "Thermal-EX",
+  char_1001_amiya2: "Amiya (Guard)",
 };
-
-const useNameOverride = (name: string) => NAME_OVERRIDES[name] ?? name;
 
 void (async () => {
   console.log("Updating operators and summons...");
@@ -32,10 +32,11 @@ void (async () => {
 
   const summonIdToOperatorName: Record<string, string> = {};
   const denormalizedCharacters: DenormalizedCharacter[] = (
-    [...Object.entries(enCharacterTable), ...cnOnlyCharacters] as [
-      string,
-      GameDataCharacter
-    ][]
+    [
+      ...Object.entries(enCharacterTable),
+      ...cnOnlyCharacters,
+      ...Object.entries(enPatchChars),
+    ] as [string, GameDataCharacter][]
   )
     .filter(
       ([_, character]) =>
@@ -43,9 +44,9 @@ void (async () => {
     )
     .map(([charId, character], i) => {
       const isCnOnly = !enCharacterIds.has(charId);
-      const characterName = useNameOverride(
-        isCnOnly ? character.appellation : character.name
-      );
+      const characterName =
+        NAME_OVERRIDES[charId] ??
+        (isCnOnly ? character.appellation : character.name);
 
       character.skills
         .filter((skill) => skill.overrideTokenKey != null)
@@ -98,6 +99,7 @@ void (async () => {
           const baseSkillObject = isCnOnly
             ? cnSkillTable[skillId as keyof typeof cnSkillTable]
             : enSkillTable[skillId as keyof typeof enSkillTable];
+
           const levels = baseSkillObject.levels.map(
             (skillAtLevel: SkillAtLevel, levelIndex) => {
               const baseSkillLevelObject = {
@@ -106,6 +108,17 @@ void (async () => {
                   ? rangeTable[skillAtLevel.rangeId as keyof typeof rangeTable]
                   : null,
               };
+
+              // SPECIAL CASES
+              // - heavyrain s1 (skchr_zebra_1) interpolates "duration" but this value is missing from the blackboard;
+              //   we have to append it to the blackboard manually
+              if (skillId === "skchr_zebra_1") {
+                baseSkillLevelObject.blackboard.push({
+                  key: "duration",
+                  value: baseSkillLevelObject.duration,
+                });
+              }
+
               if (isCnOnly && character.profession !== "TOKEN") {
                 try {
                   const skillTL =
@@ -132,8 +145,10 @@ void (async () => {
         })
         .filter((skillData) => !!skillData);
 
-      const { name: cnName, subProfessionId } =
-        cnCharacterTable[charId as keyof typeof cnCharacterTable];
+      const mostRecentCharData =
+        cnCharacterTable[charId as keyof typeof cnCharacterTable] ??
+        enPatchChars[charId as keyof typeof enPatchChars];
+      const { name: cnName, subProfessionId } = mostRecentCharData;
 
       if (character.tokenKey) {
         summonIdToOperatorName[character.tokenKey] = characterName;
@@ -147,9 +162,7 @@ void (async () => {
         skillData,
         cnName,
         subProfessionId,
-        name: useNameOverride(
-          isCnOnly ? character.appellation : character.name
-        ),
+        name: characterName,
         isCnOnly,
         fileIndex: i,
       };

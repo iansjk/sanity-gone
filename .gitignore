@@ -9,3 +9,6 @@ out/
 
 public/robots.txt
 public/sitemap*.xml
+public/aceship.json
+
+yarn-error.log

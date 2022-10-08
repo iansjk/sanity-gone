@@ -18,7 +18,11 @@ export async function fetchContentfulGraphQl<T = any>(
   let response = null;
   try {
     response = await instance.post<{ data: T }>(
-      "/" + process.env.CONTENTFUL_SPACE_ID!,
+      `/${process.env.CONTENTFUL_SPACE_ID!}${
+        process.env.CONTENTFUL_ENVIRONMENT
+          ? `/environments/${process.env.CONTENTFUL_ENVIRONMENT}`
+          : ""
+      }`,
       {
         query,
         variables,

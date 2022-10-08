@@ -7,6 +7,21 @@ const nextConfig = {
     // set minimumCacheTTL to 7 days
     minimumCacheTTL: 604800,
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
 };
 
-module.exports = nextConfig;
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
+const { createVanillaExtractPlugin } = require("@vanilla-extract/next-plugin");
+const withVanillaExtract = createVanillaExtractPlugin({
+  identifiers: process.env.NODE_ENV === "production" ? "short" : "debug",
+});
+module.exports = withVanillaExtract(withBundleAnalyzer(nextConfig));

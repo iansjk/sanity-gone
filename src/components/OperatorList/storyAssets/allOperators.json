@@ -1,0 +1,106 @@
+[
+  {
+    "charId": "char_1014_nearl2",
+    "name": "Nearl the Radiant Knight",
+    "isCnOnly": false,
+    "profession": "WARRIOR",
+    "subProfessionId": "fearless",
+    "rarity": 5
+  },
+  {
+    "charId": "char_103_angel",
+    "name": "Exusiai",
+    "isCnOnly": false,
+    "profession": "SNIPER",
+    "subProfessionId": "fastshot",
+    "rarity": 5
+  },
+  {
+    "charId": "char_1001_amiya2",
+    "name": "Amiya (Guard)",
+    "isCnOnly": true,
+    "profession": "WARRIOR",
+    "subProfessionId": "artsfghter",
+    "rarity": 4
+  },
+  {
+    "charId": "char_4045_heidi",
+    "name": "Heidi",
+    "isCnOnly": true,
+    "profession": "SUPPORT",
+    "subProfessionId": "bard",
+    "rarity": 4
+  },
+  {
+    "charId": "char_473_mberry",
+    "name": "Mulberry",
+    "isCnOnly": false,
+    "profession": "MEDIC",
+    "subProfessionId": "wandermedic",
+    "rarity": 4
+  },
+  {
+    "charId": "char_4041_chnut",
+    "name": "Chestnut",
+    "isCnOnly": true,
+    "profession": "MEDIC",
+    "subProfessionId": "wandermedic",
+    "rarity": 3
+  },
+  {
+    "charId": "char_484_robrta",
+    "name": "Roberta",
+    "isCnOnly": false,
+    "profession": "SUPPORT",
+    "subProfessionId": "craftsman",
+    "rarity": 3
+  },
+  {
+    "charId": "char_283_midn",
+    "name": "Midnight",
+    "isCnOnly": false,
+    "profession": "WARRIOR",
+    "subProfessionId": "lord",
+    "rarity": 2
+  },
+  {
+    "charId": "char_282_catap",
+    "name": "Catapult",
+    "isCnOnly": false,
+    "profession": "SNIPER",
+    "subProfessionId": "aoesniper",
+    "rarity": 2
+  },
+  {
+    "charId": "char_009_12fce",
+    "name": "12F",
+    "isCnOnly": false,
+    "profession": "CASTER",
+    "subProfessionId": "splashcaster",
+    "rarity": 1
+  },
+  {
+    "charId": "char_501_durin",
+    "name": "Durin",
+    "isCnOnly": false,
+    "profession": "CASTER",
+    "subProfessionId": "corecaster",
+    "rarity": 1
+  },
+  {
+    "charId": "char_4000_jnight",
+    "name": "'Justice Knight'",
+    "isCnOnly": false,
+    "profession": "SNIPER",
+    "subProfessionId": "fastshot",
+    "rarity": 0
+  },
+  {
+    "charId": "char_376_therex",
+    "name": "Thermal-EX",
+    "isCnOnly": false,
+    "profession": "SPECIAL",
+    "subProfessionId": "executor",
+    "rarity": 0
+  }
+]

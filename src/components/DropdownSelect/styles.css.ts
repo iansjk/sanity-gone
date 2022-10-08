@@ -2,10 +2,6 @@ import { style, styleVariants } from "@vanilla-extract/css";
 import { spacing } from "../../theme-helpers";
 import { vars } from "../../theme.css";
 
-export const root = style({
-  position: "relative",
-});
-
 export const options = style({
   margin: 0,
   padding: spacing(1, 0, 0, 0),
@@ -72,7 +68,6 @@ export const button = style([
 
 export const transition = styleVariants({
   base: {
-    position: "absolute",
     zIndex: 50,
     transition: "opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
   },

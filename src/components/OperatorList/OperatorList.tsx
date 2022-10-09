@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo, useRef } from "react";
-import { Box, Tooltip } from "@mui/material";
+import { Box } from "@mui/material";
+import Image from "next/image";
+import Link from "next/link";
 import cx from "clsx";
 
 import {
@@ -7,9 +9,8 @@ import {
   subProfessionIdToSubclass,
 } from "../../utils/globals";
 import StarIcon from "../icons/StarIcon";
-import Image from "next/image";
-import Link from "next/link";
 import { operatorBranchIcon } from "../../utils/images";
+import Tooltip from "../Tooltip";
 import * as classes from "./styles.css";
 
 const getPortraitFilename = (operatorId: string) =>
@@ -190,7 +191,17 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
             ) : (
               <div className={classes.operatorInfo}>{operatorInfo}</div>
             )}
-            <Tooltip title={subclass}>
+            <Tooltip
+              content={subclass}
+              interactive
+              role="presentation"
+              aria={{
+                expanded: false,
+              }}
+              appendTo={
+                typeof document !== "undefined" ? document.body : undefined
+              }
+            >
               <button
                 aria-label={`Filter list by ${subclass}`}
                 className={classes.operatorSubclass}

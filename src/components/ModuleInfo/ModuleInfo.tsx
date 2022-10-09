@@ -120,7 +120,7 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
           )}
         </RibbonButtonGroup>
         <PotentialsDropdown
-          handlePotentialChange={(pot) => setPotential(pot)}
+          onChange={(pot) => setPotential(pot)}
           potentialsToShow={potentialsInUse[stage - 1]}
           currentPotential={potential}
         />

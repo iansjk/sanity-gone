@@ -1,9 +1,9 @@
-import { useMediaQuery, useTheme, Tooltip } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
+import { useMediaQuery, useTheme } from "@mui/material";
 
+import Tooltip from "../Tooltip";
 import { Media } from "../../Media";
-
 import {
   professionToClass,
   slugify,
@@ -90,11 +90,21 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
             )}`}
           >
             <a className={classes.classAndSubclass}>
-              <Tooltip title={operatorClass}>
-                <span role="img" className={classes.classIconContainer}>
+              <Tooltip
+                content={operatorClass}
+                interactive
+                role="presentation"
+                aria={{
+                  expanded: false,
+                }}
+                appendTo={
+                  typeof document !== "undefined" ? document.body : undefined
+                }
+              >
+                <span className={classes.classIconContainer}>
                   <Image
                     src={operatorClassIcon(operatorClass.toLowerCase())}
-                    alt=""
+                    alt={operatorClass}
                     width={24}
                     height={24}
                   />

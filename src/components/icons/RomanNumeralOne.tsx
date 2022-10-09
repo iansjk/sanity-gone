@@ -1,6 +1,8 @@
-const RomanNumeralOne: React.VFC<React.HTMLAttributes<SVGElement>> = (
-  props
-) => {
+type Props = React.HTMLAttributes<SVGElement> & {
+  pathClassName?: string;
+};
+
+const RomanNumeralOne: React.VFC<Props> = ({ pathClassName, ...rest }) => {
   return (
     <svg
       width="4"
@@ -8,9 +10,9 @@ const RomanNumeralOne: React.VFC<React.HTMLAttributes<SVGElement>> = (
       viewBox="0 0 4 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
+      {...rest}
     >
-      <path d="M0 0H4V16H0V0Z" fill="#D6D6E2" />
+      <path d="M0 0H4V16H0V0Z" fill="#D6D6E2" className={pathClassName} />
     </svg>
   );
 };

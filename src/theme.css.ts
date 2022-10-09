@@ -24,6 +24,7 @@ export const rawColors = {
     purple: "#7f7dea",
     magenta: "#e85593",
   },
+  fallbackAccentColor: "#ffffff",
 };
 
 export const vars = createGlobalTheme(":root", {

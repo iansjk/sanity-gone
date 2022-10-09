@@ -6,16 +6,6 @@ import { usePopper } from "react-popper";
 
 import * as classes from "./styles.css";
 
-// this augmentation is needed in order for the generic type <P> to be passed
-// from the outer function to the inner function (the argument to React.forwardRef);
-// see https://fettblog.eu/typescript-react-generic-forward-refs/
-declare module "react" {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  function forwardRef<T, P = {}>(
-    render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
-  ): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
-}
-
 export const DropdownOption = <T,>(
   props: React.HTMLAttributes<HTMLLIElement> & {
     value: T;
@@ -37,10 +27,10 @@ export interface DropdownSelectRef {
   button: HTMLButtonElement | null;
 }
 
-function DropdownSelectInner<T>(
-  props: Props<T>,
-  ref: React.Ref<DropdownSelectRef>
-) {
+const DropdownSelectInner: React.ForwardRefRenderFunction<
+  DropdownSelectRef,
+  Props<T>
+> = (props, ref) => {
   const {
     buttonContent,
     value,
@@ -105,10 +95,11 @@ function DropdownSelectInner<T>(
       </Portal>
     </Listbox>
   );
-}
-const DropdownSelect = React.forwardRef(DropdownSelectInner);
-// @ts-expect-error displayName is missing from the type augmentation above
-DropdownSelect.displayName = "DropdownSelect";
+};
+DropdownSelectInner.displayName = "DropdownSelect";
+const DropdownSelect = React.forwardRef(DropdownSelectInner) as <T>(
+  props: Props<T> & React.RefAttributes<DropdownSelectRef>
+) => ReturnType<typeof DropdownSelectInner>;
 export default DropdownSelect;
 
 // handles the case when component has not mounted yet and `document` is not yet available

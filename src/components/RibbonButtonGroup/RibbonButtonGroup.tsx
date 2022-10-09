@@ -7,7 +7,8 @@ type Props = React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>;
 const RibbonButtonGroup: React.FC<Props> = ({
   children,
   className,
-  role: _,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  role: _role,
   ...rest
 }) => {
   return (

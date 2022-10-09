@@ -1,16 +1,11 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
-import {
-  Button,
-  css,
-  GlobalStyles,
-  ListItemIcon,
-  ListItemText,
-  Menu,
-  MenuItem,
-  styled,
-  Theme,
-  useTheme,
-} from "@mui/material";
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useRef,
+} from "react";
+import { css, GlobalStyles, Theme, useTheme } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
 import { MdArrowForwardIos } from "react-icons/md";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -34,31 +29,20 @@ import TraitInfo from "../../components/TraitInfo";
 import OperatorList, {
   OperatorListOperator,
 } from "../../components/OperatorList";
-
 import { Media } from "../../Media";
 import { fetchContentfulGraphQl } from "../../utils/fetch";
 import { DenormalizedCharacter } from "../../../scripts/types";
 import operatorListBannerImage from "../../images/page-banners/operators.jpg";
 import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
+import {
+  DropdownSelect,
+  DropdownOption,
+  DropdownSelectRef,
+} from "../../components/DropdownSelect";
 
 import * as classes from "./index.css";
 
 const MENU_ICON_SIZE = 18;
-
-const ClassSubclassMenuItem = styled(MenuItem)(({ theme }) => ({
-  padding: theme.spacing(0, 1.5),
-  minHeight: "unset",
-  "&.selected": {
-    backgroundColor: theme.palette.midtoneBrighterer.main,
-  },
-  "& .MuiListItemIcon-root": {
-    minWidth: "unset",
-    marginRight: theme.spacing(1),
-  },
-  "& .MuiListItemText-root": {
-    padding: theme.spacing(1, 0),
-  },
-}));
 
 interface Props {
   allOperators: OperatorListOperator[];
@@ -223,9 +207,6 @@ const Operators: React.VFC<Props> = (props) => {
 
   const [showOnlyGuideAvailable, setShowOnlyGuideAvailable] = useState(true);
   const [showClassDescriptions, setShowClassDescriptions] = useState(true);
-  const [isClassMenuOpen, setIsClassMenuOpen] = useState(false);
-  const [isSubclassMenuOpen, setIsSubclassMenuOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [selectedProfession, setSelectedProfession] = useState<string | null>(
     null
   );
@@ -234,11 +215,11 @@ const Operators: React.VFC<Props> = (props) => {
   >(null);
   const theme = useTheme();
   const router = useRouter();
+  const classDropdownRef = useRef<DropdownSelectRef>(null);
 
   const hashChangeCallback = useCallback(() => {
     const hash = window.location.hash;
     if (hash.length > 0) {
-      console.log(hash);
       const classMatch = /^#([^-]*?)(?:-(.*?))?$/.exec(hash);
       const opClass = classMatch ? classMatch[1] : "";
       const opSubclass = classMatch
@@ -271,35 +252,6 @@ const Operators: React.VFC<Props> = (props) => {
     setShowOnlyGuideAvailable(e.target.checked);
   };
 
-  const handleClassMenuClick: React.MouseEventHandler<HTMLButtonElement> = (
-    e
-  ) => {
-    setAnchorEl(e.currentTarget);
-    setIsClassMenuOpen(true);
-  };
-
-  const handleSubclassMenuClick: React.MouseEventHandler<HTMLButtonElement> = (
-    e
-  ) => {
-    setAnchorEl(e.currentTarget);
-    setIsSubclassMenuOpen(true);
-  };
-
-  const handleClassClick = (profession: string | null) => () => {
-    setSelectedProfession((oldProfession) => {
-      if (oldProfession !== profession) {
-        setSelectedSubProfessionId(null);
-      }
-      return profession;
-    });
-    setIsClassMenuOpen(false);
-  };
-
-  const handleSubclassClick = (subProfessionId: string | null) => () => {
-    setSelectedSubProfessionId(subProfessionId);
-    setIsSubclassMenuOpen(false);
-  };
-
   const handleSubclassFilter = useCallback(
     (profession: string, subProfessionId: string) => {
       setSelectedProfession(profession);
@@ -311,6 +263,7 @@ const Operators: React.VFC<Props> = (props) => {
   const handleResetFilter = () => {
     setSelectedProfession(null);
     setSelectedSubProfessionId(null);
+    classDropdownRef.current?.button?.focus();
   };
 
   const selectedClass =
@@ -331,137 +284,93 @@ const Operators: React.VFC<Props> = (props) => {
 
   const sortAndFilterOptions = (
     <>
-      <span className={classes.filterVisualLabel} aria-hidden="true">
+      <span className={classes.filterVisualLabel}>
         <FilterIcon />
         Filters
       </span>
-      <Button
-        id="class-menu-button"
-        variant="contained"
-        aria-label="Select class"
-        aria-controls="class-menu"
-        aria-haspopup="true"
-        aria-expanded={isClassMenuOpen ? "true" : undefined}
-        onClick={handleClassMenuClick}
-        className={classes.sortAndFilterButton}
-      >
-        {selectedProfession ? (
-          <>
-            <Image
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              src={operatorClassIcon(slugify(selectedClass!))}
-              alt=""
-              width={MENU_ICON_SIZE}
-              height={MENU_ICON_SIZE}
-            />
-            {selectedClass}
-          </>
-        ) : (
-          "All Classes"
-        )}
-      </Button>
-      <Menu
-        id="class-menu"
-        open={isClassMenuOpen}
-        anchorEl={anchorEl}
-        MenuListProps={{
-          "aria-labelledby": "class-menu-button",
-        }}
-        onClose={() => setIsClassMenuOpen(false)}
-      >
-        <ClassSubclassMenuItem
-          onClick={handleClassClick(null)}
-          className={selectedProfession == null ? "selected" : ""}
-        >
-          <ListItemText>All Classes</ListItemText>
-        </ClassSubclassMenuItem>
-        {Object.values(opClasses).map(({ className, profession }) => (
-          <ClassSubclassMenuItem
-            key={className}
-            onClick={handleClassClick(profession)}
-            className={selectedProfession === profession ? "selected" : ""}
-          >
-            <ListItemIcon>
+
+      <DropdownSelect
+        buttonContent={
+          selectedProfession ? (
+            <>
               <Image
-                src={operatorClassIcon(slugify(className))}
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                src={operatorClassIcon(slugify(selectedClass!))}
                 alt=""
                 width={MENU_ICON_SIZE}
                 height={MENU_ICON_SIZE}
               />
-            </ListItemIcon>
-            <ListItemText>{className}</ListItemText>
-          </ClassSubclassMenuItem>
-        ))}
-      </Menu>
-      <Button
-        id="subclass-menu-button"
-        disabled={selectedProfession == null}
-        variant="contained"
-        aria-label="Select subclass"
-        aria-controls="subclass-menu"
-        aria-haspopup="true"
-        aria-expanded={isSubclassMenuOpen ? "true" : undefined}
-        onClick={handleSubclassMenuClick}
-        className={classes.sortAndFilterButton}
-      >
-        {selectedSubProfessionId ? (
-          <>
-            <Image
-              src={operatorBranchIcon(selectedSubProfessionId)}
-              alt=""
-              width={MENU_ICON_SIZE}
-              height={MENU_ICON_SIZE}
-            />
-            {selectedSubclass}
-          </>
-        ) : (
-          "All Branches"
-        )}
-      </Button>
-      <Menu
-        id="subclass-menu"
-        open={isSubclassMenuOpen}
-        anchorEl={anchorEl}
-        MenuListProps={{
-          "aria-labelledby": "subclass-menu-button",
+              <span>{selectedClass}</span>
+            </>
+          ) : (
+            "All Classes"
+          )
+        }
+        value={selectedProfession}
+        onChange={(newValue) => setSelectedProfession(newValue)}
+        classes={{
+          button: classes.sortAndFilterButton,
         }}
-        onClose={() => setIsSubclassMenuOpen(false)}
+        ref={classDropdownRef}
       >
-        <ClassSubclassMenuItem
-          onClick={handleSubclassClick(null)}
-          className={selectedProfession == null ? "selected" : ""}
-        >
-          <ListItemText>All Branches</ListItemText>
-        </ClassSubclassMenuItem>
+        <DropdownOption value={null}>All Classes</DropdownOption>
+        {Object.values(opClasses).map(
+          ({ className: operatorClassName, profession }) => (
+            <DropdownOption key={profession} value={profession}>
+              <Image
+                src={operatorClassIcon(slugify(operatorClassName))}
+                alt=""
+                width={MENU_ICON_SIZE}
+                height={MENU_ICON_SIZE}
+              />
+              <span>{operatorClassName}</span>
+            </DropdownOption>
+          )
+        )}
+      </DropdownSelect>
+
+      <DropdownSelect
+        buttonContent={
+          selectedSubProfessionId ? (
+            <>
+              <Image
+                src={operatorBranchIcon(selectedSubProfessionId)}
+                alt=""
+                width={MENU_ICON_SIZE}
+                height={MENU_ICON_SIZE}
+              />
+              <span>{selectedSubclass}</span>
+            </>
+          ) : (
+            "All Branches"
+          )
+        }
+        disabled={selectedProfession == null}
+        value={selectedSubProfessionId}
+        onChange={(newValue) => setSelectedSubProfessionId(newValue)}
+        classes={{
+          button: classes.sortAndFilterButton,
+        }}
+      >
+        <DropdownOption value={null}>All Branches</DropdownOption>
         {Object.values(branches)
           .filter(
             ({ class: subclassClass }) =>
               subclassClass.profession === selectedProfession
           )
           .map(({ subProfessionId }) => (
-            <ClassSubclassMenuItem
-              key={subProfessionIdToSubclass(subProfessionId)}
-              onClick={handleSubclassClick(subProfessionId)}
-              className={
-                selectedSubProfessionId === subProfessionId
-                  ? "selected"
-                  : undefined
-              }
-            >
-              <ListItemIcon>
-                <Image
-                  src={operatorBranchIcon(subProfessionId)}
-                  alt=""
-                  width={MENU_ICON_SIZE}
-                  height={MENU_ICON_SIZE}
-                />
-              </ListItemIcon>
-              <ListItemText>
-                {subProfessionIdToSubclass(subProfessionId)}
-              </ListItemText>
-            </ClassSubclassMenuItem>
+            <DropdownOption key={subProfessionId} value={subProfessionId}>
+              <Image
+                src={operatorBranchIcon(subProfessionId)}
+                alt=""
+                width={MENU_ICON_SIZE}
+                height={MENU_ICON_SIZE}
+              />
+              <span>{subProfessionIdToSubclass(subProfessionId)}</span>
+            </DropdownOption>
           ))}
-      </Menu>
+      </DropdownSelect>
+
       {(selectedProfession != null || selectedSubProfessionId != null) && (
         <button
           className={classes.resetFiltersButton}
@@ -470,6 +379,7 @@ const Operators: React.VFC<Props> = (props) => {
           Reset
         </button>
       )}
+
       <CustomCheckbox
         className={classes.guideAvailableCheckbox}
         label="Guide available"

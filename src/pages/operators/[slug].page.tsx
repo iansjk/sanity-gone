@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Box, Theme, useTheme, css, GlobalStyles } from "@mui/material";
-import { tint, rgba, transparentize } from "polished";
+import { tint, rgba, transparentize, parseToRgb } from "polished";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import removeMarkdown from "remove-markdown";
@@ -24,8 +24,16 @@ import { fetchContentfulGraphQl } from "../../utils/fetch";
 import operatorsJson from "../../../data/operators.json";
 import summonsJson from "../../../data/summons.json";
 import modulesJson from "../../../data/modules.json";
+import { Tab } from "@headlessui/react";
+import * as classes from "./[slug].css";
+import cx from "clsx";
 
 import Modules from "../../components/Modules";
+import { lastUpdatedDate } from "./index.css";
+import { hexToRgb } from "../../utils/globals";
+import ScrollContainer from "react-indiana-drag-scroll";
+import useMediaQuery from "../../utils/media-query";
+import { breakpoints } from "../../theme-helpers";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const query = `
@@ -379,6 +387,14 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   const [baseChar, alterName] = operatorName.split(" the ");
   const shouldShowModules =
     modules && modules.length > 0 && (module1Analysis || module2Analysis);
+  const talents = [talent1Analysis, talent2Analysis].filter((x) =>
+    Boolean(x)
+  ) as MDXRemoteSerializeResult[];
+  const skills = [skill1Analysis, skill2Analysis, skill3Analysis].filter((x) =>
+    Boolean(x)
+  ) as MDXRemoteSerializeResult[];
+
+  const isMobile = useMediaQuery(breakpoints.down("mobile"));
 
   return (
     <Layout
@@ -412,180 +428,209 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         )(theme)}
       />
       {/* we add a key prop here to force rerendering of Tabs if e.g. a user clicks a guide search result while already on a guide page */}
-      <Tabs
-        component="main"
-        key={operator.name}
-        css={styles(operator.accentColorInHex)}
+      <div
+        style={
+          {
+            "--accent-color": operator.accentColorInHex,
+            "--accent-color-rgb": hexToRgb(operator.accentColorInHex),
+            "--accent-color-transparentized-09": transparentize(
+              0.9,
+              operator.accentColorInHex
+            ),
+            "--accent-color-transparentized-08": transparentize(
+              0.8,
+              operator.accentColorInHex
+            ),
+            "--accent-color-tinted-027": hexToRgb(
+              tint(0.27, operator.accentColorInHex)
+            ),
+          } as React.CSSProperties
+        }
       >
-        <TabButtons className="tabs" isSwiper>
-          {[
-            ...["Introduction"],
-            ...(shouldShowModules ? ["Modules"] : []),
-            ...["Talents", "Skills"],
-            ...(synergies.length > 0 ? ["Synergy"] : []),
-          ].map((label) => (
-            <button key={label}>{label}</button>
-          ))}
-        </TabButtons>
-        <TabPanels className="panels">
-          {[
-            ...[
-              {
-                component: (
-                  <Introduction
-                    analysis={introduction}
-                    isLimited={operator.limited}
-                    operatorObject={operatorObject}
-                    summonObject={summons[0]}
-                    strengths={strengths}
-                    weaknesses={weaknesses}
-                  />
-                ),
-                className: "introduction",
-              },
-            ],
-            ...(shouldShowModules
-              ? [
-                  {
-                    component: (
-                      <Modules
-                        operatorName={operatorObject.name}
-                        modules={modules}
-                        moduleAnalyses={
-                          [module1Analysis, module2Analysis].filter((x) =>
-                            Boolean(x)
-                          ) as MDXRemoteSerializeResult[]
-                        }
-                      />
-                    ),
-                    className: "modules",
-                  },
-                ]
-              : []),
-            ...[
-              {
-                component: (
-                  <CardWithTabs
-                    header="Talents"
-                    panelContent={(
-                      [talent1Analysis, talent2Analysis].filter((x) =>
-                        Boolean(x)
-                      ) as MDXRemoteSerializeResult[]
-                    ).map((mdxSource, i) => (
-                      <MDXRemote
-                        key={i}
-                        {...mdxSource}
-                        components={{
-                          TalentInfo: () => (
-                            <TalentInfo
-                              talentObject={operatorObject.talents[i]}
+        <Tab.Group
+          as={"main"}
+          className={classes.tabContainer}
+          vertical={!isMobile}
+          key={operator.name}
+        >
+          <Tab.List as={ScrollContainer} className={classes.tabButtons}>
+            {[
+              ...["Introduction"],
+              ...(shouldShowModules ? ["Modules"] : []),
+              ...["Talents", "Skills"],
+              ...(synergies.length > 0 ? ["Synergy"] : []),
+            ].map((label) => (
+              <Tab as={Fragment} key={label}>
+                <button className={classes.button}>{label}</button>
+              </Tab>
+            ))}
+          </Tab.List>
+          <Tab.Panels className={classes.panels}>
+            {[
+              ...[
+                {
+                  component: (
+                    <Introduction
+                      analysis={introduction}
+                      isLimited={operator.limited}
+                      operatorObject={operatorObject}
+                      summonObject={summons[0]}
+                      strengths={strengths}
+                      weaknesses={weaknesses}
+                    />
+                  ),
+                  className: "introduction",
+                },
+              ],
+              ...(shouldShowModules
+                ? [
+                    {
+                      component: (
+                        <Modules
+                          operatorName={operatorObject.name}
+                          modules={modules}
+                          moduleAnalyses={
+                            [module1Analysis, module2Analysis].filter((x) =>
+                              Boolean(x)
+                            ) as MDXRemoteSerializeResult[]
+                          }
+                        />
+                      ),
+                      className: "modules",
+                    },
+                  ]
+                : []),
+              ...[
+                {
+                  component: (
+                    <CardWithTabs
+                      header="Talents"
+                      tabGroups={[
+                        {
+                          buttons: talents.map((_, i) => {
+                            return { label: `talent ${i + 1}` };
+                          }),
+                          panels: talents.map((mdxSource, i) => (
+                            <MDXRemote
+                              key={i}
+                              {...mdxSource}
+                              components={{
+                                TalentInfo: () => (
+                                  <TalentInfo
+                                    talentObject={operatorObject.talents[i]}
+                                  />
+                                ),
+                                SummonStats: () => (
+                                  <CharacterStats
+                                    characterObject={summons[0]}
+                                  />
+                                ),
+                              }}
                             />
-                          ),
-                          SummonStats: () => (
-                            <CharacterStats characterObject={summons[0]} />
-                          ),
-                        }}
-                      />
-                    ))}
-                    buttonLabelFn={(i) => `talent ${i + 1}`}
-                  />
-                ),
-                className: "talents",
-              },
-              {
-                component: (
-                  <CardWithTabs
-                    header="Skills"
-                    panelContent={(
-                      [skill1Analysis, skill2Analysis, skill3Analysis].filter(
-                        (x) => Boolean(x)
-                      ) as MDXRemoteSerializeResult[]
-                    ).map((mdxSource, i) => (
-                      <MDXRemote
-                        key={i}
-                        {...mdxSource}
-                        components={{
-                          SkillInfo: () => (
-                            <SkillInfo
-                              isRecommended={skillRecommended[i]}
-                              skillObject={operatorObject.skillData[i]}
+                          )),
+                        },
+                      ]}
+                    />
+                  ),
+                  className: "talents",
+                },
+                {
+                  component: (
+                    <CardWithTabs
+                      header="Skills"
+                      tabGroups={[
+                        {
+                          buttons: skills.map((_, i) => {
+                            return { label: `skill ${i + 1}` };
+                          }),
+                          panels: skills.map((mdxSource, i) => (
+                            <MDXRemote
+                              key={i}
+                              {...mdxSource}
+                              components={{
+                                SkillInfo: () => (
+                                  <SkillInfo
+                                    isRecommended={skillRecommended[i]}
+                                    skillObject={operatorObject.skillData[i]}
+                                  />
+                                ),
+                                SummonStats: () => (
+                                  <CharacterStats
+                                    characterObject={
+                                      summons.length > 1
+                                        ? summons[i]
+                                        : summons[0]
+                                    }
+                                  />
+                                ),
+                                MasteryRecommendation,
+                                img: (props) => (
+                                  <Box
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                  >
+                                    {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+                                    <img
+                                      {...props}
+                                      style={{
+                                        width: `min(100vw - 32px, 360px)`,
+                                      }}
+                                    />
+                                  </Box>
+                                ),
+                              }}
                             />
-                          ),
-                          SummonStats: () => (
-                            <CharacterStats
-                              characterObject={
-                                summons.length > 1 ? summons[i] : summons[0]
-                              }
-                            />
-                          ),
-                          MasteryRecommendation,
-                          img: (props) => (
-                            <Box
-                              display="flex"
-                              alignItems="center"
-                              justifyContent="center"
-                            >
-                              {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
-                              <img
-                                {...props}
-                                style={{
-                                  width: `min(100vw - 32px, 360px)`,
-                                }}
-                              />
-                            </Box>
-                          ),
-                        }}
-                      />
-                    ))}
-                    buttonLabelFn={(i) => `skill ${i + 1}`}
-                  />
-                ),
-                className: "skills",
-              },
-            ],
-            ...(synergies.length > 0
-              ? [
-                  {
-                    component: <Synergies synergies={synergies} />,
-                    className: "synergies",
-                  },
-                ]
-              : []),
-          ].map(({ component, className }, i) => (
-            <div className={`analysis-section ${className}`} key={i}>
-              {component}
+                          )),
+                        },
+                      ]}
+                    />
+                  ),
+                  className: "skills",
+                },
+              ],
+              ...(synergies.length > 0
+                ? [
+                    {
+                      component: <Synergies synergies={synergies} />,
+                      className: "synergies",
+                    },
+                  ]
+                : []),
+            ].map(({ component, className }, i) => (
+              <Tab.Panel className={`analysis-section ${className}`} key={i}>
+                {component}
+              </Tab.Panel>
+            ))}
+          </Tab.Panels>
+          <div className={classes.leftSidebar}>
+            <Media greaterThanOrEqual="mobile">
+              <hr className={classes.separator} />
+            </Media>
+            <div className={classes.leftSidebarSection}>
+              <span className={classes.sectionLabel}>External Links</span>
+              <a
+                className={classes.externalLink}
+                href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${operatorName}`}
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                Aceship
+              </a>
+              <a
+                className={classes.externalLink}
+                href={`http://prts.wiki/w/${encodeURIComponent(
+                  operatorObject.cnName
+                )}`}
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                PRTS
+              </a>
             </div>
-          ))}
-        </TabPanels>
-        <div className="left-sidebar">
-          <Media greaterThanOrEqual="mobile">
-            <hr />
-          </Media>
-          <div className="external-links">
-            <span className="section-label">External Links</span>
-            <a
-              className="emphasized-link"
-              href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${operatorName}`}
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              Aceship
-            </a>
-            <a
-              className="emphasized-link"
-              href={`http://prts.wiki/w/${encodeURIComponent(
-                operatorObject.cnName
-              )}`}
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              PRTS
-            </a>
-          </div>
-          <div className="metadata">
-            <div className="last-updated-section">
-              <span className="section-label">Last updated</span>
-              <span className="last-updated">
+            <div className={classes.leftSidebarSection}>
+              <span className={classes.sectionLabel}>Last updated</span>
+              <span className={classes.lastUpdated}>
                 {new Intl.DateTimeFormat("en-US", {
                   month: "long",
                   day: "numeric",
@@ -594,8 +639,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
               </span>
             </div>
           </div>
-        </div>
-      </Tabs>
+        </Tab.Group>
+      </div>
     </Layout>
   );
 };
@@ -697,252 +742,3 @@ const globalOverrideStyles =
         }
       }
     `;
-
-const styles = (accentColor: string) => (theme: Theme) =>
-  css`
-    padding: ${theme.spacing(0, 3)};
-    margin: ${theme.spacing(3, 0, 0)};
-    display: grid;
-    grid-template-rows: max-content max-content 1fr;
-    grid-template-columns: max-content 1fr;
-
-    ${theme.breakpoints.down("mobile")} {
-      margin: ${theme.spacing(2, 0, 0)};
-      padding: 0;
-      grid-template-columns: 1fr;
-    }
-
-    .fresnel-container {
-      display: grid;
-    }
-
-    .fresnel-container > .swiper-container {
-      background-color: ${transparentize(0.34, theme.palette.dark.main)};
-      backdrop-filter: blur(8px);
-
-      button:not(.synergy-operator-button):not(.module-button) {
-        box-sizing: border-box;
-        padding: ${theme.spacing(2)};
-        width: max-content;
-        position: relative;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: ${theme.typography.cardHeading.fontSize}px;
-        font-weight: ${theme.typography.cardHeading.fontWeight};
-        line-height: ${theme.typography.cardHeading.lineHeight};
-        text-transform: ${theme.typography.cardHeading.textTransform};
-
-        &:not(.active) {
-          color: ${theme.palette.gray.main};
-        }
-
-        &.active {
-          &::after {
-            content: " ";
-            display: inline-block;
-            width: ${theme.spacing(4)};
-            position: absolute;
-            left: calc(50% - ${theme.spacing(2)});
-            bottom: 0;
-            border-bottom-width: 3px;
-            border-bottom-style: solid;
-          }
-        }
-      }
-
-      button:not(.synergy-operator-button):not(.module-button).active {
-        color: ${accentColor};
-
-        &::after {
-          border-bottom-color: ${accentColor};
-        }
-      }
-    }
-
-    .fresnel-container > .tabs {
-      display: flex;
-      flex-direction: column;
-      z-index: 1;
-
-      button {
-        width: 192px;
-        height: ${theme.spacing(6)};
-        padding-left: ${theme.spacing(2)};
-        margin-top: ${theme.spacing(1)};
-        text-align: start;
-        line-height: ${theme.typography.navigationLink.lineHeight};
-        border: 0;
-        border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
-        background: none;
-        color: ${theme.palette.gray.main};
-        cursor: pointer;
-
-        :disabled {
-          cursor: initial;
-          color: ${rgba(theme.palette.gray.main, 0.5)};
-        }
-
-        &:not(:disabled):not(.active):hover {
-          background-color: ${transparentize(0.9, theme.palette.gray.main)};
-          color: ${theme.palette.white.main};
-        }
-
-        &.active {
-          background: linear-gradient(
-            90deg,
-            ${transparentize(0.9, accentColor)},
-            ${transparentize(0.8, accentColor)}
-          );
-          color: ${tint(0.27, accentColor)};
-          border-right: 3px solid ${tint(0.27, accentColor)};
-          font-weight: ${theme.typography.navigationLinkBold.fontWeight};
-        }
-
-        ${theme.breakpoints.down("mobile")} {
-          font-size: ${theme.typography.cardHeading.fontSize}px;
-          line-height: ${theme.typography.cardHeading.lineHeight};
-          font-weight: ${theme.typography.cardHeading.fontWeight};
-          text-transform: ${theme.typography.cardHeading.textTransform};
-        }
-      }
-    }
-
-    .left-sidebar {
-      grid-row-start: 2;
-      padding-right: ${theme.spacing(4)};
-
-      ${theme.breakpoints.down("mobile")} {
-        grid-row: 3;
-        padding: ${theme.spacing(0, 2, 3)};
-      }
-
-      hr {
-        border: 0;
-        border-top: 1px solid ${theme.palette.midtoneBrighter.main};
-        margin: ${theme.spacing(3)} 0 0 0;
-      }
-
-      .external-links,
-      .metadata {
-        padding-left: ${theme.spacing(2)};
-
-        ${theme.breakpoints.down("mobile")} {
-          padding: 0;
-        }
-      }
-
-      .external-links,
-      .authors-section,
-      .last-updated-section {
-        margin-top: ${theme.spacing(3)};
-      }
-
-      .section-label {
-        display: block;
-        margin-bottom: ${theme.spacing(1)};
-        font-size: ${theme.typography.body3.fontSize}px;
-        line-height: ${theme.typography.body3.lineHeight};
-        color: ${theme.palette.gray.main};
-      }
-
-      .metadata {
-        ${theme.breakpoints.down("mobile")} {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      .external-links {
-        a {
-          margin-right: ${theme.spacing(1)};
-
-          color: ${rgba(tint(0.27, accentColor), 0.66)};
-          background-color: ${rgba(accentColor, 0.08)};
-
-          &:hover {
-            color: ${tint(0.27, accentColor)};
-            background-color: ${rgba(accentColor, 0.4)};
-          }
-        }
-      }
-
-      .last-updated-section {
-        .last-updated {
-          font-style: italic;
-        }
-      }
-    }
-
-    & > .panels {
-      grid-row-start: span 3;
-      grid-column: 2 / span 2;
-      margin-left: -1px;
-      height: 100%;
-      border-left: 1px solid ${theme.palette.gray.main};
-      position: relative;
-
-      &::before {
-        content: "";
-        backdrop-filter: blur(8px);
-        position: absolute;
-        width: 100%;
-        height: 350px;
-        top: 0;
-        left: 0;
-        z-index: -1;
-      }
-
-      ${theme.breakpoints.down("mobile")} {
-        grid-row: 2;
-        grid-column: 1;
-        border: none;
-        backdrop-filter: unset;
-      }
-
-      .analysis-section {
-        height: 100%;
-
-        section {
-          height: 100%;
-
-          .card-content {
-            box-sizing: border-box;
-            height: calc(
-              100% - ${theme.typography.cardHeading.fontSize}px *
-                ${theme.typography.cardHeading.lineHeight} - ${theme.spacing(4)}
-            );
-
-            ${theme.breakpoints.down("mobile")} {
-              height: 100%;
-            }
-
-            .tabs-wrapper {
-              height: 100%;
-            }
-          }
-        }
-      }
-
-      .analysis-section:not(.synergies):not(.modules) {
-        .tab-buttons {
-          button.active {
-            background-color: ${accentColor};
-            border-color: ${accentColor};
-
-            svg path {
-              fill: ${theme.palette.dark.main};
-            }
-          }
-
-          button.inactive:hover {
-            border-color: ${accentColor};
-
-            svg path {
-              fill: ${accentColor};
-            }
-          }
-        }
-      }
-    }
-  `;

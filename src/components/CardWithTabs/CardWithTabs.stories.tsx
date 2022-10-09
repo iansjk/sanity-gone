@@ -465,35 +465,51 @@ const Template: Story<CardWithTabsProps> = (args) => <CardWithTabs {...args} />;
 export const Skills = Template.bind({});
 Skills.args = {
   header: "Skills",
-  buttonLabelFn: (i) => `skill ${i + 1}`,
-  panelContent: skillAnalyses.map((mdxSource, i) => (
-    <MDXRemote
-      key={i}
-      {...mdxSource}
-      components={{
-        SkillInfo: () => (
-          <SkillInfo
-            isRecommended={isSkillRecommended[i]}
-            skillObject={skillObjects[i]}
-          />
-        ),
-        MasteryRecommendation,
-      }}
-    />
-  )),
+  tabGroups: [
+    {
+      buttons: skillAnalyses.map((_, i) => {
+        return {
+          label: `skill ${i + 1}`,
+        };
+      }),
+      panels: skillAnalyses.map((mdxSource, i) => (
+        <MDXRemote
+          key={i}
+          {...mdxSource}
+          components={{
+            SkillInfo: () => (
+              <SkillInfo
+                isRecommended={isSkillRecommended[i]}
+                skillObject={skillObjects[i]}
+              />
+            ),
+            MasteryRecommendation,
+          }}
+        />
+      )),
+    },
+  ],
 };
 
 export const Talents = Template.bind({});
 Talents.args = {
   header: "Talents",
-  buttonLabelFn: (i) => `talent ${i + 1}`,
-  panelContent: talentAnalyses.map((mdxSource, i) => (
-    <MDXRemote
-      key={i}
-      {...mdxSource}
-      components={{
-        TalentInfo: () => <TalentInfo talentObject={talentObjects[i]} />,
-      }}
-    />
-  )),
+  tabGroups: [
+    {
+      buttons: talentAnalyses.map((_, i) => {
+        return {
+          label: `talent ${i + 1}`,
+        };
+      }),
+      panels: talentAnalyses.map((mdxSource, i) => (
+        <MDXRemote
+          key={i}
+          {...mdxSource}
+          components={{
+            TalentInfo: () => <TalentInfo talentObject={talentObjects[i]} />,
+          }}
+        />
+      )),
+    },
+  ],
 };

@@ -1,2 +1,5 @@
-import DropdownSelect, { DropdownOption } from "./DropdownSelect";
-export { DropdownSelect, DropdownOption };
+import DropdownSelect, {
+  DropdownOption,
+  DropdownSelectRef,
+} from "./DropdownSelect";
+export { DropdownSelect, DropdownOption, type DropdownSelectRef };

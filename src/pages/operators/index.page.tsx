@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useRef,
+} from "react";
 import { css, GlobalStyles, Theme, useTheme } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
 import { MdArrowForwardIos } from "react-icons/md";
@@ -31,6 +37,7 @@ import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
 import {
   DropdownSelect,
   DropdownOption,
+  DropdownSelectRef,
 } from "../../components/DropdownSelect";
 
 import * as classes from "./index.css";
@@ -208,11 +215,11 @@ const Operators: React.VFC<Props> = (props) => {
   >(null);
   const theme = useTheme();
   const router = useRouter();
+  const classDropdownRef = useRef<DropdownSelectRef>(null);
 
   const hashChangeCallback = useCallback(() => {
     const hash = window.location.hash;
     if (hash.length > 0) {
-      console.log(hash);
       const classMatch = /^#([^-]*?)(?:-(.*?))?$/.exec(hash);
       const opClass = classMatch ? classMatch[1] : "";
       const opSubclass = classMatch
@@ -256,6 +263,7 @@ const Operators: React.VFC<Props> = (props) => {
   const handleResetFilter = () => {
     setSelectedProfession(null);
     setSelectedSubProfessionId(null);
+    classDropdownRef.current.button.focus();
   };
 
   const selectedClass =
@@ -303,6 +311,7 @@ const Operators: React.VFC<Props> = (props) => {
         classes={{
           button: classes.sortAndFilterButton,
         }}
+        ref={classDropdownRef}
       >
         <DropdownOption value={null}>All Classes</DropdownOption>
         {Object.values(opClasses).map(

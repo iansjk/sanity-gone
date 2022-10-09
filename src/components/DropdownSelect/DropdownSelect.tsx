@@ -1,10 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useImperativeHandle, useState } from "react";
 import { createPortal } from "react-dom";
 import { Listbox, Transition } from "@headlessui/react";
 import cx from "clsx";
 import { usePopper } from "react-popper";
 
 import * as classes from "./styles.css";
+
+// this augmentation is needed in order for the generic type <P> to be passed
+// from the outer function to the inner function (the argument to React.forwardRef);
+// see https://fettblog.eu/typescript-react-generic-forward-refs/
+declare module "react" {
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  function forwardRef<T, P = {}>(
+    render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+  ): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
+}
 
 export const DropdownOption = <T,>(
   props: React.HTMLAttributes<HTMLLIElement> & {
@@ -13,7 +23,7 @@ export const DropdownOption = <T,>(
   }
 ) => <Listbox.Option<"li", T> {...props} />;
 
-interface Props<T> {
+type Props<T> = React.PropsWithChildren<{
   buttonContent: React.ReactNode;
   value: T;
   onChange: (newValue: T) => void;
@@ -21,9 +31,16 @@ interface Props<T> {
     button?: string;
   };
   disabled?: boolean;
+}>;
+
+export interface DropdownSelectRef {
+  button: HTMLButtonElement | null;
 }
 
-const DropdownSelect = <T,>(props: React.PropsWithChildren<Props<T>>) => {
+function DropdownSelectInner<T>(
+  props: Props<T>,
+  ref: React.Ref<DropdownSelectRef>
+) {
   const {
     buttonContent,
     value,
@@ -46,6 +63,9 @@ const DropdownSelect = <T,>(props: React.PropsWithChildren<Props<T>>) => {
       },
     ],
   });
+  useImperativeHandle(ref, () => ({
+    button: referenceElement,
+  }));
 
   return (
     <Listbox<"div", T>
@@ -85,7 +105,10 @@ const DropdownSelect = <T,>(props: React.PropsWithChildren<Props<T>>) => {
       </Portal>
     </Listbox>
   );
-};
+}
+const DropdownSelect = React.forwardRef(DropdownSelectInner);
+// @ts-expect-error displayName is missing from the type augmentation above
+DropdownSelect.displayName = "DropdownSelect";
 export default DropdownSelect;
 
 // handles the case when component has not mounted yet and `document` is not yet available

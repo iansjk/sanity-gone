@@ -1,159 +1,86 @@
-import { css, Interpolation } from "@emotion/react";
-import { Theme } from "@mui/material";
+import * as classes from "./styles.css";
+import { Fragment } from "react";
 
 import Card from "../Card";
-import Tabs from "../Tabs";
-import TabButtons from "../TabButtons";
-import TabPanels from "../TabPanels";
 import RomanNumeralOne from "../icons/RomanNumeralOne";
 import RomanNumeralTwo from "../icons/RomanNumeralTwo";
 import RomanNumeralThree from "../icons/RomanNumeralThree";
+import cx from "clsx";
+import { Tab } from "@headlessui/react";
+import useMediaQuery from "../../utils/media-query";
+import { breakpoints } from "../../theme-helpers";
+
+export type TabGroup = {
+  label?: JSX.Element;
+  buttons: Array<{
+    image?: JSX.Element;
+    label: string;
+    indicator?: JSX.Element;
+  }>;
+  panels: JSX.Element[];
+};
 
 export type CardWithTabsProps = {
   header: string;
-  isSwiper?: boolean;
-  css?: Interpolation<Theme>;
-} & Either<
-  {
-    panelContent: JSX.Element[];
-  } & Either<
-    {
-      buttonLabels: string[];
-    },
-    {
-      buttonLabelFn: (index: number) => string;
-    }
-  >,
-  {
-    buttons: JSX.Element[];
-    panels: JSX.Element[];
-  }
->;
+  tabGroups: TabGroup[];
+  buttonClassName?: string;
+  tabsClassName?: string;
+};
 
 const CardWithTabs: React.VFC<CardWithTabsProps> = (props) => {
-  const {
-    header,
-    isSwiper,
-    panelContent,
-    buttonLabels,
-    buttonLabelFn,
-    buttons,
-    panels,
-    ...rest
-  } = props;
+  const { header, tabGroups, buttonClassName, tabsClassName, ...rest } = props;
+  const isMobile = useMediaQuery(breakpoints.down("mobile"));
 
   return (
-    <Card header={header} css={styles} {...rest}>
-      <Tabs className="tabs-wrapper">
-        <TabButtons className="tab-buttons" isSwiper={isSwiper}>
-          {panelContent
-            ? panelContent.map((_, i) => (
-                <button
-                  key={i}
-                  aria-label={
-                    buttonLabelFn ? buttonLabelFn(i) : buttonLabels?.[i]
-                  }
-                >
-                  {i === 0 && <RomanNumeralOne />}
-                  {i === 1 && <RomanNumeralTwo />}
-                  {i === 2 && <RomanNumeralThree />}
-                </button>
-              ))
-            : buttons}
-        </TabButtons>
-        <TabPanels className="tab-panels">
-          {panelContent
-            ? panelContent.map((panel, i) => <div key={i}>{panel}</div>)
-            : panels}
-        </TabPanels>
-      </Tabs>
+    <Card className={classes.cardWithTabsRoot} header={header} {...rest}>
+      <Tab.Group as={"div"} className={classes.tabWrapper} vertical={!isMobile}>
+        <Tab.List className={cx(tabsClassName, classes.tabButtons)}>
+          {tabGroups &&
+            tabGroups.map((group, groupIndex) => {
+              return (
+                <Fragment key={groupIndex}>
+                  {group.label}
+                  {group.buttons.map((button, buttonIndex) => (
+                    <Tab as={Fragment} key={buttonIndex}>
+                      <button className={cx(classes.button, buttonClassName)}>
+                        {button.image ??
+                          ((buttonIndex === 0 && (
+                            <RomanNumeralOne
+                              pathClassName={classes.romanNumerals}
+                            />
+                          )) ||
+                            (buttonIndex === 1 && (
+                              <RomanNumeralTwo
+                                pathClassName={classes.romanNumerals}
+                              />
+                            )) ||
+                            (buttonIndex === 2 && (
+                              <RomanNumeralThree
+                                pathClassName={classes.romanNumerals}
+                              />
+                            )))}
+                        {button.indicator}
+                      </button>
+                    </Tab>
+                  ))}
+                </Fragment>
+              );
+            })}
+        </Tab.List>
+        <Tab.Panels className={classes.tabPanels}>
+          {tabGroups &&
+            tabGroups.map((group, groupIndex) => {
+              return (
+                <Fragment key={groupIndex}>
+                  {group.panels.map((panel, panelIndex) => (
+                    <Tab.Panel key={panelIndex}>{panel}</Tab.Panel>
+                  ))}
+                </Fragment>
+              );
+            })}
+        </Tab.Panels>
+      </Tab.Group>
     </Card>
   );
 };
 export default CardWithTabs;
-
-const styles = (theme: Theme) => css`
-  .card-content {
-    padding: 0;
-  }
-
-  .tabs-wrapper {
-    display: flex;
-
-    ${theme.breakpoints.down("mobile")} {
-      flex-direction: column;
-    }
-
-    .tab-panels {
-      flex-grow: 1;
-      padding: ${theme.spacing(0, 4, 4)};
-
-      ${theme.breakpoints.down("mobile")} {
-        padding: ${theme.spacing(0, 2, 2)};
-      }
-    }
-
-    .tab-buttons {
-      min-width: ${theme.spacing(12)};
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      padding: ${theme.spacing(3, 0, 4)};
-      background: ${theme.palette.midtone.main};
-
-      ${theme.breakpoints.down("mobile")} {
-        flex-direction: row;
-        justify-content: center;
-        padding: ${theme.spacing(2, 0)};
-        padding-bottom: 0;
-        background: none;
-      }
-
-      button {
-        border-radius: ${theme.spacing(1)};
-        width: ${theme.spacing(6)};
-        height: ${theme.spacing(6)};
-        border: none;
-        font-weight: ${theme.typography.skillTalentHeading.fontWeight};
-        cursor: pointer;
-        background-color: ${theme.palette.midtoneDarker.main};
-        color: ${theme.palette.midtoneBrighter.main};
-        box-sizing: border-box;
-        border: ${theme.spacing(0.25)} solid
-          ${theme.palette.midtoneBrighter.main};
-        padding: 0;
-        margin-bottom: ${theme.spacing(2)};
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        ${theme.breakpoints.down("mobile")} {
-          margin-bottom: 0;
-          margin-right: ${theme.spacing(2)};
-
-          &:last-of-type {
-            margin-left: 0;
-          }
-        }
-
-        svg path {
-          fill: ${theme.palette.midtoneBrighter.main};
-        }
-
-        &.last-child {
-          margin: 0;
-        }
-
-        &.inactive:hover {
-          border-color: ${theme.palette.gray.main};
-          color: ${theme.palette.gray.main};
-        }
-
-        &.active {
-          background-color: ${theme.palette.midtoneBrighter.main};
-          color: ${theme.palette.white.main};
-        }
-      }
-    }
-  }
-`;

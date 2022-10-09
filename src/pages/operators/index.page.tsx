@@ -263,7 +263,7 @@ const Operators: React.VFC<Props> = (props) => {
   const handleResetFilter = () => {
     setSelectedProfession(null);
     setSelectedSubProfessionId(null);
-    classDropdownRef.current.button.focus();
+    classDropdownRef.current?.button?.focus();
   };
 
   const selectedClass =

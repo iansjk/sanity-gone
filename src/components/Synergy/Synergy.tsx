@@ -7,6 +7,7 @@ import {
   subProfessionIdToSubclass,
 } from "../../utils/globals";
 import OperatorPortrait from "../OperatorPortrait";
+import * as classes from "./styles.css";
 
 export enum SynergyQuality {
   "Bad Synergy" = -1,
@@ -45,29 +46,40 @@ const Synergy: React.VFC<
   const rarity = rawRarity ? rawRarity + 1 : undefined;
 
   return (
-    <section css={styles} {...rest}>
-      <div className="synergy-header">
-        <div className="portrait">
+    <section className={classes.root}>
+      <div className={classes.synergyHeader}>
+        <div className={classes.portrait}>
           <OperatorPortrait
             variant="small"
             charId={charId}
             iconOverride={isGroup ? iconUrl : undefined}
           />
         </div>
-        <div className="name-and-quality">
-          <h3 className="operator-name">{name}</h3>
+        <div className={classes.nameAndQuality}>
+          <h3 className={classes.operatorName}>{name}</h3>
           {!isGroup && (
-            <div className="synergy-operator-info">
+            <div className={classes.synergyOperatorInfo}>
               {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
-              <span className={`rarity-${rarity!}-stars`}>{rarity} ★</span>
-              <span className="operator-class">
+              <span
+                className={
+                  classes.synergyQuality[
+                    `rarity-${rarity!}-stars` as keyof typeof classes.synergyQuality
+                  ]
+                }
+              >
+                {rarity} ★
+              </span>
+              <span className={classes.operatorClass}>
                 {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
                 {professionToClass(profession!)}
               </span>
-              <span className="class-subclass-separator" aria-hidden="true">
+              <span
+                className={classes.classSubclassSeparator}
+                aria-hidden="true"
+              >
                 ·
               </span>
-              <span className="subclass">
+              <span className={classes.subclass}>
                 {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
                 {subProfessionIdToSubclass(subProfessionId!)}
               </span>

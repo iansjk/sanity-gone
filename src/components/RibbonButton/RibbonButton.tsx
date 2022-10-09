@@ -17,6 +17,7 @@ const RibbonButton: React.FC<Props> = ({
   return (
     <button
       className={cx(classes.root, className, active && classes.active)}
+      aria-current={active ? "true" : undefined}
       {...rest}
     >
       {children}

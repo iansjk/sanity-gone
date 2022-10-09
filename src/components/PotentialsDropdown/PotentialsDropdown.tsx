@@ -1,5 +1,4 @@
 import React from "react";
-import { Listbox, Transition } from "@headlessui/react";
 
 import {
   PotentialFiveIcon,
@@ -9,6 +8,10 @@ import {
   PotentialThreeIcon,
   PotentialTwoIcon,
 } from "../icons/operatorStats";
+import {
+  DropdownSelect,
+  DropdownOption,
+} from "../../components/DropdownSelect";
 
 import * as classes from "./styles.css";
 
@@ -74,35 +77,19 @@ const PotentialsDropdown: React.VFC<PotentialsDropdownProps> = (props) => {
   const potList = potentialsToShow ?? [0, 1, 2, 3, 4, 5]; // default to all pots
 
   return (
-    <Listbox<"div", number>
-      as="div"
+    <DropdownSelect
+      buttonContent={potentialLabel(currentPotential)}
       value={currentPotential}
       onChange={onChange}
-      className={classes.root}
+      // TODO maybe we should disable the dropdown if there's only one option?
+      // disabled={potList.length === 1 && potList[0] === currentPotential}
     >
-      <Listbox.Button<"button"> className={classes.button}>
-        {potentialLabel(currentPotential)}
-      </Listbox.Button>
-      <Transition<"div">
-        className={classes.transition.base}
-        enterFrom={classes.transition.enterFrom}
-        enterTo={classes.transition.enterTo}
-        leaveFrom={classes.transition.leaveFrom}
-        leaveTo={classes.transition.leaveTo}
-      >
-        <Listbox.Options<"ul"> className={classes.options}>
-          {potList.map((pot) => (
-            <Listbox.Option<"li">
-              key={pot}
-              value={pot}
-              className={classes.option}
-            >
-              {potentialLabel(pot)}
-            </Listbox.Option>
-          ))}
-        </Listbox.Options>
-      </Transition>
-    </Listbox>
+      {potList.map((pot) => (
+        <DropdownOption key={pot} value={pot}>
+          {potentialLabel(pot)}
+        </DropdownOption>
+      ))}
+    </DropdownSelect>
   );
 };
 export default PotentialsDropdown;

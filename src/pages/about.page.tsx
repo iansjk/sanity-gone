@@ -42,11 +42,6 @@ const memberGroups: {
         imageFilename: "pepegaturtle.png",
       },
       {
-        name: "Xinbra",
-        role: "Writer, Editor",
-        imageFilename: "pepegaturtle.png",
-      },
-      {
         name: "vae",
         role: "Writer",
         imageFilename: "pepegaturtle.png",
@@ -98,6 +93,11 @@ const memberGroups: {
       },
       {
         name: "JyuViGrace",
+        role: "Developer",
+        imageFilename: "pepegaturtle.png",
+      },
+      {
+        name: "Neia",
         role: "Developer",
         imageFilename: "pepegaturtle.png",
       },

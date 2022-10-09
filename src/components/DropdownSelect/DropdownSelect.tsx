@@ -27,10 +27,10 @@ export interface DropdownSelectRef {
   button: HTMLButtonElement | null;
 }
 
-const DropdownSelectInner: React.ForwardRefRenderFunction<
-  DropdownSelectRef,
-  Props<T>
-> = (props, ref) => {
+const DropdownSelectInner = <T,>(
+  props: Props<T>,
+  ref: React.ForwardedRef<DropdownSelectRef>
+) => {
   const {
     buttonContent,
     value,

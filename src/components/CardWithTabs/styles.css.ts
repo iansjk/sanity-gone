@@ -58,12 +58,12 @@ export const button = style({
   alignItems: "center",
   justifyContent: "center",
   ":hover": {
-    borderColor: `var(--accent-color, ${vars.colors.neutrals.midtoneBrighter})`,
+    borderColor: `var(--accent-color, ${vars.colors.neutrals.white})`,
   },
   selectors: {
     "&[data-headlessui-state~=selected]": {
-      borderColor: `var(--accent-color, transparent)`,
-      backgroundColor: `var(--accent-color, ${vars.colors.neutrals.midtoneBrighter})`,
+      borderColor: `var(--accent-color, ${vars.colors.neutrals.white})`,
+      backgroundColor: `var(--accent-color, ${vars.colors.neutrals.white})`,
       color: vars.colors.neutrals.white,
     },
   },
@@ -83,7 +83,7 @@ export const romanNumerals = style({
       fill: vars.colors.neutrals.darktone,
     },
     [`${button}:not([data-headlessui-state~=selected]):hover &`]: {
-      fill: `var(--accent-color, ${vars.colors.neutrals.midtoneBrighter})`,
+      fill: `var(--accent-color, ${vars.colors.neutrals.white})`,
     },
   },
 });

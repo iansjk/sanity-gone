@@ -5,6 +5,9 @@ import aboutDiscordButton from "../images/page-banners/about_discord.png";
 import * as classes from "./about.css";
 
 import type { NextPage } from "next";
+import useMediaQuery from "../utils/media-query";
+import { breakpoints } from "../theme-helpers";
+import { Disclosure } from "@headlessui/react";
 
 const memberGroups: {
   title: string;
@@ -133,34 +136,25 @@ const memberGroups: {
 ];
 
 const About: NextPage = () => {
+  const isMobile = useMediaQuery(breakpoints.down("mobile"));
+
   return (
     <Layout pageTitle="About" bannerImage={aboutPageBanner}>
-      <main css={styles}>
-        <section className="team-members">
-          <h2>Sanity;Gone Team</h2>
-          <Media lessThan="mobile">
-            <div className="team-groups">
-              {memberGroups.map(({ title, members }, index) => {
-                return (
-                  <Accordion
-                    className="team-group"
-                    expanded={index == 0}
-                    key={title}
-                    sx={{
-                      backgroundColor: "transparent",
-                      color: "white",
-                      boxShadow: "none",
-                      ":before": {
-                        height: 0,
-                      },
-                    }}
-                  >
-                    <AccordionSummary
-                      sx={{
-                        margin: 0,
-                      }}
-                      expandIcon={
+      <main className={classes.root}>
+        <section className={classes.teamMembers}>
+          <h2 className={classes.pageHeading}>Sanity;Gone Team</h2>
+          <div className={classes.teamGroups}>
+            {isMobile
+              ? memberGroups.map(({ title, members }) => {
+                  return (
+                    <Disclosure key={title}>
+                      <Disclosure.Button className={classes.disclosureButton}>
+                        <h3 className={classes.teamGroupTitle}>
+                          {title}
+                          <span className={classes.divider}></span>
+                        </h3>
                         <svg
+                          className={classes.disclosureChevron}
                           width="13"
                           height="14"
                           viewBox="0 0 13 14"
@@ -173,81 +167,73 @@ const About: NextPage = () => {
                             fillOpacity="0.8"
                           />
                         </svg>
-                      }
-                      // aria-controls="panel1a-content"
-                      // id="panel1a-header"
-                    >
-                      <h3>
+                      </Disclosure.Button>
+                      <Disclosure.Panel>
+                        <ul className={classes.memberList}>
+                          {members.map(({ name, role, imageFilename }) => {
+                            return (
+                              <li className={classes.memberCard} key={name}>
+                                <Image
+                                  className={classes.avatar}
+                                  src={`/images/member-avatars/${imageFilename}`}
+                                  alt=""
+                                  width={48}
+                                  height={48}
+                                  objectFit="cover"
+                                />
+                                <div className={classes.memberInfo}>
+                                  <span className={classes.memberName}>
+                                    {name}
+                                  </span>
+                                  <span className={classes.role}>{role}</span>
+                                </div>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </Disclosure.Panel>
+                    </Disclosure>
+                  );
+                })
+              : memberGroups.map(({ title, members }) => {
+                  return (
+                    <div key={title}>
+                      <h3 className={classes.teamGroupTitle}>
                         {title}
-                        <span className="divider"></span>
+                        <span className={classes.divider}></span>
                       </h3>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <ul className="member-list">
+                      <ul className={classes.memberList}>
                         {members.map(({ name, role, imageFilename }) => {
                           return (
-                            <li className="member-card" key={name}>
+                            <li className={classes.memberCard} key={name}>
                               <Image
-                                className="avatar"
+                                className={classes.avatar}
                                 src={`/images/member-avatars/${imageFilename}`}
                                 alt=""
                                 width={48}
                                 height={48}
                                 objectFit="cover"
                               />
-                              <div className="member-info">
-                                <span className="member-name">{name}</span>
-                                <span className="role">{role}</span>
+                              <div className={classes.memberInfo}>
+                                <span className={classes.memberName}>
+                                  {name}
+                                </span>
+                                <span className={classes.role}>{role}</span>
                               </div>
                             </li>
                           );
                         })}
                       </ul>
-                    </AccordionDetails>
-                  </Accordion>
-                );
-              })}
-            </div>
-          </Media>
-          <Media greaterThanOrEqual="mobile">
-            <div className="team-groups">
-              {memberGroups.map(({ title, members }) => {
-                return (
-                  <div className="team-group" key={title}>
-                    <h3>
-                      {title}
-                      <span className="divider"></span>
-                    </h3>
-                    <ul className="member-list">
-                      {members.map(({ name, role, imageFilename }) => {
-                        return (
-                          <li className="member-card" key={name}>
-                            <Image
-                              className="avatar"
-                              src={`/images/member-avatars/${imageFilename}`}
-                              alt=""
-                              width={48}
-                              height={48}
-                              objectFit="cover"
-                            />
-                            <div className="member-info">
-                              <span className="member-name">{name}</span>
-                              <span className="role">{role}</span>
-                            </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
-          </Media>
+                    </div>
+                  );
+                })}
+            {}
+          </div>
         </section>
-        <section className="about-footer">
-          <div className="special-thanks">
-            <h3>Special thanks</h3>
-            <ul>
+        <section className={classes.aboutFooter}>
+          <div className={classes.specialThanks}>
+            <h3 className={classes.specialThanksTitle}>Special thanks</h3>
+            <ul className={classes.specialThanksList}>
               <li>
                 <b>cortz</b>, <b>Alyeska</b>, and <b>Dimbreath</b> for the help
                 in early stages of development
@@ -275,10 +261,11 @@ const About: NextPage = () => {
           <a
             href="https://discord.gg"
             target="_blank"
-            className="discord-button"
+            className={classes.discordButton}
             rel="noreferrer"
           >
             <svg
+              className={classes.discordButtonIcon}
               width="79"
               height="60"
               viewBox="0 0 79 60"
@@ -290,7 +277,7 @@ const About: NextPage = () => {
                 fill="#E8E8F2"
               />
             </svg>
-            <div className="background">
+            <div className={classes.background}>
               <Image
                 alt=""
                 src={aboutDiscordButton}
@@ -305,176 +292,3 @@ const About: NextPage = () => {
   );
 };
 export default About;
-const styles = (theme: Theme) => css`
-  margin: ${theme.spacing(0, 3)};
-  background: rgba(36, 36, 46, 0.66);
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(8px);
-  border-radius: ${theme.spacing(1, 1, 1, 1)};
-
-  h2 {
-    margin: ${theme.spacing(0, 0, 3)};
-    font-size: ${theme.typography.generalHeadingBold.fontSize}px;
-    font-weight: ${theme.typography.generalHeadingBold.fontWeight};
-    line-height: ${theme.typography.generalHeadingBold.lineHeight};
-  }
-
-  .team-members {
-    display: flex;
-    margin: ${theme.spacing(4, 0, 0)};
-    flex-direction: column;
-    align-items: flex-start;
-    padding: ${theme.spacing(3, 3, 3)};
-    gap: ${theme.spacing(3, 0, 0)};
-
-    .fresnel-container {
-      width: 100%;
-    }
-  }
-
-  .team-groups {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr auto;
-    gap: ${theme.spacing(4)};
-    width: 100%;
-
-    ${theme.breakpoints.down("mobile")} {
-      display: flex;
-      flex-direction: column;
-      gap: ${theme.spacing(3)};
-    }
-
-    .member-list {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: ${theme.spacing(3)};
-      margin: ${theme.spacing(3, 0, 0)};
-      flex-wrap: wrap;
-      max-height: 500px;
-
-      ${theme.breakpoints.down("mobile")} {
-        display: flex;
-        max-height: none;
-      }
-    }
-
-    .team-group {
-      h3 {
-        margin: ${theme.spacing(0, 0, 0)};
-        font-size: ${theme.typography.teamGroupHeading.fontSize}px;
-        font-weight: ${theme.typography.teamGroupHeading.fontWeight};
-        line-height: ${theme.typography.teamGroupHeading.lineHeight};
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: ${theme.spacing(4)};
-        color: ${theme.palette.white.main};
-
-        ${theme.breakpoints.down("mobile")} {
-          width: 100%;
-        }
-
-        span.divider {
-          display: inline-block;
-          width: 100%;
-          height: 1px;
-          background: ${theme.palette.midtoneBrighterer.main};
-
-          ${theme.breakpoints.down("mobile")} {
-            margin-right: ${theme.spacing(4)};
-          }
-        }
-      }
-
-      .member-card {
-        display: flex;
-        justify-items: center;
-        align-items: center;
-
-        .member-info {
-          display: flex;
-          flex-direction: column;
-          margin: ${theme.spacing(0, 0, 0, 2)};
-        }
-
-        .avatar {
-          border-radius: 50%;
-        }
-
-        .member-name {
-          margin: ${theme.spacing(0, 0, 0)};
-          font-size: ${theme.typography.memberNameHeading.fontSize}px;
-          font-weight: ${theme.typography.memberNameHeading.fontWeight};
-          line-height: ${theme.typography.memberNameHeading.lineHeight};
-          justify-self: flex-start;
-          color: ${theme.palette.white.main};
-          grid-area: name;
-        }
-
-        .role {
-          color: ${theme.palette.gray.main};
-          font-size: ${theme.typography.memberRoleHeading.fontSize}px;
-          font-weight: ${theme.typography.memberRoleHeading.fontWeight};
-          line-height: ${theme.typography.memberRoleHeading.lineHeight};
-        }
-      }
-    }
-  }
-
-  .about-footer {
-    background: ${theme.palette.midtoneDarker.main};
-    border-radius: ${theme.spacing(0, 0, 1, 1)};
-    display: flex;
-    justify-content: space-between;
-
-    ${theme.breakpoints.down("mobile")} {
-      flex-direction: column;
-    }
-
-    .special-thanks {
-      padding: ${theme.spacing(3, 3, 3)};
-
-      h3 {
-        margin: ${theme.spacing(0, 0, 0)};
-        text-transform: uppercase;
-        font-size: ${theme.typography.cardHeading.fontSize}px;
-        font-weight: ${theme.typography.cardHeading.fontWeight};
-        line-height: ${theme.typography.cardHeading.lineHeight};
-      }
-
-      ul {
-        margin: ${theme.spacing(3, 0, 0)};
-      }
-
-      p {
-        margin: ${theme.spacing(2, 0, 0)};
-      }
-    }
-
-    .discord-button {
-      background-image: url("images/page-banners/about_discord.png");
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 340px;
-      position: relative;
-
-      ${theme.breakpoints.down("mobile")} {
-        width: 100%;
-        height: 210px;
-      }
-
-      svg {
-        z-index: 1;
-      }
-    }
-
-    .background {
-      width: "100%";
-      height: "100%";
-      position: "absolute";
-    }
-  }
-`;

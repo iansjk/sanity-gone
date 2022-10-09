@@ -62,6 +62,9 @@ export const button = style([
         color: vars.colors.neutrals.midtoneBrighterer,
         backgroundColor: vars.colors.neutrals.darktone,
       },
+      "&:hover": {
+        backgroundColor: vars.colors.neutrals.midtoneBrighterer,
+      },
     },
   },
 ]);

@@ -12,15 +12,19 @@ export interface SynergiesProps {
 }
 
 const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
-  // Group Synergies by quality
-  const groupedSynergies = synergies.reduce<Record<string, SynergyProps[]>>(
-    function (acc, curr) {
-      (acc[curr["quality"] || "default"] =
-        acc[curr["quality"] || "default"] || []).push(curr);
-      return acc;
-    },
-    {}
+  //Sort synergies first.
+  const sortedSynergies = synergies.sort(
+    (a, b) => (b.quality ?? 0.5) - (a.quality ?? 0.5)
   );
+
+  // Group Synergies by quality
+  const groupedSynergies = sortedSynergies.reduce<
+    Record<string, SynergyProps[]>
+  >(function (acc, curr) {
+    (acc[curr["quality"] || "default"] =
+      acc[curr["quality"] || "default"] || []).push(curr);
+    return acc;
+  }, {});
 
   const tabGroups = Object.keys(groupedSynergies).map((key) => {
     const group = groupedSynergies[key];

@@ -199,13 +199,13 @@ const attributeLabel = (key: string, short?: boolean) => {
   let IconComponent = null;
   let attributeName = "";
   switch (key) {
-    case "max_hp":
-      IconComponent = HealthIcon;
-      attributeName = short ? "HP" : "Health";
-      break;
     case "atk":
       IconComponent = AttackPowerIcon;
       attributeName = short ? "ATK" : "Attack Power";
+      break;
+    case "max_hp":
+      IconComponent = HealthIcon;
+      attributeName = short ? "HP" : "Health";
       break;
     case "def":
       IconComponent = DefenseIcon;

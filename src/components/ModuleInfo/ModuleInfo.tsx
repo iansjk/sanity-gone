@@ -31,7 +31,7 @@ export interface ModuleInfoProps {
 const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
   const { operatorName, module } = props;
   const { moduleId, moduleName, moduleIcon, phases } = module;
-  
+
   const maxStage = phases.length;
   const [stage, setStageNumber] = useState(maxStage);
   const [potential, setPotential] = useState(0);
@@ -67,7 +67,9 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
     (phase) => phase.requiredPotentialRank === potential
   )!;
 
-  const attributes = activeCandidate.attributeBlackboard.reduce<{ [attrKey: string]: number }>((acc, curr) => {
+  const attributes = activeCandidate.attributeBlackboard.reduce<{
+    [attrKey: string]: number;
+  }>((acc, curr) => {
     acc[curr.key] = curr.value;
     return acc;
   }, {});
@@ -96,7 +98,8 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
         />
       </div>
       <dl
-        className={numberOfBonuses === 3
+        className={
+          numberOfBonuses === 3
             ? classes.moduleAttributes.threeBonuses
             : classes.moduleAttributes.default
         }
@@ -216,7 +219,7 @@ const attributeLabel = (key: string, short?: boolean) => {
       break;
     case "cost":
       IconComponent = DPCostIcon;
-      attributeName = "DP Cost"
+      attributeName = "DP Cost";
       break;
     case "respawn_time":
       IconComponent = HourglassIcon;
@@ -224,18 +227,21 @@ const attributeLabel = (key: string, short?: boolean) => {
       break;
     case "block_cnt":
       IconComponent = BlockIcon;
-      attributeName = "Block"
+      attributeName = "Block";
       break;
     default:
-      throw new Error(`Unknown attribute key: ${key}`)
+      throw new Error(`Unknown attribute key: ${key}`);
   }
   return (
     <>
-      <IconComponent aria-hidden="true" pathClassName={classes.moduleAttributeIconPath[key]} />{" "}
+      <IconComponent
+        aria-hidden="true"
+        pathClassName={classes.moduleAttributeIconPath[key]}
+      />{" "}
       {attributeName}
     </>
-  )
-}
+  );
+};
 
 const attributeValue = (key: string, value: number) => {
   if (value < 0) {

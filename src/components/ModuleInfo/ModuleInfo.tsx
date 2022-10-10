@@ -127,7 +127,7 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
         {Object.entries(attributes).map(([key, value]) => (
           <div key={key}>
             <dt>{attributeLabel(key, isMobile)}</dt>
-            <dd>{attributeValue(key, value)}</dd>
+            <dd>{attributeValue(value)}</dd>
           </div>
         ))}
       </dl>
@@ -243,9 +243,9 @@ const attributeLabel = (key: string, short?: boolean) => {
   );
 };
 
-const attributeValue = (key: string, value: number) => {
+const attributeValue = (value: number) => {
   if (value < 0) {
     return value;
   }
   return `+${value}`;
-}
+};

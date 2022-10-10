@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import cx from "clsx";
 
 import { moduleImage, moduleTypeImage } from "../../utils/images";
 import Image from "next/image";
@@ -132,11 +131,14 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
         ))}
       </dl>
       <div
-        className={cx(
-          classes.moduleEffects.default,
-          activeCandidate.displayRange && classes.moduleEffects.hasRange,
-          !activeCandidate.talentEffect && classes.moduleEffects.noTalent
-        )}
+        className={
+          classes.moduleEffects[
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            `talent-${Boolean(activeCandidate.talentEffect)}-range-${Boolean(
+              activeCandidate.displayRange
+            )}`
+          ]
+        }
       >
         <div className={classes.traitEffect}>
           <dt className={classes.moduleEffectDt}>

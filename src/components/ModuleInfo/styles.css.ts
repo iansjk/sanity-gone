@@ -70,6 +70,7 @@ export const moduleAttributes = styleVariants({
           gridTemplateColumns: "1fr",
           gridTemplateRows: "178px repeat(4, max-content)",
           gridAutoFlow: "column",
+          columnGap: 0,
         },
       },
     },
@@ -166,20 +167,14 @@ export const moduleAttributeIconPath = styleVariants({
   },
   block_cnt: {
     fill: vars.colors.accents.softBlue,
-  }
+  },
 });
 
 const baseModuleEffects = style({
   display: "grid",
-  gridTemplateColumns: "1fr",
-  gridTemplateRows: "repeat(2, auto)",
-  gridAutoFlow: "column",
-  gap: spacing(0.25),
   "@media": {
     [breakpoints.down("mobile")]: {
-      gridTemplateColumns: "1fr",
-      gridTemplateRows: "repeat(3, auto)",
-      gridAutoFlow: "column",
+      rowGap: spacing(0.25),
     },
   },
 });
@@ -192,21 +187,23 @@ globalStyle(
 );
 
 export const moduleEffects = styleVariants({
-  default: [baseModuleEffects],
-  noTalent: [
+  "talent-false-range-false": [baseModuleEffects, {}],
+  "talent-false-range-true": [
     baseModuleEffects,
     {
-      "@media": {
-        [breakpoints.down("mobile")]: {
-          gridTemplateRows: "repeat(2, auto)",
-        },
-      },
+      columnGap: spacing(0.25),
     },
   ],
-  hasRange: [
+  "talent-true-range-false": [
     baseModuleEffects,
     {
-      gridTemplateColumns: "1fr 228px",
+      rowGap: spacing(0.25),
+    },
+  ],
+  "talent-true-range-true": [
+    baseModuleEffects,
+    {
+      gap: spacing(0.25),
     },
   ],
 });
@@ -257,20 +254,16 @@ export const traitEffect = style([
       [breakpoints.down("mobile")]: {
         gridRowStart: 1,
         gridColumnStart: 1,
+        selectors: {
+          [`${moduleEffects["talent-false-range-false"]} &`]: {
+            borderRadius: spacing(0, 0, 0.5, 0.5),
+          },
+        },
       },
-    },
-    selectors: {
-      [`${moduleEffects.noTalent} &`]: {
-        borderRadius: spacing(0, 0, 0.5, 0.5),
-      },
-      [`${moduleEffects.noTalent}${moduleEffects.hasRange} &`]: {
-        borderBottomRightRadius: 0,
-        minHeight: spacing(8),
-        gridRow: "span 2",
-        "@media": {
-          [breakpoints.down("mobile")]: {
-            minHeight: "unset",
-            gridRow: "unset",
+      [breakpoints.up("mobile")]: {
+        selectors: {
+          [`${moduleEffects["talent-false-range-true"]} &`]: {
+            borderBottomLeftRadius: spacing(0.5),
           },
         },
       },
@@ -283,10 +276,18 @@ export const talentEffect = style([
   {
     gridColumnStart: 1,
     gridRowStart: 2,
-    borderRadius: spacing(0, 0, 0.5, 0.5),
     selectors: {
-      [`${moduleEffects.hasRange} &`]: {
-        borderBottomRightRadius: 0,
+      [`${moduleEffects["talent-true-range-false"]} &`]: {
+        borderRadius: spacing(0, 0, 0.5, 0.5),
+      },
+    },
+    "@media": {
+      [breakpoints.up("mobile")]: {
+        selectors: {
+          [`${moduleEffects["talent-true-range-true"]} &`]: {
+            borderBottomLeftRadius: spacing(0.5),
+          },
+        },
       },
     },
   },
@@ -299,18 +300,16 @@ export const moduleRange = style([
     alignItems: "center",
     justifyContent: "center",
     gridColumnStart: 2,
-    gridRow: "span 2",
     borderBottomRightRadius: spacing(0.5),
     "@media": {
       [breakpoints.down("mobile")]: {
-        gridTemplateColumns: "1fr",
-        gridTemplateRows: "repeat(3, auto)",
-        gridAutoFlow: "column",
-        selectors: {
-          [`${moduleEffects.noTalent} &`]: {
-            gridTemplateRows: "repeat(2, auto)",
-          },
-        },
+        gridColumn: 1,
+        borderBottomLeftRadius: spacing(0.5),
+      },
+    },
+    selectors: {
+      [`${moduleEffects["talent-true-range-true"]} &`]: {
+        gridRow: "span 2",
       },
     },
   },

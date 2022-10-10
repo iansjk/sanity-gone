@@ -11,6 +11,7 @@ import {
   DPCostIcon,
   HealthIcon,
 } from "../icons/operatorStats";
+import HourglassIcon from "../icons/HourglassIcon";
 import { DenormalizedModule } from "../../utils/types";
 import RibbonButton from "../RibbonButton";
 import RibbonButtonGroup from "../RibbonButtonGroup";
@@ -20,7 +21,17 @@ import useMediaQuery from "../../utils/media-query";
 import { breakpoints } from "../../theme-helpers";
 
 import * as classes from "./styles.css";
-import HourglassIcon from "../icons/HourglassIcon";
+
+const ATTRIBUTE_KEY_SORT_ORDER: { [key: string]: number } = {
+  atk: 0,
+  max_hp: 1,
+  def: 2,
+  attack_speed: 3,
+  magic_resistance: 4,
+  cost: 5,
+  respawn_time: 6,
+  block_cnt: 7,
+};
 
 export interface ModuleInfoProps {
   operatorName: string;
@@ -66,12 +77,22 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
     (phase) => phase.requiredPotentialRank === potential
   )!;
 
-  const attributes = activeCandidate.attributeBlackboard.reduce<{
-    [attrKey: string]: number;
-  }>((acc, curr) => {
-    acc[curr.key] = curr.value;
-    return acc;
-  }, {});
+  const attributes = activeCandidate.attributeBlackboard
+    .sort((a, b) => {
+      if (ATTRIBUTE_KEY_SORT_ORDER[a.key] == null) {
+        throw new Error(`Unknown attribute key: ${a.key}`);
+      }
+      if (ATTRIBUTE_KEY_SORT_ORDER[b.key] == null) {
+        throw new Error(`Unknown attribute key: ${b.key}`);
+      }
+      return ATTRIBUTE_KEY_SORT_ORDER[a.key] - ATTRIBUTE_KEY_SORT_ORDER[b.key];
+    })
+    .reduce<{
+      [attrKey: string]: number;
+    }>((acc, curr) => {
+      acc[curr.key] = curr.value;
+      return acc;
+    }, {});
   const numberOfBonuses = Object.keys(attributes).length;
 
   return (

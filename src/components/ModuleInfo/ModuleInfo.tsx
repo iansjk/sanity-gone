@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { css } from "@emotion/react";
-import { Theme, useMediaQuery, useTheme } from "@mui/material";
+import cx from "clsx";
 
 import { moduleImage, moduleTypeImage } from "../../utils/images";
 import Image from "next/image";
@@ -15,6 +14,9 @@ import RibbonButton from "../RibbonButton";
 import RibbonButtonGroup from "../RibbonButtonGroup";
 import CharacterRange from "../CharacterRange";
 import PotentialsDropdown from "../PotentialsDropdown";
+import useMediaQuery from "../../utils/media-query";
+import { breakpoints } from "../../theme-helpers";
+
 import * as classes from "./styles.css";
 
 export interface ModuleInfoProps {
@@ -76,48 +78,23 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
     (attackSpeedBonus ? 1 : 0);
 
   const hasThreeBonuses = numberOfBonuses === 3;
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
+  const isMobile = useMediaQuery(breakpoints.down("mobile"));
 
   return (
-    <div css={styles}>
-      <div className="module-controls">
-        <RibbonButtonGroup className="stage-buttons">
-          <RibbonButton
-            className={classes.stageButton}
-            active={stage === 1}
-            onClick={() => {
-              setStage(1);
-            }}
-            aria-label="Stage 1"
-          >
-            1
-          </RibbonButton>
-          {maxStage >= 2 && (
+    <div>
+      <div className={classes.moduleControls}>
+        <RibbonButtonGroup className={classes.stageButtons}>
+          {[...Array(maxStage).fill(0)].map((_, i) => (
             <RibbonButton
+              key={i}
               className={classes.stageButton}
-              active={stage === 2}
-              onClick={() => {
-                setStage(2);
-              }}
-              aria-label="Stage 2"
+              active={stage === i + 1}
+              onClick={() => setStage(i + 1)}
+              aria-label={`Stage ${i + 1}`}
             >
-              2
+              {i + 1}
             </RibbonButton>
-          )}
-          {maxStage >= 3 && (
-            <RibbonButton
-              className={classes.stageButton}
-              active={stage === 3}
-              onClick={() => {
-                setStage(3);
-              }}
-              aria-label="Stage 3"
-            >
-              3
-            </RibbonButton>
-          )}
+          ))}
         </RibbonButtonGroup>
         <PotentialsDropdown
           onChange={(pot) => setPotential(pot)}
@@ -127,20 +104,21 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
       </div>
       <dl
         className={
-          "module-attributes" + (hasThreeBonuses ? " three-bonuses" : "")
+          hasThreeBonuses
+            ? classes.moduleAttributes.threeBonuses
+            : classes.moduleAttributes.default
         }
       >
-        <div className="module-image-container">
+        <div className={classes.moduleImageContainer}>
           <Image
-            className="module-image"
             src={moduleImage(moduleId)}
             alt={`${operatorName} module`}
             layout="fill"
           />
         </div>
 
-        <div className="module-labels">
-          <div className="module-icon">
+        <div className={classes.moduleLabels}>
+          <div className={classes.moduleIcon}>
             <Image
               src={moduleTypeImage(moduleIcon)}
               alt=""
@@ -148,13 +126,16 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
               height={42}
             />
           </div>
-          <h3 className="module-name">{moduleName}</h3>
-          <p className="module-type">{moduleIcon.toUpperCase()}</p>
+          <h3 className={classes.moduleName}>{moduleName}</h3>
+          <p className={classes.moduleType}>{moduleIcon.toUpperCase()}</p>
         </div>
         {attackBonus && (
-          <div className="attack stat-change">
+          <div>
             <dt>
-              <AttackPowerIcon aria-hidden="true" />{" "}
+              <AttackPowerIcon
+                aria-hidden="true"
+                pathClassName={classes.moduleAttributeIconPath.attack}
+              />{" "}
               {isMobile ? "ATK" : "Attack Power"}
             </dt>
             <dd>{attackBonus ? `+${attackBonus}` : "N/A"}</dd>
@@ -162,27 +143,38 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
         )}
 
         {healthBonus && (
-          <div className="health stat-change">
+          <div>
             <dt>
-              <HealthIcon aria-hidden="true" /> {isMobile ? "HP" : "Health"}
+              <HealthIcon
+                aria-hidden="true"
+                pathClassName={classes.moduleAttributeIconPath.health}
+              />{" "}
+              {isMobile ? "HP" : "Health"}
             </dt>
             <dd>{healthBonus ? `+${healthBonus}` : "N/A"}</dd>
           </div>
         )}
 
         {defenseBonus && (
-          <div className="defense stat-change">
+          <div>
             <dt>
-              <DefenseIcon aria-hidden="true" /> {isMobile ? "DEF" : "Defense"}
+              <DefenseIcon
+                aria-hidden="true"
+                pathClassName={classes.moduleAttributeIconPath.defense}
+              />{" "}
+              {isMobile ? "DEF" : "Defense"}
             </dt>
             <dd>+{defenseBonus}</dd>
           </div>
         )}
 
         {attackSpeedBonus && (
-          <div className="attack-speed stat-change">
+          <div>
             <dt>
-              <AttackSpeedIcon aria-hidden="true" />{" "}
+              <AttackSpeedIcon
+                aria-hidden="true"
+                pathClassName={classes.moduleAttributeIconPath.attackSpeed}
+              />{" "}
               {isMobile ? "ASPD" : "Attack Speed"}
             </dt>
             <dd>+{attackSpeedBonus}</dd>
@@ -190,37 +182,38 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
         )}
       </dl>
       <div
-        className={
-          "module-effects" +
-          (activeCandidate.displayRange ? " has-range" : "") +
-          (activeCandidate.talentEffect ? "" : " no-talent")
-        }
+        className={cx(
+          classes.moduleEffects.default,
+          activeCandidate.displayRange && classes.moduleEffects.hasRange,
+          !activeCandidate.talentEffect && classes.moduleEffects.noTalent
+        )}
       >
-        <div className="trait-effect">
-          <dt>
+        <div className={classes.traitEffect}>
+          <dt className={classes.moduleEffectDt}>
             {activeCandidate.traitEffectType === "update" && (
-              <span className="added">ADDED</span>
+              <span className={classes.moduleEffectAdded}>Added</span>
             )}
             {activeCandidate.traitEffectType === "override" && (
-              <span className="updated">UPDATED</span>
+              <span className={classes.moduleEffectUpdated}>Updated</span>
             )}
             Trait
           </dt>
           <dd
+            className={classes.moduleEffectDd}
             dangerouslySetInnerHTML={{
               __html: activeCandidate.traitEffect ?? "No effect",
             }}
           />
         </div>
         {activeCandidate.talentEffect && (
-          <div className="talent-effect">
-            <dt>
+          <div className={classes.talentEffect}>
+            <dt className={classes.moduleEffectDt}>
               {activeCandidate.talentEffect &&
                 (activeCandidate.talentIndex === -1 ? ( // new talent added
-                  <span className="added">ADDED</span>
+                  <span className={classes.moduleEffectAdded}>ADDED</span>
                 ) : (
                   // current talent updated
-                  <span className="updated">UPDATED</span>
+                  <span className={classes.moduleEffectUpdated}>UPDATED</span>
                 ))}
               {
                 activeCandidate.talentEffect
@@ -231,6 +224,7 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
               }
             </dt>
             <dd
+              className={classes.moduleEffectDd}
               dangerouslySetInnerHTML={{
                 __html: activeCandidate.talentEffect ?? "No effect",
               }}
@@ -238,7 +232,7 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
           </div>
         )}
         {activeCandidate.displayRange && (
-          <div className="module-range">
+          <div className={classes.moduleRange}>
             {/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
             <CharacterRange rangeObject={activeCandidate.range!} />
           </div>
@@ -248,271 +242,3 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
   );
 };
 export default ModuleInfo;
-
-const styles = (theme: Theme) => css`
-  .module-controls {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: ${theme.spacing(8)};
-    background: ${theme.palette.midtone.main};
-    margin-top: ${theme.spacing(3)};
-    border-bottom: ${theme.spacing(0.125)} solid
-      ${theme.palette.midtoneBrighterer.main};
-    border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
-
-    ${theme.breakpoints.down("mobile")} {
-      padding-right: ${theme.spacing(2)};
-    }
-
-    .stage-buttons {
-      margin-right: ${theme.spacing(3)};
-
-      ${theme.breakpoints.down("mobile")} {
-        margin-right: 0;
-        flex-grow: 1;
-      }
-    }
-  }
-
-  .module-attributes {
-    margin: ${theme.spacing(0, 0, 0.25, 0)};
-    display: grid;
-    grid-auto-flow: row;
-    position: relative;
-    grid-template-columns: 304px 1fr 1fr;
-    grid-template-rows: 88px 88px;
-    gap: ${theme.spacing(0.25)};
-
-    &.three-bonuses {
-      grid-template-columns: 304px repeat(3, 1fr);
-
-      .module-labels {
-        grid-column-start: span 3;
-      }
-    }
-
-    .module-image-container {
-      grid-row-start: span 2;
-      position: relative;
-      overflow: hidden;
-      background: ${theme.palette.midtoneDarker.main};
-
-      span > img {
-        padding: ${theme.spacing(2)} !important;
-      }
-    }
-
-    .module-labels {
-      display: grid;
-      grid-template-columns: max-content 1fr;
-      grid-template-rows: repeat(2, max-content);
-      column-gap: ${theme.spacing(2)};
-      row-gap: ${theme.spacing(0.5)};
-      align-items: center;
-      padding: ${theme.spacing(2)};
-
-      grid-column-start: span 2;
-
-      .module-icon {
-        height: 42px;
-        width: 42px;
-        padding: ${theme.spacing(0.75)};
-        border-radius: ${theme.spacing(1)};
-        background-color: ${theme.palette.dark.main};
-        grid-row-start: span 2;
-      }
-
-      min-width: 0;
-
-      .module-name {
-        white-space: nowrap;
-        padding: 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin: 0;
-        //margin: ${theme.spacing(0, 0, 0.5, 0)};
-
-        font-size: ${theme.typography.skillTalentHeading.fontSize}px;
-        line-height: ${theme.typography.skillTalentHeading.lineHeight};
-        font-weight: ${theme.typography.skillTalentHeading.fontWeight};
-      }
-
-      .module-type {
-        margin: 0;
-        padding: 0;
-        color: ${theme.palette.gray.main};
-        overflow: hidden;
-
-        font-size: ${theme.typography.skillTalentHeading.fontSize}px;
-        line-height: ${theme.typography.skillTalentHeading.lineHeight};
-        font-weight: ${theme.typography.skillTalentHeading.fontWeight};
-      }
-    }
-
-    .attack {
-      svg path {
-        fill: ${theme.palette.red.main};
-      }
-    }
-
-    .health {
-      svg path {
-        fill: ${theme.palette.lime.main};
-      }
-    }
-
-    .defense {
-      svg path {
-        fill: ${theme.palette.orange.main};
-      }
-    }
-
-    .attack-speed {
-      svg path {
-        fill: ${theme.palette.yellow.main};
-      }
-    }
-  }
-
-  .module-effects {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    grid-auto-flow: column;
-    gap: ${theme.spacing(0.25)};
-
-    span.keyword,
-    span.potential {
-      color: ${theme.palette.blue.main};
-    }
-
-    .trait-effect,
-    .talent-effect {
-      background: ${theme.palette.midtoneDarker.main};
-      padding: ${theme.spacing(2)};
-
-      dt {
-        margin-bottom: ${theme.spacing(1)};
-        font-size: ${theme.typography.label2.fontSize}px;
-        line-height: ${theme.typography.label2.lineHeight};
-        color: ${theme.palette.gray.main};
-
-        span.added,
-        span.updated {
-          margin-right: ${theme.spacing(1)};
-          font-weight: ${theme.typography.label2.fontWeight};
-        }
-        span.added {
-          color: ${theme.palette.lime.main};
-        }
-        span.updated {
-          color: ${theme.palette.yellow.main};
-        }
-      }
-      dd {
-        font-weight: ${theme.typography.body1.fontWeight};
-        font-size: ${theme.typography.body1.fontSize}px;
-        line-height: ${theme.typography.body1.lineHeight};
-        margin: 0;
-      }
-    }
-    .trait-effect {
-      grid-column-start: 1;
-      grid-row-start: 1;
-    }
-    .talent-effect {
-      grid-column-start: 1;
-      grid-row-start: 2;
-      border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
-    }
-
-    &.no-talent {
-      .trait-effect {
-        border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
-      }
-    }
-
-    &.has-range {
-      grid-template-columns: 1fr 228px;
-
-      .talent-effect {
-        border-bottom-right-radius: 0;
-      }
-
-      &.no-talent {
-        .trait-effect {
-          border-bottom-right-radius: 0;
-          min-height: ${theme.spacing(
-            8
-          )}; // to prevent the trait being shorter than range
-          grid-row: span 2;
-
-          ${theme.breakpoints.down("mobile")} {
-            min-height: unset;
-            grid-row: unset;
-          }
-        }
-      }
-
-      .module-range {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        grid-column-start: 2;
-        grid-row: span 2;
-        background: ${theme.palette.midtoneDarker.main};
-        padding: ${theme.spacing(2)};
-        border-bottom-right-radius: ${theme.spacing(0.5)};
-      }
-
-      ${theme.breakpoints.down("mobile")} {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, auto);
-        grid-auto-flow: column;
-
-        .module-range {
-          grid-column-start: 1;
-          grid-row-start: 3;
-          border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
-        }
-
-        .trait-effect {
-          grid-row-start: 1;
-          grid-column-start: 1;
-        }
-
-        &.no-talent {
-          grid-template-rows: repeat(2, auto);
-
-          .module-range {
-            grid-row-start: 2;
-          }
-        }
-      }
-    }
-  }
-
-  ${theme.breakpoints.down("mobile")} {
-    .module-attributes {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 178px repeat(2, max-content);
-      grid-auto-flow: row;
-
-      .module-image-container {
-        grid-column-start: span 2;
-        grid-row-start: 1;
-      }
-
-      &.three-bonuses {
-        grid-template-columns: 1fr;
-        grid-template-rows: 178px repeat(4, max-content);
-        grid-auto-flow: column;
-
-        .module-labels {
-          grid-row-start: unset;
-        }
-      }
-    }
-  }
-`;

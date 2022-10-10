@@ -5,7 +5,7 @@ import * as NextImage from "next/image";
 
 import { MediaContextProvider, mediaStyle } from "../src/Media";
 import theme from "../src/theme";
-import Layout from "../src/Layout";
+import Layout from "../src/components/Layout";
 
 const breakpoints = {
   mobile: 360,

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Layout from "../Layout";
+import Layout from "../components/Layout";
 import aboutPageBanner from "../images/page-banners/about.jpg";
 import * as classes from "./about.css";
 

@@ -13,7 +13,7 @@ import Tabs from "../../components/Tabs";
 import TabButtons from "../../components/TabButtons";
 import TabPanels from "../../components/TabPanels";
 import TalentInfo from "../../components/TalentInfo";
-import Layout from "../../Layout";
+import Layout from "../../components/Layout";
 import CardWithTabs from "../../components/CardWithTabs";
 import { CharacterObject, DenormalizedModule } from "../../utils/types";
 import MasteryRecommendation from "../../components/MasteryRecommendation";

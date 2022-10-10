@@ -5,17 +5,17 @@ import { css, Global } from "@emotion/react";
 import { BsDiscord as DiscordLogo } from "react-icons/bs";
 import "wicg-inert";
 
-import SanityGoneLogo from "./components/SanityGoneLogo";
-import MobileMenuIcon from "./components/icons/MobileMenuIcon";
+import SanityGoneLogo from "../SanityGoneLogo";
+import MobileMenuIcon from "../icons/MobileMenuIcon";
 import { tint, rgba, transparentize } from "polished";
-import MobileMenu from "./components/MobileMenu";
-import SearchBar from "./components/SearchBar";
-import WeirdDeathSphere from "./components/WeirdDeathSphere";
-import { Media } from "./Media";
-import config from "./config";
+import MobileMenu from "../MobileMenu";
+import SearchBar from "../SearchBar";
+import WeirdDeathSphere from "../WeirdDeathSphere";
+import { Media } from "../../Media";
+import config from "../../config";
 import Link from "next/link";
 import Image from "next/image";
-import HashCompatibleNextLink from "./components/HashCompatibleNextLink";
+import HashCompatibleNextLink from "../HashCompatibleNextLink";
 import { useRouter } from "next/router";
 
 interface BannerImageProps {

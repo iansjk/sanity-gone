@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { GetStaticProps } from "next";
 
-import Layout from "../../Layout";
+import Layout from "../../components/Layout";
 import {
   classToProfession,
   subclassToSubProfessionId,

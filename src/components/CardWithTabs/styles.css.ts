@@ -1,7 +1,6 @@
 import { globalStyle, style, styleVariants } from "@vanilla-extract/css";
 import { breakpoints, spacing } from "../../theme-helpers";
 import { vars } from "../../theme.css";
-import { synergyContainer } from "../Synergies/styles.css";
 
 export const cardWithTabsRoot = style({});
 
@@ -10,7 +9,9 @@ export const tabWrapper = style({
   height: "100%",
   "@media": {
     [breakpoints.down("mobile")]: {
-      flexDirection: "column",
+      display: "grid",
+      gridTemplateColumns: "1fr",
+      gridTemplateRows: "max-content max-content",
     },
   },
 });
@@ -36,9 +37,10 @@ export const tabButtons = style({
     [breakpoints.down("mobile")]: {
       flexDirection: "row",
       justifyContent: "center",
-      padding: spacing(2, 0),
+      padding: spacing(2),
       paddingBottom: 0,
       background: "none",
+      gap: spacing(2),
     },
   },
 });
@@ -70,7 +72,6 @@ export const button = style({
   "@media": {
     [breakpoints.down("mobile")]: {
       marginBottom: 0,
-      marginRight: spacing(2),
     },
   },
 });

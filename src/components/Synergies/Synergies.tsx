@@ -60,6 +60,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
                 width={48}
                 height={48}
                 alt=""
+                layout="fixed"
               />
             ),
             label: syn.name,

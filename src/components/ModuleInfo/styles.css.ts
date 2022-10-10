@@ -88,7 +88,7 @@ export const moduleLabels = style({
   gridColumnStart: "span 2",
   selectors: {
     [`${moduleAttributes.threeBonuses} &`]: {
-      gridRowStart: "span 3",
+      gridColumn: "span 3",
       "@media": {
         [breakpoints.down("mobile")]: {
           gridRowStart: "unset",

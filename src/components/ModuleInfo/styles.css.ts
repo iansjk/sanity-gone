@@ -186,14 +186,18 @@ globalStyle(
   }
 );
 
+const baseHasRange = style({
+  columnGap: spacing(0.25),
+  "@media": {
+    [breakpoints.up("mobile")]: {
+      gridTemplateColumns: "704fr 228fr",
+    },
+  },
+});
+
 export const moduleEffects = styleVariants({
   "talent-false-range-false": [baseModuleEffects, {}],
-  "talent-false-range-true": [
-    baseModuleEffects,
-    {
-      columnGap: spacing(0.25),
-    },
-  ],
+  "talent-false-range-true": [baseModuleEffects, baseHasRange, {}],
   "talent-true-range-false": [
     baseModuleEffects,
     {
@@ -202,9 +206,8 @@ export const moduleEffects = styleVariants({
   ],
   "talent-true-range-true": [
     baseModuleEffects,
-    {
-      gap: spacing(0.25),
-    },
+    baseHasRange,
+    { rowGap: spacing(0.25) },
   ],
 });
 

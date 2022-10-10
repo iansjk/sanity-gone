@@ -2,6 +2,7 @@ import { globalStyle, style } from "@vanilla-extract/css";
 import { transparentize } from "polished";
 import { breakpoints, spacing } from "../../theme-helpers";
 import { rawColors, vars } from "../../theme.css";
+import { cardWithTabsRoot } from "../CardWithTabs/styles.css";
 
 export const root = style({
   borderRadius: spacing(1),
@@ -38,6 +39,11 @@ export const cardContent = style({
     [breakpoints.down("mobile")]: {
       padding: spacing(2),
       borderBottomRightRadius: "unset",
+    },
+  },
+  selectors: {
+    [`${cardWithTabsRoot} &`]: {
+      padding: 0,
     },
   },
 });

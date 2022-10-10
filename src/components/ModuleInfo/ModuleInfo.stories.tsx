@@ -733,3 +733,146 @@ NightingaleModule1WithRange.args = {
     ],
   },
 };
+
+export const SchwarzModule1WithRespawnTime = Template.bind({});
+SchwarzModule1WithRespawnTime.args = {
+  operatorName: "Schwarz",
+  module: {
+    moduleId: "uniequip_002_shwaz",
+    moduleIcon: "arc-x",
+    moduleName: "定制弩配件套装",
+    phases: [
+      {
+        candidates: [
+          {
+            attributeBlackboard: [
+              {
+                key: "max_hp",
+                value: 130,
+              },
+              {
+                key: "atk",
+                value: 55,
+              },
+              {
+                key: "respawn_time",
+                value: -25,
+              },
+            ],
+            displayRange: false,
+            range: null,
+            requiredPotentialRank: 0,
+            talentEffect: null,
+            talentIndex: -1,
+            traitEffect: '再部署时间<span class="keyword">减少</span>',
+            traitEffectType: "update",
+          },
+        ],
+      },
+      {
+        candidates: [
+          {
+            attributeBlackboard: [
+              {
+                key: "max_hp",
+                value: 150,
+              },
+              {
+                key: "atk",
+                value: 65,
+              },
+              {
+                key: "respawn_time",
+                value: -25,
+              },
+            ],
+            displayRange: false,
+            range: null,
+            requiredPotentialRank: 0,
+            talentEffect:
+              "携带黑和另外至少一名【狙击】干员时，所有【狙击】干员的攻击力+11%",
+            talentIndex: 1,
+            traitEffect: '再部署时间<span class="keyword">减少</span>',
+            traitEffectType: "update",
+          },
+          {
+            attributeBlackboard: [
+              {
+                key: "max_hp",
+                value: 150,
+              },
+              {
+                key: "atk",
+                value: 65,
+              },
+              {
+                key: "respawn_time",
+                value: -25,
+              },
+            ],
+            displayRange: false,
+            range: null,
+            requiredPotentialRank: 5,
+            talentEffect:
+              '携带黑和另外至少一名【狙击】干员时，所有【狙击】干员的攻击力+13%<span class="potential">（+2%）</span>',
+            talentIndex: 1,
+            traitEffect: '再部署时间<span class="keyword">减少</span>',
+            traitEffectType: "update",
+          },
+        ],
+      },
+      {
+        candidates: [
+          {
+            attributeBlackboard: [
+              {
+                key: "max_hp",
+                value: 170,
+              },
+              {
+                key: "atk",
+                value: 75,
+              },
+              {
+                key: "respawn_time",
+                value: -25,
+              },
+            ],
+            displayRange: false,
+            range: null,
+            requiredPotentialRank: 0,
+            talentEffect:
+              "携带黑和另外至少一名【狙击】干员时，所有【狙击】干员的攻击力+13%",
+            talentIndex: 1,
+            traitEffect: '再部署时间<span class="keyword">减少</span>',
+            traitEffectType: "update",
+          },
+          {
+            attributeBlackboard: [
+              {
+                key: "max_hp",
+                value: 170,
+              },
+              {
+                key: "atk",
+                value: 75,
+              },
+              {
+                key: "respawn_time",
+                value: -25,
+              },
+            ],
+            displayRange: false,
+            range: null,
+            requiredPotentialRank: 5,
+            talentEffect:
+              '携带黑和另外至少一名【狙击】干员时，所有【狙击】干员的攻击力+15%<span class="potential">（+2%）</span>',
+            talentIndex: 1,
+            traitEffect: '再部署时间<span class="keyword">减少</span>',
+            traitEffectType: "update",
+          },
+        ],
+      },
+    ],
+  },
+};

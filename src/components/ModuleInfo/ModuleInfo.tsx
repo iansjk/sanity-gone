@@ -213,7 +213,7 @@ const attributeLabel = (key: string, short?: boolean) => {
       break;
     case "attack_speed":
       IconComponent = AttackSpeedIcon;
-      attributeName = short ? "AS" : "Attack Speed";
+      attributeName = short ? "ASPD" : "Attack Speed";
       break;
     case "magic_resistance":
       IconComponent = ArtsResistanceIcon;

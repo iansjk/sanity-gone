@@ -4,9 +4,12 @@ import cx from "clsx";
 import { moduleImage, moduleTypeImage } from "../../utils/images";
 import Image from "next/image";
 import {
+  ArtsResistanceIcon,
   AttackPowerIcon,
   AttackSpeedIcon,
+  BlockIcon,
   DefenseIcon,
+  DPCostIcon,
   HealthIcon,
 } from "../icons/operatorStats";
 import { DenormalizedModule } from "../../utils/types";
@@ -18,6 +21,7 @@ import useMediaQuery from "../../utils/media-query";
 import { breakpoints } from "../../theme-helpers";
 
 import * as classes from "./styles.css";
+import HourglassIcon from "../icons/HourglassIcon";
 
 export interface ModuleInfoProps {
   operatorName: string;
@@ -27,10 +31,11 @@ export interface ModuleInfoProps {
 const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
   const { operatorName, module } = props;
   const { moduleId, moduleName, moduleIcon, phases } = module;
-
+  
   const maxStage = phases.length;
   const [stage, setStageNumber] = useState(maxStage);
   const [potential, setPotential] = useState(0);
+  const isMobile = useMediaQuery(breakpoints.down("mobile"));
 
   // this is a 2D array of the potentials in use at each stage of the module
   const potentialsInUse: number[][] = [];
@@ -62,23 +67,11 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
     (phase) => phase.requiredPotentialRank === potential
   )!;
 
-  const attributes = activeCandidate.attributeBlackboard;
-  const attackBonus = attributes.find((kv) => kv.key === "atk")?.value;
-  const healthBonus = attributes.find((kv) => kv.key === "max_hp")?.value;
-  const defenseBonus = attributes.find((kv) => kv.key === "def")?.value;
-  const attackSpeedBonus = attributes.find(
-    (kv) => kv.key === "attack_speed"
-  )?.value;
-
-  // HG, why did you make people have 3 module bonuses :sadge:
-  const numberOfBonuses =
-    (attackBonus ? 1 : 0) +
-    (healthBonus ? 1 : 0) +
-    (defenseBonus ? 1 : 0) +
-    (attackSpeedBonus ? 1 : 0);
-
-  const hasThreeBonuses = numberOfBonuses === 3;
-  const isMobile = useMediaQuery(breakpoints.down("mobile"));
+  const attributes = activeCandidate.attributeBlackboard.reduce<{ [attrKey: string]: number }>((acc, curr) => {
+    acc[curr.key] = curr.value;
+    return acc;
+  }, {});
+  const numberOfBonuses = Object.keys(attributes).length;
 
   return (
     <div>
@@ -103,8 +96,7 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
         />
       </div>
       <dl
-        className={
-          hasThreeBonuses
+        className={numberOfBonuses === 3
             ? classes.moduleAttributes.threeBonuses
             : classes.moduleAttributes.default
         }
@@ -129,57 +121,12 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
           <h3 className={classes.moduleName}>{moduleName}</h3>
           <p className={classes.moduleType}>{moduleIcon.toUpperCase()}</p>
         </div>
-        {attackBonus && (
-          <div>
-            <dt>
-              <AttackPowerIcon
-                aria-hidden="true"
-                pathClassName={classes.moduleAttributeIconPath.attack}
-              />{" "}
-              {isMobile ? "ATK" : "Attack Power"}
-            </dt>
-            <dd>{attackBonus ? `+${attackBonus}` : "N/A"}</dd>
+        {Object.entries(attributes).map(([key, value]) => (
+          <div key={key}>
+            <dt>{attributeLabel(key, isMobile)}</dt>
+            <dd>{attributeValue(key, value)}</dd>
           </div>
-        )}
-
-        {healthBonus && (
-          <div>
-            <dt>
-              <HealthIcon
-                aria-hidden="true"
-                pathClassName={classes.moduleAttributeIconPath.health}
-              />{" "}
-              {isMobile ? "HP" : "Health"}
-            </dt>
-            <dd>{healthBonus ? `+${healthBonus}` : "N/A"}</dd>
-          </div>
-        )}
-
-        {defenseBonus && (
-          <div>
-            <dt>
-              <DefenseIcon
-                aria-hidden="true"
-                pathClassName={classes.moduleAttributeIconPath.defense}
-              />{" "}
-              {isMobile ? "DEF" : "Defense"}
-            </dt>
-            <dd>+{defenseBonus}</dd>
-          </div>
-        )}
-
-        {attackSpeedBonus && (
-          <div>
-            <dt>
-              <AttackSpeedIcon
-                aria-hidden="true"
-                pathClassName={classes.moduleAttributeIconPath.attackSpeed}
-              />{" "}
-              {isMobile ? "ASPD" : "Attack Speed"}
-            </dt>
-            <dd>+{attackSpeedBonus}</dd>
-          </div>
-        )}
+        ))}
       </dl>
       <div
         className={cx(
@@ -242,3 +189,57 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
   );
 };
 export default ModuleInfo;
+
+const attributeLabel = (key: string, short?: boolean) => {
+  let IconComponent = null;
+  let attributeName = "";
+  switch (key) {
+    case "max_hp":
+      IconComponent = HealthIcon;
+      attributeName = short ? "HP" : "Health";
+      break;
+    case "atk":
+      IconComponent = AttackPowerIcon;
+      attributeName = short ? "ATK" : "Attack Power";
+      break;
+    case "def":
+      IconComponent = DefenseIcon;
+      attributeName = short ? "DEF" : "Defense";
+      break;
+    case "attack_speed":
+      IconComponent = AttackSpeedIcon;
+      attributeName = short ? "AS" : "Attack Speed";
+      break;
+    case "magic_resistance":
+      IconComponent = ArtsResistanceIcon;
+      attributeName = short ? "RES" : "Arts Resistance";
+      break;
+    case "cost":
+      IconComponent = DPCostIcon;
+      attributeName = "DP Cost"
+      break;
+    case "respawn_time":
+      IconComponent = HourglassIcon;
+      attributeName = short ? "Redeploy" : "Redeploy Time";
+      break;
+    case "block_cnt":
+      IconComponent = BlockIcon;
+      attributeName = "Block"
+      break;
+    default:
+      throw new Error(`Unknown attribute key: ${key}`)
+  }
+  return (
+    <>
+      <IconComponent aria-hidden="true" pathClassName={classes.moduleAttributeIconPath[key]} />{" "}
+      {attributeName}
+    </>
+  )
+}
+
+const attributeValue = (key: string, value: number) => {
+  if (value < 0) {
+    return value;
+  }
+  return `+${value}`;
+}

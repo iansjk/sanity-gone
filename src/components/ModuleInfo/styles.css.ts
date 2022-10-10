@@ -143,18 +143,30 @@ export const moduleType = style({
 });
 
 export const moduleAttributeIconPath = styleVariants({
-  attack: {
+  atk: {
     fill: vars.colors.accents.red,
   },
-  health: {
+  max_hp: {
     fill: vars.colors.accents.lime,
   },
-  defense: {
+  def: {
     fill: vars.colors.accents.orange,
   },
-  attackSpeed: {
+  attack_speed: {
     fill: vars.colors.accents.yellow,
   },
+  magic_resistance: {
+    fill: vars.colors.accents.blue,
+  },
+  cost: {
+    fill: vars.colors.neutrals.white,
+  },
+  respawn_time: {
+    fill: vars.colors.accents.magenta,
+  },
+  block_cnt: {
+    fill: vars.colors.accents.softBlue,
+  }
 });
 
 const baseModuleEffects = style({

@@ -141,7 +141,12 @@ const ModuleInfo: React.VFC<ModuleInfoProps> = (props) => {
 
         <div className="module-labels">
           <div className="module-icon">
-            <Image src={moduleTypeImage(moduleIcon)} width={42} height={42} />
+            <Image
+              src={moduleTypeImage(moduleIcon)}
+              alt=""
+              width={42}
+              height={42}
+            />
           </div>
           <h3 className="module-name">{moduleName}</h3>
           <p className="module-type">{moduleIcon.toUpperCase()}</p>

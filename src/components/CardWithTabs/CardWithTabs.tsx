@@ -9,6 +9,7 @@ import cx from "clsx";
 import { Tab } from "@headlessui/react";
 import useMediaQuery from "../../utils/media-query";
 import { breakpoints } from "../../theme-helpers";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 export type TabGroup = {
   label?: JSX.Element;
@@ -34,7 +35,10 @@ const CardWithTabs: React.VFC<CardWithTabsProps> = (props) => {
   return (
     <Card className={classes.cardWithTabsRoot} header={header} {...rest}>
       <Tab.Group as={"div"} className={classes.tabWrapper} vertical={!isMobile}>
-        <Tab.List className={cx(tabsClassName, classes.tabButtons)}>
+        <Tab.List
+          as={ScrollContainer}
+          className={cx(tabsClassName, classes.tabButtons)}
+        >
           {tabGroups &&
             tabGroups.map((group, groupIndex) => {
               return (

@@ -44,11 +44,6 @@ const memberGroups: {
         imageFilename: "pepegaturtle.png",
       },
       {
-        name: "vae",
-        role: "Writer",
-        imageFilename: "pepegaturtle.png",
-      },
-      {
         name: "cube",
         role: "Writer",
         imageFilename: "pepegaturtle.png",

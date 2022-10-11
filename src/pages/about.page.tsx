@@ -54,7 +54,7 @@ const memberGroups: {
         imageFilename: "pepegaturtle.png",
       },
       {
-        name: "SifiGemini0616",
+        name: "ScifiGemini0616",
         role: "Writer",
         imageFilename: "pepegaturtle.png",
       },
@@ -94,7 +94,7 @@ const memberGroups: {
         imageFilename: "pepegaturtle.png",
       },
       {
-        name: "Neia",
+        name: "neia",
         role: "Developer",
         imageFilename: "pepegaturtle.png",
       },

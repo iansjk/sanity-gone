@@ -90,7 +90,6 @@ export const syngergyQualityBase = style({
       display: "flex",
       alignItems: "center",
       margin: spacing(0, 2, 0, 0),
-      // overflow: "hidden",
 
       ":before": {
         content: " ",

@@ -63,6 +63,11 @@ const memberGroups: {
         role: "Writer",
         imageFilename: "july.png",
       },
+      {
+        name: "phlegyas",
+        role: "Writer",
+        imageFilename: "phlegyas.png",
+      },
     ],
   },
   {

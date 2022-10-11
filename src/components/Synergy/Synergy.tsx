@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-import { Theme } from "@mui/material";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import {
@@ -46,7 +44,7 @@ const Synergy: React.VFC<
   const rarity = rawRarity ? rawRarity + 1 : undefined;
 
   return (
-    <section className={classes.root}>
+    <section className={classes.root} {...rest}>
       <div className={classes.synergyHeader}>
         <div className={classes.portrait}>
           <OperatorPortrait

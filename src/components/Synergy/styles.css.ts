@@ -4,7 +4,6 @@ import { vars } from "../../theme.css";
 
 export const root = style({
   marginTop: spacing(3),
-  flexDirection: "column",
 });
 
 export const synergyHeader = style({

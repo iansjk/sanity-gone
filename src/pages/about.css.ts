@@ -179,9 +179,10 @@ export const background = style({
 
 export const disclosureButton = style({
   display: "flex",
+  alignItems: "center",
+  padding: 0,
   background: "transparent",
   border: "none",
-  alignItems: "center",
 });
 
 export const disclosureChevron = style({

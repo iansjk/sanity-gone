@@ -1,13 +1,15 @@
 import Image from "next/image";
+import { Disclosure } from "@headlessui/react";
+
 import Layout from "../Layout";
 import aboutPageBanner from "../images/page-banners/about.jpg";
 import aboutDiscordButton from "../images/page-banners/about_discord.png";
-import * as classes from "./about.css";
+import { breakpoints } from "../theme-helpers";
+import useMediaQuery from "../utils/media-query";
 
 import type { NextPage } from "next";
-import useMediaQuery from "../utils/media-query";
-import { breakpoints } from "../theme-helpers";
-import { Disclosure } from "@headlessui/react";
+
+import * as classes from "./about.css";
 
 const memberGroups: {
   title: string;
@@ -235,8 +237,8 @@ const About: NextPage = () => {
             <h3 className={classes.specialThanksTitle}>Special thanks</h3>
             <ul className={classes.specialThanksList}>
               <li>
-                <b>cortz</b>, <b>Alyeska</b>, and <b>Dimbreath</b> for the help
-                in early stages of development
+                <b>cortz</b>, <b>Alyeska</b>, and <b>Dimbreath</b> for their
+                help in the early stages of development
               </li>
               <li>
                 <b>Kengxxiao</b> for their{" "}

@@ -1,30 +1,18 @@
-import { ThemeProvider as MuiThemeProvider, GlobalStyles } from "@mui/material";
-import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
-import { CacheProvider, EmotionCache } from "@emotion/react";
-import emotionNormalize from "emotion-normalize";
-
-import theme from "../theme";
-import createEmotionCache from "../createEmotionCache";
-import { MediaContextProvider, mediaStyle } from "../Media";
-
-import type { AppProps } from "next/app";
+import { useEffect } from "react";
 import Head from "next/head";
 import Script from "next/script";
-import { NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, pageview } from "../utils/gtag";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 
-// Client-side cache, shared for the whole session of the user in the browser.
-const clientSideEmotionCache = createEmotionCache();
+import { NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, pageview } from "../utils/gtag";
+import { MediaContextProvider } from "../Media";
+
+import type { AppProps } from "next/app";
+import "normalize.css";
 
 const isProductionEnvironment = process.env.NODE_ENV === "production";
 
-interface MyAppProps extends AppProps {
-  emotionCache?: EmotionCache;
-}
-
-export default function MyApp(props: MyAppProps) {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+export default function MyApp(props: AppProps) {
+  const { Component, pageProps } = props;
 
   // pass route change events to Google Analytics
   // from https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_app.js
@@ -46,32 +34,24 @@ export default function MyApp(props: MyAppProps) {
   }, [router.events]);
 
   return (
-    <MediaContextProvider>
-      <CacheProvider value={emotionCache}>
-        <MuiThemeProvider theme={theme}>
-          <EmotionThemeProvider theme={theme}>
-            <GlobalStyles styles={mediaStyle} />
-            <GlobalStyles styles={emotionNormalize} />
-            <Head>
-              <meta
-                name="viewport"
-                content="initial-scale=1, width=device-width"
-              />
-            </Head>
+    <>
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
 
-            {/* Global Site Tag (gtag.js) - Google Analytics */}
-            {/* from https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_app.js */}
-            {isProductionEnvironment && (
-              <>
-                <Script
-                  strategy="afterInteractive"
-                  src={`https://www.googletagmanager.com/gtag/js?id=${NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-                />
-                <Script
-                  id="gtag-init"
-                  strategy="afterInteractive"
-                  dangerouslySetInnerHTML={{
-                    __html: `
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      {/* from https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_app.js */}
+      {isProductionEnvironment && (
+        <>
+          <Script
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+          />
+          <Script
+            id="gtag-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
@@ -79,15 +59,13 @@ export default function MyApp(props: MyAppProps) {
                     page_path: window.location.pathname,
                   });
                 `,
-                  }}
-                />
-              </>
-            )}
-
-            <Component {...pageProps} />
-          </EmotionThemeProvider>
-        </MuiThemeProvider>
-      </CacheProvider>
-    </MediaContextProvider>
+            }}
+          />
+        </>
+      )}
+      <MediaContextProvider>
+        <Component {...pageProps} />
+      </MediaContextProvider>
+    </>
   );
 }

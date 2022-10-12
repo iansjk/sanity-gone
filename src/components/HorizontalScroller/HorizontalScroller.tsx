@@ -1,21 +1,29 @@
-import React, { useEffect } from "react";
-import { css, Theme } from "@mui/material";
+import React, { useEffect, useRef } from "react";
 import ScrollContainer, {
   ScrollContainerProps,
   ScrollEvent,
 } from "react-indiana-drag-scroll";
+import cx from "clsx";
+
 import * as classes from "./styles.css";
 
 export type HorizontalScrollerProps = React.HTMLAttributes<HTMLDivElement> & {
+  scrollerClassName?: string;
   scrollContainerProps?: Omit<ScrollContainerProps, "ref" | "innerRef">;
 };
 
 const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
-  const { children, scrollContainerProps, ...rest } = props;
+  const {
+    children,
+    scrollContainerProps,
+    scrollerClassName,
+    className,
+    ...rest
+  } = props;
   const { onScroll, ...remainingScrollContainerProps } =
     scrollContainerProps ?? {};
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const contentRef = React.useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined" && containerRef.current) {
@@ -54,9 +62,9 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
   };
 
   return (
-    <div ref={containerRef} css={styles} {...rest}>
+    <div ref={containerRef} className={cx(classes.root, className)} {...rest}>
       <ScrollContainer
-        className={`${classes.scrollerContents} scroller-contents`}
+        className={cx(classes.scrollerContents, scrollerClassName)}
         onScroll={handleScroll}
         innerRef={contentRef}
         {...remainingScrollContainerProps}
@@ -67,41 +75,3 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = (props) => {
   );
 };
 export default HorizontalScroller;
-
-const styles = (theme: Theme) => css`
-  --scroll-left: 0px;
-  --offset-width: 0px;
-  --scroll-width: 999px;
-  --scrollbar-width: 0px;
-  width: calc(100vw - var(--scrollbar-width));
-  box-sizing: border-box;
-
-  .scroller-contents {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    overflow: auto;
-
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      #000 clamp(0px, var(--scroll-left), ${theme.spacing(3)}),
-      #000
-        calc(
-          100% -
-            clamp(
-              0px,
-              calc(
-                var(--scroll-width) - var(--offset-width) - var(--scroll-left)
-              ),
-              ${theme.spacing(3)}
-            )
-        ),
-      transparent
-    );
-
-    & > * {
-      flex-shrink: 0;
-    }
-  }
-`;

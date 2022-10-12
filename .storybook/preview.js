@@ -1,11 +1,12 @@
-import { ThemeProvider as MuiThemeProvider, GlobalStyles } from "@mui/material";
-import { css, ThemeProvider as EmotionThemeProvider } from "@emotion/react";
-import emotionNormalize from "emotion-normalize";
+//@ts-nocheck
 import * as NextImage from "next/image";
 
 import { MediaContextProvider, mediaStyle } from "../src/Media";
-import theme from "../src/theme";
 import Layout from "../src/components/Layout";
+
+import * as classes from "./preview.css";
+
+import "normalize.css";
 
 const breakpoints = {
   mobile: 360,
@@ -36,33 +37,17 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <MediaContextProvider>
-      <MuiThemeProvider theme={theme}>
-        <EmotionThemeProvider theme={theme}>
-          <GlobalStyles styles={mediaStyle} />
-          <GlobalStyles styles={emotionNormalize} />
-          <GlobalStyles styles={styles} />
-          <Layout>
-            <Story />
-          </Layout>
-        </EmotionThemeProvider>
-      </MuiThemeProvider>
+      <style>{mediaStyle}</style>
+      <Layout
+        classes={{
+          header: classes.forceHide,
+          footer: classes.forceHide,
+          navbar: classes.forceHide,
+          headerMainWrapper: classes.headerMainWrapper,
+        }}
+      >
+        <Story />
+      </Layout>
     </MediaContextProvider>
   ),
 ];
-
-const styles = (theme) => css`
-  header,
-  footer,
-  .navbar {
-    display: none !important;
-  }
-
-  .header-main-wrapper {
-    margin: unset !important;
-    padding: ${theme.spacing(3)} !important;
-
-    ${theme.breakpoints.down("mobile")} {
-      padding: 0 !important;
-    }
-  }
-`;

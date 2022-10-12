@@ -43,6 +43,7 @@ interface LayoutProps {
     footer: string;
     breadcrumbLink: string;
     siteWrapper: string;
+    navbar: string;
   }>;
   style?: React.CSSProperties;
 }
@@ -131,7 +132,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
           </div>
         )}
         <div className={cx(classes.topFold, customClasses?.topFold)}>
-          <div className={classes.navbar}>
+          <div className={cx(classes.navbar, customClasses?.navbar)}>
             <div className={classes.navbarBackground}>
               <div className={classes.flexSpacer} />
               <div className={classes.logoBg} />

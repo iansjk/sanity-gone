@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
 import cx from "clsx";
 
@@ -36,6 +35,8 @@ import RibbonButtonGroup from "../RibbonButtonGroup";
 import SliderWithInput from "../SliderWithInput";
 import TraitInfo from "../TraitInfo";
 import Tooltip from "../Tooltip";
+import useMediaQuery from "../../utils/media-query";
+import { breakpoints } from "../../theme-helpers";
 
 import * as classes from "./styles.css";
 
@@ -50,8 +51,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
 }) => {
   const { charId: id, name, profession } = characterObject;
   const isSummon = profession === "TOKEN";
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
+  const isMobile = useMediaQuery(breakpoints.down("mobile"));
 
   const phases = characterObject.phases;
   const maxElite = phases.length - 1;

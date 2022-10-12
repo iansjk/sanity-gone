@@ -351,6 +351,7 @@ export const header = style({
         left: 0,
         bottom: -16,
         height: 260,
+        width: "100%",
         background:
           "linear-gradient(to bottom, rgba(0, 0, 0, 0) 63.34%, rgba(0, 0, 0, 0.5) 100%)",
       },

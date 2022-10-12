@@ -229,6 +229,7 @@ export const alterName = style({
   marginTop: 0,
   ...vars.typography.generalHeading,
   fontWeight: "normal",
+  display: "block",
 });
 
 export const breadcrumbLink = accentColorEmphasizedLink;

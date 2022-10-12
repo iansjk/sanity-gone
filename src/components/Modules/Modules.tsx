@@ -1,4 +1,5 @@
 import { DenormalizedModule } from "../../utils/types";
+import { CardProps } from "../Card";
 import CardWithTabs from "../CardWithTabs";
 import { moduleTypeImage } from "../../utils/images";
 import Image from "next/image";
@@ -11,6 +12,7 @@ export type ModulesProps = {
   operatorName: string;
   modules: DenormalizedModule[];
   moduleAnalyses: MDXRemoteSerializeResult[];
+  classes?: CardProps["classes"];
 };
 
 const Modules: React.VFC<ModulesProps> = (props) => {
@@ -18,6 +20,7 @@ const Modules: React.VFC<ModulesProps> = (props) => {
     operatorName,
     modules: allModules,
     moduleAnalyses: allModuleAnalyses,
+    classes: cardClasses,
   } = props;
   const numModulesToShow = Math.min(
     allModules.length,
@@ -59,6 +62,7 @@ const Modules: React.VFC<ModulesProps> = (props) => {
           },
         ]}
         buttonClassName={classes.button}
+        classes={cardClasses}
       />
     </div>
   );

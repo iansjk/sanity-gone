@@ -213,7 +213,6 @@ const Operators: React.VFC<Props> = (props) => {
   const [selectedSubProfessionId, setSelectedSubProfessionId] = useState<
     string | null
   >(null);
-  const theme = useTheme();
   const router = useRouter();
   const classDropdownRef = useRef<DropdownSelectRef>(null);
 
@@ -394,12 +393,20 @@ const Operators: React.VFC<Props> = (props) => {
       pageTitle="Operator List"
       bannerImage={operatorListBannerImage}
       blendPoint={496}
+      classes={{
+        topFold: classes.topFold,
+        headerMainWrapper: classes.headerMainWrapper,
+        header: classes.header,
+        headingAndBreadcrumb: classes.headingAndBreadcrumb,
+        heading: classes.heading,
+        pageContent: classes.pageContent,
+        footer: classes.footer,
+      }}
       /* No previous location for now
       previousLocation="Home"
       previousLocationLink="/"
        */
     >
-      <GlobalStyles styles={globalOverrideStyles(theme)} />
       <main className={classes.main}>
         <div className={classes.mainContainer}>
           {/* <span className="last-updated">

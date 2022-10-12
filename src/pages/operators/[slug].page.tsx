@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import { Box, Theme, useTheme, css, GlobalStyles } from "@mui/material";
-import { tint, rgba, transparentize, parseToRgb } from "polished";
+import { Box, Theme, css } from "@mui/material";
+import { tint, rgba, transparentize } from "polished";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import removeMarkdown from "remove-markdown";
@@ -9,12 +9,9 @@ import Introduction from "../../components/Introduction";
 import CharacterStats from "../../components/CharacterStats";
 import SkillInfo from "../../components/SkillInfo";
 import Synergies from "../../components/Synergies";
-import Tabs from "../../components/Tabs";
-import TabButtons from "../../components/TabButtons";
-import TabPanels from "../../components/TabPanels";
 import TalentInfo from "../../components/TalentInfo";
 import Layout from "../../components/Layout";
-import CardWithTabs from "../../components/CardWithTabs";
+import CardWithTabs, { CardWithTabsProps } from "../../components/CardWithTabs";
 import { CharacterObject, DenormalizedModule } from "../../utils/types";
 import MasteryRecommendation from "../../components/MasteryRecommendation";
 import { operatorAvatar } from "../../utils/images";
@@ -359,7 +356,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
     skill2Recommended,
     skill3Recommended,
   ];
-  const theme = useTheme();
 
   const synergies = synergiesRaw.map((syn) => {
     const baseProps = {
@@ -395,6 +391,12 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   ) as MDXRemoteSerializeResult[];
 
   const isMobile = useMediaQuery(breakpoints.down("mobile"));
+  const cardProps: Partial<CardWithTabsProps> = {
+    classes: {
+      headingBlock: classes.cardHeadingBlock,
+      heading: classes.cardHeading,
+    },
+  };
 
   return (
     <Layout
@@ -402,13 +404,13 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       customPageHeading={
         alterName ? (
           <>
-            <h1>{baseChar}</h1>
-            <h1>
-              <span className="alter-name">The {alterName}</span>
+            <h1 className={classes.heading}>{baseChar}</h1>
+            <h1 className={classes.heading}>
+              <span className={classes.alterName}>The {alterName}</span>
             </h1>
           </>
         ) : (
-          <h1>{baseChar}</h1>
+          <h1 className={classes.heading}>{baseChar}</h1>
         )
       }
       bannerImageProps={{
@@ -420,227 +422,231 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
       description={ogDescription}
       previousLocation="Operators"
       previousLocationLink="/operators"
+      classes={{
+        breadcrumbLink: classes.breadcrumbLink,
+        header: classes.header,
+        headingAndBreadcrumb: classes.headingAndBreadcrumb,
+      }}
+      style={
+        {
+          "--accent-color": operator.accentColorInHex,
+          "--accent-color-rgb": hexToRgb(operator.accentColorInHex),
+          "--accent-color-transparentized-09": transparentize(
+            0.9,
+            operator.accentColorInHex
+          ),
+          "--accent-color-transparentized-08": transparentize(
+            0.8,
+            operator.accentColorInHex
+          ),
+          "--accent-color-tinted-027": hexToRgb(
+            tint(0.27, operator.accentColorInHex)
+          ),
+        } as React.CSSProperties
+      }
     >
-      <GlobalStyles
+      {/* <GlobalStyles
         styles={globalOverrideStyles(
           operator.accentColorInHex,
           operator.customBgPositionX
         )(theme)}
-      />
+      /> */}
       {/* we add a key prop here to force rerendering of Tabs if e.g. a user clicks a guide search result while already on a guide page */}
-      <div
-        style={
-          {
-            "--accent-color": operator.accentColorInHex,
-            "--accent-color-rgb": hexToRgb(operator.accentColorInHex),
-            "--accent-color-transparentized-09": transparentize(
-              0.9,
-              operator.accentColorInHex
-            ),
-            "--accent-color-transparentized-08": transparentize(
-              0.8,
-              operator.accentColorInHex
-            ),
-            "--accent-color-tinted-027": hexToRgb(
-              tint(0.27, operator.accentColorInHex)
-            ),
-          } as React.CSSProperties
-        }
+      <Tab.Group
+        as={"main"}
+        className={classes.tabContainer}
+        vertical={!isMobile}
+        key={operator.name}
       >
-        <Tab.Group
-          as={"main"}
-          className={classes.tabContainer}
-          vertical={!isMobile}
-          key={operator.name}
-        >
-          <Tab.List as={ScrollContainer} className={classes.tabButtons}>
-            {[
-              ...["Introduction"],
-              ...(shouldShowModules ? ["Modules"] : []),
-              ...["Talents", "Skills"],
-              ...(synergies.length > 0 ? ["Synergy"] : []),
-            ].map((label) => (
-              <Tab as={Fragment} key={label}>
-                <button className={classes.button}>{label}</button>
-              </Tab>
-            ))}
-          </Tab.List>
-          <Tab.Panels className={classes.panels}>
-            {[
-              ...[
-                {
-                  component: (
-                    <Introduction
-                      analysis={introduction}
-                      isLimited={operator.limited}
-                      operatorObject={operatorObject}
-                      summonObject={summons[0]}
-                      strengths={strengths}
-                      weaknesses={weaknesses}
-                    />
-                  ),
-                  className: "introduction",
-                },
-              ],
-              ...(shouldShowModules
-                ? [
-                    {
-                      component: (
-                        <Modules
-                          operatorName={operatorObject.name}
-                          modules={modules}
-                          moduleAnalyses={
-                            [module1Analysis, module2Analysis].filter((x) =>
-                              Boolean(x)
-                            ) as MDXRemoteSerializeResult[]
-                          }
-                        />
-                      ),
-                      className: "modules",
-                    },
-                  ]
-                : []),
-              ...[
-                {
-                  component: (
-                    <CardWithTabs
-                      header="Talents"
-                      tabGroups={[
-                        {
-                          buttons: talents.map((_, i) => {
-                            return { label: `talent ${i + 1}` };
-                          }),
-                          panels: talents.map((mdxSource, i) => (
-                            <MDXRemote
-                              key={i}
-                              {...mdxSource}
-                              components={{
-                                TalentInfo: () => (
-                                  <TalentInfo
-                                    talentObject={operatorObject.talents[i]}
+        <Tab.List as={ScrollContainer} className={classes.tabButtons}>
+          {[
+            ...["Introduction"],
+            ...(shouldShowModules ? ["Modules"] : []),
+            ...["Talents", "Skills"],
+            ...(synergies.length > 0 ? ["Synergy"] : []),
+          ].map((label) => (
+            <Tab as={Fragment} key={label}>
+              <button className={classes.button}>{label}</button>
+            </Tab>
+          ))}
+        </Tab.List>
+        <Tab.Panels className={classes.panels}>
+          {[
+            ...[
+              {
+                component: (
+                  <Introduction
+                    analysis={introduction}
+                    isLimited={operator.limited}
+                    operatorObject={operatorObject}
+                    summonObject={summons[0]}
+                    strengths={strengths}
+                    weaknesses={weaknesses}
+                    {...cardProps}
+                  />
+                ),
+                className: "introduction",
+              },
+            ],
+            ...(shouldShowModules
+              ? [
+                  {
+                    component: (
+                      <Modules
+                        operatorName={operatorObject.name}
+                        modules={modules}
+                        moduleAnalyses={
+                          [module1Analysis, module2Analysis].filter((x) =>
+                            Boolean(x)
+                          ) as MDXRemoteSerializeResult[]
+                        }
+                        {...cardProps}
+                      />
+                    ),
+                    className: "modules",
+                  },
+                ]
+              : []),
+            ...[
+              {
+                component: (
+                  <CardWithTabs
+                    header="Talents"
+                    {...cardProps}
+                    tabGroups={[
+                      {
+                        buttons: talents.map((_, i) => {
+                          return { label: `talent ${i + 1}` };
+                        }),
+                        panels: talents.map((mdxSource, i) => (
+                          <MDXRemote
+                            key={i}
+                            {...mdxSource}
+                            components={{
+                              TalentInfo: () => (
+                                <TalentInfo
+                                  talentObject={operatorObject.talents[i]}
+                                />
+                              ),
+                              SummonStats: () => (
+                                <CharacterStats characterObject={summons[0]} />
+                              ),
+                            }}
+                          />
+                        )),
+                      },
+                    ]}
+                  />
+                ),
+                className: "talents",
+              },
+              {
+                component: (
+                  <CardWithTabs
+                    header="Skills"
+                    {...cardProps}
+                    tabGroups={[
+                      {
+                        buttons: skills.map((_, i) => {
+                          return { label: `skill ${i + 1}` };
+                        }),
+                        panels: skills.map((mdxSource, i) => (
+                          <MDXRemote
+                            key={i}
+                            {...mdxSource}
+                            components={{
+                              SkillInfo: () => (
+                                <SkillInfo
+                                  isRecommended={skillRecommended[i]}
+                                  skillObject={operatorObject.skillData[i]}
+                                />
+                              ),
+                              SummonStats: () => (
+                                <CharacterStats
+                                  characterObject={
+                                    summons.length > 1 ? summons[i] : summons[0]
+                                  }
+                                />
+                              ),
+                              MasteryRecommendation,
+                              img: (props) => (
+                                <Box
+                                  display="flex"
+                                  alignItems="center"
+                                  justifyContent="center"
+                                >
+                                  {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+                                  <img
+                                    {...props}
+                                    style={{
+                                      width: `min(100vw - 32px, 360px)`,
+                                    }}
                                   />
-                                ),
-                                SummonStats: () => (
-                                  <CharacterStats
-                                    characterObject={summons[0]}
-                                  />
-                                ),
-                              }}
-                            />
-                          )),
-                        },
-                      ]}
-                    />
-                  ),
-                  className: "talents",
-                },
-                {
-                  component: (
-                    <CardWithTabs
-                      header="Skills"
-                      tabGroups={[
-                        {
-                          buttons: skills.map((_, i) => {
-                            return { label: `skill ${i + 1}` };
-                          }),
-                          panels: skills.map((mdxSource, i) => (
-                            <MDXRemote
-                              key={i}
-                              {...mdxSource}
-                              components={{
-                                SkillInfo: () => (
-                                  <SkillInfo
-                                    isRecommended={skillRecommended[i]}
-                                    skillObject={operatorObject.skillData[i]}
-                                  />
-                                ),
-                                SummonStats: () => (
-                                  <CharacterStats
-                                    characterObject={
-                                      summons.length > 1
-                                        ? summons[i]
-                                        : summons[0]
-                                    }
-                                  />
-                                ),
-                                MasteryRecommendation,
-                                img: (props) => (
-                                  <Box
-                                    display="flex"
-                                    alignItems="center"
-                                    justifyContent="center"
-                                  >
-                                    {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
-                                    <img
-                                      {...props}
-                                      style={{
-                                        width: `min(100vw - 32px, 360px)`,
-                                      }}
-                                    />
-                                  </Box>
-                                ),
-                              }}
-                            />
-                          )),
-                        },
-                      ]}
-                    />
-                  ),
-                  className: "skills",
-                },
-              ],
-              ...(synergies.length > 0
-                ? [
-                    {
-                      component: <Synergies synergies={synergies} />,
-                      className: "synergies",
-                    },
-                  ]
-                : []),
-            ].map(({ component, className }, i) => (
-              <Tab.Panel className={`analysis-section ${className}`} key={i}>
-                {component}
-              </Tab.Panel>
-            ))}
-          </Tab.Panels>
-          <div className={classes.leftSidebar}>
-            <Media greaterThanOrEqual="mobile">
-              <hr className={classes.separator} />
-            </Media>
-            <div className={classes.leftSidebarSection}>
-              <span className={classes.sectionLabel}>External Links</span>
-              <a
-                className={classes.externalLink}
-                href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${operatorName}`}
-                rel="noreferrer noopener"
-                target="_blank"
-              >
-                Aceship
-              </a>
-              <a
-                className={classes.externalLink}
-                href={`http://prts.wiki/w/${encodeURIComponent(
-                  operatorObject.cnName
-                )}`}
-                rel="noreferrer noopener"
-                target="_blank"
-              >
-                PRTS
-              </a>
-            </div>
-            <div className={classes.leftSidebarSection}>
-              <span className={classes.sectionLabel}>Last updated</span>
-              <span className={classes.lastUpdated}>
-                {new Intl.DateTimeFormat("en-US", {
-                  month: "long",
-                  day: "numeric",
-                  year: "numeric",
-                }).format(new Date(publishedAt))}
-              </span>
-            </div>
+                                </Box>
+                              ),
+                            }}
+                          />
+                        )),
+                      },
+                    ]}
+                  />
+                ),
+                className: "skills",
+              },
+            ],
+            ...(synergies.length > 0
+              ? [
+                  {
+                    component: (
+                      <Synergies synergies={synergies} {...cardProps} />
+                    ),
+                    className: "synergies",
+                  },
+                ]
+              : []),
+          ].map(({ component, className }, i) => (
+            <Tab.Panel className={`analysis-section ${className}`} key={i}>
+              {component}
+            </Tab.Panel>
+          ))}
+        </Tab.Panels>
+        <div className={classes.leftSidebar}>
+          <Media greaterThanOrEqual="mobile">
+            <hr className={classes.separator} />
+          </Media>
+          <div className={classes.leftSidebarSection}>
+            <span className={classes.sectionLabel}>External Links</span>
+            <a
+              className={classes.externalLink}
+              href={`https://aceship.github.io/AN-EN-Tags/akhrchars.html?opname=${operatorName}`}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              Aceship
+            </a>
+            <a
+              className={classes.externalLink}
+              href={`http://prts.wiki/w/${encodeURIComponent(
+                operatorObject.cnName
+              )}`}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              PRTS
+            </a>
           </div>
-        </Tab.Group>
-      </div>
+          <div className={classes.leftSidebarSection}>
+            <span className={classes.sectionLabel}>Last updated</span>
+            <span className={classes.lastUpdated}>
+              {new Intl.DateTimeFormat("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              }).format(new Date(publishedAt))}
+            </span>
+          </div>
+        </div>
+      </Tab.Group>
     </Layout>
   );
 };

@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, CardProps } from "@mui/material";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { CharacterObject } from "../../utils/types";
 
@@ -12,6 +12,7 @@ export type IntroductionProps = OperatorInfoProps & {
   analysis: MDXRemoteSerializeResult;
   strengths: MDXRemoteSerializeResult;
   weaknesses: MDXRemoteSerializeResult;
+  classes?: CardProps["classes"];
 };
 
 const Introduction: React.VFC<IntroductionProps> = (props) => {
@@ -22,6 +23,7 @@ const Introduction: React.VFC<IntroductionProps> = (props) => {
     analysis,
     strengths,
     weaknesses,
+    classes,
   } = props;
 
   const components = {
@@ -45,7 +47,7 @@ const Introduction: React.VFC<IntroductionProps> = (props) => {
   };
 
   return (
-    <Card header="Introduction">
+    <Card header="Introduction" classes={classes}>
       <OperatorInfo operatorObject={operatorObject} isLimited={isLimited} />
       <div className="introduction-content">
         <MDXRemote {...analysis} components={components} />

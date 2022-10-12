@@ -1,9 +1,8 @@
-import { createVar, style } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import { transparentize } from "polished";
 import { breakpoints, spacing } from "../../theme-helpers";
 import { rawColors, vars } from "../../theme.css";
-
-export const accentColor = createVar() as string;
+import { heading as defaultHeading } from "../../components/Layout/styles.css";
 
 export const tabContainer = style({
   padding: spacing(0, 3),
@@ -132,22 +131,26 @@ export const sectionLabel = style({
   color: vars.colors.neutrals.gray,
 });
 
-export const externalLink = style({
-  marginRight: spacing(1),
-  display: "inline-block",
-  padding: spacing(0, 0.5),
-  borderRadius: spacing(0.25),
+const accentColorEmphasizedLink = style({
   transition: "all 50ms ease-out",
   color: "rgba(var(--accent-color-tinted-027), 0.66)",
   backgroundColor: "rgba(var(--accent-color-rgb), 0.08)",
 
   ":hover": {
-    color: "var(--accent-color-tinted-027)",
+    color: "rgb(var(--accent-color-tinted-027))",
     backgroundColor: "rgba(var(--accent-color-rgb), 0.4)",
-    //             color: ${tint(0.27, accentColor)};
-    //             background-color: ${rgba(accentColor, 0.4)};
   },
 });
+
+export const externalLink = style([
+  accentColorEmphasizedLink,
+  {
+    marginRight: spacing(1),
+    display: "inline-block",
+    padding: spacing(0, 0.5),
+    borderRadius: spacing(0.25),
+  },
+]);
 
 export const lastUpdated = style({
   fontStyle: "italic",
@@ -179,249 +182,64 @@ export const panels = style({
     },
   },
 });
-//     padding: ${theme.spacing(0, 3)};
-//     margin: ${theme.spacing(3, 0, 0)};
-//     display: grid;
-//     grid-template-rows: max-content max-content 1fr;
-//     grid-template-columns: max-content 1fr;
 
-//     ${theme.breakpoints.down("mobile")} {
-//       margin: ${theme.spacing(2, 0, 0)};
-//       padding: 0;
-//       grid-template-columns: 1fr;
-//     }
+export const header = style({
+  height: spacing(30.5),
+  "@media": {
+    [breakpoints.down("mobile")]: {
+      position: "relative",
 
-//     .fresnel-container {
-//       display: grid;
-//     }
+      "::before": {
+        content: '""',
+        position: "absolute",
+        bottom: -16,
+        left: 0,
+        width: "100%",
+        height: 260,
+        background:
+          "linear-gradient(to bottom, rgba(0, 0, 0, 0) 63.34%, rgba(0, 0, 0, 0.5) 100%)",
+      },
+    },
+  },
+});
 
-//     .fresnel-container > .swiper-container {
-//       background-color: ${transparentize(0.34, theme.palette.dark.main)};
-//       backdrop-filter: blur(8px);
+export const headingAndBreadcrumb = style({
+  "@media": {
+    [breakpoints.down("mobile")]: {
+      zIndex: 1,
+    },
+  },
+});
 
-//       button:not(.synergy-operator-button):not(.module-button) {
-//         box-sizing: border-box;
-//         padding: ${theme.spacing(2)};
-//         width: max-content;
-//         position: relative;
-//         background: none;
-//         border: none;
-//         cursor: pointer;
-//         font-size: ${theme.typography.cardHeading.fontSize}px;
-//         font-weight: ${theme.typography.cardHeading.fontWeight};
-//         line-height: ${theme.typography.cardHeading.lineHeight};
-//         text-transform: ${theme.typography.cardHeading.textTransform};
+export const heading = style([
+  defaultHeading,
+  {
+    ...vars.typography.operatorPageHeading,
+    textShadow: vars.shadows.titleShadow,
+    "@media": {
+      [breakpoints.down("mobile")]: {
+        marginTop: 0,
+        ...vars.typography.operatorNameHeading,
+      },
+    },
+  },
+]);
 
-//         &:not(.active) {
-//           color: ${theme.palette.gray.main};
-//         }
+export const alterName = style({
+  marginTop: 0,
+  ...vars.typography.generalHeading,
+  fontWeight: "normal",
+});
 
-//         &.active {
-//           &::after {
-//             content: " ";
-//             display: inline-block;
-//             width: ${theme.spacing(4)};
-//             position: absolute;
-//             left: calc(50% - ${theme.spacing(2)});
-//             bottom: 0;
-//             border-bottom-width: 3px;
-//             border-bottom-style: solid;
-//           }
-//         }
-//       }
+export const breadcrumbLink = accentColorEmphasizedLink;
 
-//       button:not(.synergy-operator-button):not(.module-button).active {
-//         color: ${accentColor};
+export const cardHeadingBlock = style({
+  background: `linear-gradient(to right, var(--accent-color-transparentized-09),
+    transparent
+  ),
+  ${transparentize(0.67, rawColors.neutrals.midtoneBrighter)}`,
+});
 
-//         &::after {
-//           border-bottom-color: ${accentColor};
-//         }
-//       }
-//     }
-
-//     .fresnel-container > .tabs {
-//       display: flex;
-//       flex-direction: column;
-//       z-index: 1;
-
-//       button {
-//         width: 192px;
-//         height: ${theme.spacing(6)};
-//         padding-left: ${theme.spacing(2)};
-//         margin-top: ${theme.spacing(1)};
-//         text-align: start;
-//         line-height: ${theme.typography.navigationLink.lineHeight};
-//         border: 0;
-//         border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
-//         background: none;
-//         color: ${theme.palette.gray.main};
-//         cursor: pointer;
-
-//         :disabled {
-//           cursor: initial;
-//           color: ${rgba(theme.palette.gray.main, 0.5)};
-//         }
-
-//         &:not(:disabled):not(.active):hover {
-//           background-color: ${transparentize(0.9, theme.palette.gray.main)};
-//           color: ${theme.palette.white.main};
-//         }
-
-//         &.active {
-//           background: linear-gradient(
-//             90deg,
-//             ${transparentize(0.9, accentColor)},
-//             ${transparentize(0.8, accentColor)}
-//           );
-//           color: ${tint(0.27, accentColor)};
-//           border-right: 3px solid ${tint(0.27, accentColor)};
-//           font-weight: ${theme.typography.navigationLinkBold.fontWeight};
-//         }
-
-//         ${theme.breakpoints.down("mobile")} {
-//           font-size: ${theme.typography.cardHeading.fontSize}px;
-//           line-height: ${theme.typography.cardHeading.lineHeight};
-//           font-weight: ${theme.typography.cardHeading.fontWeight};
-//           text-transform: ${theme.typography.cardHeading.textTransform};
-//         }
-//       }
-//     }
-
-//     .left-sidebar {
-//       grid-row-start: 2;
-//       padding-right: ${theme.spacing(4)};
-
-//       ${theme.breakpoints.down("mobile")} {
-//         grid-row: 3;
-//         padding: ${theme.spacing(0, 2, 3)};
-//       }
-
-//       hr {
-//         border: 0;
-//         border-top: 1px solid ${theme.palette.midtoneBrighter.main};
-//         margin: ${theme.spacing(3)} 0 0 0;
-//       }
-
-//       .external-links,
-//       .metadata {
-//         padding-left: ${theme.spacing(2)};
-
-//         ${theme.breakpoints.down("mobile")} {
-//           padding: 0;
-//         }
-//       }
-
-//       .external-links,
-//       .authors-section,
-//       .last-updated-section {
-//         margin-top: ${theme.spacing(3)};
-//       }
-
-//       .section-label {
-//         display: block;
-//         margin-bottom: ${theme.spacing(1)};
-//         font-size: ${theme.typography.body3.fontSize}px;
-//         line-height: ${theme.typography.body3.lineHeight};
-//         color: ${theme.palette.gray.main};
-//       }
-
-//       .metadata {
-//         ${theme.breakpoints.down("mobile")} {
-//           display: grid;
-//           grid-template-columns: repeat(2, 1fr);
-//         }
-//       }
-
-//       .external-links {
-//         a {
-//           margin-right: ${theme.spacing(1)};
-
-//           color: ${rgba(tint(0.27, accentColor), 0.66)};
-//           background-color: ${rgba(accentColor, 0.08)};
-
-//           &:hover {
-//             color: ${tint(0.27, accentColor)};
-//             background-color: ${rgba(accentColor, 0.4)};
-//           }
-//         }
-//       }
-
-//       .last-updated-section {
-//         .last-updated {
-//           font-style: italic;
-//         }
-//       }
-//     }
-
-//     & > .panels {
-//       grid-row-start: span 3;
-//       grid-column: 2 / span 2;
-//       margin-left: -1px;
-//       height: 100%;
-//       border-left: 1px solid ${theme.palette.gray.main};
-//       position: relative;
-
-//       &::before {
-//         content: "";
-//         backdrop-filter: blur(8px);
-//         position: absolute;
-//         width: 100%;
-//         height: 350px;
-//         top: 0;
-//         left: 0;
-//         z-index: -1;
-//       }
-
-//       ${theme.breakpoints.down("mobile")} {
-//         grid-row: 2;
-//         grid-column: 1;
-//         border: none;
-//         backdrop-filter: unset;
-//       }
-
-//       .analysis-section {
-//         height: 100%;
-
-//         section {
-//           height: 100%;
-
-//           .card-content {
-//             box-sizing: border-box;
-//             height: calc(
-//               100% - ${theme.typography.cardHeading.fontSize}px *
-//                 ${theme.typography.cardHeading.lineHeight} - ${theme.spacing(4)}
-//             );
-
-//             ${theme.breakpoints.down("mobile")} {
-//               height: 100%;
-//             }
-
-//             .tabs-wrapper {
-//               height: 100%;
-//             }
-//           }
-//         }
-//       }
-
-//       .analysis-section:not(.synergies):not(.modules) {
-//         .tab-buttons {
-//           button.active {
-//             background-color: ${accentColor};
-//             border-color: ${accentColor};
-
-//             svg path {
-//               fill: ${theme.palette.dark.main};
-//             }
-//           }
-
-//           button.inactive:hover {
-//             border-color: ${accentColor};
-
-//             svg path {
-//               fill: ${accentColor};
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `;
+export const cardHeading = style({
+  color: "rgb(var(--accent-color-tinted-027))",
+});

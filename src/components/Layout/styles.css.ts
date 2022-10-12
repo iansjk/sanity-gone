@@ -295,7 +295,7 @@ export const skipLink = style({
   borderRadius: spacing(0, 0, 0.5, 0.5),
   ...vars.typography.navigationLink,
   fontWeight: vars.typography.navigationLinkBold.fontWeight,
-  transform: `translateY(${spacing(15)})`,
+  transform: `translateY(-${spacing(15)})`,
   transition: "transform 0.3s ease-in-out",
   ":focus": {
     transform: "translateY(0)",

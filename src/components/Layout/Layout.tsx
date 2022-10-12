@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import { BsDiscord as DiscordLogo } from "react-icons/bs";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import "wicg-inert";
 import cx from "clsx";
 
@@ -29,7 +29,7 @@ interface LayoutProps {
   image?: string;
   customPageHeading?: React.ReactNode;
   blendPoint?: number;
-  bannerImage?: any;
+  bannerImage?: Exclude<ImageProps["src"], string>;
   bannerImageProps?: BannerImageProps;
   previousLocation?: string;
   previousLocationLink?: string;

@@ -5,7 +5,6 @@ import React, {
   useCallback,
   useRef,
 } from "react";
-import { css, GlobalStyles, Theme, useTheme } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
 import { MdArrowForwardIos } from "react-icons/md";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -537,71 +536,3 @@ const Operators: React.VFC<Props> = (props) => {
   );
 };
 export default Operators;
-
-const globalOverrideStyles = (theme: Theme) => css`
-  .top-fold {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .header-main-wrapper {
-    max-width: unset;
-    margin: 0;
-  }
-
-  header {
-    padding: ${theme.spacing(3, 0, 0, 0)};
-    height: ${theme.spacing(30.5)};
-
-    ${theme.breakpoints.down("mobile")} {
-      position: relative;
-    }
-
-    &::before {
-      ${theme.breakpoints.down("mobile")} {
-        content: "";
-        position: absolute;
-        bottom: -16px;
-        left: 0;
-        width: 100%;
-        height: 260px;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0) 63.34%,
-          rgba(0, 0, 0, 0.5) 100%
-        );
-      }
-    }
-
-    .heading-and-breadcrumb {
-      max-width: ${theme.breakpoints.values["maxWidth"]}px;
-      width: 100%;
-      margin: 0 auto;
-
-      ${theme.breakpoints.down("mobile")} {
-        z-index: 1;
-      }
-
-      h1 {
-        margin: ${theme.spacing(0, 3)};
-        font-size: ${theme.typography.operatorPageHeading.fontSize}px;
-        font-weight: ${theme.typography.operatorPageHeading.fontWeight};
-        line-height: ${theme.typography.operatorPageHeading.lineHeight};
-
-        ${theme.breakpoints.down("mobile")} {
-          margin: ${theme.spacing(0, 2)};
-          font-size: ${theme.typography.operatorNameHeading.fontSize}px;
-        }
-      }
-    }
-  }
-
-  .page-content {
-    flex: 1 1 0;
-    display: flex;
-  }
-
-  footer {
-    margin-top: 0;
-  }
-`;

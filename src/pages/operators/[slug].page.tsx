@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
-import { Box, Theme, css } from "@mui/material";
-import { tint, rgba, transparentize } from "polished";
+import { tint, transparentize } from "polished";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import removeMarkdown from "remove-markdown";
+import { Tab } from "@headlessui/react";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 import Introduction from "../../components/Introduction";
 import CharacterStats from "../../components/CharacterStats";
@@ -21,16 +22,12 @@ import { fetchContentfulGraphQl } from "../../utils/fetch";
 import operatorsJson from "../../../data/operators.json";
 import summonsJson from "../../../data/summons.json";
 import modulesJson from "../../../data/modules.json";
-import { Tab } from "@headlessui/react";
-import * as classes from "./[slug].css";
-import cx from "clsx";
-
 import Modules from "../../components/Modules";
-import { lastUpdatedDate } from "./index.css";
 import { hexToRgb } from "../../utils/globals";
-import ScrollContainer from "react-indiana-drag-scroll";
 import useMediaQuery from "../../utils/media-query";
 import { breakpoints } from "../../theme-helpers";
+
+import * as classes from "./[slug].css";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const query = `
@@ -640,100 +637,3 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   );
 };
 export default OperatorAnalysis;
-
-const globalOverrideStyles =
-  (accentColor: string, customBgPositionX?: string) => (theme: Theme) =>
-    css`
-      ${customBgPositionX &&
-      css`
-        body {
-          background-position-x: ${customBgPositionX};
-        }
-      `}
-
-      a {
-        color: ${accentColor};
-      }
-
-      :root {
-        --accent-color: ${accentColor};
-      }
-
-      .heading-block {
-        background: linear-gradient(
-            90deg,
-            ${transparentize(0.9, accentColor)},
-            transparent
-          ),
-          ${transparentize(0.67, theme.palette.midtoneBrighter.main)};
-
-        h2 {
-          color: ${tint(0.27, accentColor)} !important;
-        }
-      }
-
-      header {
-        height: ${theme.spacing(30.5)};
-
-        ${theme.breakpoints.down("mobile")} {
-          position: relative;
-        }
-
-        &::before {
-          ${theme.breakpoints.down("mobile")} {
-            content: "";
-            position: absolute;
-            bottom: -16px;
-            left: 0;
-            width: 100%;
-            height: 260px;
-            background: linear-gradient(
-              180deg,
-              rgba(0, 0, 0, 0) 63.34%,
-              rgba(0, 0, 0, 0.5) 100%
-            );
-          }
-        }
-
-        .heading-and-breadcrumb {
-          ${theme.breakpoints.down("mobile")} {
-            z-index: 1;
-          }
-
-          h1 {
-            font-size: ${theme.typography.operatorPageHeading.fontSize}px;
-            font-weight: ${theme.typography.operatorPageHeading.fontWeight};
-            line-height: ${theme.typography.operatorPageHeading.lineHeight};
-            text-shadow: 0 ${theme.spacing(0.25)} ${theme.spacing(1)}
-              rgba(0, 0, 0, 0.5);
-
-            .alter-name {
-              display: block;
-              font-size: ${theme.typography.generalHeading.fontSize}px;
-              line-height: ${theme.typography.generalHeading.lineHeight};
-              font-weight: normal;
-            }
-
-            ${theme.breakpoints.down("mobile")} {
-              font-size: ${theme.typography.operatorNameHeading.fontSize}px;
-              font-weight: ${theme.typography.operatorNameHeading.fontWeight};
-              line-height: ${theme.typography.operatorNameHeading.lineHeight};
-              margin-top: 0;
-
-              .alter-name {
-                font-weight: normal;
-              }
-            }
-          }
-          .breadcrumb > a {
-            color: ${rgba(tint(0.27, accentColor), 0.66)};
-            background-color: ${rgba(accentColor, 0.08)};
-
-            &:hover {
-              color: ${tint(0.27, accentColor)};
-              background-color: ${rgba(accentColor, 0.4)};
-            }
-          }
-        }
-      }
-    `;

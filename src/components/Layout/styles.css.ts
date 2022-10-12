@@ -459,6 +459,10 @@ export const logoAndDescription = style({
   },
 });
 
+export const logo = style({
+  padding: 0,
+});
+
 export const footerLink = style({
   padding: 0,
   color: vars.colors.neutrals.gray,
@@ -546,3 +550,11 @@ export const socialListItem = style([
     },
   },
 ]);
+
+globalStyle(`${baseLinksSocialList} a`, {
+  color: vars.colors.neutrals.gray,
+});
+
+globalStyle(`${baseLinksSocialListItem} a:hover`, {
+  color: vars.colors.neutrals.white,
+});

@@ -231,7 +231,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
         <footer className={cx(classes.footer, customClasses?.footer)}>
           <div className={classes.footerContent}>
             <div className={classes.logoAndDescription}>
-              <SanityGoneLogo />
+              <SanityGoneLogo className={classes.logo} />
               <p>
                 Sanity;Gone is a community resource for Arknights players,
                 providing quick guides, reviews, and detailed information about

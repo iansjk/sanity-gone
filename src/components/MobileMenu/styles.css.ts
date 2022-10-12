@@ -61,6 +61,11 @@ export const list = style({
   margin: 0,
   padding: 0,
   listStyle: "none",
+  selectors: {
+    [`${searchBarContainer}:has([data-headlessui-state~="open"]) + &`]: {
+      display: "none",
+    },
+  },
 });
 
 export const listLink = style({

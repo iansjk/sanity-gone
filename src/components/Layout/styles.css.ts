@@ -120,7 +120,7 @@ globalStyle("img", {
   objectFit: "contain",
 });
 
-globalStyle("body::webkit-scrollbar", {
+globalStyle("body::-webkit-scrollbar", {
   width: spacing(2),
 });
 

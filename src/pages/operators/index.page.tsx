@@ -503,10 +503,12 @@ const Operators: React.VFC<Props> = (props) => {
                     <div className={classes.classOrSubclassDescription}>
                       {branches[selectedSubProfessionId].analysis != null && (
                         <MDXRemote
+                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                           {...branches[selectedSubProfessionId].analysis!}
                           components={{
                             BranchNamePlural: () => (
                               <strong>
+                                {/*  eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
                                 {selectedSubclass!} {selectedClass!}s
                               </strong>
                             ),

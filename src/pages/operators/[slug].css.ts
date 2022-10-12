@@ -244,3 +244,9 @@ export const cardHeadingBlock = style({
 export const cardHeading = style({
   color: "rgb(var(--accent-color-tinted-027))",
 });
+
+export const imgEmbed = style({
+  width: `min(100vw - 32px, 360px)`,
+  display: "block",
+  margin: "0 auto",
+});

@@ -570,19 +570,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                               ),
                               MasteryRecommendation,
                               img: (props) => (
-                                <Box
-                                  display="flex"
-                                  alignItems="center"
-                                  justifyContent="center"
-                                >
-                                  {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
-                                  <img
-                                    {...props}
-                                    style={{
-                                      width: `min(100vw - 32px, 360px)`,
-                                    }}
-                                  />
-                                </Box>
+                                // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
+                                <img {...props} className={classes.imgEmbed} />
                               ),
                             }}
                           />

@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef } from "react";
-import { Box } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import cx from "clsx";
@@ -145,29 +144,16 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
           data-profession={op.profession}
           data-subprofessionid={op.subProfessionId}
         >
-          <Box
-            gridArea="x"
-            height="100%"
-            overflow="hidden"
-            sx={{
-              backgroundColor: (theme) => theme.palette.midtone.main,
-            }}
-          >
-            <Box
-              position="relative"
-              width="100%"
-              height={0}
-              top="-20px"
-              paddingBottom="200%"
-            >
+          <div className={classes.outerPortraitWrapper}>
+            <div className={classes.innerPortraitWrapper}>
               <Image
                 src={`/images/portraits/${portraitFilename}`}
                 alt=""
                 layout="fill"
                 objectPosition="right bottom"
               />
-            </Box>
-          </Box>
+            </div>
+          </div>
           <div className={classes.operatorCardContent}>
             {hasGuide && (
               <Link href={`/operators/${url}`}>

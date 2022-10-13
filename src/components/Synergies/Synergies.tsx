@@ -1,17 +1,24 @@
+import { Fragment } from "react";
+import Image from "next/image";
+import cx from "clsx";
+
 import CardWithTabs from "../CardWithTabs";
 import Synergy, { SynergyProps, SynergyQuality } from "../Synergy";
 import { operatorAvatar } from "../../utils/images";
-import Image from "next/image";
-import cx from "clsx";
-import { Fragment } from "react";
-import * as classes from "./styles.css";
 import GroupSynergyIcon from "../icons/GroupSynergyIcon";
+import { CardProps } from "../Card";
 
-export interface SynergiesProps {
+import * as classes from "./styles.css";
+
+export type SynergiesProps = {
   synergies: SynergyProps[];
-}
+  classes?: CardProps["classes"];
+};
 
-const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
+const Synergies: React.VFC<SynergiesProps> = ({
+  synergies,
+  classes: cardClasses,
+}) => {
   //Sort synergies first.
   const sortedSynergies = synergies
     .map((syn) => ({
@@ -111,6 +118,7 @@ const Synergies: React.VFC<SynergiesProps> = ({ synergies }) => {
         tabGroups={tabGroups}
         buttonClassName={classes.button}
         tabsClassName={classes.tabsContainer}
+        classes={cardClasses}
       />
     </div>
   );

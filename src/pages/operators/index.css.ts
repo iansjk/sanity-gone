@@ -1,5 +1,6 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 import { rgba, tint } from "polished";
+
 import { breakpoints, spacing } from "../../theme-helpers";
 import { rawColors, vars } from "../../theme.css";
 
@@ -326,4 +327,65 @@ export const resultsHeading = style({
       margin: 0,
     },
   },
+});
+
+export const topFold = style({
+  display: "flex",
+  flexDirection: "column",
+});
+
+export const headerMainWrapper = style({
+  maxWidth: "unset",
+  margin: 0,
+});
+
+export const header = style({
+  padding: spacing(3, 0, 0, 0),
+  height: spacing(30.5),
+  "@media": {
+    [breakpoints.down("mobile")]: {
+      position: "relative",
+      "::before": {
+        content: '""',
+        position: "absolute",
+        left: 0,
+        bottom: -16,
+        height: 260,
+        width: "100%",
+        background:
+          "linear-gradient(to bottom, rgba(0, 0, 0, 0) 63.34%, rgba(0, 0, 0, 0.5) 100%)",
+      },
+    },
+  },
+});
+
+export const headingAndBreadcrumb = style({
+  maxWidth: breakpoints.maxWidth,
+  width: "100%",
+  margin: "0 auto",
+  "@media": {
+    [breakpoints.down("mobile")]: {
+      zIndex: 1,
+    },
+  },
+});
+
+export const heading = style({
+  margin: spacing(0, 3),
+  ...vars.typography.operatorPageHeading,
+  "@media": {
+    [breakpoints.down("mobile")]: {
+      margin: spacing(0, 2),
+      fontSize: vars.typography.operatorNameHeading.fontSize,
+    },
+  },
+});
+
+export const pageContent = style({
+  display: "flex",
+  flex: "1 1 0",
+});
+
+export const footer = style({
+  marginTop: 0,
 });

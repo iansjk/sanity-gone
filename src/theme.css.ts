@@ -123,7 +123,7 @@ export const vars = createGlobalTheme(":root", {
     },
   },
   shadows: {
-    titleShadow: `${spacing(0.25)} ${spacing(1)} rgba(0, 0, 0, 0.6)`,
+    titleShadow: `0 ${spacing(0.25)} ${spacing(1)} rgba(0, 0, 0, 0.5)`,
     baseShadow: `${spacing(0.25)} ${spacing(0.25)} ${spacing(
       1
     )} rgba(0, 0, 0, 0.15)`,

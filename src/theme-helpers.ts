@@ -5,10 +5,14 @@ export const spacing = (...argsInput: number[]): string => {
   return args.map((arg) => `${arg * spacingUnitInPixels}px`).join(" ");
 };
 
-const breakpointValues = {
-  mobile: "1000px",
-  maxWidth: `${1270 + spacingUnitInPixels * 3 * 2}px`,
+export const rawBreakpointValues = {
+  mobile: 1000,
+  maxWidth: 1270 + spacingUnitInPixels * 3 * 2,
 };
+
+const breakpointValues = Object.fromEntries(
+  Object.entries(rawBreakpointValues).map(([key, value]) => [key, `${value}px`])
+) as Record<keyof typeof rawBreakpointValues, string>;
 
 export const breakpoints = {
   ...breakpointValues,

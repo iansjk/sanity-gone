@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useMediaQuery, useTheme } from "@mui/material";
 
 import Tooltip from "../Tooltip";
 import { Media } from "../../Media";
@@ -14,6 +13,8 @@ import {
 import { operatorClassIcon, operatorBranchIcon } from "../../utils/images";
 import { CharacterObject } from "../../utils/types";
 import OperatorPortrait from "../OperatorPortrait";
+import useMediaQuery from "../../utils/media-query";
+import { breakpoints } from "../../theme-helpers";
 
 import * as classes from "./styles.css";
 
@@ -66,8 +67,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     description!
   );
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
+  const isMobile = useMediaQuery(breakpoints.down("mobile"));
   const [charName, alterName] = name.split(" the ");
 
   return (

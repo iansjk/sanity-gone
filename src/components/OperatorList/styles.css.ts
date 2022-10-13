@@ -301,3 +301,18 @@ globalStyle(`${rarities["rarity5Stars"]} ${rarityStar} path`, {
 globalStyle(`${rarities["rarity6Stars"]} ${rarityStar} path`, {
   fill: "url(#rarity-6-gradient)",
 });
+
+export const outerPortraitWrapper = style({
+  gridArea: "x",
+  height: "100%",
+  overflow: "hidden",
+  backgroundColor: vars.colors.neutrals.midtone,
+});
+
+export const innerPortraitWrapper = style({
+  position: "relative",
+  width: "100%",
+  height: 0,
+  top: -20,
+  paddingBottom: "200%",
+});

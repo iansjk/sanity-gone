@@ -5,7 +5,6 @@ import React, {
   useCallback,
   useRef,
 } from "react";
-import { css, GlobalStyles, Theme, useTheme } from "@mui/material";
 import slugify from "@sindresorhus/slugify";
 import { MdArrowForwardIos } from "react-icons/md";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -14,7 +13,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { GetStaticProps } from "next";
 
-import Layout from "../../Layout";
+import Layout from "../../components/Layout";
 import {
   classToProfession,
   subclassToSubProfessionId,
@@ -213,7 +212,6 @@ const Operators: React.VFC<Props> = (props) => {
   const [selectedSubProfessionId, setSelectedSubProfessionId] = useState<
     string | null
   >(null);
-  const theme = useTheme();
   const router = useRouter();
   const classDropdownRef = useRef<DropdownSelectRef>(null);
 
@@ -394,12 +392,20 @@ const Operators: React.VFC<Props> = (props) => {
       pageTitle="Operator List"
       bannerImage={operatorListBannerImage}
       blendPoint={496}
+      classes={{
+        topFold: classes.topFold,
+        headerMainWrapper: classes.headerMainWrapper,
+        header: classes.header,
+        headingAndBreadcrumb: classes.headingAndBreadcrumb,
+        heading: classes.heading,
+        pageContent: classes.pageContent,
+        footer: classes.footer,
+      }}
       /* No previous location for now
       previousLocation="Home"
       previousLocationLink="/"
        */
     >
-      <GlobalStyles styles={globalOverrideStyles(theme)} />
       <main className={classes.main}>
         <div className={classes.mainContainer}>
           {/* <span className="last-updated">
@@ -497,10 +503,12 @@ const Operators: React.VFC<Props> = (props) => {
                     <div className={classes.classOrSubclassDescription}>
                       {branches[selectedSubProfessionId].analysis != null && (
                         <MDXRemote
+                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                           {...branches[selectedSubProfessionId].analysis!}
                           components={{
                             BranchNamePlural: () => (
                               <strong>
+                                {/*  eslint-disable-next-line @typescript-eslint/no-non-null-assertion */}
                                 {selectedSubclass!} {selectedClass!}s
                               </strong>
                             ),
@@ -530,71 +538,3 @@ const Operators: React.VFC<Props> = (props) => {
   );
 };
 export default Operators;
-
-const globalOverrideStyles = (theme: Theme) => css`
-  .top-fold {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .header-main-wrapper {
-    max-width: unset;
-    margin: 0;
-  }
-
-  header {
-    padding: ${theme.spacing(3, 0, 0, 0)};
-    height: ${theme.spacing(30.5)};
-
-    ${theme.breakpoints.down("mobile")} {
-      position: relative;
-    }
-
-    &::before {
-      ${theme.breakpoints.down("mobile")} {
-        content: "";
-        position: absolute;
-        bottom: -16px;
-        left: 0;
-        width: 100%;
-        height: 260px;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0) 63.34%,
-          rgba(0, 0, 0, 0.5) 100%
-        );
-      }
-    }
-
-    .heading-and-breadcrumb {
-      max-width: ${theme.breakpoints.values["maxWidth"]}px;
-      width: 100%;
-      margin: 0 auto;
-
-      ${theme.breakpoints.down("mobile")} {
-        z-index: 1;
-      }
-
-      h1 {
-        margin: ${theme.spacing(0, 3)};
-        font-size: ${theme.typography.operatorPageHeading.fontSize}px;
-        font-weight: ${theme.typography.operatorPageHeading.fontWeight};
-        line-height: ${theme.typography.operatorPageHeading.lineHeight};
-
-        ${theme.breakpoints.down("mobile")} {
-          margin: ${theme.spacing(0, 2)};
-          font-size: ${theme.typography.operatorNameHeading.fontSize}px;
-        }
-      }
-    }
-  }
-
-  .page-content {
-    flex: 1 1 0;
-    display: flex;
-  }
-
-  footer {
-    margin-top: 0;
-  }
-`;

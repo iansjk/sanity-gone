@@ -1,4 +1,4 @@
-import Layout from "../Layout";
+import Layout from "../components/Layout";
 import disclaimerPageBanner from "../images/page-banners/disclaimer.jpg";
 import * as classes from "./disclaimer.css";
 import type { NextPage } from "next";

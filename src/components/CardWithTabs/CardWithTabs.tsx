@@ -1,7 +1,7 @@
 import * as classes from "./styles.css";
 import { Fragment } from "react";
 
-import Card from "../Card";
+import Card, { CardProps } from "../Card";
 import RomanNumeralOne from "../icons/RomanNumeralOne";
 import RomanNumeralTwo from "../icons/RomanNumeralTwo";
 import RomanNumeralThree from "../icons/RomanNumeralThree";
@@ -26,14 +26,27 @@ export type CardWithTabsProps = {
   tabGroups: TabGroup[];
   buttonClassName?: string;
   tabsClassName?: string;
+  classes?: CardProps["classes"];
 };
 
 const CardWithTabs: React.VFC<CardWithTabsProps> = (props) => {
-  const { header, tabGroups, buttonClassName, tabsClassName, ...rest } = props;
+  const {
+    header,
+    tabGroups,
+    buttonClassName,
+    tabsClassName,
+    classes: cardClasses,
+  } = props;
   const isMobile = useMediaQuery(breakpoints.down("mobile"));
 
   return (
-    <Card className={classes.cardWithTabsRoot} header={header} {...rest}>
+    <Card
+      header={header}
+      classes={{
+        ...cardClasses,
+        root: cx(cardClasses?.root, classes.cardWithTabsRoot),
+      }}
+    >
       <Tab.Group as={"div"} className={classes.tabWrapper} vertical={!isMobile}>
         <Tab.List
           as={ScrollContainer}

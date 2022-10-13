@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { css } from "@emotion/react";
-import { useMediaQuery, useTheme, Theme } from "@mui/material";
 import Image from "next/image";
 import cx from "clsx";
 
@@ -37,6 +35,8 @@ import RibbonButtonGroup from "../RibbonButtonGroup";
 import SliderWithInput from "../SliderWithInput";
 import TraitInfo from "../TraitInfo";
 import Tooltip from "../Tooltip";
+import useMediaQuery from "../../utils/media-query";
+import { breakpoints } from "../../theme-helpers";
 
 import * as classes from "./styles.css";
 
@@ -51,8 +51,7 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
 }) => {
   const { charId: id, name, profession } = characterObject;
   const isSummon = profession === "TOKEN";
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
+  const isMobile = useMediaQuery(breakpoints.down("mobile"));
 
   const phases = characterObject.phases;
   const maxElite = phases.length - 1;
@@ -469,230 +468,3 @@ const CharacterStats: React.VFC<CharacterStatsProps> = ({
   );
 };
 export default CharacterStats;
-
-const styles = (theme: Theme) => css`
-  .stats-controls {
-    display: flex;
-    flex-direction: row;
-    height: ${theme.spacing(8)};
-    background: ${theme.palette.midtone.main};
-    margin-top: ${theme.spacing(3)};
-    border-bottom: ${theme.spacing(0.125)} solid
-      ${theme.palette.midtoneBrighterer.main};
-    border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
-
-    ${theme.breakpoints.down("mobile")} {
-      flex-direction: column-reverse;
-      border-radius: 0;
-      margin-top: ${theme.spacing(9)};
-    }
-
-    .trust-and-elite-buttons {
-      display: flex;
-      height: ${theme.spacing(8)};
-
-      .checkbox-container {
-        margin: ${theme.spacing(2, 2, 2, 0)};
-        display: flex;
-        flex-direction: row;
-
-        ${theme.breakpoints.down("mobile")} {
-          border: none;
-        }
-
-        .checkbox {
-          margin-left: ${theme.spacing(3)};
-
-          ${theme.breakpoints.down("mobile")} {
-            margin-left: ${theme.spacing(2)};
-          }
-
-          label {
-            padding: ${theme.spacing(0.25)} 0;
-
-            ${theme.breakpoints.down("mobile")} {
-              padding: ${theme.spacing(0.5)} 0;
-            }
-          }
-        }
-      }
-    }
-
-    .slider-container {
-      margin-right: ${theme.spacing(2)};
-
-      ${theme.breakpoints.down("mobile")} {
-        position: relative;
-        margin-right: 0;
-        background: ${theme.palette.midtone.main};
-        padding-left: ${theme.spacing(2)};
-        border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
-      }
-    }
-
-    .mobile-spacer {
-      ${theme.breakpoints.down("mobile")} {
-        flex: 1 1 0;
-      }
-    }
-
-    .spacer {
-      flex: 1 1 0;
-    }
-  }
-
-  dl {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-flow: column;
-    gap: ${theme.spacing(0.25)};
-    margin-top: 0;
-
-    ${theme.breakpoints.down("mobile")} {
-      grid-auto-flow: unset;
-    }
-
-    &.operator-stats {
-      grid-template-columns: repeat(4, 195fr) 224fr;
-
-      ${theme.breakpoints.down("mobile")} {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, max-content);
-      }
-
-      .attack-power {
-        border-bottom-left-radius: ${theme.spacing(0.5)};
-
-        ${theme.breakpoints.down("mobile")} {
-          border-bottom-left-radius: 0;
-          border-top-right-radius: ${theme.spacing(0.5)};
-        }
-      }
-    }
-
-    &.summon-stats {
-      grid-template-columns: 88fr repeat(4, 149fr) 224fr;
-
-      ${theme.breakpoints.down("mobile")} {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, max-content);
-
-        .range {
-          grid-row: 6;
-        }
-      }
-
-      // FIXME FIXME FIXME
-      &.no-stat-changes {
-        margin-top: ${theme.spacing(3)};
-
-        ${theme.breakpoints.down("mobile")} {
-          margin-top: ${theme.spacing(2)};
-        }
-        .summon-icon {
-          border-radius: ${theme.spacing(0.5, 0, 0, 0.5)};
-          ${theme.breakpoints.down("mobile")} {
-            border-radius: ${theme.spacing(0.5, 0.5, 0, 0)};
-          }
-        }
-        .range {
-          border-radius: ${theme.spacing(0, 0.5, 0.5, 0)};
-        }
-      }
-    }
-    // end FIXME
-
-    .summon-icon {
-      grid-row-start: span 2;
-
-      justify-content: center;
-
-      ${theme.breakpoints.down("mobile")} {
-        grid-row-start: unset;
-        grid-column: span 2;
-      }
-
-      img {
-        margin: auto;
-      }
-    }
-
-    .health {
-      svg path {
-        fill: ${theme.palette.lime.main};
-      }
-    }
-
-    .attack-power {
-      svg path {
-        fill: ${theme.palette.red.main};
-      }
-    }
-
-    .defense {
-      svg path {
-        fill: ${theme.palette.orange.main};
-      }
-    }
-
-    .attack-speed {
-      svg path {
-        fill: ${theme.palette.yellow.main};
-      }
-    }
-
-    .arts-resistance {
-      svg path {
-        fill: ${theme.palette.blue.main};
-      }
-    }
-
-    .block {
-      svg path {
-        fill: ${theme.palette.softBlue.main};
-      }
-    }
-
-    .redeploy-time {
-      svg path {
-        fill: ${theme.palette.pink.main};
-      }
-    }
-
-    .dp-cost {
-      svg path {
-        fill: ${theme.palette.white.main};
-      }
-    }
-
-    .range {
-      grid-row-start: span 2;
-      position: relative;
-      border-radius: ${theme.spacing(0, 0, 0.5, 0)};
-
-      ${theme.breakpoints.down("mobile")} {
-        grid-row: 5;
-        grid-column-start: span 2;
-        border-radius: ${theme.spacing(0, 0, 0.5, 0.5)};
-      }
-
-      dd {
-        position: absolute;
-        top: -5px; /* this is needed to counteract extra space made by .visually-hidden */
-        left: -5px;
-        margin-top: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        ${theme.breakpoints.down("mobile")} {
-          position: relative;
-          top: -2.5px;
-          left: -2.5px;
-        }
-      }
-    }
-  }
-`;

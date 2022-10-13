@@ -13,21 +13,8 @@ module.exports = {
   core: {
     builder: "webpack5",
   },
-  features: { emotionAlias: false, storyStoreV7: true },
+  features: { storyStoreV7: true },
   staticDirs: ["../public"],
-  babel: async (options) => {
-    options.overrides.push({
-      presets: [
-        [
-          "@babel/preset-react",
-          { runtime: "automatic", importSource: "@emotion/react" },
-        ],
-      ],
-      plugins: ["@emotion/babel-plugin"],
-      test: "*", // This says "for all files, use this override".
-    });
-    return options;
-  },
   webpackFinal: (config) => {
     config.experiments = {
       ...config.experiments,

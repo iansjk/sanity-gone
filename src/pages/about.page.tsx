@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 
-import Layout from "../Layout";
+import Layout from "../components/Layout";
 import aboutPageBanner from "../images/page-banners/about.jpg";
 import aboutDiscordButton from "../images/page-banners/about_discord.png";
 import { breakpoints } from "../theme-helpers";

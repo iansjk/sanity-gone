@@ -9,14 +9,26 @@ export const root = style({
   boxShadow: "2px 4px 8px rgba(0, 0, 0, 0.15)",
   backdropFilter: "blur(8px)",
   borderRadius: spacing(1),
+  "@media": {
+    [breakpoints.down("mobile")]: {
+      margin: 0,
+    },
+  },
 });
 
-export const pageHeading = style({
-  margin: spacing(0, 0, 3),
-  fontSize: vars.typography.generalHeadingBold.fontSize,
-  fontWeight: vars.typography.generalHeadingBold.fontWeight,
-  lineHeight: vars.typography.generalHeadingBold.lineHeight,
+export const title = style({
+  textTransform: "uppercase",
+  fontSize: vars.typography.cardHeading.fontSize,
+  fontWeight: vars.typography.cardHeading.fontWeight,
+  lineHeight: vars.typography.cardHeading.lineHeight,
 });
+
+export const pageHeading = style([
+  title,
+  {
+    margin: spacing(0, 0, 3),
+  },
+]);
 
 export const teamMembers = style({
   display: "flex",
@@ -52,6 +64,7 @@ export const memberList = style({
   maxHeight: "500px",
   "@media": {
     [breakpoints.down("mobile")]: {
+      margin: 0,
       display: "flex",
       maxHeight: "none",
     },
@@ -136,16 +149,21 @@ export const specialThanks = style({
   padding: spacing(3, 3, 3),
 });
 
-export const specialThanksTitle = style({
-  margin: 0,
-  textTransform: "uppercase",
-  fontSize: vars.typography.cardHeading.fontSize,
-  fontWeight: vars.typography.cardHeading.fontWeight,
-  lineHeight: vars.typography.cardHeading.lineHeight,
-});
+export const specialThanksTitle = style([
+  title,
+  {
+    margin: 0,
+  },
+]);
 
 export const specialThanksList = style({
   margin: spacing(3, 0, 0),
+  "@media": {
+    [breakpoints.down("mobile")]: {
+      padding: 0,
+      paddingLeft: "20px",
+    },
+  },
 });
 
 export const specialThanksParagraph = style({
@@ -186,6 +204,7 @@ export const disclosureButton = style({
 });
 
 export const disclosureChevron = style({
+  transform: "rotate(90deg)",
   selectors: {
     [`${disclosureButton}[data-headlessui-state~=open] &`]: {
       transform: "rotate(180deg)",

@@ -207,7 +207,7 @@ export const disclosureChevron = style({
   transform: "rotate(90deg)",
   selectors: {
     [`${disclosureButton}[data-headlessui-state~=open] &`]: {
-      transform: "rotate(180deg)",
+      transform: "rotate(0)",
     },
   },
 });

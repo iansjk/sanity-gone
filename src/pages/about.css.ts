@@ -12,6 +12,7 @@ export const root = style({
   "@media": {
     [breakpoints.down("mobile")]: {
       margin: 0,
+      borderRadius: 0,
     },
   },
 });

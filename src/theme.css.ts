@@ -121,6 +121,21 @@ export const vars = createGlobalTheme(":root", {
       lineHeight: "1.25",
       textTransform: "uppercase",
     },
+    teamGroupHeading: {
+      fontSize: "16px",
+      fontWeight: "400",
+      lineHeight: "1.5",
+    },
+    memberNameHeading: {
+      fontSize: "16px",
+      fontWeight: "600",
+      lineHeight: "1.5",
+    },
+    memberRoleHeading: {
+      fontSize: "18px",
+      fontWeight: "400",
+      lineHeight: "1.52",
+    },
   },
   shadows: {
     titleShadow: `0 ${spacing(0.25)} ${spacing(1)} rgba(0, 0, 0, 0.5)`,

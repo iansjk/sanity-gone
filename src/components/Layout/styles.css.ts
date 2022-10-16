@@ -475,6 +475,8 @@ const baseLinksSocialSection = style({
   justifySelf: "flex-end",
   "@media": {
     [breakpoints.down("mobile")]: {
+      marginTop: spacing(4),
+      justifySelf: "flex-start",
       gridRow: 2,
     },
   },

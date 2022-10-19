@@ -7686,7 +7686,7 @@
     {
       "moduleId": "uniequip_002_shwaz",
       "moduleIcon": "arc-x",
-      "moduleName": "定制弩配件套装",
+      "moduleName": "Customized Crossbow Accessory Suit",
       "phases": [
         {
           "candidates": [
@@ -7710,7 +7710,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>",
+              "traitEffect": "Redeployment Time <span class=\"keyword\">reduced</span>",
               "traitEffectType": "update"
             }
           ]
@@ -7822,7 +7822,7 @@
     {
       "moduleId": "uniequip_002_prove",
       "moduleIcon": "arc-x",
-      "moduleName": "尾巴养护套装",
+      "moduleName": "Tail-Care Suit",
       "phases": [
         {
           "candidates": [
@@ -7846,7 +7846,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>",
+              "traitEffect": "Redeployment Time <span class=\"keyword\">reduced</span>",
               "traitEffectType": "update"
             }
           ]
@@ -7958,7 +7958,7 @@
     {
       "moduleId": "uniequip_002_acdrop",
       "moduleIcon": "arc-x",
-      "moduleName": "“自由、洋葱圈和我”",
+      "moduleName": "'Freedom, Onion Rings, and Me'",
       "phases": [
         {
           "candidates": [
@@ -7982,7 +7982,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "再部署时间<span class=\"keyword\">减少</span>",
+              "traitEffect": "Redeployment Time <span class=\"keyword\">reduced</span>",
               "traitEffectType": "update"
             }
           ]
@@ -8048,7 +8048,7 @@
     {
       "moduleId": "uniequip_002_lisa",
       "moduleIcon": "dec-x",
-      "moduleName": "Cherished Omamori",
+      "moduleName": "Pocket Omamori",
       "phases": [
         {
           "candidates": [
@@ -8126,7 +8126,7 @@
     {
       "moduleId": "uniequip_002_aglina",
       "moduleIcon": "dec-y",
-      "moduleName": "重力校准模块",
+      "moduleName": "Gravity Calibration Module",
       "phases": [
         {
           "candidates": [
@@ -8146,7 +8146,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts damage</span>, and <span class=\"skill-tooltip\">Slow</span> the enemy for a <span class=\"keyword\">moderate</span> period of time",
               "traitEffectType": "override"
             }
           ]
@@ -8376,7 +8376,7 @@
     {
       "moduleId": "uniequip_002_glacus",
       "moduleIcon": "dec-x",
-      "moduleName": "外骨骼装备",
+      "moduleName": "Powered Exoskeleton",
       "phases": [
         {
           "candidates": [
@@ -8396,7 +8396,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
+              "traitEffect": "SP recovery +0.2/sec when there are enemies within range",
               "traitEffectType": "update"
             }
           ]
@@ -8492,7 +8492,7 @@
     {
       "moduleId": "uniequip_002_glassb",
       "moduleIcon": "dec-y",
-      "moduleName": "读书笔记",
+      "moduleName": "Reading Notes",
       "phases": [
         {
           "candidates": [
@@ -8512,7 +8512,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts damage</span>, and <span class=\"skill-tooltip\">Slow</span> the enemy for a <span class=\"keyword\">moderate</span> period of time",
               "traitEffectType": "override"
             }
           ]
@@ -8608,7 +8608,7 @@
     {
       "moduleId": "uniequip_002_podego",
       "moduleIcon": "dec-x",
-      "moduleName": "“不谢的苗圃”",
+      "moduleName": "'Amaranthine Nursery'",
       "phases": [
         {
           "candidates": [
@@ -8628,7 +8628,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击范围内存在敌人时技力自然恢复速度+0.2/s",
+              "traitEffect": "SP recovery +0.2/sec when there are enemies within range",
               "traitEffectType": "update"
             }
           ]
@@ -8724,7 +8724,7 @@
     {
       "moduleId": "uniequip_002_skgoat",
       "moduleIcon": "dec-y",
-      "moduleName": "待确认的申请表",
+      "moduleName": "Application Forms, To Be Confirmed",
       "phases": [
         {
           "candidates": [
@@ -8744,7 +8744,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，并对敌人造成<span class=\"keyword\">较长</span>的<span class=\"skill-tooltip\">停顿</span>",
+              "traitEffect": "Attacks deal <span class=\"keyword\">Arts damage</span>, and <span class=\"skill-tooltip\">Slow</span> the enemy for a <span class=\"keyword\">moderate</span> period of time",
               "traitEffectType": "override"
             }
           ]

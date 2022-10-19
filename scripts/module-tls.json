@@ -1402,5 +1402,127 @@
         ]
       }
     ]
+  },
+  "uniequip_002_moeshd": {
+    "moduleName": "Combat Boots",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": null
+          },
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": "Has a 24% chance to resist Physical and Arts damage. The allies in the four surrounding tiles obtain half of the effect"
+          },
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": "Has a 27% chance to resist Physical and Arts damage. The allies in the four surrounding tiles obtain half of the effect"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": null
+          },
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": "Has a 27% <span class=\"potential\">(+3%)</span> chance to resist Physical and Arts damage. The allies in the four surrounding tiles obtain half of the effect"
+          },
+          {
+            "trait": "Blocks 4 enemies",
+            "talent": "Has a 30% <span class=\"potential\">(+3%)</span> chance to resist Physical and Arts damage. The allies in the four surrounding tiles obtain half of the effect"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_leizi": {
+    "moduleName": "'All The Thunderlight'",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": null
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": "Increases ATK by 23% and restores 1 SP when attacking unblocked enemies"
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": "Increases ATK by 26% and restores 1 SP when attacking unblocked enemies"
+          }
+        ]
+      },
+      {
+        "requiredPotentialRank": 4,
+        "translations": [
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": null
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": "Increases ATK by 26% <span class=\"potential\">(+3%)</span> and restores 1 SP when attacking unblocked enemies"
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump deals <span class=\"keyword\">10%</span> less damage and inflicts a short <span class=\"skill-tooltip\">Slow</span> (0.8s)",
+            "talent": "Increases ATK by 29% <span class=\"potential\">(+3%)</span> and restores 1 SP when attacking unblocked enemies"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_pudd": {
+    "moduleName": "Portable Electrical Measuring Equipment",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
+            "talent": null
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
+            "talent": "ATK +13%"
+          },
+          {
+            "trait": "Attacks deal <span class=\"keyword\">Arts</span> damage and jump between <span class=\"keyword\">4</span> enemies. Each jump <span class=\"keyword\">no longer deals less damage</span> and inflicts a brief <span class=\"skill-tooltip\">Slow</span> (0.5s)",
+            "talent": "ATK +16%"
+          }
+        ]
+      }
+    ]
+  },
+  "uniequip_002_bldsk": {
+    "moduleName": "Emergency Reserve",
+    "phases": [
+      {
+        "requiredPotentialRank": 0,
+        "translations": [
+          {
+            "trait": "When healing units with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": null
+          },
+          {
+            "trait": "When healing units with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": "Restores 2 Skill Points to this Operator and a random ally within range when an enemy within range is killed; if the enemy killed is an Elite or Leader, additional SP restored +1"
+          },
+          {
+            "trait": "When healing units with less than 50% HP, <span class=\"keyword\">+15%</span> healing effectiveness",
+            "talent": "Restores 2 Skill Points to this Operator and a random ally within range when an enemy within range is killed; if the enemy killed is an Elite or Leader, additional SP restored +2"
+          }
+        ]
+      }
+    ]
   }
 }

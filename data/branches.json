@@ -14,6 +14,10 @@
     "trait": "能够阻挡三个敌人，可以进行远程攻击",
     "class": "Defender"
   },
+  "chainhealer": {
+    "trait": "恢复友方单位生命，且会在<span class=\"keyword\">3</span>个友方单位间跳跃，每次跳跃治疗量降低25%",
+    "class": "Medic"
+  },
   "pioneer": {
     "branchName": "Pioneer",
     "trait": "Blocks 2 enemies",

@@ -7816,6 +7816,82 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "uniequip_003_shwaz",
+      "moduleIcon": "arc-y",
+      "moduleName": "老剃刀",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 80
+                },
+                {
+                  "key": "def",
+                  "value": 10
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "攻击正前方的敌人时攻击力提升至<span class=\"keyword\">105%</span>且无视其物理闪避",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 100
+                },
+                {
+                  "key": "def",
+                  "value": 13
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至165%，并使命中目标的防御力下降25%，持续5秒",
+              "talentIndex": 0,
+              "traitEffect": "攻击正前方的敌人时攻击力提升至<span class=\"keyword\">105%</span>且无视其物理闪避",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 120
+                },
+                {
+                  "key": "def",
+                  "value": 16
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "攻击时，20%几率当次攻击的攻击力提升至170%，并使命中目标的防御力下降25%，持续5秒",
+              "talentIndex": 0,
+              "traitEffect": "攻击正前方的敌人时攻击力提升至<span class=\"keyword\">105%</span>且无视其物理闪避",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
     }
   ],
   "char_145_prove": [
@@ -8840,7 +8916,7 @@
     {
       "moduleId": "uniequip_002_ghost2",
       "moduleIcon": "pum-x",
-      "moduleName": "“唱片”收藏箱",
+      "moduleName": "'Vinyl Record' Box",
       "phases": [
         {
           "candidates": [
@@ -8860,7 +8936,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但攻击力<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffect": "Instead of retreating when defeated, switch to a &lt;Substitute&gt; (Substitute has 0 Block, but ATK is <span class=\"keyword\">increased</span>) for 20 seconds before switching back to the original",
               "traitEffectType": "override"
             }
           ]
@@ -9060,7 +9136,7 @@
     {
       "moduleId": "uniequip_002_bena",
       "moduleIcon": "pum-y",
-      "moduleName": "<The Jeffreys Collection of Fairy Tales, New and Old> Hardcover Edition",
+      "moduleName": "The Jeffreys Collection of Fairytales New and Old, Hardback Edition",
       "phases": [
         {
           "candidates": [
@@ -9176,7 +9252,7 @@
     {
       "moduleId": "uniequip_002_kazema",
       "moduleIcon": "pum-x",
-      "moduleName": "旧物",
+      "moduleName": "An Old Thing",
       "phases": [
         {
           "candidates": [
@@ -9196,7 +9272,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "受到致命伤时不撤退，切换成&lt;替身&gt;作战（替身阻挡数为0但攻击力<span class=\"keyword\">提升</span>），持续20秒后自身再次替换&lt;替身&gt;",
+              "traitEffect": "Instead of retreating when defeated, switch to a &lt;Substitute&gt; (Substitute has 0 Block, but ATK is <span class=\"keyword\">increased</span>) for 20 seconds before switching back to the original",
               "traitEffectType": "override"
             }
           ]
@@ -9292,7 +9368,7 @@
     {
       "moduleId": "uniequip_002_lumen",
       "moduleIcon": "wah-x",
-      "moduleName": "纯铜单筒望远镜",
+      "moduleName": "Spyglass",
       "phases": [
         {
           "candidates": [
@@ -9312,7 +9388,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "自身获得<span class=\"skill-tooltip\">抵抗</span>且更不容易受到敌人的攻击",
+              "traitEffect": "Gain <span class=\"skill-tooltip\">status resistance</span>, and become less likely to be attacked",
               "traitEffectType": "update"
             }
           ]
@@ -9370,7 +9446,7 @@
     {
       "moduleId": "uniequip_002_ceylon",
       "moduleIcon": "wah-x",
-      "moduleName": "野外考察套装",
+      "moduleName": "Field Research Equipment",
       "phases": [
         {
           "candidates": [
@@ -9390,7 +9466,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "自身获得<span class=\"skill-tooltip\">抵抗</span>且更不容易受到敌人的攻击",
+              "traitEffect": "Gain <span class=\"skill-tooltip\">status resistance</span>, and become less likely to be attacked",
               "traitEffectType": "update"
             }
           ]
@@ -9486,7 +9562,7 @@
     {
       "moduleId": "uniequip_002_whispr",
       "moduleIcon": "wah-x",
-      "moduleName": "古朴的急救箱",
+      "moduleName": "A Quaint First-Aid Kit",
       "phases": [
         {
           "candidates": [
@@ -9506,7 +9582,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "自身获得<span class=\"skill-tooltip\">抵抗</span>且更不容易受到敌人的攻击",
+              "traitEffect": "Gain <span class=\"skill-tooltip\">status resistance</span>, and become less likely to be attacked",
               "traitEffectType": "update"
             }
           ]
@@ -9602,7 +9678,7 @@
     {
       "moduleId": "uniequip_002_finlpp",
       "moduleIcon": "wah-y",
-      "moduleName": "“江河之韵”",
+      "moduleName": "'The River's Lingering Charm'",
       "phases": [
         {
           "candidates": [
@@ -9622,7 +9698,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "拥有较大治疗范围，治疗较远目标时治疗量<span class=\"keyword\">不再降低</span>",
+              "traitEffect": "Has a large healing range and healing is <span class=\"keyword\">no longer reduced</span> for distant targets",
               "traitEffectType": "override"
             }
           ]
@@ -9680,7 +9756,7 @@
     {
       "moduleId": "uniequip_002_zumama",
       "moduleIcon": "hes-x",
-      "moduleName": "Zumama's Toolbox",
+      "moduleName": "Zumama's Tool Box",
       "phases": [
         {
           "candidates": [
@@ -9872,7 +9948,7 @@
     {
       "moduleId": "uniequip_002_aurora",
       "moduleIcon": "hes-x",
-      "moduleName": "盾用摄制模块",
+      "moduleName": "Shield Photography Module",
       "phases": [
         {
           "candidates": [
@@ -9892,7 +9968,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
+              "traitEffect": "SP recovery is slowed except when blocking enemies",
               "traitEffectType": "override"
             }
           ]
@@ -9988,7 +10064,7 @@
     {
       "moduleId": "uniequip_002_irene",
       "moduleIcon": "swo-y",
-      "moduleName": "厚重的经卷",
+      "moduleName": "Liber Sacer",
       "phases": [
         {
           "candidates": [
@@ -10008,7 +10084,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击时无视敌人<span class=\"value-up\">70</span>点的防御力",
+              "traitEffect": "Attacks ignore <span class=\"value-up\">70</span> DEF",
               "traitEffectType": "update"
             }
           ]
@@ -10640,7 +10716,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，在找不到攻击目标时可以将攻击能量<span class=\"keyword\">储存</span>起来之后一齐发射（最多4个）",
               "traitEffectType": "override"
             }
           ]
@@ -10663,7 +10739,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "储存的攻击能量造成的伤害提升至135%",
               "talentIndex": 0,
-              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，在找不到攻击目标时可以将攻击能量<span class=\"keyword\">储存</span>起来之后一齐发射（最多4个）",
               "traitEffectType": "override"
             },
             {
@@ -10682,7 +10758,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "储存的攻击能量造成的伤害提升至139%<span class=\"potential\">（+4%）</span>",
               "talentIndex": 0,
-              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，在找不到攻击目标时可以将攻击能量<span class=\"keyword\">储存</span>起来之后一齐发射（最多4个）",
               "traitEffectType": "override"
             }
           ]
@@ -10705,7 +10781,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "储存的攻击能量造成的伤害提升至138%",
               "talentIndex": 0,
-              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，在找不到攻击目标时可以将攻击能量<span class=\"keyword\">储存</span>起来之后一齐发射（最多4个）",
               "traitEffectType": "override"
             },
             {
@@ -10724,7 +10800,7 @@
               "requiredPotentialRank": 4,
               "talentEffect": "储存的攻击能量造成的伤害提升至142%<span class=\"potential\">（+4%）</span>",
               "talentIndex": 0,
-              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，在找不到攻击目标时可以将攻击能量<span class=\"keyword\">储存</span>起来之后一齐发射（最多4个）",
               "traitEffectType": "override"
             }
           ]
@@ -10872,7 +10948,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": null,
               "talentIndex": -1,
-              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，在找不到攻击目标时可以将攻击能量<span class=\"keyword\">储存</span>起来之后一齐发射（最多4个）",
               "traitEffectType": "override"
             }
           ]
@@ -10895,7 +10971,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "储存的攻击能量造成的伤害提升至140%，可额外储存1份只用于攻击精英或领袖敌人的攻击能量",
               "talentIndex": 0,
-              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，在找不到攻击目标时可以将攻击能量<span class=\"keyword\">储存</span>起来之后一齐发射（最多4个）",
               "traitEffectType": "override"
             }
           ]
@@ -10918,7 +10994,7 @@
               "requiredPotentialRank": 0,
               "talentEffect": "储存的攻击能量造成的伤害提升至143%，可额外储存1份只用于攻击精英或领袖敌人的攻击能量",
               "talentIndex": 0,
-              "traitEffect": "攻击造成法术伤害，在找不到攻击目标时可以将攻击能量储存起来之后一齐发射（最多4个）",
+              "traitEffect": "攻击造成<span class=\"keyword\">法术伤害</span>，在找不到攻击目标时可以将攻击能量<span class=\"keyword\">储存</span>起来之后一齐发射（最多4个）",
               "traitEffectType": "override"
             }
           ]
@@ -14038,6 +14114,120 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "uniequip_003_hsguma",
+      "moduleIcon": "pro-x",
+      "moduleName": "护身符",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 125
+                },
+                {
+                  "key": "def",
+                  "value": 85
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "阻挡敌人时防御力<span class=\"keyword\">+20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 165
+                },
+                {
+                  "key": "def",
+                  "value": 115
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "在场时所有友方【重装】职业干员的防御力提升9%，自身防御力额外提升4%",
+              "talentIndex": 1,
+              "traitEffect": "阻挡敌人时防御力<span class=\"keyword\">+20%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 165
+                },
+                {
+                  "key": "def",
+                  "value": 115
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 5,
+              "talentEffect": "在场时所有友方【重装】职业干员的防御力提升11%<span class=\"potential\">（+2%）</span>，自身防御力额外提升4%",
+              "talentIndex": 1,
+              "traitEffect": "阻挡敌人时防御力<span class=\"keyword\">+20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 200
+                },
+                {
+                  "key": "def",
+                  "value": 140
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "在场时所有友方【重装】职业干员的防御力提升11%，自身防御力额外提升6%",
+              "talentIndex": 1,
+              "traitEffect": "阻挡敌人时防御力<span class=\"keyword\">+20%</span>",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 200
+                },
+                {
+                  "key": "def",
+                  "value": 140
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 5,
+              "talentEffect": "在场时所有友方【重装】职业干员的防御力提升13%<span class=\"potential\">（+2%）</span>，自身防御力额外提升6%",
+              "talentIndex": 1,
+              "traitEffect": "阻挡敌人时防御力<span class=\"keyword\">+20%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
     }
   ],
   "char_2014_nian": [
@@ -15241,6 +15431,1008 @@
               "talentEffect": "部署后立刻恢复全体友方单位的生命值，恢复量为末药攻击力的190%<span class=\"potential\">（+10%）</span>",
               "talentIndex": 0,
               "traitEffect": "治疗生命值低于50%的友方单位时治疗量提升<span class=\"keyword\">15%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_112_siege": [
+    {
+      "moduleId": "uniequip_002_siege",
+      "moduleIcon": "sol-x",
+      "moduleName": "“糖果盒”",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 60
+                },
+                {
+                  "key": "def",
+                  "value": 40
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 68
+                },
+                {
+                  "key": "def",
+                  "value": 46
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "所有【先锋】职业干员的攻击力和防御力各+8%，自身攻击力和防御力额外+6%",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 68
+                },
+                {
+                  "key": "def",
+                  "value": 46
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "所有【先锋】职业干员的攻击力和防御力各+10%<span class=\"potential\">（+2%）</span>，自身攻击力和防御力额外+6%",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 75
+                },
+                {
+                  "key": "def",
+                  "value": 50
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "所有【先锋】职业干员的攻击力和防御力各+8%，自身攻击力和防御力额外+8%",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 75
+                },
+                {
+                  "key": "def",
+                  "value": 50
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "所有【先锋】职业干员的攻击力和防御力各+10%<span class=\"potential\">（+2%）</span>，自身攻击力和防御力额外+8%",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_362_saga": [
+    {
+      "moduleId": "uniequip_002_saga",
+      "moduleIcon": "sol-y",
+      "moduleName": "身向云泥",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 75
+                },
+                {
+                  "key": "atk",
+                  "value": 45
+                },
+                {
+                  "key": "def",
+                  "value": 15
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 105
+                },
+                {
+                  "key": "atk",
+                  "value": 50
+                },
+                {
+                  "key": "def",
+                  "value": 18
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "生命值低于40%时，仅一次获得70%物理闪避和每秒回复5.5%的最大生命，持续17秒",
+              "talentIndex": 1,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 105
+                },
+                {
+                  "key": "atk",
+                  "value": 50
+                },
+                {
+                  "key": "def",
+                  "value": 18
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "生命值低于40%时，仅一次获得70%物理闪避和每秒回复6.5%<span class=\"potential\">（+1%）</span>的最大生命，持续19<span class=\"potential\">（+2）</span>秒",
+              "talentIndex": 1,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 125
+                },
+                {
+                  "key": "atk",
+                  "value": 55
+                },
+                {
+                  "key": "def",
+                  "value": 20
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "生命值低于40%时，仅一次获得70%物理闪避和每秒回复6%的最大生命，持续18秒",
+              "talentIndex": 1,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 125
+                },
+                {
+                  "key": "atk",
+                  "value": 55
+                },
+                {
+                  "key": "def",
+                  "value": 20
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "生命值低于40%时，仅一次获得70%物理闪避和每秒回复7%<span class=\"potential\">（+1%）</span>的最大生命，持续20<span class=\"potential\">（+2）</span>秒",
+              "talentIndex": 1,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_420_flamtl": [
+    {
+      "moduleId": "uniequip_002_flamtl",
+      "moduleIcon": "sol-y",
+      "moduleName": "红松的起点",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 175
+                },
+                {
+                  "key": "atk",
+                  "value": 35
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 240
+                },
+                {
+                  "key": "atk",
+                  "value": 40
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "触发闪避时，下次攻击攻击力提升至115％并变为二连击，且攻击所有阻挡的敌人",
+              "talentIndex": 0,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 300
+                },
+                {
+                  "key": "atk",
+                  "value": 45
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "触发闪避时，下次攻击攻击力提升至120％并变为二连击，且攻击所有阻挡的敌人",
+              "talentIndex": 0,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_102_texas": [
+    {
+      "moduleId": "uniequip_002_texas",
+      "moduleIcon": "sol-y",
+      "moduleName": "外勤私人补给包",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 100
+                },
+                {
+                  "key": "atk",
+                  "value": 35
+                },
+                {
+                  "key": "def",
+                  "value": 15
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 130
+                },
+                {
+                  "key": "atk",
+                  "value": 39
+                },
+                {
+                  "key": "def",
+                  "value": 19
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "编入队伍后，额外获得2点初始部署费用。技能造成的伤害提高10％",
+              "talentIndex": 0,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 155
+                },
+                {
+                  "key": "atk",
+                  "value": 42
+                },
+                {
+                  "key": "def",
+                  "value": 22
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "编入队伍后，额外获得2点初始部署费用。技能造成的伤害提高15％",
+              "talentIndex": 0,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_349_chiave": [
+    {
+      "moduleId": "uniequip_002_chiave",
+      "moduleIcon": "sol-y",
+      "moduleName": "自制千斤顶",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 37
+                },
+                {
+                  "key": "def",
+                  "value": 30
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 40
+                },
+                {
+                  "key": "def",
+                  "value": 33
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "在场时，所有一星干员的再部署时间-78%；场上每有一名一星干员，自身的攻击力和防御力+13%",
+              "talentIndex": 0,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 40
+                },
+                {
+                  "key": "def",
+                  "value": 33
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "在场时，所有一星干员的再部署时间-78%；场上每有一名一星干员，自身的攻击力和防御力+15%<span class=\"potential\">（+2%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 42
+                },
+                {
+                  "key": "def",
+                  "value": 35
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "在场时，所有一星干员的再部署时间-80%；场上每有一名一星干员，自身的攻击力和防御力+15%",
+              "talentIndex": 0,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 42
+                },
+                {
+                  "key": "def",
+                  "value": 35
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "在场时，所有一星干员的再部署时间-80%；场上每有一名一星干员，自身的攻击力和防御力+17%<span class=\"potential\">（+2%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "首次部署时部署费用-4",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_115_headbr": [
+    {
+      "moduleId": "uniequip_002_headbr",
+      "moduleIcon": "sol-x",
+      "moduleName": "冬将军的毕业礼物",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 180
+                },
+                {
+                  "key": "def",
+                  "value": 32
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 225
+                },
+                {
+                  "key": "def",
+                  "value": 35
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "编入队伍时所有【先锋】职业干员的部署费用-1，自身部署费用额外-1",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 260
+                },
+                {
+                  "key": "def",
+                  "value": 37
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "编入队伍时所有【先锋】职业干员的部署费用-1，【尖兵】分支职业干员部署费用额外-1",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_198_blackd": [
+    {
+      "moduleId": "uniequip_002_blackd",
+      "moduleIcon": "sol-x",
+      "moduleName": "耐低温通讯设备",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 135
+                },
+                {
+                  "key": "def",
+                  "value": 24
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 170
+                },
+                {
+                  "key": "def",
+                  "value": 27
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "当阻挡住两个及以上的敌人时，防御力+21%",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 170
+                },
+                {
+                  "key": "def",
+                  "value": 27
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "阻挡两个及以上的敌人时，防御力+24%<span class=\"potential\">（+3%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 195
+                },
+                {
+                  "key": "def",
+                  "value": 30
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "当阻挡住两个及以上的敌人时，防御力+24%",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 195
+                },
+                {
+                  "key": "def",
+                  "value": 30
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "阻挡两个及以上的敌人时，防御力+27%<span class=\"potential\">（+3%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_149_scave": [
+    {
+      "moduleId": "uniequip_002_scave",
+      "moduleIcon": "sol-x",
+      "moduleName": "“专属餐具”",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 27
+                },
+                {
+                  "key": "def",
+                  "value": 18
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 32
+                },
+                {
+                  "key": "def",
+                  "value": 22
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "当周围四格内没有其他友方单位时，攻击力和防御力各+14%",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 32
+                },
+                {
+                  "key": "def",
+                  "value": 22
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "当周围四格内没有其他友方单位时，攻击力和防御力各+16%<span class=\"potential\">（+2%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 36
+                },
+                {
+                  "key": "def",
+                  "value": 25
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "当周围四格内没有其他友方单位时，攻击力和防御力各+16%",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            },
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "atk",
+                  "value": 36
+                },
+                {
+                  "key": "def",
+                  "value": 25
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 4,
+              "talentEffect": "当周围四格内没有其他友方单位时，攻击力和防御力各+18%<span class=\"potential\">（+2%）</span>",
+              "talentIndex": 0,
+              "traitEffect": "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％",
+              "traitEffectType": "override"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_4014_lunacu": [
+    {
+      "moduleId": "uniequip_002_lunacu",
+      "moduleIcon": "dea-y",
+      "moduleName": "“移动的窝”",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 120
+                },
+                {
+                  "key": "atk",
+                  "value": 55
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 145
+                },
+                {
+                  "key": "atk",
+                  "value": 63
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "未开启技能时，获得<span class=\"skill-tooltip\">迷彩</span>，开启技能后攻击间隔小幅度缩短",
+              "talentIndex": 0,
+              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 160
+                },
+                {
+                  "key": "atk",
+                  "value": 68
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "未开启技能时，获得<span class=\"skill-tooltip\">迷彩</span>，开启技能后攻击间隔缩短",
+              "talentIndex": 0,
+              "traitEffect": "攻击的敌人未被击倒时自身额外获得<span class=\"keyword\">1</span>点技力",
+              "traitEffectType": "update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "char_1028_texas2": [
+    {
+      "moduleId": "uniequip_002_texas2",
+      "moduleIcon": "exe-y",
+      "moduleName": "蓝莓与黑巧",
+      "phases": [
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 140
+                },
+                {
+                  "key": "atk",
+                  "value": 40
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": null,
+              "talentIndex": -1,
+              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 160
+                },
+                {
+                  "key": "atk",
+                  "value": 53
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "被动技能持续时间内攻击力+25%，首次击倒敌人时回复所有生命并重新释放被动技能",
+              "talentIndex": 0,
+              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
+              "traitEffectType": "update"
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "attributeBlackboard": [
+                {
+                  "key": "max_hp",
+                  "value": 180
+                },
+                {
+                  "key": "atk",
+                  "value": 65
+                }
+              ],
+              "displayRange": false,
+              "range": null,
+              "requiredPotentialRank": 0,
+              "talentEffect": "被动技能持续时间内攻击力+28%，首次击倒敌人时回复所有生命并重新释放被动技能",
+              "talentIndex": 0,
+              "traitEffect": "周围四格没有友方干员时攻击力<span class=\"keyword\">+10%</span>",
               "traitEffectType": "update"
             }
           ]

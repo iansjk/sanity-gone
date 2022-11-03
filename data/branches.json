@@ -20,6 +20,7 @@
     "class": "Medic"
   },
   "crusher": {
+    "branchName": "Crusher",
     "trait": "Attack <span class=\"keyword\">multiple enemies</span> equal to block count",
     "class": "Guard"
   },

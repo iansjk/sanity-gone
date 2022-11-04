@@ -458,8 +458,8 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
         <Tab.List as={ScrollContainer} className={classes.tabButtons}>
           {[
             ...["Introduction"],
-            ...(shouldShowModules ? ["Modules"] : []),
             ...["Talents", "Skills"],
+            ...(shouldShowModules ? ["Modules"] : []),
             ...(synergies.length > 0 ? ["Synergy"] : []),
           ].map((label) => (
             <Tab as={Fragment} key={label}>
@@ -485,25 +485,6 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 className: "introduction",
               },
             ],
-            ...(shouldShowModules
-              ? [
-                  {
-                    component: (
-                      <Modules
-                        operatorName={operatorObject.name}
-                        modules={modules}
-                        moduleAnalyses={
-                          [module1Analysis, module2Analysis].filter((x) =>
-                            Boolean(x)
-                          ) as MDXRemoteSerializeResult[]
-                        }
-                        {...cardProps}
-                      />
-                    ),
-                    className: "modules",
-                  },
-                ]
-              : []),
             ...[
               {
                 component: (
@@ -580,6 +561,25 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
                 className: "skills",
               },
             ],
+            ...(shouldShowModules
+              ? [
+                  {
+                    component: (
+                      <Modules
+                        operatorName={operatorObject.name}
+                        modules={modules}
+                        moduleAnalyses={
+                          [module1Analysis, module2Analysis].filter((x) =>
+                            Boolean(x)
+                          ) as MDXRemoteSerializeResult[]
+                        }
+                        {...cardProps}
+                      />
+                    ),
+                    className: "modules",
+                  },
+                ]
+              : []),
             ...(synergies.length > 0
               ? [
                   {

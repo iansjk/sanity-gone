@@ -51,6 +51,7 @@ export const limitedWrapper = style({
   lineHeight: 1,
   display: "flex",
   justifyContent: "center",
+  zIndex: 1,
 });
 
 export const limitedText = style({

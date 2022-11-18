@@ -9,7 +9,7 @@ const instance = axios.create({
     Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN!}`,
     "Content-Type": "application/json; charset=utf-8",
   },
-  timeout: 1000,
+  timeout: 5000,
 });
 
 export async function fetchContentfulGraphQl<T = unknown>(

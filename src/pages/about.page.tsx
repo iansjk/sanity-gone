@@ -125,7 +125,7 @@ const memberGroups: {
       },
       {
         name: "Noël",
-        role: "Advisor",
+        role: "Founder, Advisor",
         imageFilename: "noel.png",
       },
       {

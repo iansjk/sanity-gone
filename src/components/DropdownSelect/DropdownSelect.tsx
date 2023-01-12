@@ -15,7 +15,7 @@ export const DropdownOption = <T,>(
 
 type Props<T> = React.PropsWithChildren<{
   buttonContent: React.ReactNode;
-  value: T;
+  value: T | null | undefined;
   onChange: (newValue: T) => void;
   classes?: {
     button?: string;
@@ -60,7 +60,7 @@ const DropdownSelectInner = <T,>(
   return (
     <Listbox<"div", T>
       as="div"
-      value={value}
+      value={value != null ? value : undefined}
       onChange={onChange}
       disabled={disabled}
     >

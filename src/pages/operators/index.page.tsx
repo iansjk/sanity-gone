@@ -250,6 +250,12 @@ const Operators: React.VFC<Props> = (props) => {
     setShowOnlyGuideAvailable(e.target.checked);
   };
 
+  const handleClassChange = (newValue: string) => {
+    if (selectedProfession === newValue) return;
+    setSelectedProfession(newValue);
+    setSelectedSubProfessionId(null);
+  };
+
   const handleSubclassFilter = useCallback(
     (profession: string, subProfessionId: string) => {
       setSelectedProfession(profession);
@@ -305,7 +311,7 @@ const Operators: React.VFC<Props> = (props) => {
           )
         }
         value={selectedProfession}
-        onChange={(newValue) => setSelectedProfession(newValue)}
+        onChange={handleClassChange}
         classes={{
           button: classes.sortAndFilterButton,
         }}

@@ -1,14 +1,4 @@
 {
-  "incantationmedic": {
-    "branchName": "Incantation",
-    "trait": "Attacks deal <span class=\"keyword\">Arts damage</span>. When attacking an enemy, heal a friendly operator within attack range for <span class=\"keyword\">50%</span> of the damage dealt.",
-    "class": "Medic"
-  },
-  "agent": {
-    "branchName": "Agent",
-    "trait": "再部署时间<span class=\"keyword\">减少</span>，可使用远程攻击",
-    "class": "Vanguard"
-  },
   "shotprotector": {
     "branchName": "Longstrike",
     "trait": "能够阻挡三个敌人，可以进行远程攻击",
@@ -283,5 +273,15 @@
     "branchName": "Dollkeeper",
     "trait": "Does not retreat upon receiving lethal damage, instead swaps to a &lt;Substitute&gt; (Substitute has 0 Block). Swaps back to the original after 20 seconds",
     "class": "Specialist"
+  },
+  "incantationmedic": {
+    "branchName": "Incantation",
+    "trait": "Attacks deal <span class=\"keyword\">Arts damage</span>. When attacking an enemy, heal a friendly operator within attack range for <span class=\"keyword\">50%</span> of the damage dealt.",
+    "class": "Medic"
+  },
+  "agent": {
+    "branchName": "Agent",
+    "trait": "Has <span class=\"keyword\">reduced</span> Redeployment Time, can use ranged attacks",
+    "class": "Vanguard"
   }
 }

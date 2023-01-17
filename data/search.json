@@ -508,7 +508,7 @@
     "63": {
       "type": "operator",
       "charId": "char_4055_bgsnow",
-      "name": "Pozëmka",
+      "name": "Pozёmka",
       "class": "Sniper",
       "subclass": "Heavyshooter",
       "rarity": "6"
@@ -2497,6 +2497,15 @@
     }
   },
   "operatorsWithGuides": {
+    "Pozёmka": "pozyomka",
+    "Perfumer": "perfumer",
+    "Sussurro": "sussurro",
+    "Myrrh": "myrrh",
+    "Minimalist": "minimalist",
+    "Hibiscus the Purifier": "hibiscus-the-purifier",
+    "Gavial": "gavial",
+    "Czerny": "czerny",
+    "Cantabile": "cantabile",
     "Archetto": "archetto",
     "Windflit": "windflit",
     "Irene": "irene",

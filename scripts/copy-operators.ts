@@ -21,6 +21,7 @@ fs.mkdirSync(dataDir, { recursive: true });
 const NAME_OVERRIDES: { [characterId: string]: string } = {
   char_376_therex: "Thermal-EX",
   char_1001_amiya2: "Amiya (Guard)",
+  char_4055_bgsnow: "Pozёmka",
 };
 
 void (async () => {

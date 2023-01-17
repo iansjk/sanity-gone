@@ -68,7 +68,7 @@ const OperatorInfo: React.VFC<OperatorInfoProps> = (props) => {
     description!
   );
   const isMobile = useMediaQuery(breakpoints.down("mobile"));
-  const [charName, alterName] = name.split(" the ");
+  const [charName, alterName] = name.split(/\sthe\s/i);
 
   return (
     <div className={classes.root}>

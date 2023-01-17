@@ -377,7 +377,7 @@ const OperatorAnalysis: React.VFC<Props> = (props) => {
   });
 
   const operatorName = operator.name;
-  const [baseChar, alterName] = operatorName.split(" the ");
+  const [baseChar, alterName] = operatorName.split(/\sthe\s/i);
   const shouldShowModules =
     modules && modules.length > 0 && (module1Analysis || module2Analysis);
   const talents = [talent1Analysis, talent2Analysis].filter((x) =>

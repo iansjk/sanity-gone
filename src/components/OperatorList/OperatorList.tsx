@@ -95,7 +95,7 @@ const OperatorList: React.VFC<Props> = React.memo((props) => {
       const subclass = subProfessionIdToSubclass(op.subProfessionId);
       const url = operatorsWithGuides[op.name];
       const hasGuide = url != null;
-      const [charName, alterName] = op.name.split(" the ");
+      const [charName, alterName] = op.name.split(/\sthe\s/i);
       const portraitFilename = getPortraitFilename(op.charId);
       const rarityClass = `rarity${op.rarity + 1}Star${
         op.rarity > 0 ? "s" : ""

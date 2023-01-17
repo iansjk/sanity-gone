@@ -14,6 +14,7 @@ import {
   SkillAtLevel,
 } from "./types";
 import { fixJetSkillDescriptionTags } from "./fix-jet-skill-descs";
+import { getReleaseOrderAndLimitedLookup } from "./scrape-prts";
 
 const dataDir = path.join(__dirname, "../data");
 fs.mkdirSync(dataDir, { recursive: true });
@@ -21,10 +22,13 @@ fs.mkdirSync(dataDir, { recursive: true });
 const NAME_OVERRIDES: { [characterId: string]: string } = {
   char_376_therex: "Thermal-EX",
   char_1001_amiya2: "Amiya (Guard)",
+  char_4055_bgsnow: "Pozёmka",
 };
 
 void (async () => {
   console.log("Updating operators and summons...");
+  const releaseOrderAndLimitedLookup = await getReleaseOrderAndLimitedLookup();
+
   const enCharacterIds = new Set(Object.keys(enCharacterTable));
   const cnOnlyCharacters = Object.entries(cnCharacterTable).filter(
     ([charId]) => !enCharacterIds.has(charId)
@@ -42,7 +46,7 @@ void (async () => {
       ([_, character]) =>
         character.profession !== "TRAP" && !character.isNotObtainable
     )
-    .map(([charId, character], i) => {
+    .map(([charId, character]) => {
       const isCnOnly = !enCharacterIds.has(charId);
       const characterName =
         NAME_OVERRIDES[charId] ??
@@ -164,7 +168,6 @@ void (async () => {
         subProfessionId,
         name: characterName,
         isCnOnly,
-        fileIndex: i,
       };
     });
 
@@ -175,11 +178,19 @@ void (async () => {
     denormalizedOperators
       .map(
         (character) =>
-          [character.name, character] as [string, DenormalizedCharacter]
+          [
+            character.name,
+            {
+              ...character,
+              ...releaseOrderAndLimitedLookup[character.cnName],
+            },
+          ] as [string, DenormalizedCharacter]
       )
       .sort(([_, charA], [__, charB]) => {
         // sort by descending rarity and descending fileIndex
-        return charB.rarity - charA.rarity || charB.fileIndex - charA.fileIndex;
+        return (
+          charB.rarity - charA.rarity || charB.releaseOrder - charA.releaseOrder
+        );
       })
   );
   fs.writeFileSync(

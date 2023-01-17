@@ -420,7 +420,6 @@
       ],
       "cnName": "医疗探机",
       "isCnOnly": false,
-      "fileIndex": 227,
       "operatorName": "Silence"
     }
   ],
@@ -848,7 +847,6 @@
       "skillData": [],
       "cnName": "触手",
       "isCnOnly": false,
-      "fileIndex": 228,
       "operatorName": "Deepcolor"
     }
   ],
@@ -1453,7 +1451,6 @@
       "skillData": [],
       "cnName": "Mon3tr",
       "isCnOnly": false,
-      "fileIndex": 229,
       "operatorName": "Kal'tsit"
     }
   ],
@@ -1819,7 +1816,7 @@
               },
               "requiredPotentialRank": 0,
               "prefabKey": "2",
-              "name": "Fleeting Phantom",
+              "name": null,
               "description": "75 RES; 30% Physical Dodge; Attracts enemy's attack more easily; Loses 3% Max HP per second",
               "rangeId": null,
               "blackboard": [
@@ -1891,7 +1888,6 @@
       "skillData": [],
       "cnName": "幻影",
       "isCnOnly": false,
-      "fileIndex": 230,
       "operatorName": "Nightingale"
     }
   ],
@@ -2219,7 +2215,7 @@
               },
               "requiredPotentialRank": 0,
               "prefabKey": "1",
-              "name": "Robotter - Operation",
+              "name": null,
               "description": "Reduces the ASPD of enemy attackers by 10",
               "rangeId": null,
               "blackboard": [
@@ -2241,7 +2237,7 @@
               },
               "requiredPotentialRank": 0,
               "prefabKey": "1",
-              "name": "Robotter - Improvement",
+              "name": null,
               "description": "Reduces the ASPD of enemy attackers by 25",
               "rangeId": null,
               "blackboard": [
@@ -2263,7 +2259,7 @@
               },
               "requiredPotentialRank": 0,
               "prefabKey": "1",
-              "name": "Robotter - Extension",
+              "name": null,
               "description": "Reduces the ASPD of enemy attackers by 25",
               "rangeId": null,
               "blackboard": [
@@ -3414,7 +3410,6 @@
       ],
       "cnName": "机械水獭",
       "isCnOnly": false,
-      "fileIndex": 231,
       "operatorName": "Mayer"
     }
   ],
@@ -4006,6 +4001,36 @@
                   "value": 22
                 }
               ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "10",
+              "name": null,
+              "description": null,
+              "rangeId": null,
+              "blackboard": [],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 4,
+              "prefabKey": "10",
+              "name": null,
+              "description": null,
+              "rangeId": null,
+              "blackboard": [],
               "range": null
             }
           ]
@@ -4653,7 +4678,6 @@
       ],
       "cnName": "龙腾.F",
       "isCnOnly": false,
-      "fileIndex": 232,
       "operatorName": "Magallan"
     },
     {
@@ -5147,6 +5171,36 @@
                   "value": 22
                 }
               ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "10",
+              "name": null,
+              "description": null,
+              "rangeId": null,
+              "blackboard": [],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 4,
+              "prefabKey": "10",
+              "name": null,
+              "description": null,
+              "rangeId": null,
+              "blackboard": [],
               "range": null
             }
           ]
@@ -5794,7 +5848,6 @@
       ],
       "cnName": "龙腾.L",
       "isCnOnly": false,
-      "fileIndex": 233,
       "operatorName": "Magallan"
     },
     {
@@ -6384,6 +6437,36 @@
                   "value": 22
                 }
               ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "10",
+              "name": null,
+              "description": null,
+              "rangeId": null,
+              "blackboard": [],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 4,
+              "prefabKey": "10",
+              "name": null,
+              "description": null,
+              "rangeId": null,
+              "blackboard": [],
               "range": null
             }
           ]
@@ -7031,7 +7114,6 @@
       ],
       "cnName": "龙腾.A",
       "isCnOnly": false,
-      "fileIndex": 234,
       "operatorName": "Magallan"
     }
   ],
@@ -7784,7 +7866,6 @@
       ],
       "cnName": "诅咒娃娃",
       "isCnOnly": false,
-      "fileIndex": 235,
       "operatorName": "Shamare"
     }
   ],
@@ -8159,7 +8240,7 @@
               },
               "requiredPotentialRank": 0,
               "prefabKey": "#",
-              "name": "Phantom in the Mirror",
+              "name": null,
               "description": "Can summon a clone with the same abilities as Phantom, but has its own redeployment time",
               "rangeId": null,
               "blackboard": [],
@@ -8172,7 +8253,7 @@
               },
               "requiredPotentialRank": 0,
               "prefabKey": "#",
-              "name": "Phantom in the Mirror",
+              "name": null,
               "description": "Can summon a clone with the same abilities as Phantom, but has its own redeployment time",
               "rangeId": null,
               "blackboard": [],
@@ -8189,7 +8270,7 @@
               },
               "requiredPotentialRank": 0,
               "prefabKey": "2",
-              "name": "Phantom Mastery",
+              "name": null,
               "description": "Redeployment time of clone is reduced by 10 seconds",
               "rangeId": null,
               "blackboard": [
@@ -9740,7 +9821,6 @@
       ],
       "cnName": "镜中虚影",
       "isCnOnly": false,
-      "fileIndex": 236,
       "operatorName": "Phantom"
     }
   ],
@@ -10455,7 +10535,6 @@
       ],
       "cnName": "此面向敌",
       "isCnOnly": false,
-      "fileIndex": 237,
       "operatorName": "W"
     }
   ],
@@ -11784,7 +11863,6 @@
       ],
       "cnName": "工程蓄水炮",
       "isCnOnly": false,
-      "fileIndex": 238,
       "operatorName": "Weedy"
     }
   ],
@@ -12135,6 +12213,10 @@
                 {
                   "key": "max_deck_stack_cnt",
                   "value": 3
+                },
+                {
+                  "key": "move_speed",
+                  "value": 1
                 }
               ],
               "range": {
@@ -12198,6 +12280,10 @@
                 {
                   "key": "max_deck_stack_cnt",
                   "value": 4
+                },
+                {
+                  "key": "move_speed",
+                  "value": 1
                 }
               ],
               "range": {
@@ -12261,6 +12347,10 @@
                 {
                   "key": "max_deck_stack_cnt",
                   "value": 5
+                },
+                {
+                  "key": "move_speed",
+                  "value": 1
                 }
               ],
               "range": {
@@ -13592,7 +13682,6 @@
       ],
       "cnName": "移动摄影器",
       "isCnOnly": false,
-      "fileIndex": 239,
       "operatorName": "Scene"
     }
   ],
@@ -14737,7 +14826,6 @@
       ],
       "cnName": "沙之碑",
       "isCnOnly": false,
-      "fileIndex": 240,
       "operatorName": "Beeswax"
     }
   ],
@@ -15671,7 +15759,6 @@
       ],
       "cnName": "迷迭香的战术装备",
       "isCnOnly": false,
-      "fileIndex": 241,
       "operatorName": "Rosmontis"
     }
   ],
@@ -16695,7 +16782,6 @@
       ],
       "cnName": "\"夹子\"",
       "isCnOnly": false,
-      "fileIndex": 242,
       "operatorName": "Robin"
     }
   ],
@@ -17097,7 +17183,6 @@
       "skillData": [],
       "cnName": "磐蟹护卫队",
       "isCnOnly": false,
-      "fileIndex": 243,
       "operatorName": "Beanstalk"
     }
   ],
@@ -17684,7 +17769,6 @@
       "skillData": [],
       "cnName": "\"小自在\"",
       "isCnOnly": false,
-      "fileIndex": 244,
       "operatorName": "Dusk"
     }
   ],
@@ -18708,7 +18792,6 @@
       ],
       "cnName": "迎宾踏垫",
       "isCnOnly": false,
-      "fileIndex": 245,
       "operatorName": "Frost"
     }
   ],
@@ -20477,7 +20560,6 @@
       ],
       "cnName": "斯卡蒂的海嗣",
       "isCnOnly": false,
-      "fileIndex": 246,
       "operatorName": "Skadi the Corrupting Heart"
     }
   ],
@@ -20991,7 +21073,6 @@
       ],
       "cnName": "全自动造型仪",
       "isCnOnly": false,
-      "fileIndex": 247,
       "operatorName": "Roberta"
     }
   ],
@@ -22006,7 +22087,6 @@
       ],
       "cnName": "“耀阳”",
       "isCnOnly": false,
-      "fileIndex": 248,
       "operatorName": "Nearl the Radiant Knight"
     }
   ],
@@ -23085,7 +23165,6 @@
       ],
       "cnName": "“清平”",
       "isCnOnly": false,
-      "fileIndex": 249,
       "operatorName": "Ling"
     },
     {
@@ -24545,7 +24624,6 @@
       ],
       "cnName": "“逍遥”",
       "isCnOnly": false,
-      "fileIndex": 250,
       "operatorName": "Ling"
     },
     {
@@ -26389,7 +26467,6 @@
       ],
       "cnName": "“弦惊”",
       "isCnOnly": false,
-      "fileIndex": 251,
       "operatorName": "Ling"
     }
   ],
@@ -26892,7 +26969,6 @@
       ],
       "cnName": "眠兽",
       "isCnOnly": false,
-      "fileIndex": 252,
       "operatorName": "Blacknight"
     }
   ],
@@ -27525,7 +27601,6 @@
       "skillData": [],
       "cnName": "纸偶",
       "isCnOnly": false,
-      "fileIndex": 253,
       "operatorName": "Kazemaru"
     }
   ],
@@ -28758,24 +28833,21 @@
       ],
       "cnName": "可靠电池",
       "isCnOnly": false,
-      "fileIndex": 254,
       "operatorName": "Windflit"
     }
   ],
   "Ebenholz": [
     {
-      "name": "Old Day Remnants",
+      "name": "Remnants of Days Past",
       "description": null,
       "canUseGeneralPotentialItem": true,
-      "canUseActivityPotentialItem": false,
-      "potentialItemId": null,
-      "activityPotentialItemId": null,
+      "potentialItemId": "",
       "nationId": null,
       "groupId": null,
       "teamId": null,
       "displayNumber": null,
       "tokenKey": null,
-      "appellation": "Old Day Remnants",
+      "appellation": " ",
       "position": "ALL",
       "tagList": null,
       "itemUsage": null,
@@ -29191,9 +29263,9 @@
           "hidden": false,
           "levels": [
             {
-              "name": "闪回",
+              "name": "Flashback",
               "rangeId": null,
-              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "description": "Activates when enemies approach. On activation, deals Arts damage to all nearby enemies and drags them towards itself <@ba.vup>moderately</>",
               "skillType": 2,
               "durationType": 0,
               "spData": {
@@ -29219,9 +29291,9 @@
               "range": null
             },
             {
-              "name": "闪回",
+              "name": "Flashback",
               "rangeId": null,
-              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "description": "Activates when enemies approach. On activation, deals Arts damage to all nearby enemies and drags them towards itself <@ba.vup>moderately</>",
               "skillType": 2,
               "durationType": 0,
               "spData": {
@@ -29247,9 +29319,9 @@
               "range": null
             },
             {
-              "name": "闪回",
+              "name": "Flashback",
               "rangeId": null,
-              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "description": "Activates when enemies approach. On activation, deals Arts damage to all nearby enemies and drags them towards itself <@ba.vup>moderately</>",
               "skillType": 2,
               "durationType": 0,
               "spData": {
@@ -29275,9 +29347,9 @@
               "range": null
             },
             {
-              "name": "闪回",
+              "name": "Flashback",
               "rangeId": null,
-              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "description": "Activates when enemies approach. On activation, deals Arts damage to all nearby enemies and drags them towards itself <@ba.vup>moderately</>",
               "skillType": 2,
               "durationType": 0,
               "spData": {
@@ -29303,9 +29375,9 @@
               "range": null
             },
             {
-              "name": "闪回",
+              "name": "Flashback",
               "rangeId": null,
-              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "description": "Activates when enemies approach. On activation, deals Arts damage to all nearby enemies and drags them towards itself <@ba.vup>moderately</>",
               "skillType": 2,
               "durationType": 0,
               "spData": {
@@ -29331,9 +29403,9 @@
               "range": null
             },
             {
-              "name": "闪回",
+              "name": "Flashback",
               "rangeId": null,
-              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "description": "Activates when enemies approach. On activation, deals Arts damage to all nearby enemies and drags them towards itself <@ba.vup>moderately</>",
               "skillType": 2,
               "durationType": 0,
               "spData": {
@@ -29359,9 +29431,9 @@
               "range": null
             },
             {
-              "name": "闪回",
+              "name": "Flashback",
               "rangeId": null,
-              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "description": "Activates when enemies approach. On activation, deals Arts damage to all nearby enemies and drags them towards itself <@ba.vup>moderately</>",
               "skillType": 2,
               "durationType": 0,
               "spData": {
@@ -29387,9 +29459,9 @@
               "range": null
             },
             {
-              "name": "闪回",
+              "name": "Flashback",
               "rangeId": null,
-              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "description": "Activates when enemies approach. On activation, deals Arts damage to all nearby enemies and drags them towards itself <@ba.vup>moderately</>",
               "skillType": 2,
               "durationType": 0,
               "spData": {
@@ -29415,9 +29487,9 @@
               "range": null
             },
             {
-              "name": "闪回",
+              "name": "Flashback",
               "rangeId": null,
-              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "description": "Activates when enemies approach. On activation, deals Arts damage to all nearby enemies and drags them towards itself <@ba.vup>moderately</>",
               "skillType": 2,
               "durationType": 0,
               "spData": {
@@ -29443,9 +29515,9 @@
               "range": null
             },
             {
-              "name": "闪回",
+              "name": "Flashback",
               "rangeId": null,
-              "description": "敌人接近时会激活，激活后对周围所有敌人造成法术伤害并令以<@ba.vup>中等力度</>拖拽敌人至自身中心",
+              "description": "Activates when enemies approach. On activation, deals Arts damage to all nearby enemies and drags them towards itself <@ba.vup>moderately</>",
               "skillType": 2,
               "durationType": 0,
               "spData": {
@@ -29474,9 +29546,1769 @@
         }
       ],
       "cnName": "旧日残影",
-      "isCnOnly": true,
-      "fileIndex": 288,
+      "isCnOnly": false,
       "operatorName": "Ebenholz"
+    }
+  ],
+  "Pozёmka": [
+    {
+      "name": "'Typewriter'",
+      "description": null,
+      "canUseGeneralPotentialItem": true,
+      "potentialItemId": "",
+      "nationId": null,
+      "groupId": null,
+      "teamId": null,
+      "displayNumber": null,
+      "tokenKey": null,
+      "appellation": " ",
+      "position": "RANGED",
+      "tagList": null,
+      "itemUsage": null,
+      "itemDesc": null,
+      "itemObtainApproach": null,
+      "isNotObtainable": false,
+      "isSpChar": false,
+      "maxPotentialLevel": 0,
+      "rarity": 5,
+      "profession": "TOKEN",
+      "subProfessionId": "notchar1",
+      "trait": null,
+      "phases": [
+        {
+          "characterPrefabKey": "token_10026_bgsnow_subbow",
+          "rangeId": "3-2",
+          "maxLevel": 50,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 500,
+                "atk": 369,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 50,
+              "data": {
+                "maxHp": 500,
+                "atk": 506,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "3-2",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 2
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10026_bgsnow_subbow",
+          "rangeId": "3-2",
+          "maxLevel": 80,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 500,
+                "atk": 506,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 80,
+              "data": {
+                "maxHp": 500,
+                "atk": 666,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "3-2",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 2
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10026_bgsnow_subbow",
+          "rangeId": "3-2",
+          "maxLevel": 90,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 500,
+                "atk": 666,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 90,
+              "data": {
+                "maxHp": 500,
+                "atk": 866,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 5,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1.6,
+                "respawnTime": 40,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 1,
+                "maxDeckStackCnt": 0,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "3-2",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              },
+              {
+                "row": 0,
+                "col": 1
+              },
+              {
+                "row": 0,
+                "col": 2
+              },
+              {
+                "row": 0,
+                "col": 3
+              }
+            ]
+          }
+        }
+      ],
+      "skills": [
+        {
+          "skillId": "sktok_bgsnow_1",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          }
+        },
+        {
+          "skillId": "sktok_bgsnow_2",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          }
+        },
+        {
+          "skillId": "sktok_bgsnow_3",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 2,
+            "level": 1
+          }
+        }
+      ],
+      "talents": [
+        {
+          "candidates": [
+            {
+              "unlockCondition": {
+                "phase": 0,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "interval",
+                  "value": 15
+                }
+              ],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 1,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "interval",
+                  "value": 20
+                }
+              ],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "1",
+              "name": null,
+              "description": "-",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "interval",
+                  "value": 25
+                }
+              ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "candidates": [
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 0,
+              "prefabKey": "2",
+              "name": "Stenographer of Weaknesses",
+              "description": "Attacks from the 'Typewriter' reduce the target's DEF by 18% for 4 seconds; if the 'Typewriter' is placed within the 4 tiles adjacent to Pozëmka, this effect increases to 23%",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "duration",
+                  "value": 4
+                },
+                {
+                  "key": "bgsnow_token[def_down]_1.def",
+                  "value": -0.18
+                },
+                {
+                  "key": "bgsnow_token[def_down]_2.def",
+                  "value": -0.23
+                }
+              ],
+              "range": null
+            },
+            {
+              "unlockCondition": {
+                "phase": 2,
+                "level": 1
+              },
+              "requiredPotentialRank": 4,
+              "prefabKey": "2",
+              "name": "Stenographer of Weaknesses",
+              "description": "Attacks from the 'Typewriter' reduce the target's DEF by 20% <@ba.talpu>(+2%)</> for 5 <@ba.talpu>(+1)</> seconds; if the 'Typewriter' is placed within the 4 tiles adjacent to Pozëmka, this effect increases to <@ba.talpu>25% (+2%)</>",
+              "rangeId": null,
+              "blackboard": [
+                {
+                  "key": "duration",
+                  "value": 5
+                },
+                {
+                  "key": "bgsnow_token[def_down]_1.def",
+                  "value": -0.2
+                },
+                {
+                  "key": "bgsnow_token[def_down]_2.def",
+                  "value": -0.25
+                }
+              ],
+              "range": null
+            }
+          ]
+        }
+      ],
+      "potentialRanks": [],
+      "favorKeyFrames": [
+        {
+          "level": 0,
+          "data": {
+            "maxHp": 0,
+            "atk": 0,
+            "def": 0,
+            "magicResistance": 0,
+            "cost": 0,
+            "blockCnt": 0,
+            "moveSpeed": 0,
+            "attackSpeed": 0,
+            "baseAttackTime": 0,
+            "respawnTime": 0,
+            "hpRecoveryPerSec": 0,
+            "spRecoveryPerSec": 0,
+            "maxDeployCount": 0,
+            "maxDeckStackCnt": 0,
+            "tauntLevel": 0,
+            "massLevel": 0,
+            "baseForceLevel": 0,
+            "stunImmune": false,
+            "silenceImmune": false,
+            "sleepImmune": false,
+            "frozenImmune": false,
+            "levitateImmune": false
+          }
+        },
+        {
+          "level": 50,
+          "data": {
+            "maxHp": 0,
+            "atk": 0,
+            "def": 0,
+            "magicResistance": 0,
+            "cost": 0,
+            "blockCnt": 0,
+            "moveSpeed": 0,
+            "attackSpeed": 0,
+            "baseAttackTime": 0,
+            "respawnTime": 0,
+            "hpRecoveryPerSec": 0,
+            "spRecoveryPerSec": 0,
+            "maxDeployCount": 0,
+            "maxDeckStackCnt": 0,
+            "tauntLevel": 0,
+            "massLevel": 0,
+            "baseForceLevel": 0,
+            "stunImmune": false,
+            "silenceImmune": false,
+            "sleepImmune": false,
+            "frozenImmune": false,
+            "levitateImmune": false
+          }
+        }
+      ],
+      "allSkillLvlup": [
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        }
+      ],
+      "charId": "token_10026_bgsnow_subbow",
+      "skillData": [
+        {
+          "skillId": "sktok_bgsnow_1",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "Iamb",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.2
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.3
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Iamb",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.25
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.35
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Iamb",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.3
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.4
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Iamb",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.35
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.45
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Iamb",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.4
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Iamb",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.45
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.55
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Iamb",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.5
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.6
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Iamb",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.53
+                },
+                {
+                  "key": "prob",
+                  "value": 0.3
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 1.85
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Iamb",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.56
+                },
+                {
+                  "key": "prob",
+                  "value": 0.4
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Iamb",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk",
+                  "value": 0.6
+                },
+                {
+                  "key": "prob",
+                  "value": 0.4
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.25
+                }
+              ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "skillId": "sktok_bgsnow_2",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "Précis",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.6
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.7
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Précis",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.65
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.7
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Précis",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.7
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.7
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Précis",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.8
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.65
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Précis",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.85
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.65
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Précis",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 1.9
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.65
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Précis",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.6
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Précis",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2.1
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.6
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Précis",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2.2
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.6
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Précis",
+              "rangeId": null,
+              "description": null,
+              "skillType": 1,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "atk_scale",
+                  "value": 2.3
+                },
+                {
+                  "key": "respawn_time",
+                  "value": 0.5
+                }
+              ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "skillId": "sktok_bgsnow_3",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "Opprobrium",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 15,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 1.55
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Opprobrium",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 15,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 1.65
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Opprobrium",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 15,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 1.75
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Opprobrium",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 16,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 1.85
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Opprobrium",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 16,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 1.95
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Opprobrium",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 16,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 2.05
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Opprobrium",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 17,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 2.15
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Opprobrium",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 18,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 2.3
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Opprobrium",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 19,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 2.4
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Opprobrium",
+              "rangeId": "4-1",
+              "description": null,
+              "skillType": 1,
+              "durationType": 2,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 0
+              },
+              "prefabId": "sktok_bgsnow_3",
+              "duration": 20,
+              "blackboard": [
+                {
+                  "key": "attack@atk_scale",
+                  "value": 2.55
+                },
+                {
+                  "key": "base_attack_time",
+                  "value": -0.6
+                }
+              ],
+              "range": {
+                "id": "4-1",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": 0,
+                    "col": 3
+                  },
+                  {
+                    "row": 0,
+                    "col": 4
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "cnName": "“打字机”",
+      "isCnOnly": false,
+      "operatorName": "Pozёmka"
     }
   ],
   "Dorothy": [
@@ -31433,1772 +33265,7 @@
       ],
       "cnName": "共振装置",
       "isCnOnly": true,
-      "fileIndex": 289,
       "operatorName": "Dorothy"
-    }
-  ],
-  "Позёмка": [
-    {
-      "name": "Typewriters",
-      "description": null,
-      "canUseGeneralPotentialItem": true,
-      "canUseActivityPotentialItem": false,
-      "potentialItemId": null,
-      "activityPotentialItemId": null,
-      "nationId": null,
-      "groupId": null,
-      "teamId": null,
-      "displayNumber": null,
-      "tokenKey": null,
-      "appellation": "Typewriters",
-      "position": "RANGED",
-      "tagList": null,
-      "itemUsage": null,
-      "itemDesc": null,
-      "itemObtainApproach": null,
-      "isNotObtainable": false,
-      "isSpChar": false,
-      "maxPotentialLevel": 0,
-      "rarity": 5,
-      "profession": "TOKEN",
-      "subProfessionId": "notchar1",
-      "trait": null,
-      "phases": [
-        {
-          "characterPrefabKey": "token_10026_bgsnow_subbow",
-          "rangeId": "3-2",
-          "maxLevel": 50,
-          "attributesKeyFrames": [
-            {
-              "level": 1,
-              "data": {
-                "maxHp": 500,
-                "atk": 369,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 5,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1.6,
-                "respawnTime": 40,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 1,
-                "maxDeckStackCnt": 0,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            },
-            {
-              "level": 50,
-              "data": {
-                "maxHp": 500,
-                "atk": 506,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 5,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1.6,
-                "respawnTime": 40,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 1,
-                "maxDeckStackCnt": 0,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            }
-          ],
-          "evolveCost": null,
-          "range": {
-            "id": "3-2",
-            "direction": 1,
-            "grids": [
-              {
-                "row": 0,
-                "col": 0
-              },
-              {
-                "row": 0,
-                "col": 1
-              },
-              {
-                "row": 0,
-                "col": 2
-              },
-              {
-                "row": 0,
-                "col": 3
-              }
-            ]
-          }
-        },
-        {
-          "characterPrefabKey": "token_10026_bgsnow_subbow",
-          "rangeId": "3-2",
-          "maxLevel": 80,
-          "attributesKeyFrames": [
-            {
-              "level": 1,
-              "data": {
-                "maxHp": 500,
-                "atk": 506,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 5,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1.6,
-                "respawnTime": 40,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 1,
-                "maxDeckStackCnt": 0,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            },
-            {
-              "level": 80,
-              "data": {
-                "maxHp": 500,
-                "atk": 666,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 5,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1.6,
-                "respawnTime": 40,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 1,
-                "maxDeckStackCnt": 0,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            }
-          ],
-          "evolveCost": null,
-          "range": {
-            "id": "3-2",
-            "direction": 1,
-            "grids": [
-              {
-                "row": 0,
-                "col": 0
-              },
-              {
-                "row": 0,
-                "col": 1
-              },
-              {
-                "row": 0,
-                "col": 2
-              },
-              {
-                "row": 0,
-                "col": 3
-              }
-            ]
-          }
-        },
-        {
-          "characterPrefabKey": "token_10026_bgsnow_subbow",
-          "rangeId": "3-2",
-          "maxLevel": 90,
-          "attributesKeyFrames": [
-            {
-              "level": 1,
-              "data": {
-                "maxHp": 500,
-                "atk": 666,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 5,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1.6,
-                "respawnTime": 40,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 1,
-                "maxDeckStackCnt": 0,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            },
-            {
-              "level": 90,
-              "data": {
-                "maxHp": 500,
-                "atk": 866,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 5,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1.6,
-                "respawnTime": 40,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 1,
-                "maxDeckStackCnt": 0,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            }
-          ],
-          "evolveCost": null,
-          "range": {
-            "id": "3-2",
-            "direction": 1,
-            "grids": [
-              {
-                "row": 0,
-                "col": 0
-              },
-              {
-                "row": 0,
-                "col": 1
-              },
-              {
-                "row": 0,
-                "col": 2
-              },
-              {
-                "row": 0,
-                "col": 3
-              }
-            ]
-          }
-        }
-      ],
-      "skills": [
-        {
-          "skillId": "sktok_bgsnow_1",
-          "overridePrefabKey": null,
-          "overrideTokenKey": null,
-          "levelUpCostCond": [
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            }
-          ],
-          "unlockCond": {
-            "phase": 0,
-            "level": 1
-          }
-        },
-        {
-          "skillId": "sktok_bgsnow_2",
-          "overridePrefabKey": null,
-          "overrideTokenKey": null,
-          "levelUpCostCond": [
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            }
-          ],
-          "unlockCond": {
-            "phase": 1,
-            "level": 1
-          }
-        },
-        {
-          "skillId": "sktok_bgsnow_3",
-          "overridePrefabKey": null,
-          "overrideTokenKey": null,
-          "levelUpCostCond": [
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            }
-          ],
-          "unlockCond": {
-            "phase": 2,
-            "level": 1
-          }
-        }
-      ],
-      "talents": [
-        {
-          "candidates": [
-            {
-              "unlockCondition": {
-                "phase": 0,
-                "level": 1
-              },
-              "requiredPotentialRank": 0,
-              "prefabKey": "1",
-              "name": null,
-              "description": "-",
-              "rangeId": null,
-              "blackboard": [
-                {
-                  "key": "interval",
-                  "value": 15
-                }
-              ],
-              "range": null
-            },
-            {
-              "unlockCondition": {
-                "phase": 1,
-                "level": 1
-              },
-              "requiredPotentialRank": 0,
-              "prefabKey": "1",
-              "name": null,
-              "description": "-",
-              "rangeId": null,
-              "blackboard": [
-                {
-                  "key": "interval",
-                  "value": 20
-                }
-              ],
-              "range": null
-            },
-            {
-              "unlockCondition": {
-                "phase": 2,
-                "level": 1
-              },
-              "requiredPotentialRank": 0,
-              "prefabKey": "1",
-              "name": null,
-              "description": "-",
-              "rangeId": null,
-              "blackboard": [
-                {
-                  "key": "interval",
-                  "value": 25
-                }
-              ],
-              "range": null
-            }
-          ]
-        },
-        {
-          "candidates": [
-            {
-              "unlockCondition": {
-                "phase": 2,
-                "level": 1
-              },
-              "requiredPotentialRank": 0,
-              "prefabKey": "2",
-              "name": "弱点速记",
-              "description": "“打字机”的攻击会使命中目标的防御力下降18%，持续4秒；若“打字机”放在鸿雪周围四格则效果提升至23%",
-              "rangeId": null,
-              "blackboard": [
-                {
-                  "key": "duration",
-                  "value": 4
-                },
-                {
-                  "key": "bgsnow_token[def_down]_1.def",
-                  "value": -0.18
-                },
-                {
-                  "key": "bgsnow_token[def_down]_2.def",
-                  "value": -0.23
-                }
-              ],
-              "range": null
-            },
-            {
-              "unlockCondition": {
-                "phase": 2,
-                "level": 1
-              },
-              "requiredPotentialRank": 4,
-              "prefabKey": "2",
-              "name": "弱点速记",
-              "description": "“打字机”的攻击会使命中目标的防御力下降20%<@ba.talpu>（+2%）</>，持续5<@ba.talpu>（+1）</>秒；若“打字机”放在鸿雪周围四格则效果提升至25%<@ba.talpu>（+2%）</>",
-              "rangeId": null,
-              "blackboard": [
-                {
-                  "key": "duration",
-                  "value": 5
-                },
-                {
-                  "key": "bgsnow_token[def_down]_1.def",
-                  "value": -0.2
-                },
-                {
-                  "key": "bgsnow_token[def_down]_2.def",
-                  "value": -0.25
-                }
-              ],
-              "range": null
-            }
-          ]
-        }
-      ],
-      "potentialRanks": [],
-      "favorKeyFrames": [
-        {
-          "level": 0,
-          "data": {
-            "maxHp": 0,
-            "atk": 0,
-            "def": 0,
-            "magicResistance": 0,
-            "cost": 0,
-            "blockCnt": 0,
-            "moveSpeed": 0,
-            "attackSpeed": 0,
-            "baseAttackTime": 0,
-            "respawnTime": 0,
-            "hpRecoveryPerSec": 0,
-            "spRecoveryPerSec": 0,
-            "maxDeployCount": 0,
-            "maxDeckStackCnt": 0,
-            "tauntLevel": 0,
-            "massLevel": 0,
-            "baseForceLevel": 0,
-            "stunImmune": false,
-            "silenceImmune": false,
-            "sleepImmune": false,
-            "frozenImmune": false,
-            "levitateImmune": false
-          }
-        },
-        {
-          "level": 50,
-          "data": {
-            "maxHp": 0,
-            "atk": 0,
-            "def": 0,
-            "magicResistance": 0,
-            "cost": 0,
-            "blockCnt": 0,
-            "moveSpeed": 0,
-            "attackSpeed": 0,
-            "baseAttackTime": 0,
-            "respawnTime": 0,
-            "hpRecoveryPerSec": 0,
-            "spRecoveryPerSec": 0,
-            "maxDeployCount": 0,
-            "maxDeckStackCnt": 0,
-            "tauntLevel": 0,
-            "massLevel": 0,
-            "baseForceLevel": 0,
-            "stunImmune": false,
-            "silenceImmune": false,
-            "sleepImmune": false,
-            "frozenImmune": false,
-            "levitateImmune": false
-          }
-        }
-      ],
-      "allSkillLvlup": [
-        {
-          "unlockCond": {
-            "phase": 0,
-            "level": 1
-          },
-          "lvlUpCost": null
-        },
-        {
-          "unlockCond": {
-            "phase": 0,
-            "level": 1
-          },
-          "lvlUpCost": null
-        },
-        {
-          "unlockCond": {
-            "phase": 0,
-            "level": 1
-          },
-          "lvlUpCost": null
-        },
-        {
-          "unlockCond": {
-            "phase": 1,
-            "level": 1
-          },
-          "lvlUpCost": null
-        },
-        {
-          "unlockCond": {
-            "phase": 1,
-            "level": 1
-          },
-          "lvlUpCost": null
-        },
-        {
-          "unlockCond": {
-            "phase": 1,
-            "level": 1
-          },
-          "lvlUpCost": null
-        }
-      ],
-      "charId": "token_10026_bgsnow_subbow",
-      "skillData": [
-        {
-          "skillId": "sktok_bgsnow_1",
-          "iconId": null,
-          "hidden": false,
-          "levels": [
-            {
-              "name": "抑扬格",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk",
-                  "value": 0.2
-                },
-                {
-                  "key": "prob",
-                  "value": 0.3
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 1.3
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "抑扬格",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk",
-                  "value": 0.25
-                },
-                {
-                  "key": "prob",
-                  "value": 0.3
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 1.35
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "抑扬格",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk",
-                  "value": 0.3
-                },
-                {
-                  "key": "prob",
-                  "value": 0.3
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 1.4
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "抑扬格",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk",
-                  "value": 0.35
-                },
-                {
-                  "key": "prob",
-                  "value": 0.3
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 1.45
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "抑扬格",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk",
-                  "value": 0.4
-                },
-                {
-                  "key": "prob",
-                  "value": 0.3
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 1.5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "抑扬格",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk",
-                  "value": 0.45
-                },
-                {
-                  "key": "prob",
-                  "value": 0.3
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 1.55
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "抑扬格",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk",
-                  "value": 0.5
-                },
-                {
-                  "key": "prob",
-                  "value": 0.3
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 1.6
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "抑扬格",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk",
-                  "value": 0.53
-                },
-                {
-                  "key": "prob",
-                  "value": 0.3
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 1.85
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "抑扬格",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk",
-                  "value": 0.56
-                },
-                {
-                  "key": "prob",
-                  "value": 0.4
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "抑扬格",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk",
-                  "value": 0.6
-                },
-                {
-                  "key": "prob",
-                  "value": 0.4
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.25
-                }
-              ],
-              "range": null
-            }
-          ]
-        },
-        {
-          "skillId": "sktok_bgsnow_2",
-          "iconId": null,
-          "hidden": false,
-          "levels": [
-            {
-              "name": "点题",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk_scale",
-                  "value": 1.6
-                },
-                {
-                  "key": "respawn_time",
-                  "value": 0.7
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "点题",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk_scale",
-                  "value": 1.65
-                },
-                {
-                  "key": "respawn_time",
-                  "value": 0.7
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "点题",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk_scale",
-                  "value": 1.7
-                },
-                {
-                  "key": "respawn_time",
-                  "value": 0.7
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "点题",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk_scale",
-                  "value": 1.8
-                },
-                {
-                  "key": "respawn_time",
-                  "value": 0.65
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "点题",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk_scale",
-                  "value": 1.85
-                },
-                {
-                  "key": "respawn_time",
-                  "value": 0.65
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "点题",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk_scale",
-                  "value": 1.9
-                },
-                {
-                  "key": "respawn_time",
-                  "value": 0.65
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "点题",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk_scale",
-                  "value": 2
-                },
-                {
-                  "key": "respawn_time",
-                  "value": 0.6
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "点题",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk_scale",
-                  "value": 2.1
-                },
-                {
-                  "key": "respawn_time",
-                  "value": 0.6
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "点题",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk_scale",
-                  "value": 2.2
-                },
-                {
-                  "key": "respawn_time",
-                  "value": 0.6
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "点题",
-              "rangeId": null,
-              "description": null,
-              "skillType": 1,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "atk_scale",
-                  "value": 2.3
-                },
-                {
-                  "key": "respawn_time",
-                  "value": 0.5
-                }
-              ],
-              "range": null
-            }
-          ]
-        },
-        {
-          "skillId": "sktok_bgsnow_3",
-          "iconId": null,
-          "hidden": false,
-          "levels": [
-            {
-              "name": "锐笔速写",
-              "rangeId": "4-1",
-              "description": null,
-              "skillType": 1,
-              "durationType": 2,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_3",
-              "duration": 15,
-              "blackboard": [
-                {
-                  "key": "attack@atk_scale",
-                  "value": 1.55
-                },
-                {
-                  "key": "base_attack_time",
-                  "value": -0.6
-                }
-              ],
-              "range": {
-                "id": "4-1",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": 0,
-                    "col": 3
-                  },
-                  {
-                    "row": 0,
-                    "col": 4
-                  }
-                ]
-              }
-            },
-            {
-              "name": "锐笔速写",
-              "rangeId": "4-1",
-              "description": null,
-              "skillType": 1,
-              "durationType": 2,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_3",
-              "duration": 15,
-              "blackboard": [
-                {
-                  "key": "attack@atk_scale",
-                  "value": 1.65
-                },
-                {
-                  "key": "base_attack_time",
-                  "value": -0.6
-                }
-              ],
-              "range": {
-                "id": "4-1",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": 0,
-                    "col": 3
-                  },
-                  {
-                    "row": 0,
-                    "col": 4
-                  }
-                ]
-              }
-            },
-            {
-              "name": "锐笔速写",
-              "rangeId": "4-1",
-              "description": null,
-              "skillType": 1,
-              "durationType": 2,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_3",
-              "duration": 15,
-              "blackboard": [
-                {
-                  "key": "attack@atk_scale",
-                  "value": 1.75
-                },
-                {
-                  "key": "base_attack_time",
-                  "value": -0.6
-                }
-              ],
-              "range": {
-                "id": "4-1",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": 0,
-                    "col": 3
-                  },
-                  {
-                    "row": 0,
-                    "col": 4
-                  }
-                ]
-              }
-            },
-            {
-              "name": "锐笔速写",
-              "rangeId": "4-1",
-              "description": null,
-              "skillType": 1,
-              "durationType": 2,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_3",
-              "duration": 16,
-              "blackboard": [
-                {
-                  "key": "attack@atk_scale",
-                  "value": 1.85
-                },
-                {
-                  "key": "base_attack_time",
-                  "value": -0.6
-                }
-              ],
-              "range": {
-                "id": "4-1",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": 0,
-                    "col": 3
-                  },
-                  {
-                    "row": 0,
-                    "col": 4
-                  }
-                ]
-              }
-            },
-            {
-              "name": "锐笔速写",
-              "rangeId": "4-1",
-              "description": null,
-              "skillType": 1,
-              "durationType": 2,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_3",
-              "duration": 16,
-              "blackboard": [
-                {
-                  "key": "attack@atk_scale",
-                  "value": 1.95
-                },
-                {
-                  "key": "base_attack_time",
-                  "value": -0.6
-                }
-              ],
-              "range": {
-                "id": "4-1",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": 0,
-                    "col": 3
-                  },
-                  {
-                    "row": 0,
-                    "col": 4
-                  }
-                ]
-              }
-            },
-            {
-              "name": "锐笔速写",
-              "rangeId": "4-1",
-              "description": null,
-              "skillType": 1,
-              "durationType": 2,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_3",
-              "duration": 16,
-              "blackboard": [
-                {
-                  "key": "attack@atk_scale",
-                  "value": 2.05
-                },
-                {
-                  "key": "base_attack_time",
-                  "value": -0.6
-                }
-              ],
-              "range": {
-                "id": "4-1",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": 0,
-                    "col": 3
-                  },
-                  {
-                    "row": 0,
-                    "col": 4
-                  }
-                ]
-              }
-            },
-            {
-              "name": "锐笔速写",
-              "rangeId": "4-1",
-              "description": null,
-              "skillType": 1,
-              "durationType": 2,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_3",
-              "duration": 17,
-              "blackboard": [
-                {
-                  "key": "attack@atk_scale",
-                  "value": 2.15
-                },
-                {
-                  "key": "base_attack_time",
-                  "value": -0.6
-                }
-              ],
-              "range": {
-                "id": "4-1",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": 0,
-                    "col": 3
-                  },
-                  {
-                    "row": 0,
-                    "col": 4
-                  }
-                ]
-              }
-            },
-            {
-              "name": "锐笔速写",
-              "rangeId": "4-1",
-              "description": null,
-              "skillType": 1,
-              "durationType": 2,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_3",
-              "duration": 18,
-              "blackboard": [
-                {
-                  "key": "attack@atk_scale",
-                  "value": 2.3
-                },
-                {
-                  "key": "base_attack_time",
-                  "value": -0.6
-                }
-              ],
-              "range": {
-                "id": "4-1",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": 0,
-                    "col": 3
-                  },
-                  {
-                    "row": 0,
-                    "col": 4
-                  }
-                ]
-              }
-            },
-            {
-              "name": "锐笔速写",
-              "rangeId": "4-1",
-              "description": null,
-              "skillType": 1,
-              "durationType": 2,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_3",
-              "duration": 19,
-              "blackboard": [
-                {
-                  "key": "attack@atk_scale",
-                  "value": 2.4
-                },
-                {
-                  "key": "base_attack_time",
-                  "value": -0.6
-                }
-              ],
-              "range": {
-                "id": "4-1",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": 0,
-                    "col": 3
-                  },
-                  {
-                    "row": 0,
-                    "col": 4
-                  }
-                ]
-              }
-            },
-            {
-              "name": "锐笔速写",
-              "rangeId": "4-1",
-              "description": null,
-              "skillType": 1,
-              "durationType": 2,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 0
-              },
-              "prefabId": "sktok_bgsnow_3",
-              "duration": 20,
-              "blackboard": [
-                {
-                  "key": "attack@atk_scale",
-                  "value": 2.55
-                },
-                {
-                  "key": "base_attack_time",
-                  "value": -0.6
-                }
-              ],
-              "range": {
-                "id": "4-1",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": 0,
-                    "col": 3
-                  },
-                  {
-                    "row": 0,
-                    "col": 4
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ],
-      "cnName": "“打字机”",
-      "isCnOnly": true,
-      "fileIndex": 290,
-      "operatorName": "Позёмка"
     }
   ],
   "Stainless": [
@@ -34450,7 +34517,6 @@
       ],
       "cnName": "白铁™多功能平台",
       "isCnOnly": true,
-      "fileIndex": 291,
       "operatorName": "Stainless"
     },
     {
@@ -35843,7 +35909,6 @@
       ],
       "cnName": "白铁™多功能平台",
       "isCnOnly": true,
-      "fileIndex": 292,
       "operatorName": "Stainless"
     },
     {
@@ -38535,7 +38600,6 @@
       ],
       "cnName": "铁钳号·原型机",
       "isCnOnly": true,
-      "fileIndex": 293,
       "operatorName": "Stainless"
     }
   ],
@@ -39380,7 +39444,6 @@
       ],
       "cnName": "狼群",
       "isCnOnly": true,
-      "fileIndex": 294,
       "operatorName": "Vigil"
     }
   ],
@@ -39611,8 +39674,7 @@
         }
       ],
       "cnName": "猎潮的骑士",
-      "isCnOnly": true,
-      "fileIndex": 295
+      "isCnOnly": true
     }
   ]
 }

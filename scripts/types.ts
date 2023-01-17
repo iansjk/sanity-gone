@@ -71,7 +71,8 @@ export interface DenormalizedCharacter extends SharedProperties {
         }[];
       }[]
     | null;
-  fileIndex: number;
+  cnName: string;
+  releaseOrder: number;
 }
 
 export interface SearchResult {

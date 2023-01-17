@@ -420,7 +420,6 @@
       ],
       "cnName": "医疗探机",
       "isCnOnly": false,
-      "fileIndex": 235,
       "operatorName": "Silence"
     }
   ],
@@ -848,7 +847,6 @@
       "skillData": [],
       "cnName": "触手",
       "isCnOnly": false,
-      "fileIndex": 236,
       "operatorName": "Deepcolor"
     }
   ],
@@ -1453,7 +1451,6 @@
       "skillData": [],
       "cnName": "Mon3tr",
       "isCnOnly": false,
-      "fileIndex": 237,
       "operatorName": "Kal'tsit"
     }
   ],
@@ -1891,7 +1888,6 @@
       "skillData": [],
       "cnName": "幻影",
       "isCnOnly": false,
-      "fileIndex": 238,
       "operatorName": "Nightingale"
     }
   ],
@@ -3414,7 +3410,6 @@
       ],
       "cnName": "机械水獭",
       "isCnOnly": false,
-      "fileIndex": 239,
       "operatorName": "Mayer"
     }
   ],
@@ -4683,7 +4678,6 @@
       ],
       "cnName": "龙腾.F",
       "isCnOnly": false,
-      "fileIndex": 240,
       "operatorName": "Magallan"
     },
     {
@@ -5854,7 +5848,6 @@
       ],
       "cnName": "龙腾.L",
       "isCnOnly": false,
-      "fileIndex": 241,
       "operatorName": "Magallan"
     },
     {
@@ -7121,7 +7114,6 @@
       ],
       "cnName": "龙腾.A",
       "isCnOnly": false,
-      "fileIndex": 242,
       "operatorName": "Magallan"
     }
   ],
@@ -7874,7 +7866,6 @@
       ],
       "cnName": "诅咒娃娃",
       "isCnOnly": false,
-      "fileIndex": 243,
       "operatorName": "Shamare"
     }
   ],
@@ -9830,7 +9821,6 @@
       ],
       "cnName": "镜中虚影",
       "isCnOnly": false,
-      "fileIndex": 244,
       "operatorName": "Phantom"
     }
   ],
@@ -10545,7 +10535,6 @@
       ],
       "cnName": "此面向敌",
       "isCnOnly": false,
-      "fileIndex": 245,
       "operatorName": "W"
     }
   ],
@@ -11874,7 +11863,6 @@
       ],
       "cnName": "工程蓄水炮",
       "isCnOnly": false,
-      "fileIndex": 246,
       "operatorName": "Weedy"
     }
   ],
@@ -13694,7 +13682,6 @@
       ],
       "cnName": "移动摄影器",
       "isCnOnly": false,
-      "fileIndex": 247,
       "operatorName": "Scene"
     }
   ],
@@ -14839,7 +14826,6 @@
       ],
       "cnName": "沙之碑",
       "isCnOnly": false,
-      "fileIndex": 248,
       "operatorName": "Beeswax"
     }
   ],
@@ -15773,7 +15759,6 @@
       ],
       "cnName": "迷迭香的战术装备",
       "isCnOnly": false,
-      "fileIndex": 249,
       "operatorName": "Rosmontis"
     }
   ],
@@ -16797,7 +16782,6 @@
       ],
       "cnName": "\"夹子\"",
       "isCnOnly": false,
-      "fileIndex": 250,
       "operatorName": "Robin"
     }
   ],
@@ -17199,7 +17183,6 @@
       "skillData": [],
       "cnName": "磐蟹护卫队",
       "isCnOnly": false,
-      "fileIndex": 251,
       "operatorName": "Beanstalk"
     }
   ],
@@ -17786,7 +17769,6 @@
       "skillData": [],
       "cnName": "\"小自在\"",
       "isCnOnly": false,
-      "fileIndex": 252,
       "operatorName": "Dusk"
     }
   ],
@@ -18810,7 +18792,6 @@
       ],
       "cnName": "迎宾踏垫",
       "isCnOnly": false,
-      "fileIndex": 253,
       "operatorName": "Frost"
     }
   ],
@@ -20579,7 +20560,6 @@
       ],
       "cnName": "斯卡蒂的海嗣",
       "isCnOnly": false,
-      "fileIndex": 254,
       "operatorName": "Skadi the Corrupting Heart"
     }
   ],
@@ -21093,7 +21073,6 @@
       ],
       "cnName": "全自动造型仪",
       "isCnOnly": false,
-      "fileIndex": 255,
       "operatorName": "Roberta"
     }
   ],
@@ -22108,7 +22087,6 @@
       ],
       "cnName": "“耀阳”",
       "isCnOnly": false,
-      "fileIndex": 256,
       "operatorName": "Nearl the Radiant Knight"
     }
   ],
@@ -23187,7 +23165,6 @@
       ],
       "cnName": "“清平”",
       "isCnOnly": false,
-      "fileIndex": 257,
       "operatorName": "Ling"
     },
     {
@@ -24647,7 +24624,6 @@
       ],
       "cnName": "“逍遥”",
       "isCnOnly": false,
-      "fileIndex": 258,
       "operatorName": "Ling"
     },
     {
@@ -26491,7 +26467,6 @@
       ],
       "cnName": "“弦惊”",
       "isCnOnly": false,
-      "fileIndex": 259,
       "operatorName": "Ling"
     }
   ],
@@ -26994,7 +26969,6 @@
       ],
       "cnName": "眠兽",
       "isCnOnly": false,
-      "fileIndex": 260,
       "operatorName": "Blacknight"
     }
   ],
@@ -27627,7 +27601,6 @@
       "skillData": [],
       "cnName": "纸偶",
       "isCnOnly": false,
-      "fileIndex": 261,
       "operatorName": "Kazemaru"
     }
   ],
@@ -28860,7 +28833,6 @@
       ],
       "cnName": "可靠电池",
       "isCnOnly": false,
-      "fileIndex": 262,
       "operatorName": "Windflit"
     }
   ],
@@ -29575,7 +29547,6 @@
       ],
       "cnName": "旧日残影",
       "isCnOnly": false,
-      "fileIndex": 263,
       "operatorName": "Ebenholz"
     }
   ],
@@ -31337,7 +31308,6 @@
       ],
       "cnName": "“打字机”",
       "isCnOnly": false,
-      "fileIndex": 264,
       "operatorName": "Pozёmka"
     }
   ],
@@ -33295,7 +33265,6 @@
       ],
       "cnName": "共振装置",
       "isCnOnly": true,
-      "fileIndex": 293,
       "operatorName": "Dorothy"
     }
   ],
@@ -34548,7 +34517,6 @@
       ],
       "cnName": "白铁™多功能平台",
       "isCnOnly": true,
-      "fileIndex": 294,
       "operatorName": "Stainless"
     },
     {
@@ -35941,7 +35909,6 @@
       ],
       "cnName": "白铁™多功能平台",
       "isCnOnly": true,
-      "fileIndex": 295,
       "operatorName": "Stainless"
     },
     {
@@ -38633,7 +38600,6 @@
       ],
       "cnName": "铁钳号·原型机",
       "isCnOnly": true,
-      "fileIndex": 296,
       "operatorName": "Stainless"
     }
   ],
@@ -39478,7 +39444,6 @@
       ],
       "cnName": "狼群",
       "isCnOnly": true,
-      "fileIndex": 297,
       "operatorName": "Vigil"
     }
   ],
@@ -39709,8 +39674,7 @@
         }
       ],
       "cnName": "猎潮的骑士",
-      "isCnOnly": true,
-      "fileIndex": 298
+      "isCnOnly": true
     }
   ]
 }

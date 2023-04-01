@@ -29550,6 +29550,1961 @@
       "operatorName": "Ebenholz"
     }
   ],
+  "Dorothy": [
+    {
+      "name": "Resonator",
+      "description": null,
+      "canUseGeneralPotentialItem": true,
+      "potentialItemId": "",
+      "nationId": null,
+      "groupId": null,
+      "teamId": null,
+      "displayNumber": null,
+      "tokenKey": null,
+      "appellation": " ",
+      "position": "MELEE",
+      "tagList": null,
+      "itemUsage": null,
+      "itemDesc": null,
+      "itemObtainApproach": null,
+      "isNotObtainable": false,
+      "isSpChar": false,
+      "maxPotentialLevel": 0,
+      "rarity": 5,
+      "profession": "TOKEN",
+      "subProfessionId": "notchar1",
+      "trait": null,
+      "phases": [
+        {
+          "characterPrefabKey": "token_10025_doroth_recttp",
+          "rangeId": "0-1",
+          "maxLevel": 50,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 6,
+                "maxDeckStackCnt": 5,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 50,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 6,
+                "maxDeckStackCnt": 5,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "0-1",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10025_doroth_recttp",
+          "rangeId": "0-1",
+          "maxLevel": 80,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 8,
+                "maxDeckStackCnt": 7,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 80,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 8,
+                "maxDeckStackCnt": 7,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "0-1",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              }
+            ]
+          }
+        },
+        {
+          "characterPrefabKey": "token_10025_doroth_recttp",
+          "rangeId": "0-1",
+          "maxLevel": 90,
+          "attributesKeyFrames": [
+            {
+              "level": 1,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 10,
+                "maxDeckStackCnt": 9,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            },
+            {
+              "level": 90,
+              "data": {
+                "maxHp": 1000,
+                "atk": 100,
+                "def": 0,
+                "magicResistance": 0,
+                "cost": 3,
+                "blockCnt": 0,
+                "moveSpeed": 1,
+                "attackSpeed": 100,
+                "baseAttackTime": 1,
+                "respawnTime": 5,
+                "hpRecoveryPerSec": 0,
+                "spRecoveryPerSec": 1,
+                "maxDeployCount": 10,
+                "maxDeckStackCnt": 9,
+                "tauntLevel": 0,
+                "massLevel": 0,
+                "baseForceLevel": 0,
+                "stunImmune": false,
+                "silenceImmune": false,
+                "sleepImmune": false,
+                "frozenImmune": false,
+                "levitateImmune": false
+              }
+            }
+          ],
+          "evolveCost": null,
+          "range": {
+            "id": "0-1",
+            "direction": 1,
+            "grids": [
+              {
+                "row": 0,
+                "col": 0
+              }
+            ]
+          }
+        }
+      ],
+      "skills": [
+        {
+          "skillId": "sktok_doroth_1",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          }
+        },
+        {
+          "skillId": "sktok_doroth_2",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          }
+        },
+        {
+          "skillId": "sktok_doroth_3",
+          "overridePrefabKey": null,
+          "overrideTokenKey": null,
+          "levelUpCostCond": [
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            },
+            {
+              "unlockCond": {
+                "phase": 2,
+                "level": 1
+              },
+              "lvlUpTime": 0,
+              "levelUpCost": null
+            }
+          ],
+          "unlockCond": {
+            "phase": 2,
+            "level": 1
+          }
+        }
+      ],
+      "talents": [],
+      "potentialRanks": [],
+      "favorKeyFrames": null,
+      "allSkillLvlup": [
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 0,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        },
+        {
+          "unlockCond": {
+            "phase": 1,
+            "level": 1
+          },
+          "lvlUpCost": null
+        }
+      ],
+      "charId": "token_10025_doroth_recttp",
+      "skillData": [
+        {
+          "skillId": "sktok_doroth_1",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "Dangerous Entity Removal",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and inflicts <@ba.vup>-{-def:0%}</> DEF to the target for <@ba.vup>{duration}</> seconds",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Dangerous Entity Removal",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and inflicts <@ba.vup>-{-def:0%}</> DEF to the target for <@ba.vup>{duration}</> seconds",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.1
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Dangerous Entity Removal",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and inflicts <@ba.vup>-{-def:0%}</> DEF to the target for <@ba.vup>{duration}</> seconds",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.2
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Dangerous Entity Removal",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and inflicts <@ba.vup>-{-def:0%}</> DEF to the target for <@ba.vup>{duration}</> seconds",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.3
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Dangerous Entity Removal",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and inflicts <@ba.vup>-{-def:0%}</> DEF to the target for <@ba.vup>{duration}</> seconds",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.5
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Dangerous Entity Removal",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and inflicts <@ba.vup>-{-def:0%}</> DEF to the target for <@ba.vup>{duration}</> seconds",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.6
+                },
+                {
+                  "key": "def",
+                  "value": -0.25
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Dangerous Entity Removal",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and inflicts <@ba.vup>-{-def:0%}</> DEF to the target for <@ba.vup>{duration}</> seconds",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.7
+                },
+                {
+                  "key": "def",
+                  "value": -0.3
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Dangerous Entity Removal",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and inflicts <@ba.vup>-{-def:0%}</> DEF to the target for <@ba.vup>{duration}</> seconds",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.9
+                },
+                {
+                  "key": "def",
+                  "value": -0.32
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Dangerous Entity Removal",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and inflicts <@ba.vup>-{-def:0%}</> DEF to the target for <@ba.vup>{duration}</> seconds",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 4.2
+                },
+                {
+                  "key": "def",
+                  "value": -0.33
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Dangerous Entity Removal",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage and inflicts <@ba.vup>-{-def:0%}</> DEF to the target for <@ba.vup>{duration}</> seconds",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_1",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 4.5
+                },
+                {
+                  "key": "def",
+                  "value": -0.35
+                },
+                {
+                  "key": "duration",
+                  "value": 5
+                }
+              ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "skillId": "sktok_doroth_2",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "Quicksand Generation",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies and <$ba.root>Binds</> them for <@ba.vup>{duration}</> seconds. If the trap hits only <@ba.vup>1</> target, <$ba.root>Binds</> them for <@ba.vup>{duration_2}</> seconds instead",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Quicksand Generation",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies and <$ba.root>Binds</> them for <@ba.vup>{duration}</> seconds. If the trap hits only <@ba.vup>1</> target, <$ba.root>Binds</> them for <@ba.vup>{duration_2}</> seconds instead",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.1
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Quicksand Generation",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies and <$ba.root>Binds</> them for <@ba.vup>{duration}</> seconds. If the trap hits only <@ba.vup>1</> target, <$ba.root>Binds</> them for <@ba.vup>{duration_2}</> seconds instead",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.2
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Quicksand Generation",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies and <$ba.root>Binds</> them for <@ba.vup>{duration}</> seconds. If the trap hits only <@ba.vup>1</> target, <$ba.root>Binds</> them for <@ba.vup>{duration_2}</> seconds instead",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.3
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Quicksand Generation",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies and <$ba.root>Binds</> them for <@ba.vup>{duration}</> seconds. If the trap hits only <@ba.vup>1</> target, <$ba.root>Binds</> them for <@ba.vup>{duration_2}</> seconds instead",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.4
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Quicksand Generation",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies and <$ba.root>Binds</> them for <@ba.vup>{duration}</> seconds. If the trap hits only <@ba.vup>1</> target, <$ba.root>Binds</> them for <@ba.vup>{duration_2}</> seconds instead",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.5
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2
+                },
+                {
+                  "key": "duration_2",
+                  "value": 3.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Quicksand Generation",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies and <$ba.root>Binds</> them for <@ba.vup>{duration}</> seconds. If the trap hits only <@ba.vup>1</> target, <$ba.root>Binds</> them for <@ba.vup>{duration_2}</> seconds instead",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.6
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 2.5
+                },
+                {
+                  "key": "duration_2",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Quicksand Generation",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies and <$ba.root>Binds</> them for <@ba.vup>{duration}</> seconds. If the trap hits only <@ba.vup>1</> target, <$ba.root>Binds</> them for <@ba.vup>{duration_2}</> seconds instead",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.7
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 3
+                },
+                {
+                  "key": "duration_2",
+                  "value": 5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Quicksand Generation",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies and <$ba.root>Binds</> them for <@ba.vup>{duration}</> seconds. If the trap hits only <@ba.vup>1</> target, <$ba.root>Binds</> them for <@ba.vup>{duration_2}</> seconds instead",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.8
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 3
+                },
+                {
+                  "key": "duration_2",
+                  "value": 5.5
+                }
+              ],
+              "range": null
+            },
+            {
+              "name": "Quicksand Generation",
+              "rangeId": null,
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Physical damage to all nearby enemies and <$ba.root>Binds</> them for <@ba.vup>{duration}</> seconds. If the trap hits only <@ba.vup>1</> target, <$ba.root>Binds</> them for <@ba.vup>{duration_2}</> seconds instead",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_2",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3
+                },
+                {
+                  "key": "cnt_2",
+                  "value": 1
+                },
+                {
+                  "key": "duration",
+                  "value": 3.5
+                },
+                {
+                  "key": "duration_2",
+                  "value": 6
+                }
+              ],
+              "range": null
+            }
+          ]
+        },
+        {
+          "skillId": "sktok_doroth_3",
+          "iconId": null,
+          "hidden": false,
+          "levels": [
+            {
+              "name": "High-speed Resonating Troubleshooter",
+              "rangeId": "x-6",
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to all enemies in range and <$ba.sluggish>Slows</> them for <@ba.vup>{sluggish}</> seconds. After a delay, trigger other Resonators within range",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "High-speed Resonating Troubleshooter",
+              "rangeId": "x-6",
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to all enemies in range and <$ba.sluggish>Slows</> them for <@ba.vup>{sluggish}</> seconds. After a delay, trigger other Resonators within range",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.1
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "High-speed Resonating Troubleshooter",
+              "rangeId": "x-6",
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to all enemies in range and <$ba.sluggish>Slows</> them for <@ba.vup>{sluggish}</> seconds. After a delay, trigger other Resonators within range",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.3
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "High-speed Resonating Troubleshooter",
+              "rangeId": "x-6",
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to all enemies in range and <$ba.sluggish>Slows</> them for <@ba.vup>{sluggish}</> seconds. After a delay, trigger other Resonators within range",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.5
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "High-speed Resonating Troubleshooter",
+              "rangeId": "x-6",
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to all enemies in range and <$ba.sluggish>Slows</> them for <@ba.vup>{sluggish}</> seconds. After a delay, trigger other Resonators within range",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.6
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "High-speed Resonating Troubleshooter",
+              "rangeId": "x-6",
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to all enemies in range and <$ba.sluggish>Slows</> them for <@ba.vup>{sluggish}</> seconds. After a delay, trigger other Resonators within range",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.7
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "High-speed Resonating Troubleshooter",
+              "rangeId": "x-6",
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to all enemies in range and <$ba.sluggish>Slows</> them for <@ba.vup>{sluggish}</> seconds. After a delay, trigger other Resonators within range",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 2.8
+                },
+                {
+                  "key": "sluggish",
+                  "value": 3.5
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "High-speed Resonating Troubleshooter",
+              "rangeId": "x-6",
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to all enemies in range and <$ba.sluggish>Slows</> them for <@ba.vup>{sluggish}</> seconds. After a delay, trigger other Resonators within range",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3
+                },
+                {
+                  "key": "sluggish",
+                  "value": 4
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "High-speed Resonating Troubleshooter",
+              "rangeId": "x-6",
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to all enemies in range and <$ba.sluggish>Slows</> them for <@ba.vup>{sluggish}</> seconds. After a delay, trigger other Resonators within range",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.2
+                },
+                {
+                  "key": "sluggish",
+                  "value": 4.5
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "High-speed Resonating Troubleshooter",
+              "rangeId": "x-6",
+              "description": "When triggered, deals <@ba.vup>{atk_scale:0%}</> ATK as Arts damage to all enemies in range and <$ba.sluggish>Slows</> them for <@ba.vup>{sluggish}</> seconds. After a delay, trigger other Resonators within range",
+              "skillType": 2,
+              "durationType": 0,
+              "spData": {
+                "spType": 8,
+                "levelUpCost": null,
+                "maxChargeTime": 1,
+                "spCost": 0,
+                "initSp": 0,
+                "increment": 1
+              },
+              "prefabId": "sktok_doroth_3",
+              "duration": -1,
+              "blackboard": [
+                {
+                  "key": "cnt",
+                  "value": 1
+                },
+                {
+                  "key": "atk_scale",
+                  "value": 3.5
+                },
+                {
+                  "key": "sluggish",
+                  "value": 5
+                },
+                {
+                  "key": "interval",
+                  "value": 2
+                }
+              ],
+              "range": {
+                "id": "x-6",
+                "direction": 1,
+                "grids": [
+                  {
+                    "row": 2,
+                    "col": 0
+                  },
+                  {
+                    "row": 1,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": -2
+                  },
+                  {
+                    "row": 0,
+                    "col": -1
+                  },
+                  {
+                    "row": 0,
+                    "col": 0
+                  },
+                  {
+                    "row": 0,
+                    "col": 1
+                  },
+                  {
+                    "row": 0,
+                    "col": 2
+                  },
+                  {
+                    "row": -1,
+                    "col": 0
+                  },
+                  {
+                    "row": -2,
+                    "col": 0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "cnName": "共振装置",
+      "isCnOnly": false,
+      "operatorName": "Dorothy"
+    }
+  ],
   "Pozёmka": [
     {
       "name": "'Typewriter'",
@@ -31309,1963 +33264,6 @@
       "cnName": "“打字机”",
       "isCnOnly": false,
       "operatorName": "Pozёmka"
-    }
-  ],
-  "Dorothy": [
-    {
-      "name": "Resonator",
-      "description": null,
-      "canUseGeneralPotentialItem": true,
-      "canUseActivityPotentialItem": false,
-      "potentialItemId": null,
-      "activityPotentialItemId": null,
-      "nationId": null,
-      "groupId": null,
-      "teamId": null,
-      "displayNumber": null,
-      "tokenKey": null,
-      "appellation": "Resonator",
-      "position": "MELEE",
-      "tagList": null,
-      "itemUsage": null,
-      "itemDesc": null,
-      "itemObtainApproach": null,
-      "isNotObtainable": false,
-      "isSpChar": false,
-      "maxPotentialLevel": 0,
-      "rarity": 5,
-      "profession": "TOKEN",
-      "subProfessionId": "notchar1",
-      "trait": null,
-      "phases": [
-        {
-          "characterPrefabKey": "token_10025_doroth_recttp",
-          "rangeId": "0-1",
-          "maxLevel": 50,
-          "attributesKeyFrames": [
-            {
-              "level": 1,
-              "data": {
-                "maxHp": 1000,
-                "atk": 100,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 3,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1,
-                "respawnTime": 5,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 6,
-                "maxDeckStackCnt": 5,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            },
-            {
-              "level": 50,
-              "data": {
-                "maxHp": 1000,
-                "atk": 100,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 3,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1,
-                "respawnTime": 5,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 6,
-                "maxDeckStackCnt": 5,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            }
-          ],
-          "evolveCost": null,
-          "range": {
-            "id": "0-1",
-            "direction": 1,
-            "grids": [
-              {
-                "row": 0,
-                "col": 0
-              }
-            ]
-          }
-        },
-        {
-          "characterPrefabKey": "token_10025_doroth_recttp",
-          "rangeId": "0-1",
-          "maxLevel": 80,
-          "attributesKeyFrames": [
-            {
-              "level": 1,
-              "data": {
-                "maxHp": 1000,
-                "atk": 100,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 3,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1,
-                "respawnTime": 5,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 8,
-                "maxDeckStackCnt": 7,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            },
-            {
-              "level": 80,
-              "data": {
-                "maxHp": 1000,
-                "atk": 100,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 3,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1,
-                "respawnTime": 5,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 8,
-                "maxDeckStackCnt": 7,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            }
-          ],
-          "evolveCost": null,
-          "range": {
-            "id": "0-1",
-            "direction": 1,
-            "grids": [
-              {
-                "row": 0,
-                "col": 0
-              }
-            ]
-          }
-        },
-        {
-          "characterPrefabKey": "token_10025_doroth_recttp",
-          "rangeId": "0-1",
-          "maxLevel": 90,
-          "attributesKeyFrames": [
-            {
-              "level": 1,
-              "data": {
-                "maxHp": 1000,
-                "atk": 100,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 3,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1,
-                "respawnTime": 5,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 10,
-                "maxDeckStackCnt": 9,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            },
-            {
-              "level": 90,
-              "data": {
-                "maxHp": 1000,
-                "atk": 100,
-                "def": 0,
-                "magicResistance": 0,
-                "cost": 3,
-                "blockCnt": 0,
-                "moveSpeed": 1,
-                "attackSpeed": 100,
-                "baseAttackTime": 1,
-                "respawnTime": 5,
-                "hpRecoveryPerSec": 0,
-                "spRecoveryPerSec": 1,
-                "maxDeployCount": 10,
-                "maxDeckStackCnt": 9,
-                "tauntLevel": 0,
-                "massLevel": 0,
-                "baseForceLevel": 0,
-                "stunImmune": false,
-                "silenceImmune": false,
-                "sleepImmune": false,
-                "frozenImmune": false,
-                "levitateImmune": false
-              }
-            }
-          ],
-          "evolveCost": null,
-          "range": {
-            "id": "0-1",
-            "direction": 1,
-            "grids": [
-              {
-                "row": 0,
-                "col": 0
-              }
-            ]
-          }
-        }
-      ],
-      "skills": [
-        {
-          "skillId": "sktok_doroth_1",
-          "overridePrefabKey": null,
-          "overrideTokenKey": null,
-          "levelUpCostCond": [
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            }
-          ],
-          "unlockCond": {
-            "phase": 0,
-            "level": 1
-          }
-        },
-        {
-          "skillId": "sktok_doroth_2",
-          "overridePrefabKey": null,
-          "overrideTokenKey": null,
-          "levelUpCostCond": [
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            }
-          ],
-          "unlockCond": {
-            "phase": 1,
-            "level": 1
-          }
-        },
-        {
-          "skillId": "sktok_doroth_3",
-          "overridePrefabKey": null,
-          "overrideTokenKey": null,
-          "levelUpCostCond": [
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            },
-            {
-              "unlockCond": {
-                "phase": 2,
-                "level": 1
-              },
-              "lvlUpTime": 0,
-              "levelUpCost": null
-            }
-          ],
-          "unlockCond": {
-            "phase": 2,
-            "level": 1
-          }
-        }
-      ],
-      "talents": [],
-      "potentialRanks": [],
-      "favorKeyFrames": null,
-      "allSkillLvlup": [
-        {
-          "unlockCond": {
-            "phase": 0,
-            "level": 1
-          },
-          "lvlUpCost": null
-        },
-        {
-          "unlockCond": {
-            "phase": 0,
-            "level": 1
-          },
-          "lvlUpCost": null
-        },
-        {
-          "unlockCond": {
-            "phase": 0,
-            "level": 1
-          },
-          "lvlUpCost": null
-        },
-        {
-          "unlockCond": {
-            "phase": 1,
-            "level": 1
-          },
-          "lvlUpCost": null
-        },
-        {
-          "unlockCond": {
-            "phase": 1,
-            "level": 1
-          },
-          "lvlUpCost": null
-        },
-        {
-          "unlockCond": {
-            "phase": 1,
-            "level": 1
-          },
-          "lvlUpCost": null
-        }
-      ],
-      "charId": "token_10025_doroth_recttp",
-      "skillData": [
-        {
-          "skillId": "sktok_doroth_1",
-          "iconId": null,
-          "hidden": false,
-          "levels": [
-            {
-              "name": "危险目标清除",
-              "rangeId": null,
-              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3
-                },
-                {
-                  "key": "def",
-                  "value": -0.25
-                },
-                {
-                  "key": "duration",
-                  "value": 5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "危险目标清除",
-              "rangeId": null,
-              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3.1
-                },
-                {
-                  "key": "def",
-                  "value": -0.25
-                },
-                {
-                  "key": "duration",
-                  "value": 5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "危险目标清除",
-              "rangeId": null,
-              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3.2
-                },
-                {
-                  "key": "def",
-                  "value": -0.25
-                },
-                {
-                  "key": "duration",
-                  "value": 5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "危险目标清除",
-              "rangeId": null,
-              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3.3
-                },
-                {
-                  "key": "def",
-                  "value": -0.25
-                },
-                {
-                  "key": "duration",
-                  "value": 5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "危险目标清除",
-              "rangeId": null,
-              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3.5
-                },
-                {
-                  "key": "def",
-                  "value": -0.25
-                },
-                {
-                  "key": "duration",
-                  "value": 5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "危险目标清除",
-              "rangeId": null,
-              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3.6
-                },
-                {
-                  "key": "def",
-                  "value": -0.25
-                },
-                {
-                  "key": "duration",
-                  "value": 5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "危险目标清除",
-              "rangeId": null,
-              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3.7
-                },
-                {
-                  "key": "def",
-                  "value": -0.3
-                },
-                {
-                  "key": "duration",
-                  "value": 5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "危险目标清除",
-              "rangeId": null,
-              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3.9
-                },
-                {
-                  "key": "def",
-                  "value": -0.32
-                },
-                {
-                  "key": "duration",
-                  "value": 5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "危险目标清除",
-              "rangeId": null,
-              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 4.2
-                },
-                {
-                  "key": "def",
-                  "value": -0.33
-                },
-                {
-                  "key": "duration",
-                  "value": 5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "危险目标清除",
-              "rangeId": null,
-              "description": "触发时对目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其防御力<@ba.vup>-{-def:0%}</>，持续<@ba.vup>{duration}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_1",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 4.5
-                },
-                {
-                  "key": "def",
-                  "value": -0.35
-                },
-                {
-                  "key": "duration",
-                  "value": 5
-                }
-              ],
-              "range": null
-            }
-          ]
-        },
-        {
-          "skillId": "sktok_doroth_2",
-          "iconId": null,
-          "hidden": false,
-          "levels": [
-            {
-              "name": "流沙区域生成",
-              "rangeId": null,
-              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2
-                },
-                {
-                  "key": "cnt_2",
-                  "value": 1
-                },
-                {
-                  "key": "duration",
-                  "value": 2
-                },
-                {
-                  "key": "duration_2",
-                  "value": 3.5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "流沙区域生成",
-              "rangeId": null,
-              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.1
-                },
-                {
-                  "key": "cnt_2",
-                  "value": 1
-                },
-                {
-                  "key": "duration",
-                  "value": 2
-                },
-                {
-                  "key": "duration_2",
-                  "value": 3.5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "流沙区域生成",
-              "rangeId": null,
-              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.2
-                },
-                {
-                  "key": "cnt_2",
-                  "value": 1
-                },
-                {
-                  "key": "duration",
-                  "value": 2
-                },
-                {
-                  "key": "duration_2",
-                  "value": 3.5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "流沙区域生成",
-              "rangeId": null,
-              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.3
-                },
-                {
-                  "key": "cnt_2",
-                  "value": 1
-                },
-                {
-                  "key": "duration",
-                  "value": 2
-                },
-                {
-                  "key": "duration_2",
-                  "value": 3.5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "流沙区域生成",
-              "rangeId": null,
-              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.4
-                },
-                {
-                  "key": "cnt_2",
-                  "value": 1
-                },
-                {
-                  "key": "duration",
-                  "value": 2
-                },
-                {
-                  "key": "duration_2",
-                  "value": 3.5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "流沙区域生成",
-              "rangeId": null,
-              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.5
-                },
-                {
-                  "key": "cnt_2",
-                  "value": 1
-                },
-                {
-                  "key": "duration",
-                  "value": 2
-                },
-                {
-                  "key": "duration_2",
-                  "value": 3.5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "流沙区域生成",
-              "rangeId": null,
-              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.6
-                },
-                {
-                  "key": "cnt_2",
-                  "value": 1
-                },
-                {
-                  "key": "duration",
-                  "value": 2.5
-                },
-                {
-                  "key": "duration_2",
-                  "value": 5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "流沙区域生成",
-              "rangeId": null,
-              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.7
-                },
-                {
-                  "key": "cnt_2",
-                  "value": 1
-                },
-                {
-                  "key": "duration",
-                  "value": 3
-                },
-                {
-                  "key": "duration_2",
-                  "value": 5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "流沙区域生成",
-              "rangeId": null,
-              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.8
-                },
-                {
-                  "key": "cnt_2",
-                  "value": 1
-                },
-                {
-                  "key": "duration",
-                  "value": 3
-                },
-                {
-                  "key": "duration_2",
-                  "value": 5.5
-                }
-              ],
-              "range": null
-            },
-            {
-              "name": "流沙区域生成",
-              "rangeId": null,
-              "description": "触发时对周围所有目标造成相当于攻击力的<@ba.vup>{atk_scale:0%}</>的物理伤害，并使其<$ba.root>束缚</><@ba.vup>{duration}</>秒,如果陷阱只命中<@ba.vup>1</>名敌人，则使其<$ba.root>束缚</><@ba.vup>{duration_2}</>秒",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_2",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3
-                },
-                {
-                  "key": "cnt_2",
-                  "value": 1
-                },
-                {
-                  "key": "duration",
-                  "value": 3.5
-                },
-                {
-                  "key": "duration_2",
-                  "value": 6
-                }
-              ],
-              "range": null
-            }
-          ]
-        },
-        {
-          "skillId": "sktok_doroth_3",
-          "iconId": null,
-          "hidden": false,
-          "levels": [
-            {
-              "name": "高速共振排障",
-              "rangeId": "x-6",
-              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_3",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2
-                },
-                {
-                  "key": "sluggish",
-                  "value": 3
-                },
-                {
-                  "key": "interval",
-                  "value": 2
-                }
-              ],
-              "range": {
-                "id": "x-6",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 2,
-                    "col": 0
-                  },
-                  {
-                    "row": 1,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": -2
-                  },
-                  {
-                    "row": 0,
-                    "col": -1
-                  },
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": -1,
-                    "col": 0
-                  },
-                  {
-                    "row": -2,
-                    "col": 0
-                  }
-                ]
-              }
-            },
-            {
-              "name": "高速共振排障",
-              "rangeId": "x-6",
-              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_3",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.1
-                },
-                {
-                  "key": "sluggish",
-                  "value": 3
-                },
-                {
-                  "key": "interval",
-                  "value": 2
-                }
-              ],
-              "range": {
-                "id": "x-6",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 2,
-                    "col": 0
-                  },
-                  {
-                    "row": 1,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": -2
-                  },
-                  {
-                    "row": 0,
-                    "col": -1
-                  },
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": -1,
-                    "col": 0
-                  },
-                  {
-                    "row": -2,
-                    "col": 0
-                  }
-                ]
-              }
-            },
-            {
-              "name": "高速共振排障",
-              "rangeId": "x-6",
-              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_3",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.3
-                },
-                {
-                  "key": "sluggish",
-                  "value": 3
-                },
-                {
-                  "key": "interval",
-                  "value": 2
-                }
-              ],
-              "range": {
-                "id": "x-6",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 2,
-                    "col": 0
-                  },
-                  {
-                    "row": 1,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": -2
-                  },
-                  {
-                    "row": 0,
-                    "col": -1
-                  },
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": -1,
-                    "col": 0
-                  },
-                  {
-                    "row": -2,
-                    "col": 0
-                  }
-                ]
-              }
-            },
-            {
-              "name": "高速共振排障",
-              "rangeId": "x-6",
-              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_3",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.5
-                },
-                {
-                  "key": "sluggish",
-                  "value": 3
-                },
-                {
-                  "key": "interval",
-                  "value": 2
-                }
-              ],
-              "range": {
-                "id": "x-6",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 2,
-                    "col": 0
-                  },
-                  {
-                    "row": 1,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": -2
-                  },
-                  {
-                    "row": 0,
-                    "col": -1
-                  },
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": -1,
-                    "col": 0
-                  },
-                  {
-                    "row": -2,
-                    "col": 0
-                  }
-                ]
-              }
-            },
-            {
-              "name": "高速共振排障",
-              "rangeId": "x-6",
-              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_3",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.6
-                },
-                {
-                  "key": "sluggish",
-                  "value": 3
-                },
-                {
-                  "key": "interval",
-                  "value": 2
-                }
-              ],
-              "range": {
-                "id": "x-6",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 2,
-                    "col": 0
-                  },
-                  {
-                    "row": 1,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": -2
-                  },
-                  {
-                    "row": 0,
-                    "col": -1
-                  },
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": -1,
-                    "col": 0
-                  },
-                  {
-                    "row": -2,
-                    "col": 0
-                  }
-                ]
-              }
-            },
-            {
-              "name": "高速共振排障",
-              "rangeId": "x-6",
-              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_3",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.7
-                },
-                {
-                  "key": "sluggish",
-                  "value": 3
-                },
-                {
-                  "key": "interval",
-                  "value": 2
-                }
-              ],
-              "range": {
-                "id": "x-6",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 2,
-                    "col": 0
-                  },
-                  {
-                    "row": 1,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": -2
-                  },
-                  {
-                    "row": 0,
-                    "col": -1
-                  },
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": -1,
-                    "col": 0
-                  },
-                  {
-                    "row": -2,
-                    "col": 0
-                  }
-                ]
-              }
-            },
-            {
-              "name": "高速共振排障",
-              "rangeId": "x-6",
-              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_3",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 2.8
-                },
-                {
-                  "key": "sluggish",
-                  "value": 3.5
-                },
-                {
-                  "key": "interval",
-                  "value": 2
-                }
-              ],
-              "range": {
-                "id": "x-6",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 2,
-                    "col": 0
-                  },
-                  {
-                    "row": 1,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": -2
-                  },
-                  {
-                    "row": 0,
-                    "col": -1
-                  },
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": -1,
-                    "col": 0
-                  },
-                  {
-                    "row": -2,
-                    "col": 0
-                  }
-                ]
-              }
-            },
-            {
-              "name": "高速共振排障",
-              "rangeId": "x-6",
-              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_3",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3
-                },
-                {
-                  "key": "sluggish",
-                  "value": 4
-                },
-                {
-                  "key": "interval",
-                  "value": 2
-                }
-              ],
-              "range": {
-                "id": "x-6",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 2,
-                    "col": 0
-                  },
-                  {
-                    "row": 1,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": -2
-                  },
-                  {
-                    "row": 0,
-                    "col": -1
-                  },
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": -1,
-                    "col": 0
-                  },
-                  {
-                    "row": -2,
-                    "col": 0
-                  }
-                ]
-              }
-            },
-            {
-              "name": "高速共振排障",
-              "rangeId": "x-6",
-              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_3",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3.2
-                },
-                {
-                  "key": "sluggish",
-                  "value": 4.5
-                },
-                {
-                  "key": "interval",
-                  "value": 2
-                }
-              ],
-              "range": {
-                "id": "x-6",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 2,
-                    "col": 0
-                  },
-                  {
-                    "row": 1,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": -2
-                  },
-                  {
-                    "row": 0,
-                    "col": -1
-                  },
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": -1,
-                    "col": 0
-                  },
-                  {
-                    "row": -2,
-                    "col": 0
-                  }
-                ]
-              }
-            },
-            {
-              "name": "高速共振排障",
-              "rangeId": "x-6",
-              "description": "触发时对范围内所有目标造成相当于攻击力<@ba.vup>{atk_scale:0%}</>的法术伤害，使其<$ba.sluggish>停顿</><@ba.vup>{sluggish}</>秒，并延迟触发范围内的其他共振装置",
-              "skillType": 2,
-              "durationType": 0,
-              "spData": {
-                "spType": 8,
-                "levelUpCost": null,
-                "maxChargeTime": 1,
-                "spCost": 0,
-                "initSp": 0,
-                "increment": 1
-              },
-              "prefabId": "sktok_doroth_3",
-              "duration": -1,
-              "blackboard": [
-                {
-                  "key": "cnt",
-                  "value": 1
-                },
-                {
-                  "key": "atk_scale",
-                  "value": 3.5
-                },
-                {
-                  "key": "sluggish",
-                  "value": 5
-                },
-                {
-                  "key": "interval",
-                  "value": 2
-                }
-              ],
-              "range": {
-                "id": "x-6",
-                "direction": 1,
-                "grids": [
-                  {
-                    "row": 2,
-                    "col": 0
-                  },
-                  {
-                    "row": 1,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": -2
-                  },
-                  {
-                    "row": 0,
-                    "col": -1
-                  },
-                  {
-                    "row": 0,
-                    "col": 0
-                  },
-                  {
-                    "row": 0,
-                    "col": 1
-                  },
-                  {
-                    "row": 0,
-                    "col": 2
-                  },
-                  {
-                    "row": -1,
-                    "col": 0
-                  },
-                  {
-                    "row": -2,
-                    "col": 0
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ],
-      "cnName": "共振装置",
-      "isCnOnly": true,
-      "operatorName": "Dorothy"
     }
   ],
   "Stainless": [

@@ -1,9 +1,4 @@
 {
-  "shotprotector": {
-    "branchName": "Longstrike",
-    "trait": "能够阻挡三个敌人，可以进行远程攻击",
-    "class": "Defender"
-  },
   "chainhealer": {
     "branchName": "Chain",
     "trait": "恢复友方单位生命，且会在<span class=\"keyword\">3</span>个友方单位间跳跃，每次跳跃治疗量降低25%",
@@ -283,5 +278,10 @@
     "branchName": "Agent",
     "trait": "Has <span class=\"keyword\">reduced</span> Redeployment Time, can use ranged attacks",
     "class": "Vanguard"
+  },
+  "shotprotector": {
+    "branchName": "Sentinel Protector",
+    "trait": "能够阻挡三个敌人，可以进行远程攻击",
+    "class": "Defender"
   }
 }

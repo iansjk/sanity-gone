@@ -35,43 +35,57 @@ const ResultTable: React.FC<Props> = ({ columns }) => {
     <table className={classes.root}>
       <thead>
         <tr>
-          <th>Operator</th>
+          <th scope="row" className={classes.operatorRowHeader}>
+            Operator
+          </th>
           {/* operator names go here as <th>s */}
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">Skill Cycle</th>
+          <th scope="row" className={classes.rowHeader}>
+            Skill Cycle
+          </th>
           {columns.map(({ operatorId, skillCycle }) => (
             <td key={operatorId}>{skillCycle}</td>
           ))}
         </tr>
         <tr>
-          <th scope="row">Skill ATK</th>
+          <th scope="row" className={classes.rowHeader}>
+            Skill ATK
+          </th>
           {columns.map(({ operatorId, skillAtk }) => (
             <td key={operatorId}>{skillAtk}</td>
           ))}
         </tr>
         <tr>
-          <th scope="row">Skill Total DMG</th>
+          <th scope="row" className={classes.rowHeader}>
+            Skill Total DMG
+          </th>
           {columns.map(({ operatorId, skillTotalDamage }) => (
             <td key={operatorId}>{skillTotalDamage}</td>
           ))}
         </tr>
         <tr>
-          <th scope="row">Skill DPS</th>
+          <th scope="row" className={classes.rowHeader}>
+            Skill DPS
+          </th>
           {columns.map(({ operatorId, skillDps }) => (
             <td key={operatorId}>{skillDps}</td>
           ))}
         </tr>
         <tr>
-          <th scope="row">Basic Attack DPS</th>
+          <th scope="row" className={classes.rowHeader}>
+            Basic Attack DPS
+          </th>
           {columns.map(({ operatorId, basicAttackDps }) => (
             <td key={operatorId}>{basicAttackDps}</td>
           ))}
         </tr>
         <tr>
-          <th scope="row">Average DPS</th>
+          <th scope="row" className={classes.rowHeader}>
+            Average DPS
+          </th>
           {columns.map(({ operatorId, averageDps }) => (
             <td key={operatorId}>{averageDps}</td>
           ))}

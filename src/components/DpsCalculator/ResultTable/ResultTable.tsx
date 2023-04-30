@@ -1,4 +1,7 @@
+import { HealthIcon } from "../../icons/operatorStats";
 import * as classes from "./styles.css";
+
+const MAX_SUPPORTED_COLUMNS = 4;
 
 type OperatorOptions = any; // TODO
 
@@ -39,6 +42,16 @@ const ResultTable: React.FC<Props> = ({ columns }) => {
             Operator
           </th>
           {/* operator names go here as <th>s */}
+          {columns.length < MAX_SUPPORTED_COLUMNS && (
+            <th>
+              <button
+                aria-label="Add new operator column"
+                className={classes.newOperator}
+              >
+                <HealthIcon pathClassName={classes.newOperatorIconPath} />
+              </button>
+            </th>
+          )}
         </tr>
       </thead>
       <tbody>

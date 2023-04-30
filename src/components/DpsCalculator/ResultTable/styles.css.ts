@@ -22,3 +22,20 @@ export const operatorRowHeader = style([
     background: vars.colors.neutrals.midtoneDarker,
   },
 ]);
+
+export const newOperator = style({
+  minWidth: 251,
+  minHeight: 293,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  background: "unset",
+  border: "1px solid",
+  borderColor: vars.colors.neutrals.midtone,
+  borderRadius: spacing(0.5),
+  cursor: "pointer",
+});
+
+export const newOperatorIconPath = style({
+  fill: vars.colors.neutrals.midtoneBrighterer,
+});

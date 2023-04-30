@@ -253,6 +253,19 @@ export const addOperator = action(
   }
 );
 
+export const removeOperatorAt = action(
+  operatorsStore,
+  "removeOperatorAt",
+  (store, index) => {
+    store.set(
+      store
+        .get()
+        .slice(0, index)
+        .concat(store.get().slice(index + 1))
+    );
+  }
+);
+
 export const changeEnemyStats = action(
   enemyStatsStore,
   "changeEnemyStats",

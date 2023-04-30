@@ -8,6 +8,7 @@ import {
   calcsStore,
   canAddOperatorsStore,
   addOperator,
+  removeOperatorAt,
 } from "../store";
 import { HealthIcon } from "../../icons/operatorStats";
 import operatorsJson from "../../../../data/operators.json";
@@ -31,18 +32,17 @@ const ResultTable: React.FC = () => {
               Operator
             </th>
             {operators.map(({ operatorName }) => (
-              <div
-                key={operatorName}
-                className="visually-hidden"
-                role="columnheader"
-              >
+              <th key={operatorName} className="visually-hidden">
                 {operatorName}
-              </div>
+              </th>
             ))}
           </tr>
           <tr>
-            {operators.map(({ operatorName }) => (
-              <td key={operatorName}>{operatorName}</td>
+            {operators.map(({ operatorName }, i) => (
+              <td key={operatorName}>
+                {operatorName}
+                <button onClick={() => removeOperatorAt(i)}>Delete</button>
+              </td>
             ))}
             {/* operator names go here as <th>s */}
             {canAddOperators && (

@@ -1,15 +1,14 @@
 import { useStore } from "@nanostores/react";
 
-import { operatorsStore, calcsStore } from "../store";
+import { operatorsStore, calcsStore, canAddOperatorsStore } from "../store";
 import { HealthIcon } from "../../icons/operatorStats";
 
 import * as classes from "./styles.css";
 
-const MAX_SUPPORTED_COLUMNS = 4;
-
 const ResultTable: React.FC = () => {
   const operators = useStore(operatorsStore);
   const calcs = useStore(calcsStore);
+  const canAddOperators = useStore(canAddOperatorsStore);
 
   return (
     <table className={classes.root}>
@@ -19,7 +18,7 @@ const ResultTable: React.FC = () => {
             Operator
           </th>
           {/* operator names go here as <th>s */}
-          {operators.length < MAX_SUPPORTED_COLUMNS && (
+          {canAddOperators && (
             <th>
               <button
                 aria-label="Add new operator column"

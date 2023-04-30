@@ -29,13 +29,13 @@ interface CalculationResult {
   averageDps: number;
 }
 
-interface EnemyStats {
+export interface EnemySettings {
   defense: number;
   resistance: number;
   quantity: number;
 }
 
-interface Buffs {
+export interface BuffSettings {
   flatAtkUp: number;
   atkPercentUp: number;
   aspdUp: number;
@@ -46,13 +46,13 @@ interface Buffs {
 
 export const operatorsStore = atom<OperatorColumn[]>([]);
 
-export const enemyStatsStore = atom<EnemyStats>({
+export const enemyStatsStore = atom<EnemySettings>({
   defense: 0,
   resistance: 0,
   quantity: 1,
 });
 
-export const buffsStore = atom<Buffs>({
+export const buffsStore = atom<BuffSettings>({
   aspdUp: 0,
   flatAtkUp: 0,
   atkPercentUp: 0,
@@ -67,4 +67,30 @@ export const calcsStore = computed(
     operators.map((op) => ({
       // TODO
     })) as any as CalculationResult[]
+);
+
+export const changeEnemyStats = action(
+  enemyStatsStore,
+  "changeEnemyStats",
+  (store, key: keyof EnemySettings, value: number) => {
+    store.set({ ...store.get(), [key]: value });
+  }
+);
+
+export const changeBuffs = action(
+  buffsStore,
+  "changeBuffs",
+  (store, key: keyof BuffSettings, value: number) => {
+    store.set({ ...store.get(), [key]: value });
+  }
+);
+
+export const isCompareEnabledStore = atom(true);
+
+export const toggleCompareEnabled = action(
+  isCompareEnabledStore,
+  "toggleCompareEnabled",
+  (store) => {
+    store.set(!store.get());
+  }
 );

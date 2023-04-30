@@ -1,13 +1,30 @@
+import { useCallback } from "react";
+
 import { useStore } from "@nanostores/react";
 
 import { ArtsResistanceIcon, DefenseIcon } from "../../icons/operatorStats";
-import { enemyStatsStore } from "../store";
+import { changeEnemyStats, enemyStatsStore } from "../store";
 
 import * as classes from "./styles.css";
 import * as configClasses from "../configStyles.css";
 
+import type { EnemySettings } from "../store";
+
 const EnemyStats: React.FC = () => {
   const enemyStats = useStore(enemyStatsStore);
+
+  const handleClick = useCallback((e: React.MouseEvent<HTMLInputElement>) => {
+    (e.target as HTMLInputElement).select();
+  }, []);
+
+  const getChangeHandlerForKey = useCallback((key: keyof EnemySettings) => {
+    return (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = Number(e.target.value);
+      if (!Number.isNaN(value)) {
+        changeEnemyStats(key, value);
+      }
+    };
+  }, []);
 
   return (
     <section className={configClasses.configSection}>
@@ -21,6 +38,8 @@ const EnemyStats: React.FC = () => {
             type="number"
             aria-label="Defense"
             value={enemyStats.defense}
+            onChange={getChangeHandlerForKey("defense")}
+            onClick={handleClick}
           />
         </div>
         <div>
@@ -30,11 +49,18 @@ const EnemyStats: React.FC = () => {
             type="number"
             aria-label="Resistance"
             value={enemyStats.resistance}
+            onChange={getChangeHandlerForKey("resistance")}
+            onClick={handleClick}
           />
         </div>
         <label>
           Quantity
-          <input type="number" value={enemyStats.quantity} />
+          <input
+            type="number"
+            value={enemyStats.quantity}
+            onChange={getChangeHandlerForKey("quantity")}
+            onClick={handleClick}
+          />
         </label>
       </div>
     </section>

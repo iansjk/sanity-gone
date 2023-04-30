@@ -1,13 +1,30 @@
+import { useCallback } from "react";
+
 import { useStore } from "@nanostores/react";
-import { buffsStore } from "../store";
+import { buffsStore, changeBuffs } from "../store";
 import { AttackPowerIcon, AttackSpeedIcon } from "../../icons/operatorStats";
 import { SPCostIcon } from "../../icons/skillInfo";
 
 import * as classes from "./styles.css";
 import * as configClasses from "../configStyles.css";
 
+import type { BuffSettings } from "../store";
+
 const Buffs: React.FC = () => {
   const buffs = useStore(buffsStore);
+
+  const handleClick = useCallback((e: React.MouseEvent<HTMLInputElement>) => {
+    (e.target as HTMLInputElement).select();
+  }, []);
+
+  const getChangeHandlerForKey = useCallback((key: keyof BuffSettings) => {
+    return (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = Number(e.target.value);
+      if (!Number.isNaN(value)) {
+        changeBuffs(key, value);
+      }
+    };
+  }, []);
 
   return (
     <section className={configClasses.configSection}>
@@ -21,6 +38,8 @@ const Buffs: React.FC = () => {
             type="number"
             aria-label="Flat attack increase"
             value={buffs.flatAtkUp}
+            onChange={getChangeHandlerForKey("flatAtkUp")}
+            onClick={handleClick}
           />
         </label>
         <label>
@@ -30,6 +49,8 @@ const Buffs: React.FC = () => {
             type="number"
             aria-label="Percentage attack increase"
             value={buffs.atkPercentUp}
+            onChange={getChangeHandlerForKey("atkPercentUp")}
+            onClick={handleClick}
           />
         </label>
         <label>
@@ -39,6 +60,8 @@ const Buffs: React.FC = () => {
             type="number"
             aria-label="Attack speed increase"
             value={buffs.aspdUp}
+            onChange={getChangeHandlerForKey("aspdUp")}
+            onClick={handleClick}
           />
         </label>
         <label>
@@ -48,6 +71,8 @@ const Buffs: React.FC = () => {
             type="number"
             aria-label="Original attack increase"
             value={buffs.originalAtkUp}
+            onChange={getChangeHandlerForKey("originalAtkUp")}
+            onClick={handleClick}
           />
         </label>
         <label>
@@ -57,6 +82,8 @@ const Buffs: React.FC = () => {
             type="number"
             aria-label="Damage multiplier"
             value={buffs.dmgMultiplier}
+            onChange={getChangeHandlerForKey("dmgMultiplier")}
+            onClick={handleClick}
           />
         </label>
         <label>
@@ -66,6 +93,8 @@ const Buffs: React.FC = () => {
             type="number"
             aria-label="SP recovery increase"
             value={buffs.spRecoveryUp}
+            onChange={getChangeHandlerForKey("spRecoveryUp")}
+            onClick={handleClick}
           />
         </label>
       </div>

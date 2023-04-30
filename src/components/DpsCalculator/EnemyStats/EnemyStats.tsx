@@ -49,6 +49,7 @@ const EnemyStats: React.FC = () => {
           <input
             type="number"
             min={0}
+            max={100}
             aria-label="Resistance"
             value={enemyStats.resistance}
             onChange={getChangeHandlerForKey("resistance")}

@@ -74,8 +74,8 @@ export const calcsStore = computed(
       averageDps: 0,
       basicAttackDps: 0,
       skillCycle: {
-        uptime: 0,
-        downtime: 0,
+        uptime: 2,
+        downtime: 10,
       },
       skillAtk: 0,
       skillTotalDamage: 0,

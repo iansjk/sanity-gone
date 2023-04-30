@@ -66,9 +66,22 @@ const ResultTable: React.FC = () => {
               Skill Cycle
             </th>
             {calcs.map(({ skillCycle }, i) => (
-              <td
-                key={operators[i].operatorName}
-              >{`${skillCycle.downtime}s + ${skillCycle.uptime}s`}</td>
+              <td key={operators[i].operatorName}>
+                {`${skillCycle.downtime}s + ${skillCycle.uptime}s`}
+                {skillCycle.downtime > 0 && (
+                  <>
+                    <br />
+                    <span>
+                      (
+                      {`${(
+                        (skillCycle.uptime / skillCycle.downtime) *
+                        100
+                      ).toFixed(2)}%`}
+                      )
+                    </span>
+                  </>
+                )}
+              </td>
             ))}
           </tr>
           <tr>

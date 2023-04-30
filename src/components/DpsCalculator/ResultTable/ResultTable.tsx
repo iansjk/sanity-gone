@@ -141,6 +141,9 @@ const ResultTable: React.FC = () => {
                 addOperator(operatorName);
                 setAddOperatorModalOpen(false);
               }}
+              disabled={operators.some(
+                (op) => op.operatorName === operatorName
+              )}
             >
               {operatorName}
             </button>

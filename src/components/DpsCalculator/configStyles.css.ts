@@ -38,6 +38,7 @@ export const knobs = style({
   boxShadow: vars.shadows.baseShadow,
   columnGap: spacing(4),
   rowGap: spacing(1),
+  borderRadius: spacing(0.5),
 });
 
 globalStyle(`${knobs} > *`, {

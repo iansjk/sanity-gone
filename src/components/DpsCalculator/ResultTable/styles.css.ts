@@ -46,3 +46,12 @@ export const newOperator = style({
 export const newOperatorIconPath = style({
   fill: vars.colors.neutrals.midtoneBrighterer,
 });
+
+export const dialog = style({
+  position: "fixed",
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+  zIndex: 1,
+});

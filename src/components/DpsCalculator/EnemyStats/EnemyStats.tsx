@@ -36,6 +36,7 @@ const EnemyStats: React.FC = () => {
           DEF
           <input
             type="number"
+            min={0}
             aria-label="Defense"
             value={enemyStats.defense}
             onChange={getChangeHandlerForKey("defense")}
@@ -47,6 +48,7 @@ const EnemyStats: React.FC = () => {
           RES
           <input
             type="number"
+            min={0}
             aria-label="Resistance"
             value={enemyStats.resistance}
             onChange={getChangeHandlerForKey("resistance")}
@@ -57,6 +59,7 @@ const EnemyStats: React.FC = () => {
           Quantity
           <input
             type="number"
+            min={1}
             value={enemyStats.quantity}
             onChange={getChangeHandlerForKey("quantity")}
             onClick={handleClick}

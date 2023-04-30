@@ -59,6 +59,7 @@ globalStyle(`${knobs} input`, {
   background: vars.colors.neutrals.midtoneDarker,
   border: "none",
   borderRadius: spacing(0.25),
+  ...vars.typography.navigationLink,
   ...vars.typography.navigationLinkBold,
   lineHeight: "23px",
 });

@@ -27,15 +27,26 @@ const ResultTable: React.FC = () => {
       <table className={classes.root}>
         <thead>
           <tr>
-            <th scope="row" className={classes.operatorRowHeader}>
+            <th scope="row" className={classes.operatorRowHeader} rowSpan={2}>
               Operator
             </th>
             {operators.map(({ operatorName }) => (
-              <th key={operatorName}>{operatorName}</th>
+              <div
+                key={operatorName}
+                className="visually-hidden"
+                role="columnheader"
+              >
+                {operatorName}
+              </div>
+            ))}
+          </tr>
+          <tr>
+            {operators.map(({ operatorName }) => (
+              <td key={operatorName}>{operatorName}</td>
             ))}
             {/* operator names go here as <th>s */}
             {canAddOperators && (
-              <th>
+              <td rowSpan={2}>
                 <button
                   onClick={() => {
                     setAddOperatorModalOpen(true);
@@ -45,7 +56,7 @@ const ResultTable: React.FC = () => {
                 >
                   <HealthIcon pathClassName={classes.newOperatorIconPath} />
                 </button>
-              </th>
+              </td>
             )}
           </tr>
         </thead>

@@ -1,9 +1,11 @@
 import { useCallback } from "react";
 
 import { useStore } from "@nanostores/react";
+
 import { buffsStore, changeBuffs } from "../store";
 import { AttackPowerIcon, AttackSpeedIcon } from "../../icons/operatorStats";
 import { SPCostIcon } from "../../icons/skillInfo";
+import PercentageInput from "../PercentageInput";
 
 import * as classes from "./styles.css";
 import * as configClasses from "../configStyles.css";
@@ -45,8 +47,7 @@ const Buffs: React.FC = () => {
         <label>
           <AttackPowerIcon pathClassName={classes.attackIconPath} />
           ATK%+
-          <input
-            type="number"
+          <PercentageInput
             aria-label="Percentage attack increase"
             value={buffs.atkPercentUp}
             onChange={getChangeHandlerForKey("atkPercentUp")}
@@ -67,8 +68,7 @@ const Buffs: React.FC = () => {
         <label>
           <AttackPowerIcon pathClassName={classes.attackIconPath} />
           Original ATK+
-          <input
-            type="number"
+          <PercentageInput
             aria-label="Original attack increase"
             value={buffs.originalAtkUp}
             onChange={getChangeHandlerForKey("originalAtkUp")}
@@ -78,8 +78,7 @@ const Buffs: React.FC = () => {
         <label>
           <AttackPowerIcon pathClassName={classes.attackIconPath} />
           DMG Multiplier
-          <input
-            type="number"
+          <PercentageInput
             aria-label="Damage multiplier"
             value={buffs.dmgMultiplier}
             onChange={getChangeHandlerForKey("dmgMultiplier")}
@@ -89,8 +88,7 @@ const Buffs: React.FC = () => {
         <label>
           <SPCostIcon pathClassName={classes.spIconPath} />
           SP Recovery+
-          <input
-            type="number"
+          <PercentageInput
             aria-label="SP recovery increase"
             value={buffs.spRecoveryUp}
             onChange={getChangeHandlerForKey("spRecoveryUp")}

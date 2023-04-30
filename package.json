@@ -18,6 +18,7 @@
     "@artsy/fresnel": "^3.4.0",
     "@headlessui/react": "^1.7.3",
     "@mui/base": "^5.0.0-alpha.100",
+    "@nanostores/react": "^0.5.0",
     "@next/bundle-analyzer": "^12.3.1",
     "@popperjs/core": "^2.11.6",
     "@sindresorhus/slugify": "<2",

@@ -1488,6 +1488,13 @@
     prop-types "^15.8.1"
     react-is "^18.2.0"
 
+"@nanostores/react@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@nanostores/react/-/react-0.5.0.tgz#91f7b193eb663850632c1c571ef75aafb6fcae4a"
+  integrity sha512-1i+VhIwK+R51RXmnLul/C7a2WYkBF17/KsHsPzIboMXVjKfUvPbViZrwaeiqLFyHFUPgylq2//VkPqx3wmiCeg==
+  dependencies:
+    use-sync-external-store "^1.2.0"
+
 "@next/bundle-analyzer@^12.3.1":
   version "12.3.1"
   resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-12.3.1.tgz#df168652c43ed0dc3e91a5108e34cdcc8fc7f05a"
@@ -12855,7 +12862,7 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-use-sync-external-store@1.2.0:
+use-sync-external-store@1.2.0, use-sync-external-store@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==

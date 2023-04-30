@@ -28,6 +28,7 @@
     "dotenv": "^16.0.0",
     "flexsearch": "<0.7.0",
     "js-levenshtein": "^1.1.6",
+    "nanostores": "^0.8.1",
     "next": "^12.1.0",
     "next-mdx-remote": "^4.1.0",
     "normalize.css": "^8.0.1",

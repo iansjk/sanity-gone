@@ -1,10 +1,15 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 
 import { spacing } from "../../../theme-helpers";
 import { vars } from "../../../theme.css";
 
 export const root = style({
   gridColumn: "span 2",
+});
+
+globalStyle(`${root} tbody > tr:last-of-type th[scope="row"]`, {
+  borderBottomLeftRadius: spacing(0.5),
+  borderBottomRightRadius: spacing(0.5),
 });
 
 export const rowHeader = style({
@@ -20,6 +25,8 @@ export const operatorRowHeader = style([
   rowHeader,
   {
     background: vars.colors.neutrals.midtoneDarker,
+    borderTopLeftRadius: spacing(0.5),
+    borderTopRightRadius: spacing(0.5),
   },
 ]);
 

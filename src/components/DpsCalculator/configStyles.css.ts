@@ -55,7 +55,7 @@ globalStyle(`${knobs} input`, {
   gridColumn: -1,
   padding: spacing(0.5, 1),
   font: "inherit",
-  color: "inherit",
+  color: vars.colors.neutrals.white,
   background: vars.colors.neutrals.midtoneDarker,
   border: "none",
   borderRadius: spacing(0.25),

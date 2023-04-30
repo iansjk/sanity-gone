@@ -15,7 +15,7 @@ export const percentSignText = style({
   top: 0,
   bottom: 0,
   left: 15,
-  paddingLeft: 1,
+  paddingLeft: 2,
   color: vars.colors.neutrals.midtoneBrighterer,
   userSelect: "none",
 });
